@@ -1,0 +1,769 @@
+//
+// Génération
+//
+// dzslides sans embarquer les ressources
+// asciidoc <nomfichier>.asciidoc
+//
+// dzslides en embarquant les ressources
+// asciidoc -a data-uri -a linkcss! <nomfichier>.asciidoc
+= Android pour les débutants
+Jean-François Garreau, SQLI
+v1.0
+//:doctitle: Titre de la présentation, sans mise en avant de texte sous différentes formes.
+:author: Jean-François Garreay, SQLI, V1.0
+:title: Android pour les débutants
+:subtitle: A la découverte du nouveau framework
+:description: Présentation du framework android
+:copyright: Copyright 2013 SQLI
+//:website: TBD
+//:slidesurl: TBD
+// à remplacer par le chemin relatif de notre path d'image
+//:imagesdir: 
+:backend: dzslides
+:linkcss: true
+:dzslides-style: sqli
+:dzslides-transition: fade
+:dzslides-highlight: github
+:dzslides-autoplay: 0
+// disable syntax highlighting unless turned on explicitly
+:syntax: no-highlight
+:sqli-custom-css: ressources/css/custom.css
+
+// //////////////////////
+// 01-INTRO
+// //////////////////////
+
+
+
+== Présentation du petit déjeuner
+=== Objectifs
+
+
+* Montrer les évolutions d'HTML5.
+
+
+* Mettre en avant les cas d'usages
+
+
+* Démonstration interactive !
+
+
+[role="intro fond_2"]
+== Le Web Moderne
+
+=== Le Web évolue, les standards aussi.
+
+image::ressources/images/HTML5_Logo_512.png[role="icone"]
+
+
+[NOTES]
+====
+Historique 
+====
+
+
+
+== Historique
+
+* *1991* : HTML
+* *1994* : HTML 2
+* *1996* : CSS / Javascript
+* *1997* : HTML 4
+* *1998* : CSS 2
+* *2000* : XHTML 1
+* *2002* : Design "sans tableau"
+* *2005* : AJAX
+* *2009* et + : HTML 5
+* *17/12/2012* : Fin du premier draft HTML5
+
+
+
+== Evolution des standards
+
+
+* Affranchissement des plugins propriétaires
+
+
+* Répondre aux besoins des applications Web
+
+
+* Nouveaux usages : Mobilité
+
+
+== Intégration Web
+
+
+* Facilités pour le balisage Nouveaux tags pour clarifier la page 
+* Amélioration des microdonnées Multimédias Css3
+
+
+
+== Pour les WebApps
+
+=== Communication serveur
+
+[{stepwise}]
+* WebSockets
+
+    Canal de communication bidirectionnel et à faible latence
+
+* Server-Sent Event
+    
+    Push via HTTP
+
+* Evolutions (XMLHttpRequest 2, Cross-Origin Resource Sharing...)
+
+== Offline
+
+[{stepwise}]
+* Application Cache
+* WebStorage
+* IndexedDB
+* File System API
+* [line-through]#WebSQL#
+
+== Représentations graphiques
+
+
+=== Canvas, SVG, WebGL
+    
+image::ressources/images/canvas.jpg["Canvas"]
+
+
+== Et aussi...
+
+
+* Web Workers
+* Géolocalisation
+* History API
+* Drag'n Drop
+* File API
+* Web Intent
+
+
+== Pour la mobilité
+
+
+Fonctionnalités orientées mobiles
+Multi-touch
+Orientation
+Formulaires sémantiques
+Media Queries
+------------------------------------------------------------------------
+<div id="responsive" class="step slide" data-x="-3000" data-y="750">
+    <h2>Responsive Design</h2>
+    <p><img src="images/responsive.jpg" alt="responsive design"/></p>
+    <h2>Mutualisation des développements</h2>
+    <p>Une seule version de l'application</p>
+    <p><img src="images/devices.jpg" alt="devices"/></p>
+    <p><img src="images/phonegap.jpg" id="phonegap" alt="phonegap"/></p>
+</div>    
+------------------------------------------------------------------------
+
+
+
+// //////////////////////
+// 02-RESPONSIVE
+// //////////////////////
+
+
+[role="intro fond_2"]
+== Le Responsive Web Design
+//------------------------
+
+== Avant
+
+
+=== Mise en page fixe
+
+
+* Résolution "standard" (800_600, 1024_768)
+* Ciblage de la majorité des utilisateurs
+
+//img NYTimes tronquée
+
+== Aujourd'hui
+
+
+=== Le navigateur est partout
+
+
+* Paysage très hétérogène
+* Et en constante évolution
+
+//img plein d'ecran
+
+== Solution
+
+
+=== Le Responsive Web Design
+
+
+Pouvoir cibler tout type d’appareil et de résolution avec un même site,
+une même application web.
+
+"Une grille flexible qui incorpore des Media-queries pour créer une mise
+en page adaptative, réactive." -- Ethan Marcotte
+
+== Warning
+
+
+=== Ciblage mobile spécifique
+
+
+Le site mobile dédié demeure pertinent lorsque l'on souhaite proposer
+une expérience propre à la mobilité.
+
+// [img TAN mTickets]
+
+== Coût
+
+
+Réduire (mutualiser) les coûts de développement par rapport à la
+réalisation de déclinaisons spécifiques.
+
+---------------------------------------------------------------
+une seule plateforme < site responsive < multiples déclinaisons
+---------------------------------------------------------------
+
+== Cas d'usages
+
+[role="intro fond_3"]
+== Démo
+
+=== Le responsive design en action !
+
+
+// //////////////////////
+// 03-OFFLINE CONTENU
+// //////////////////////
+
+[role="intro fond_2"]
+== OffLine
+
+=== Le pouvoir du cache au service des applications web
+
+image::ressources/images/HTML5-gris.jpg[role="icone"]
+
+
+[NOTES]
+====
+Le offline et le cache, ça correspond à quoi ?
+
+Principe : 
+    * Pouvoir utiliser son application même sans s'il n'y a pas de réseau. 
+    * Télécharge les ressources statiques du site 
+    * Sauve la bande passante car re-télécharge les ressources que s'il y a une mise à jour du site.
+====
+
+// Separation
+[role="intro fond_2"]
+== Cas d'utilisations
+
+
+== Commercial
+
+
+[NOTES]
+====
+Démonstration des offres clientes en agence même si on n'est pas proche
+de la borne wifi. On peut aussi partir en déplacement. Les offres seront
+encore là ! Une simple mise à jour de temps en temps permet de garder
+les dernières offres.
+====
+
+[{middle}]
+image::ressources/images/iStock_000002116286Medium.jpg[width="600"]
+
+
+
+== Construction suivit de mode opérateurs
+
+[NOTES]
+====
+Utilisation de l'application dans des entrepos / sites de constructions
+non connectés. Accès aux instructions,...
+====
+
+[{middle}]
+image::ressources/images/iStock_000017249039Medium.jpg[width="600"]
+
+== Usage médical :
+
+[NOTES]
+====
+On initialise son application et on peut ensuite couper le réseau et
+continuer à utiliser l'application comme si de rien n'était. On peut
+donc envisager qu'on s'en serve pour suivre des instructions
+opératoires. On pourrait même envisager un couplage avec de la
+reconnaissance vocale. Ou de la gestuelle.
+====
+
+[{middle}]
+image::ressources/images/iStock_000017694209Medium.jpg[height="500"]
+
+
+
+== Touristique :
+
+[NOTES]
+====
+Possibilité d'utiliser l'application même dans des lieux touristiques
+nécessitant par exemple un enrichissement de contenu mais dépourvu
+connexion (cryptes par exemple). L'utilisateur initialise l'application
+lors de son premier passage dans un musé par exemple et il peut ensuite
+consulté toutes les informations sur les offres même s'il est au fond du
+musé
+====
+[{middle}]
+image::ressources/images/Hermitage_Museum.jpg[height="500"]
+
+
+// Separation
+[role="intro fond_2"]
+== Mise en oeuvre
+
+== L'appcache
+
+[{stepwise}]
+--
+.mon-appli.appcache
+-------------------------------------
+CACHE MANIFEST
+## 2012-08-22: v2
+
+CACHE:
+favicon.ico
+index.html
+stylesheet.css
+
+NETWORK:
+*
+
+FALLBACK:
+/ /offline.html
+-------------------------------------
+.index.html
+[syntax="html"]
+-------------------------------------
+<html manifest="mon-appli.appcache"> 
+  ...
+</html>
+-------------------------------------
+--
+[NOTES]
+====
+Fichier de manifest peremttant de spécifier les informations à stocker
+en cache
+====
+
+
+[role="intro fond_3"]
+== Démo
+
+=== AppCache
+
+
+
+// //////////////////////
+// 04-TEMPS REEL
+// //////////////////////
+
+[role="intro fond_2"]
+== Web Temps Réel
+
+=== Vous avez dit Web Temps Réel ?
+
+
+image::ressources/images/temps_reel.jpg[role="icone"]
+
+[NOTES]
+====
+*Image*: trouver une image qui résume le web temps réel. Par exemple :
+quelqu'un devant un écran et dans l'écran on voit un TGV passer pour
+montrer l'aspect vitesse (le tgv sortant un peu de l'écran :)). A défaut
+: /ressources/images/temps_reel.jpg (à acheter)
+====
+
+== \\
+
+[{statement}]
+Push ! +
+ +
+ +
+ +
+ +
+[incremental pull-right]#'...mais pourquoi faire ?'#
+
+
+[NOTES]
+====
+A tout est centré sur le push : l'utilisateur reçoit les données quand elles sont publiées et non plus lorsque lui ou ses applications vont les récupérer.
+====
+
+== Pour collaborer
+
+* Chat
+* Edition de documents en ligne (google drive)
+
+image:ressources/images/temps_reel_google_docs.png[]
+
+== Pour Jouer
+
+video::ressources/videos/temps_reel_jeux_pokerrpg_real_time_demo_640x360.mp4[]
+
+video::http://vimeo.com/46705336[]
+
+== Pour visualiser des données en temps réel
+
+image::ressources/images/temps_reel_visu_donnees_cloud_server_monitor.jpg[role="middle stretch-y"]
+
+TODO : plus généralement, tous systèmes d'affichage en temps-réel : panneaux d'affichage (bourse, circulation, ...)
+
+== Pour notifier
+
+image::ressources/images/temps_reel_notification_gmail_2.png[role="middle stretch-y"]
+
+TODO : détailler le scénario de vente de Gilt
+http://tech.gilt.com/post/26801428997/gilt-live-a-new-way-to-shop
+
+== 2nd screen experience
+
+Video : Trouver une vidéo à récupérer. Exemple :
+
+== Commande électronique
+
+Pour le principe
+
+image::ressources/images/temps_reel_cmd_electronique_reaDIYmate.png[]
+
+image::ressources/images/temps_reel_logo_ninja_blocks.png[]
+
+LOGO readDIYmate
+
+== Un air de déjà-vu ?
+
+[{stepwise}]
+* Polling, long polling, HTTP streaming existent depuis longtemps
+
+* Voir fichier ressources/documents/temps_reel_schemas.pptx
+
+* Ainsi que des solutions "propriétaires" efficaces
+
+	Basée sur des technologies à plugin dans le navigateur
+
+** Flex
+	
+	Et son protocole optimisé AMF
+
+** Silverlight
+
+** ...
+
+== Mais alors, qu'apporte HTML5 ?
+
+[{stepwise}]
+* Une standardisation des protocoles et des API dans le navigateur
+
+* Pérénité des implémentations
+
+* Interopérabilité des solutions
+
+== Les solutions HTML5 pour le Web temps-réel
+
+* Push simple du serveur vers le client Server Sent Events
+
+* Communication full-duplex entre le client et le serveur
+
+
+== Server Sent Events (SSE)
+
+
+image::ressources/images/temps_reel_sse.png[role="middle"]
+
+Voir fichier ressources/documents/temps_reel_schemas.pptx
+
+== WebSockets
+
+
+image::ressources/images/temps_reel_websockets.png[role="middle"]
+
+Voir fichier ressources/documents/temps_reel_schemas.pptx
+
+
+
+== Limites
+
+=== Support des navigateurs
+
+image:ressources/images/temps_reel_sse_can_i_use.png[role="middle stretch-x"]
+
+image:ressources/images/temps_reel_websocket_can_i_use.png[role="middle stretch-x"]
+
+
+
+== Limites
+
+=== Support des équipements réseau
+
+[{stepwise}]
+* Proxy, antivirus centralisé, reverse-proxy, load-balancer, routeur ...
+
+* ... qui peuvent être bloquants
+
+* Prévoir donc des solutions de contournements avec dégradation progressive
+
+	Websocket -> Long-polling -> Polling -> ...
+
+[role="intro fond_3"]
+== Démo
+
+=== Le temps réel au service de l'action !    
+
+// //////////////////////
+// 05-OFFLINE DONNEES
+// //////////////////////
+
+[role="intro fond_2"]
+== Offline
+
+
+=== La sauvegarde des données
+
+
+image::ressources/images/HTML_Offline_Storage.png[role="icone"]
+
+
+
+== Stockage local d'information
+
+
+* Stockage standardisé. possibilité de requêter / accéder à des
+informations stockées précédement.
+
+** Possibilité de travailler en hors ligne et de synchroniser après
+
+* Possibilités de stocker :
+
+** du texte mais aussi des fichiers.
+
+** 4 choix
+
+*** [line-through]#WebSQL#
+*** FileSystemAPI
+*** LocalStorage
+*** IndexedDB
+
+	
+[NOTES]
+====
+	Attention cependant. On est limité en taille. Par défaut il n'y a que
+5Mo de stockage (ça reste extensible ) De même, ce mécanisme est à
+coupler avec un système de syncrhonisation ! Cloisonnement par origine
+====
+
+== LocalStorage
+
+
+Stockage synchrone sous forme de clées valeurs, sert pour chaine de
+caractères. Utile pour des petites informations (configuration, ...)
+
+
+[{stepwise}]
+--
+
+* Avantage :
+
+    Simple d'utilisation
+
+    Disponible partout
+--
+[{stepwise}]
+--
+
+* Inconvénients :
+
+    Mal adapter à des gros volumes
+--
+[{stepwise}]
+--
+
+* fonctionne sous :
+++++++
+<table class="compat">
+<tbody>
+<tr>
+<td><img src="ressources/images/firefox-logo.jpg" width="75"></td>
+<td><img src="ressources/images/chrome-logo.png" width="75"></td>
+<td><img src="ressources/images/ie-logo.png" width="75"></td>
+<td><img src="ressources/images/safari-logo.jpg" width="75"></td>
+<td><img src="ressources/images/opera-logo.png" width="75"></td>
+<td><img src="ressources/images/ios-logo.png" width="75"></td>
+<td><img src="ressources/images/android-logo.png" width="75"></td>
+</tr>
+<tr>
+<td>16+</td>
+<td>23+</td>
+<td>8+</td>
+<td>5.1+</td>
+<td>12.1+</td>
+<td>3.2+</td>
+<td>2.1+</td>
+</tr>
+</tbody>
+</table>
+++++++
+--
+
+
+== IndexdDB
+
+
+Base de données de type NoSql avec un stockage asyncrhone
+
+
+[{stepwise}]
+--
+* avantage :
+    
+    adaptés aux gros volumes (indexation)
+
+    transactionnel
+--
+[{stepwise}]
+--
+
+* inconvénients :
+
+    encore peu répendu
+    
+    lourdeur d'utilisation
+--
+[{stepwise}]
+--
+
+* fonctionne sous : chrome / firefox / ie10
+++++++
+<table class="compat">
+<tbody>
+<tr>
+<td><img src="ressources/images/firefox-logo.jpg" width="75"></td>
+<td><img src="ressources/images/chrome-logo.png" width="75"></td>
+<td><img src="ressources/images/ie-logo.png" width="75"></td>
+<td><img src="ressources/images/safari-logo.jpg" width="75" class="not"></td>
+<td><img src="ressources/images/opera-logo.png" width="75" class="not"></td>
+<td><img src="ressources/images/ios-logo.png" width="75" class="not"></td>
+<td><img src="ressources/images/android-logo.png" width="75" class="not"></td>
+</tr>
+<tr>
+<td>16+</td>
+<td>23+</td>
+<td>10+</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+++++++
+--
+
+
+
+== File System
+
+
+Lecture écriture de fichiers directement depuis le navigateur
+
+[{stepwise}]
+--
+* Avantage :
+
+    stockage simplifié de fichiers et possibilité de les traités sans interaction serveur.
+
+    espace sécurisé de stockage fichier permettant de ne pas corrompre son pc
+--
+[{stepwise}]
+--
+
+* Inconvénients :
+
+    pas encore très répendu parmis les navigateurs
+
+    Limité en taille dans le stockage.
+--
+[{stepwise}]
+--
+
+* fonctionne sous :
+// TODO
+--
+
+
+[role="intro fond_2"]
+== Cas d'utilisation
+
+
+== Contexte de mobilité
+
+[{middle}]
+Continuer à utiliser son application métier dans une zone non couverte. 
+
+[NOTES]
+====
+  Envoi de mails
+  Possibilité de mettre à jour son stock 
+  Validation des tâches effectuées
+====
+
+
+== En déplacement
+
+
+* Signalisation d'appareils défectueux sur le terrain.
+* Enregistrement de nouveaux clients. Demarchage à domicile.
+* Edition de documents
+* passer une commande
+
+
+[role="intro fond_3"]
+== Démo
+
+=== Tout groupé
+
+
+// //////////////////////
+// 06-CONCLUSION
+// //////////////////////
+
+[role="intro fond_3"]
+== Et la suite ?
+
+== Qu'est ce que HTML5 finalement ?
+
+=== La prise en compte d'une incroyable hétérogénéité d'équipements
+
+image:ressources/images/smartphone_tv_connectee.jpg[]
+
+== Qu'est ce que HTML5 finalement ?
+
+=== La prise de pouvoir du mobile sur le web
+
+TODO : retrouver le graphique qui montre les mobiles vont devenir dominants
+
+== Qu'est ce que HTML5 finalement ?
+
+=== Le retour d'un JavaScript *outillé*
+
+[{stepwise}]
+* Industrialisation des développements JavaScript
+* Structuration du code JavaScript +
+ +
+ +
+ +
+ +
+[incremental pull-right]#*...vos prochains défis ?*#
+
+[role="intro fond_fin"]
+== Web Moderne : Q & R
