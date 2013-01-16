@@ -89,17 +89,22 @@ http://gplus.to/jefBinomed
 
 == Sommaire
 
-Android ?
 
-Concepts
+image::images/android_cupcake.jpg[role="sommaire"]  
+ 
+image:images/android_donut.jpg[role="float-left sommaire"] Android ?
 
-Economiquement intéressant ?
+image:images/android_eclair.jpg[role="float-left sommaire"] Concepts
 
-Développement
+image:images/android_froyo.png[role="float-left sommaire"] Economiquement intéressant ?
 
-Liens
+image:images/android_gingerbread.jpg[role="float-left sommaire"] Développement
 
-Questions
+image:images/android_honeycomb.png[role="float-left sommaire"] Liens
+
+image:images/android_icecreamsandwich.jpg[role="float-left sommaire"] Questions
+
+image::images/android_jellybean.png[role="float-left sommaire"] 
 
 
 //               _   _   _____    _____     ____    _____   _____  
@@ -113,17 +118,23 @@ Questions
 
 == Android ?
 
-Android ?
 
-Concepts
+image::images/android_cupcake.jpg[role="sommaire"]  
+ 
+[role="surround"]
+image:images/android_donut.jpg[role="float-left sommaire"] Android ?
 
-Economiquement intéressant ?
+image:images/android_eclair.jpg[role="float-left sommaire"] Concepts
 
-Développement
+image:images/android_froyo.png[role="float-left sommaire"] Economiquement intéressant ?
 
-Liens
+image:images/android_gingerbread.jpg[role="float-left sommaire"] Développement
 
-Questions
+image:images/android_honeycomb.png[role="float-left sommaire"] Liens
+
+image:images/android_icecreamsandwich.jpg[role="float-left sommaire"] Questions
+
+image::images/android_jellybean.png[role="float-left sommaire"] 
 
 
 
@@ -143,17 +154,17 @@ Inconvéninents
 
 == Android
 
-Modèle Choisi
+=== Modèle Choisi
 
-OS libre basé sur un noyau linux.
+* OS libre basé sur un noyau linux.
 
-Android c’est Google mais aussi d’autres boîtes : 
+* Android c’est Google mais aussi d’autres boîtes : 
 
-Open Handset Alliance : 
+* Open Handset Alliance : 
 
-Ensemble de sociétés (84 aujourd’hui) dont l’objectif est de développer des normes ouvertes pour les appareils mobiles
+** Ensemble de sociétés (84 aujourd’hui) dont l’objectif est de développer des normes ouvertes pour les appareils mobiles
 
-Créé en 2007 à l’initiative de google.
+** Créé en 2007 à l’initiative de google.
 
 [NOTES]
 ====
@@ -166,40 +177,42 @@ Quelques débats existent quand à la main mise sur android par google…
 
 === Architecture
 
-
+image::images/system-architecture.jpg[role="strech-y"]
 
 == Android
 
 === Historique des versions
 
-2007 : 1.1 → La base
+* 2007 : 1.1 → La base
 
-05 2009 : 1.5 (Cupcake) → Les Widgets
+* 05 2009 : 1.5 (Cupcake) → Les Widgets
 
-09 2009 : 1.6 (Donut) → La synthèse vocale
+* 09 2009 : 1.6 (Donut) → La synthèse vocale
 
-10 2009 : 2.0, 2.0.1, 2.1 (Eclair) → L'expérience utilisateur améliorée
+* 10 2009 : 2.0, 2.0.1, 2.1 (Eclair) → L'expérience utilisateur améliorée
 
-05 2010 : 2.2 (Froyo) → Le JIT
+* 05 2010 : 2.2 (Froyo) → Le JIT
 
-10 2010 : 2.3 (Gingerbreard) → NFC
+* 10 2010 : 2.3 (Gingerbreard) → NFC
 
-01 2011 : 3.0, 3.1, 3.2 (HoneyComb) → Android au service des tablettes
+* 01 2011 : 3.0, 3.1, 3.2 (HoneyComb) → Android au service des tablettes
 
-11 2011 : 4.0 (Ice Cream Sandwich) → 
+* 11 2011 : 4.0 (Ice Cream Sandwich) → Unification des versions tablettes et téléphones
+
+* 05 2012 & 10 2012 : 4.1 et 4.2 (Jelly Bean) → La rapidité en vue
 
 
 == Android
 
 === Langage
 
-Java dans une version 1.5 light
+* Java dans une version 1.5 light
 
-Google a intégré une bonne partie des packages bas niveau Java.
+* Google a intégré une bonne partie des packages bas niveau Java.
 
-Google a fait sa propre JVM =» Dalvik Virtual Machine
+** Google a fait sa propre JVM =» Dalvik Virtual Machine
 
-Tout le code est converti en .dex (dalvik Executable) avant d’être envoyé sur le téléphone.
+** Tout le code est converti en .dex (dalvik Executable) avant d’être envoyé sur le téléphone.
 
 [NOTES]
 ====
@@ -218,21 +231,19 @@ Sinon des solutions comme PhoneGap ou HTML5 via une webview !
 
 === Avantages
 
-Android est libre et en Java
+* Android est libre et en Java
 
-De plus en plus de frameworks sont compatibles Android 
+ De plus en plus de frameworks sont compatibles Android 
 
-REST
+** REST
 
-Xstream
+** Xstream
 
-Spring
+** Spring
 
-…
+* Le monde Java est très riche en tutoriels en tout genre.
 
-Le monde Java est très riche en tutoriels en tout genre.
-
-Google travaille activement à enrichir le framework
+* Google travaille activement à enrichir le framework
 
 
 
@@ -240,15 +251,23 @@ Google travaille activement à enrichir le framework
 
 === Inconvénients
 
-Le manque de certaines librairies bas niveau
 
-La fragmentation d’Android
 
-Par les versions
+* Le manque de certaines librairies bas niveau
 
-Par le parc d’appareils
+* La fragmentation d’Android
 
-[grid="rows",format="csv"]
+ Par les versions
+
+ Par le parc d’appareils
+
+== Android
+
+=== Fragmentation
+
+image::images/chart.png[role="float-left img_version", width="50%"]
+
+[grid="rows",format="csv", role="table_version", width="45%"]
 [options="header",cols="^,<,<,<,>"]
 |==========================
 Version,Codename,API,Distribution
@@ -285,17 +304,22 @@ Android avait pour vocation de poser des choses communes mais au final on consta
 
 == Concepts
 
-Android ?
+image::images/android_cupcake.jpg[role="sommaire"]  
+ 
+image:images/android_donut.jpg[role="float-left sommaire"] Android ?
 
-Concepts
+[role="surround"]
+image:images/android_eclair.jpg[role="float-left sommaire"] Concepts
 
-Economiquement intéressant ?
+image:images/android_froyo.png[role="float-left sommaire"] Economiquement intéressant ?
 
-Développement
+image:images/android_gingerbread.jpg[role="float-left sommaire"] Développement
 
-Liens
+image:images/android_honeycomb.png[role="float-left sommaire"] Liens
 
-Questions
+image:images/android_icecreamsandwich.jpg[role="float-left sommaire"] Questions
+
+image::images/android_jellybean.png[role="float-left sommaire"] 
 
 [NOTES]
 ====
@@ -321,15 +345,15 @@ Le reste
 
 === Activity
 
-Base graphique
+* Base graphique
 
-Une application graphique possède au moins une activité
+* Une application graphique possède au moins une activité
 
-Une activité est définie par un layout
+* Une activité est définie par un layout
 
-Définition xml des éléments graphiques
+  Définition xml des éléments graphiques
 
-Une activité peut posséder des filtres de lancements
+* Une activité peut posséder des filtres de lancements
 
 [NOTES]
 ====
@@ -342,6 +366,8 @@ Les filtres servent par exemple à définir quelle sera l'activité principale q
 
 === Cycle de vie des activités
 
+image::images/activity_lifecycle.png[role="middle", height="500"]
+
 [NOTES]
 ====
 Quand un process est trop longtemps mis en tache de fond il peut être killé
@@ -353,13 +379,15 @@ Quand un process est trop longtemps mis en tache de fond il peut être killé
 
 === Fragments
 
-Comme une activité mais en plus basique
+* Comme une activité mais en plus basique
 
-Une activité peut avoir N Fragment
+* Une activité peut avoir N Fragment
 
-Un fragment peut être réutilisé
+* Un fragment peut être réutilisé
 
-Un fragment possède son propre cycle de vie
+* Un fragment possède son propre cycle de vie
+
+image::images/fragments.png[role="middle"]
 
 [NOTES]
 ====
@@ -372,19 +400,20 @@ Les fragments sont la base à utiliser quand on envisage un développement
 
 === Cycle de vie des fragments
 
+image::images/fragment_lifecycle.png[role="middle", height="500"]
 
 
 == Concepts
 
 === Service
 
-Sortes de threads
+* Sortes de threads
 
-Sont des tâches démons d'Android !
+* Sont des tâches démons d'Android !
 
-Permet de réaliser des tâches asynchornes
+* Permet de réaliser des tâches asynchornes
 
-N'a pas besoin de couche graphique
+* N'a pas besoin de couche graphique
 
 [NOTES]
 ====
@@ -401,6 +430,8 @@ Donner un exemple de lecteur MP3 Ou alors d'avoir les accès HTTP
 
 === Cycle de vie  des services
 
+image::images/service_lifecycle.png[role="middle", height="500"]
+
 [NOTES]
 ====
 Comme vous pouvez le voir, un service à la possibilité de communiquer avec un Binder (souvent son appelant) de cette manière on peut tenir au courant l'ihm des avancées du service.
@@ -411,17 +442,17 @@ Comme vous pouvez le voir, un service à la possibilité de communiquer avec un 
 
 === Intent
 
-Gestion des messages dans Android
+* Gestion des messages dans Android
 
-Ils peuvent transporter des informations
+* Ils peuvent transporter des informations
 
-Par défaut simples
+  Par défaut simples
 
-Mais on peut envoyer des objets complexes
+  Mais on peut envoyer des objets complexes
 
-Plusieurs applications peuvent les réceptionner
+* Plusieurs applications peuvent les réceptionner
 
-En mode broadcast
+* En mode broadcast
 
 [NOTES]
 ====
@@ -440,9 +471,9 @@ Expliquer en quoi c'est puissant les boradcast ! Sms etc ...
 
 === ContentProvider
 
-Sorte de base de données partagées
+* Sorte de base de données partagées
 
-On peut définir ses propres contentProvider
+* On peut définir ses propres contentProvider
 
 [NOTES]
 ====
@@ -457,7 +488,7 @@ On peut aussi offrir la possibilité de toucher aux données de son application.
 
 === BroadCastReceiver
 
-C'est ce qui permet d'intercepter les messages du téléphone et les intents des autres applications
+* C'est ce qui permet d'intercepter les messages du téléphone et les intents des autres applications
 
 [NOTES]
 ====
@@ -470,23 +501,23 @@ De cette manière on peut agir sur la réception d'un SMS ou d'un appel.
 
 === Quelques autres concepts
 
-Les widgets
+* Les widgets
 
-SQL
+* SQL
 
-L’internationalisation
+* L’internationalisation
 
-Le draw9Patch
+* Le draw9Patch
 
-Natif
+* Natif
 
-Sensors
+* Sensors
 
-Graphique : 
+* Graphique : 
 
-Canvas
+* Canvas
 
-OpenGL ES
+* OpenGL ES
 
 
 [NOTES]
@@ -516,38 +547,43 @@ Encore bien d'autres choses....
 
 == Economiquement Intéressant ?
 
-Android ?
+image::images/android_cupcake.jpg[role="sommaire"]  
+ 
+image:images/android_donut.jpg[role="float-left sommaire"] Android ?
 
-Concepts
+image:images/android_eclair.jpg[role="float-left sommaire"] Concepts
 
-Economiquement intéressant ?
+[role="surround"]
+image:images/android_froyo.png[role="float-left sommaire"] Economiquement intéressant ?
 
-Développement
+image:images/android_gingerbread.jpg[role="float-left sommaire"] Développement
 
-Liens
+image:images/android_honeycomb.png[role="float-left sommaire"] Liens
 
-Questions
+image:images/android_icecreamsandwich.jpg[role="float-left sommaire"] Questions
+
+image::images/android_jellybean.png[role="float-left sommaire"] 
 
 
 
 
 == Economiquement Intéressant ?
 
-Amalgame open source = gratuit
+* Amalgame open source = gratuit
 
-Beaucoup d'applications sont gratuites et les gens ont du mal à acheter encore sur Android.
+  Beaucoup d'applications sont gratuites et les gens ont du mal à acheter encore sur Android.
 
-L'Iphone reste un meilleur vecteur.
+** L'Iphone reste un meilleur vecteur.
 
-Les développeurs doivent oser vendre !
+** Les développeurs doivent oser vendre !
 
-Le problème de compatibilité n'arrange pas la commercialisation
+* Le problème de compatibilité n'arrange pas la commercialisation
 
-La pub est par contre plus rémunératrice.
+* La pub est par contre plus rémunératrice.
 
-Nombre grandissant d'activations.
+* Nombre grandissant d'activations.
 
-Paiement « in App » =» très bon compromis !
+* Paiement « in App » =» très bon compromis !
 
 
 [NOTES]
@@ -564,19 +600,21 @@ L'arrivée du paiment in app est une grande avancée dans la monétisation des a
 
 === L'android market
 
-Moyen officiel de distribuer ses applications
+* Moyen officiel de distribuer ses applications
 
-Pourcentage 70% développeur, 30% google
+* Pourcentage 70% développeur, 30% google
 
-L'android market n'est pas le seul market : 
+* L'android market n'est pas le seul market : 
 
-Amazon
+** Amazon
 
-AppsLib (Archos)
+** AppsLib (Archos)
 
-SlideMe
+** SlideMe
 
-Camangi
+** Camangi
+
+** ...
 
 [NOTES]
 ====
@@ -594,17 +632,22 @@ Parler des pays ayant le market payant
 
 == Développement
 
-Android ?
+image::images/android_cupcake.jpg[role="sommaire"]  
+ 
+image:images/android_donut.jpg[role="float-left sommaire"] Android ?
 
-Concepts
+image:images/android_eclair.jpg[role="float-left sommaire"] Concepts
 
-Economiquement intéressant ?
+image:images/android_froyo.png[role="float-left sommaire"] Economiquement intéressant ?
 
-Développement
+[role="surround"]
+image:images/android_gingerbread.jpg[role="float-left sommaire"] Développement
 
-Liens
+image:images/android_honeycomb.png[role="float-left sommaire"] Liens
 
-Questions
+image:images/android_icecreamsandwich.jpg[role="float-left sommaire"] Questions
+
+image::images/android_jellybean.png[role="float-left sommaire"] 
 
 [NOTES]
 ====
@@ -615,17 +658,19 @@ Les composants graphiques
 
 == Développement
 
-Emulateur
+=== Emulateur
 
-Permet d'émuler efficacement le téléphone
+image::images/emulator.png[role="float-right"]
 
-GPS
+* Permet d'émuler efficacement le téléphone
 
-Téléphone
+** GPS
 
-SMS
+** Téléphone
 
-Multi résolution
+** SMS
+
+* Multi résolution
 
 [NOTES]
 ====
@@ -646,37 +691,50 @@ Parler de ce qu'on ne peut pas faire : BluTooth, NFC, Caméra c'est pas éviden
 
 === Les éléments graphiques
 
-Les TextView et EditText
+* Les TextView et EditText
 
-
-
-
-== Développement
-
-=== Les éléments graphiques
-
-Button et ImageButton / CheckBox, RadioButton, Spinner
-
-
+image::images/textViewAndEditText.png[{middle}]
 
 
 == Développement
 
 === Les éléments graphiques
 
-Gallery, GridView et ListView
+* Button et ImageButton / CheckBox, RadioButton, Spinner
 
+image::images/ImageButton.png[role="float-left"]
 
+image::images/ChcRadioSpinner.png[role="float-right"]
 
 
 == Développement
 
 === Les éléments graphiques
 
-TabView
+* Gallery, GridView et ListView
+
+image::images/GalleryView.png[role="float-left", width="30%"]
+
+image::images/GridView.png[width="30%"]
+
+image::images/ListView.png[role="float-right", width="30%"]
 
 
-Et bien d'autres ...
+== Développement
+
+=== Les éléments graphiques
+
+[{stepwise}]
+* TabView +
+ +
+ +
+ +
+
+image::images/TabView.png[{middle}]
+ +
+ +
+ +
+[incremental pull-right]#Et bien d'autres ...#
 
 [NOTES]
 ====
@@ -804,21 +862,6 @@ On retrouve le nom de l'application, l'icone, la déclaration de l'activité pri
 ====
 
 
-
-== Liens
-
-Android ?
-
-Concepts
-
-Economiquement intéressant ?
-
-Développement
-
-Liens
-
-Questions
-
 //    _        _____   ______   _   _    _____ 
 //   | |      |_   _| |  ____| | \ | |  / ____|
 //   | |        | |   | |__    |  \| | | (___  
@@ -827,6 +870,26 @@ Questions
 //   |______| |_____| |______| |_| \_| |_____/ 
 //                                             
 //   
+
+== Liens
+
+image::images/android_cupcake.jpg[role="sommaire"]  
+ 
+image:images/android_donut.jpg[role="float-left sommaire"] Android ?
+
+image:images/android_eclair.jpg[role="float-left sommaire"] Concepts
+
+image:images/android_froyo.png[role="float-left sommaire"] Economiquement intéressant ?
+
+image:images/android_gingerbread.jpg[role="float-left sommaire"] Développement
+
+[role="surround"]
+image:images/android_honeycomb.png[role="float-left sommaire"] Liens
+
+image:images/android_icecreamsandwich.jpg[role="float-left sommaire"] Questions
+
+image::images/android_jellybean.png[role="float-left sommaire"] 
+
 
 == Liens
 
@@ -868,17 +931,22 @@ http://code.google.com/p/binomed-project/
 
 == Questions
 
-Android ?
+image::images/android_cupcake.jpg[role="sommaire"]  
+ 
+image:images/android_donut.jpg[role="float-left sommaire"] Android ?
 
-Concepts
+image:images/android_eclair.jpg[role="float-left sommaire"] Concepts
 
-Economiquement intéressant ?
+image:images/android_froyo.png[role="float-left sommaire"] Economiquement intéressant ?
 
-Développement
+image:images/android_gingerbread.jpg[role="float-left sommaire"] Développement
 
-Liens
+image:images/android_honeycomb.png[role="float-left sommaire"] Liens
 
-Questions
+[role="surround"]
+image:images/android_icecreamsandwich.jpg[role="float-left sommaire"] Questions
+
+image::images/android_jellybean.png[role="float-left sommaire"] 
 
 
 

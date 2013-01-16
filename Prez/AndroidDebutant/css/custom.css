@@ -16,3 +16,23 @@ img.float-right{
   margin-left: 10px;
 }
 
+
+img.sommaire, span.sommaire > img{
+  height: 60px;
+}
+
+
+p.surround{
+font-weight: bold;
+font-size: 1em;
+color: #DA0E1A;
+text-align: left;
+}
+
+table.table_version td, table.table_version th {
+  font-size: 14px;
+}
+
+.img_version{
+  margin-top:7em;
+}
