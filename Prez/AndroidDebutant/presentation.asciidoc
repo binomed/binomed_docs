@@ -116,26 +116,10 @@ image::images/android_jellybean.png[role="float-left sommaire"]
 //                                                                 
 //   
 
+[role="intro fond_2"]
 == Android ?
 
-
-image::images/android_cupcake.jpg[role="sommaire"]  
- 
-[role="surround"]
-image:images/android_donut.jpg[role="float-left sommaire"] Android ?
-
-image:images/android_eclair.jpg[role="float-left sommaire"] Concepts
-
-image:images/android_froyo.png[role="float-left sommaire"] Economiquement intéressant ?
-
-image:images/android_gingerbread.jpg[role="float-left sommaire"] Développement
-
-image:images/android_honeycomb.png[role="float-left sommaire"] Liens
-
-image:images/android_icecreamsandwich.jpg[role="float-left sommaire"] Questions
-
-image::images/android_jellybean.png[role="float-left sommaire"] 
-
+image:images/android_donut.jpg[role="icone"]
 
 
 [NOTES]
@@ -302,24 +286,11 @@ Android avait pour vocation de poser des choses communes mais au final on consta
 //                                                                          
 //      
 
+[role="intro fond_2"]
 == Concepts
 
-image::images/android_cupcake.jpg[role="sommaire"]  
- 
-image:images/android_donut.jpg[role="float-left sommaire"] Android ?
+image:images/android_eclair.jpg[role="icone"]
 
-[role="surround"]
-image:images/android_eclair.jpg[role="float-left sommaire"] Concepts
-
-image:images/android_froyo.png[role="float-left sommaire"] Economiquement intéressant ?
-
-image:images/android_gingerbread.jpg[role="float-left sommaire"] Développement
-
-image:images/android_honeycomb.png[role="float-left sommaire"] Liens
-
-image:images/android_icecreamsandwich.jpg[role="float-left sommaire"] Questions
-
-image::images/android_jellybean.png[role="float-left sommaire"] 
 
 [NOTES]
 ====
@@ -545,25 +516,11 @@ Encore bien d'autres choses....
 //   
 
 
+
+[role="intro fond_2"]
 == Economiquement Intéressant ?
 
-image::images/android_cupcake.jpg[role="sommaire"]  
- 
-image:images/android_donut.jpg[role="float-left sommaire"] Android ?
-
-image:images/android_eclair.jpg[role="float-left sommaire"] Concepts
-
-[role="surround"]
-image:images/android_froyo.png[role="float-left sommaire"] Economiquement intéressant ?
-
-image:images/android_gingerbread.jpg[role="float-left sommaire"] Développement
-
-image:images/android_honeycomb.png[role="float-left sommaire"] Liens
-
-image:images/android_icecreamsandwich.jpg[role="float-left sommaire"] Questions
-
-image::images/android_jellybean.png[role="float-left sommaire"] 
-
+image:images/android_froyo.png[role="icone"]
 
 
 
@@ -630,24 +587,11 @@ Parler des pays ayant le market payant
 //                                                                                                                         
 // 
 
+[role="intro fond_2"]
 == Développement
 
-image::images/android_cupcake.jpg[role="sommaire"]  
- 
-image:images/android_donut.jpg[role="float-left sommaire"] Android ?
+image:images/android_gingerbread.jpg[role="icone"]
 
-image:images/android_eclair.jpg[role="float-left sommaire"] Concepts
-
-image:images/android_froyo.png[role="float-left sommaire"] Economiquement intéressant ?
-
-[role="surround"]
-image:images/android_gingerbread.jpg[role="float-left sommaire"] Développement
-
-image:images/android_honeycomb.png[role="float-left sommaire"] Liens
-
-image:images/android_icecreamsandwich.jpg[role="float-left sommaire"] Questions
-
-image::images/android_jellybean.png[role="float-left sommaire"] 
 
 [NOTES]
 ====
@@ -871,24 +815,10 @@ On retrouve le nom de l'application, l'icone, la déclaration de l'activité pri
 //                                             
 //   
 
+[role="intro fond_2"]
 == Liens
 
-image::images/android_cupcake.jpg[role="sommaire"]  
- 
-image:images/android_donut.jpg[role="float-left sommaire"] Android ?
-
-image:images/android_eclair.jpg[role="float-left sommaire"] Concepts
-
-image:images/android_froyo.png[role="float-left sommaire"] Economiquement intéressant ?
-
-image:images/android_gingerbread.jpg[role="float-left sommaire"] Développement
-
-[role="surround"]
-image:images/android_honeycomb.png[role="float-left sommaire"] Liens
-
-image:images/android_icecreamsandwich.jpg[role="float-left sommaire"] Questions
-
-image::images/android_jellybean.png[role="float-left sommaire"] 
+image:images/android_honeycomb.png[role="icone"]
 
 
 == Liens
@@ -929,26 +859,6 @@ http://code.google.com/p/binomed-project/
 //                                                                                  
 //   
 
-== Questions
-
-image::images/android_cupcake.jpg[role="sommaire"]  
- 
-image:images/android_donut.jpg[role="float-left sommaire"] Android ?
-
-image:images/android_eclair.jpg[role="float-left sommaire"] Concepts
-
-image:images/android_froyo.png[role="float-left sommaire"] Economiquement intéressant ?
-
-image:images/android_gingerbread.jpg[role="float-left sommaire"] Développement
-
-image:images/android_honeycomb.png[role="float-left sommaire"] Liens
-
-[role="surround"]
-image:images/android_icecreamsandwich.jpg[role="float-left sommaire"] Questions
-
-image::images/android_jellybean.png[role="float-left sommaire"] 
-
-
-
+[role="intro fond_fin"]
 == Questions
 
