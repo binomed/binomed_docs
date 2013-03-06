@@ -120,7 +120,11 @@ Tout ce qu'on croit savoir est faux ;)
 
 == Oublions le Java
 
-image::http://memegenerator.net/instance/35798696
+//image::http://memegenerator.net/instance/35798696
+image::http://cdn.memegenerator.net/instances/400x/35798696.jpg
+
+
+== AutoBoxing et types primitifs
 
 
 //    __  __   ______   __  __    ____    _____   _____    ______ 
