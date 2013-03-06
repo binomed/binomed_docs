@@ -126,6 +126,67 @@ image::http://cdn.memegenerator.net/instances/400x/35798696.jpg
 
 == AutoBoxing et types primitifs
 
+* AutoBoxing, c'est quoi ça ?
+
+** C'est créer des objets à partir de types primitifs :
+[{stepwise}]
+[syntax="java"]
+----
+Integer result = 1;
+for (int i = 0; i < 10; i++){
+ result += i;
+}
+return result;
+----
+
+Reviens à : 
+
+[syntax="java"]
+----
+Integer result = new Integer(1);
+for (int i = 0; i < 10; i++){
+ result = new Integer(i + result.intValue());
+}
+return result.intValue();
+----
+
+== Types primitifs
+
+Il est donc préférable d'utiliser au maximum des types primitifs !
+
+Attention cependant dans l'utilisation des types primitifs pour les nombres : Les entiers sont en caches de -128 à 127
+
+== SparseArray
+
+Sorte de HashMap avec des clés "entiers" dont l'ojbectif est d'éviter l'auto boxing
+
+[syntax="java"]
+----
+HashMap<Integer,String> map = new HashMap<Integer,String>();
+map.put(550,"Echo");
+map.put(551,"Echo");
+map.get(550);
+----
+
+donne 
+
+[syntax="java"]
+----
+HashMap<Integer,String> map = new HashMap<Integer,String>();
+map.put(new Integer(550),"Echo");
+map.put(new Integer(551),"Echo");
+map.get(new Integer(550));
+----
+
+avec les sparseArray : pas d'auotboxing ! 
+
+[syntax="java"]
+----
+SparseArray<String> map = new SparseArray<String>();
+map.put(550,"Echo");
+map.put(551,"Echo");
+map.get(550);
+----
 
 //    __  __   ______   __  __    ____    _____   _____    ______ 
 //   |  \/  | |  ____| |  \/  |  / __ \  |_   _| |  __ \  |  ____|
