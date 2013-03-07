@@ -1,0 +1,232 @@
+//
+// Génération
+//
+// dzslides sans embarquer les ressources
+// asciidoc <nomfichier>.asciidoc
+//
+// dzslides en embarquant les ressources
+// asciidoc -a data-uri -a linkcss! <nomfichier>.asciidoc
+= Bonnes pratiques du développement Android
+Jean-François Garreau, SQLI 
+v1.0
+//:doctitle: Titre de la présentation, sans mise en avant de texte sous différentes formes.
+:author: Jean-François Garreau, SQLI
+:title: Bonnes pratiques du développement Android
+:subtitle: Revue des bonnes pratiques et de quelques ui patterns
+:description: Revue des bonnes pratiques et de quelques ui patterns
+:copyright: Copyright 2013 SQLI
+//:website: TBD
+//:slidesurl: TBD
+// à remplacer par le chemin relatif de notre path d'image
+//:imagesdir: 
+:backend: dzslides
+:linkcss: true
+:dzslides-style: sqli
+:dzslides-transition: fade
+:dzslides-highlight: github
+:dzslides-autoplay: 0
+// disable syntax highlighting unless turned on explicitly
+:syntax: no-highlight
+:sqli-custom-css: css/custom.css
+
+
+//    _____   _   _   _______   _____     ____  
+//   |_   _| | \ | | |__   __| |  __ \   / __ \ 
+//     | |   |  \| |    | |    | |__) | | |  | |
+//     | |   | . ` |    | |    |  _  /  | |  | |
+//    _| |_  | |\  |    | |    | | \ \  | |__| |
+//   |_____| |_| \_|    |_|    |_|  \_\  \____/ 
+//                                              
+//        
+
+
+== Qui suis-je ?
+
+===  Jean-François GARREAU
+
+image::images/jf.png[role="float-left"]
+
+
+* Consultant IT chez SQLI
+ +
+ +
+* Développeur Android à mes heures perdues
+ +
+ +
+* Un des membres fondateur du GDG Nantes
+ +
+ +
+
+* Créateur de CineShowTime  image:images/cineshowtime.png[width="50"]
+ +
+ +
+
+image::images/twitter-icon.png[width="50", role="float-left"]
+
+@gdgnantes / @binomed / @uncle_bens1
+ +
+ +
+ +
+
+image::images/google-Plus-icon.png[width="50",role="float-left"]
+
+http://gplus.to/jefBinomed
+
+
+
+//     _____    ____    __  __   __  __              _____   _____    ______ 
+//    / ____|  / __ \  |  \/  | |  \/  |     /\     |_   _| |  __ \  |  ____|
+//   | (___   | |  | | | \  / | | \  / |    /  \      | |   | |__) | | |__   
+//    \___ \  | |  | | | |\/| | | |\/| |   / /\ \     | |   |  _  /  |  __|  
+//    ____) | | |__| | | |  | | | |  | |  / ____ \   _| |_  | | \ \  | |____ 
+//   |_____/   \____/  |_|  |_| |_|  |_| /_/    \_\ |_____| |_|  \_\ |______|
+//                                                                           
+//      
+
+
+== Sommaire
+
+
+Revoir son Java
+
+Ménager la mémoire
+
+Ui patterns
+
+Les librairies
+
+
+
+//         _             __      __           
+//        | |     /\     \ \    / /     /\    
+//        | |    /  \     \ \  / /     /  \   
+//    _   | |   / /\ \     \ \/ /     / /\ \  
+//   | |__| |  / ____ \     \  /     / ____ \ 
+//    \____/  /_/    \_\     \/     /_/    \_\
+//                                            
+//                      
+
+[role="intro fond_2"]
+== Revoir son Java
+
+
+
+
+[NOTES]
+====
+Tout ce qu'on croit savoir est faux ;)
+====
+
+
+== Oublions le Java
+
+//image::http://memegenerator.net/instance/35798696
+image::http://cdn.memegenerator.net/instances/400x/35798696.jpg
+
+
+== AutoBoxing et types primitifs
+
+* AutoBoxing, c'est quoi ça ?
+
+** C'est créer des objets à partir de types primitifs :
+[{stepwise}]
+[syntax="java"]
+----
+Integer result = 1;
+for (int i = 0; i < 10; i++){
+ result += i;
+}
+return result;
+----
+
+Reviens à : 
+
+[syntax="java"]
+----
+Integer result = new Integer(1);
+for (int i = 0; i < 10; i++){
+ result = new Integer(i + result.intValue());
+}
+return result.intValue();
+----
+
+== Types primitifs
+
+Il est donc préférable d'utiliser au maximum des types primitifs !
+
+Attention cependant dans l'utilisation des types primitifs pour les nombres : Les entiers sont en caches de -128 à 127
+
+== SparseArray
+
+Sorte de HashMap avec des clés "entiers" dont l'ojbectif est d'éviter l'auto boxing
+
+[syntax="java"]
+----
+HashMap<Integer,String> map = new HashMap<Integer,String>();
+map.put(550,"Echo");
+map.put(551,"Echo");
+map.get(550);
+----
+
+donne 
+
+[syntax="java"]
+----
+HashMap<Integer,String> map = new HashMap<Integer,String>();
+map.put(new Integer(550),"Echo");
+map.put(new Integer(551),"Echo");
+map.get(new Integer(550));
+----
+
+avec les sparseArray : pas d'auotboxing ! 
+
+[syntax="java"]
+----
+SparseArray<String> map = new SparseArray<String>();
+map.put(550,"Echo");
+map.put(551,"Echo");
+map.get(550);
+----
+
+//    __  __   ______   __  __    ____    _____   _____    ______ 
+//   |  \/  | |  ____| |  \/  |  / __ \  |_   _| |  __ \  |  ____|
+//   | \  / | | |__    | \  / | | |  | |   | |   | |__) | | |__   
+//   | |\/| | |  __|   | |\/| | | |  | |   | |   |  _  /  |  __|  
+//   | |  | | | |____  | |  | | | |__| |  _| |_  | | \ \  | |____ 
+//   |_|  |_| |______| |_|  |_|  \____/  |_____| |_|  \_\ |______|
+//                                                                
+//  
+
+[role="intro fond_2"]
+== Ménageons la mémoire
+
+=== Moins y en a mieux c'est
+
+
+//    _    _   _____     _____               _______   _______   ______   _____    _   _ 
+//   | |  | | |_   _|   |  __ \      /\     |__   __| |__   __| |  ____| |  __ \  | \ | |
+//   | |  | |   | |     | |__) |    /  \       | |       | |    | |__    | |__) | |  \| |
+//   | |  | |   | |     |  ___/    / /\ \      | |       | |    |  __|   |  _  /  | . ` |
+//   | |__| |  _| |_    | |       / ____ \     | |       | |    | |____  | | \ \  | |\  |
+//    \____/  |_____|   |_|      /_/    \_\    |_|       |_|    |______| |_|  \_\ |_| \_|
+//                                                                                       
+// 
+
+[role="intro fond_2"]
+== Ui patterns
+
+
+
+//    _        _____   ____    _____               _____   _____    _____   ______    _____ 
+//   | |      |_   _| |  _ \  |  __ \      /\     |_   _| |  __ \  |_   _| |  ____|  / ____|
+//   | |        | |   | |_) | | |__) |    /  \      | |   | |__) |   | |   | |__    | (___  
+//   | |        | |   |  _ <  |  _  /    / /\ \     | |   |  _  /    | |   |  __|    \___ \ 
+//   | |____   _| |_  | |_) | | | \ \   / ____ \   _| |_  | | \ \   _| |_  | |____   ____) |
+//   |______| |_____| |____/  |_|  \_\ /_/    \_\ |_____| |_|  \_\ |_____| |______| |_____/ 
+//                                                                                          
+//  
+
+[role="intro fond_2"]
+== Librairies
+
+=== Quoi utiliser et pourquoi ?

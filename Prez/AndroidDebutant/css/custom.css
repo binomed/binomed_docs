@@ -29,6 +29,11 @@ color: #DA0E1A;
 text-align: left;
 }
 
+table.table_version{
+  position: absolute;
+  top: 4em;
+}
+
 table.table_version td, table.table_version th {
   font-size: 14px;
 }

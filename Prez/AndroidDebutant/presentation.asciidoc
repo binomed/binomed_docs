@@ -10,7 +10,7 @@
 Jean-François Garreau, SQLI 
 v1.0
 //:doctitle: Titre de la présentation, sans mise en avant de texte sous différentes formes.
-//:author: Jean-François Garreau, @binomed, V1.0, Janvier 2013
+:author: Jean-François Garreau, SQLI
 :title: Android pour les débutants
 :subtitle: A la découverte du nouveau framework
 :description: Présentation du framework android
@@ -29,9 +29,6 @@ v1.0
 :syntax: no-highlight
 :sqli-custom-css: css/custom.css
 
-== GTUG Nantes
-
-=== Android pour les débutants
 
 //    _____   _   _   _______   _____     ____  
 //   |_   _| | \ | | |__   __| |  __ \   / __ \ 
