@@ -87,14 +87,16 @@ http://gplus.to/jefBinomed
 == Sommaire
 
 
-Revoir son Java
+* Revoir son Java
 
-Ménager la mémoire
+* Ménager la mémoire
 
-Ui patterns
+* Ui patterns
 
-Les librairies
+* Bonnes pratiques
 
+* Les librairies
+ 
 
 
 //         _             __      __           
@@ -109,8 +111,7 @@ Les librairies
 [role="intro fond_2"]
 == Revoir son Java
 
-
-
+image::images/LogoJava.png[role="icone"]
 
 [NOTES]
 ====
@@ -120,8 +121,8 @@ Tout ce qu'on croit savoir est faux ;)
 
 == Oublions le Java
 
-//image::http://memegenerator.net/instance/35798696
-image::http://cdn.memegenerator.net/instances/400x/35798696.jpg
+
+image::images/forget_java.jpg[role="middle"]
 
 
 == AutoBoxing et types primitifs
@@ -130,6 +131,7 @@ image::http://cdn.memegenerator.net/instances/400x/35798696.jpg
 
 ** C'est créer des objets à partir de types primitifs :
 [{stepwise}]
+--
 [syntax="java"]
 ----
 Integer result = 1;
@@ -141,6 +143,7 @@ return result;
 
 Reviens à : 
 
+
 [syntax="java"]
 ----
 Integer result = new Integer(1);
@@ -149,12 +152,16 @@ for (int i = 0; i < 10; i++){
 }
 return result.intValue();
 ----
+--
 
 == Types primitifs
 
 Il est donc préférable d'utiliser au maximum des types primitifs !
 
-Attention cependant dans l'utilisation des types primitifs pour les nombres : Les entiers sont en caches de -128 à 127
+Attention cependant dans l'utilisation des types primitifs pour les nombres : 
+
+[{middle}]
+Les entiers sont en caches de -128 à 127
 
 == SparseArray
 
@@ -170,6 +177,8 @@ map.get(550);
 
 donne 
 
+[{stepwise}]
+--
 [syntax="java"]
 ----
 HashMap<Integer,String> map = new HashMap<Integer,String>();
@@ -180,6 +189,7 @@ map.get(new Integer(550));
 
 avec les sparseArray : pas d'auotboxing ! 
 
+
 [syntax="java"]
 ----
 SparseArray<String> map = new SparseArray<String>();
@@ -187,6 +197,35 @@ map.put(550,"Echo");
 map.put(551,"Echo");
 map.get(550);
 ----
+--
+
+== Préférons les implémentations aux interfaces
+
+* Avec Android, il est bon de ménager l'appareil dès qu'on le peut 
+
+	Utilisation des implémentatins dans la déclaration plutôt que les interfaces.
+
+[{stepwise}]
+--
+[syntax="java"]
+----
+List<String> list = new ArrayList<String>();
+----
+
+est à remplacer par 
+
+
+[syntax="java"]
+----
+ArrayList<String> list = new ArrayList<String>();
+----
+--
+
+[NOTES]
+====
+On fait ça pour ménager la compilation
+====
+
 
 //    __  __   ______   __  __    ____    _____   _____    ______ 
 //   |  \/  | |  ____| |  \/  |  / __ \  |_   _| |  __ \  |  ____|
@@ -202,6 +241,26 @@ map.get(550);
 
 === Moins y en a mieux c'est
 
+image::images/cofee_overload.jpg[role="icone"]
+
+
+== Objectif : Instanciations minis ! 
+
+=== Comment procédons nous pour faire le moins d'instanciations ?
+
+* Nous sommes sur des téléphones, la ram n'est pas une ressources forcément très présente.
+
+* Vous n'êtes pas la seule applications ! 
+
+* Minimisons donc notre impact sur cette dernière.
+
+** Variables statiques
+
+** Réutilisation d'objets
+
+** Gestion des chaines de caratères
+
+** Gestion de l'autoboxing (cf précédement)
 
 //    _    _   _____     _____               _______   _______   ______   _____    _   _ 
 //   | |  | | |_   _|   |  __ \      /\     |__   __| |__   __| |  ____| |  __ \  | \ | |
@@ -215,6 +274,26 @@ map.get(550);
 [role="intro fond_2"]
 == Ui patterns
 
+image::images/ActionBar2.png[role="icone"]
+
+
+//    ____     ____    _   _   _   _   ______    _____     _____    _____               _______   _____    ____    _    _   ______    _____ 
+//   |  _ \   / __ \  | \ | | | \ | | |  ____|  / ____|   |  __ \  |  __ \      /\     |__   __| |_   _|  / __ \  | |  | | |  ____|  / ____|
+//   | |_) | | |  | | |  \| | |  \| | | |__    | (___     | |__) | | |__) |    /  \       | |      | |   | |  | | | |  | | | |__    | (___  
+//   |  _ <  | |  | | | . ` | | . ` | |  __|    \___ \    |  ___/  |  _  /    / /\ \      | |      | |   | |  | | | |  | | |  __|    \___ \ 
+//   | |_) | | |__| | | |\  | | |\  | | |____   ____) |   | |      | | \ \   / ____ \     | |     _| |_  | |__| | | |__| | | |____   ____) |
+//   |____/   \____/  |_| \_| |_| \_| |______| |_____/    |_|      |_|  \_\ /_/    \_\    |_|    |_____|  \___\_\  \____/  |______| |_____/ 
+//                                                                                                                                          
+//     
+
+[role="intro fond_2"]
+== Bonnes Pratiques
+
+// Parler de la sauvegarde de la bande passante en utilisant les reciever
+// Télécharger 1 seul fichier plutot que pls
+// utilser du json
+// gestion de BD
+// AsynckTask
 
 
 //    _        _____   ____    _____               _____   _____    _____   ______    _____ 
