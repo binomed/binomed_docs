@@ -249,7 +249,7 @@ Sinon des solutions comme PhoneGap ou HTML5 via une webview !
 
 === Fragmentation
 
-image::images/chart.png[role="float-left img_version", width="50%"]
+image::images/chart.png[role="float-right img_version", width="50%"]
 
 [grid="rows",format="csv", role="table_version", width="45%"]
 [options="header",cols="^,<,<,<,>"]
