@@ -260,7 +260,155 @@ image::images/cofee_overload.jpg[role="icone"]
 
 ** Gestion des chaines de caratères
 
+** Layout allégé ! 
+
 ** Gestion de l'autoboxing (cf précédement)
+
+
+== Préférons les variables statiques
+
+=== Quand cela est possible bien entendu
+
+* L'utilisation de variables statiques permet d'économiser des instanciations.
+
+[syntax="java"]
+----
+public long doSomeStuff(int left, int top, int right, int bottom){
+	return stuff(new Rect(left, top, right, bottom));
+} 
+
+public abstract long stuff(Rect rect);
+----
+
+[{stepwise}]
+--
+On peut faire mieux ! 
+
+[syntax="java"]
+----
+private static final Rect rect = new Rect();
+
+public long doSomeStuff(int left, int top, int right, int bottom){
+	rect.set(left, top, right, bottom);
+	return stuff(rect);
+} 
+
+public abstract long stuff(Rect rect);
+----
+--
+
+== Réutilisons des objets !
+
+[syntax="java"]
+----
+private static final int  MSG_ANIMATION_FRAME = 0xcafe;
+
+public void sendMessage(Handler handler, Object userInfo){
+	final Message message = new Message();
+	message.what = MSG_ANIMATION_FRAME;
+	message.obj = userInfo;
+
+	handler.sendMessage(message);
+} 
+
+----
+
+
+Peut être remplacé par 
+
+[syntax="java"]
+----
+private static final int  MSG_ANIMATION_FRAME = 0xcafe;
+
+public void sendMessage(Handler handler, Object userInfo){
+	final Message message = Message.obtain();
+	message.what = MSG_ANIMATION_FRAME;
+	message.obj = userInfo;
+
+	handler.sendMessage(message);
+} 
+----
+
+* voici un article très intéressant sur la mise en place de ce design pattern : http://www.devahead.com/blog/2011/12/recycling-objects-in-android-with-an-object-pool-to-avoid-garbage-collection/?utm_source=%23AndroidDev+Weekly&utm_campaign=65486bb85d-NEWSLETTER&utm_medium=email[Design Pattern Object Pool]
+
+== ViewHolder
+
+=== Réutilisation de vue sur les listView
+
+* pattern de réutilisabilité des vues 
+
+PAS BIEN ! 
+
+[syntax="java"]
+----
+public View getView(int position, View convertView, ViewGroup parent) {
+    LayoutInflater inflater = (LayoutInflater) context
+        .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+    View rowView = inflater.inflate(R.layout.rowlayout, parent, false);
+    TextView textView = (TextView) rowView.findViewById(R.id.label);
+    ImageView imageView = (ImageView) rowView.findViewById(R.id.icon);
+    textView.setText(values[position]);
+    // Change the icon for Windows and iPhone
+    String s = values[position];
+    if (s.startsWith("iPhone")) {
+      imageView.setImageResource(R.drawable.no);
+    } else {
+      imageView.setImageResource(R.drawable.ok);
+    }
+
+    return rowView;
+  }
+----
+
+== ViewHolder
+
+=== Réutilisation de vue sur les listView
+
+BIEN ! 
+
+[syntax="java"]
+----
+public View getView(int position, View convertView, ViewGroup parent) {
+	View rowView = null;
+
+	if (convertView == null){
+	    LayoutInflater inflater = (LayoutInflater) context
+	        .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+	    rowView = inflater.inflate(R.layout.rowlayout, parent, false);
+	}else{
+		rowView = convertView;
+	}
+    TextView textView = (TextView) rowView.findViewById(R.id.label);
+    ImageView imageView = (ImageView) rowView.findViewById(R.id.icon);
+    textView.setText(values[position]);
+    // Change the icon for Windows and iPhone
+    String s = values[position];
+    if (s.startsWith("iPhone")) {
+      imageView.setImageResource(R.drawable.no);
+    } else {
+      imageView.setImageResource(R.drawable.ok);
+    }
+
+    return rowView;
+  }
+----
+
+
+== ViewHolder
+
+=== Pourquoi donc ?
+
+image::images/list_view_explain.jpg[{middle}, height="500px"]
+
+== Gestion des chaines de caratères
+
+* Préférez le StringBuffer aux concaténations de chaines !
+
+* Pensez aussi à référencer 1 fois les chaines de caratères de vos vues si elles sont statiques. Utile pour le listView, ...
+
+
+
+== Layout allégés
 
 //    _    _   _____     _____               _______   _______   ______   _____    _   _ 
 //   | |  | | |_   _|   |  __ \      /\     |__   __| |__   __| |  ____| |  __ \  | \ | |
@@ -276,6 +424,30 @@ image::images/cofee_overload.jpg[role="icone"]
 
 image::images/ActionBar2.png[role="icone"]
 
+== Action Bar
+
+image::images/action_bar.jpg[{middle},height="400px"]
+
+== DashBoard
+
+image::images/dashboard.jpg[{middle},height="400px"]
+
+== Sliding Menu
+
+image::images/sliding_menu.png[{middle},height="400px"]
+
+== PullToRefresh
+
+image::images/Pulldowntorefresh.png[{middle},height="500px"]
+
+== QuickActions
+
+image::images/QuickActions.png[{middle}]
+
+== ViewPager
+
+image::images/Horizontalscrolling2.png[{middle}]
+
 
 //    ____     ____    _   _   _   _   ______    _____     _____    _____               _______   _____    ____    _    _   ______    _____ 
 //   |  _ \   / __ \  | \ | | | \ | | |  ____|  / ____|   |  __ \  |  __ \      /\     |__   __| |_   _|  / __ \  | |  | | |  ____|  / ____|
@@ -289,12 +461,14 @@ image::images/ActionBar2.png[role="icone"]
 [role="intro fond_2"]
 == Bonnes Pratiques
 
+image::images/yoda.jpg[role="icone"]
+
 // Parler de la sauvegarde de la bande passante en utilisant les reciever
 // Télécharger 1 seul fichier plutot que pls
 // utilser du json
 // gestion de BD
 // AsynckTask
-
+// Draw9Patch
 
 //    _        _____   ____    _____               _____   _____    _____   ______    _____ 
 //   | |      |_   _| |  _ \  |  __ \      /\     |_   _| |  __ \  |_   _| |  ____|  / ____|
@@ -309,3 +483,5 @@ image::images/ActionBar2.png[role="icone"]
 == Librairies
 
 === Quoi utiliser et pourquoi ?
+
+image::images/android_lib.jpg[role="icone"]
