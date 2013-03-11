@@ -463,6 +463,11 @@ image::images/Horizontalscrolling2.png[{middle}]
 
 image::images/yoda.jpg[role="icone"]
 
+== Optimisons la bande passante ! 
+
+[{Statment}]
+Il vaut mieux faire n petits téléchargement ou 1 gros ?
+
 // Parler de la sauvegarde de la bande passante en utilisant les reciever
 // Télécharger 1 seul fichier plutot que pls
 // utilser du json
