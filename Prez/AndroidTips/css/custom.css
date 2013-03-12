@@ -36,6 +36,20 @@ img.library{
   background-size: 713px 550px;
 }
 
+.nexus10{
+  position: absolute;
+  top: 50%;
+  margin-top: -300px;
+  left: 50%;
+  margin-left: -500px;
+  width: 1024px;
+  height: 600px;
+}
+.nexus10.phone{
+  background: url('../images/nexus10.png') no-repeat;
+  background-size: 1024px 600px;
+}
+
 /*
   ACTION BAR
 */
@@ -209,4 +223,87 @@ img.library{
   -o-transform-origin: 0 0;
   -webkit-transform: scale(0.75);
   -webkit-transform-origin: 0 0;
+}
+
+/*
+Fragment
+*/
+
+#fragment_phone{
+  position: absolute;
+} 
+
+#fragment_phone_1{
+  position: absolute;
+  background: url('../images/cst_phone_1.png') no-repeat;
+  background-size: 251px 387px;
+  height: 387px;
+  left: 279px;
+  position: absolute;
+  top: 72px;
+  width: 251px;
+}
+
+#fragment_phone_2{
+  position: absolute;
+  background: url('../images/cst_phone_2.png') no-repeat;
+  background-size: 251px 387px;
+  height: 387px;
+  left: 279px;
+  position: absolute;
+  top: 72px;
+  width: 251px;
+}
+
+#fragment_tab_main{
+  position: absolute;
+  left: 278px;
+  position: absolute;
+  top: 121px;
+  width: 127px;
+  height: 50px;
+}
+
+#fragment_tab_fav{
+  position: absolute;
+  left: 405px;
+  position: absolute;
+  top: 121px;
+  width: 127px;
+  height: 50px;
+}
+
+#fragment_tablet{
+  position: absolute;
+}
+
+#fragment_tablet_1{
+  position: absolute;
+  background: url('../images/cst_tablet.png') no-repeat;
+  background-size: 600px 386px;
+  top: 103px;
+  left: 211px;;
+  width: 600px;
+  height: 386px;
+
+}
+
+#fragmentchangeViewPhone{
+  position: absolute;
+  background: url('../images/nexus4_small.png') no-repeat;
+  background-size: 33px 50px;
+  width: 33px;
+  height: 50px;
+  bottom: 70px;
+  right: 0;
+}
+
+#fragmentchangeViewTablet{
+  position: absolute;
+  background: url('../images/nexus10_small.png') no-repeat;
+  background-size: 74px 50px;
+  width: 74px;
+  height: 50px;
+  bottom: 70px;
+  right: 0;
 }

@@ -536,7 +536,8 @@ image::images/ActionBar2.png[role="icone"]
 
 == Sliding Menu
 
-//image::images/sliding_menu.png[{middle},height="400px"]
+// à regarder : http://srobbin.com/jquery-plugins/pageslide/
+
 +++++++++++++++++++++++
 <div id="sliding" class="nexus4 phone">  
   <iframe id="slidingmenu" src="http://www.aldomatic.com/jqm/fb-menu-style/" frameborder="0" allowfullscreen></iframe>
@@ -555,6 +556,7 @@ image::images/ActionBar2.png[role="icone"]
 
 == PullToRefresh
 
+// Voir avec IScroll
 
 +++++++++++++++++++++++
 <div id="pull" class="nexus4 phone">  
@@ -580,6 +582,57 @@ image::images/QuickActions.png[{middle}]
 == ViewPager
 
 image::images/Horizontalscrolling2.png[{middle}]
+
+
+== Fragments
+
+
++++++++++++++++++++++++
+<div id="fragment_phone" class="nexus4 phone">  
+  <div id="fragment_phone_1"></div>
+  <div id="fragment_phone_2"></div>
+  <a id="fragment_tab_main" href="#"></a>
+  <a id="fragment_tab_fav" href="#"></a>
+</div>
+<div id="fragment_tablet" class="nexus10 phone">  
+  <div id="fragment_tablet_1"></div>
+</div>
+<a id="fragmentchangeViewPhone" href="#"></a>
+<a id="fragmentchangeViewTablet" href="#"></a>
+<script type="text/javascript">
+  jQuery(function() {
+    jQuery("#fragment_tablet").hide();
+    jQuery("#fragment_phone_2").hide();
+    jQuery("#fragmentchangeViewPhone").hide();
+    jQuery("#fragmentchangeViewPhone").on("click", function(){ 
+        jQuery("#fragmentchangeViewPhone").hide();
+        jQuery("#fragmentchangeViewTablet").show();
+        jQuery("#fragment_tablet").hide();
+        jQuery("#fragment_phone_2").hide();
+        jQuery("#fragment_phone").show();
+        jQuery("#fragment_phone_1").show();        
+        return false;
+    });     
+    jQuery("#fragmentchangeViewTablet").on("click", function(){ 
+        jQuery("#fragmentchangeViewPhone").show();
+        jQuery("#fragmentchangeViewTablet").hide();
+        jQuery("#fragment_phone").hide();
+        jQuery("#fragment_tablet").show();
+        return false;
+    });
+    jQuery("#fragment_tab_main").on("click", function(){ 
+        jQuery("#fragment_phone_2").hide();
+        jQuery("#fragment_phone_1").show();
+        return false;
+    });
+    jQuery("#fragment_tab_fav").on("click", function(){ 
+        jQuery("#fragment_phone_1").hide();
+        jQuery("#fragment_phone_2").show();
+        return false;
+    });
+  });
+ </script>
++++++++++++++++++++++++
 
 
 //    ____     ____    _   _   _   _   ______    _____     _____    _____               _______   _____    ____    _    _   ______    _____ 
