@@ -555,7 +555,7 @@ image::images/ActionBar2.png[role="icone"]
 
 == PullToRefresh
 
-http://cubiq.org/dropbox/iscroll4/examples/pull-to-refresh/
+
 +++++++++++++++++++++++
 <div id="pull" class="nexus4 phone">  
   <iframe id="pulltorefresh" src="http://cubiq.org/dropbox/iscroll4/examples/pull-to-refresh/" frameborder="0" allowfullscreen></iframe>
