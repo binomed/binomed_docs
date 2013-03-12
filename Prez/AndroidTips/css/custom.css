@@ -207,6 +207,48 @@ img.library{
 }
 
 /*
+  quickAction
+*/
+
+#quickAction{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 713px;
+  height: 550px; 
+  background: url('../images/quick_action1.png') no-repeat;
+  background-size: 713px 550px;
+}
+
+#quick_contact{
+  position: absolute;
+  top: 210px;
+  left: 475px;
+  width:50px;
+  height: 50px;
+  background: rgba(255,255,255,0.6);
+}
+
+#quick_clicks{
+  position: absolute;
+  top: 210px;
+  left: 475px;
+  width:150px;
+  height: 50px;
+  background: rgba(255,255,255,0.6);
+}
+
+#quickAction_actions{
+   position: absolute;
+  top: 0;
+  left: 0;
+  width: 713px;
+  height: 550px; 
+  background: url('../images/quick_actions.png') no-repeat;
+  background-size: 713px 550px;
+}
+
+/*
   sliding menu / pull refresh / viewPager
 */
 

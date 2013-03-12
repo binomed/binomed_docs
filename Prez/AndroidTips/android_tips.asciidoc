@@ -577,7 +577,34 @@ image::images/ActionBar2.png[role="icone"]
 
 == QuickActions
 
-image::images/QuickActions.png[{middle}]
+//image::images/QuickActions.png[{middle}]
+
++++++++++++++++++++++++
+<div class="nexus4">
+  <div id="quickAction">
+    <a id="quick_contact" href="#" ></a>    
+  </div>
+  <div id="quickAction_actions">
+    <a id="quick_clicks" href="#" ></a>    
+  </div>
+  
+</div>
+
+ <script type="text/javascript">
+  jQuery(function() {
+      jQuery('#quickAction_actions').hide();
+      jQuery("#quick_contact").on("click", function(){ 
+        jQuery("#quickAction_actions").show("slow");
+        return false;
+      });   
+      jQuery("#quick_clicks").on("click", function(){ 
+        jQuery("#quickAction_actions").hide("slow");
+        return false;
+      });   
+                   
+  });
+</script>
++++++++++++++++++++++++
 
 == ViewPager
 
