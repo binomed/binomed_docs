@@ -581,7 +581,22 @@ image::images/QuickActions.png[{middle}]
 
 == ViewPager
 
-image::images/Horizontalscrolling2.png[{middle}]
++++++++++++++++++++++++
+<div id="viewPage" class="nexus4 phone">  
+  <iframe id="viewpager" src="http://mobilegwt.appspot.com/showcase/#CarouselPlace:" frameborder="0" allowfullscreen></iframe>
+</div>
+<img id="imgViewPager" src="images/Horizontalscrolling2.png" class="middle"></img>
+<script type="text/javascript">
+  jQuery(function() {
+    if( jQuery.browser.webkit){
+      jQuery('#imgViewPager').hide();
+    }else{
+      jQuery('#viewpager').hide();
+    }
+  });
+ </script>
++++++++++++++++++++++++
+//image::images/Horizontalscrolling2.png[{middle}]
 
 
 == Fragments

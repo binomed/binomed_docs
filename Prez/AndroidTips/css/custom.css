@@ -207,10 +207,10 @@ img.library{
 }
 
 /*
-  sliding menu
+  sliding menu / pull refresh / viewPager
 */
 
-#slidingmenu, #pulltorefresh{
+#slidingmenu, #pulltorefresh, #viewpager{
   position: absolute;
   top: 111px;
   left: 372px;
