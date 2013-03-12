@@ -16,68 +16,197 @@ img.float-right{
   margin-left: 10px;
 }
 
+img.library{
+  width: 100px;
+  margin:  0px auto;
+}
 
-img.sommaire, span.sommaire > img{
+
+.nexus4{
+  position: absolute;
+  top: 50%;
+  margin-top: -275px;
+  left: 50%;
+  margin-left: -350px;
+  width: 713px;
+  height: 550px;
+}
+.nexus4.phone{
+  background: url('../images/nexus_4.png') no-repeat;
+  background-size: 713px 550px;
+}
+
+/*
+  ACTION BAR
+*/
+
+#ab_circle {
+  background: transparent;
+  width: 280px;
   height: 60px;
-}
-
-
-p.surround{
-font-weight: bold;
-font-size: 1em;
-color: #DA0E1A;
-text-align: left;
-}
-
-table.table_version{
+  border-radius: 50%;
+  border: 3px solid #f00;
   position: absolute;
-  top: 4em;
+  top: 70px;
+  left: 260px;
 }
 
-table.table_version td, table.table_version th {
-  font-size: 14px;
-}
-
-.img_version{
-  margin-top:7em;
-}
-
-.dev_code{
+#ab_1{
   position: absolute;
-  top: 7em;
-  left: 19em;
-  width: 5%;
-  -webkit-transform: rotate(-25deg);
-  -moz-transform: rotate(-25deg);
-  transform: rotate(-25deg);
+  top: 0;
+  left: 0;
+  width: 713px;
+  height: 550px; 
+  background: url('../images/action_bar1.png') no-repeat;
+  background-size: 713px 550px;
 }
 
-.dev_gen{
+#ab_2{
   position: absolute;
-  top: 10.4em;
-  left: 19em;
-  -webkit-transform: rotate(18deg);
-  -moz-transform: rotate(18deg);
-  transform: rotate(18deg);
-  width: 5%;
+  top: 0;
+  left: 0;
+  width: 713px;
+  height: 550px; 
+  background: url('../images/action_bar2.png') no-repeat;
+  background-size: 713px 550px;
 }
 
-.dev_res{
+#ab_contact{  
   position: absolute;
-  left: 19em;
-  top: 16em;
-  width: 5%;
-  -webkit-transform: rotate(-100deg);
-  -moz-transform: rotate(-100deg);
-  transform: rotate(-100deg);
+  top: 210px;
+  left: 475px;
+  width:50px;
+  height: 50px;
 }
 
-.dev_manifest{
+#ab_click{
+    position: absolute;
+  top: 70px;
+  left: 270px;
+  width:50px;
+  height: 50px;
+
+}
+
+/*
+  DASHBOARD
+*/
+
+#dashboard{
   position: absolute;
-  left: 19em;
-  top: 23em;
-  width: 5%;
-  -webkit-transform: rotate(-40deg);
-  -moz-transform: rotate(-40deg);
-  transform: rotate(-40deg);
+  top: 0;
+  left: 0;
+  width: 713px;
+  height: 550px; 
+  background: url('../images/dash_board1.png') no-repeat;
+  background-size: 713px 550px;
+}
+
+#dashboard a{
+  text-decoration: none;
+  display: block;
+  color: #000;
+  font-size: 18px;
+  padding: 4px 8px;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+#db_maps{
+  position: absolute;
+  top: 200px;
+  left: 320px;
+  
+}
+#db_maps:after,#db_galery:after,#db_calendar:after,#db_gmail:after{
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: 0;
+  width: 50px;
+  height: 50px;
+}
+#db_maps:after{
+  background: url('../images/db_maps.png') no-repeat;
+  background-size: 50px 50px;
+}
+
+#db_galery{
+  position: absolute;
+  top: 200px;
+  left: 420px;
+}
+#db_galery:after{
+  background: url('../images/db_galery.png') no-repeat;
+  background-size: 50px 50px;
+}
+
+#db_calendar{
+  position: absolute;
+  top: 310px;
+  left: 320px;
+}
+#db_calendar:after{
+  background: url('../images/db_calendar.png') no-repeat;
+  background-size: 50px 50px;
+}
+
+#db_gmail{
+  position: absolute;
+  top: 310px;
+  left: 420px;
+}
+#db_gmail:after{
+  background: url('../images/db_gmail.png') no-repeat;
+  background-size: 50px 50px;
+}
+
+#toast_maps, #toast_galery, #toast_calendar, #toast_gmail{
+  position: absolute;
+  top: 360px;
+  left: 300px;  
+  width: 195px;
+  height: 75px;
+}
+
+#toast_maps{
+  background: url('../images/db_toast_maps.png') no-repeat;
+  background-size: 195px 75px; 
+}
+
+#toast_galery{
+  background: url('../images/db_toast_galery.png') no-repeat;
+  background-size: 195px 75px; 
+}
+
+#toast_calendar{
+  background: url('../images/db_toast_calendar.png') no-repeat;
+  background-size: 195px 75px; 
+}
+
+#toast_gmail{
+  background: url('../images/db_toast_gmail.png') no-repeat;
+  background-size: 195px 75px; 
+}
+
+/*
+  sliding menu
+*/
+
+#slidingmenu, #pulltorefresh{
+  position: absolute;
+  top: 111px;
+  left: 372px;
+  width: 447px;
+  height: 648px;
+  zoom: 0.75;
+  -moz-transform: scale(0.75);
+  -moz-transform-origin: 0 0;
+  -o-transform: scale(0.75);
+  -o-transform-origin: 0 0;
+  -webkit-transform: scale(0.75);
+  -webkit-transform-origin: 0 0;
 }
