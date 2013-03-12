@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html class="aspect-4-3">
+  <head>
+    <meta charset="utf-8">
+    <title>Android pour les débutants</title>
+    <meta name="description" content="Présentation du framework android">
+    <meta name="author" content="Jean-François Garreau, SQLI">
+    <meta name="copyright" content="Copyright 2013 SQLI">
+    <meta name="generator" content="AsciiDoc 8.6.8, dzslides backend">
+    <meta name="presdate" content="v1.0">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald">
+    <link rel="stylesheet" href="./dzslides/themes/highlight/github.min.css">
+    <link rel="stylesheet" href="./dzslides/themes/style/sqli.css">
+    <!-- bug in full screen image if include dzslides.css before ours -->
+    <link rel="stylesheet" href="./dzslides/core/dzslides.css">
+    <link rel="stylesheet" href="./dzslides/themes/transition/fade.css">
+    <link rel="stylesheet" href="css/custom.css">
+  </head>
+  <body>
+    <section class="title">
+      <h1>Android pour les débutants</h1>
+<div class="subtitle"><h2 class="subtitle">A la découverte du nouveau framework</h2></div>
+      <footer>Jean-François Garreau, SQLI</footer>
+    </section>
+<section>
+<h2>Qui suis-je ?</h2>
+<article>
+<div class="sect2">
+<h3 id="_jean_françois_garreau">Jean-François GARREAU</h3>
+
+<img src="images/jf.png" alt="images/jf.png" class="float-left">
+
+<ul>
+<li>
+Consultant IT chez SQLI
+<br>
+<br>
+</li>
+<li>
+Développeur Android à mes heures perdues
+<br>
+<br>
+</li>
+<li>
+Un des membres fondateur du GDG Nantes
+<br>
+<br>
+</li>
+<li>
+Créateur de CineShowTime  <span class="image">
+<img src="images/cineshowtime.png" alt="images/cineshowtime.png" width="50">
+</span>
+<br>
+<br>
+</li>
+</ul>
+
+<img src="images/twitter-icon.png" alt="images/twitter-icon.png" width="50" class="float-left">
+
+<p>@gdgnantes / @binomed / @uncle_bens1
+<br>
+<br>
+<br></p>
+
+<img src="images/google-Plus-icon.png" alt="images/google-Plus-icon.png" width="50" class="float-left">
+
+<p><a href="http://gplus.to/jefBinomed">http://gplus.to/jefBinomed</a></p>
+</div>
+</article>
+</section>
+<section>
+<h2>Sommaire</h2>
+<article>
+
+<img src="images/android_cupcake.jpg" alt="images/android_cupcake.jpg" class="sommaire">
+
+<p><span class="image float-left sommaire">
+<img src="images/android_donut.jpg" alt="images/android_donut.jpg">
+</span> Android ?</p>
+<p><span class="image float-left sommaire">
+<img src="images/android_eclair.jpg" alt="images/android_eclair.jpg">
+</span> Concepts</p>
+<p><span class="image float-left sommaire">
+<img src="images/android_froyo.png" alt="images/android_froyo.png">
+</span> Economiquement intéressant ?</p>
+<p><span class="image float-left sommaire">
+<img src="images/android_gingerbread.jpg" alt="images/android_gingerbread.jpg">
+</span> Développement</p>
+<p><span class="image float-left sommaire">
+<img src="images/android_honeycomb.png" alt="images/android_honeycomb.png">
+</span> Liens</p>
+<p><span class="image float-left sommaire">
+<img src="images/android_icecreamsandwich.jpg" alt="images/android_icecreamsandwich.jpg">
+</span> Questions</p>
+
+<img src="images/android_jellybean.png" alt="images/android_jellybean.png" class="float-left sommaire">
+
+</article>
+</section>
+<section class="intro fond_2">
+<h2>Android ?</h2>
+<article>
+
+<img src="images/android_donut.jpg" alt="images/android_donut.jpg" class="icone">
+
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>Modèle choisi</p>
+<p>Architecture</p>
+<p>Langage</p>
+<p>Avantages</p>
+<p>Inconvéninents</p>
+</details>
+</article>
+</section>
+<section>
+<h2>Android</h2>
+<article>
+<div class="sect2">
+<h3 id="_modèle_choisi">Modèle Choisi</h3>
+<ul>
+<li>
+OS libre basé sur un noyau linux.
+</li>
+<li>
+Android c’est Google mais aussi d’autres boîtes :
+</li>
+<li>
+Open Handset Alliance :
+<ul>
+<li>
+Ensemble de sociétés (84 aujourd’hui) dont l’objectif est de développer des normes ouvertes pour les appareils mobiles
+</li>
+<li>
+Créé en 2007 à l’initiative de google.
+</li>
+</ul>
+</li>
+</ul>
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>Quelques débats existent quand à la main mise sur android par google…</p>
+</details>
+</div>
+</article>
+</section>
+<section>
+<h2>Android</h2>
+<article>
+<div class="sect2">
+<h3 id="_architecture">Architecture</h3>
+
+<img src="images/system-architecture.jpg" alt="images/system-architecture.jpg" class="strech-y">
+
+</div>
+</article>
+</section>
+<section>
+<h2>Android</h2>
+<article>
+<div class="sect2">
+<h3 id="_historique_des_versions">Historique des versions</h3>
+<ul>
+<li>
+2007 : 1.1 → La base
+</li>
+<li>
+05 2009 : 1.5 (Cupcake) → Les Widgets
+</li>
+<li>
+09 2009 : 1.6 (Donut) → La synthèse vocale
+</li>
+<li>
+10 2009 : 2.0, 2.0.1, 2.1 (Eclair) → L&#8217;expérience utilisateur améliorée
+</li>
+<li>
+05 2010 : 2.2 (Froyo) → Le JIT
+</li>
+<li>
+10 2010 : 2.3 (Gingerbreard) → NFC
+</li>
+<li>
+01 2011 : 3.0, 3.1, 3.2 (HoneyComb) → Android au service des tablettes
+</li>
+<li>
+11 2011 : 4.0 (Ice Cream Sandwich) → Unification des versions tablettes et téléphones
+</li>
+<li>
+05 2012 &amp; 10 2012 : 4.1 et 4.2 (Jelly Bean) → La rapidité en vue
+</li>
+</ul>
+</div>
+</article>
+</section>
+<section>
+<h2>Android</h2>
+<article>
+<div class="sect2">
+<h3 id="_langage">Langage</h3>
+<ul>
+<li>
+Java dans une version 1.5 light
+</li>
+<li>
+Google a intégré une bonne partie des packages bas niveau Java.
+<ul>
+<li>
+Google a fait sa propre JVM =» Dalvik Virtual Machine
+</li>
+<li>
+Tout le code est converti en .dex (dalvik Executable) avant d’être envoyé sur le téléphone.
+</li>
+</ul>
+</li>
+</ul>
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>Il existe aussi la possibilité de coder en php via un framework externe ASE (ajoute un interpreteur)</p>
+<p>sinon google autorise avec le NDK du developpement C C++</p>
+<p>Il existe aussi la possibilité de coder e,n C# avec mono android (dispo depuis peu pour android 4.0)</p>
+<p>Sinon des solutions comme PhoneGap ou HTML5 via une webview !</p>
+</details>
+</div>
+</article>
+</section>
+<section>
+<h2>Android</h2>
+<article>
+<div class="sect2">
+<h3 id="_avantages">Avantages</h3>
+<ul>
+<li>
+Android est libre et en Java
+<div class="literal">
+<pre class="literal">De plus en plus de frameworks sont compatibles Android</pre>
+</div>
+<ul>
+<li>
+REST
+</li>
+<li>
+Xstream
+</li>
+<li>
+Spring
+</li>
+</ul>
+</li>
+<li>
+Le monde Java est très riche en tutoriels en tout genre.
+</li>
+<li>
+Google travaille activement à enrichir le framework
+</li>
+</ul>
+</div>
+</article>
+</section>
+<section>
+<h2>Android</h2>
+<article>
+<div class="sect2">
+<h3 id="_inconvénients">Inconvénients</h3>
+<ul>
+<li>
+Le manque de certaines librairies bas niveau
+</li>
+<li>
+La fragmentation d’Android
+<div class="literal">
+<pre class="literal">Par les versions</pre>
+</div>
+<div class="literal">
+<pre class="literal">Par le parc d’appareils</pre>
+</div>
+</li>
+</ul>
+</div>
+</article>
+</section>
+<section>
+<h2>Android</h2>
+<article>
+<div class="sect2">
+<h3 id="_fragmentation">Fragmentation</h3>
+
+<img src="images/chart.png" alt="images/chart.png" width="50%" class="float-right img_version">
+
+<table class="tableblock frame-all grid-rows table_version"
+style="
+width:45%;
+">
+<col style="width:20%;">
+<col style="width:20%;">
+<col style="width:20%;">
+<col style="width:20%;">
+<col style="width:20%;">
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top" >Version</th>
+<th class="tableblock halign-left valign-top" >Codename</th>
+<th class="tableblock halign-left valign-top" >API</th>
+<th class="tableblock halign-left valign-top" >Distribution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">1.6</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Donut</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">0.2%</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">2.1</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Eclair</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">7</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">2.4%</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">2.2</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Froyo</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">8</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">9.0%</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">2.3 - 2.3.2</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Gingerbread</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">9</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">0.2%</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">2.3.3 - 2.3.7</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">10</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">47.4%</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">3.1</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Honeycomb</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">12</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">0.4%</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">3.2</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">13</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">1.1%</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">4.0.3 - 4.0.4</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Ice Cream Sandwich</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">15</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">29.1%</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">4.1</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Jelly Bean</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">16</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">9.0%</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">4.2</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">17</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">1.2%</p></td>
+</tr>
+</tbody>
+</table>
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>Les evolutions d’api ! Car comme le système est neuf, il évolue souvent et donc il faut faire des fois du code spécifique par target.</p>
+<p>Concernant openGL on est obligé de faire du spécifique par téléphone. Des frameworks arrivent pour aider AndEngine, PlayN</p>
+<p>Android avait pour vocation de poser des choses communes mais au final on constate que les constructeurs ne jouent pas vraiment le jeu.</p>
+</details>
+</div>
+</article>
+</section>
+<section class="intro fond_2">
+<h2>Concepts</h2>
+<article>
+
+<img src="images/android_eclair.jpg" alt="images/android_eclair.jpg" class="icone">
+
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>Activity</p>
+<p>Fragments</p>
+<p>Cycle de vie des activités</p>
+<p>Les services</p>
+<p>Les Intents</p>
+<p>Les contents providers</p>
+<p>Broadcast recivers</p>
+<p>Le reste</p>
+</details>
+</article>
+</section>
+<section>
+<h2>Concepts</h2>
+<article>
+<div class="sect2">
+<h3 id="_activity">Activity</h3>
+<ul>
+<li>
+Base graphique
+</li>
+<li>
+Une application graphique possède au moins une activité
+</li>
+<li>
+Une activité est définie par un layout
+<div class="literal">
+<pre class="literal">Définition xml des éléments graphiques</pre>
+</div>
+</li>
+<li>
+Une activité peut posséder des filtres de lancements
+</li>
+</ul>
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>Les filtres servent par exemple à définir quelle sera l&#8217;activité principale quand on lance l&#8217;application</p>
+</details>
+</div>
+</article>
+</section>
+<section>
+<h2>Concepts</h2>
+<article>
+<div class="sect2">
+<h3 id="_cycle_de_vie_des_activités">Cycle de vie des activités</h3>
+
+<img src="images/activity_lifecycle.png" alt="images/activity_lifecycle.png" height="500" class="middle">
+
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>Quand un process est trop longtemps mis en tache de fond il peut être killé</p>
+</details>
+</div>
+</article>
+</section>
+<section>
+<h2>Concepts</h2>
+<article>
+<div class="sect2">
+<h3 id="_fragments">Fragments</h3>
+<ul>
+<li>
+Comme une activité mais en plus basique
+</li>
+<li>
+Une activité peut avoir N Fragment
+</li>
+<li>
+Un fragment peut être réutilisé
+</li>
+<li>
+Un fragment possède son propre cycle de vie
+</li>
+</ul>
+
+<img src="images/fragments.png" alt="images/fragments.png" class="middle">
+
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>Les fragments sont la base à utiliser quand on envisage un développement</p>
+</details>
+</div>
+</article>
+</section>
+<section>
+<h2>Concepts</h2>
+<article>
+<div class="sect2">
+<h3 id="_cycle_de_vie_des_fragments">Cycle de vie des fragments</h3>
+
+<img src="images/fragment_lifecycle.png" alt="images/fragment_lifecycle.png" height="500" class="middle">
+
+</div>
+</article>
+</section>
+<section>
+<h2>Concepts</h2>
+<article>
+<div class="sect2">
+<h3 id="_service">Service</h3>
+<ul>
+<li>
+Sortes de threads
+</li>
+<li>
+Sont des tâches démons d&#8217;Android !
+</li>
+<li>
+Permet de réaliser des tâches asynchornes
+</li>
+<li>
+N&#8217;a pas besoin de couche graphique
+</li>
+</ul>
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>Les services sont très utiles pour gérer tous les traitements un minimum longs</p>
+<p>Attention cependant à bien les lancer dans des threads car sinon il bloquent le process qui en est à l&#8217;origine.</p>
+<p>Donner un exemple de lecteur MP3 Ou alors d&#8217;avoir les accès HTTP</p>
+</details>
+</div>
+</article>
+</section>
+<section>
+<h2>Concepts</h2>
+<article>
+<div class="sect2">
+<h3 id="_cycle_de_vie_des_services">Cycle de vie  des services</h3>
+
+<img src="images/service_lifecycle.png" alt="images/service_lifecycle.png" height="500" class="middle">
+
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>Comme vous pouvez le voir, un service à la possibilité de communiquer avec un Binder (souvent son appelant) de cette manière on peut tenir au courant l&#8217;ihm des avancées du service.</p>
+</details>
+</div>
+</article>
+</section>
+<section>
+<h2>Concepts</h2>
+<article>
+<div class="sect2">
+<h3 id="_intent">Intent</h3>
+<ul>
+<li>
+Gestion des messages dans Android
+</li>
+<li>
+Ils peuvent transporter des informations
+<div class="literal">
+<pre class="literal">Par défaut simples</pre>
+</div>
+<div class="literal">
+<pre class="literal">Mais on peut envoyer des objets complexes</pre>
+</div>
+</li>
+<li>
+Plusieurs applications peuvent les réceptionner
+</li>
+<li>
+En mode broadcast
+</li>
+</ul>
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>L&#8217;intent est très très important car sans lui les différents processus (activités, services, …) ne pourraient pas communiquer.</p>
+<p>Si on veut faire passer des objets complexes, il faut que nos objets implémentent une certaine interface</p>
+<p>L&#8217;avantage de la multi réception est d&#8217;avoir la possibilité de réécrire des briques métiers. On peut ainsi enrichir les fonctionnalités de bases.</p>
+<p>Expliquer en quoi c&#8217;est puissant les boradcast ! Sms etc &#8230;</p>
+</details>
+</div>
+</article>
+</section>
+<section>
+<h2>Concepts</h2>
+<article>
+<div class="sect2">
+<h3 id="_contentprovider">ContentProvider</h3>
+<ul>
+<li>
+Sorte de base de données partagées
+</li>
+<li>
+On peut définir ses propres contentProvider
+</li>
+</ul>
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>De cette manière on peut accéder facilement aux données du téléphone</p>
+<p>On peut aussi offrir la possibilité de toucher aux données de son application.</p>
+</details>
+</div>
+</article>
+</section>
+<section>
+<h2>Concepts</h2>
+<article>
+<div class="sect2">
+<h3 id="_broadcastreceiver">BroadCastReceiver</h3>
+<ul>
+<li>
+C&#8217;est ce qui permet d&#8217;intercepter les messages du téléphone et les intents des autres applications
+</li>
+</ul>
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>De cette manière on peut agir sur la réception d&#8217;un SMS ou d&#8217;un appel.</p>
+</details>
+</div>
+</article>
+</section>
+<section>
+<h2>Concepts</h2>
+<article>
+<div class="sect2">
+<h3 id="_quelques_autres_concepts">Quelques autres concepts</h3>
+<ul>
+<li>
+Les widgets
+</li>
+<li>
+SQL
+</li>
+<li>
+L’internationalisation
+</li>
+<li>
+Le draw9Patch
+</li>
+<li>
+Natif
+</li>
+<li>
+Sensors
+</li>
+<li>
+Graphique :
+</li>
+<li>
+Canvas
+</li>
+<li>
+OpenGL ES
+</li>
+</ul>
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>Il resterait encore plein de notions à traiter mais parlons rapidement de celles là.</p>
+<p>Les widgets sont des éléments graphiques propres à android et disponible uniquement depuis l&#8217;application de bureau d&#8217;android. Les widgets sont des éléments indépendants ou non de l&#8217;application auquel ils appartiennent.</p>
+<p>La base de données est SQLLite (connu au niveau HTML5)</p>
+<p>L&#8217;internationnalisation est très simplifée, il suffit de déclarer un fichier par langue et le framework android s&#8217;occupe du reste</p>
+<p>Le draw9Patch : très pratique pour les ressources graphiques =» principe de déclarer uniquement les zones extensibles.</p>
+<p>Encore bien d&#8217;autres choses&#8230;.</p>
+</details>
+</div>
+</article>
+</section>
+<section class="intro fond_2">
+<h2>Economiquement Intéressant ?</h2>
+<article>
+
+<img src="images/android_froyo.png" alt="images/android_froyo.png" class="icone">
+
+</article>
+</section>
+<section>
+<h2>Economiquement Intéressant ?</h2>
+<article>
+<ul>
+<li>
+Amalgame open source = gratuit
+<div class="literal">
+<pre class="literal">Beaucoup d'applications sont gratuites et les gens ont du mal à acheter encore sur Android.</pre>
+</div>
+<ul>
+<li>
+L&#8217;Iphone reste un meilleur vecteur.
+</li>
+<li>
+Les développeurs doivent oser vendre !
+</li>
+</ul>
+</li>
+<li>
+Le problème de compatibilité n&#8217;arrange pas la commercialisation
+</li>
+<li>
+La pub est par contre plus rémunératrice.
+</li>
+<li>
+Nombre grandissant d&#8217;activations.
+</li>
+<li>
+Paiement « in App » =» très bon compromis !
+</li>
+</ul>
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>Les premiers utilisateurs étaient les déçus d&#8217;iphone et surtout des geeks =» on recherche beaucoup du gratuit</p>
+<p>Il faut lancer une dynamique de payement =» ce n&#8217;est pas par ce que notre application est développée par un amateur qu&#8217;elle ne mérite pas une rétribution</p>
+<p>L&#8217;arrivée du paiment in app est une grande avancée dans la monétisation des applications</p>
+</details>
+</article>
+</section>
+<section>
+<h2>Economiquement Intéressant ?</h2>
+<article>
+<div class="sect2">
+<h3 id="_l_8217_android_market">L&#8217;android market</h3>
+<ul>
+<li>
+Moyen officiel de distribuer ses applications
+</li>
+<li>
+Pourcentage 70% développeur, 30% google
+</li>
+<li>
+L&#8217;android market n&#8217;est pas le seul market :
+<ul>
+<li>
+Amazon
+</li>
+<li>
+AppsLib (Archos)
+</li>
+<li>
+SlideMe
+</li>
+<li>
+Camangi
+</li>
+<li>
+&#8230;
+</li>
+</ul>
+</li>
+</ul>
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>Parler des pays ayant le market payant</p>
+</details>
+</div>
+</article>
+</section>
+<section class="intro fond_2">
+<h2>Développement</h2>
+<article>
+
+<img src="images/android_gingerbread.jpg" alt="images/android_gingerbread.jpg" class="icone">
+
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>Les composants graphiques</p>
+</details>
+</article>
+</section>
+<section>
+<h2>Développement</h2>
+<article>
+<div class="sect2">
+<h3 id="_emulateur">Emulateur</h3>
+
+<img src="images/emulator.png" alt="images/emulator.png" class="float-right">
+
+<ul>
+<li>
+Permet d'émuler efficacement le téléphone
+<ul>
+<li>
+GPS
+</li>
+<li>
+Téléphone
+</li>
+<li>
+SMS
+</li>
+</ul>
+</li>
+<li>
+Multi résolution
+</li>
+</ul>
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>On peut aussi simuler les perturbation réseaux</p>
+<p>On peut faire du debug</p>
+<p>O n a accès aux logs de l&#8217;application</p>
+<p>On peut faire des captures d'écrans</p>
+<p>Parler de ce qu&#8217;on ne peut pas faire : BluTooth, NFC, Caméra c&#8217;est pas évident, &#8230;</p>
+</details>
+</div>
+</article>
+</section>
+<section>
+<h2>Développement</h2>
+<article>
+<div class="sect2">
+<h3 id="_les_éléments_graphiques">Les éléments graphiques</h3>
+<ul>
+<li>
+Les TextView et EditText
+</li>
+</ul>
+
+<img src="images/textViewAndEditText.png" alt="images/textViewAndEditText.png" class="middle">
+
+</div>
+</article>
+</section>
+<section>
+<h2>Développement</h2>
+<article>
+<div class="sect2">
+<h3 id="_les_éléments_graphiques_2">Les éléments graphiques</h3>
+<ul>
+<li>
+Button et ImageButton / CheckBox, RadioButton, Spinner
+</li>
+</ul>
+
+<img src="images/ImageButton.png" alt="images/ImageButton.png" class="float-left">
+
+
+<img src="images/ChcRadioSpinner.png" alt="images/ChcRadioSpinner.png" class="float-right">
+
+</div>
+</article>
+</section>
+<section>
+<h2>Développement</h2>
+<article>
+<div class="sect2">
+<h3 id="_les_éléments_graphiques_3">Les éléments graphiques</h3>
+<ul>
+<li>
+Gallery, GridView et ListView
+</li>
+</ul>
+
+<img src="images/GalleryView.png" alt="images/GalleryView.png" width="30%" class="float-left">
+
+
+<img src="images/GridView.png" alt="images/GridView.png" width="30%">
+
+
+<img src="images/ListView.png" alt="images/ListView.png" width="30%" class="float-right">
+
+</div>
+</article>
+</section>
+<section>
+<h2>Développement</h2>
+<article>
+<div class="sect2">
+<h3 id="_les_éléments_graphiques_4">Les éléments graphiques</h3>
+<ul>
+<li>
+TabView<br>
+<br>
+<br>
+<br>
+</li>
+</ul>
+
+<img src="images/TabView.png" alt="images/TabView.png" class="middle">
+
+<p><span class="pull-right">Et bien d&#8217;autres &#8230;</span></p>
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>Et il en existe encore pleins d&#8217;autres … TimePicket, DatePicker &#8230;.</p>
+</details>
+</div>
+</article>
+</section>
+<section>
+<h2>Développement</h2>
+<article>
+<div class="sect2">
+<h3 id="_multi_plateformes">Multi Plateformes</h3>
+<ul>
+<li>
+Développer sous android se fait aussi facilement sous linux, windows ou mac.
+</li>
+<li>
+Sous windows il suffit d&#8217;installer les drivers et le téléphone est reconnu
+</li>
+<li>
+Sous Linux il faut modifier un fichier en spécifiant le constructeur
+</li>
+<li>
+Sous Mac ça marche direct
+</li>
+</ul>
+</div>
+</article>
+</section>
+<section>
+<h2>Développement</h2>
+<article>
+<div class="sect2">
+<h3 id="_hello_world">Hello World</h3>
+
+<img src="images/project_1.png" alt="images/project_1.png" width="46%" class="float-left">
+
+
+<img src="images/project_2.png" alt="images/project_2.png" width="46%" class="float-right">
+
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>On défini le nom du projet,</p>
+<p>La version android visée</p>
+<p>Le fait de choisir google apis, vous permet d&#8217;avoir accès aux api google du genre maps.</p>
+<p>On doit ensuite choisir un nom de package afin d&#8217;intentifier votre application (ils sont unique pour les applis du market)</p>
+<p>On définit une Activité par défaut</p>
+</details>
+</div>
+</article>
+</section>
+<section>
+<h2>Développement</h2>
+<article>
+<div class="sect2">
+<h3 id="_le_projet">Le Projet</h3>
+
+<img src="images/project_3.png" alt="images/project_3.png" class="float-left stretch-y">
+
+
+<img src="images/arrow_left.png" alt="images/arrow_left.png" class="dev_code">
+
+
+<img src="images/arrow_left.png" alt="images/arrow_left.png" class="dev_gen">
+
+
+<img src="images/arrow_split.png" alt="images/arrow_split.png" class="dev_res">
+
+
+<img src="images/arrow_left.png" alt="images/arrow_left.png" class="dev_manifest">
+
+<br><br>
+<p>Votre code<br>
+<br>
+<br>
+<br>
+Le code auto généré<br>
+<br>
+<br>
+<br>
+Vos ressources dynamiques<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+Le manifest</p>
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>Le projet est constitué d&#8217;une partie statique (votre code, vos ressources)</p>
+<p>Et d&#8217;une partie dynamique (la partie gen) contenant toutes les constantes.</p>
+<p>La partie res est très importante car elle contient toutes les ressources « dynamiques » extérieurs à votre projet</p>
+<p>On peut voir différents répertoire en fonction de la résolution</p>
+</details>
+</div>
+</article>
+</section>
+<section>
+<h2>Développement</h2>
+<article>
+<div class="sect2">
+<h3 id="_le_layout">Le layout</h3>
+<div class="listing">
+<pre class="xml"><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    &gt;
+    &lt;TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hello"
+        /&gt;
+&lt;/LinearLayout&gt;</code></pre>
+</div>
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>Déclaration d&#8217;un sumple texte dans une vue. On remarque que le texte provient d&#8217;une ressource</p>
+<p>Parler de l&#8217;aspect multi résolution</p>
+<p>Les xml de définitions peuvent être spécifiques =» un chaque téléphone peut avoir une présentation différente. On peut définir des agencements différents entre les différentes résolutions</p>
+<p>On peut aussi affecter des thèmes très simplement à nos applications</p>
+</details>
+</div>
+</article>
+</section>
+<section>
+<h2>Développement</h2>
+<article>
+<div class="sect2">
+<h3 id="_manifest_xml">Manifest.xml</h3>
+<div class="listing">
+<pre class="xml"><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.binomed.sqli"
+      android:versionCode="1"
+      android:versionName="1.0"&gt;
+    &lt;application android:icon="@drawable/icon" android:label="@string/app_name"&gt;
+        &lt;activity android:name=".Convert"
+                  android:label="@string/app_name"&gt;
+            &lt;intent-filter&gt;
+                &lt;action android:name="android.intent.action.MAIN" /&gt;
+                &lt;category android:name="android.intent.category.LAUNCHER" /&gt;
+            &lt;/intent-filter&gt;
+        &lt;/activity&gt;
+
+    &lt;/application&gt;
+    &lt;uses-sdk android:minSdkVersion="9" /&gt;
+
+&lt;/manifest&gt;</code></pre>
+</div>
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>On retrouve le nom de l&#8217;application, l&#8217;icone, la déclaration de l&#8217;activité principale</p>
+</details>
+</div>
+</article>
+</section>
+<section class="intro fond_2">
+<h2>Liens</h2>
+<article>
+
+<img src="images/android_honeycomb.png" alt="images/android_honeycomb.png" class="icone">
+
+</article>
+</section>
+<section>
+<h2>Liens</h2>
+<article>
+<ul>
+<li>
+Android
+</li>
+</ul>
+<p><a href="http://developer.android.com/index.html">http://developer.android.com/index.html</a></p>
+<p><a href="http://android.git.kernel.org/">http://android.git.kernel.org/</a></p>
+<p><a href="http://androidcookbook.oreilly.com/">http://androidcookbook.oreilly.com/</a></p>
+<ul>
+<li>
+Graphiques
+</li>
+</ul>
+<p>23 liens graphiques : <a href="http://goo.gl/9yxu6">http://goo.gl/9yxu6</a></p>
+<p>Création d&#8217;icones : <a href="http://goo.gl/zCxLd">http://goo.gl/zCxLd</a></p>
+<p><a href="http://www.iconfinder.com/">http://www.iconfinder.com/</a></p>
+<p><a href="http://www.androiduipatterns.com/">http://www.androiduipatterns.com/</a></p>
+<p>Préconisations Google : <a href="http://goo.gl/OsR2L">http://goo.gl/OsR2L</a></p>
+<ul>
+<li>
+Projets :
+</li>
+</ul>
+<p>Github Jean-François :  <a href="https://github.com/organizations/binomed">https://github.com/organizations/binomed</a></p>
+</article>
+</section>
+<section class="intro fond_fin">
+<h2>Questions</h2>
+<article>
+
+<img src="images/andquestionsag.png" alt="images/andquestionsag.png" class="icone">
+
+</article>
+</section>
+    <script src="./dzslides/core/dzslides.js"></script>
+    <script src="./dzslides/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>

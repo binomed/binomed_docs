@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html class="aspect-4-3">
+  <head>
+    <meta charset="utf-8">
+    <title>Bonnes pratiques du développement Android</title>
+    <meta name="description" content="Revue des bonnes pratiques et de quelques ui patterns">
+    <meta name="author" content="Jean-François Garreau, SQLI">
+    <meta name="copyright" content="Copyright 2013 SQLI">
+    <meta name="generator" content="AsciiDoc 8.6.8, dzslides backend">
+    <meta name="presdate" content="v1.0">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald">
+    <link rel="stylesheet" href="./dzslides/themes/highlight/github.min.css">
+    <link rel="stylesheet" href="./dzslides/themes/style/sqli.css">
+    <!-- bug in full screen image if include dzslides.css before ours -->
+    <link rel="stylesheet" href="./dzslides/core/dzslides.css">
+    <link rel="stylesheet" href="./dzslides/themes/transition/fade.css">
+    <link rel="stylesheet" href="css/custom.css">
+  </head>
+  <body>
+    <section class="title">
+      <h1>Bonnes pratiques du développement Android</h1>
+<div class="subtitle"><h2 class="subtitle">Revue des bonnes pratiques et de quelques ui patterns</h2></div>
+      <footer>Jean-François Garreau, SQLI</footer>
+    </section>
+<div id="preamble">
+<div class="sectionbody">
+<script src="scripts/jquery-1.8.3.min.js"></script>
+<script src="scripts/iscroll-lite.js"></script>
+<!--<script src="scripts/jquery.mobile-1.3.0.min.js"></script>-->
+</div>
+</div>
+<section>
+<h2>Qui suis-je ?</h2>
+<article>
+<div class="sect2">
+<h3 id="_jean_françois_garreau">Jean-François GARREAU</h3>
+
+<img src="images/jf.png" alt="images/jf.png" class="float-left">
+
+<ul>
+<li>
+Consultant IT chez SQLI
+<br>
+<br>
+</li>
+<li>
+Développeur Android à mes heures perdues
+<br>
+<br>
+</li>
+<li>
+Un des membres fondateur du GDG Nantes
+<br>
+<br>
+</li>
+<li>
+Créateur de CineShowTime  <span class="image">
+<img src="images/cineshowtime.png" alt="images/cineshowtime.png" width="50">
+</span>
+<br>
+<br>
+</li>
+</ul>
+
+<img src="images/twitter-icon.png" alt="images/twitter-icon.png" width="50" class="float-left">
+
+<p>@gdgnantes / @binomed / @uncle_bens1
+<br>
+<br>
+<br></p>
+
+<img src="images/google-Plus-icon.png" alt="images/google-Plus-icon.png" width="50" class="float-left">
+
+<p><a href="http://gplus.to/jefBinomed">http://gplus.to/jefBinomed</a></p>
+</div>
+</article>
+</section>
+<section>
+<h2>Sommaire</h2>
+<article>
+<ul>
+<li>
+Revoir son Java
+</li>
+<li>
+Ménager la mémoire
+</li>
+<li>
+Ui patterns
+</li>
+<li>
+Bonnes pratiques
+</li>
+<li>
+Les librairies
+</li>
+</ul>
+</article>
+</section>
+<section class="intro fond_2">
+<h2>Revoir son Java</h2>
+<article>
+
+<img src="images/LogoJava.png" alt="images/LogoJava.png" class="icone">
+
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>Tout ce qu&#8217;on croit savoir est faux ;)</p>
+</details>
+</article>
+</section>
+<section>
+<h2>Oublions le Java</h2>
+<article>
+
+<img src="images/forget_java.jpg" alt="images/forget_java.jpg" class="middle">
+
+</article>
+</section>
+<section>
+<h2>AutoBoxing et types primitifs</h2>
+<article>
+<ul>
+<li>
+AutoBoxing, c&#8217;est quoi ça ?
+<ul>
+<li>
+C&#8217;est créer des objets à partir de types primitifs :
+</li>
+</ul>
+</li>
+</ul>
+<div class="incremental">
+<div class="listing">
+<pre class="java"><code>Integer result = 1;
+for (int i = 0; i &lt; 10; i++){
+ result += i;
+}
+return result;</code></pre>
+</div>
+<p>Reviens à :</p>
+<div class="listing">
+<pre class="java"><code>Integer result = new Integer(1);
+for (int i = 0; i &lt; 10; i++){
+ result = new Integer(i + result.intValue());
+}
+return result.intValue();</code></pre>
+</div>
+</div>
+</article>
+</section>
+<section>
+<h2>Types primitifs</h2>
+<article>
+<p>Il est donc préférable d&#8217;utiliser au maximum des types primitifs !</p>
+<p>Attention cependant dans l&#8217;utilisation des types primitifs pour les nombres :</p>
+<p class="middle">Les entiers sont en caches de -128 à 127</p>
+</article>
+</section>
+<section>
+<h2>SparseArray</h2>
+<article>
+<p>Sorte de HashMap avec des clés "entiers" dont l&#8217;ojbectif est d'éviter l&#8217;auto boxing</p>
+<div class="listing">
+<pre class="java"><code>HashMap&lt;Integer,String&gt; map = new HashMap&lt;Integer,String&gt;();
+map.put(550,"Echo");
+map.put(551,"Echo");
+map.get(550);</code></pre>
+</div>
+<p>donne</p>
+<div class="incremental">
+<div class="listing">
+<pre class="java"><code>HashMap&lt;Integer,String&gt; map = new HashMap&lt;Integer,String&gt;();
+map.put(new Integer(550),"Echo");
+map.put(new Integer(551),"Echo");
+map.get(new Integer(550));</code></pre>
+</div>
+<p>avec les sparseArray : pas d&#8217;auotboxing !</p>
+<div class="listing">
+<pre class="java"><code>SparseArray&lt;String&gt; map = new SparseArray&lt;String&gt;();
+map.put(550,"Echo");
+map.put(551,"Echo");
+map.get(550);</code></pre>
+</div>
+</div>
+</article>
+</section>
+<section>
+<h2>Préférons les implémentations aux interfaces</h2>
+<article>
+<ul>
+<li>
+Avec Android, il est bon de ménager l&#8217;appareil dès qu&#8217;on le peut
+<div class="literal">
+<pre class="literal">Utilisation des implémentatins dans la déclaration plutôt que les interfaces.</pre>
+</div>
+</li>
+</ul>
+<div class="incremental">
+<div class="listing">
+<pre class="java"><code>List&lt;String&gt; list = new ArrayList&lt;String&gt;();</code></pre>
+</div>
+<p>est à remplacer par</p>
+<div class="listing">
+<pre class="java"><code>ArrayList&lt;String&gt; list = new ArrayList&lt;String&gt;();</code></pre>
+</div>
+</div>
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>On fait ça pour ménager la compilation</p>
+</details>
+</article>
+</section>
+<section class="intro fond_2">
+<h2>Ménageons la mémoire</h2>
+<article>
+<div class="sect2">
+<h3 id="_moins_y_en_a_mieux_c_8217_est">Moins y en a mieux c&#8217;est</h3>
+
+<img src="images/cofee_overload.jpg" alt="images/cofee_overload.jpg" class="icone">
+
+</div>
+</article>
+</section>
+<section>
+<h2>Objectif : Instanciations minis !</h2>
+<article>
+<div class="sect2">
+<h3 id="_comment_procédons_nous_pour_faire_le_moins_d_8217_instanciations">Comment procédons nous pour faire le moins d&#8217;instanciations ?</h3>
+<ul>
+<li>
+Nous sommes sur des téléphones, la ram n&#8217;est pas une ressources forcément très présente.
+</li>
+<li>
+Vous n'êtes pas la seule applications !
+</li>
+<li>
+Minimisons donc notre impact sur cette dernière.
+<ul>
+<li>
+Variables statiques
+</li>
+<li>
+Réutilisation d&#8217;objets
+</li>
+<li>
+Gestion des chaines de caratères
+</li>
+<li>
+Layout allégé !
+</li>
+<li>
+Gestion de l&#8217;autoboxing (cf précédement)
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</article>
+</section>
+<section>
+<h2>Préférons les variables statiques</h2>
+<article>
+<div class="sect2">
+<h3 id="_quand_cela_est_possible_bien_entendu">Quand cela est possible bien entendu</h3>
+<ul>
+<li>
+L&#8217;utilisation de variables statiques permet d'économiser des instanciations.
+</li>
+</ul>
+<div class="listing">
+<pre class="java"><code>public long doSomeStuff(int left, int top, int right, int bottom){
+        return stuff(new Rect(left, top, right, bottom));
+}
+
+public abstract long stuff(Rect rect);</code></pre>
+</div>
+<div class="incremental">
+<p>On peut faire mieux !</p>
+<div class="listing">
+<pre class="java"><code>private static final Rect rect = new Rect();
+
+public long doSomeStuff(int left, int top, int right, int bottom){
+        rect.set(left, top, right, bottom);
+        return stuff(rect);
+}
+
+public abstract long stuff(Rect rect);</code></pre>
+</div>
+</div>
+</div>
+</article>
+</section>
+<section>
+<h2>Réutilisons des objets !</h2>
+<article>
+<div class="listing">
+<pre class="java"><code>private static final int  MSG_ANIMATION_FRAME = 0xcafe;
+
+public void sendMessage(Handler handler, Object userInfo){
+        final Message message = new Message();
+        message.what = MSG_ANIMATION_FRAME;
+        message.obj = userInfo;
+
+        handler.sendMessage(message);
+}</code></pre>
+</div>
+<p>Peut être remplacé par</p>
+<div class="listing">
+<pre class="java"><code>private static final int  MSG_ANIMATION_FRAME = 0xcafe;
+
+public void sendMessage(Handler handler, Object userInfo){
+        final Message message = Message.obtain();
+        message.what = MSG_ANIMATION_FRAME;
+        message.obj = userInfo;
+
+        handler.sendMessage(message);
+}</code></pre>
+</div>
+<ul>
+<li>
+voici un article très intéressant sur la mise en place de ce design pattern : <a href="http://www.devahead.com/blog/2011/12/recycling-objects-in-android-with-an-object-pool-to-avoid-garbage-collection/?utm_source=%23AndroidDev+Weekly&amp;utm_campaign=65486bb85d-NEWSLETTER&amp;utm_medium=email">Design Pattern Object Pool</a>
+</li>
+</ul>
+</article>
+</section>
+<section>
+<h2>ViewHolder</h2>
+<article>
+<div class="sect2">
+<h3 id="_réutilisation_de_vue_sur_les_listview">Réutilisation de vue sur les listView</h3>
+<ul>
+<li>
+pattern de réutilisabilité des vues
+</li>
+</ul>
+<p>PAS BIEN !</p>
+<div class="listing">
+<pre class="java"><code>public View getView(int position, View convertView, ViewGroup parent) {
+    LayoutInflater inflater = (LayoutInflater) context
+        .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+    View rowView = inflater.inflate(R.layout.rowlayout, parent, false);
+    TextView textView = (TextView) rowView.findViewById(R.id.label);
+    ImageView imageView = (ImageView) rowView.findViewById(R.id.icon);
+    textView.setText(values[position]);
+    // Change the icon for Windows and iPhone
+    String s = values[position];
+    if (s.startsWith("iPhone")) {
+      imageView.setImageResource(R.drawable.no);
+    } else {
+      imageView.setImageResource(R.drawable.ok);
+    }
+
+    return rowView;
+  }</code></pre>
+</div>
+</div>
+</article>
+</section>
+<section>
+<h2>ViewHolder</h2>
+<article>
+<div class="sect2">
+<h3 id="_réutilisation_de_vue_sur_les_listview_2">Réutilisation de vue sur les listView</h3>
+<p>BIEN !</p>
+<div class="listing">
+<pre class="java"><code>public View getView(int position, View convertView, ViewGroup parent) {
+        View rowView = null;
+
+        if (convertView == null){
+            LayoutInflater inflater = (LayoutInflater) context
+                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            rowView = inflater.inflate(R.layout.rowlayout, parent, false);
+        }else{
+                rowView = convertView;
+        }
+    TextView textView = (TextView) rowView.findViewById(R.id.label);
+    ImageView imageView = (ImageView) rowView.findViewById(R.id.icon);
+    textView.setText(values[position]);
+    // Change the icon for Windows and iPhone
+    String s = values[position];
+    if (s.startsWith("iPhone")) {
+      imageView.setImageResource(R.drawable.no);
+    } else {
+      imageView.setImageResource(R.drawable.ok);
+    }
+
+    return rowView;
+  }</code></pre>
+</div>
+</div>
+</article>
+</section>
+<section>
+<h2>ViewHolder</h2>
+<article>
+<div class="sect2">
+<h3 id="_pourquoi_donc">Pourquoi donc ?</h3>
+
+<img src="images/list_view_explain.jpg" alt="images/list_view_explain.jpg" height="500px" class="middle">
+
+</div>
+</article>
+</section>
+<section>
+<h2>Gestion des chaines de caratères</h2>
+<article>
+<ul>
+<li>
+Préférez le StringBuffer aux concaténations de chaines !
+</li>
+<li>
+Pensez aussi à référencer 1 fois les chaines de caratères de vos vues si elles sont statiques. Utile pour le listView, &#8230;
+</li>
+</ul>
+</article>
+</section>
+<section>
+<h2>Layout allégés</h2>
+<article>
+<ul>
+<li>
+Un arbre de layout trop compliqué va instancier beaucoup d&#8217;objets !
+<ul>
+<li>
+Préférez le GridLayout (disponible depuis 10 mais rétrocompatible jusqu'à 7)
+</li>
+<li>
+Ou utilisez des Relatives Layouts
+</li>
+<li>
+N&#8217;hésitez pas non plus à mutualiser vos layouts !
+<div class="literal">
+<pre class="literal">L'utilisation des balises merges et includes se révèle fort utile.</pre>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>Utiliser les balises merges pour réutiliser des layouts</p>
+</details>
+</article>
+</section>
+<section class="intro fond_2">
+<h2>Ui patterns</h2>
+<article>
+
+<img src="images/ActionBar2.png" alt="images/ActionBar2.png" class="icone">
+
+</article>
+</section>
+<section>
+<h2>Action Bar</h2>
+<article>
+<div class="nexus4">
+  <div id="ab_1">
+    <a id="ab_contact" href="#" ></a>
+  </div>
+  <div id="ab_2">
+    <a id="ab_click" href="#"></a>
+  </div>
+  <div id="ab_circle"></div>
+</div>
+
+ <script type="text/javascript">
+  jQuery(function() {
+      jQuery("#ab_2").hide();
+      jQuery("#ab_contact").on("click", function(){
+        jQuery("#ab_circle").hide();
+        jQuery("#ab_1").hide();
+        jQuery("#ab_2").show();
+        return false;
+      });
+      jQuery("#ab_click").on("click", function(){
+        jQuery("#ab_circle").hide();
+        jQuery("#ab_2").hide();
+        jQuery("#ab_1").show();
+        return false;
+      });
+
+  });
+</script>
+</article>
+</section>
+<section>
+<h2>DashBoard</h2>
+<article>
+<div class="nexus4">
+  <div id="dashboard">
+    <a id="db_maps" href="#" >Maps</a>
+    <a id="db_galery" href="#" >Gallery</a>
+    <a id="db_calendar" href="#" >Calendar</a>
+    <a id="db_gmail" href="#" >Gmail</a>
+    <div id="toast_maps"></div>
+    <div id="toast_galery"></div>
+    <div id="toast_calendar"></div>
+    <div id="toast_gmail"></div>
+  </div>
+
+</div>
+
+ <script type="text/javascript">
+  jQuery(function() {
+      jQuery('#toast_maps').hide();
+      jQuery('#toast_galery').hide();
+      jQuery('#toast_calendar').hide();
+      jQuery('#toast_gmail').hide();
+      jQuery("#db_maps").on("click", function(){
+        jQuery("#toast_maps").show();
+        setTimeout(function(){
+          jQuery('#toast_maps').hide("slow");
+        },1000);
+        return false;
+      });
+      jQuery("#db_galery").on("click", function(){
+        jQuery("#toast_galery").show();
+        setTimeout(function(){
+          jQuery('#toast_galery').hide("slow");
+        },1000);
+        return false;
+      });
+      jQuery("#db_calendar").on("click", function(){
+        jQuery("#toast_calendar").show();
+        setTimeout(function(){
+          jQuery('#toast_calendar').hide("slow");
+        },1000);
+        return false;
+      });
+      jQuery("#db_gmail").on("click", function(){
+        jQuery("#toast_gmail").show();
+        setTimeout(function(){
+          jQuery('#toast_gmail').hide("slow");
+        },1000);
+        return false;
+      });
+
+  });
+</script>
+</article>
+</section>
+<section>
+<h2>Sliding Menu</h2>
+<article>
+<div id="sliding" class="nexus4 phone">
+  <iframe id="slidingmenu" src="http://www.aldomatic.com/jqm/fb-menu-style/" frameborder="0" allowfullscreen></iframe>
+</div>
+<img id="imgSliding" src="images/sliding_menu.png" height="400px" class="middle"></img>
+<script type="text/javascript">
+  jQuery(function() {
+    if( jQuery.browser.webkit){
+      jQuery('#imgSliding').hide();
+    }else{
+      jQuery('#sliding').hide();
+    }
+  });
+ </script>
+</article>
+</section>
+<section>
+<h2>PullToRefresh</h2>
+<article>
+<div id="pull" class="nexus4 phone">
+
+  <div id="pullwrapper">
+    <div id="wrapper" >
+      <div id="scroller">
+        <div id="pullDown">
+            <span class="pullDownIcon"></span><span class="pullDownLabel">Pull down to refresh...</span>
+        </div>
+        <ul id="thelist">
+            <li>Pretty row 1</li>
+            <li>Pretty row 2</li>
+            <li>Pretty row 3</li>
+            <li>Pretty row 4</li>
+            <li>Pretty row 5</li>
+            <li>Pretty row 6</li>
+            <li>Pretty row 7</li>
+            <li>Pretty row 8</li>
+            <li>Pretty row 9</li>
+            <li>Pretty row 10</li>
+            <li>Pretty row 11</li>
+            <li>Pretty row 12</li>
+            <li>Pretty row 13</li>
+            <li>Pretty row 14</li>
+            <li>Pretty row 15</li>
+            <li>Pretty row 16</li>
+            <li>Pretty row 17</li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="nexus4header"></div>
+</div>
+<script type="text/javascript">
+
+var myScroll,
+  pullDownEl, pullDownOffset,
+  generatedCount = 0;
+
+function pullDownAction () {
+  setTimeout(function () {  // <-- Simulate network congestion, remove setTimeout from production!
+    var el, li, i;
+    el = document.getElementById('thelist');
+
+    for (i=0; i<3; i++) {
+      li = document.createElement('li');
+      li.innerText = 'Generated row ' + (++generatedCount);
+      el.insertBefore(li, el.childNodes[0]);
+    }
+
+    myScroll.refresh();   // Remember to refresh when contents are loaded (ie: on ajax completion)
+  }, 1000); // <-- Simulate network congestion, remove setTimeout from production!
+}
+
+function loaded() {
+  pullDownEl = document.getElementById('pullDown');
+  pullDownOffset = pullDownEl.offsetHeight;
+
+  myScroll = new iScroll('wrapper', {
+    useTransition: true,
+    topOffset: pullDownOffset,
+    onRefresh: function () {
+      if (pullDownEl.className.match('loading')) {
+        pullDownEl.className = '';
+        pullDownEl.querySelector('.pullDownLabel').innerHTML = 'Pull down to refresh...';
+      }
+    },
+    onScrollMove: function () {
+      if (this.y > 5 && !pullDownEl.className.match('flip')) {
+        pullDownEl.className = 'flip';
+        pullDownEl.querySelector('.pullDownLabel').innerHTML = 'Release to refresh...';
+        this.minScrollY = 0;
+      } else if (this.y < 5 && pullDownEl.className.match('flip')) {
+        pullDownEl.className = '';
+        pullDownEl.querySelector('.pullDownLabel').innerHTML = 'Pull down to refresh...';
+        this.minScrollY = -pullDownOffset;
+      }
+    },
+    onScrollEnd: function () {
+      if (pullDownEl.className.match('flip')) {
+        pullDownEl.className = 'loading';
+        pullDownEl.querySelector('.pullDownLabel').innerHTML = 'Loading...';
+        pullDownAction(); // Execute custom function (ajax call?)
+      }
+    }
+  });
+
+  setTimeout(function () { document.getElementById('wrapper').style.left = '0'; }, 800);
+}
+
+document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+
+document.addEventListener('DOMContentLoaded', function () { setTimeout(loaded, 200); }, false);
+</script>
+<!--
+<div id="pull" class="nexus4 phone">
+  <iframe id="pulltorefresh" src="http://cubiq.org/dropbox/iscroll4/examples/pull-to-refresh/" frameborder="0" allowfullscreen></iframe>
+</div>
+<img id="imgPull" src="images/Pulldowntorefresh.png" height="500px" class="middle"></img>
+<script type="text/javascript">
+  jQuery(function() {
+    if( jQuery.browser.webkit){
+      jQuery('#imgPull').hide();
+    }else{
+      jQuery('#pull').hide();
+    }
+  });
+ </script>
+ -->
+</article>
+</section>
+<section>
+<h2>QuickActions</h2>
+<article>
+<div class="nexus4">
+  <div id="quickAction">
+    <a id="quick_contact" href="#" ></a>
+  </div>
+  <div id="quickAction_actions">
+    <a id="quick_clicks" href="#" ></a>
+  </div>
+
+</div>
+
+ <script type="text/javascript">
+  jQuery(function() {
+      jQuery('#quickAction_actions').hide();
+      jQuery("#quick_contact").on("click", function(){
+        jQuery("#quickAction_actions").show("slow");
+        return false;
+      });
+      jQuery("#quick_clicks").on("click", function(){
+        jQuery("#quickAction_actions").hide("slow");
+        return false;
+      });
+
+  });
+</script>
+</article>
+</section>
+<section>
+<h2>ViewPager</h2>
+<article>
+<div id="viewPage" class="nexus4 phone">
+  <iframe id="viewpager" src="http://mobilegwt.appspot.com/showcase/#CarouselPlace:" frameborder="0" allowfullscreen></iframe>
+</div>
+<img id="imgViewPager" src="images/Horizontalscrolling2.png" class="middle"></img>
+<script type="text/javascript">
+  jQuery(function() {
+    if( jQuery.browser.webkit){
+      jQuery('#imgViewPager').hide();
+    }else{
+      jQuery('#viewpager').hide();
+    }
+  });
+ </script>
+</article>
+</section>
+<section>
+<h2>Fragments</h2>
+<article>
+<div id="fragment_phone" class="nexus4 phone">
+  <div id="fragment_phone_1"></div>
+  <div id="fragment_phone_2"></div>
+  <a id="fragment_tab_main" href="#"></a>
+  <a id="fragment_tab_fav" href="#"></a>
+</div>
+<div id="fragment_tablet" class="nexus10 phone">
+  <div id="fragment_tablet_1"></div>
+</div>
+<a id="fragmentchangeViewPhone" href="#"></a>
+<a id="fragmentchangeViewTablet" href="#"></a>
+<script type="text/javascript">
+  jQuery(function() {
+    jQuery("#fragment_tablet").hide();
+    jQuery("#fragment_phone_2").hide();
+    jQuery("#fragmentchangeViewPhone").hide();
+    jQuery("#fragmentchangeViewPhone").on("click", function(){
+        jQuery("#fragmentchangeViewPhone").hide();
+        jQuery("#fragmentchangeViewTablet").show();
+        jQuery("#fragment_tablet").hide();
+        jQuery("#fragment_phone_2").hide();
+        jQuery("#fragment_phone").show();
+        jQuery("#fragment_phone_1").show();
+        return false;
+    });
+    jQuery("#fragmentchangeViewTablet").on("click", function(){
+        jQuery("#fragmentchangeViewPhone").show();
+        jQuery("#fragmentchangeViewTablet").hide();
+        jQuery("#fragment_phone").hide();
+        jQuery("#fragment_tablet").show();
+        return false;
+    });
+    jQuery("#fragment_tab_main").on("click", function(){
+        jQuery("#fragment_phone_2").hide();
+        jQuery("#fragment_phone_1").show();
+        return false;
+    });
+    jQuery("#fragment_tab_fav").on("click", function(){
+        jQuery("#fragment_phone_1").hide();
+        jQuery("#fragment_phone_2").show();
+        return false;
+    });
+  });
+ </script>
+</article>
+</section>
+<section class="intro fond_2">
+<h2>Bonnes Pratiques</h2>
+<article>
+
+<img src="images/yoda.jpg" alt="images/yoda.jpg" class="icone">
+
+</article>
+</section>
+<section>
+<h2>Optimisons la bande passante !</h2>
+<article>
+<p>Il vaut mieux faire n petits téléchargement ou 1 gros ?</p>
+
+<img src="images/cookie_model.png" alt="images/cookie_model.png" width="800px">
+
+</article>
+</section>
+<section>
+<h2>Optimisons la bande passante</h2>
+<article>
+<p class="statement">Un seul !</p>
+<p class="middle"><a href="http://www.youtube.com/watch?v=PwC1OlJo5VM">Reto Meier Google IO 2012 : à partir de 20:00</a></p>
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>On passe les détails mais ça économise la batterie avec les ouvertures de connexions.</p>
+</details>
+</article>
+</section>
+<section>
+<h2>Optimisions la bande passante</h2>
+<article>
+<ul>
+<li>
+De simples actions suffises à améliorer la consomation de bande passante :
+<ul>
+<li>
+Zipper ces résultats
+</li>
+<li>
+Préferer le json au xml
+</li>
+<li>
+Mettre en cache ses résultats de façon à eviter de devoir les rechercher en permanance !
+<div class="literal">
+<pre class="literal">Utilisation d'une base de données.</pre>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</article>
+</section>
+<section>
+<h2>Améliorons l&#8217;expérience utilisateur</h2>
+<article>
+<div class="sect2">
+<h3 id="_n_8217_attendons_pas_qu_8217_il_nous_demande_l_8217_information">N&#8217;attendons pas qu&#8217;il nous demande l&#8217;information</h3>
+<ul>
+<li>
+Utilisation des Broadcastreciever !
+<ul>
+<li>
+Application beaucoup plus réactive
+</li>
+<li>
+L&#8217;utilisateur a une sensation de rapidité !
+</li>
+</ul>
+</li>
+</ul>
+<p>a utilser bien sur si cela est possible ;)</p>
+</div>
+</article>
+</section>
+<section>
+<h2>Améliorons l&#8217;expérience utilisateur</h2>
+<article>
+<ul>
+<li>
+Règle 1 :
+</li>
+</ul>
+<div class="incremental">
+<div class="literal">
+<pre class="literal">Ne pas bloquer le thread UI</pre>
+</div>
+</div>
+<ul>
+<li>
+Règle 2 :
+</li>
+</ul>
+<div class="incremental">
+<div class="literal">
+<pre class="literal">Ne pas bloquer le thread UI</pre>
+</div>
+<ul>
+<li>
+Ok mais Comment ?
+</li>
+</ul>
+</div>
+</article>
+</section>
+<section>
+<h2>Ne pas bloquer l&#8217;ui Thread</h2>
+<article>
+<ul>
+<li>
+Plusieurs choses sont à disposition
+<ul>
+<li>
+AsyncTask
+</li>
+<li>
+Services
+</li>
+</ul>
+</li>
+</ul>
+</article>
+</section>
+<section>
+<h2>Gagnons en place</h2>
+<article>
+<p>Nous sommes sur des réseaux téléphoniques pas toujours fournis en 4G, donc il faut ménager le poids de nos applications !</p>
+<ul>
+<li>
+Draw9Patch : économie d&#8217;image
+</li>
+</ul>
+
+<img src="images/d9p.png" alt="images/d9p.png" height="400px">
+
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>Ne pas hésiter non plus à créer programatiquement des drawables</p>
+</details>
+</article>
+</section>
+<section class="intro fond_2">
+<h2>Librairies</h2>
+<article>
+<div class="sect2">
+<h3 id="_quoi_utiliser_et_pourquoi">Quoi utiliser et pourquoi ?</h3>
+
+<img src="images/android_lib.jpg" alt="images/android_lib.jpg" class="icone">
+
+</div>
+</article>
+</section>
+<section>
+<h2>Pourquoi ?</h2>
+<article>
+
+<img src="images/meme_enjeux.jpg" alt="images/meme_enjeux.jpg" class="middle">
+
+</article>
+</section>
+<section>
+<h2>Librairies Google</h2>
+<article>
+<ul>
+<li>
+SupportLibrarie
+</li>
+<li>
+Analytics
+</li>
+<li>
+PlayService
+</li>
+<li>
+GCM
+</li>
+<li>
+AddMob
+</li>
+<li>
+&#8230;
+</li>
+</ul>
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>Dans playservice, on va trouver des choses commes mapssV2, la sécurisation des apps</p>
+</details>
+</article>
+</section>
+<section>
+<h2>ActionBarSherlock</h2>
+<article>
+
+<img src="images/abs.png" alt="images/abs.png" class="library">
+
+<ul>
+<li>
+Pourquoi ?
+<ul>
+<li>
+Mise à disposition de l&#8217;action bar depuis Donut !
+</li>
+<li>
+Utilisation des méthodes et objets standards android !
+</li>
+</ul>
+</li>
+</ul>
+</article>
+</section>
+<section>
+<h2>ACRA</h2>
+<article>
+
+<img src="images/acra.png" alt="images/acra.png" class="library">
+
+<ul>
+<li>
+Pourquoi ?
+<ul>
+<li>
+Report de crash automatique
+</li>
+</ul>
+</li>
+</ul>
+</article>
+</section>
+<section>
+<h2>RoboSpice</h2>
+<article>
+
+<img src="images/robospice.png" alt="images/robospice.png" class="library">
+
+<ul>
+<li>
+Pourquoi ?
+<ul>
+<li>
+Gestion très propres des services
+</li>
+<li>
+Gestion d&#8217;un cache de requêtes !
+</li>
+<li>
+Relativement simple d&#8217;utilisation
+</li>
+</ul>
+</li>
+</ul>
+</article>
+</section>
+<section>
+<h2>Injections de dépendances</h2>
+<article>
+
+<img src="images/android_annotations.png" alt="images/android_annotations.png" class="float-right library">
+
+<ul>
+<li>
+Android Annotations
+<ul>
+<li>
+Injection à la compilation
+</li>
+</ul>
+</li>
+</ul>
+
+<img src="images/roboguice.png" alt="images/roboguice.png" class="float-right library">
+
+<ul>
+<li>
+RoboGuice
+<ul>
+<li>
+Injection à l'éxécution
+</li>
+</ul>
+</li>
+</ul>
+</article>
+</section>
+<section>
+<h2>Les librairies ça à l&#8217;air simple !</h2>
+<article>
+
+<img src="images/meme_solutions.jpg" alt="images/meme_solutions.jpg" class="middle">
+
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>Oui mais pas trop en fait&#8230; car pb d&#8217;héritage
+pb avec Maven, &#8230;</p>
+</details>
+</article>
+</section>
+<section class="intro fond_fin">
+<h2>Questions</h2>
+<article>
+
+<img src="images/andquestionsag.png" alt="images/andquestionsag.png" class="icone">
+
+</article>
+</section>
+    <script src="./dzslides/core/dzslides.js"></script>
+    <script src="./dzslides/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
