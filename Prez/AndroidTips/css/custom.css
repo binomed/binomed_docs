@@ -49,6 +49,18 @@ img.library{
   background-size: 274px 95px;
 }
 
+.nexus4footer{
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 50%;
+  margin-left: -87px;
+  width: 272px;
+  height: 101px;
+  background: url('../images/nexus4_footer.png') no-repeat;
+  background-size: 272px 101px;
+}
+
 .nexus10{
   position: absolute;
   top: 50%;
@@ -220,6 +232,75 @@ img.library{
 }
 
 /*
+
+Sliding menu
+*/
+
+#sliding_divs{
+  overflow: hidden;
+  width: 251px;
+  height: 463px; 
+}
+
+#sliding_open{
+  position: absolute;
+  top: 90px;
+  left: 260px;
+  width:50px;
+  height: 50px;
+}
+
+#sliding_home.translate{
+    transform: translate(150px,100px);
+  -ms-transform: translate(150px,100px); /* IE 9 */
+  -webkit-transform: translate(150px,100px); /* Safari and Chrome */
+  -o-transform: translate(150px,100px); /* Opera */
+  -moz-transform: translate(150px,100px); /* Firefox */
+}
+
+#sliding_home_content{
+  position: absolute;
+  top: 57px;
+  left: 279px;
+  width: 251px;
+  height: 463px; 
+  background: url('../images/sliding_menu_1.png') no-repeat;
+  background-size: 251px 463px;
+}
+#sliding_menu{
+  position: absolute;
+  top: 57px;
+  left: 279px;
+  width: 251px;
+  height: 463px; 
+  background: url('../images/sliding_menu_2.png') no-repeat;
+  background-size: 251px 463px;
+}
+
+#sliding_menu ul {
+  list-style:none;
+  padding:0;
+  margin:0;
+  width:100%;
+  text-align:left;
+}
+#sliding_item1:before, #sliding_item2:before, #sliding_item3:before{
+  content: "";
+  width: 72px;
+  height: 72px;
+}
+
+#sliding_item1:before{
+  background: url('../images/ic_menu_emoticons.png') no-repeat;
+}
+#sliding_item2:before{
+  background: url('../images/ic_menu_myplaces.png') no-repeat;
+}
+#sliding_item3:before{
+  background: url('../images/ic_menu_start_conversation.png') no-repeat;
+}
+
+/*
   quickAction
 */
 
@@ -260,10 +341,10 @@ img.library{
 }
 
 /*
-  sliding menu / pull refresh / viewPager
+pull refresh / viewPager
 */
 
-#slidingmenu, #pulltorefresh, #viewpager{
+#pulltorefresh, #viewpager{
   position: absolute;
   top: 111px;
   left: 372px;
