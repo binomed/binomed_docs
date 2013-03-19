@@ -562,9 +562,10 @@ image::images/ActionBar2.png[role="icone"]
 </div>
 <script type="text/javascript">
   jQuery(function() {
-    jQuery('#sliding_menu').hide();
+    //jQuery('#sliding_menu').hide();
     jQuery("#sliding_open").on("click", function(){ 
-      jQuery('#sliding_menu').animate({'width':'toggle'},350);
+      //jQuery('#sliding_menu').animate({'width':'toggle'},350);
+      jQuery('#sliding_menu').addClass("translate");
       jQuery('#sliding_home').addClass("translate");
       return false;
     });

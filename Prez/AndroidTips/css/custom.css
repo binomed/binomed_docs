@@ -244,37 +244,55 @@ Sliding menu
 
 #sliding_open{
   position: absolute;
-  top: 90px;
-  left: 260px;
+  top: 30px;
+  left: 0;
   width:50px;
   height: 50px;
 }
+#sliding_home,#sliding_menu{
+  transition: all 0.6s ease-in 0s;
+}
 
 #sliding_home.translate{
-    transform: translate(150px,100px);
-  -ms-transform: translate(150px,100px); /* IE 9 */
-  -webkit-transform: translate(150px,100px); /* Safari and Chrome */
-  -o-transform: translate(150px,100px); /* Opera */
-  -moz-transform: translate(150px,100px); /* Firefox */
+    transform: translate(140px);
+  -ms-transform: translate(140px); /* IE 9 */
+  -webkit-transform: translate(140px); /* Safari and Chrome */
+  -o-transform: translate(140px); /* Opera */
+  -moz-transform: translate(140px); /* Firefox */
+  transition: all 0.6s ease-in 0s;
+}
+#sliding_home{
+  position: absolute;
+  top: 57px;
+  left: 279px;
+  width: 251px;
+  height: 463px; 
 }
 
 #sliding_home_content{
   position: absolute;
-  top: 57px;
-  left: 279px;
+  top: 0px;
+  left: 0px;
   width: 251px;
   height: 463px; 
   background: url('../images/sliding_menu_1.png') no-repeat;
   background-size: 251px 463px;
 }
-#sliding_menu{
+#sliding_menu,#sliding_menu.translate{
   position: absolute;
-  top: 57px;
-  left: 279px;
-  width: 251px;
-  height: 463px; 
+  top: 92px;
+  left: 281px;
+  width: 140px;
+  height: 357px; 
   background: url('../images/sliding_menu_2.png') no-repeat;
-  background-size: 251px 463px;
+  background-size: 140px 357px;
+}
+#sliding_menu{
+  width: 0px;
+}
+#sliding_menu.translate{
+  width: 140px;
+  transition: all 0.6s ease-in 0s;
 }
 
 #sliding_menu ul {
