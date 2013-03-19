@@ -237,9 +237,12 @@ Sliding menu
 */
 
 #sliding_divs{
+  position: absolute;
   overflow: hidden;
   width: 251px;
   height: 463px; 
+  left: 279px;
+  top: 57px;
 }
 
 #sliding_open{
@@ -263,8 +266,8 @@ Sliding menu
 }
 #sliding_home{
   position: absolute;
-  top: 57px;
-  left: 279px;
+  top: 0;/*57px;*/
+  left: 0; /*279px;*/
   width: 251px;
   height: 463px; 
 }
@@ -280,18 +283,20 @@ Sliding menu
 }
 #sliding_menu,#sliding_menu.translate{
   position: absolute;
-  top: 92px;
-  left: 281px;
+  top: 34px;
+  left: 0;
   width: 140px;
   height: 357px; 
   background: url('../images/sliding_menu_2.png') no-repeat;
   background-size: 140px 357px;
 }
 #sliding_menu{
-  width: 0px;
+  width: 140px;
+  position: absolute;
+  left: -140px;
 }
 #sliding_menu.translate{
-  width: 140px;
+ left: 0px;
   transition: all 0.6s ease-in 0s;
 }
 
@@ -302,20 +307,22 @@ Sliding menu
   width:100%;
   text-align:left;
 }
-#sliding_item1:before, #sliding_item2:before, #sliding_item3:before{
-  content: "";
-  width: 72px;
-  height: 72px;
+#sliding_item1, #sliding_item2, #sliding_item3{
+  padding-left: 40px;
+  padding-top: 10px;
+}
+#sliding_item1{
+  background: url('../images/ic_menu_emoticons.png') no-repeat;
+  background-size: 40px 40px; 
 }
 
-#sliding_item1:before{
-  background: url('../images/ic_menu_emoticons.png') no-repeat;
-}
-#sliding_item2:before{
+#sliding_item2{
   background: url('../images/ic_menu_myplaces.png') no-repeat;
+  background-size: 40px 40px; 
 }
-#sliding_item3:before{
+#sliding_item3{
   background: url('../images/ic_menu_start_conversation.png') no-repeat;
+  background-size: 40px 40px; 
 }
 
 /*

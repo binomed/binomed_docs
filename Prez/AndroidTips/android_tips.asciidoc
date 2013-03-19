@@ -546,9 +546,9 @@ image::images/ActionBar2.png[role="icone"]
     <div id="sliding_divs">
       <div id="sliding_menu">
         <ul>
-            <li id="sliding_item1">item 1</li>
-            <li id="sliding_item2">item 2</li>
-            <li id="sliding_item3">item 3</li>
+            <li><div id="sliding_item1">item 1</div></li>
+            <li><div id="sliding_item2">item 2</div></li>
+            <li><div id="sliding_item3">item 3</div></li>
         </ul>
       </div>
       <div id="sliding_home">
@@ -564,9 +564,13 @@ image::images/ActionBar2.png[role="icone"]
   jQuery(function() {
     //jQuery('#sliding_menu').hide();
     jQuery("#sliding_open").on("click", function(){ 
-      //jQuery('#sliding_menu').animate({'width':'toggle'},350);
-      jQuery('#sliding_menu').addClass("translate");
-      jQuery('#sliding_home').addClass("translate");
+      if (jQuery('#sliding_home').hasClass("translate")){
+        jQuery('#sliding_menu').removeClass("translate");
+        jQuery('#sliding_home').removeClass("translate");
+      }else{
+        jQuery('#sliding_menu').addClass("translate");
+        jQuery('#sliding_home').addClass("translate");
+      }
       return false;
     });
     

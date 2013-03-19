@@ -700,9 +700,7 @@ Et il en existe encore pleins d'autres … TimePicket, DatePicker ....
 
 === Hello World
 
-image::images/project_1.png[role="float-left", width="46%"]
-
-image::images/project_2.png[role="float-right", width="46%"]
+image::images/project_1.jpg[role="float-left", width="75%"]
 
 [NOTES]
 ====
