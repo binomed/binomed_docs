@@ -6,6 +6,11 @@
 
 */
 
+@font-face{
+  font-family: roboto;
+  src: url('../fonts/Roboto-Thin.ttf'),
+}
+
 img.float-left{
   float: left;
   margin-right: 40px;
@@ -487,6 +492,23 @@ PullTo refresh
   from { -webkit-transform:rotate(0deg) translateZ(0); }
   to { -webkit-transform:rotate(360deg) translateZ(0); }
 }
+
+/*
+
+ViewPager
+*/
+
+#viewPager{
+  position: absolute;
+  overflow: hidden;
+  width: 251px;
+  height: 463px; 
+  left: 279px;
+  top: 57px;
+  background: url('../images/view_pager_back.png')  no-repeat;
+  background-size : 251px 436px; 
+}
+
 
 /*
 Fragment
