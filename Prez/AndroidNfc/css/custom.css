@@ -1,0 +1,58 @@
+/*
+ Theme: Default
+ Fonts: Oswald
+
+ <link href="http://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+
+*/
+
+img.float-left{
+  float: left;
+  margin-right: 40px;
+}
+
+img.float-right{
+  float: right;
+  margin-left: 10px;
+}
+
+#ndef_header{
+  height: 90px;
+  width: 360px;
+  position: absolute;
+  top: 155px;
+  background: rgba(252,203,206,0.5);
+}
+
+
+#ndef_length_type{
+  height: 90px;
+  width: 360px;
+  position: absolute;
+  top: 205px;
+  background: rgba(252,203,206,0.5);
+}
+
+#ndef_length_payload{
+  height: 90px;
+  width: 360px;
+  position: absolute;
+  top: 270px;
+  background: rgba(252,203,206,0.5);
+}
+
+#ndef_type_id{
+  height: 155px;
+  width: 360px;
+  position: absolute;
+  top: 335px;
+  background: rgba(252,203,206,0.5);
+}
+
+#ndef_payload{
+  height: 90px;
+  width: 360px;
+  position: absolute;
+  top: 455px;
+  background: rgba(252,203,206,0.5);
+}
