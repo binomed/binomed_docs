@@ -260,7 +260,7 @@ image::images/cofee_overload.jpg[role="icone"]
 
 * Nous sommes sur des téléphones, la ram n'est pas une ressources forcément très présente.
 
-* Vous n'êtes pas la seule applications ! 
+* Vous n'êtes pas la seule application ! 
 
 * Minimisons donc notre impact sur cette dernière.
 
