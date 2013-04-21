@@ -133,30 +133,33 @@ image::images/nfc_logo.jpg[role="icone"]
 == Qu’est ce que le NFC ?
 
 image::images/nfc_logo.jpg[role="float-right", width="100px"]
-NFC = Near Field Communication
-
-* Communication en champ proche
+*NFC = Near Field Communication ou Communication en champ proche*
  +
  +
 
 image::images/nfc_card.jpg[role="float-right", width="100px"]
-Interaction / sélection physique
+*Interaction / sélection physique*
 
 * on approche le téléphone du tag NFC pour déclancher l’interaction
  +
  +
-Sécurisé
+*Sécurisé*
 
 * Présence de l’utilisateur
  +
  +
-Régit par le NFC Forum.
+*Régit par le NFC Forum.*
  +
  +
 Extension du RFID => Compatibilité de lecture
  +
  + 
 Destiné aux téléphones
+
+[NOTES]
+====
+
+====
 
 //    ______   _______              _______                _____    _______ 
 //   |  ____| |__   __|     /\     |__   __|       /\     |  __ \  |__   __|
@@ -176,8 +179,7 @@ image::images/nfc_card.jpg[role="icone"]
 === Historique
 *2004*
 
-	Nokia, Philips et Sony créent le NFC Forum (aujourd’hui 140 sociétés). 
-	La mission est d’assurer une uniformité entre les différents acteurs
+	Nokia, Philips et Sony créent le NFC Forum (aujourd’hui 140 sociétés).  La mission est d’assurer une uniformité entre les différents acteurs
 
 +++++++++
 <br>
@@ -194,8 +196,7 @@ image::images/nfc_card.jpg[role="icone"]
 
 *2009*
 	
-	Apparition du standard P2P (communication pair à pair) entre 
-	2 périphériques (non existant en RFID). 
+	Apparition du standard P2P (communication pair à pair) entre 2 périphériques (non existant en RFID). 
  
 
 +++++++++
@@ -209,8 +210,8 @@ image::images/nfc_card.jpg[role="icone"]
 === Technologies : RFID / SmartCard
 *Le NFC est basé sur le RFID = Radio Frequency Identification*
 
-	La distance entre le lecteur et le tag peut être de plusieurs dizaines de mètres  
-	(pour le RFID)
+//	La distance entre le lecteur et le tag peut être de plusieurs dizaines de mètres (pour le RFID)
+	Distance Tag / Lecteur = jusqu'à 10aines de mètres !
 
 
 +++++++++
@@ -218,19 +219,27 @@ image::images/nfc_card.jpg[role="icone"]
 +++++++++
 *Technologies éprouvée : premier brevet en 1983*
 
-	Utilise la fréquence 13,56MHz pour des communications < 1m
-	La norme associée est ISO 18092
+	Fréquence 13,56MHz pour des communications < 1m
+	
+	Norme ISO 18092
 
 
 +++++++++
 <br>
 +++++++++
-*SmartCart : carte à puces*
+*SmartCard : carte à puces*
 
-	Le NFC est une extension de SmartCard, standardisant l’utilisation de celles-ci à travers 
-	la communication RFID
-	La norme ISO 14443-4 est la norme standardisant l’utilisation sans contact 
-	d’une SmartCard
+	NFC = extension de SmartCard, standardisant l’utilisation de celles-ci à travers la communication RFID
+	
+	=> Norme ISO 14443-4 est la norme standardisant l’utilisation sans contact d’une SmartCard
+
+[NOTES]
+====
+RFID : Distance de pls mètres
+ -> Fréquence 13.56Mhz pour com < 1m
+NFC pour SmartCard = NFC standard de smartCard pour la communication RFID
+	
+====
 
 //    _   _    ____    _____    __  __   ______    _____ 
 //   | \ | |  / __ \  |  __ \  |  \/  | |  ____|  / ____|
@@ -248,24 +257,51 @@ image::images/iso-logo.png[role="icone"]
 
 == Normes
 === Modes de fonctionnements
-*Le NFC Forum prévoit 3 modes de communications :*
+*3 modes de communications :*
 
-* Le mode émulation de carte
+++++++
+<br>
+++++++
+
+image::images/smart_card_nfc.jpg[role="float-left", width="150px"]
+Emulation de carte
 	
-	Un logiciel simule un taf ou une interface de carte à puce
+++++++
+<br>
+<br>
+<br>
+++++++
 
-* Le mode lecteur / écriture
+image::images/social-nfc-tags.png[role="float-left", width="150px"]
+Lecture / écriture
 	
-	Le mobile peut lire ou écrire des informations sur des « tags ».
+++++++
+<br>
+<br>
+<br>
+++++++
 
-* Le mode Pair à Pair
+image::images/nfc_p2p.jpg[role="float-left", width="150px"]
+Pair à Pair
 	
-	Transfert de données entre 2 appareils.
+++++++
+<br>
+<br>
+<br>
+++++++
 
+
+[NOTES]
+====
+Normes Régies par le NFC Forum !
+Emulation= Simulation interface carte à puce
+Lecture / Ecriture : Tag
+Pair à Pair : 2 Appareils
+====
 
 == Normes
 === Communication
-*La communication se fait via la norme ISO 14443*
+*Norme ISO 14443*
 
 * Débits compris entre 106 et 424 Kps
 
@@ -273,43 +309,45 @@ image::images/iso-logo.png[role="icone"]
 
 * Hal duplex ou full duplex
 
-	Correction d’erreur
-
 *2 types de ISO 14443 :*
 
 * ISO 14443 A (NfcA dans Android)
 	
-	Le bit d’information est calculé en fonction du précédent bit
-	Valeur = -1 pour 0 après un 1
-	Valeur = 0 pour 0 après un 0
-	Valeur 1 pour 1 après un 0 ou un 1
-
-
 * ISO 14443 B (NfcB dans Android)
 	
-	Le bit d’information correspond à la donnée
+
+
+[NOTES]
+====
+Half-duplex : Communication dans les 2 sens mais chacun son tour. FullDuplex : Com 2 sens simultanément
+NfcA : Modulation sur 100% -1 pour 0 après 1, 0 pour 0 après 0, 1 pour 1 après 0 ou 1
+NfcB : Modulation sur 10%
+====
 
 == Normes
 === Autres normes tolérées par android
 *Felica (NfcF dans Android)*
-
-	Non standardisée ISO mais supportée par le NFC Forum.
-	Très rependue au Japon
 
 +++++++++
 <br>
 +++++++++
 *ISO 15693 (NfcV dans Android)*
 
-	Norme ISO mais non supportée par le NFC Forum
 
+[NOTES]
+====
+Felica : Pas ISO mais NFC-Forum : Japon
+15693 : ISO mais pas NFC-Forum
+====
 
 == Normes
 === Les types de tags du NFC Forum
 *Le NFC forum prévoit 4 types de tags (gestion des données dans la mémoire et interface de commande)*
 
 	NfcA = Type 1 / 2 / 4
+	
 	NfcB = Type 4
+	
 	NfcF = Type 3
 
 
@@ -319,13 +357,13 @@ image::images/iso-logo.png[role="icone"]
 |Type 1 | 96bits -> 2Kbits | ISO 14443-A | Topaz
 |Type 2 | 48bits -> 2Kbits | ISO 14443-A | Mifare Ultra Light
 |Type 3 | ? -> 1Mbits | Felica | Felica
-|Type 4 | ? -> 32Kbits | ISO 14443 A ou B | DesFireISO 14443-A
+|Type 4 | ? -> 32Kbits | ISO 14443 A ou B | DesFire ISO 14443-A
 |====================
 
 
 == Normes
 === NDEF : NFC Data Exchange Format
-*Spécification utilisée pour l’échange de données*
+
 +++++++++
 <br>
 +++++++++
@@ -333,14 +371,19 @@ image::images/iso-logo.png[role="icone"]
 +++++++++
 <br>
 +++++++++
-*Un bloc NDEF peut contenir plusieurs enregistrements NDEF (donc plusieurs messages)*
+*Un message NDEF = 1 ou N Ndef records*
 +++++++++
 <br>
 +++++++++
-*La norme prédéfinie un certains type d’information possibles pour gagner de la place comme*
+*Types prédéfinis*
 
 	Texte brut, URI, …
 
+[NOTES]
+====
+Format d'échange standard
+But des types = Gain de place
+====
 
 == Normes
 === NDEF : NFC Data Exchange Format
@@ -351,13 +394,15 @@ image::images/Ndefrecod.png[role="middle"]
 <br>
 ++++++
 
-Le header permet d’identifier les informations sur le tag
+Header = informations sur le tag
 
 	Sa place dans le message
+	
 	Son type
+	
 	Sa taille
 
-Le payload correspond aux données
+Payload = données
 
 == Normes
 === NDEF - Informations sur le message
@@ -368,26 +413,36 @@ Le payload correspond aux données
 
 image::images/Ndeffullrecod.png[role="float-left stretch-y"]
 
-* MB (Message Begin) : début de message
-* ME (Message End) : fin de message
-* CF (Chunk Flag) : permet d’indiquer que le message est tronqué
-* SR (Short Reccord) : permet d’indiquer que le message sera court (1octet)
-* IL (ID Length) : permet d’indiquer la présence d’un identifiant => Payload Length et Id devront être remplit si c’est le cas
-* TNF (Type Name Format) : le type de la donnée
+* *MB (Message Begin)* : début de message
+	
+* *ME (Message End)* : fin de message
+	
+* *CF (Chunk Flag)* : permet d’indiquer que le message est tronqué
+	
+* *SR (Short Reccord)* : permet d’indiquer que le message sera court (1octet)
+	
+* *IL (ID Length)* : permet d’indiquer la présence d’un identifiant
+
+* *TNF (Type Name Format)* : le type de la donnée
+
+[NOTES]
+====
+MB = 1 => début de message | ME = 1 => Message fini dans le message
+IL : si à 1 : ID Length et  ID devront être remplis
+
+====
 
 == Normes
 === NDEF - TNF (le type du tag)
 
-Enfin, les 3 derniers bits de ce premier octet décrivent le TNF (Type Name Format) de l'enregistrement. Les différents TNF sont :
-
-* 0x00 Vide : Enregistrement vide
-* 0x01 Well-Known Type (WKT) : Type défini par le NFC Forum
-* 0x02 Type MIME
-* 0x03 Absolute Uri
-* 0x04 External
-* 0x05 Type non connu
-* 0x06 Type inchangé (utilisé pour les enregistrements tronqués)
-* 0x07 réservé pour un usage futur
+* *0x00*  Vide : Enregistrement vide
+* *0x01* Well-Known Type (WKT) : Type défini par le NFC Forum
+* *0x02* : Type MIME
+* *0x03* Absolute Uri
+* *0x04* External
+* *0x05* Type non connu
+* *0x06* Type inchangé (utilisé pour les enregistrements tronqués)
+* *0x07* réservé pour un usage futur
 
 == Normes
 === NDEF - Taille du type
@@ -398,7 +453,13 @@ Enfin, les 3 derniers bits de ce premier octet décrivent le TNF (Type Name Form
 
 image::images/Ndeffullrecod.png[role="float-left stretch-y"]
 
-	Le TNF indique une sorte de catégorie de type, mais pas le type lui-même. Le type précis étant de taille variable ("image/jpeg", "Sp", ...), ce champs permet d'indiquer le nombre d'octet qu'occupera le type dans l'en-tête.
+	Taille du Type dans le payload  :  En Octet
+
+[NOTES]
+====
+Détail du type contenu dans le message : lié au TNF. TNF = premier type, Vrai type dans le payload ! => taille à préciser
+
+====
 
 == Normes
 === NDEF - Taille du message
@@ -409,7 +470,13 @@ image::images/Ndeffullrecod.png[role="float-left stretch-y"]
 
 image::images/Ndeffullrecod.png[role="float-left stretch-y"]
 
-	Indique la taille du message en octet. En fonction du contenu de SR, ce champ peut contenir de 1 ou 4 octets
+	Indique la taille du message en octet. Ce champ peut contenir de 1 ou 4 octets 
+
+[NOTES]
+====
+La taille varie à cause du champ SR (Short Record)
+
+====
 
 == Normes
 === NDEF - Type & Id
@@ -420,7 +487,10 @@ image::images/Ndeffullrecod.png[role="float-left stretch-y"]
 
 image::images/Ndeffullrecod.png[role="float-left stretch-y"]
 
-	La présence de ces champs dépend des octets précédents et représentent respectivement le type du payload ainsi que l’id de l’enregistrement
+* *Type* est toujours présent : Type du Payload
+
+* *ID* dépend du champ IL : Id de l'enregistrement
+	
 
 == Normes
 === NDEF - Contenu du message
@@ -434,38 +504,58 @@ image::images/Ndeffullrecod.png[role="float-left stretch-y"]
 
 == Normes
 === Well Known Types
-*On peut gagner des octets grâce aux WKT*
 
-	Octet Type : le type de données
+Octet *Type*
 
 * U (0x55) pour des uri
 * T (0x54) pour du texte
 * Sp (0x53,0x70) pour un smartPoster (le type a une taille de 2)
 
+[NOTES]
+====
+Sert à gagner encore plus de bits
+
+====
 
 == Normes
 === Well Known Types
-	
-*Le payload varie*
 
-* Pour des uris, il commence par un bit d’identification
+* *URIs*, 1er bit = bit d’identification
 	
 	0x00 : pas de préfixe
+	
 	0x01 : http://www.
-	0x02 : https://www.
+		
 	0x03 : http://
-	0x04 : https://
+		
 	0x05 : tel:
+	
 	0x06 : mailto:
+	
 	0x1D : file://
+	
 	0x24...0xFF : réservés pour un usage futur
 
-* Pour du texte il commence par un octer indiquant l’encodage (UTF8 =0, UTF16 = 1) et la langue
-* Pour les smartPoster il faut intégrer dans le payload un nouvel enregistrement URI
+
+* *Texte* : un octet indiquant l’encodage (UTF8 =0, UTF16 = 1) et 1 pour la langue
+* *SmartPoster* Nouveau Ndef avec l'URI
+
+[NOTES]
+====
+Le payload Varie en fonction du WKT
+Pour les Uris : il y en a 35 !
+SmartPoster contient dans son payload le nouvel enregistrement et les données annexes
+
+====
 
 == Normes
 === Les types personnalisés
-Il y a la possibilité de spécifier son propre type afin de filtrer le message et donc ouvrir le message à partir d’une application précise
+
+Définition de son propre type ! 
+[NOTES]
+====
+Filtrer le message et donc ouvrir le message à partir d’une application précise
+====
 
 //    _    _    _____               _____   ______    _____ 
 //   | |  | |  / ____|     /\      / ____| |  ____|  / ____|
@@ -482,27 +572,48 @@ Il y a la possibilité de spécifier son propre type afin de filtrer le message 
 image::images/google-wallet-logo.jpg[role="icone"]
 
 == Usages
+=== Mode lecture
 
-Les usages sont multiples et dependent du mode dfutilisation du nfc
+++++++
+<br>
+++++++
 
-* Mode lecture :
+image::images/social-nfc-tags.png[width="250px"]
+
+image::images/recharge_nfc.jpg[width="250px"]
+
+image::images/foursquare-nfc.png[width="250px"]
+
+[NOTES]
+====
+Infos complementaires sur des produits  /////// GEOLOC /////// URLS
+Codes promos //////	Dématérialisation de cartes
+====
+
+== Usages
+=== P2P
+
+image::images/nfc_beam.jpg[width="450px", role="middle"]
+
+[NOTES]
+====
+Echange de contacts ///// 	Echange de fichiers //////	Configuration bluetooth
+====
+
+== Usages
+=== Emulation de carte : non disponible en natif sur Android
 	
-	Informations complementaires sur des produits
-	Geolocalisation
-	Urls
-	Code Promos
-	Dématérialisation de cartes
+image::images/cityzi_transport.jpg[width="400px"]
 
-* P2P :
+image::images/google-wallet.jpg[width="400px"]
 
-	Echange de contacts
-	Echange de fichiers
-	Configuration bluetooth
 
-* Emulation de carte : non disponible en natif sur Android
-	
-	Paiement securise
-	Authentification sur des reseaux securise
+[NOTES]
+====
+Paiement securise 	
+Authentification sur des reseaux securise
+====
+
 
 //    _____    ______   __  __    ____  
 //   |  __ \  |  ____| |  \/  |  / __ \ 
@@ -534,17 +645,23 @@ image::images/android_nfc.png[role="icone"]
 
 == Implémentation
 === Et avec android ?
-*Android offre une api NFC*
 
 	Depuis 2010 : Lecture / Ecriture de tags
+	
 	Depuis 2011 : Beam
+	
 	Depuis 2012 : Partage de médias
 
-*Reconnaissance de plusieurs type de tags : Message transformé en Intent*
-	
-	Pas que les messages NDEF
 
 image::images/nfc_tag_dispatch.png[role="middle"]
+
+
+[NOTES]
+====
+IL n'y a pas que le NDEF de reconnu ! 
+Message transformé en Intent
+====
+
 
 == Implémentation
 === Configuration
@@ -765,10 +882,7 @@ image::images/nfc_logo.jpg[role="icone"]
 * Facile à mettre en oeuvre
 * Pas cher (<1€ / tag)
 
-[NOTES]
-====
-On retrouve le nom de l'application, l'icone, la déclaration de l'activité principale
-====
+
 
 
 //    _        _____   ______   _   _    _____ 
