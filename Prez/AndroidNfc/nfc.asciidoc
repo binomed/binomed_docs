@@ -860,6 +860,26 @@ mAdapter.setNdefPushMessageCallback(this, this);
 
 image::images/nfa.png[role="icone"]
 
+== Pourquoi ?
+
+// Expliquer ce qui m'a motiver à faire NfA
+
+== Objectifs
+
+// Parler de l'aspect sans héritage etc...
+
+== Implémentation
+
+// présenter le gain de code
+
+== RoadMap
+
+// Parler de ce qui viendra :)
+
+== Résumé
+
+// Mettre le logo, le lien vers sonatype, le github, les librairies à l'origine , mettre le lien vers le market
+
 
 //     _____    ____    _   _    _____   _        _    _    _____   _____    ____    _   _ 
 //    / ____|  / __ \  | \ | |  / ____| | |      | |  | |  / ____| |_   _|  / __ \  | \ | |
