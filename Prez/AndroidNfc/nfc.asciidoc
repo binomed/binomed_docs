@@ -862,23 +862,186 @@ image::images/nfa.png[role="icone"]
 
 == Pourquoi ?
 
-// Expliquer ce qui m'a motiver à faire NfA
+*NFC & Android = byte[] !*
+
+
+	Exemple pour écrire "Hello World"
+
+++++++
+<br>
+++++++
+[syntax="java"]
+----
+		byte[] languageData = "en".getBytes();
+		
+		byte[] textData = "Hello World".getBytes(record.getEncoding());
+		byte[] payload = new byte[1 + languageData.length + textData.length];
+
+		byte status = (byte) 0x00;
+		payload[0] = status;
+		System.arraycopy(languageData, 0, payload, 1, languageData.length);
+		System.arraycopy(textData, 0, payload, 1 + languageData.length
+					, textData.length);
+
+		NdefRecord ndefRecord = new NdefRecord(NdefRecord.TNF_WELL_KNOWN
+					, NdefRecord.RTD_TEXT
+					, record.getId()
+					, payload);
+----
+
+== Pourquoi ? 
+
+image::images/meme_rock.jpg[role="stretch-y middle"]
+
+[NOTES]
+====
+Simplifier l'écriture. Si le nfc doit percer, il faut l'aider
+====
 
 == Objectifs
 
-// Parler de l'aspect sans héritage etc...
+[{stepwise}]
+* Non basé sur l'héritage
+* Léger
+* Helpers ! 
+* Economie de code.
+
+[NOTES]
+====
+Parler du problème fréquent avec le multi héritage mais dire que ça sera dispo
+====
+
+== Objectifs
+
+image::images/meme_challenge.jpg[role="stretch-y middle"]
+
 
 == Implémentation
+=== Initialisation
+
+*Android*
+[syntax="java"]
+----
+// We register the default Nfc Adapter
+mAdapter = NfcAdapter.getDefaultAdapter(activity);
+// We register the curent activity to a the filters we wants
+PendingIntent pendingIntent = PendingIntent.getActivity(activity, 0
+	, new Intent(activity, activity.getClass())
+		.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), 0);
+
+int length = filters != null && filters.length > 0 ? filters.length : 1;
+IntentFilter[] intentFilters = new IntentFilter[length];
+IntentFilter ndefFilter = new IntentFilter(filter.getAction());
+pendingIntentArray.put(activity.getTaskId(), pendingIntent);		
+----
+
+*NfA*
+[syntax="java"]
+----
+// We register our activity to the NFA Manager
+NFA_MANAGER.register(activity //
+		, NDEF_FILTER //				
+		);
+----
+
+== Implémentation
+=== Lecture - Android
+
+[syntax="java"]
+----
+byte[] payload = ndefRecord.getPayload();
+ByteArrayInputStream bais = new ByteArrayInputStream(payload);
+int status = bais.read();
+byte languageCodeLength = (byte) (status & TextRecord.LANGUAGE_CODE_MASK);
+byte[] bytes = new byte[languageCodeLength];
+bais.read(bytes, 0, bytes.length);
+String languageCode = new String(bytes);
+bytes = new byte[payload.length - languageCodeLength - 1];
+bais.read(bytes, 0, bytes.length);
+byte[] textData = bytes;
+Charset textEncoding = ((status & 0x80) != 0) ? TextRecord.UTF16 
+			: TextRecord.UTF8;
+String message = null;
+try {
+	message = new String(textData, textEncoding.name());
+} catch (UnsupportedEncodingException e) {
+	throw new RuntimeException(e);
+}
+----
+
+== Implémentation
+=== Lecture - NfA
+
+[syntax="java"]
+----
+NfaRecieveBeanBuilder<TextRecord> builder = recieveBeanConfigure(); //
+builder.intent(intent) //
+.intentRecieveRecord(new INfaIntentRecieveRecord<TextRecord>() {
+
+	@Override
+	public void recieveRecord(TextRecord record) {
+		String message = record.getText();
+
+	}
+}) // INfaIntentRecieveRecord
+.parser(TEXT_PARSER); //
+NFA_MANAGER.manageIntent(builder.build());
+----
+
+== Implémentation
+=== Ecriture
+
+*Android*
+[syntax="java"]
+----
+byte[] languageData = "en".getBytes();
+byte[] textData = "Hello World".getBytes(record.getEncoding());
+byte[] payload = new byte[1 + languageData.length + textData.length];
+byte status = (byte) (0x00);
+payload[0] = status;
+System.arraycopy(languageData, 0, payload, 1, languageData.length);
+System.arraycopy(textData, 0, payload, 1 + languageData.length
+		, textData.length);
+
+NdefRecord ndefRecord = new NdefRecord(NdefRecord.TNF_WELL_KNOWN
+		, NdefRecord.RTD_TEXT, record.getId(), payload);
+----
+
+*NfA*
+[syntax="java"]
+----
+NFA_MANAGER.writeTag(getApplicationContext(), //
+		intent, // 
+		activity, // 
+		false, // addAndroidApplicationRecord
+		NfaWriteBean.writeBeanConfigure() //
+				.writer(TEXT_WRITER) //
+				.record(NfaRecordFactory.wellKnowTypeFactory()//
+					.textRecordInstance("Hello World")) //
+				.build());
+----
 
 // présenter le gain de code
 
 == RoadMap
 
 // Parler de ce qui viendra :)
+* Plus de Writers / Parsers / Filters / Records
+* Signature Record
+* Handover Record
+* SmartPoster enrichis
+* Module de Crypto
+* Ajout de classes abstraites
+* Optimisation du code
+* votre contribution ;)
 
 == Résumé
 
 // Mettre le logo, le lien vers sonatype, le github, les librairies à l'origine , mettre le lien vers le market
+
+== Résumé
+
+image::images/meme_baby_win.jpg[role="stretch-y middle"]
 
 
 //     _____    ____    _   _    _____   _        _    _    _____   _____    ____    _   _ 
