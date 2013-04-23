@@ -236,7 +236,9 @@ image::images/nfc_card.jpg[role="icone"]
 [NOTES]
 ====
 RFID : Distance de pls mètres
- -> Fréquence 13.56Mhz pour com < 1m
+
+-> Fréquence 13.56Mhz pour com < 1m
+
 NFC pour SmartCard = NFC standard de smartCard pour la communication RFID
 	
 ====
@@ -294,8 +296,11 @@ Pair à Pair
 [NOTES]
 ====
 Normes Régies par le NFC Forum !
+
 Emulation= Simulation interface carte à puce
+
 Lecture / Ecriture : Tag
+
 Pair à Pair : 2 Appareils
 ====
 
@@ -320,7 +325,9 @@ Pair à Pair : 2 Appareils
 [NOTES]
 ====
 Half-duplex : Communication dans les 2 sens mais chacun son tour. FullDuplex : Com 2 sens simultanément
+
 NfcA : Modulation sur 100% -1 pour 0 après 1, 0 pour 0 après 0, 1 pour 1 après 0 ou 1
+
 NfcB : Modulation sur 10%
 ====
 
@@ -337,6 +344,7 @@ NfcB : Modulation sur 10%
 [NOTES]
 ====
 Felica : Pas ISO mais NFC-Forum : Japon
+
 15693 : ISO mais pas NFC-Forum
 ====
 
@@ -382,6 +390,7 @@ Felica : Pas ISO mais NFC-Forum : Japon
 [NOTES]
 ====
 Format d'échange standard
+
 But des types = Gain de place
 ====
 
@@ -428,6 +437,7 @@ image::images/Ndeffullrecod.png[role="float-left stretch-y"]
 [NOTES]
 ====
 MB = 1 => début de message | ME = 1 => Message fini dans le message
+
 IL : si à 1 : ID Length et  ID devront être remplis
 
 ====
@@ -543,7 +553,9 @@ Sert à gagner encore plus de bits
 [NOTES]
 ====
 Le payload Varie en fonction du WKT
+
 Pour les Uris : il y en a 35 !
+
 SmartPoster contient dans son payload le nouvel enregistrement et les données annexes
 
 ====
@@ -587,6 +599,7 @@ image::images/foursquare-nfc.png[width="250px"]
 [NOTES]
 ====
 Infos complementaires sur des produits  /////// GEOLOC /////// URLS
+
 Codes promos //////	Dématérialisation de cartes
 ====
 
@@ -611,6 +624,7 @@ image::images/google-wallet.jpg[width="400px"]
 [NOTES]
 ====
 Paiement securise 	
+
 Authentification sur des reseaux securise
 ====
 
@@ -659,6 +673,7 @@ image::images/nfc_tag_dispatch.png[role="middle"]
 [NOTES]
 ====
 IL n'y a pas que le NDEF de reconnu ! 
+
 Message transformé en Intent
 ====
 
@@ -1046,9 +1061,7 @@ image::images/nfa.png[role="float-left"]
 
 * Merci à https://github.com/grundid/nfctools[NfcTools] et http://code.google.com/p/ndef-tools-for-android/[Ndef tools for Android]
 
-* Sample disponible ici : 
-
-// Mettre le logo, le lien vers sonatype, le github, les librairies à l'origine , mettre le lien vers le market
+* Sample disponible ici : https://play.google.com/store/apps/details?id=com.github.nfcforandroid.samples[Play Store]
 
 == Résumé
 
@@ -1078,7 +1091,6 @@ image::images/nfc_logo.jpg[role="icone"]
 
 
 
-
 //    _        _____   ______   _   _    _____ 
 //   | |      |_   _| |  ____| | \ | |  / ____|
 //   | |        | |   | |__    |  \| | | (___  
@@ -1093,6 +1105,7 @@ image::images/nfc_logo.jpg[role="icone"]
 
 image::images/link.png[role="icone"]
 
+// Revoir la disposition : + ajout du lien de la presentation
 
 == Liens
 
