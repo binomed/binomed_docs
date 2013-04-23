@@ -23,7 +23,7 @@ v1.0
 :linkcss: true
 :dzslides-style: gdg
 :dzslides-transition: fade
-:dzslides-highlight: github
+:dzslides-highlight: googlecode
 :dzslides-autoplay: 0
 // disable syntax highlighting unless turned on explicitly
 :syntax: no-highlight
@@ -1037,6 +1037,17 @@ NFA_MANAGER.writeTag(getApplicationContext(), //
 
 == Résumé
 
+image::images/nfa.png[role="float-left"]
+
+
+* Disponible sur maven Oss Sonatype : http://goo.gl/NAQwd
+
+* Code source disponible sous github : https://github.com/organizations/NfcForAndroid[Github]
+
+* Merci à https://github.com/grundid/nfctools[NfcTools] et http://code.google.com/p/ndef-tools-for-android/[Ndef tools for Android]
+
+* Sample disponible ici : 
+
 // Mettre le logo, le lien vers sonatype, le github, les librairies à l'origine , mettre le lien vers le market
 
 == Résumé
@@ -1062,7 +1073,7 @@ image::images/nfc_logo.jpg[role="icone"]
 
 * La technologie est encore assez récente mais offre déjà beaucoup de possibilités
 * La sécurisation peut être un problème dans certains cas
-* Facile à mettre en oeuvre
+* Facile à mettre en oeuvre (encore plus avec Nfc For Android ;) )
 * Pas cher (<1€ / tag)
 
 
