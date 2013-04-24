@@ -1041,27 +1041,57 @@ NFA_MANAGER.writeTag(getApplicationContext(), //
 == RoadMap
 
 // Parler de ce qui viendra :)
-* Plus de Writers / Parsers / Filters / Records
-* Signature Record
-* Handover Record
-* SmartPoster enrichis
-* Module de Crypto
-* Ajout de classes abstraites
-* Optimisation du code
-* votre contribution ;)
+* 0.8.0
+	
+	Plus de Writers / Parsers / Filters / Records
+
+	Signature Record
+	
+	SmartPoster enrichis
+
+	Tests unitaires
+
+* 0.9.0
+
+	Handover Record
+
+	Module de Crypto
+
+	Ajout de classes abstraites
+
+* 1.0.0
+
+	Optimisation du code
+
+	bugs fix
+
+	votre contribution ;)
 
 == Résumé
 
 image::images/nfa.png[role="float-left"]
 
 
-* Disponible sur maven Oss Sonatype : http://goo.gl/NAQwd
+Disponible sur maven Oss Sonatype : http://goo.gl/NAQwd
 
-* Code source disponible sous github : https://github.com/organizations/NfcForAndroid[Github]
+++++++
+<br>
+<br>
+++++++
 
-* Merci à https://github.com/grundid/nfctools[NfcTools] et http://code.google.com/p/ndef-tools-for-android/[Ndef tools for Android]
+Code source disponible sous github : https://github.com/organizations/NfcForAndroid[Github]
 
-* Sample disponible ici : https://play.google.com/store/apps/details?id=com.github.nfcforandroid.samples[Play Store]
+++++++
+<br>
+++++++
+
+Merci à https://github.com/grundid/nfctools[NfcTools] et http://code.google.com/p/ndef-tools-for-android/[Ndef tools for Android]
+
+++++++
+<br>
+++++++
+
+Sample disponible ici : https://play.google.com/store/apps/details?id=com.github.nfcforandroid.samples[Play Store]
 
 == Résumé
 
@@ -1109,29 +1139,21 @@ image::images/link.png[role="icone"]
 
 == Liens
 
-* http://www.nfc-forum.org/specs/spec_list/
-	
-	Spécifications de NFC Forum
+*  http://goo.gl/lFuCJ[http://goo.gl/lFuCJ] la présentation
 
-* http://d.android.com/guide/topics/nfc/index.html
-	
-	Présentation de l'API NFC
+* http://www.nfc-forum.org/specs/spec_list/[Spécifications de NFC Forum]
 
-* http://d.android.com/reference/android/nfc/package-summary.html
-	
-	Javadoc
+* http://d.android.com/guide/topics/nfc/index.html[Présentation de l'API NFC]
 
-* http://rapidnfc.com/
-	
-	Achat de tags
+* http://d.android.com/reference/android/nfc/package-summary.html[Javadoc Android]
 
-* http://nfctags.tagstand.com/collections/nfc-reader-writers/products/mini-usb-nfc-reader-writer-acr122t
-	
-	Lecteur
+* http://rapidnfc.com/[Achat de tags]
 
-* Projets :
-	
-	Github Jean-François :  https://github.com/organizations/binomed
+* http://nfctags.tagstand.com/collections/nfc-reader-writers/products/mini-usb-nfc-reader-writer-acr122t[Lecteur]
+
+* https://github.com/organizations/NfcForAndroid[Projet Nfc For Android]
+
+* https://github.com/organizations/binomed[Github Jean-François]
 
 
 //     ____    _    _   ______    _____   _______   _____    ____    _   _    _____ 
