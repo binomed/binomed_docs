@@ -989,7 +989,9 @@ try {
 [syntax="java"]
 ----
 NfaRecieveBeanBuilder<TextRecord> builder = recieveBeanConfigure(); //
-builder.intent(intent) //
+builder //
+.activity(activity) //
+.intent(intent) //
 .intentRecieveRecord(new INfaIntentRecieveRecord<TextRecord>() {
 
 	@Override
