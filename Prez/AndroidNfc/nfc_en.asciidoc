@@ -1140,7 +1140,7 @@ image::images/link.png[role="icone"]
 
 == Links
 
-*  http://goo.gl/lFuCJ[http://goo.gl/lFuCJ] The presentation
+*  http://goo.gl/O3ryH[http://goo.gl/O3ryH] The presentation
 
 * http://www.nfc-forum.org/specs/spec_list/[NFC Forum specifications]
 
