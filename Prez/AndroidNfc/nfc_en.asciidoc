@@ -227,7 +227,7 @@ image::images/nfc_card.jpg[role="icone"]
 +++++++++
 <br>
 +++++++++
-*SmartCard : *
+*SmartCard :*
 
 	NFC = extension of SmartCard, just a standardisation of smartcard throught RFID communication
 	
