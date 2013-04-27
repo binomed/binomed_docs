@@ -6,12 +6,12 @@
 //
 // dzslides en embarquant les ressources
 // asciidoc -a data-uri -a linkcss! <nomfichier>.asciidoc
-= NFC et Android
+= NFC & Android
 Jean-François Garreau, GDG Nantes, SQLI 
 v1.0
 //:doctitle: Titre de la présentation, sans mise en avant de texte sous différentes formes.
 :author: Jean-François Garreau, GDG Nantes, SQLI
-:title: NFC et Android
+:title: NFC & Android
 :subtitle: New Future Communication
 :description: NFC presentation on Android
 :copyright: Copyright 2013 SQLI
