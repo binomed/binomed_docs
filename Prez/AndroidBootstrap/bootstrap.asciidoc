@@ -1,0 +1,497 @@
+//
+// Génération
+//
+// dzslides sans embarquer les ressources
+// asciidoc <nomfichier>.asciidoc
+//
+// dzslides en embarquant les ressources
+// asciidoc -a data-uri -a linkcss! <nomfichier>.asciidoc
+= Android BootStrap
+Jean-François Garreau, GDG Nantes, SQLI,  DroidCon FR 2013
+v1.0
+//:doctitle: Titre de la présentation, sans mise en avant de texte sous différentes formes.
+:author: Jean-François Garreau, GDG Nantes, SQLI, Droid Con FR 2013
+:title: Android BootStrap
+:subtitle: Où Comment faire des applications avec les librairies
+:description: Rex de l'utilisation des librairies
+:copyright: Copyright 2013 SQLI
+//:website: TBD
+//:slidesurl: TBD
+// à remplacer par le chemin relatif de notre path d'image
+//:imagesdir: 
+:backend: dzslides
+:linkcss: true
+:dzslides-style: sqli
+:dzslides-transition: fade
+:dzslides-highlight: googlecode
+:dzslides-autoplay: 0
+// disable syntax highlighting unless turned on explicitly
+:syntax: no-highlight
+:sqli-custom-css: css/custom.css
+
+
+//    _____   _   _   _______   _____     ____  
+//   |_   _| | \ | | |__   __| |  __ \   / __ \ 
+//     | |   |  \| |    | |    | |__) | | |  | |
+//     | |   | . ` |    | |    |  _  /  | |  | |
+//    _| |_  | |\  |    | |    | | \ \  | |__| |
+//   |_____| |_| \_|    |_|    |_|  \_\  \____/ 
+//                                              
+//        
+
+
+== Qui suis-je ?
+
+===  Jean-François GARREAU
+
+image::images/jf.png[role="float-left"]
+
+
+* Consultant IT chez SQLI
+ +
+ +
+* Développeur Android à mes heures perdues
+ +
+ +
+* Un des membres fondateur du GDG Nantes
+ +
+ +
+
+* Créateur de CineShowTime  image:images/cineshowtime.png[width="50"]
+ +
+ +
+
+image::images/twitter-icon.png[width="50", role="float-left"]
+
+@gdgnantes / @binomed / @uncle_bens1
+ +
+ +
+ +
+
+image::images/google-Plus-icon.png[width="50",role="float-left"]
+
+http://gplus.to/jefBinomed
+
+
+
+//     _____    ____    __  __   __  __              _____   _____    ______ 
+//    / ____|  / __ \  |  \/  | |  \/  |     /\     |_   _| |  __ \  |  ____|
+//   | (___   | |  | | | \  / | | \  / |    /  \      | |   | |__) | | |__   
+//    \___ \  | |  | | | |\/| | | |\/| |   / /\ \     | |   |  _  /  |  __|  
+//    ____) | | |__| | | |  | | | |  | |  / ____ \   _| |_  | | \ \  | |____ 
+//   |_____/   \____/  |_|  |_| |_|  |_| /_/    \_\ |_____| |_|  \_\ |______|
+//                                                                           
+//      
+
+
+== Sommaire
+
+Enjeux
+
+Les librairies à la rescousse
+	
+Solutions possibles
+	
+Cas pratique
+
+Liens
+
+//    ______ _   _      _ ______ _    ___   __
+//   |  ____| \ | |    | |  ____| |  | \ \ / /
+//   | |__  |  \| |    | | |__  | |  | |\ V / 
+//   |  __| | . ` |_   | |  __| | |  | | > <  
+//   | |____| |\  | |__| | |____| |__| |/ . \ 
+//   |______|_| \_|\____/|______|\____//_/ \_\
+//                                            
+//    
+
+[role="intro"]
+== Les enjeux
+
+image::images/nfc_logo.jpg[role="icone"]
+
+== Les enjeux
+
+* Eviter de perdre du temps à réinventer la roue
+
+* Gain de productivité
+
+* Facilité d'accès aux standards
+
+* Open Source ?
+
+[NOTES]
+====
+
+====
+
+//    _      _____ ____  _____            _____ _____  _____ ______  _____ 
+//   | |    |_   _|  _ \|  __ \     /\   |_   _|  __ \|_   _|  ____|/ ____|
+//   | |      | | | |_) | |__) |   /  \    | | | |__) | | | | |__  | (___  
+//   | |      | | |  _ <|  _  /   / /\ \   | | |  _  /  | | |  __|  \___ \ 
+//   | |____ _| |_| |_) | | \ \  / ____ \ _| |_| | \ \ _| |_| |____ ____) |
+//   |______|_____|____/|_|  \_\/_/    \_\_____|_|  \_\_____|______|_____/ 
+//                                                                         
+// 
+
+[role="intro"]
+== Les librairies à la rescousse
+
+image::images/nfc_card.jpg[role="icone"]
+
+== Les librairies Android
+
+* Se présentent sous 3 formes
+
+	Un jar à inclure dans un projet
+	Un projet android
+	Accès à un Intent
+
+* Ajout de dépendances
+
+image::images/apklib.png[]
+
+[NOTES]
+====
+	
+====
+
+== Les librairies Android
+
+* Avantages
+
+	Permet de faire ce que l'on veut
+	Open Source
+	Souvent modulables
+
+* Inconvénients
+
+	Gestion des versions
+	Gestion des conflits
+	Agrégation parfois compliquée
+	Poids de l'application pouvant grimper...
+
+[NOTES]
+====
+	
+====
+
+== Les librairies Android
+
+* Liste des librairies présentées
+
+** ActionBarSherlock
+
+	Gestion ActionBar
+
+**	ACRA
+
+	Remontée automatique de bugs
+
+** Compatibility package
+
+	Accès aux fragments depuis 1.6
+
+** ViewPager
+	
+	Navigation par pages facilitée
+
+* D'autres encore
+
+	HoloEveryWhere, Polaris, SlidingMenu, Android Annotations, RoboGuice, ...
+
+[NOTES]
+====
+Parler des autres à l'oral
+====
+
+//     _____  ____  _     _    _ _______ _____ ____  _   _  _____ 
+//    / ____|/ __ \| |   | |  | |__   __|_   _/ __ \| \ | |/ ____|
+//   | (___ | |  | | |   | |  | |  | |    | || |  | |  \| | (___  
+//    \___ \| |  | | |   | |  | |  | |    | || |  | | . ` |\___ \ 
+//    ____) | |__| | |___| |__| |  | |   _| || |__| | |\  |____) |
+//   |_____/ \____/|______\____/   |_|  |_____\____/|_| \_|_____/ 
+//                                                                
+//    
+
+[role="intro"]
+== Solutions possibles
+
+image::images/iso-logo.png[role="icone"]
+
+== Solutions possibles
+
+* Android Bootstrap
+
+* Android KickStartR
+
+* DIY
+
+* Ultimate Android Library / Android ToolBox / Anrdoid UI Patterns
+
+[NOTES]
+====
+Dire que le dernier n'est plus dispo mais qu'on peut trouver l'apk sur le net
+====
+
+//     _____           _____   _____  _____         _______ _____ ____  _    _ ______ 
+//    / ____|   /\    / ____| |  __ \|  __ \     /\|__   __|_   _/ __ \| |  | |  ____|
+//   | |       /  \  | (___   | |__) | |__) |   /  \  | |    | || |  | | |  | | |__   
+//   | |      / /\ \  \___ \  |  ___/|  _  /   / /\ \ | |    | || |  | | |  | |  __|  
+//   | |____ / ____ \ ____) | | |    | | \ \  / ____ \| |   _| || |__| | |__| | |____ 
+//    \_____/_/    \_\_____/  |_|    |_|  \_\/_/    \_\_|  |_____\___\_\\____/|______|
+//                                                                                    
+//        
+
+[role="intro"]
+== Cas Pratique
+
+image::images/google-wallet-logo.jpg[role="icone"]
+
+== Application DroidCon
+
+Objectif : 
+
+* Créons une application DroidCon from scratch
+
+* Manipulons des librairies
+
+* Retour sur certains pièges
+
+
+[NOTES]
+====
+
+====
+
+== Librairies Utilisées
+
+* Support librairie v4
+* ACRA
+* HoloEveryWhere
+* ActionBarSherlock
+* QuickActions
+* SlidingMenu
+* RoboSpice
+* RoboGuice
+* Polaris
+* ViewPagerIndicator
+* UrlImageViewerHelper
+
+== Etape 1
+=== Déterminer son arbre de dépendances
+
+// Mettre une image des dépendances
+
+
+[NOTES]
+====
+====
+
+== Etape 2
+=== Support Librairie V4
+	
+Sera héritée des autres libraires
+
+[NOTES]
+====
+====
+
+== Etape 3
+=== ACRA
+
+* Copier le jar dans libs
+
+	Ou ajouter la dépendance suivante : //MAVEN
+
+* Configurer le backend 
+* Configurer la classe Application
+
+[NOTES]
+====
+====
+
+== Etape 4
+=== ActionBarSherlock
+
+* Importer dans le workspace le projet ActionBarSherlock
+
+[NOTES]
+====
+Dire que l'ajout du projet dans eclipse est systématique ! 
+
+====
+
+== Etape 5 
+=== HoloEverywhere
+
+* Important dansle workspace le projet
+
+* Gestion des dépendances
+
+	HoloEveryWhere -> ActionBarSherlock
+
+* Ajout dans le manifest.xml le thème héritant de Holo
+
+[NOTES]
+====
+====
+
+== Etape 6 
+=== ViewPageIndicator
+
+* Importer dans le workspace le projet
+
+* Gestion des dépendances
+
+	ViewPagerIndicator -> HoloEveryWhere
+
+[NOTES]
+====
+====
+
+== Etape 7 
+=== Sliding Menu
+
+* Importer dans le workspace le projet
+
+* Gestion des dépendances
+
+	Sliding Menu -> ViewPagerIndicator
+
+	BreizhCamp -> Sliding Menu
+
+* Ajout d'une classe utilitaire pour faire marcher ABS et sliding menu
+
+// A remplacer par Navigation Drawer
+
+[NOTES]
+====
+====
+
+== Etape 8
+=== RoboSpice
+
+* Ajout des librairies dans libs
+
+	Guava-13.0.1
+	jackson-code-asl-1.9.10
+	jackson-mapper-asl-1.9.10
+	spring-android-core-1.0.0.RELEASE
+	spring-android-rest-template-1.0.0.RELEASE
+	robospice-1.1.0
+	robospice-cache-1.1.0
+	robospice-spring-android-1.1.0
+
+* Ajout du service RoboSpice
+
+* Ajout des autorisations
+
+// A remplacer par Volley
+
+[NOTES]
+====
+====
+
+== Etape 9
+=== Roboguice
+
+* Ajout des librairies dans libs
+
+	guice-3.0-no_aop
+	javax.inject-1
+	roboguice-2.0
+
+* Ajout des classes utilitaires
+
+
+[NOTES]
+====
+Toujours pour les mêmes raison, on a besoin d'avoir des classes de haut niveau pour marcher avec ABS
+====
+
+== Etape 10
+=== Maps V2
+
+// A faire
+
+
+== Etape 11 
+=== UrlImageViewHelper
+
+* Import du projet dans le workspace
+
+* Gestion des dépendances
+
+	BreizhCamp -> UrlImageViewHelper
+
+// Voir si Volley peut pas remplacer ça ?
+
+[NOTES]
+====
+====
+
+== Etape 12
+=== Quickactions
+
+* Import du projet dans le workspace
+
+* Gestion des dépendances
+
+	BreizhCamp -> QuickActions
+
+== Etape 13
+=== Design Pattern NavigationDrawer
+
+* Ajout d'une classe utilitaire
+
+* Ajout d'un Fragment
+
+// A voir si on fait tout ?
+
+== Bonne pratique d'évolution
+
+* Suivre les projets :
+
+	 AndroidBootStrap : http://wwww.androidboostrap.com
+	 AndroidKickStartR : http://wwww/androidkickstartr.com
+
+* Se créer un répertoire dans son FileSystem contentant les clones des librairies
+
+	Pouvoir récupérer les dernières évolutions
+	Pouvoir gérer sans interférences dans son projet les merges
+
+* Toujours créer des classes de helpers plutôt que de surcharger la librairie elle même
+
+
+
+
+//    _        _____   ______   _   _    _____ 
+//   | |      |_   _| |  ____| | \ | |  / ____|
+//   | |        | |   | |__    |  \| | | (___  
+//   | |        | |   |  __|   | . ` |  \___ \ 
+//   | |____   _| |_  | |____  | |\  |  ____) |
+//   |______| |_____| |______| |_| \_| |_____/ 
+//                                             
+//   
+
+[role="intro"]
+== Liens
+
+image::images/link.png[role="icone"]
+
+//Refaire tous les liens
+
+//     ____    _    _   ______    _____   _______   _____    ____    _   _    _____ 
+//    / __ \  | |  | | |  ____|  / ____| |__   __| |_   _|  / __ \  | \ | |  / ____|
+//   | |  | | | |  | | | |__    | (___      | |      | |   | |  | | |  \| | | (___  
+//   | |  | | | |  | | |  __|    \___ \     | |      | |   | |  | | | . ` |  \___ \ 
+//   | |__| | | |__| | | |____   ____) |    | |     _| |_  | |__| | | |\  |  ____) |
+//    \___\_\  \____/  |______| |_____/     |_|    |_____|  \____/  |_| \_| |_____/ 
+//                                                                                  
+//   
+
+[role="intro fond_fin"]
+== Questions
+
+image::images/andquestionsag.jpg[role="icone"]
