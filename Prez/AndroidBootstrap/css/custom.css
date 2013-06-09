@@ -16,43 +16,44 @@ img.float-right{
   margin-left: 10px;
 }
 
-#ndef_header{
-  height: 90px;
-  width: 360px;
+
+img.company_logo{
+  position:absolute;
+  bottom: 20%;
+  left: 20%;
+  width:  150px;
+}
+
+img.gdg_logo{
+  position:absolute;
+  bottom: 20%;
+  right: 20%;
+  width:  150px;
+}
+
+.logo_twitter,.logo_gplus{
   position: absolute;
-  top: 155px;
-  background: rgba(252,203,206,0.5);
+  left:25%;  
+  width: 40px;
+}
+.logo_twitter{
+  top: 50px;
+}
+
+.logo_gplus{
+ top: 100px;
+}
+
+.twitters_account, .gplus_account{
+  position: absolute;
+  left:30%; 
+}
+
+.twitters_account{
+  top: 50px;
 }
 
 
-#ndef_length_type{
-  height: 90px;
-  width: 360px;
-  position: absolute;
-  top: 205px;
-  background: rgba(252,203,206,0.5);
-}
-
-#ndef_length_payload{
-  height: 90px;
-  width: 360px;
-  position: absolute;
-  top: 270px;
-  background: rgba(252,203,206,0.5);
-}
-
-#ndef_type_id{
-  height: 155px;
-  width: 360px;
-  position: absolute;
-  top: 335px;
-  background: rgba(252,203,206,0.5);
-}
-
-#ndef_payload{
-  height: 90px;
-  width: 360px;
-  position: absolute;
-  top: 455px;
-  background: rgba(252,203,206,0.5);
+.gplus_account{
+ top: 100px;
 }

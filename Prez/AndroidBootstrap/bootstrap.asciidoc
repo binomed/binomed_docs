@@ -7,12 +7,12 @@
 // dzslides en embarquant les ressources
 // asciidoc -a data-uri -a linkcss! <nomfichier>.asciidoc
 = Android BootStrap
-Jean-François Garreau, GDG Nantes, SQLI,  DroidCon FR 2013
+Jean-François Garreau, GDG Nantes, SQLI,  Breizhcamp 2013
 v1.0
 //:doctitle: Titre de la présentation, sans mise en avant de texte sous différentes formes.
-:author: Jean-François Garreau, GDG Nantes, SQLI, Droid Con FR 2013
+:author: Breizhcamp 2013
 :title: Android BootStrap
-:subtitle: Où Comment faire des applications avec les librairies
+:subtitle: Guide de l'application à librairie
 :description: Rex de l'utilisation des librairies
 :copyright: Copyright 2013 SQLI
 //:website: TBD
@@ -42,35 +42,15 @@ v1.0
 
 == Qui suis-je ?
 
-===  Jean-François GARREAU
+===  Jean-François GARREAU, Consultant IT SQLI
 
-image::images/jf.png[role="float-left"]
+image::images/jf.png[role="middle"]
 
 
-* Consultant IT chez SQLI
- +
- +
-* Développeur Android à mes heures perdues
- +
- +
-* Un des membres fondateur du GDG Nantes
- +
- +
+image::images/sqli_logo.png[role="company_logo"]
 
-* Créateur de CineShowTime  image:images/cineshowtime.png[width="50"]
- +
- +
+image::images/GDG-Logo-carre.png[role="gdg_logo"]
 
-image::images/twitter-icon.png[width="50", role="float-left"]
-
-@gdgnantes / @binomed / @uncle_bens1
- +
- +
- +
-
-image::images/google-Plus-icon.png[width="50",role="float-left"]
-
-http://gplus.to/jefBinomed
 
 
 
@@ -86,14 +66,14 @@ http://gplus.to/jefBinomed
 
 == Sommaire
 
-Enjeux
-
-Les librairies à la rescousse
-	
-Solutions possibles
-	
-Cas pratique
-
+Enjeux +
+ +
+Les librairies à la rescousse +
+ +	
+Solutions possibles +
+ +	
+Cas pratique +
+ +
 Liens
 
 //    ______ _   _      _ ______ _    ___   __
@@ -170,6 +150,7 @@ image::images/apklib.png[]
 	Gestion des conflits
 	Agrégation parfois compliquée
 	Poids de l'application pouvant grimper...
+	Complication de l'environement de développement 
 
 [NOTES]
 ====
@@ -198,7 +179,7 @@ image::images/apklib.png[]
 
 * D'autres encore
 
-	HoloEveryWhere, Polaris, SlidingMenu, Android Annotations, RoboGuice, ...
+	HoloEveryWhere, MapsV2, NavifationDrawer, Android Annotations, RoboGuice, ...
 
 [NOTES]
 ====
@@ -221,9 +202,9 @@ image::images/iso-logo.png[role="icone"]
 
 == Solutions possibles
 
-* Android Bootstrap
+* Android Bootstrap[http://www.androidbootstrap.com/]
 
-* Android KickStartR
+* Android KickStartR[http://androidkickstartr.com/]
 
 * DIY
 
@@ -232,6 +213,8 @@ image::images/iso-logo.png[role="icone"]
 [NOTES]
 ====
 Dire que le dernier n'est plus dispo mais qu'on peut trouver l'apk sur le net
+
+On fait du DIY car pour le moment ces solutions ne sont pas assez complètes...
 ====
 
 //     _____           _____   _____  _____         _______ _____ ____  _    _ ______ 
@@ -248,35 +231,58 @@ Dire que le dernier n'est plus dispo mais qu'on peut trouver l'apk sur le net
 
 image::images/google-wallet-logo.jpg[role="icone"]
 
-== Application DroidCon
+== Application BreizhCamp
+=== Objectif : 
 
-Objectif : 
-
-* Créons une application DroidCon from scratch
+* Créons une application Breizhcamp from scratch
 
 * Manipulons des librairies
 
 * Retour sur certains pièges
 
+* Cherchons la solution la plus proche des solutions Google !
+
 
 [NOTES]
 ====
-
+On cherche un truc proche de Google pour assurer la maintenance
 ====
+
+== Application BreizhCamp
+=== Besoins
+
+* Requêtes
+* Cartes
+* Images
+* Popups
+* Pages
+* Gestion des crash
+* IHM unifiée
+* Injection de code
+* ActionBar
+* Sliging Menu
+
+[NOTES]
+====
+On cherche un truc proche de Google pour assurer la maintenance
+====
+
 
 == Librairies Utilisées
 
-* Support librairie v4
-* ACRA
-* HoloEveryWhere
-* ActionBarSherlock
-* QuickActions
-* SlidingMenu
-* RoboSpice
-* RoboGuice
-* Polaris
-* ViewPagerIndicator
-* UrlImageViewerHelper
+
+
+* Requêtes => Volley
+* Cartes => Maps V2
+* Images => Volley
+* Popups => QuickActions
+* Pages => ViewPagerIndicator + Support Librairy v4
+* Gestion des crash => ACRA
+* IHM unifiée => HoloEveryWhere
+* Injection de code => RoboGuice
+* ActionBar => ActionBarSherlock
+* Sliging Menu => NavigationDrawer
+
 
 == Etape 1
 === Déterminer son arbre de dépendances
@@ -286,91 +292,114 @@ Objectif :
 
 [NOTES]
 ====
+On fait ça pour gérer au mieux les dépendances et donc éviter les doublons !
 ====
 
 == Etape 2
-=== Support Librairie V4
+=== Maven / pas de maven / Graddle ?
+
+Maven : 
+
+	Bien pour sonar et pour les librairies jar classiques
+
+	Moins bien pour le poste de développement et pour les apklibs...
+
+Pas de Maven : 
+
+	DIY... faut se structurer, peut être problématique vis à vis de l'intégration continue.
+
+Graddle : 
+
+	Plus pratique sur l'intégration (cependant pas encore testé :) ). Peut se mixer avec Maven pour les dépendances classiques
+
+	Mauvaise gestion des apklibs (obligé d'avoir le projet à côté de son projet)
+
+[NOTES]
+====
+Graddle peut être une bonne nouvelle alternative. Je penses choisir ça prochainement
+Aujourd'hui tout évolue vite.
+====
+
+== Support Librairie V4
 	
-Sera héritée des autres libraires
+* Fragments
+
+* NavigationDrawer
+
+* ViewPager
+
+* ...
+
+Doit être ajouté tout le temps dans /libs
 
 [NOTES]
 ====
 ====
 
-== Etape 3
-=== ACRA
+== ACRA
+=== Report de crashs faciles
 
-* Copier le jar dans libs
+* Contextualisation des crashs
 
-	Ou ajouter la dépendance suivante : //MAVEN
+* Possibiltié de backend graphique
 
-* Configurer le backend 
-* Configurer la classe Application
+* Intégration par jar dans /libs
+
+[NOTES]
+====
+Config Application + options
+====
+
+== ActionBarSherlock
+=== L'actionBar pour tous
+
+* Intégration en tant qu'apklib
 
 [NOTES]
 ====
 ====
 
-== Etape 4
-=== ActionBarSherlock
+== HoloEverywhere
+=== Holo 
 
-* Importer dans le workspace le projet ActionBarSherlock
+* Intégration en tant qu'apklib
 
-[NOTES]
-====
-Dire que l'ajout du projet dans eclipse est systématique ! 
-
-====
-
-== Etape 5 
-=== HoloEverywhere
-
-* Important dansle workspace le projet
-
-* Gestion des dépendances
+* Gestion des dépendances ! 
 
 	HoloEveryWhere -> ActionBarSherlock
 
-* Ajout dans le manifest.xml le thème héritant de Holo
+
+[NOTES]
+====
+Le thème doit hériter de Holo
+====
+
+== ViewPageIndicator
+=== De beaux indicateurs !
+
+* Intégration en tant qu'apklib
+
+
+[NOTES]
+====
+Utilisation simple du titleIndicator
+====
+
+== NavigationDrawer
+
+* Via la support library
+
+* Classe de plus haut niveau recommandée.
+
+* Les Fragments au coeur de l'implémentation.
 
 [NOTES]
 ====
 ====
 
-== Etape 6 
-=== ViewPageIndicator
+== RoboSpice ou Volley ?
 
-* Importer dans le workspace le projet
-
-* Gestion des dépendances
-
-	ViewPagerIndicator -> HoloEveryWhere
-
-[NOTES]
-====
-====
-
-== Etape 7 
-=== Sliding Menu
-
-* Importer dans le workspace le projet
-
-* Gestion des dépendances
-
-	Sliding Menu -> ViewPagerIndicator
-
-	BreizhCamp -> Sliding Menu
-
-* Ajout d'une classe utilitaire pour faire marcher ABS et sliding menu
-
-// A remplacer par Navigation Drawer
-
-[NOTES]
-====
-====
-
-== Etape 8
-=== RoboSpice
+* Apklib
 
 * Ajout des librairies dans libs
 
@@ -391,10 +420,11 @@ Dire que l'ajout du projet dans eclipse est systématique !
 
 [NOTES]
 ====
+facilite l'inclusion
 ====
 
-== Etape 9
-=== Roboguice
+== Roboguice
+=== L'injection des dépendances
 
 * Ajout des librairies dans libs
 
@@ -404,20 +434,23 @@ Dire que l'ajout du projet dans eclipse est systématique !
 
 * Ajout des classes utilitaires
 
+* Oposant : Dagger / Android Annoations !
+
+// Mettre les logos
 
 [NOTES]
 ====
-Toujours pour les mêmes raison, on a besoin d'avoir des classes de haut niveau pour marcher avec ABS
+
 ====
 
-== Etape 10
-=== Maps V2
+== Maps V2
 
-// A faire
+* à Intégrer en tant qu'apklib
+
+* Clé Maps obligatoire !
 
 
-== Etape 11 
-=== UrlImageViewHelper
+== UrlImageViewHelper
 
 * Import du projet dans le workspace
 
@@ -431,23 +464,26 @@ Toujours pour les mêmes raison, on a besoin d'avoir des classes de haut niveau 
 ====
 ====
 
-== Etape 12
-=== Quickactions
+== Quickactions
+=== Les popups faciles
 
-* Import du projet dans le workspace
+* à intégrer en tant qu'apklib
 
-* Gestion des dépendances
+== Pièges
 
-	BreizhCamp -> QuickActions
+* RoboSpice & ABS
 
-== Etape 13
-=== Design Pattern NavigationDrawer
+* ABS & NavigationDrawer
 
-* Ajout d'une classe utilitaire
+* Holo & ABS
 
-* Ajout d'un Fragment
+* L'héritage est le problème
 
-// A voir si on fait tout ?
+[NOTES]
+====
+ABS est au cours des problèmes mais est indispensable 
+====
+
 
 == Bonne pratique d'évolution
 
@@ -464,6 +500,36 @@ Toujours pour les mêmes raison, on a besoin d'avoir des classes de haut niveau 
 * Toujours créer des classes de helpers plutôt que de surcharger la librairie elle même
 
 
+//     _____ ____  _   _  _____ _     _    _  _____ _____ ____  _   _ 
+//    / ____/ __ \| \ | |/ ____| |   | |  | |/ ____|_   _/ __ \| \ | |
+//   | |   | |  | |  \| | |    | |   | |  | | (___   | || |  | |  \| |
+//   | |   | |  | | . ` | |    | |   | |  | |\___ \  | || |  | | . ` |
+//   | |___| |__| | |\  | |____| |___| |__| |____) |_| || |__| | |\  |
+//    \_____\____/|_| \_|\_____|______\____/|_____/|_____\____/|_| \_|
+//                                                                    
+//  
+
+[role="intro"]
+== Conclusion
+
+image::images/link.png[role="icone"]
+
+Les librairies sont nos amis
+
+Oui mais...
+
+// Statement 
+
+Attention à l'intégration !
+
+Important d'intentifier son besoin !
+
+Important de connaître les parades d'intégration ! 
+
+Le poids n'est pas un problème !  progard à la rescousse.
+
+
+//Refaire tous les liens
 
 
 //    _        _____   ______   _   _    _____ 
@@ -492,6 +558,17 @@ image::images/link.png[role="icone"]
 //   
 
 [role="intro fond_fin"]
-== Questions
+== questions
 
 image::images/andquestionsag.jpg[role="icone"]
+
+
+image::images/twitter-icon.png[width="50", role="logo_twitter"]
+
+[role="twitters_account"]
+@gdgnantes / @binomed / @uncle_bens1
+ 
+image::images/google-Plus-icon.png[width="50",role="logo_gplus"]
+
+[role="gplus_account"]
+http://gplus.to/jefBinomed 
