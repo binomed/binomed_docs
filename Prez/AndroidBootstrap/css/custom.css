@@ -31,29 +31,46 @@ img.gdg_logo{
   width:  150px;
 }
 
+.avatar{
+  -moz-box-shadow:  2px 2px 2px 3px #CCCCCC;        
+  -webkit-box-shadow:  2px 2px 2px 3px #CCCCCC;        
+  box-shadow:  2px 2px 2px 3px #CCCCCC;
+  width: 200px;
+}
+
+.logo_twitter, .logo_gplus, .twitters_account, .gplus_account{
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
 .logo_twitter,.logo_gplus{
   position: absolute;
-  left:25%;  
   width: 40px;
 }
 .logo_twitter{
-  top: 50px;
+  top: 290px;
+  left:35%;  
 }
 
 .logo_gplus{
- top: 100px;
+ top: 335px;
+  left:40%;  
 }
 
 .twitters_account, .gplus_account{
   position: absolute;
-  left:30%; 
+  font-size: 20px;
 }
 
 .twitters_account{
-  top: 50px;
+  top: 215px;
+  left:36%; 
 }
 
 
 .gplus_account{
- top: 100px;
+ top: 258px;
+  left:41%; 
 }

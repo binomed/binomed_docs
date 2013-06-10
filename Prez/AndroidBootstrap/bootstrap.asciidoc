@@ -44,7 +44,7 @@ v1.0
 
 ===  Jean-François GARREAU, Consultant IT SQLI
 
-image::images/jf.png[role="middle"]
+image::images/jf.jpg[role="middle avatar"]
 
 
 image::images/sqli_logo.png[role="company_logo"]
@@ -89,6 +89,8 @@ Liens
 == Les enjeux
 
 image::images/nfc_logo.jpg[role="icone"]
+
+image:images/fond_enjeux.png[]
 
 == Les enjeux
 
@@ -558,15 +560,15 @@ image::images/link.png[role="icone"]
 //   
 
 [role="intro fond_fin"]
-== questions
+== Merci
 
-image::images/andquestionsag.jpg[role="icone"]
+image::images/andquestionsag.png[role="icone"]
 
 
 image::images/twitter-icon.png[width="50", role="logo_twitter"]
 
 [role="twitters_account"]
-@gdgnantes / @binomed / @uncle_bens1
+@gdgnantes / @binomed
  
 image::images/google-Plus-icon.png[width="50",role="logo_gplus"]
 
