@@ -12,7 +12,7 @@ v1.0
 //:doctitle: Titre de la présentation, sans mise en avant de texte sous différentes formes.
 :author: Breizhcamp 2013
 :title: Android BootStrap
-:subtitle: Guide de l'application à librairie
+:subtitle: Rex sur les librairies Android
 :description: Rex de l'utilisation des librairies
 :copyright: Copyright 2013 SQLI
 //:website: TBD
@@ -68,7 +68,7 @@ image::images/GDG-Logo-carre.png[role="gdg_logo"]
 
 Enjeux +
  +
-Les librairies à la rescousse +
+Les librairies à notre secours +
  +	
 Solutions possibles +
  +	
@@ -317,7 +317,7 @@ image::images/ic_launcher.png[role="middle"]
 * IHM unifiée
 * Injection de code
 * ActionBar
-* Sliging Menu
+* Sliding Menu
 
 [NOTES]
 ====
@@ -353,7 +353,7 @@ On fait ça pour gérer au mieux les dépendances et donc éviter les doublons !
 ====
 
 == Etape 2
-=== Maven / pas de maven / Graddle ?
+=== Maven / pas de maven / Gradle ?
 
 Maven : 
 
@@ -365,7 +365,7 @@ Pas de Maven :
 
 * DIY... faut se structurer, peut être problématique vis à vis de l'intégration continue.
 
-Graddle : 
+Gradle : 
 
 * Plus pratique sur l'intégration (cependant pas encore testé :) ). Peut se mixer avec Maven pour les dépendances classiques
 
@@ -373,7 +373,7 @@ Graddle :
 
 [NOTES]
 ====
-Graddle peut être une bonne nouvelle alternative. Je penses choisir ça prochainement
+Gradle peut être une bonne nouvelle alternative. Je penses choisir ça prochainement
 Aujourd'hui tout évolue vite.
 ====
 
@@ -502,7 +502,7 @@ image::images/roboguice.png[height="96px"]
 
 * Ajout des classes utilitaires
 
-* Oposant : Dagger / Android Annoations !
+* Opposants : Dagger / Android Annoations !
 
 image::images/dagger_logo.png[height="96px", role="float-left"]
 
@@ -608,7 +608,7 @@ image:images/fond_conclusion.png[]
 == Conlusion
 
 [{middle}]
-Les librairies sont nos amis
+Les librairies sont nos amies
 
 == Conlusion
 
