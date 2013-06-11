@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html class="aspect-4-3">
+  <head>
+    <meta charset="utf-8">
+    <title>Android BootStrap</title>
+    <meta name="description" content="Rex de l'utilisation des librairies">
+    <meta name="author" content="Breizhcamp 2013">
+    <meta name="copyright" content="Copyright 2013 SQLI">
+    <meta name="generator" content="AsciiDoc 8.6.8, dzslides backend">
+    <meta name="presdate" content="v1.0">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald">
+    <link rel="stylesheet" href="./dzslides/themes/highlight/googlecode.min.css">
+    <link rel="stylesheet" href="./dzslides/themes/style/sqli.css">
+    <!-- bug in full screen image if include dzslides.css before ours -->
+    <link rel="stylesheet" href="./dzslides/core/dzslides.css">
+    <link rel="stylesheet" href="./dzslides/themes/transition/fade.css">
+    <link rel="stylesheet" href="css/custom.css">
+  </head>
+  <body>
+    <section class="title">
+      <h1>Android BootStrap</h1>
+<div class="subtitle"><h2 class="subtitle">Guide de l'application à librairie</h2></div>
+      <footer>Breizhcamp 2013</footer>
+    </section>
+<section>
+<h2>Qui suis-je ?</h2>
+<article>
+<div class="sect2">
+<h3 id="_jean_françois_garreau_consultant_it_sqli">Jean-François GARREAU, Consultant IT SQLI</h3>
+
+<img src="images/jf.jpg" alt="images/jf.jpg" class="middle avatar">
+
+
+<img src="images/sqli_logo.png" alt="images/sqli_logo.png" class="company_logo">
+
+
+<img src="images/GDG-Logo-carre.png" alt="images/GDG-Logo-carre.png" class="gdg_logo">
+
+</div>
+</article>
+</section>
+<section>
+<h2>Sommaire</h2>
+<article>
+<p>Enjeux<br>
+<br>
+Les librairies à la rescousse<br>
+<br>
+Solutions possibles<br>
+<br>
+Cas pratique<br>
+<br>
+Liens</p>
+</article>
+</section>
+<section class="intro pagetransition">
+<h2>Les enjeux</h2>
+<article>
+<p><span class="image">
+<img src="images/fond_enjeux.png" alt="images/fond_enjeux.png">
+</span></p>
+</article>
+</section>
+<section>
+<h2>Les enjeux</h2>
+<article>
+
+<img src="images/build_great_apps.jpg" alt="images/build_great_apps.jpg" width="450px" class="middle">
+
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>Perte de temps / Productivité / Standards / Open Source / Retro compatibilité</p>
+</details>
+</article>
+</section>
+<section class="intro pagetransition">
+<h2>Les librairies à la rescousse</h2>
+<article>
+<p><span class="image">
+<img src="images/fond_lib_rescousse.png" alt="images/fond_lib_rescousse.png">
+</span></p>
+</article>
+</section>
+<section>
+<h2>Les librairies Android</h2>
+<article>
+<ul>
+<li>
+Se présentent sous 3 formes<br>
+<br>
+<br>
+        Un jar à inclure dans un projet
+<div class="literal">
+<pre class="literal">Un projet android</pre>
+</div>
+<div class="literal">
+<pre class="literal">Accès à un Intent</pre>
+</div>
+</li>
+<li>
+Ajout de dépendances<br>
+<br>
+</li>
+</ul>
+
+<img src="images/apklib.png" alt="images/apklib.png" class="middle">
+
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+</details>
+</article>
+</section>
+<section>
+<h2>Les librairies Android</h2>
+<article>
+<div class="sect2">
+<h3 id="_avantages">Avantages</h3>
+<br><br>
+
+<img src="images/JesusLoves.png" alt="images/JesusLoves.png" width="300px" class="float-left">
+
+<p>Respect des standards<br>
+<br>
+<br>
+Permet de faire ce que l&#8217;on veut<br>
+<br>
+<br>
+Open Source<br>
+<br>
+<br>
+Souvent modulables</p>
+</div>
+</article>
+</section>
+<section>
+<h2>Les librairies Android</h2>
+<article>
+<div class="sect2">
+<h3 id="_inconvénients">Inconvénients</h3>
+<br><br>
+
+<img src="images/facepalm.jpg" alt="images/facepalm.jpg" width="300px" class="float-left">
+
+<p>Gestion des versions<br>
+<br>
+<br>
+Gestion des conflits<br>
+<br>
+<br>
+Agrégation parfois compliquée<br>
+<br>
+<br>
+Poids de l&#8217;application pouvant grimper&#8230;<br>
+<br>
+<br>
+Complication de l&#8217;environement de développement</p>
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+</details>
+</div>
+</article>
+</section>
+<section>
+<h2>Les librairies Android</h2>
+<article>
+<ul>
+<li>
+Liste des librairies présentées
+<ul>
+<li>
+ActionBarSherlock
+<div class="literal">
+<pre class="literal">Gestion ActionBar</pre>
+</div>
+</li>
+<li>
+ACRA
+<div class="literal">
+<pre class="literal">Remontée automatique de bugs</pre>
+</div>
+</li>
+<li>
+Compatibility package
+<div class="literal">
+<pre class="literal">Accès aux fragments depuis 1.6</pre>
+</div>
+</li>
+<li>
+ViewPager
+<div class="literal">
+<pre class="literal">Navigation par pages facilitée</pre>
+</div>
+</li>
+</ul>
+</li>
+<li>
+D&#8217;autres encore
+<div class="literal">
+<pre class="literal">HoloEveryWhere, MapsV2, NavifationDrawer, Android Annotations, RoboGuice, ...</pre>
+</div>
+</li>
+</ul>
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>Parler des autres à l&#8217;oral</p>
+</details>
+</article>
+</section>
+<section class="intro pagetransition">
+<h2>Solutions possibles</h2>
+<article>
+<p><span class="image">
+<img src="images/fond_solutions.png" alt="images/fond_solutions.png">
+</span></p>
+</article>
+</section>
+<section>
+<h2>Solutions possibles</h2>
+<article>
+<p><a href="http://www.androidbootstrap.com/">Android Bootstrap</a><br>
+<br>
+<br>
+<br>
+<a href="http://androidkickstartr.com/">Android KickStartR</a><br>
+<br>
+<br>
+<br>
+DIY<br>
+<br>
+<br>
+<br>
+<a href="http://www.theultimateandroidlibrary.com/">Ultimate Android Library</a> / <a href="http://androidweekly.net/toolbox">Android ToolBox</a> / <a href="https://plus.google.com/108176685096570584154/posts">Anrdoid UI Patterns</a></p>
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>Dire que le dernier n&#8217;est plus dispo mais qu&#8217;on peut trouver l&#8217;apk sur le net</p>
+<p>On fait du DIY car pour le moment ces solutions ne sont pas assez complètes&#8230;</p>
+</details>
+</article>
+</section>
+<section class="intro pagetransition">
+<h2>Cas Pratique</h2>
+<article>
+<p><span class="image">
+<img src="images/fond_cas_utilisations.png" alt="images/fond_cas_utilisations.png">
+</span></p>
+</article>
+</section>
+<section>
+<h2>Application BreizhCamp</h2>
+<article>
+
+<img src="images/BreizhCamp_logo.png" alt="images/BreizhCamp_logo.png" width="100px" class="middle">
+
+<br>
+<p><a href="http://goo.gl/SzhBx">http://goo.gl/SzhBx</a></p>
+<br>
+
+<img src="images/breizhcamp_screen1.png" alt="images/breizhcamp_screen1.png" width="200px" class="float-left">
+
+
+<img src="images/breizhcamp_screen2.png" alt="images/breizhcamp_screen2.png" width="200px" class="float-left">
+
+
+<img src="images/breizhcamp_screen3.png" alt="images/breizhcamp_screen3.png" width="200px" class="float-left">
+
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<ul>
+<li>
+Créons une application Breizhcamp from scratch
+</li>
+<li>
+Manipulons des librairies
+</li>
+<li>
+Retour sur certains pièges
+</li>
+<li>
+Cherchons la solution la plus proche des solutions Google !
+</li>
+</ul>
+</details>
+</article>
+</section>
+<section>
+<h2>Application BreizhCamp</h2>
+<article>
+<div class="sect2">
+<h3 id="_démo">Démo</h3>
+
+<img src="images/ic_launcher.png" alt="images/ic_launcher.png" class="middle">
+
+</div>
+</article>
+</section>
+<section>
+<h2>Application BreizhCamp</h2>
+<article>
+<div class="sect2">
+<h3 id="_besoins">Besoins</h3>
+<ul>
+<li>
+Requêtes
+</li>
+<li>
+Cartes
+</li>
+<li>
+Images
+</li>
+<li>
+Popups
+</li>
+<li>
+Pages
+</li>
+<li>
+Gestion des crash
+</li>
+<li>
+IHM unifiée
+</li>
+<li>
+Injection de code
+</li>
+<li>
+ActionBar
+</li>
+<li>
+Sliging Menu
+</li>
+</ul>
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>On cherche un truc proche de Google pour assurer la maintenance</p>
+</details>
+</div>
+</article>
+</section>
+<section>
+<h2>Librairies Utilisées</h2>
+<article>
+<ul>
+<li>
+Requêtes &#8658; Volley
+</li>
+<li>
+Cartes &#8658; Maps V2
+</li>
+<li>
+Images &#8658; Volley
+</li>
+<li>
+Popups &#8658; QuickActions
+</li>
+<li>
+Pages &#8658; ViewPagerIndicator + Support Librairy v4
+</li>
+<li>
+Gestion des crash &#8658; ACRA
+</li>
+<li>
+IHM unifiée &#8658; HoloEveryWhere
+</li>
+<li>
+Injection de code &#8658; RoboGuice
+</li>
+<li>
+ActionBar &#8658; ActionBarSherlock
+</li>
+<li>
+Sliging Menu &#8658; NavigationDrawer
+</li>
+</ul>
+</article>
+</section>
+<section>
+<h2>Etape 1</h2>
+<article>
+<div class="sect2">
+<h3 id="_déterminer_son_arbre_de_dépendances">Déterminer son arbre de dépendances</h3>
+
+<img src="images/dependances.png" alt="images/dependances.png" height="400px" class="middle">
+
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>On fait ça pour gérer au mieux les dépendances et donc éviter les doublons !</p>
+</details>
+</div>
+</article>
+</section>
+<section>
+<h2>Etape 2</h2>
+<article>
+<div class="sect2">
+<h3 id="_maven_pas_de_maven_graddle">Maven / pas de maven / Graddle ?</h3>
+<p>Maven :</p>
+<ul>
+<li>
+Bien pour sonar et pour les librairies jar classiques
+</li>
+<li>
+Moins bien pour le poste de développement et pour les apklibs&#8230;
+</li>
+</ul>
+<p>Pas de Maven :</p>
+<ul>
+<li>
+DIY&#8230; faut se structurer, peut être problématique vis à vis de l&#8217;intégration continue.
+</li>
+</ul>
+<p>Graddle :</p>
+<ul>
+<li>
+Plus pratique sur l&#8217;intégration (cependant pas encore testé :) ). Peut se mixer avec Maven pour les dépendances classiques
+</li>
+<li>
+Mauvaise gestion des apklibs (obligé d&#8217;avoir le projet à côté de son projet)
+</li>
+</ul>
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>Graddle peut être une bonne nouvelle alternative. Je penses choisir ça prochainement
+Aujourd&#8217;hui tout évolue vite.</p>
+</details>
+</div>
+</article>
+</section>
+<section>
+<h2>Support Librairie V4</h2>
+<article>
+
+<img src="images/ic_launcher_xhdpi.png" alt="images/ic_launcher_xhdpi.png" height="96px">
+
+<ul>
+<li>
+Fragments
+</li>
+<li>
+NavigationDrawer
+</li>
+<li>
+ViewPager
+</li>
+<li>
+&#8230;
+</li>
+<li>
+Doit être ajouté tout le temps dans /libs
+</li>
+</ul>
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>Pour navigation drawer, les fragments sont au coeurs du mécanisme</p>
+</details>
+</article>
+</section>
+<section>
+<h2>ACRA</h2>
+<article>
+<div class="sect2">
+<h3 id="_report_de_crashs_faciles">Report de crashs faciles</h3>
+
+<img src="images/ACRANewLogo.png" alt="images/ACRANewLogo.png" height="96px">
+
+<ul>
+<li>
+Contextualisation des crashs
+</li>
+<li>
+Possibiltié de backend graphique
+</li>
+<li>
+Intégration par jar dans /libs
+</li>
+</ul>
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>Config Application + options</p>
+</details>
+</div>
+</article>
+</section>
+<section>
+<h2>ActionBarSherlock</h2>
+<article>
+<div class="sect2">
+<h3 id="_l_8217_actionbar_pour_tous">L&#8217;actionBar pour tous</h3>
+
+<img src="images/actionbar_sherlock.png" alt="images/actionbar_sherlock.png" height="96px">
+
+<ul>
+<li>
+Intégration en tant qu&#8217;apklib
+</li>
+<li>
+Basé sur l&#8217;héritage
+</li>
+</ul>
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+</details>
+</div>
+</article>
+</section>
+<section>
+<h2>HoloEverywhere</h2>
+<article>
+<div class="sect2">
+<h3 id="_holo">Holo</h3>
+
+<img src="images/holo_every_where_icon.png" alt="images/holo_every_where_icon.png" height="96px">
+
+<ul>
+<li>
+Intégration en tant qu&#8217;apklib
+</li>
+<li>
+Gestion des dépendances !
+<div class="literal">
+<pre class="literal">HoloEveryWhere -&gt; ActionBarSherlock</pre>
+</div>
+</li>
+</ul>
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>Le thème doit hériter de Holo</p>
+</details>
+</div>
+</article>
+</section>
+<section>
+<h2>ViewPageIndicator</h2>
+<article>
+<div class="sect2">
+<h3 id="_de_beaux_indicateurs">De beaux indicateurs !</h3>
+
+<img src="images/viewpager_indicator.png" alt="images/viewpager_indicator.png" height="96px">
+
+<ul>
+<li>
+Intégration en tant qu&#8217;apklib
+</li>
+<li>
+Gestion des dépendances !
+<div class="literal">
+<pre class="literal">ViewPager -&gt; HoloEveryWhere</pre>
+</div>
+<div class="literal">
+<pre class="literal">BreizhCamp -&gt; ViewPager</pre>
+</div>
+</li>
+</ul>
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>Utilisation simple du titleIndicator</p>
+</details>
+</div>
+</article>
+</section>
+<section>
+<h2>RoboSpice Ou Volley ?</h2>
+<article>
+
+<img src="images/android_volley.jpg" alt="images/android_volley.jpg" height="96px" class="float-left">
+
+
+<img src="images/Robospice-logo-white-background.png" alt="images/Robospice-logo-white-background.png" height="96px">
+
+<ul>
+<li>
+Apklib
+</li>
+<li>
+librairies pour RoboSpice
+<div class="literal">
+<pre class="literal">commons.io-1.3.2 / commons.lang3-3.1 / jackson-code-asl-1.9.11 / jackson-mapper-asl-1.9.11</pre>
+</div>
+<div class="literal">
+<pre class="literal">/ spring-android-core-1.0.1.RELEASE / spring-android-rest-template-1.0.1.RELEASE</pre>
+</div>
+<div class="literal">
+<pre class="literal">/ robospice-1.4.4 / robospice-cache-1.4.4 /     robospice-spring-android-1.4.4</pre>
+</div>
+<div class="literal">
+<pre class="literal">Basé sur les services</pre>
+</div>
+</li>
+<li>
+Librairies pour Volley
+<div class="literal">
+<pre class="literal">gson 2.2.4</pre>
+</div>
+<div class="literal">
+<pre class="literal">Basé sur un Looper avec une queue de request</pre>
+</div>
+</li>
+</ul>
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>Pourquoi pas Volley ? à cause de la gestion avec un looper. Va l&#8217;emporter à terme</p>
+</details>
+</article>
+</section>
+<section>
+<h2>Roboguice</h2>
+<article>
+<div class="sect2">
+<h3 id="_l_8217_injection_des_dépendances">L&#8217;injection des dépendances</h3>
+
+<img src="images/roboguice.png" alt="images/roboguice.png" height="96px">
+
+<ul>
+<li>
+Ajout des librairies dans libs
+<div class="literal">
+<pre class="literal">guice-3.0-no_aop
+javax.inject-1
+roboguice-2.0</pre>
+</div>
+</li>
+<li>
+Ajout des classes utilitaires
+</li>
+<li>
+Oposant : Dagger / Android Annoations !
+</li>
+</ul>
+
+<img src="images/dagger_logo.png" alt="images/dagger_logo.png" height="96px" class="float-left">
+
+
+<img src="images/android_anotation_logo.png" alt="images/android_anotation_logo.png" height="96px">
+
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+</details>
+</div>
+</article>
+</section>
+<section>
+<h2>Maps V2</h2>
+<article>
+<div class="sect2">
+<h3 id="_réellement_google_play_services">Réellement Google play services</h3>
+
+<img src="images/google_play_services.png" alt="images/google_play_services.png" height="96px">
+
+<ul>
+<li>
+à Intégrer en tant qu&#8217;apklib
+</li>
+<li>
+Clé Maps obligatoire !
+<div class="literal">
+<pre class="literal">Api Console</pre>
+</div>
+<div class="literal">
+<pre class="literal">Paramétrage d'une clé de hashage !</pre>
+</div>
+</li>
+</ul>
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>/!\ si plusieurs cartes !  dans des fragments</p>
+</details>
+</div>
+</article>
+</section>
+<section>
+<h2>UrlImageViewHelper</h2>
+<article>
+
+<img src="images/ic_launcher_xhdpi.png" alt="images/ic_launcher_xhdpi.png" height="96px">
+
+<ul>
+<li>
+A intégrer en tant qu&#8217;apklib
+</li>
+<li>
+Volley pourrait remplacer cette libraire.
+</li>
+</ul>
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>Attente en natif du BitmapUrlCache !  car nécessite un helper</p>
+</details>
+</article>
+</section>
+<section>
+<h2>NewQuickactions</h2>
+<article>
+<div class="sect2">
+<h3 id="_les_popups_faciles">Les popups faciles</h3>
+
+<img src="images/ic_launcher_xhdpi.png" alt="images/ic_launcher_xhdpi.png" height="96px">
+
+<ul>
+<li>
+à intégrer en tant qu&#8217;apklib
+</li>
+<li>
+Création facile de popups.
+</li>
+<li>
+Au niveau du thème est maintenant dépassé
+</li>
+</ul>
+</div>
+</article>
+</section>
+<section>
+<h2>Pièges</h2>
+<article>
+<ul>
+<li>
+RoboSpice &amp; ABS
+</li>
+<li>
+ABS &amp; NavigationDrawer
+</li>
+<li>
+Holo &amp; ABS
+</li>
+<li>
+Maps &amp; Fragments in Fragments !
+</li>
+<li>
+L&#8217;héritage est le problème
+</li>
+</ul>
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>ABS est au cours des problèmes mais est indispensable</p>
+<p>Maps : Utilisation de getChildFragmentManager, on ne peut pas intégrer par le XML dans ce cas !</p>
+</details>
+</article>
+</section>
+<section>
+<h2>Bonne pratique d'évolution</h2>
+<article>
+<ul>
+<li>
+Suivre les projets :
+</li>
+</ul>
+<p><a href="http://wwww.androidboostrap.com">AndroidBootStrap</a>
+<a href="http://wwww/androidkickstartr.com">AndroidKickStartR</a></p>
+<ul>
+<li>
+Se créer un répertoire dans son FileSystem contentant les clones des librairies
+<div class="literal">
+<pre class="literal">Pouvoir récupérer les dernières évolutions
+Pouvoir gérer sans interférences dans son projet les merges</pre>
+</div>
+</li>
+<li>
+Toujours créer des classes de helpers plutôt que de surcharger la librairie elle même
+</li>
+</ul>
+</article>
+</section>
+<section class="intro pagetransition">
+<h2>Conclusion</h2>
+<article>
+<p><span class="image">
+<img src="images/fond_conclusion.png" alt="images/fond_conclusion.png">
+</span></p>
+</article>
+</section>
+<section>
+<h2>Conlusion</h2>
+<article>
+<p class="middle">Les librairies sont nos amis</p>
+</article>
+</section>
+<section>
+<h2>Conlusion</h2>
+<article>
+
+<img src="images/insectes_amis.jpg" alt="images/insectes_amis.jpg" height="400px" class="middle">
+
+</article>
+</section>
+<section>
+<h2>Conlusion</h2>
+<article>
+<div class="incremental">
+<p>Oui mais&#8230;</p>
+<p>Attention à l&#8217;intégration !</p>
+<p>Important d&#8217;intentifier son besoin !</p>
+<p>Important de connaître les parades d&#8217;intégration !</p>
+<p>Le poids n&#8217;est pas un problème !  progard à la rescousse.</p>
+</div>
+</article>
+</section>
+<section>
+<h2>Liens</h2>
+<article>
+<ul>
+<li>
+<a href="https://github.com/octo-online/robospice">RoboSpice</a>
+</li>
+<li>
+<a href="https://android.googlesource.com/platform/frameworks/volley/">Volley</a>
+</li>
+<li>
+<a href="http://developer.android.com/google/play-services/index.html">GooglePlayServices (inclu dans le sdk)</a>
+</li>
+<li>
+<a href="http://developer.android.com/tools/extras/support-library.html">SupportLibrairy (inclu dans le sdk)</a>
+</li>
+<li>
+<a href="https://github.com/lorensiuswlt/NewQuickAction">NewQuickActions</a>
+</li>
+<li>
+<a href="http://viewpagerindicator.com/">ViewPagerIndicator</a>
+</li>
+<li>
+<a href="http://actionbarsherlock.com/">ActionBarSherlock</a>
+</li>
+<li>
+<a href="http://acra.ch/">ACRA</a>
+</li>
+<li>
+<a href="https://github.com/Prototik/HoloEverywhere">HoloEveryWhere</a>
+</li>
+<li>
+<a href="https://code.google.com/p/roboguice/">RoboGuice</a>
+</li>
+<li>
+<a href="http://androidannotations.org/">AndriodAnnotations</a>
+</li>
+<li>
+<a href="http://square.github.io/dagger/">Dagger</a>
+</li>
+</ul>
+</article>
+</section>
+<section class="intro pagetransition">
+<h2>Merci</h2>
+<article>
+
+<img src="images/fond_merci.png" alt="images/fond_merci.png">
+
+<p class="lien_prez"><a href="http://goo.gl/ao62e">http://goo.gl/ao62e</a></p>
+
+<img src="images/twitter-icon.png" alt="images/twitter-icon.png" width="50" class="logo_twitter">
+
+<p class="twitters_account">@gdgnantes / @binomed</p>
+
+<img src="images/google-Plus-icon.png" alt="images/google-Plus-icon.png" width="50" class="logo_gplus">
+
+<p class="gplus_account"><a href="http://gplus.to/jefBinomed">http://gplus.to/jefBinomed</a></p>
+</article>
+</section>
+    <script src="./dzslides/core/dzslides.js"></script>
+    <script src="./dzslides/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
