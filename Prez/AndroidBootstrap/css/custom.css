@@ -31,6 +31,15 @@ img.gdg_logo{
   width:  150px;
 }
 
+section.intro.pagetransition > h2{
+  left: 65%;
+  top: 20%;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);  
+  -o-transform: rotate(0deg);  
+  transform: rotate(0deg);  
+}
+
 .avatar{
   -moz-box-shadow:  2px 2px 2px 3px #CCCCCC;        
   -webkit-box-shadow:  2px 2px 2px 3px #CCCCCC;        
@@ -38,39 +47,60 @@ img.gdg_logo{
   width: 200px;
 }
 
-.logo_twitter, .logo_gplus, .twitters_account, .gplus_account{
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-}
 
 .logo_twitter,.logo_gplus{
   position: absolute;
   width: 40px;
+  right:35%;  
 }
 .logo_twitter{
-  top: 290px;
-  left:35%;  
+  bottom: 5%;
 }
 
 .logo_gplus{
- top: 335px;
-  left:40%;  
+ bottom: 15%;
 }
 
 .twitters_account, .gplus_account{
   position: absolute;
   font-size: 20px;
+  right:11%; 
 }
 
 .twitters_account{
-  top: 215px;
-  left:36%; 
+  bottom: 6%;  
 }
 
 
 .gplus_account{
- top: 258px;
-  left:41%; 
+ bottom: 17%;
+}
+
+.lien_prez{
+  position: absolute;
+  top: 30%;
+  right:15%;  
+}
+
+/**
+* Surcharge thème sqli
+*/
+
+section:not(.title):not(.intro):after{
+  font-size: 12pt;
+  content: " ";
+  position: absolute;
+  top: 00px;
+  left: 0px;
+  background: url(../dzslides/images/logo_sstxt.png) no-repeat 51em 40em, url(../images/BreizhCamp_logo.png) no-repeat 47em 40em;
+  z-index: -1;
+  -webkit-background-size: 2em 2em, 2em 2em;
+  -moz-background-size: 2em 2em, 2em 2em;
+  -o-background-size: 2em 2em, 2em 2em;
+  background-size: 2em 2em, 2em 2em;
+  padding-left: 4em;
+  padding-top: 40em;
+  height: 100%;
+  line-height: 1.9;
+  width: 100%;
 }

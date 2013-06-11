@@ -85,25 +85,19 @@ Liens
 //                                            
 //    
 
-[role="intro"]
+[role="intro pagetransition"]
 == Les enjeux
 
-image::images/nfc_logo.jpg[role="icone"]
 
 image:images/fond_enjeux.png[]
 
 == Les enjeux
 
-* Eviter de perdre du temps à réinventer la roue
-
-* Gain de productivité
-
-* Facilité d'accès aux standards
-
-* Open Source ?
+image::images/build_great_apps.jpg[role="middle", width="450px"]
 
 [NOTES]
 ====
+Perte de temps / Productivité / Standards / Open Source / Retro compatibilité
 
 ====
 
@@ -116,22 +110,26 @@ image:images/fond_enjeux.png[]
 //                                                                         
 // 
 
-[role="intro"]
+[role="intro pagetransition"]
 == Les librairies à la rescousse
 
-image::images/nfc_card.jpg[role="icone"]
+image:images/fond_lib_rescousse.png[]
 
 == Les librairies Android
 
-* Se présentent sous 3 formes
-
+* Se présentent sous 3 formes +
+ +
+ +
 	Un jar à inclure dans un projet
+
 	Un projet android
+
 	Accès à un Intent
 
-* Ajout de dépendances
+* Ajout de dépendances +
+ +
 
-image::images/apklib.png[]
+image::images/apklib.png[role="middle"]
 
 [NOTES]
 ====
@@ -139,20 +137,48 @@ image::images/apklib.png[]
 ====
 
 == Les librairies Android
+=== Avantages
 
-* Avantages
++++++
+<br><br>
++++++
 
-	Permet de faire ce que l'on veut
-	Open Source
-	Souvent modulables
+image::images/JesusLoves.png[role="float-left", width="300px"]
 
-* Inconvénients
+Respect des standards +
+ +
+ +
+Permet de faire ce que l'on veut +
+ +
+ +
+Open Source +
+ +
+ +
+Souvent modulables
 
-	Gestion des versions
-	Gestion des conflits
-	Agrégation parfois compliquée
-	Poids de l'application pouvant grimper...
-	Complication de l'environement de développement 
+
+== Les librairies Android
+=== Inconvénients
+
++++++
+<br><br>
++++++
+
+image::images/facepalm.jpg[role="float-left", width="300px"]
+
+Gestion des versions +
+ +
+ +
+Gestion des conflits +
+ +
+ +
+Agrégation parfois compliquée +
+ +
+ +
+Poids de l'application pouvant grimper... +
+ +
+ +
+Complication de l'environement de développement 
 
 [NOTES]
 ====
@@ -197,20 +223,28 @@ Parler des autres à l'oral
 //                                                                
 //    
 
-[role="intro"]
+[role="intro pagetransition"]
 == Solutions possibles
 
-image::images/iso-logo.png[role="icone"]
+image:images/fond_solutions.png[]
 
 == Solutions possibles
 
-* Android Bootstrap[http://www.androidbootstrap.com/]
 
-* Android KickStartR[http://androidkickstartr.com/]
 
-* DIY
-
-* Ultimate Android Library / Android ToolBox / Anrdoid UI Patterns
+http://www.androidbootstrap.com/[Android Bootstrap] +
+ +
+ +
+ +
+http://androidkickstartr.com/[Android KickStartR] +
+ +
+ +
+ +
+DIY +
+ +
+ +
+ +
+http://www.theultimateandroidlibrary.com/[Ultimate Android Library] / http://androidweekly.net/toolbox[Android ToolBox] / https://plus.google.com/108176685096570584154/posts[Anrdoid UI Patterns]
 
 [NOTES]
 ====
@@ -228,13 +262,34 @@ On fait du DIY car pour le moment ces solutions ne sont pas assez complètes...
 //                                                                                    
 //        
 
-[role="intro"]
+[role="intro pagetransition"]
 == Cas Pratique
 
-image::images/google-wallet-logo.jpg[role="icone"]
+image:images/fond_cas_utilisations.png[]
 
 == Application BreizhCamp
-=== Objectif : 
+
+
+image::images/BreizhCamp_logo.png[role="middle",width="100px"]
+
++++++
+<br>
++++++
+
+http://goo.gl/SzhBx
+
++++++
+<br>
++++++
+
+image::images/breizhcamp_screen1.png[role="float-left", width="200px"]
+
+image::images/breizhcamp_screen2.png[role="float-left", width="200px"]
+
+image::images/breizhcamp_screen3.png[role="float-left", width="200px"]
+
+[NOTES]
+====
 
 * Créons une application Breizhcamp from scratch
 
@@ -243,12 +298,12 @@ image::images/google-wallet-logo.jpg[role="icone"]
 * Retour sur certains pièges
 
 * Cherchons la solution la plus proche des solutions Google !
-
-
-[NOTES]
 ====
-On cherche un truc proche de Google pour assurer la maintenance
-====
+
+== Application BreizhCamp
+=== Démo
+
+image::images/ic_launcher.png[role="middle"]
 
 == Application BreizhCamp
 === Besoins
@@ -289,7 +344,7 @@ On cherche un truc proche de Google pour assurer la maintenance
 == Etape 1
 === Déterminer son arbre de dépendances
 
-// Mettre une image des dépendances
+image::images/dependances.png[role="middle", height="400px"]
 
 
 [NOTES]
@@ -302,19 +357,19 @@ On fait ça pour gérer au mieux les dépendances et donc éviter les doublons !
 
 Maven : 
 
-	Bien pour sonar et pour les librairies jar classiques
+* Bien pour sonar et pour les librairies jar classiques
 
-	Moins bien pour le poste de développement et pour les apklibs...
+* Moins bien pour le poste de développement et pour les apklibs...
 
 Pas de Maven : 
 
-	DIY... faut se structurer, peut être problématique vis à vis de l'intégration continue.
+* DIY... faut se structurer, peut être problématique vis à vis de l'intégration continue.
 
 Graddle : 
 
-	Plus pratique sur l'intégration (cependant pas encore testé :) ). Peut se mixer avec Maven pour les dépendances classiques
+* Plus pratique sur l'intégration (cependant pas encore testé :) ). Peut se mixer avec Maven pour les dépendances classiques
 
-	Mauvaise gestion des apklibs (obligé d'avoir le projet à côté de son projet)
+* Mauvaise gestion des apklibs (obligé d'avoir le projet à côté de son projet)
 
 [NOTES]
 ====
@@ -323,6 +378,8 @@ Aujourd'hui tout évolue vite.
 ====
 
 == Support Librairie V4
+
+image::images/ic_launcher_xhdpi.png[height="96px"]
 	
 * Fragments
 
@@ -332,14 +389,17 @@ Aujourd'hui tout évolue vite.
 
 * ...
 
-Doit être ajouté tout le temps dans /libs
+* Doit être ajouté tout le temps dans /libs
 
 [NOTES]
 ====
+Pour navigation drawer, les fragments sont au coeurs du mécanisme
 ====
 
 == ACRA
 === Report de crashs faciles
+
+image::images/ACRANewLogo.png[height="96px"]
 
 * Contextualisation des crashs
 
@@ -355,7 +415,11 @@ Config Application + options
 == ActionBarSherlock
 === L'actionBar pour tous
 
+image::images/actionbar_sherlock.png[height="96px"]
+
 * Intégration en tant qu'apklib
+
+* Basé sur l'héritage
 
 [NOTES]
 ====
@@ -363,6 +427,8 @@ Config Application + options
 
 == HoloEverywhere
 === Holo 
+
+image::images/holo_every_where_icon.png[height="96px"]
 
 * Intégration en tant qu'apklib
 
@@ -379,54 +445,54 @@ Le thème doit hériter de Holo
 == ViewPageIndicator
 === De beaux indicateurs !
 
+image::images/viewpager_indicator.png[height="96px"]
+
 * Intégration en tant qu'apklib
 
+* Gestion des dépendances ! 
+
+	ViewPager -> HoloEveryWhere
+
+	BreizhCamp -> ViewPager
 
 [NOTES]
 ====
 Utilisation simple du titleIndicator
 ====
 
-== NavigationDrawer
+== RoboSpice Ou Volley ?
 
-* Via la support library
+image::images/android_volley.jpg[height="96px", role="float-left"]
 
-* Classe de plus haut niveau recommandée.
-
-* Les Fragments au coeur de l'implémentation.
-
-[NOTES]
-====
-====
-
-== RoboSpice ou Volley ?
+image::images/Robospice-logo-white-background.png[height="96px"]
 
 * Apklib
 
-* Ajout des librairies dans libs
+* librairies pour RoboSpice
 
-	Guava-13.0.1
-	jackson-code-asl-1.9.10
-	jackson-mapper-asl-1.9.10
-	spring-android-core-1.0.0.RELEASE
-	spring-android-rest-template-1.0.0.RELEASE
-	robospice-1.1.0
-	robospice-cache-1.1.0
-	robospice-spring-android-1.1.0
+	commons.io-1.3.2 / commons.lang3-3.1 / jackson-code-asl-1.9.11 / jackson-mapper-asl-1.9.11 
 
-* Ajout du service RoboSpice
+	/ spring-android-core-1.0.1.RELEASE / spring-android-rest-template-1.0.1.RELEASE 
 
-* Ajout des autorisations
+	/ robospice-1.4.4 / robospice-cache-1.4.4 /	robospice-spring-android-1.4.4
 
-// A remplacer par Volley
+	Basé sur les services
+
+* Librairies pour Volley
+
+	gson 2.2.4
+
+	Basé sur un Looper avec une queue de request
 
 [NOTES]
 ====
-facilite l'inclusion
+Pourquoi pas Volley ? à cause de la gestion avec un looper. Va l'emporter à terme
 ====
 
 == Roboguice
 === L'injection des dépendances
+
+image::images/roboguice.png[height="96px"]
 
 * Ajout des librairies dans libs
 
@@ -438,7 +504,9 @@ facilite l'inclusion
 
 * Oposant : Dagger / Android Annoations !
 
-// Mettre les logos
+image::images/dagger_logo.png[height="96px", role="float-left"]
+
+image::images/android_anotation_logo.png[height="96px"]
 
 [NOTES]
 ====
@@ -446,30 +514,48 @@ facilite l'inclusion
 ====
 
 == Maps V2
+=== Réellement Google play services
+
+image::images/google_play_services.png[height="96px"]
 
 * à Intégrer en tant qu'apklib
 
 * Clé Maps obligatoire !
 
+	Api Console
 
-== UrlImageViewHelper
-
-* Import du projet dans le workspace
-
-* Gestion des dépendances
-
-	BreizhCamp -> UrlImageViewHelper
-
-// Voir si Volley peut pas remplacer ça ?
+	Paramétrage d'une clé de hashage ! 
 
 [NOTES]
 ====
+/!\ si plusieurs cartes !  dans des fragments
 ====
 
-== Quickactions
+
+== UrlImageViewHelper
+
+image::images/ic_launcher_xhdpi.png[height="96px"]
+
+* A intégrer en tant qu'apklib
+
+* Volley pourrait remplacer cette libraire.
+
+
+[NOTES]
+====
+Attente en natif du BitmapUrlCache !  car nécessite un helper
+====
+
+== NewQuickactions
 === Les popups faciles
 
+image::images/ic_launcher_xhdpi.png[height="96px"]
+
 * à intégrer en tant qu'apklib
+
+* Création facile de popups.
+
+* Au niveau du thème est maintenant dépassé
 
 == Pièges
 
@@ -479,20 +565,23 @@ facilite l'inclusion
 
 * Holo & ABS
 
+* Maps & Fragments in Fragments !
+
 * L'héritage est le problème
 
 [NOTES]
 ====
 ABS est au cours des problèmes mais est indispensable 
-====
 
+Maps : Utilisation de getChildFragmentManager, on ne peut pas intégrer par le XML dans ce cas !
+====
 
 == Bonne pratique d'évolution
 
 * Suivre les projets :
 
-	 AndroidBootStrap : http://wwww.androidboostrap.com
-	 AndroidKickStartR : http://wwww/androidkickstartr.com
+http://wwww.androidboostrap.com[AndroidBootStrap]
+http://wwww/androidkickstartr.com[AndroidKickStartR] 
 
 * Se créer un répertoire dans son FileSystem contentant les clones des librairies
 
@@ -511,16 +600,25 @@ ABS est au cours des problèmes mais est indispensable
 //                                                                    
 //  
 
-[role="intro"]
+[role="intro pagetransition"]
 == Conclusion
 
-image::images/link.png[role="icone"]
+image:images/fond_conclusion.png[]
 
+== Conlusion
+
+[{middle}]
 Les librairies sont nos amis
 
-Oui mais...
+== Conlusion
 
-// Statement 
+image::images/insectes_amis.jpg[role="middle", height="400px"]
+
+== Conlusion
+
+[{stepwise}]
+--
+Oui mais...
 
 Attention à l'intégration !
 
@@ -529,9 +627,7 @@ Important d'intentifier son besoin !
 Important de connaître les parades d'intégration ! 
 
 Le poids n'est pas un problème !  progard à la rescousse.
-
-
-//Refaire tous les liens
+--
 
 
 //    _        _____   ______   _   _    _____ 
@@ -543,12 +639,22 @@ Le poids n'est pas un problème !  progard à la rescousse.
 //                                             
 //   
 
-[role="intro"]
 == Liens
 
-image::images/link.png[role="icone"]
 
-//Refaire tous les liens
+* https://github.com/octo-online/robospice[RoboSpice]
+* https://android.googlesource.com/platform/frameworks/volley/[Volley]
+* http://developer.android.com/google/play-services/index.html[GooglePlayServices (inclu dans le sdk)]
+* http://developer.android.com/tools/extras/support-library.html[SupportLibrairy (inclu dans le sdk)]
+* https://github.com/lorensiuswlt/NewQuickAction[NewQuickActions]
+* http://viewpagerindicator.com/[ViewPagerIndicator]
+* http://actionbarsherlock.com/[ActionBarSherlock]
+* http://acra.ch/[ACRA]
+* https://github.com/Prototik/HoloEverywhere[HoloEveryWhere]
+* https://code.google.com/p/roboguice/[RoboGuice]
+* http://androidannotations.org/[AndriodAnnotations]
+* http://square.github.io/dagger/[Dagger]
+
 
 //     ____    _    _   ______    _____   _______   _____    ____    _   _    _____ 
 //    / __ \  | |  | | |  ____|  / ____| |__   __| |_   _|  / __ \  | \ | |  / ____|
@@ -559,11 +665,13 @@ image::images/link.png[role="icone"]
 //                                                                                  
 //   
 
-[role="intro fond_fin"]
+[role="intro pagetransition"]
 == Merci
 
-image::images/andquestionsag.png[role="icone"]
+image::images/fond_merci.png[]
 
+[role="lien_prez"]
+http://goo.gl/ao62e
 
 image::images/twitter-icon.png[width="50", role="logo_twitter"]
 
