@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html class="aspect-4-3">
+  <head>
+    <meta charset="utf-8">
+    <title>NFC &amp; Android</title>
+    <meta name="description" content="NFC presentation on Android">
+    <meta name="author" content="Breizhcamp 2013">
+    <meta name="copyright" content="Copyright 2013 SQLI">
+    <meta name="generator" content="AsciiDoc 8.6.8, dzslides backend">
+    <meta name="presdate" content="v1.0">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald">
+    <link rel="stylesheet" href="./dzslides/themes/highlight/googlecode.min.css">
+    <link rel="stylesheet" href="./dzslides/themes/style/sqli.css">
+    <!-- bug in full screen image if include dzslides.css before ours -->
+    <link rel="stylesheet" href="./dzslides/core/dzslides.css">
+    <link rel="stylesheet" href="./dzslides/themes/transition/fade.css">
+    <link rel="stylesheet" href="css/custom.css">
+  </head>
+  <body>
+    <section class="title">
+      <h1>NFC &amp; Android</h1>
+<div class="subtitle"><h2 class="subtitle">New Future Communication</h2></div>
+      <footer>Breizhcamp 2013</footer>
+    </section>
+<section>
+<h2>Qui suis-je ?</h2>
+<article>
+<div class="sect2">
+<h3 id="_jean_françois_garreau_consultant_it_sqli">Jean-François GARREAU, Consultant IT SQLI</h3>
+
+<img src="images/jf.jpg" alt="images/jf.jpg" class="middle avatar">
+
+
+<img src="images/sqli_logo.png" alt="images/sqli_logo.png" class="company_logo">
+
+
+<img src="images/GDG-Logo-carre.png" alt="images/GDG-Logo-carre.png" class="gdg_logo">
+
+</div>
+</article>
+</section>
+<section>
+<h2>Agenda</h2>
+<article>
+<ul>
+<li>
+Qu&#8217;est ce que le NFC ?
+</li>
+<li>
+Historique
+<div class="literal">
+<pre class="literal">Un peu d'histoire</pre>
+</div>
+</li>
+<li>
+Standards
+<div class="literal">
+<pre class="literal">Théories et standards</pre>
+</div>
+</li>
+<li>
+Uses Cases
+<div class="literal">
+<pre class="literal">On peut faire quoi avec le NFC ?</pre>
+</div>
+</li>
+<li>
+Demos
+<div class="literal">
+<pre class="literal">Une petit démo</pre>
+</div>
+</li>
+<li>
+Implementation
+<div class="literal">
+<pre class="literal">Concrètement ça donne uConcretly, how do I code that ?</pre>
+</div>
+</li>
+<li>
+Nfa : Nfc For Android
+<div class="literal">
+<pre class="literal">Presentation of the library</pre>
+</div>
+</li>
+<li>
+Conclusion
+</li>
+</ul>
+</article>
+</section>
+<section class="intro fond_1">
+<h2>What is NFC ?</h2>
+<article>
+
+<img src="images/nfc_logo.jpg" alt="images/nfc_logo.jpg" class="icone">
+
+</article>
+</section>
+<section>
+<h2>What is NFC ?</h2>
+<article>
+
+<img src="images/cat_scientist.jpg" alt="images/cat_scientist.jpg" class="stretch-y middle">
+
+</article>
+</section>
+<section>
+<h2>What is NFC ?</h2>
+<article>
+<div class="sect2">
+<h3 id="_nfc_near_field_communication">NFC = Near Field Communication*</h3>
+
+<img src="images/nfc_logo.jpg" alt="images/nfc_logo.jpg" width="100px" class="middle">
+
+
+<img src="images/nfc_explain.jpg" alt="images/nfc_explain.jpg" width="300px" class="middle">
+
+
+<img src="images/nfc_card.jpg" alt="images/nfc_card.jpg" width="100px" class="middle">
+
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>Register by NFC FORUM for Phones mainly</p>
+<p>User needed &#8658; Securised</p>
+<p>RFID &#8658; Auto alimentated</p>
+</details>
+</div>
+</article>
+</section>
+<section class="intro fond_1">
+<h2>History</h2>
+<article>
+
+<img src="images/nfc_card.jpg" alt="images/nfc_card.jpg" class="icone">
+
+</article>
+</section>
+<section>
+<h2>History</h2>
+<article>
+<p><strong>2004</strong></p>
+<div class="literal">
+<pre class="literal">Nokia, Philips and Sony create the NFC Forum</pre>
+</div>
+<br>
+<p><strong>2006</strong></p>
+<div class="literal">
+<pre class="literal">First NFC Tags specifications</pre>
+</div>
+<div class="literal">
+<pre class="literal">First NFC Phone  : Nokia 6131</pre>
+</div>
+<br>
+<p><strong>2009</strong></p>
+<div class="literal">
+<pre class="literal">Add of P2P protocol.</pre>
+</div>
+<br>
+<p><strong>2010</strong></p>
+<div class="literal">
+<pre class="literal">First NFC Android phone</pre>
+</div>
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>NFC Forum = 140 Company today. Unifed protocols</p>
+</details>
+</article>
+</section>
+<section>
+<h2>History</h2>
+<article>
+<div class="sect2">
+<h3 id="_technologies_rfid_smartcard">Technologies : RFID / SmartCard</h3>
+<p><strong>NFC is based on RFID = Radio Frequency Identification</strong></p>
+<br>
+
+<img src="images/RFID.jpg" alt="images/RFID.jpg" width="200" class="middle">
+
+<br>
+<p><strong>SmartCard :</strong></p>
+<div class="literal">
+<pre class="literal">NFC = extension of SmartCard, =&gt; standardisation of smartcard throught RFID communication</pre>
+</div>
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>RFID : Distance de pls mètres since 1983 !</p>
+<p>&#8594; Fréquence 13.56Mhz pour com &lt; 1m</p>
+<p>NFC pour SmartCard = NFC standard de smartCard pour la communication RFID</p>
+<p>Questions : RFID = ISO 18092 /  Smart Card = ISO 14443-4</p>
+</details>
+</div>
+</article>
+</section>
+<section class="intro  fond_1">
+<h2>Standards</h2>
+<article>
+
+<img src="images/iso-logo.png" alt="images/iso-logo.png" class="icone">
+
+</article>
+</section>
+<section>
+<h2>Standards</h2>
+<article>
+<div class="sect2">
+<h3 id="_mode">Mode</h3>
+<p><strong>3 communications modes :</strong></p>
+<br>
+
+<img src="images/smart_card_nfc.jpg" alt="images/smart_card_nfc.jpg" width="150px" class="float-left">
+
+<p>Card emulation</p>
+<br>
+<br>
+<br>
+<br>
+
+<img src="images/social-nfc-tags.jpg" alt="images/social-nfc-tags.jpg" width="150px" class="float-left">
+
+<p>Read / Write</p>
+<br>
+<br>
+<br>
+<br>
+
+<img src="images/nfc_p2p.jpg" alt="images/nfc_p2p.jpg" width="150px" class="float-left">
+
+<p>Peer to Peer</p>
+<br>
+<br>
+<br>
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>Normes Régies par le NFC Forum !</p>
+<p>Emulation= Simulation interface carte à puce</p>
+<p>Lecture / Ecriture : Tag</p>
+<p>Pair à Pair : 2 Appareils</p>
+</details>
+</div>
+</article>
+</section>
+<section>
+<h2>Standards</h2>
+<article>
+<div class="sect2">
+<h3 id="_communication">Communication</h3>
+
+<img src="images/reduce_speed.svg" alt="images/reduce_speed.svg" width="400" class="middle">
+
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<ul>
+<li>
+Rates between 106 et 424 Kps /  Communication lower to 10cm.
+</li>
+</ul>
+<p>Half-duplex : Communication dans les 2 sens mais chacun son tour. FullDuplex : Com 2 sens simultanément</p>
+<p>NfcA : Modulation sur 100% -1 pour 0 après 1, 0 pour 0 après 0, 1 pour 1 après 0 ou 1</p>
+<p>NfcB : Modulation sur 10%</p>
+</details>
+</div>
+</article>
+</section>
+<section>
+<h2>Standards</h2>
+<article>
+<div class="sect2">
+<h3 id="_protocol_others_standards_tolerated_by_android">Protocol Others standards tolerated by Android</h3>
+
+<img src="images/felica_logo.png" alt="images/felica_logo.png" height="150" class="float-left">
+
+<p><strong>Felica (NfcF in Android)</strong></p>
+<div class="literal">
+<pre class="literal">Japan</pre>
+</div>
+<br>
+<br>
+<br>
+<br>
+
+<img src="images/iso-logo.png" alt="images/iso-logo.png" height="150" class="float-left">
+
+<p><strong>ISO</strong></p>
+<div class="literal">
+<pre class="literal">ISO 14443 A (NfcA in Android)</pre>
+</div>
+<div class="literal">
+<pre class="literal">ISO 14443 B (NfcB in Android)</pre>
+</div>
+<div class="literal">
+<pre class="literal">15693 (NfcV in Android)</pre>
+</div>
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>Felica : Pas ISO mais NFC-Forum : Japon</p>
+<p>15693 : ISO mais pas NFC-Forum</p>
+</details>
+</div>
+</article>
+</section>
+<section>
+<h2>Standards</h2>
+<article>
+<div class="sect2">
+<h3 id="_tag_types_of_the_nfc_forum">Tag types of the NFC Forum</h3>
+<p><strong>The NFC forum defined 4 types of tags</strong></p>
+<div class="literal">
+<pre class="literal">NfcA = Type 1 / 2 / 4</pre>
+</div>
+<div class="literal">
+<pre class="literal">NfcB = Type 4</pre>
+</div>
+<div class="literal">
+<pre class="literal">NfcF = Type 3</pre>
+</div>
+<table class="tableblock frame-all grid-all"
+style="
+width:100%;
+">
+<col style="width:25%;">
+<col style="width:25%;">
+<col style="width:25%;">
+<col style="width:25%;">
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" >Type </th>
+<th class="tableblock halign-left valign-top" > Available memory  </th>
+<th class="tableblock halign-left valign-top" > Communication Type </th>
+<th class="tableblock halign-left valign-top" > Possible Tags</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Type 1</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">96bits &#8594; 2Kbits</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">ISO 14443-A</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Topaz</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Type 2</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">48bits &#8594; 2Kbits</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">ISO 14443-A</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Mifare Ultra Light</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Type 3</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">? &#8594; 1Mbits</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Felica</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Felica</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Type 4</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">? &#8594; 32Kbits</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">ISO 14443 A or B</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">DesFire ISO 14443-A</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</article>
+</section>
+<section>
+<h2>Standards</h2>
+<article>
+<div class="sect2">
+<h3 id="_ndef_nfc_data_exchange_format">NDEF : NFC Data Exchange Format</h3>
+
+<img src="images/Ndefrecod.png" alt="images/Ndefrecod.png" class="middle">
+
+<br>
+<p>Header = informations about the tag</p>
+<div class="literal">
+<pre class="literal">Place in message</pre>
+</div>
+<div class="literal">
+<pre class="literal">Type</pre>
+</div>
+<div class="literal">
+<pre class="literal">Size</pre>
+</div>
+<div class="literal">
+<pre class="literal">Payload = Data</pre>
+</div>
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>Format d'échange standard | One Ndef = N ndef record</p>
+<p>Predifined types</p>
+<p>But des types = Gain de place</p>
+</details>
+</div>
+</article>
+</section>
+<section>
+<h2>Standards</h2>
+<article>
+<div class="sect2">
+<h3 id="_ndef_informations_about_the_message">NDEF - Informations about the message</h3>
+<div id="ndef_header" ></div>
+
+<img src="images/Ndeffullrecod.png" alt="images/Ndeffullrecod.png" class="float-left stretch-y">
+
+<ul>
+<li>
+<strong>MB (Message Begin)</strong>
+</li>
+<li>
+<strong>ME (Message End)</strong>
+</li>
+<li>
+<strong>CF (Chunk Flag)</strong>
+</li>
+<li>
+<strong>SR (Short Reccord)</strong>
+</li>
+<li>
+<strong>IL (ID Length)</strong>
+</li>
+<li>
+<strong>TNF (Type Name Format)</strong>
+</li>
+</ul>
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>MB = 1 &#8658; début de message | ME = 1 &#8658; Message fini dans le message  | SR : is short (1octet)</p>
+<p>IL : si à 1 : ID Length et  ID devront être remplis</p>
+</details>
+</div>
+</article>
+</section>
+<section>
+<h2>Standards</h2>
+<article>
+<div class="sect2">
+<h3 id="_ndef_tnf_data_type">NDEF - TNF (data type)</h3>
+<ul>
+<li>
+<strong>0x00</strong>  Empty : Empty record
+</li>
+<li>
+<strong>0x01</strong> Well-Known Type (WKT) : Type defined by NFC Forum
+</li>
+<li>
+<strong>0x02</strong> : MIME Type
+</li>
+<li>
+<strong>0x03</strong> Absolute Uri
+</li>
+<li>
+<strong>0x04</strong> External
+</li>
+<li>
+<strong>0x05</strong> Unkown Type
+</li>
+<li>
+<strong>0x06</strong> Unchanged Type (use for truncated messages)
+</li>
+<li>
+<strong>0x07</strong> Reserved for futur use
+</li>
+</ul>
+</div>
+</article>
+</section>
+<section>
+<h2>Standards</h2>
+<article>
+<div class="sect2">
+<h3 id="_ndef_type_length">NDEF - Type Length</h3>
+<div id="ndef_length_type" ></div>
+
+<img src="images/Ndeffullrecod.png" alt="images/Ndeffullrecod.png" class="float-left stretch-y">
+
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>Détail du type contenu dans le message : lié au TNF. TNF = premier type, Vrai type dans le payload ! &#8658; taille à préciser</p>
+</details>
+</div>
+</article>
+</section>
+<section>
+<h2>Standards</h2>
+<article>
+<div class="sect2">
+<h3 id="_ndef_data_length">NDEF - Data length</h3>
+<div id="ndef_length_payload" ></div>
+
+<img src="images/Ndeffullrecod.png" alt="images/Ndeffullrecod.png" class="float-left stretch-y">
+
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>La taille varie à cause du champ SR (Short Record) : size between 1 or 4 octets</p>
+</details>
+</div>
+</article>
+</section>
+<section>
+<h2>Standards</h2>
+<article>
+<div class="sect2">
+<h3 id="_ndef_type_amp_id">NDEF - Type &amp; Id</h3>
+<div id="ndef_type_id" ></div>
+
+<img src="images/Ndeffullrecod.png" alt="images/Ndeffullrecod.png" class="float-left stretch-y">
+
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>Type always present : Payload Type</p>
+<p>ID dependant to IL field : record Id</p>
+</details>
+</div>
+</article>
+</section>
+<section>
+<h2>Standards</h2>
+<article>
+<div class="sect2">
+<h3 id="_ndef_message_content">NDEF - Message content</h3>
+<div id="ndef_payload" ></div>
+
+<img src="images/Ndeffullrecod.png" alt="images/Ndeffullrecod.png" class="float-left stretch-y">
+
+</div>
+</article>
+</section>
+<section>
+<h2>Standards</h2>
+<article>
+<div class="sect2">
+<h3 id="_well_known_types">Well Known Types</h3>
+<p>Octet <strong>Type</strong></p>
+<ul>
+<li>
+U (0x55) for uris
+</li>
+<li>
+T (0x54) for text
+</li>
+<li>
+Sp (0x53,0x70) for smartPoster (type length is 2)
+</li>
+</ul>
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>Sert à gagner encore plus de bits</p>
+</details>
+</div>
+</article>
+</section>
+<section>
+<h2>Standards</h2>
+<article>
+<div class="sect2">
+<h3 id="_well_known_types_2">Well Known Types</h3>
+<ul>
+<li>
+<strong>URIs</strong>, 1st bit = identification bit
+<div class="literal">
+<pre class="literal">0x00 : no prefix</pre>
+</div>
+<div class="literal">
+<pre class="literal">0x01 : http://www.</pre>
+</div>
+<div class="literal">
+<pre class="literal">0x03 : http://</pre>
+</div>
+<div class="literal">
+<pre class="literal">0x05 : tel:</pre>
+</div>
+<div class="literal">
+<pre class="literal">0x06 : mailto:</pre>
+</div>
+<div class="literal">
+<pre class="literal">0x1D : file://</pre>
+</div>
+<div class="literal">
+<pre class="literal">0x24...0xFF : reserved for futur uses</pre>
+</div>
+</li>
+<li>
+<strong>Text</strong> : one octet for encoding (UTF8 =0, UTF16 = 1) and one for language
+</li>
+<li>
+<strong>SmartPoster</strong> New Ndef with the URI
+</li>
+</ul>
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>Le payload Varie en fonction du WKT</p>
+<p>Pour les Uris : il y en a 35 !</p>
+<p>SmartPoster contient dans son payload le nouvel enregistrement et les données annexes</p>
+</details>
+</div>
+</article>
+</section>
+<section>
+<h2>Standards</h2>
+<article>
+<div class="sect2">
+<h3 id="_external_types">External types</h3>
+<p>You could define your own types !</p>
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>Filtrer le message et donc ouvrir le message à partir d’une application précise</p>
+</details>
+</div>
+</article>
+</section>
+<section class="intro fond_1">
+<h2>Uses</h2>
+<article>
+
+<img src="images/google-wallet-logo.jpg" alt="images/google-wallet-logo.jpg" class="icone">
+
+</article>
+</section>
+<section>
+<h2>Uses</h2>
+<article>
+<div class="sect2">
+<h3 id="_read_mode">Read mode</h3>
+<br>
+
+<img src="images/social-nfc-tags.jpg" alt="images/social-nfc-tags.jpg" width="240px">
+
+
+<img src="images/recharge_nfc.jpg" alt="images/recharge_nfc.jpg" width="240px">
+
+
+<img src="images/foursquare-nfc.png" alt="images/foursquare-nfc.png" width="240px">
+
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>Infos complementaires sur des produits  /////// GEOLOC /////// URLS</p>
+<p>Codes promos //////     Dématérialisation de cartes</p>
+</details>
+</div>
+</article>
+</section>
+<section>
+<h2>Uses</h2>
+<article>
+<div class="sect2">
+<h3 id="_p2p">P2P</h3>
+
+<img src="images/nfc_beam.jpg" alt="images/nfc_beam.jpg" width="450px" class="middle">
+
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>Echange de contacts /////       Echange de fichiers //////      Configuration bluetooth</p>
+</details>
+</div>
+</article>
+</section>
+<section>
+<h2>Uses</h2>
+<article>
+<div class="sect2">
+<h3 id="_card_emulation_not_available_nativly_with_android">Card emulation : not available nativly with Android</h3>
+
+<img src="images/cityzi_transport.jpg" alt="images/cityzi_transport.jpg" width="400px">
+
+
+<img src="images/google-wallet.jpg" alt="images/google-wallet.jpg" width="400px">
+
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>Paiement securise</p>
+<p>Authentification sur des reseaux securise</p>
+</details>
+</div>
+</article>
+</section>
+<section class="intro  fond_1">
+<h2>Demo</h2>
+<article>
+
+<img src="images/nfc_demo.png" alt="images/nfc_demo.png" class="icone">
+
+</article>
+</section>
+<section class="intro  fond_1">
+<h2>Implementation</h2>
+<article>
+
+<img src="images/android_nfc.png" alt="images/android_nfc.png" class="icone">
+
+</article>
+</section>
+<section>
+<h2>Implementation</h2>
+<article>
+<div class="sect2">
+<h3 id="_2010_read_write">2010 : Read / Write</h3>
+
+<img src="images/read_nfc.jpg" alt="images/read_nfc.jpg" class="middle strech-y">
+
+</div>
+</article>
+</section>
+<section>
+<h2>Implementation</h2>
+<article>
+<div class="sect2">
+<h3 id="_2011_beam">2011 : Beam</h3>
+
+<img src="images/DBZ_fusion.png" alt="images/DBZ_fusion.png" width="700px" class="middle">
+
+</div>
+</article>
+</section>
+<section>
+<h2>Implementation</h2>
+<article>
+<div class="sect2">
+<h3 id="_2012_share_medias">2012 : Share medias</h3>
+
+<img src="images/troc.gif" alt="images/troc.gif" class="middle strech-y">
+
+</div>
+</article>
+</section>
+<section>
+<h2>Implementation</h2>
+<article>
+<div class="sect2">
+<h3 id="_how_do_we_code_that">How do we code that ?</h3>
+
+<img src="images/nfc_tag_dispatch.png" alt="images/nfc_tag_dispatch.png" class="middle">
+
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>IL n&#8217;y a pas que le NDEF de reconnu !</p>
+<p>Message transformé en Intent</p>
+</details>
+</div>
+</article>
+</section>
+<section>
+<h2>Implementation</h2>
+<article>
+<div class="sect2">
+<h3 id="_configuration">Configuration</h3>
+<p><strong>AndroidManifest.xml</strong></p>
+<br>
+<p>Add permission</p>
+<div class="listing">
+<pre class="xml"><code>&lt;uses-permission android:name="android.permission.NFC"/&gt;</code></pre>
+</div>
+<br>
+<p>Add feature use (only phones with NFC chip)</p>
+<div class="listing">
+<pre class="xml"><code>&lt;uses-feature android:required="true" android:name="android.hardware.nfc"/&gt;</code></pre>
+</div>
+<br>
+<p>Specify the min Sdk version</p>
+<div class="listing">
+<pre class="xml"><code>&lt;uses-sdk android:minSdkVersion="10" /&gt;</code></pre>
+</div>
+</div>
+</article>
+</section>
+<section>
+<h2>Implementation</h2>
+<article>
+<div class="sect2">
+<h3 id="_tag_reception">Tag reception</h3>
+<p><strong>We could filters tag according</strong></p>
+<br>
+<div class="literal">
+<pre class="literal">Technology
+Mime Type</pre>
+</div>
+<br>
+<div class="listing">
+<pre class="xml"><code>&lt;uses-permission android:name="android.permission.NFC"/&gt;
+&lt;intent-filter&gt;
+        &lt;action android:name="android.nfc.action.NDEF_DISCOVERED"/&gt;
+        &lt;category android:name="android.intent.category.DEFAULT"/&gt;
+        &lt;data android:scheme="http" android:host="sqli.com"/&gt;
+&lt;/intent-filter&gt;</code></pre>
+</div>
+</div>
+</article>
+</section>
+<section>
+<h2>Implementation</h2>
+<article>
+<div class="sect2">
+<h3 id="_tags_reception">Tags reception</h3>
+<p><strong>Intercept and dispatch</strong></p>
+<br>
+<div class="listing">
+<pre class="java redux"><code>@Override
+protected void onCreate(Bundle savedInstanceState) {
+        …
+        mAdapter = NfcAdapter.getDefaultAdapter(this);
+        resoudreIntent(getIntent());
+}
+
+@Override
+protected void onResume() {
+        super.onResume();
+        …
+        mAdapter.enableForegroundDispatch(this, pendingIntent, filters, techs);
+}
+
+@Override
+protected void onPause() {
+        …
+        mAdapter.disableForegroundDispatch(this);
+        super.onPause();
+}</code></pre>
+</div>
+</div>
+</article>
+</section>
+<section>
+<h2>Implementation</h2>
+<article>
+<div class="sect2">
+<h3 id="_read_a_tag">Read a tag</h3>
+<p><strong>We read information from Intent</strong></p>
+<br>
+<div class="listing">
+<pre class="java redux"><code>private void resoudreIntent(Intent intent) {
+        String action = intent.getAction();
+        if (NfcAdapter.ACTION_NDEF_DISCOVERED.equals(action)) {
+                Parcelable[] rawMsgs = intent.getParcelableArrayExtra(
+                        NfcAdapter.EXTRA_NDEF_MESSAGES);
+                NdefMessage[] messages;
+                NdefRecord record = null;
+                if (rawMsgs != null) {
+                        messages = new NdefMessage[rawMsgs.length];
+                        for (int i = 0; i &lt; rawMsgs.length; i++) {
+                                messages[i] = (NdefMessage) rawMsgs[i];
+                                for (int j = 0; j &lt; messages[i].getRecords().length; j++) {
+                                        record = messages[i].getRecords()[j];
+                                        …
+                                }
+                        }
+                }
+        }
+}</code></pre>
+</div>
+</div>
+</article>
+</section>
+<section>
+<h2>Implementation</h2>
+<article>
+<div class="sect2">
+<h3 id="_tag_write">Tag write</h3>
+<p><strong>You have to create a NDefMessage</strong></p>
+<br>
+<div class="listing">
+<pre class="java"><code>String uri = "sqli.com";
+byte[] uriField = uri.getBytes();
+byte[] payload = new byte[uriField.length + 1];
+payload[0] = 0x03;
+System.arraycopy(uriField, 0, payload, 1, uriField.length);
+NdefRecord record = new NdefRecord(NdefRecord.TNF_WELL_KNOWN,
+                NdefRecord.RTD_URI,
+                new byte[0],
+                payload);
+NdefMessage msg = new NdefMessage(new NdefRecord[]{record});</code></pre>
+</div>
+</div>
+</article>
+</section>
+<section>
+<h2>Implementation</h2>
+<article>
+<div class="sect2">
+<h3 id="_write_tag">Write tag</h3>
+<p><strong>Then you will write on a tag (when it is detected : Intent)</strong></p>
+<br>
+<div class="listing">
+<pre class="java redux"><code>private void writeTag(Intent intent) {
+        Tag tag = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);
+        final Ndef ndef = Ndef.get(tag);
+        AsyncTask&lt;Void, Void, String&gt; taskWrite = new AsyncTask&lt;Void, Void, String&gt;() {
+                @Override
+                protected String doInBackground(Void... params) {
+                        try {
+                                ndef.connect();
+                                try {
+                                ndef.writeNdefMessage(getMessage());
+                                } catch (FormatException e) {}
+                        ndef.close();
+                        } catch (IOException e) {}
+                }
+        };
+        taskWrite.execute();
+}</code></pre>
+</div>
+</div>
+</article>
+</section>
+<section>
+<h2>Implementation</h2>
+<article>
+<div class="sect2">
+<h3 id="_beam">BEAM</h3>
+<p><strong>Override the manifest.xml</strong></p>
+<br>
+<div class="listing">
+<pre class="xml"><code>&lt;meta-data
+        android:name="android.nfc.disable_beam_default"
+        android:value="true" /&gt;</code></pre>
+</div>
+<br>
+<p><strong>Then specify that you write like for tag but for a precise intetn</strong></p>
+<br>
+<div class="listing">
+<pre class="java"><code>mAdapter.setNdefPushMessageCallback(this, this);</code></pre>
+</div>
+</div>
+</article>
+</section>
+<section class="intro  fond_1">
+<h2>NFA</h2>
+<article>
+<div class="sect2">
+<h3 id="_nfc_for_android">Nfc For Android</h3>
+
+<img src="images/nfa.png" alt="images/nfa.png" class="icone">
+
+</div>
+</article>
+</section>
+<section>
+<h2>Why ?</h2>
+<article>
+<p><strong>NFC &amp; Android = byte[] !</strong></p>
+<div class="literal">
+<pre class="literal">How to write "Hello World"</pre>
+</div>
+<br>
+<div class="listing">
+<pre class="java redux"><code>byte[] languageData = "en".getBytes();
+
+byte[] textData = "Hello World".getBytes(record.getEncoding());
+byte[] payload = new byte[1 + languageData.length + textData.length];
+
+byte status = (byte) 0x00;
+payload[0] = status;
+System.arraycopy(languageData, 0, payload, 1, languageData.length);
+System.arraycopy(textData, 0, payload, 1 + languageData.length
+                        , textData.length);
+
+NdefRecord ndefRecord = new NdefRecord(NdefRecord.TNF_WELL_KNOWN
+                        , NdefRecord.RTD_TEXT
+                        , record.getId()
+                        , payload);</code></pre>
+</div>
+</article>
+</section>
+<section>
+<h2>Why ?</h2>
+<article>
+
+<img src="images/meme_rock.jpg" alt="images/meme_rock.jpg" class="stretch-y middle">
+
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>Simplifier l'écriture. Si le nfc doit percer, il faut l&#8217;aider</p>
+</details>
+</article>
+</section>
+<section>
+<h2>Targets</h2>
+<article>
+<ul class="incremental">
+<li>
+Non inherit base library
+</li>
+<li>
+Lightweight
+</li>
+<li>
+Helpers !
+</li>
+<li>
+Less code
+</li>
+</ul>
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>Parler du problème fréquent avec le multi héritage mais dire que ça sera dispo</p>
+</details>
+</article>
+</section>
+<section>
+<h2>Targets</h2>
+<article>
+
+<img src="images/meme_challenge.jpg" alt="images/meme_challenge.jpg" class="stretch-y middle">
+
+</article>
+</section>
+<section>
+<h2>Implementation</h2>
+<article>
+<div class="sect2">
+<h3 id="_initialisation">Initialisation</h3>
+<p><strong>Android</strong></p>
+<div class="listing">
+<pre class="java"><code>// We register the default Nfc Adapter
+mAdapter = NfcAdapter.getDefaultAdapter(activity);
+// We register the curent activity to a the filters we wants
+PendingIntent pendingIntent = PendingIntent.getActivity(activity, 0
+        , new Intent(activity, activity.getClass())
+                .addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), 0);
+
+int length = filters != null &amp;&amp; filters.length &gt; 0 ? filters.length : 1;
+IntentFilter[] intentFilters = new IntentFilter[length];
+IntentFilter ndefFilter = new IntentFilter(filter.getAction());
+pendingIntentArray.put(activity.getTaskId(), pendingIntent);</code></pre>
+</div>
+<p><strong>NfA</strong></p>
+<div class="listing">
+<pre class="java"><code>// We register our activity to the NFA Manager
+NFA_MANAGER.register(activity //
+                , NDEF_FILTER //
+                );</code></pre>
+</div>
+</div>
+</article>
+</section>
+<section>
+<h2>Implementation</h2>
+<article>
+<div class="sect2">
+<h3 id="_read_android">Read - Android</h3>
+<div class="listing">
+<pre class="java"><code>byte[] payload = ndefRecord.getPayload();
+ByteArrayInputStream bais = new ByteArrayInputStream(payload);
+int status = bais.read();
+byte languageCodeLength = (byte) (status &amp; TextRecord.LANGUAGE_CODE_MASK);
+byte[] bytes = new byte[languageCodeLength];
+bais.read(bytes, 0, bytes.length);
+String languageCode = new String(bytes);
+bytes = new byte[payload.length - languageCodeLength - 1];
+bais.read(bytes, 0, bytes.length);
+byte[] textData = bytes;
+Charset textEncoding = ((status &amp; 0x80) != 0) ? TextRecord.UTF16
+                        : TextRecord.UTF8;
+String message = null;
+try {
+        message = new String(textData, textEncoding.name());
+} catch (UnsupportedEncodingException e) {
+        throw new RuntimeException(e);
+}</code></pre>
+</div>
+</div>
+</article>
+</section>
+<section>
+<h2>Implementation</h2>
+<article>
+<div class="sect2">
+<h3 id="_read_nfa">Read - NfA</h3>
+<div class="listing">
+<pre class="java"><code>NfaRecieveBeanBuilder&lt;TextRecord&gt; builder = recieveBeanConfigure(); //
+builder //
+.activity(activity) //
+.intent(intent) //
+.intentRecieveRecord(new INfaIntentRecieveRecord&lt;TextRecord&gt;() {
+
+        @Override
+        public void recieveRecord(TextRecord record) {
+                String message = record.getText();
+
+        }
+}) // INfaIntentRecieveRecord
+.parser(TEXT_PARSER); //
+NFA_MANAGER.manageIntent(builder.build());</code></pre>
+</div>
+</div>
+</article>
+</section>
+<section>
+<h2>Implementation</h2>
+<article>
+<div class="sect2">
+<h3 id="_write">Write</h3>
+<p><strong>Android</strong></p>
+<div class="listing">
+<pre class="java"><code>byte[] languageData = "en".getBytes();
+byte[] textData = "Hello World".getBytes(record.getEncoding());
+byte[] payload = new byte[1 + languageData.length + textData.length];
+byte status = (byte) (0x00);
+payload[0] = status;
+System.arraycopy(languageData, 0, payload, 1, languageData.length);
+System.arraycopy(textData, 0, payload, 1 + languageData.length
+                , textData.length);
+
+NdefRecord ndefRecord = new NdefRecord(NdefRecord.TNF_WELL_KNOWN
+                , NdefRecord.RTD_TEXT, record.getId(), payload);</code></pre>
+</div>
+<p><strong>NfA</strong></p>
+<div class="listing">
+<pre class="java redux"><code>NFA_MANAGER.writeTag(getApplicationContext(), //
+                intent, //
+                activity, //
+                false, // addAndroidApplicationRecord
+                NfaWriteBean.writeBeanConfigure() //
+                                .writer(TEXT_WRITER) //
+                                .record(NfaRecordFactory.wellKnowTypeFactory()//
+                                        .textRecordInstance("Hello World")) //
+                                .build());</code></pre>
+</div>
+</div>
+</article>
+</section>
+<section>
+<h2>RoadMap</h2>
+<article>
+<ul>
+<li>
+0.8.0
+<div class="literal">
+<pre class="literal">More Writers / Parsers / Filters / Records</pre>
+</div>
+<div class="literal">
+<pre class="literal">Signature Record</pre>
+</div>
+<div class="literal">
+<pre class="literal">SmartPoster more rich</pre>
+</div>
+<div class="literal">
+<pre class="literal">Unit tests :P</pre>
+</div>
+</li>
+<li>
+0.9.0
+<div class="literal">
+<pre class="literal">Handover Record</pre>
+</div>
+<div class="literal">
+<pre class="literal">Cryptography module</pre>
+</div>
+<div class="literal">
+<pre class="literal">Add some abstract class</pre>
+</div>
+</li>
+<li>
+1.0.0
+<div class="literal">
+<pre class="literal">Code optimisation</pre>
+</div>
+<div class="literal">
+<pre class="literal">bugs fix</pre>
+</div>
+<div class="literal">
+<pre class="literal">your contribution ;)</pre>
+</div>
+</li>
+</ul>
+</article>
+</section>
+<section>
+<h2>Summary</h2>
+<article>
+
+<img src="images/nfa.png" alt="images/nfa.png" class="float-left">
+
+<p>Available with maven on Oss Sonatype : <a href="http://goo.gl/NAQwd">http://goo.gl/NAQwd</a></p>
+<br>
+<br>
+<p>Open source on github : <a href="https://github.com/organizations/NfcForAndroid">Github</a></p>
+<br>
+<p>Thank you to <a href="https://github.com/grundid/nfctools">NfcTools</a> and <a href="http://code.google.com/p/ndef-tools-for-android/">Ndef tools for Android</a></p>
+<br>
+<p>Sample available here : <a href="https://play.google.com/store/apps/details?id=com.github.nfcforandroid.samples">Play Store</a></p>
+</article>
+</section>
+<section>
+<h2>Summary</h2>
+<article>
+
+<img src="images/meme_baby_win.jpg" alt="images/meme_baby_win.jpg" class="stretch-y middle">
+
+</article>
+</section>
+<section class="intro  fond_1">
+<h2>Conclusion</h2>
+<article>
+
+<img src="images/nfc_logo.jpg" alt="images/nfc_logo.jpg" class="icone">
+
+</article>
+</section>
+<section>
+<h2>Conclusion</h2>
+<article>
+<ul>
+<li>
+The technology is pretty recent but already offers a high number of possibilities
+</li>
+<li>
+The secure aspect could be a problem some times
+</li>
+<li>
+Easy to implmenet (even easier with Nfc For Android ;) )
+</li>
+<li>
+Cheap technology (&lt;1€ / tag)
+</li>
+</ul>
+</article>
+</section>
+<section class="intro  fond_1">
+<h2>Links</h2>
+<article>
+
+<img src="images/link.png" alt="images/link.png" class="icone">
+
+</article>
+</section>
+<section>
+<h2>Links</h2>
+<article>
+<ul>
+<li>
+<a href="http://goo.gl/O3ryH">http://goo.gl/O3ryH</a> The presentation
+</li>
+<li>
+<a href="http://www.nfc-forum.org/specs/spec_list/">NFC Forum specifications</a>
+</li>
+<li>
+<a href="http://d.android.com/guide/topics/nfc/index.html">Android NFC API</a>
+</li>
+<li>
+<a href="http://d.android.com/reference/android/nfc/package-summary.html">Android Javadoc</a>
+</li>
+<li>
+<a href="http://rapidnfc.com/">Buy tags</a>
+</li>
+<li>
+<a href="http://nfctags.tagstand.com/collections/nfc-reader-writers/products/mini-usb-nfc-reader-writer-acr122t">Reader</a>
+</li>
+<li>
+<a href="https://github.com/organizations/NfcForAndroid">Nfc For Android project</a>
+</li>
+<li>
+<a href="https://github.com/organizations/binomed">Github Jean-François</a>
+</li>
+</ul>
+</article>
+</section>
+<section class="intro pagetransition">
+<h2>Merci</h2>
+<article>
+
+<img src="images/fond_merci.png" alt="images/fond_merci.png">
+
+<p class="lien_prez"><a href="http://goo.gl/ao62e">http://goo.gl/ao62e</a></p>
+
+<img src="images/twitter-icon.png" alt="images/twitter-icon.png" width="50" class="logo_twitter">
+
+<p class="twitters_account">@gdgnantes / @binomed</p>
+
+<img src="images/google-Plus-icon.png" alt="images/google-Plus-icon.png" width="50" class="logo_gplus">
+
+<p class="gplus_account"><a href="http://gplus.to/jefBinomed">http://gplus.to/jefBinomed</a></p>
+</article>
+</section>
+    <script src="./dzslides/core/dzslides.js"></script>
+    <script src="./dzslides/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
