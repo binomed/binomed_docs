@@ -301,7 +301,7 @@ image::images/breizhcamp_screen3.png[role="float-left", width="200px"]
 ====
 
 == Application BreizhCamp
-=== Démo
+===	 Démo
 
 image::images/ic_launcher.png[role="middle"]
 
