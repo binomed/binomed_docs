@@ -1,0 +1,1163 @@
+//
+// Génération
+//
+// dzslides sans embarquer les ressources
+// asciidoc <nomfichier>.asciidoc
+//
+// dzslides en embarquant les ressources
+// asciidoc -a data-uri -a linkcss! <nomfichier>.asciidoc
+= NFC & Android
+Breizhcamp 2013
+v1.0
+//:doctitle: Titre de la présentation, sans mise en avant de texte sous différentes formes.
+:author: Breizhcamp 2013
+:title: NFC & Android
+:subtitle: New Future Communication
+:description: NFC presentation on Android
+:copyright: Copyright 2013 SQLI
+//:website: TBD
+//:slidesurl: TBD
+// à remplacer par le chemin relatif de notre path d'image
+//:imagesdir: 
+:backend: dzslides
+:linkcss: true
+:dzslides-style: sqli
+:dzslides-transition: fade
+:dzslides-highlight: googlecode
+:dzslides-autoplay: 0
+// disable syntax highlighting unless turned on explicitly
+:syntax: no-highlight
+:sqli-custom-css: css/custom.css
+
+
+//    _____   _   _   _______   _____     ____  
+//   |_   _| | \ | | |__   __| |  __ \   / __ \ 
+//     | |   |  \| |    | |    | |__) | | |  | |
+//     | |   | . ` |    | |    |  _  /  | |  | |
+//    _| |_  | |\  |    | |    | | \ \  | |__| |
+//   |_____| |_| \_|    |_|    |_|  \_\  \____/ 
+//                                              
+//        
+
+
+
+== Qui suis-je ?
+
+===  Jean-François GARREAU, Consultant IT SQLI
+
+image::images/jf.jpg[role="middle avatar"]
+
+
+image::images/sqli_logo.png[role="company_logo"]
+
+image::images/GDG-Logo-carre.png[role="gdg_logo"]
+
+
+
+//     _____    ____    __  __   __  __              _____   _____    ______ 
+//    / ____|  / __ \  |  \/  | |  \/  |     /\     |_   _| |  __ \  |  ____|
+//   | (___   | |  | | | \  / | | \  / |    /  \      | |   | |__) | | |__   
+//    \___ \  | |  | | | |\/| | | |\/| |   / /\ \     | |   |  _  /  |  __|  
+//    ____) | | |__| | | |  | | | |  | |  / ____ \   _| |_  | | \ \  | |____ 
+//   |_____/   \____/  |_|  |_| |_|  |_| /_/    \_\ |_____| |_|  \_\ |______|
+//                                                                           
+//      
+
+
+== Agenda
+
+* Qu'est ce que le NFC ?
+
+* Historique
+	
+	Un peu d'histoire
+
+* Standards
+	
+	Théories et standards 
+
+* Uses Cases
+	
+	On peut faire quoi avec le NFC ? 
+
+* Demos
+	
+	Une petit démo
+
+* Implementation
+	
+	Concrètement ça donne uConcretly, how do I code that ?
+
+* Nfa : Nfc For Android
+
+	Presentation of the library
+
+* Conclusion
+
+//    _   _   ______    _____     ___  
+//   | \ | | |  ____|  / ____|   |__ \ 
+//   |  \| | | |__    | |           ) |
+//   | . ` | |  __|   | |          / / 
+//   | |\  | | |      | |____     |_|  
+//   |_| \_| |_|       \_____|    (_)  
+//                                     
+//       
+
+[role="intro fond_1"]
+== What is NFC ?
+
+image::images/nfc_logo.jpg[role="icone"]
+
+
+== What is NFC ?
+
+image::images/cat_scientist.jpg[role="stretch-y middle"]
+
+== What is NFC ?
+=== NFC = Near Field Communication*
+
+image::images/nfc_logo.jpg[width="100px",role="middle"]
+
+image::images/nfc_explain.jpg[width="300px",role="middle"]
+
+image::images/nfc_card.jpg[width="100px",role="middle"]
+
+
+[NOTES]
+====
+Register by NFC FORUM for Phones mainly
+
+User needed => Securised
+
+RFID => Auto alimentated
+====
+
+//    ______   _______              _______                _____    _______ 
+//   |  ____| |__   __|     /\     |__   __|       /\     |  __ \  |__   __|
+//   | |__       | |       /  \       | |         /  \    | |__) |    | |   
+//   |  __|      | |      / /\ \      | |        / /\ \   |  _  /     | |   
+//   | |____     | |     / ____ \     | |       / ____ \  | | \ \     | |   
+//   |______|    |_|    /_/    \_\    |_|      /_/    \_\ |_|  \_\    |_|   
+//                                                                          
+//  
+
+[role="intro fond_1"]
+== History
+
+image::images/nfc_card.jpg[role="icone"]
+
+== History
+*2004*
+
+	Nokia, Philips and Sony create the NFC Forum
+
++++++++++
+<br>
++++++++++
+
+*2006*
+	
+	 First NFC Tags specifications
+	 
+	 First NFC Phone  : Nokia 6131
+
++++++++++
+<br>
++++++++++
+
+*2009*
+	
+	Add of P2P protocol. 
+ 
+
++++++++++
+<br>
++++++++++
+*2010*
+	
+	First NFC Android phone
+
+[NOTES]
+====
+NFC Forum = 140 Company today. Unifed protocols
+====
+
+== History
+=== Technologies : RFID / SmartCard
+*NFC is based on RFID = Radio Frequency Identification*
+
+//	La distance entre le lecteur et le tag peut être de plusieurs dizaines de mètres (pour le RFID)
+
+
++++++++++
+<br>
++++++++++
+image::images/RFID.jpg[role="middle", width="200"]
+
+
++++++++++
+<br>
++++++++++
+*SmartCard :*
+
+	NFC = extension of SmartCard, => standardisation of smartcard throught RFID communication
+	
+
+[NOTES]
+====
+RFID : Distance de pls mètres since 1983 ! 
+
+-> Fréquence 13.56Mhz pour com < 1m
+
+NFC pour SmartCard = NFC standard de smartCard pour la communication RFID
+
+Questions : RFID = ISO 18092 /  Smart Card = ISO 14443-4
+	
+====
+
+//    _   _    ____    _____    __  __   ______    _____ 
+//   | \ | |  / __ \  |  __ \  |  \/  | |  ____|  / ____|
+//   |  \| | | |  | | | |__) | | \  / | | |__    | (___  
+//   | . ` | | |  | | |  _  /  | |\/| | |  __|    \___ \ 
+//   | |\  | | |__| | | | \ \  | |  | | | |____   ____) |
+//   |_| \_|  \____/  |_|  \_\ |_|  |_| |______| |_____/ 
+//                                                       
+//   
+
+[role="intro  fond_1"]
+== Standards
+
+image::images/iso-logo.png[role="icone"]
+
+== Standards
+=== Mode
+*3 communications modes :*
+
+++++++
+<br>
+++++++
+
+image::images/smart_card_nfc.jpg[role="float-left", width="150px"]
+Card emulation
+	
+++++++
+<br>
+<br>
+<br>
+<br>
+++++++
+
+image::images/social-nfc-tags.jpg[role="float-left", width="150px"]
+Read / Write
+	
+++++++
+<br>
+<br>
+<br>
+<br>
+++++++
+
+image::images/nfc_p2p.jpg[role="float-left", width="150px"]
+Peer to Peer
+	
+++++++
+<br>
+<br>
+<br>
+++++++
+
+
+[NOTES]
+====
+Normes Régies par le NFC Forum !
+
+Emulation= Simulation interface carte à puce
+
+Lecture / Ecriture : Tag
+
+Pair à Pair : 2 Appareils
+====
+
+== Standards
+=== Communication 
+
+image::images/reduce_speed.svg[role="middle", width="400"]
+
+
+
+[NOTES]
+====
+* Rates between 106 et 424 Kps /  Communication lower to 10cm. 
+
+Half-duplex : Communication dans les 2 sens mais chacun son tour. FullDuplex : Com 2 sens simultanément
+
+NfcA : Modulation sur 100% -1 pour 0 après 1, 0 pour 0 après 0, 1 pour 1 après 0 ou 1
+
+NfcB : Modulation sur 10%
+====
+
+== Standards
+=== Protocol Others standards tolerated by Android
+
+image::images/felica_logo.png[role="float-left", height="150"]
+*Felica (NfcF in Android)*
+
+	Japan
+
++++++++++
+<br>
+<br>
+<br>
+<br>
++++++++++
+image::images/iso-logo.png[role="float-left", height="150"]
+*ISO*
+
+	ISO 14443 A (NfcA in Android)
+	
+	ISO 14443 B (NfcB in Android)
+	
+	15693 (NfcV in Android)
+
+
+[NOTES]
+====
+Felica : Pas ISO mais NFC-Forum : Japon
+
+15693 : ISO mais pas NFC-Forum
+====
+
+== Standards
+=== Tag types of the NFC Forum
+*The NFC forum defined 4 types of tags*
+
+	NfcA = Type 1 / 2 / 4
+	
+	NfcB = Type 4
+	
+	NfcF = Type 3
+
+
+[options="header"]
+|====================
+|Type | Available memory  | Communication Type | Possible Tags
+|Type 1 | 96bits -> 2Kbits | ISO 14443-A | Topaz
+|Type 2 | 48bits -> 2Kbits | ISO 14443-A | Mifare Ultra Light
+|Type 3 | ? -> 1Mbits | Felica | Felica
+|Type 4 | ? -> 32Kbits | ISO 14443 A or B | DesFire ISO 14443-A
+|====================
+
+
+
+== Standards
+=== NDEF : NFC Data Exchange Format
+
+image::images/Ndefrecod.png[role="middle"]
+
+++++++
+<br>
+++++++
+
+Header = informations about the tag
+
+	Place in message
+	
+	Type
+	
+	Size
+
+	Payload = Data
+
+[NOTES]
+====
+Format d'échange standard | One Ndef = N ndef record
+
+Predifined types
+
+But des types = Gain de place
+====
+
+== Standards
+=== NDEF - Informations about the message
+
+++++++
+<div id="ndef_header" ></div>
+++++++
+
+image::images/Ndeffullrecod.png[role="float-left stretch-y"]
+
+* *MB (Message Begin)*
+	
+* *ME (Message End)*
+	
+* *CF (Chunk Flag)*
+	
+* *SR (Short Reccord)*
+	
+* *IL (ID Length)*
+
+* *TNF (Type Name Format)*
+
+[NOTES]
+====
+MB = 1 => début de message | ME = 1 => Message fini dans le message  | SR : is short (1octet)
+
+IL : si à 1 : ID Length et  ID devront être remplis
+
+====
+
+== Standards
+=== NDEF - TNF (data type)
+
+* *0x00*  Empty : Empty record
+* *0x01* Well-Known Type (WKT) : Type defined by NFC Forum
+* *0x02* : MIME Type
+* *0x03* Absolute Uri
+* *0x04* External
+* *0x05* Unkown Type
+* *0x06* Unchanged Type (use for truncated messages)
+* *0x07* Reserved for futur use
+
+== Standards
+=== NDEF - Type Length
+
+++++++
+<div id="ndef_length_type" ></div>
+++++++
+
+image::images/Ndeffullrecod.png[role="float-left stretch-y"]
+
+
+[NOTES]
+====
+Détail du type contenu dans le message : lié au TNF. TNF = premier type, Vrai type dans le payload ! => taille à préciser
+
+====
+
+== Standards
+=== NDEF - Data length
+
+++++++
+<div id="ndef_length_payload" ></div>
+++++++
+
+image::images/Ndeffullrecod.png[role="float-left stretch-y"]
+
+
+[NOTES]
+====
+La taille varie à cause du champ SR (Short Record) : size between 1 or 4 octets
+
+====
+
+== Standards
+=== NDEF - Type & Id
+
+++++++
+<div id="ndef_type_id" ></div>
+++++++
+
+image::images/Ndeffullrecod.png[role="float-left stretch-y"]
+
+	
+[NOTES]
+====
+Type always present : Payload Type
+
+ID dependant to IL field : record Id
+
+====
+
+== Standards
+=== NDEF - Message content
+
+++++++
+<div id="ndef_payload" ></div>
+++++++
+
+image::images/Ndeffullrecod.png[role="float-left stretch-y"]
+
+
+== Standards
+=== Well Known Types
+
+Octet *Type*
+
+* U (0x55) for uris
+* T (0x54) for text
+* Sp (0x53,0x70) for smartPoster (type length is 2)
+
+[NOTES]
+====
+Sert à gagner encore plus de bits
+
+====
+
+== Standards
+=== Well Known Types
+
+* *URIs*, 1st bit = identification bit
+	
+	0x00 : no prefix
+	
+	0x01 : http://www.
+		
+	0x03 : http://
+		
+	0x05 : tel:
+	
+	0x06 : mailto:
+	
+	0x1D : file://
+	
+	0x24...0xFF : reserved for futur uses
+
+
+* *Text* : one octet for encoding (UTF8 =0, UTF16 = 1) and one for language
+* *SmartPoster* New Ndef with the URI
+
+[NOTES]
+====
+Le payload Varie en fonction du WKT
+
+Pour les Uris : il y en a 35 !
+
+SmartPoster contient dans son payload le nouvel enregistrement et les données annexes
+
+====
+
+== Standards
+=== External types
+
+You could define your own types ! 
+[NOTES]
+====
+Filtrer le message et donc ouvrir le message à partir d’une application précise
+====
+
+//    _    _    _____               _____   ______    _____ 
+//   | |  | |  / ____|     /\      / ____| |  ____|  / ____|
+//   | |  | | | (___      /  \    | |  __  | |__    | (___  
+//   | |  | |  \___ \    / /\ \   | | |_ | |  __|    \___ \ 
+//   | |__| |  ____) |  / ____ \  | |__| | | |____   ____) |
+//    \____/  |_____/  /_/    \_\  \_____| |______| |_____/ 
+//                                                          
+//     
+
+[role="intro fond_1"]
+== Uses
+
+image::images/google-wallet-logo.jpg[role="icone"]
+
+== Uses
+=== Read mode
+
+++++++
+<br>
+++++++
+
+image::images/social-nfc-tags.jpg[width="240px"]
+
+image::images/recharge_nfc.jpg[width="240px"]
+
+image::images/foursquare-nfc.png[width="240px"]
+
+[NOTES]
+====
+Infos complementaires sur des produits  /////// GEOLOC /////// URLS
+
+Codes promos //////	Dématérialisation de cartes
+====
+
+== Uses
+=== P2P
+
+image::images/nfc_beam.jpg[width="450px", role="middle"]
+
+[NOTES]
+====
+Echange de contacts ///// 	Echange de fichiers //////	Configuration bluetooth
+====
+
+== Uses
+=== Card emulation : not available nativly with Android
+	
+image::images/cityzi_transport.jpg[width="400px"]
+
+image::images/google-wallet.jpg[width="400px"]
+
+
+[NOTES]
+====
+Paiement securise 	
+
+Authentification sur des reseaux securise
+====
+
+
+//    _____    ______   __  __    ____  
+//   |  __ \  |  ____| |  \/  |  / __ \ 
+//   | |  | | | |__    | \  / | | |  | |
+//   | |  | | |  __|   | |\/| | | |  | |
+//   | |__| | | |____  | |  | | | |__| |
+//   |_____/  |______| |_|  |_|  \____/ 
+//                                      
+//         
+
+[role="intro  fond_1"]
+== Demo
+
+image::images/nfc_demo.png[role="icone"]
+
+//    _____   __  __   _____    _        ______   __  __   ______   _   _   _______              _______   _____    ____    _   _ 
+//   |_   _| |  \/  | |  __ \  | |      |  ____| |  \/  | |  ____| | \ | | |__   __|     /\     |__   __| |_   _|  / __ \  | \ | |
+//     | |   | \  / | | |__) | | |      | |__    | \  / | | |__    |  \| |    | |       /  \       | |      | |   | |  | | |  \| |
+//     | |   | |\/| | |  ___/  | |      |  __|   | |\/| | |  __|   | . ` |    | |      / /\ \      | |      | |   | |  | | | . ` |
+//    _| |_  | |  | | | |      | |____  | |____  | |  | | | |____  | |\  |    | |     / ____ \     | |     _| |_  | |__| | | |\  |
+//   |_____| |_|  |_| |_|      |______| |______| |_|  |_| |______| |_| \_|    |_|    /_/    \_\    |_|    |_____|  \____/  |_| \_|
+//                                                                                                                                
+//        
+
+[role="intro  fond_1"]
+== Implementation
+
+image::images/android_nfc.png[role="icone"]
+
+== Implementation
+=== 2010 : Read / Write
+
+
+image::images/read_nfc.jpg[role="middle strech-y"]
+
+
+== Implementation
+=== 2011 : Beam
+
+image::images/DBZ_fusion.png[role="middle", width="700px"]
+
+
+== Implementation
+=== 2012 : Share medias
+
+image::images/troc.gif[role="middle strech-y"]
+
+== Implementation
+=== How do we code that ?
+
+image::images/nfc_tag_dispatch.png[role="middle"]
+
+
+[NOTES]
+====
+IL n'y a pas que le NDEF de reconnu ! 
+
+Message transformé en Intent
+====
+
+
+== Implementation
+=== Configuration
+*AndroidManifest.xml*
+
+++++++
+<br>
+++++++
+Add permission
+[syntax="xml"]
+----
+<uses-permission android:name="android.permission.NFC"/>
+----
+++++++
+<br>
+++++++
+Add feature use (only phones with NFC chip)
+[syntax="xml"]
+----
+<uses-feature android:required="true" android:name="android.hardware.nfc"/>
+----
+++++++
+<br>
+++++++
+Specify the min Sdk version
+[syntax="xml"]
+----
+<uses-sdk android:minSdkVersion="10" />
+----
+
+== Implementation
+=== Tag reception
+*We could filters tag according*
+
+++++++
+<br>
+++++++
+	Technology
+	Mime Type
+++++++
+<br>
+++++++
+[syntax="xml"]
+----
+<uses-permission android:name="android.permission.NFC"/>
+<intent-filter>
+	<action android:name="android.nfc.action.NDEF_DISCOVERED"/>
+	<category android:name="android.intent.category.DEFAULT"/>
+	<data android:scheme="http" android:host="sqli.com"/>
+</intent-filter>
+----
+
+== Implementation
+=== Tags reception
+*Intercept and dispatch*
+++++++
+<br>
+++++++
+[syntax="java redux"]
+----
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+	…
+	mAdapter = NfcAdapter.getDefaultAdapter(this);
+	resoudreIntent(getIntent());
+}
+
+@Override
+protected void onResume() {
+	super.onResume();
+	…
+	mAdapter.enableForegroundDispatch(this, pendingIntent, filters, techs);
+}
+
+@Override
+protected void onPause() {
+	…
+	mAdapter.disableForegroundDispatch(this);
+	super.onPause();
+}
+----
+
+== Implementation
+=== Read a tag
+*We read information from Intent*
+++++++
+<br>
+++++++
+[syntax="java redux"]
+----
+private void resoudreIntent(Intent intent) {
+	String action = intent.getAction();
+	if (NfcAdapter.ACTION_NDEF_DISCOVERED.equals(action)) {
+		Parcelable[] rawMsgs = intent.getParcelableArrayExtra(
+			NfcAdapter.EXTRA_NDEF_MESSAGES);
+		NdefMessage[] messages;
+		NdefRecord record = null;
+		if (rawMsgs != null) {
+			messages = new NdefMessage[rawMsgs.length];
+			for (int i = 0; i < rawMsgs.length; i++) {
+				messages[i] = (NdefMessage) rawMsgs[i];
+				for (int j = 0; j < messages[i].getRecords().length; j++) {
+					record = messages[i].getRecords()[j];
+					…
+				}
+			}
+		}
+	}
+}
+----
+
+== Implementation
+=== Tag write
+*You have to create a NDefMessage*
+++++++
+<br>
+++++++
+[syntax="java"]
+----
+String uri = "sqli.com";
+byte[] uriField = uri.getBytes();
+byte[] payload = new byte[uriField.length + 1];
+payload[0] = 0x03;
+System.arraycopy(uriField, 0, payload, 1, uriField.length);
+NdefRecord record = new NdefRecord(NdefRecord.TNF_WELL_KNOWN, 
+		NdefRecord.RTD_URI, 
+		new byte[0], 
+		payload);
+NdefMessage msg = new NdefMessage(new NdefRecord[]{record});
+----
+
+== Implementation
+=== Write tag
+*Then you will write on a tag (when it is detected : Intent)*
+++++++
+<br>
+++++++
+[syntax="java redux"]
+----
+private void writeTag(Intent intent) {
+	Tag tag = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);
+	final Ndef ndef = Ndef.get(tag);
+	AsyncTask<Void, Void, String> taskWrite = new AsyncTask<Void, Void, String>() {
+		@Override
+		protected String doInBackground(Void... params) {
+			try {
+				ndef.connect();
+				try {
+				ndef.writeNdefMessage(getMessage());
+				} catch (FormatException e) {}
+			ndef.close();
+			} catch (IOException e) {}
+		}
+	};
+	taskWrite.execute();
+}
+----
+
+== Implementation
+=== BEAM
+*Override the manifest.xml*
+++++++
+<br>
+++++++
+[syntax="xml"]
+----
+<meta-data
+	android:name="android.nfc.disable_beam_default"
+	android:value="true" />
+----
+
+++++++
+<br>
+++++++
+*Then specify that you write like for tag but for a precise intetn*
+++++++
+<br>
+++++++
+[syntax="java"]
+----
+mAdapter.setNdefPushMessageCallback(this, this);
+----
+
+//    _   _   ______            
+//   | \ | | |  ____|     /\    
+//   |  \| | | |__       /  \   
+//   | . ` | |  __|     / /\ \  
+//   | |\  | | |       / ____ \ 
+//   |_| \_| |_|      /_/    \_\
+//                              
+//   
+
+[role="intro  fond_1"]
+== NFA
+=== Nfc For Android
+
+image::images/nfa.png[role="icone"]
+
+== Why ?
+
+*NFC & Android = byte[] !*
+
+
+	How to write "Hello World"
+
+++++++
+<br>
+++++++
+[syntax="java redux"]
+----
+byte[] languageData = "en".getBytes();
+
+byte[] textData = "Hello World".getBytes(record.getEncoding());
+byte[] payload = new byte[1 + languageData.length + textData.length];
+
+byte status = (byte) 0x00;
+payload[0] = status;
+System.arraycopy(languageData, 0, payload, 1, languageData.length);
+System.arraycopy(textData, 0, payload, 1 + languageData.length
+			, textData.length);
+
+NdefRecord ndefRecord = new NdefRecord(NdefRecord.TNF_WELL_KNOWN
+			, NdefRecord.RTD_TEXT
+			, record.getId()
+			, payload);
+----
+
+== Why ? 
+
+image::images/meme_rock.jpg[role="stretch-y middle"]
+
+[NOTES]
+====
+Simplifier l'écriture. Si le nfc doit percer, il faut l'aider
+====
+
+== Targets
+
+[{stepwise}]
+* Non inherit base library
+* Lightweight
+* Helpers ! 
+* Less code
+
+[NOTES]
+====
+Parler du problème fréquent avec le multi héritage mais dire que ça sera dispo
+====
+
+== Targets
+
+image::images/meme_challenge.jpg[role="stretch-y middle"]
+
+
+== Implementation
+=== Initialisation
+
+*Android*
+[syntax="java"]
+----
+// We register the default Nfc Adapter
+mAdapter = NfcAdapter.getDefaultAdapter(activity);
+// We register the curent activity to a the filters we wants
+PendingIntent pendingIntent = PendingIntent.getActivity(activity, 0
+	, new Intent(activity, activity.getClass())
+		.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), 0);
+
+int length = filters != null && filters.length > 0 ? filters.length : 1;
+IntentFilter[] intentFilters = new IntentFilter[length];
+IntentFilter ndefFilter = new IntentFilter(filter.getAction());
+pendingIntentArray.put(activity.getTaskId(), pendingIntent);		
+----
+
+*NfA*
+[syntax="java"]
+----
+// We register our activity to the NFA Manager
+NFA_MANAGER.register(activity //
+		, NDEF_FILTER //				
+		);
+----
+
+== Implementation
+=== Read - Android
+
+[syntax="java"]
+----
+byte[] payload = ndefRecord.getPayload();
+ByteArrayInputStream bais = new ByteArrayInputStream(payload);
+int status = bais.read();
+byte languageCodeLength = (byte) (status & TextRecord.LANGUAGE_CODE_MASK);
+byte[] bytes = new byte[languageCodeLength];
+bais.read(bytes, 0, bytes.length);
+String languageCode = new String(bytes);
+bytes = new byte[payload.length - languageCodeLength - 1];
+bais.read(bytes, 0, bytes.length);
+byte[] textData = bytes;
+Charset textEncoding = ((status & 0x80) != 0) ? TextRecord.UTF16 
+			: TextRecord.UTF8;
+String message = null;
+try {
+	message = new String(textData, textEncoding.name());
+} catch (UnsupportedEncodingException e) {
+	throw new RuntimeException(e);
+}
+----
+
+== Implementation
+=== Read - NfA
+
+[syntax="java"]
+----
+NfaRecieveBeanBuilder<TextRecord> builder = recieveBeanConfigure(); //
+builder //
+.activity(activity) //
+.intent(intent) //
+.intentRecieveRecord(new INfaIntentRecieveRecord<TextRecord>() {
+
+	@Override
+	public void recieveRecord(TextRecord record) {
+		String message = record.getText();
+
+	}
+}) // INfaIntentRecieveRecord
+.parser(TEXT_PARSER); //
+NFA_MANAGER.manageIntent(builder.build());
+----
+
+== Implementation
+=== Write
+
+*Android*
+[syntax="java"]
+----
+byte[] languageData = "en".getBytes();
+byte[] textData = "Hello World".getBytes(record.getEncoding());
+byte[] payload = new byte[1 + languageData.length + textData.length];
+byte status = (byte) (0x00);
+payload[0] = status;
+System.arraycopy(languageData, 0, payload, 1, languageData.length);
+System.arraycopy(textData, 0, payload, 1 + languageData.length
+		, textData.length);
+
+NdefRecord ndefRecord = new NdefRecord(NdefRecord.TNF_WELL_KNOWN
+		, NdefRecord.RTD_TEXT, record.getId(), payload);
+----
+
+*NfA*
+[syntax="java redux"]
+----
+NFA_MANAGER.writeTag(getApplicationContext(), //
+		intent, // 
+		activity, // 
+		false, // addAndroidApplicationRecord
+		NfaWriteBean.writeBeanConfigure() //
+				.writer(TEXT_WRITER) //
+				.record(NfaRecordFactory.wellKnowTypeFactory()//
+					.textRecordInstance("Hello World")) //
+				.build());
+----
+
+// présenter le gain de code
+
+== RoadMap
+
+// Parler de ce qui viendra :)
+* 0.8.0
+	
+	More Writers / Parsers / Filters / Records
+
+	Signature Record
+	
+	SmartPoster more rich
+
+	Unit tests :P
+
+* 0.9.0
+
+	Handover Record
+
+	Cryptography module
+
+	Add some abstract class
+
+* 1.0.0
+
+	Code optimisation
+
+	bugs fix
+
+	your contribution ;)
+
+== Summary
+
+image::images/nfa.png[role="float-left"]
+
+
+Available with maven on Oss Sonatype : http://goo.gl/NAQwd
+
+++++++
+<br>
+<br>
+++++++
+
+Open source on github : https://github.com/organizations/NfcForAndroid[Github]
+
+++++++
+<br>
+++++++
+
+Thank you to https://github.com/grundid/nfctools[NfcTools] and http://code.google.com/p/ndef-tools-for-android/[Ndef tools for Android]
+
+++++++
+<br>
+++++++
+
+Sample available here : https://play.google.com/store/apps/details?id=com.github.nfcforandroid.samples[Play Store]
+
+== Summary
+
+image::images/meme_baby_win.jpg[role="stretch-y middle"]
+
+
+//     _____    ____    _   _    _____   _        _    _    _____   _____    ____    _   _ 
+//    / ____|  / __ \  | \ | |  / ____| | |      | |  | |  / ____| |_   _|  / __ \  | \ | |
+//   | |      | |  | | |  \| | | |      | |      | |  | | | (___     | |   | |  | | |  \| |
+//   | |      | |  | | | . ` | | |      | |      | |  | |  \___ \    | |   | |  | | | . ` |
+//   | |____  | |__| | | |\  | | |____  | |____  | |__| |  ____) |  _| |_  | |__| | | |\  |
+//    \_____|  \____/  |_| \_|  \_____| |______|  \____/  |_____/  |_____|  \____/  |_| \_|
+//                                                                                         
+//
+
+[role="intro  fond_1"]
+== Conclusion
+
+image::images/nfc_logo.jpg[role="icone"]
+
+== Conclusion
+
+* The technology is pretty recent but already offers a high number of possibilities
+* The secure aspect could be a problem some times
+* Easy to implmenet (even easier with Nfc For Android ;) )
+* Cheap technology (<1€ / tag)
+
+
+
+//    _        _____   ______   _   _    _____ 
+//   | |      |_   _| |  ____| | \ | |  / ____|
+//   | |        | |   | |__    |  \| | | (___  
+//   | |        | |   |  __|   | . ` |  \___ \ 
+//   | |____   _| |_  | |____  | |\  |  ____) |
+//   |______| |_____| |______| |_| \_| |_____/ 
+//                                             
+//   
+
+[role="intro  fond_1"]
+== Links
+
+image::images/link.png[role="icone"]
+
+// Revoir la disposition : + ajout du lien de la presentation
+
+== Links
+
+*  http://goo.gl/O3ryH[http://goo.gl/O3ryH] The presentation
+
+* http://www.nfc-forum.org/specs/spec_list/[NFC Forum specifications]
+
+* http://d.android.com/guide/topics/nfc/index.html[Android NFC API]
+
+* http://d.android.com/reference/android/nfc/package-summary.html[Android Javadoc]
+
+* http://rapidnfc.com/[Buy tags]
+
+* http://nfctags.tagstand.com/collections/nfc-reader-writers/products/mini-usb-nfc-reader-writer-acr122t[Reader]
+
+* https://github.com/organizations/NfcForAndroid[Nfc For Android project]
+
+* https://github.com/organizations/binomed[Github Jean-François]
+
+
+//     ____    _    _   ______    _____   _______   _____    ____    _   _    _____ 
+//    / __ \  | |  | | |  ____|  / ____| |__   __| |_   _|  / __ \  | \ | |  / ____|
+//   | |  | | | |  | | | |__    | (___      | |      | |   | |  | | |  \| | | (___  
+//   | |  | | | |  | | |  __|    \___ \     | |      | |   | |  | | | . ` |  \___ \ 
+//   | |__| | | |__| | | |____   ____) |    | |     _| |_  | |__| | | |\  |  ____) |
+//    \___\_\  \____/  |______| |_____/     |_|    |_____|  \____/  |_| \_| |_____/ 
+//                                                                                  
+//   
+
+[role="intro pagetransition"]
+== Merci
+
+image::images/fond_merci.png[]
+
+[role="lien_prez"]
+http://goo.gl/ao62e
+
+image::images/twitter-icon.png[width="50", role="logo_twitter"]
+
+[role="twitters_account"]
+@gdgnantes / @binomed
+ 
+image::images/google-Plus-icon.png[width="50",role="logo_gplus"]
+
+[role="gplus_account"]
+http://gplus.to/jefBinomed 

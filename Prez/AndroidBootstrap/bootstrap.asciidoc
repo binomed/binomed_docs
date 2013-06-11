@@ -671,7 +671,7 @@ Le poids n'est pas un problème !  progard à la rescousse.
 image::images/fond_merci.png[]
 
 [role="lien_prez"]
-http://goo.gl/ao62e
+http://goo.gl/uI0Zu
 
 image::images/twitter-icon.png[width="50", role="logo_twitter"]
 
