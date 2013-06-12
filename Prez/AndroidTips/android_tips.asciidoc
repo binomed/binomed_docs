@@ -7,10 +7,10 @@
 // dzslides en embarquant les ressources
 // asciidoc -a data-uri -a linkcss! <nomfichier>.asciidoc
 = Bonnes pratiques du développement Android
-Jean-François Garreau, SQLI 
+DroidCon FR13
 v1.0
 //:doctitle: Titre de la présentation, sans mise en avant de texte sous différentes formes.
-:author: Jean-François Garreau, SQLI
+:author: DroidCon FR13
 :title: Bonnes pratiques du développement Android
 :subtitle: Revue des bonnes pratiques et de quelques ui patterns
 :description: Revue des bonnes pratiques et de quelques ui patterns
@@ -43,44 +43,29 @@ v1.0
 <script src="scripts/jquery-1.8.3.min.js"></script>
 <script src="scripts/iscroll-lite.js"></script>
 <script src="scripts/jquery.hammer.min.js"></script>
+<script src="scripts/fastclick.js"></script>
 <!--<script src="scripts/swipeview.js"></script>-->
 <!--<script src="scripts/code.photoswipe-3.0.5.js"></script>
 <script src="scripts/klass.min.js"></script>-->
 <!--<script src="scripts/jquery.pageslide.min.js"></script>-->
 <!--<script src="scripts/jquery.mobile-1.3.0.min.js"></script>-->
+<script type="text/javascript">
+window.addEventListener('load', function() {
+            new FastClick(document.body);
+        }, false);
+</script>
 +++++++++++++++++++++++
 
-== Qui suis-je ?
+== Qui suis-je ?
 
-===  Jean-François GARREAU
+===  Jean-François GARREAU, Consultant IT SQLI
 
-image::images/jf.png[role="float-left"]
+image::images/jf.jpg[role="middle avatar"]
 
 
-* Consultant IT chez SQLI
- +
- +
-* Développeur Android à mes heures perdues
- +
- +
-* Un des membres fondateur du GDG Nantes
- +
- +
+image::images/sqli_logo.png[role="company_logo"]
 
-* Créateur de CineShowTime  image:images/cineshowtime.png[width="50"]
- +
- +
-
-image::images/twitter-icon.png[width="50", role="float-left"]
-
-@gdgnantes / @binomed / @uncle_bens1
- +
- +
- +
-
-image::images/google-Plus-icon.png[width="50",role="float-left"]
-
-http://gplus.to/jefBinomed
+image::images/GDG-Logo-carre.png[role="gdg_logo"]
 
 
 
@@ -154,14 +139,16 @@ return result;
 Reviens à : 
 
 
-[syntax="java"]
-----
-Integer result = new Integer(1);
-for (int i = 0; i < 10; i++){
- result = new Integer(i + result.intValue());
+++++
+<div class="listing">
+<pre class="java"><code>Integer result = new Integer(1);
+for (int i = 0; i &lt; 10; i++){
+ result = <mark>new Integer(i + result.intValue())</mark>;
 }
-return result.intValue();
-----
+return <mark>result.intValue();</mark></code></pre>
+</div>
+</div>
+++++
 --
 
 == Types primitifs
@@ -189,13 +176,16 @@ donne
 
 [{stepwise}]
 --
-[syntax="java"]
-----
-HashMap<Integer,String> map = new HashMap<Integer,String>();
-map.put(new Integer(550),"Echo");
+
+++++
+<div class="listing">
+<pre class="java"><code>
+HashMap&lt;Integer,String&gt; map = new HashMap&lt;Integer,String&gt;();
+map.put(<mark>new Integer(550)</mark>,"Echo");
 map.put(new Integer(551),"Echo");
 map.get(new Integer(550));
-----
+</code></pre></div>
+++++
 
 avec les sparseArray : pas d'auotboxing ! 
 
@@ -208,6 +198,11 @@ map.put(551,"Echo");
 map.get(550);
 ----
 --
+
+[NOTES]
+====
+Gère aussi Booléens, Int en natif. La clé reste un entier !
+====
 
 == Préférons les implémentations aux interfaces
 
@@ -225,10 +220,12 @@ List<String> list = new ArrayList<String>();
 est à remplacer par 
 
 
-[syntax="java"]
-----
-ArrayList<String> list = new ArrayList<String>();
-----
+++++
+<div class="listing">
+<pre class="java"><code>
+<mark>ArrayList&lt;String&gt;</mark> list = new ArrayList&lt;String&gt;();
+</code></pre></div>
+++++
 --
 
 [NOTES]
@@ -281,65 +278,72 @@ image::images/cofee_overload.jpg[role="icone"]
 
 * L'utilisation de variables statiques permet d'économiser des instanciations.
 
-[syntax="java"]
-----
+++++
+<div class="listing">
+<pre class="java"><code>
 public long doSomeStuff(int left, int top, int right, int bottom){
 	return stuff(new Rect(left, top, right, bottom));
 } 
 
 public abstract long stuff(Rect rect);
-----
+</code></pre></div>
+++++
 
 [{stepwise}]
 --
 On peut faire mieux ! 
 
-[syntax="java"]
-----
-private static final Rect rect = new Rect();
+++++
+<div class="listing">
+<pre class="java"><code>
+private <mark>static final</mark> Rect rect = new Rect();
 
 public long doSomeStuff(int left, int top, int right, int bottom){
-	rect.set(left, top, right, bottom);
+	<mark>rect.set(left, top, right, bottom)</mark>;
 	return stuff(rect);
 } 
 
 public abstract long stuff(Rect rect);
-----
+</code></pre></div>
+++++
 --
 
 == Réutilisons des objets !
 
-[syntax="java"]
-----
+++++
+<div class="listing">
+<pre class="java"><code>
 private static final int  MSG_ANIMATION_FRAME = 0xcafe;
 
 public void sendMessage(Handler handler, Object userInfo){
-	final Message message = new Message();
+	final Message message = <mark>new Message();</mark>
 	message.what = MSG_ANIMATION_FRAME;
 	message.obj = userInfo;
 
 	handler.sendMessage(message);
 } 
-
-----
+</code></pre></div>
+++++
 
 
 Peut être remplacé par 
 
-[syntax="java"]
-----
+++++
+<div class="listing">
+<pre class="java"><code>
 private static final int  MSG_ANIMATION_FRAME = 0xcafe;
 
 public void sendMessage(Handler handler, Object userInfo){
-	final Message message = Message.obtain();
-	message.what = MSG_ANIMATION_FRAME;
-	message.obj = userInfo;
+  final Message message = <mark>Message.obtain();</mark>
+  message.what = MSG_ANIMATION_FRAME;
+  message.obj = userInfo;
 
-	handler.sendMessage(message);
+  handler.sendMessage(message);
 } 
-----
+</code></pre></div>
+++++
 
-* voici un article très intéressant sur la mise en place de ce design pattern : http://www.devahead.com/blog/2011/12/recycling-objects-in-android-with-an-object-pool-to-avoid-garbage-collection/?utm_source=%23AndroidDev+Weekly&utm_campaign=65486bb85d-NEWSLETTER&utm_medium=email[Design Pattern Object Pool]
+* Article sur la mise en place de ce design pattern : http://www.devahead.com/blog/2011/12/recycling-objects-in-android-with-an-object-pool-to-avoid-garbage-collection/?utm_source=%23AndroidDev+Weekly&utm_campaign=65486bb85d-NEWSLETTER&utm_medium=email[Design Pattern Object Pool]
 
 == ViewHolder
 
@@ -349,12 +353,13 @@ public void sendMessage(Handler handler, Object userInfo){
 
 PAS BIEN ! 
 
-[syntax="java"]
-----
+++++
+<div class="listing">
+<pre class="java"><code>
 public View getView(int position, View convertView, ViewGroup parent) {
-    LayoutInflater inflater = (LayoutInflater) context
+    <mark>LayoutInflater inflater = (LayoutInflater) context
         .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-    View rowView = inflater.inflate(R.layout.rowlayout, parent, false);
+    View rowView = inflater.inflate(R.layout.rowlayout, parent, false);</mark>
     TextView textView = (TextView) rowView.findViewById(R.id.label);
     ImageView imageView = (ImageView) rowView.findViewById(R.id.icon);
     textView.setText(values[position]);
@@ -368,7 +373,8 @@ public View getView(int position, View convertView, ViewGroup parent) {
 
     return rowView;
   }
-----
+</code></pre></div>
+++++
 
 == ViewHolder
 
@@ -376,17 +382,18 @@ public View getView(int position, View convertView, ViewGroup parent) {
 
 BIEN ! 
 
-[syntax="java"]
-----
+++++
+<div class="listing">
+<pre class="java"><code>
 public View getView(int position, View convertView, ViewGroup parent) {
 	View rowView = null;
 
-	if (convertView == null){
+	<mark>if (convertView == null){</mark>
 	    LayoutInflater inflater = (LayoutInflater) context
 	        .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 	    rowView = inflater.inflate(R.layout.rowlayout, parent, false);
 	}else{
-		rowView = convertView;
+		<mark>rowView = convertView;</mark>
 	}
     TextView textView = (TextView) rowView.findViewById(R.id.label);
     ImageView imageView = (ImageView) rowView.findViewById(R.id.icon);
@@ -401,7 +408,8 @@ public View getView(int position, View convertView, ViewGroup parent) {
 
     return rowView;
   }
-----
+</code></pre></div>
+++++
 
 
 == ViewHolder
@@ -463,18 +471,21 @@ image::images/ActionBar2.png[role="icone"]
  <script type="text/javascript">
   jQuery(function() {
       jQuery("#ab_2").hide();
-      jQuery("#ab_contact").on("click", function(){ 
+      function clickContact(){
         jQuery("#ab_circle").hide();
         jQuery("#ab_1").hide();
         jQuery("#ab_2").show();
         return false;
-      });
-      jQuery("#ab_click").on("click", function(){ 
+      }
+      jQuery("#ab_contact").click(clickContact);
+
+      function clickClick(){
         jQuery("#ab_circle").hide();
         jQuery("#ab_2").hide();
         jQuery("#ab_1").show();
         return false;
-      });
+      }
+      jQuery("#ab_click").on("click", clickClick);
                    
   });
 </script>
@@ -540,7 +551,7 @@ image::images/ActionBar2.png[role="icone"]
 </script>
 +++++++++++++++++++++++
 
-== Sliding Menu
+== NavigationDrawer
 
 // à regarder : http://srobbin.com/jquery-plugins/pageslide/
 
@@ -550,9 +561,9 @@ image::images/ActionBar2.png[role="icone"]
     <div id="sliding_divs">
       <div id="sliding_menu">
         <ul>
-            <li><div id="sliding_item1">item 1</div></li>
-            <li><div id="sliding_item2">item 2</div></li>
-            <li><div id="sliding_item3">item 3</div></li>
+            <li><div id="sliding_item1">Nav 1</div></li>
+            <li><div id="sliding_item2">Nav 2</div></li>
+            <li><div id="sliding_item3">Nav 3</div></li>
         </ul>
       </div>
       <div id="sliding_home">
@@ -1100,6 +1111,8 @@ a utilser bien sur si cela est possible ;)
 
 ** Services
 
+** Loaders
+
 
 == Gagnons en place
 
@@ -1112,6 +1125,7 @@ image::images/d9p.png[height="400px"]
 [NOTES]
 ====
 Ne pas hésiter non plus à créer programatiquement des drawables
+La partie du bas permet de définir la zone où mettre le contenu ! 
 ====
 
 
@@ -1137,7 +1151,7 @@ image::images/meme_enjeux.jpg[{middle}]
 
 == Librairies Google
 
-* SupportLibrarie
+* SupportLibrary
 
 * Analytics
 
@@ -1172,13 +1186,13 @@ image::images/acra.png[role="library"]
 
 ** Report de crash automatique 
 
-== RoboSpice
+== RoboSpice Ou Volley
 
 image::images/robospice.png[role="library"]
 
 * Pourquoi ?
 
-** Gestion très propres des services
+** Gestion très propres des appels https
 
 ** Gestion d'un cache de requêtes !
 
@@ -1219,7 +1233,20 @@ pb avec Maven, ...
 //                                                                                  
 //   
 
-[role="intro fond_fin"]
-== Questions
+[role="intro pagetransition"]
+== Merci
 
-image::images/andquestionsag.png[role="icone"]
+image::images/fond_merci.png[]
+
+[role="lien_prez"]
+http://goo.gl/ebkxz
+
+image::images/twitter-icon.png[width="50", role="logo_twitter"]
+
+[role="twitters_account"]
+@gdgnantes / @binomed
+ 
+image::images/google-Plus-icon.png[width="50",role="logo_gplus"]
+
+[role="gplus_account"]
+http://gplus.to/jefBinomed 

@@ -41,9 +41,9 @@ v1.0
 
 
 
-== Qui suis-je ?
+== Who Am I ?
 
-===  Jean-François GARREAU, Consultant IT SQLI
+===  Jean-François GARREAU, IT constultant SQLI
 
 image::images/jf.jpg[role="middle avatar"]
 
@@ -64,29 +64,30 @@ image::images/GDG-Logo-carre.png[role="gdg_logo"]
 //      
 
 
+
 == Agenda
 
-* Qu'est ce que le NFC ?
+* What is NFC ?
 
-* Historique
+* History
 	
-	Un peu d'histoire
+	Little informations about NFC
 
 * Standards
 	
-	Théories et standards 
+	Theories and associated standards
 
-* Uses Cases
+* Uses
 	
-	On peut faire quoi avec le NFC ? 
+	What can we do with NFC
 
 * Demos
 	
-	Une petit démo
+	A litle demo
 
 * Implementation
 	
-	Concrètement ça donne uConcretly, how do I code that ?
+	Concretly, how do I code that ?
 
 * Nfa : Nfc For Android
 
