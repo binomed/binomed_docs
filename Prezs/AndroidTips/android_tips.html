@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Bonnes pratiques du développement Android</title>
     <meta name="description" content="Revue des bonnes pratiques et de quelques ui patterns">
-    <meta name="author" content="Jean-François Garreau, SQLI">
+    <meta name="author" content="DroidCon FR13">
     <meta name="copyright" content="Copyright 2013 SQLI">
     <meta name="generator" content="AsciiDoc 8.6.8, dzslides backend">
     <meta name="presdate" content="v1.0">
@@ -20,7 +20,7 @@
     <section class="title">
       <h1>Bonnes pratiques du développement Android</h1>
 <div class="subtitle"><h2 class="subtitle">Revue des bonnes pratiques et de quelques ui patterns</h2></div>
-      <footer>Jean-François Garreau, SQLI</footer>
+      <footer>DroidCon FR13</footer>
     </section>
 <div id="preamble">
 <div class="sectionbody">
@@ -477,8 +477,6 @@ N&#8217;hésitez pas non plus à mutualiser vos layouts !
         return false;
       }
       jQuery("#ab_contact").click(clickContact);
-      //jQuery("#ab_contact").on("click", clickContact);
-      //jQuery("#ab_contact").on("touch", clickContact);
 
       function clickClick(){
         jQuery("#ab_circle").hide();
@@ -487,7 +485,6 @@ N&#8217;hésitez pas non plus à mutualiser vos layouts !
         return false;
       }
       jQuery("#ab_click").on("click", clickClick);
-      jQuery("#ab_click").on("touch", clickClick);
 
   });
 </script>
@@ -550,16 +547,16 @@ N&#8217;hésitez pas non plus à mutualiser vos layouts !
 </article>
 </section>
 <section>
-<h2>Sliding Menu</h2>
+<h2>NavigationDrawer</h2>
 <article>
 <div class="nexus4 phone">
   <div id="sliding">
     <div id="sliding_divs">
       <div id="sliding_menu">
         <ul>
-            <li><div id="sliding_item1">item 1</div></li>
-            <li><div id="sliding_item2">item 2</div></li>
-            <li><div id="sliding_item3">item 3</div></li>
+            <li><div id="sliding_item1">Nav 1</div></li>
+            <li><div id="sliding_item2">Nav 2</div></li>
+            <li><div id="sliding_item3">Nav 3</div></li>
         </ul>
       </div>
       <div id="sliding_home">
@@ -1130,6 +1127,9 @@ AsyncTask
 <li>
 Services
 </li>
+<li>
+Loaders
+</li>
 </ul>
 </li>
 </ul>
@@ -1151,7 +1151,8 @@ Draw9Patch : économie d&#8217;image
 <!--
   <details><summary>Notes</summary></details>
   -->
-<p>Ne pas hésiter non plus à créer programatiquement des drawables</p>
+<p>Ne pas hésiter non plus à créer programatiquement des drawables
+La partie du bas permet de définir la zone où mettre le contenu !</p>
 </details>
 </article>
 </section>
@@ -1179,7 +1180,7 @@ Draw9Patch : économie d&#8217;image
 <article>
 <ul>
 <li>
-SupportLibrarie
+SupportLibrary
 </li>
 <li>
 Analytics
@@ -1245,7 +1246,7 @@ Report de crash automatique
 </article>
 </section>
 <section>
-<h2>RoboSpice</h2>
+<h2>RoboSpice Ou Volley</h2>
 <article>
 
 <img src="images/robospice.png" alt="images/robospice.png" class="library">
@@ -1255,7 +1256,7 @@ Report de crash automatique
 Pourquoi ?
 <ul>
 <li>
-Gestion très propres des services
+Gestion très propres des appels https
 </li>
 <li>
 Gestion d&#8217;un cache de requêtes !
@@ -1320,7 +1321,7 @@ pb avec Maven, &#8230;</p>
 
 <img src="images/fond_merci.png" alt="images/fond_merci.png">
 
-<p class="lien_prez"><a href="http://goo.gl/uI0Zu">http://goo.gl/uI0Zu</a></p>
+<p class="lien_prez"><a href="http://goo.gl/ebkxz">http://goo.gl/ebkxz</a></p>
 
 <img src="images/twitter-icon.png" alt="images/twitter-icon.png" width="50" class="logo_twitter">
 
