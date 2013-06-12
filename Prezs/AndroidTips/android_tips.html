@@ -35,48 +35,19 @@
 </div>
 </div>
 <section>
-<h2>Qui suis-je ?</h2>
+<h2>Qui suis-je ?</h2>
 <article>
 <div class="sect2">
-<h3 id="_jean_françois_garreau">Jean-François GARREAU</h3>
+<h3 id="_jean_françois_garreau_consultant_it_sqli">Jean-François GARREAU, Consultant IT SQLI</h3>
 
-<img src="images/jf.png" alt="images/jf.png" class="float-left">
+<img src="images/jf.jpg" alt="images/jf.jpg" class="middle avatar">
 
-<ul>
-<li>
-Consultant IT chez SQLI
-<br>
-<br>
-</li>
-<li>
-Développeur Android à mes heures perdues
-<br>
-<br>
-</li>
-<li>
-Un des membres fondateur du GDG Nantes
-<br>
-<br>
-</li>
-<li>
-Créateur de CineShowTime  <span class="image">
-<img src="images/cineshowtime.png" alt="images/cineshowtime.png" width="50">
-</span>
-<br>
-<br>
-</li>
-</ul>
 
-<img src="images/twitter-icon.png" alt="images/twitter-icon.png" width="50" class="float-left">
+<img src="images/sqli_logo.png" alt="images/sqli_logo.png" class="company_logo">
 
-<p>@gdgnantes / @binomed / @uncle_bens1
-<br>
-<br>
-<br></p>
 
-<img src="images/google-Plus-icon.png" alt="images/google-Plus-icon.png" width="50" class="float-left">
+<img src="images/GDG-Logo-carre.png" alt="images/GDG-Logo-carre.png" class="gdg_logo">
 
-<p><a href="http://gplus.to/jefBinomed">http://gplus.to/jefBinomed</a></p>
 </div>
 </article>
 </section>
@@ -149,9 +120,10 @@ return result;</code></pre>
 <div class="listing">
 <pre class="java"><code>Integer result = new Integer(1);
 for (int i = 0; i &lt; 10; i++){
- result = new Integer(i + result.intValue());
+ result = <mark>new Integer(i + result.intValue())</mark>;
 }
-return result.intValue();</code></pre>
+return <mark>result.intValue();</mark></code></pre>
+</div>
 </div>
 </div>
 </article>
@@ -177,11 +149,12 @@ map.get(550);</code></pre>
 <p>donne</p>
 <div class="incremental">
 <div class="listing">
-<pre class="java"><code>HashMap&lt;Integer,String&gt; map = new HashMap&lt;Integer,String&gt;();
-map.put(new Integer(550),"Echo");
+<pre class="java"><code>
+HashMap&lt;Integer,String&gt; map = new HashMap&lt;Integer,String&gt;();
+map.put(<mark>new Integer(550)</mark>,"Echo");
 map.put(new Integer(551),"Echo");
-map.get(new Integer(550));</code></pre>
-</div>
+map.get(new Integer(550));
+</code></pre></div>
 <p>avec les sparseArray : pas d&#8217;auotboxing !</p>
 <div class="listing">
 <pre class="java"><code>SparseArray&lt;String&gt; map = new SparseArray&lt;String&gt;();
@@ -190,6 +163,12 @@ map.put(551,"Echo");
 map.get(550);</code></pre>
 </div>
 </div>
+<details>
+<!--
+  <details><summary>Notes</summary></details>
+  -->
+<p>Gère aussi Booléens, Int en natif. La clé reste un entier !</p>
+</details>
 </article>
 </section>
 <section>
@@ -209,8 +188,9 @@ Avec Android, il est bon de ménager l&#8217;appareil dès qu&#8217;on le peut
 </div>
 <p>est à remplacer par</p>
 <div class="listing">
-<pre class="java"><code>ArrayList&lt;String&gt; list = new ArrayList&lt;String&gt;();</code></pre>
-</div>
+<pre class="java"><code>
+<mark>ArrayList&lt;String&gt;</mark> list = new ArrayList&lt;String&gt;();
+</code></pre></div>
 </div>
 <details>
 <!--
@@ -278,24 +258,26 @@ L&#8217;utilisation de variables statiques permet d'économiser des instanciatio
 </li>
 </ul>
 <div class="listing">
-<pre class="java"><code>public long doSomeStuff(int left, int top, int right, int bottom){
+<pre class="java"><code>
+public long doSomeStuff(int left, int top, int right, int bottom){
         return stuff(new Rect(left, top, right, bottom));
 }
 
-public abstract long stuff(Rect rect);</code></pre>
-</div>
+public abstract long stuff(Rect rect);
+</code></pre></div>
 <div class="incremental">
 <p>On peut faire mieux !</p>
 <div class="listing">
-<pre class="java"><code>private static final Rect rect = new Rect();
+<pre class="java"><code>
+private <mark>static final</mark> Rect rect = new Rect();
 
 public long doSomeStuff(int left, int top, int right, int bottom){
-        rect.set(left, top, right, bottom);
+        <mark>rect.set(left, top, right, bottom)</mark>;
         return stuff(rect);
 }
 
-public abstract long stuff(Rect rect);</code></pre>
-</div>
+public abstract long stuff(Rect rect);
+</code></pre></div>
 </div>
 </div>
 </article>
@@ -304,31 +286,33 @@ public abstract long stuff(Rect rect);</code></pre>
 <h2>Réutilisons des objets !</h2>
 <article>
 <div class="listing">
-<pre class="java"><code>private static final int  MSG_ANIMATION_FRAME = 0xcafe;
+<pre class="java"><code>
+private static final int  MSG_ANIMATION_FRAME = 0xcafe;
 
 public void sendMessage(Handler handler, Object userInfo){
-        final Message message = new Message();
+        final Message message = <mark>new Message();</mark>
         message.what = MSG_ANIMATION_FRAME;
         message.obj = userInfo;
 
         handler.sendMessage(message);
-}</code></pre>
-</div>
+}
+</code></pre></div>
 <p>Peut être remplacé par</p>
 <div class="listing">
-<pre class="java"><code>private static final int  MSG_ANIMATION_FRAME = 0xcafe;
+<pre class="java"><code>
+private static final int  MSG_ANIMATION_FRAME = 0xcafe;
 
 public void sendMessage(Handler handler, Object userInfo){
-        final Message message = Message.obtain();
-        message.what = MSG_ANIMATION_FRAME;
-        message.obj = userInfo;
+  final Message message = <mark>Message.obtain();</mark>
+  message.what = MSG_ANIMATION_FRAME;
+  message.obj = userInfo;
 
-        handler.sendMessage(message);
-}</code></pre>
-</div>
+  handler.sendMessage(message);
+}
+</code></pre></div>
 <ul>
 <li>
-voici un article très intéressant sur la mise en place de ce design pattern : <a href="http://www.devahead.com/blog/2011/12/recycling-objects-in-android-with-an-object-pool-to-avoid-garbage-collection/?utm_source=%23AndroidDev+Weekly&amp;utm_campaign=65486bb85d-NEWSLETTER&amp;utm_medium=email">Design Pattern Object Pool</a>
+Article sur la mise en place de ce design pattern : <a href="http://www.devahead.com/blog/2011/12/recycling-objects-in-android-with-an-object-pool-to-avoid-garbage-collection/?utm_source=%23AndroidDev+Weekly&amp;utm_campaign=65486bb85d-NEWSLETTER&amp;utm_medium=email">Design Pattern Object Pool</a>
 </li>
 </ul>
 </article>
@@ -345,10 +329,11 @@ pattern de réutilisabilité des vues
 </ul>
 <p>PAS BIEN !</p>
 <div class="listing">
-<pre class="java"><code>public View getView(int position, View convertView, ViewGroup parent) {
-    LayoutInflater inflater = (LayoutInflater) context
+<pre class="java"><code>
+public View getView(int position, View convertView, ViewGroup parent) {
+    <mark>LayoutInflater inflater = (LayoutInflater) context
         .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-    View rowView = inflater.inflate(R.layout.rowlayout, parent, false);
+    View rowView = inflater.inflate(R.layout.rowlayout, parent, false);</mark>
     TextView textView = (TextView) rowView.findViewById(R.id.label);
     ImageView imageView = (ImageView) rowView.findViewById(R.id.icon);
     textView.setText(values[position]);
@@ -361,8 +346,8 @@ pattern de réutilisabilité des vues
     }
 
     return rowView;
-  }</code></pre>
-</div>
+  }
+</code></pre></div>
 </div>
 </article>
 </section>
@@ -373,15 +358,16 @@ pattern de réutilisabilité des vues
 <h3 id="_réutilisation_de_vue_sur_les_listview_2">Réutilisation de vue sur les listView</h3>
 <p>BIEN !</p>
 <div class="listing">
-<pre class="java"><code>public View getView(int position, View convertView, ViewGroup parent) {
+<pre class="java"><code>
+public View getView(int position, View convertView, ViewGroup parent) {
         View rowView = null;
 
-        if (convertView == null){
+        <mark>if (convertView == null){</mark>
             LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             rowView = inflater.inflate(R.layout.rowlayout, parent, false);
         }else{
-                rowView = convertView;
+                <mark>rowView = convertView;</mark>
         }
     TextView textView = (TextView) rowView.findViewById(R.id.label);
     ImageView imageView = (ImageView) rowView.findViewById(R.id.icon);
@@ -395,8 +381,8 @@ pattern de réutilisabilité des vues
     }
 
     return rowView;
-  }</code></pre>
-</div>
+  }
+</code></pre></div>
 </div>
 </article>
 </section>
@@ -478,18 +464,23 @@ N&#8217;hésitez pas non plus à mutualiser vos layouts !
  <script type="text/javascript">
   jQuery(function() {
       jQuery("#ab_2").hide();
-      jQuery("#ab_contact").on("click", function(){
+      function clickContact(){
         jQuery("#ab_circle").hide();
         jQuery("#ab_1").hide();
         jQuery("#ab_2").show();
         return false;
-      });
-      jQuery("#ab_click").on("click", function(){
+      }
+      jQuery("#ab_contact").on("click", clickContact);
+      jQuery("#ab_contact").on("touch", clickContact);
+
+      function clickClick(){
         jQuery("#ab_circle").hide();
         jQuery("#ab_2").hide();
         jQuery("#ab_1").show();
         return false;
-      });
+      }
+      jQuery("#ab_click").on("click", clickClick);
+      jQuery("#ab_click").on("touch", clickClick);
 
   });
 </script>
@@ -1316,12 +1307,21 @@ pb avec Maven, &#8230;</p>
 </details>
 </article>
 </section>
-<section class="intro fond_fin">
-<h2>Questions</h2>
+<section class="intro pagetransition">
+<h2>Merci</h2>
 <article>
 
-<img src="images/andquestionsag.png" alt="images/andquestionsag.png" class="icone">
+<img src="images/fond_merci.png" alt="images/fond_merci.png">
 
+<p class="lien_prez"><a href="http://goo.gl/uI0Zu">http://goo.gl/uI0Zu</a></p>
+
+<img src="images/twitter-icon.png" alt="images/twitter-icon.png" width="50" class="logo_twitter">
+
+<p class="twitters_account">@gdgnantes / @binomed</p>
+
+<img src="images/google-Plus-icon.png" alt="images/google-Plus-icon.png" width="50" class="logo_gplus">
+
+<p class="gplus_account"><a href="http://gplus.to/jefBinomed">http://gplus.to/jefBinomed</a></p>
 </article>
 </section>
     <script src="./dzslides/core/dzslides.js"></script>
