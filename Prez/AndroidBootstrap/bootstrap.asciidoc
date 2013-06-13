@@ -329,9 +329,9 @@ On cherche un truc proche de Google pour assurer la maintenance
 
 
 
-* Requêtes => Volley
+* Requêtes => Volley & RoboSpice
 * Cartes => Maps V2
-* Images => Volley
+* Images => UrlImageViewHelper
 * Popups => QuickActions
 * Pages => ViewPagerIndicator + Support Librairy v4
 * Gestion des crash => ACRA
@@ -409,7 +409,7 @@ image::images/ACRANewLogo.png[height="96px"]
 
 [NOTES]
 ====
-Config Application + options
+Config Application + options /!\ à la configuration serveur ! Install de couchDB etc... ou backend appengine
 ====
 
 == ActionBarSherlock
@@ -423,6 +423,7 @@ image::images/actionbar_sherlock.png[height="96px"]
 
 [NOTES]
 ====
+Est à la source de tous les problèmes tout en étant notre sauveur.
 ====
 
 == HoloEverywhere
@@ -510,7 +511,8 @@ image::images/android_anotation_logo.png[height="96px"]
 
 [NOTES]
 ====
-
+Pb d'intégration avec ABS ! Obliger de recréer les classes !
+Sinon alternatives peuvent poser des soucis ! _ pour androidannotations... as t-on besoin d'une injection forte... ?
 ====
 
 == Maps V2
@@ -528,7 +530,7 @@ image::images/google_play_services.png[height="96px"]
 
 [NOTES]
 ====
-/!\ si plusieurs cartes !  dans des fragments
+/!\ si plusieurs cartes !  dans des fragments => pas d'instanciation depuis le XML !! 
 ====
 
 
