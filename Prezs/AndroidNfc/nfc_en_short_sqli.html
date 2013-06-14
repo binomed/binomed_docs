@@ -1101,18 +1101,18 @@ try {
 <div class="sect2">
 <h3 id="_read_nfa">Read - NfA</h3>
 <div class="listing">
-<pre class="java"><code>NfaRecieveBeanBuilder&lt;TextRecord&gt; builder = recieveBeanConfigure(); //
+<pre class="java"><code>NfaReceiveBeanBuilder&lt;TextRecord&gt; builder = receiveBeanConfigure(); //
 builder //
 .activity(activity) //
 .intent(intent) //
-.intentRecieveRecord(new INfaIntentRecieveRecord&lt;TextRecord&gt;() {
+.intentReceiveRecord(new INfaIntentReceiveRecord&lt;TextRecord&gt;() {
 
         @Override
-        public void recieveRecord(TextRecord record) {
+        public void receiveRecord(TextRecord record) {
                 String message = record.getText();
 
         }
-}) // INfaIntentRecieveRecord
+}) // INfaIntentReceiveRecord
 .parser(TEXT_PARSER); //
 NFA_MANAGER.manageIntent(builder.build());</code></pre>
 </div>
@@ -1242,7 +1242,7 @@ The technology is pretty recent but already offers a high number of possibilitie
 The secure aspect could be a problem some times
 </li>
 <li>
-Easy to implmenet (even easier with Nfc For Android ;) )
+Easy to implement (even easier with Nfc For Android ;) )
 </li>
 <li>
 Cheap technology (&lt;1€ / tag)
@@ -1295,7 +1295,7 @@ Cheap technology (&lt;1€ / tag)
 
 <img src="images/fond_merci.png" alt="images/fond_merci.png">
 
-<p class="lien_prez"><a href="http://goo.gl/ao62e">http://goo.gl/ao62e</a></p>
+<p class="lien_prez"><a href="http://goo.gl/CyRE5">http://goo.gl/CyRE5</a></p>
 
 <img src="images/twitter-icon.png" alt="images/twitter-icon.png" width="50" class="logo_twitter">
 
