@@ -317,7 +317,7 @@ image::images/ic_launcher.png[role="middle"]
 * IHM unifiée
 * Injection de code
 * ActionBar
-* Sliding Menu
+* NavigationDrawer
 
 [NOTES]
 ====
@@ -338,7 +338,7 @@ On cherche un truc proche de Google pour assurer la maintenance
 * IHM unifiée => HoloEveryWhere
 * Injection de code => RoboGuice
 * ActionBar => ActionBarSherlock
-* Sliging Menu => NavigationDrawer
+* NavigationDrawer => NavigationDrawer
 
 
 == Etape 1
@@ -561,7 +561,7 @@ image::images/ic_launcher_xhdpi.png[height="96px"]
 
 == Pièges
 
-* RoboSpice & ABS
+* RoboGuice & ABS
 
 * ABS & NavigationDrawer
 
@@ -624,7 +624,7 @@ Oui mais...
 
 Attention à l'intégration !
 
-Important d'intentifier son besoin !
+Important d'indentifier son besoin !
 
 Important de connaître les parades d'intégration ! 
 
@@ -673,7 +673,7 @@ Le poids n'est pas un problème !  progard à la rescousse.
 image::images/fond_merci.png[]
 
 [role="lien_prez"]
-http://goo.gl/uI0Zu
+http://goo.gl/XFT0Y
 
 image::images/twitter-icon.png[width="50", role="logo_twitter"]
 

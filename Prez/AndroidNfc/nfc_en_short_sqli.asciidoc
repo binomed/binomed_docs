@@ -967,18 +967,18 @@ try {
 
 [syntax="java"]
 ----
-NfaRecieveBeanBuilder<TextRecord> builder = recieveBeanConfigure(); //
+NfaReceiveBeanBuilder<TextRecord> builder = receiveBeanConfigure(); //
 builder //
 .activity(activity) //
 .intent(intent) //
-.intentRecieveRecord(new INfaIntentRecieveRecord<TextRecord>() {
+.intentReceiveRecord(new INfaIntentReceiveRecord<TextRecord>() {
 
 	@Override
-	public void recieveRecord(TextRecord record) {
+	public void receiveRecord(TextRecord record) {
 		String message = record.getText();
 
 	}
-}) // INfaIntentRecieveRecord
+}) // INfaIntentReceiveRecord
 .parser(TEXT_PARSER); //
 NFA_MANAGER.manageIntent(builder.build());
 ----
@@ -1096,7 +1096,7 @@ image::images/nfc_logo.jpg[role="icone"]
 
 * The technology is pretty recent but already offers a high number of possibilities
 * The secure aspect could be a problem some times
-* Easy to implmenet (even easier with Nfc For Android ;) )
+* Easy to implement (even easier with Nfc For Android ;) )
 * Cheap technology (<1€ / tag)
 
 
@@ -1151,7 +1151,7 @@ image::images/link.png[role="icone"]
 image::images/fond_merci.png[]
 
 [role="lien_prez"]
-http://goo.gl/ao62e
+http://goo.gl/CyRE5
 
 image::images/twitter-icon.png[width="50", role="logo_twitter"]
 
