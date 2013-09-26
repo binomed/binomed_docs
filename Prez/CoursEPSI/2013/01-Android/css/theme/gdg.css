@@ -12,14 +12,112 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Open Sans"), local("OpenSans"), url("css/theme/fonts/OpenSans.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local("Open Sans Semibold"), local("OpenSans-Semibold"), url("css/theme/fonts/OpenSans-Semibold.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: local("Open Sans Italic"), local("OpenSans-Italic"), url("css/theme/fonts/OpenSans-Italic.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 600;
+  src: local("Open Sans Semibold Italic"), local("OpenSans-SemiboldItalic"), url("css/theme/fonts/OpenSans-SemiboldItalic.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Source Code Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Source Code Pro"), local("SourceCodePro-Regular"), url("css/theme/fonts/SourceCodePro-Regular.woff") format("woff");
+}
+
 /*
 @mixin bodyBackground() {
 	@include radial-gradient( rgba(247,242,211,1), rgba(255,255,255,1) );
 }*/
-/* line 51, ../../scss/theme/gdg.scss */
-section {
+/* line 93, ../../scss/theme/gdg.scss */
+.reveal .slides > section, .reveal .slides > section > section {
+  position: absolute;
+  font-family: "Open Sans", Arial, sans-serif;
   background-color: white;
-  height: 95%;
+  height: calc(100% - 60px);
+  text-align: left;
+  padding: 20px 40px 60px 40px;
+}
+/* line 101, ../../scss/theme/gdg.scss */
+.reveal .slides > section h2, .reveal .slides > section > section h2 {
+  font-family: "Open Sans";
+  font-size: 1.7em;
+  position: relative;
+  left: -40px;
+  width: calc(100% + (2 * 40px));
+  height: 1.5em;
+  line-height: 1.5em;
+  background-color: #3c78d8;
+  color: white;
+  text-align: center;
+}
+/* line 115, ../../scss/theme/gdg.scss */
+.reveal .slides > section h3, .reveal .slides > section > section h3 {
+  font-family: "Open Sans";
+  font-size: 1em;
+  text-transform: capitalize;
+  position: relative;
+  left: 100px;
+  margin-bottom: 40px;
+}
+
+/* line 125, ../../scss/theme/gdg.scss */
+section > footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #3c78d8), color-stop(25%, #3c78d8), color-stop(25%, #cc0000), color-stop(50%, #cc0000), color-stop(50%, #ffd966), color-stop(75%, #ffd966), color-stop(75%, #6aa84f), color-stop(100%, #6aa84f));
+  background-image: -webkit-linear-gradient(left, #3c78d8, #3c78d8 25%, #cc0000 25%, #cc0000 50%, #ffd966 50%, #ffd966 75%, #6aa84f 75%, #6aa84f);
+  background-image: -moz-linear-gradient(left, #3c78d8, #3c78d8 25%, #cc0000 25%, #cc0000 50%, #ffd966 50%, #ffd966 75%, #6aa84f 75%, #6aa84f);
+  background-image: -o-linear-gradient(left, #3c78d8, #3c78d8 25%, #cc0000 25%, #cc0000 50%, #ffd966 50%, #ffd966 75%, #6aa84f 75%, #6aa84f);
+  background-image: linear-gradient(left, #3c78d8, #3c78d8 25%, #cc0000 25%, #cc0000 50%, #ffd966 50%, #ffd966 75%, #6aa84f 75%, #6aa84f);
+}
+
+/* line 135, ../../scss/theme/gdg.scss */
+section > footer:after {
+  position: absolute;
+  content: ' Gdg';
+  padding-left: calc(1.3em + 5px);
+  font-size: 0.6em;
+  font-weight: 600;
+  bottom: 10px;
+  left: 10px;
+  width: 50%;
+  height: 2.24em;
+  background: url(./images/logo_gdg.png) no-repeat 0px 0px;
+  background-size: 1.3em 2.24em;
+}
+
+/* line 152, ../../scss/theme/gdg.scss */
+.reveal .slides > section img {
+  border: 0px none black;
+  -webkit-box-shadow: white 0px 0px 0px;
+  -moz-box-shadow: white 0px 0px 0px;
+  box-shadow: white 0px 0px 0px;
 }
 
 /*********************************************
