@@ -1,4 +1,3 @@
-
 # Android 
 
 ## Cours EPSI 2013 - I5 - 01
@@ -9,23 +8,14 @@
 
 ###  Jean-François GARREAU
 
-![avatar float-left](/assets/images/jf.png)
+![avatar center w-200](/assets/images/jf.jpg)
 
 
-* Consultant IT chez SQLI
-* Développeur Android à mes heures perdues
-* Un des membres fondateur du GDG Nantes
-* Créateur de CineShowTime  ![logo](/assets/images/cineshowtime.png)
-
-![logo](/assets/images/twitter-icon.png)
-
-@gdgnantes / @binomed / @uncle_bens1
-
-![logo](/assets/images/google-Plus-icon.png)
-
-http://gplus.to/jefBinomed
+![company_logo](/assets/images/sqli_logo.png)
+![gdg_logo](/assets/images/GDG-Logo-carre.png)
 
 <footer/>
+
 ##==##
 <!--
 //     _____    ____    __  __   __  __              _____   _____    ______ 
@@ -53,6 +43,7 @@ http://gplus.to/jefBinomed
 * ![sommaire](/assets/images/android_jellybean.png)
 
 <footer/>
+
 ##==##
 <!--
 //               _   _   _____    _____     ____    _____   _____  
@@ -95,9 +86,9 @@ Inconvéninents
 
 * Open Handset Alliance : 
 
-** Ensemble de sociétés (84 aujourd’hui) dont l’objectif est de développer des normes ouvertes pour les appareils mobiles
+    * Ensemble de sociétés (84 aujourd’hui) dont l’objectif est de développer des normes ouvertes pour les appareils mobiles
 
-** Créé en 2007 à l’initiative de google.
+    * Créé en 2007 à l’initiative de google.
 
 <aside class="notes">
 Quelques débats existent quand à la main mise sur android par google…
@@ -110,7 +101,7 @@ Quelques débats existent quand à la main mise sur android par google…
 
 ### Architecture
 
-![](/assets/images/system-architecture.jpg)
+![center h-500](/assets/images/system-architecture.jpg)
 <footer/>
 ##==##
 
@@ -119,22 +110,15 @@ Quelques débats existent quand à la main mise sur android par google…
 ### Historique des versions
 
 * 2007 : 1.1 → La base
-
-* 05 2009 : 1.5 (Cupcake) → Les Widgets
-
-* 09 2009 : 1.6 (Donut) → La synthèse vocale
-
-* 10 2009 : 2.0, 2.0.1, 2.1 (Eclair) → L'expérience utilisateur améliorée
-
-* 05 2010 : 2.2 (Froyo) → Le JIT
-
+* 05 2009 : 1.5 (Cupcake) → Widgets
+* 09 2009 : 1.6 (Donut) → Synthèse vocale
+* 10 2009 : 2.0->2.1 (Eclair) → Expérience utilisateur améliorée
+* 05 2010 : 2.2 (Froyo) → JIT
 * 10 2010 : 2.3 (Gingerbreard) → NFC
+* 01 2011 : 3.0->3.2 (HoneyComb) → Android & tablettes
+* 11 2011 : 4.0.x (Ice Cream Sandwich) → Unification tablettes et téléphones
+* 05/12, 10/12, 07/13 : 4.1.x->4.3.x (Jelly Bean) → La rapidité en vue
 
-* 01 2011 : 3.0, 3.1, 3.2 (HoneyComb) → Android au service des tablettes
-
-* 11 2011 : 4.0 (Ice Cream Sandwich) → Unification des versions tablettes et téléphones
-
-* 05 2012 & 10 2012 : 4.1 et 4.2 (Jelly Bean) → La rapidité en vue
 <footer/>
 ##==##
 
@@ -146,9 +130,9 @@ Quelques débats existent quand à la main mise sur android par google…
 
 * Google a intégré une bonne partie des packages bas niveau Java.
 
-** Google a fait sa propre JVM =» Dalvik Virtual Machine
+    * Google a fait sa propre JVM =» Dalvik Virtual Machine
 
-** Tout le code est converti en .dex (dalvik Executable) avant d’être envoyé sur le téléphone.
+    * Tout le code est converti en .dex (dalvik Executable) avant d’être envoyé sur le téléphone.
 
 <aside class="notes">
 Il existe aussi la possibilité de coder en php via un framework externe ASE (ajoute un interpreteur)
@@ -197,27 +181,24 @@ Sinon des solutions comme PhoneGap ou HTML5 via une webview !
  Par les versions
 
  Par le parc d’appareils
- <footer/>
+ 
+<footer/>
 ##==##
 ## Android
 
 ### Fragmentation
 
-![](/assets/images/chart.png)
+![float-left w-300](/assets/images/chart.png)
 
 
 |Version|Codename|API|Distribution|
-|:-----:|:------:|:-:|:----------:|
-|1.6|Donut|4|0.2%|
-|2.1|Eclair|7|2.4%|
-|2.2|Froyo|8|9.0%|
-|2.3 - 2.3.2|Gingerbread|9|0.2%|
-|2.3.3 - 2.3.7||10|47.4%|
-|3.1|Honeycomb|12|0.4%|
-|3.2||13|1.1%|
-|4.0.3 - 4.0.4|Ice Cream Sandwich|15|29.1%|
-|4.1|Jelly Bean|16|9.0%|
-|4.2||17|1.2%|
+|-----|------|-|----------|
+|2.2|Froyo|8|2.4%|
+|2.3.3 - 2.3.7|Gingerbread|10|30.7%|
+|3.2|Honeycomb|13|0.1%|
+|4.0.3 - 4.0.4|Ice Cream Sandwich|15|21.7%|
+|4.1.x|Jelly Bean|16|36.6%|
+|4.2.x||17|8.5%|
 
 <aside class="notes">
 Les evolutions d’api ! Car comme le système est neuf, il évolue souvent et donc il faut faire des fois du code spécifique par target.
@@ -227,6 +208,7 @@ Concernant openGL on est obligé de faire du spécifique par téléphone. Des fr
 Android avait pour vocation de poser des choses communes mais au final on constate que les constructeurs ne jouent pas vraiment le jeu.
 </aside>
 <footer/>
+
 ##==##
 <!--
 //     _____    ____    _   _    _____   ______   _____    _______    _____ 
@@ -290,7 +272,7 @@ Les filtres servent par exemple à définir quelle sera l'activité principale q
 
 ### Cycle de vie des activités
 
-![](/assets/images/activity_lifecycle.png)
+![center h-500](/assets/images/activity_lifecycle.png)
 
 <aside class="notes">
 Quand un process est trop longtemps mis en tache de fond il peut être killé
@@ -311,7 +293,7 @@ Quand un process est trop longtemps mis en tache de fond il peut être killé
 
 * Un fragment possède son propre cycle de vie
 
-![](/assets/images/fragments.png)
+![center h-300](/assets/images/fragments.png)
 
 <aside class="notes">
 Les fragments sont la base à utiliser quand on envisage un développement
@@ -324,7 +306,7 @@ Les fragments sont la base à utiliser quand on envisage un développement
 
 ### Cycle de vie des fragments
 
-![](/assets/images/fragment_lifecycle.png)
+![center h-500](/assets/images/fragment_lifecycle.png)
 <footer/>
 ##==##
 
@@ -355,7 +337,7 @@ Donner un exemple de lecteur MP3 Ou alors d'avoir les accès HTTP
 
 ### Cycle de vie  des services
 
-![](/assets/images/service_lifecycle.png)
+![center h-500](/assets/images/service_lifecycle.png)
 
 <aside class="notes">
 Comme vous pouvez le voir, un service à la possibilité de communiquer avec un Binder (souvent son appelant) de cette manière on peut tenir au courant l'ihm des avancées du service.
@@ -459,6 +441,7 @@ Le draw9Patch : très pratique pour les ressources graphiques =» principe de d�
 Encore bien d'autres choses....
 </aside>
 <footer/>
+
 ##==##
 <!--
 //    ______    _____    ____    _   _    ____    __  __   _____    ____    _    _   ______   __  __   ______   _   _   _______ 
@@ -487,9 +470,9 @@ Encore bien d'autres choses....
 
   Beaucoup d'applications sont gratuites et les gens ont du mal à acheter encore sur Android.
 
-** L'Iphone reste un meilleur vecteur.
+    * L'Iphone reste un meilleur vecteur.
 
-** Les développeurs doivent oser vendre !
+    * Les développeurs doivent oser vendre !
 
 * Le problème de compatibilité n'arrange pas la commercialisation
 
@@ -520,20 +503,22 @@ L'arrivée du paiment in app est une grande avancée dans la monétisation des a
 
 * L'android market n'est pas le seul market : 
 
-** Amazon
+    * Amazon
 
-** AppsLib (Archos)
+    * AppsLib (Archos)
 
-** SlideMe
+    * SlideMe
 
-** Camangi
+    * Camangi
 
-** ...
+    * ...
 
 <aside class="notes">
 Parler des pays ayant le market payant
 </aside>
 <footer/>
+
+
 ##==##
 <!--
 //    _____    ______  __      __  ______   _         ____    _____    _____    ______   __  __   ______   _   _   _______ 
@@ -563,15 +548,12 @@ Les composants graphiques
 
 ### Emulateur
 
-![](/assets/images/emulator.png)
+![center h-300](/assets/images/emulator.png)
 
 * Permet d'émuler efficacement le téléphone
-
-** GPS
-
-** Téléphone
-
-** SMS
+ * GPS
+ * Téléphone
+ * SMS
 
 * Multi résolution
 
@@ -596,7 +578,7 @@ Parler de ce qu'on ne peut pas faire : BluTooth, NFC, Caméra c'est pas éviden
 
 * Les TextView et EditText
 
-![](/assets/images/textViewAndEditText.png)
+![center](/assets/images/textViewAndEditText.png)
 <footer/>
 ##==##
 
@@ -606,9 +588,9 @@ Parler de ce qu'on ne peut pas faire : BluTooth, NFC, Caméra c'est pas éviden
 
 * Button et ImageButton / CheckBox, RadioButton, Spinner
 
-![](/assets/images/ImageButton.png)
+![float-left](/assets/images/ImageButton.png)
 
-![](/assets/images/ChcRadioSpinner.png)
+![float-right](/assets/images/ChcRadioSpinner.png)
 <footer/>
 ##==##
 
@@ -618,11 +600,11 @@ Parler de ce qu'on ne peut pas faire : BluTooth, NFC, Caméra c'est pas éviden
 
 * Gallery, GridView et ListView
 
-![](/assets/images/GalleryView.png)
+![float-left w-300](/assets/images/GalleryView.png)
 
-![](/assets/images/GridView.png)
+![float-right w-300](/assets/images/GridView.png)
 
-![](/assets/images/ListView.png)
+![center w-300](/assets/images/ListView.png)
 <footer/>
 ##==##
 
@@ -631,14 +613,12 @@ Parler de ce qu'on ne peut pas faire : BluTooth, NFC, Caméra c'est pas éviden
 ### Les éléments graphiques
 
 
-* TabView +
- +
- +
- +
+* TabView
 
-![](/assets/images/TabView.png)
+![center](/assets/images/TabView.png)
  
-[pull-right]#Et bien d'autres ...#
+
+Et bien d'autres ...
 
 <aside class="notes">
 Et il en existe encore pleins d'autres … TimePicket, DatePicker ....
@@ -658,6 +638,7 @@ Et il en existe encore pleins d'autres … TimePicket, DatePicker ....
 * Sous Linux il faut modifier un fichier en spécifiant le constructeur
 
 * Sous Mac ça marche direct
+
 <footer/>
 ##==##
 
@@ -666,7 +647,7 @@ Et il en existe encore pleins d'autres … TimePicket, DatePicker ....
 
 ### Hello World
 
-![](/assets/images/project_1.jpg)
+![center](/assets/images/project_1.jpg)
 
 <aside class="notes">
 On défini le nom du projet, 
@@ -680,6 +661,8 @@ On doit ensuite choisir un nom de package afin d'intentifier votre application (
 On définit une Activité par défaut
 </aside>
 <footer/>
+
+
 ##==##
 
 
@@ -687,33 +670,22 @@ On définit une Activité par défaut
 
 ### Le Projet
 
-![](/assets/images//project_3.png)[role="float-left stretch-y"]
+![float-left h-500](/assets/images/project_3.png)
 
-![](/assets/images//arrow_left.png)[role="dev_code"]
+![dev_code](/assets/images//arrow_left.png)
 
-![](/assets/images//arrow_left.png)[role="dev_gen"]
+![dev_gen](/assets/images//arrow_left.png)
 
-![](/assets/images//arrow_split.png)[role="dev_res"]
+![dev_res](/assets/images//arrow_split.png)
 
-![](/assets/images//arrow_left.png)[role="dev_manifest"]
+![dev_manifest](/assets/images//arrow_left.png)
 
-++++
-<br><br>
-++++
-Votre code +
- +
- +
- +
-Le code auto généré + 
- +
- +
- +
-Vos ressources dynamiques +
- +
- +
- +
- +
- +
+Votre code 
+<br><br><br>
+Le code auto généré
+<br><br><br>
+Vos ressources dynamiques
+<br><br><br><br>
 Le manifest 
 
 
@@ -729,11 +701,10 @@ La partie res est très importante car elle contient toutes les ressources « d
 On peut voir différents répertoire en fonction de la résolution 
 </aside>
 <footer/>
+
+
 ##==##
-
-
 ## Développement
-
 ### Le layout
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -742,14 +713,13 @@ On peut voir différents répertoire en fonction de la résolution
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     >
-    <TextView 
+    <TextView
         android:layout_width="fill_parent" 
         android:layout_height="wrap_content" 
         android:text="@string/hello"
         />
 </LinearLayout>
 ```
-
 
 <aside class="notes">
 Déclaration d'un sumple texte dans une vue. On remarque que le texte provient d'une ressource
@@ -762,8 +732,6 @@ On peut aussi affecter des thèmes très simplement à nos applications
 </aside>
 <footer/>
 ##==##
-
-
 ## Développement
 
 ### Manifest.xml

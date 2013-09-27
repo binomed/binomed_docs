@@ -1,0 +1,35 @@
+/* line 7, ../../scss/theme/gdg_print.scss */
+.reveal .slides > section footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2mm;
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #3c78d8), color-stop(25%, #3c78d8), color-stop(25%, #cc0000), color-stop(50%, #cc0000), color-stop(50%, #ffd966), color-stop(75%, #ffd966), color-stop(75%, #6aa84f), color-stop(100%, #6aa84f));
+  background-image: -webkit-linear-gradient(left, #3c78d8, #3c78d8 25%, #cc0000 25%, #cc0000 50%, #ffd966 50%, #ffd966 75%, #6aa84f 75%, #6aa84f);
+  background-image: -moz-linear-gradient(left, #3c78d8, #3c78d8 25%, #cc0000 25%, #cc0000 50%, #ffd966 50%, #ffd966 75%, #6aa84f 75%, #6aa84f);
+  background-image: -o-linear-gradient(left, #3c78d8, #3c78d8 25%, #cc0000 25%, #cc0000 50%, #ffd966 50%, #ffd966 75%, #6aa84f 75%, #6aa84f);
+  background-image: linear-gradient(left, #3c78d8, #3c78d8 25%, #cc0000 25%, #cc0000 50%, #ffd966 50%, #ffd966 75%, #6aa84f 75%, #6aa84f);
+}
+/* line 17, ../../scss/theme/gdg_print.scss */
+.reveal .slides > section footer:after {
+  position: absolute;
+  content: ' Gdg';
+  padding-left: calc(1.3em + 5px);
+  font-size: 0.6em;
+  font-weight: 600;
+  bottom: 10px;
+  left: 10px;
+  width: 50%;
+  height: 2.24em;
+  background: url(./images/logo_gdg.png) no-repeat 0px 0px;
+  background-size: 1.3em 2.24em;
+}
+/* line 34, ../../scss/theme/gdg_print.scss */
+.reveal .slides > section img[alt*=icon] {
+  position: absolute;
+  right: 5%;
+  top: 45%;
+  width: 20%;
+  min-height: 100pt;
+}

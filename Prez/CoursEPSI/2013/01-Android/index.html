@@ -36,7 +36,9 @@
         ---------------- PREZ STYLES  ---------------------------
         ------------------------------------------------------ -->
         <link rel="stylesheet" href="css/theme/gdg.css" id="theme">
+        <link rel="stylesheet" href="css/theme/gdg_print.css" id="theme" media="print">
 		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/style_print.css" media="print">
         
 	</head>
 
@@ -46,7 +48,7 @@
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-				<section data-markdown="assets/markdown/prez.md" data-separator="##==##" data-vertical="##--##" ></section>
+           		<section data-markdown="assets/markdown/prez.md" data-separator="##==##" data-vertical="##--##" ></section>
 
 			</div>
 
@@ -64,8 +66,8 @@
 				progress: true,
 				history: true,
 				center: false,
-                width: 1280,
-                height: 920,
+                width: 1024,
+	height: 768,
 
 				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
 				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none

@@ -1,0 +1,41 @@
+@import "compass";
+@import "compass/css3/box-shadow";
+@import "compass/css3/text-shadow";
+
+
+.reveal .slides > section{
+    footer{
+        position:absolute;
+        bottom:0;
+        left:0;
+        width:100%;
+        height:2mm;
+        
+        @include background-image(linear-gradient(left, #3C78D8, #3C78D8 25%, #CC0000 25%, #CC0000 50%, #FFD966 50%, #FFD966 75%, #6AA84F 75%, #6AA84F)); 
+    }
+
+    footer:after{
+        position:absolute;
+        content:' Gdg';
+        padding-left:calc(1.3em + 5px);
+        font-size:0.6em;
+        font-weight:600;
+        bottom:10px;
+        left:10px;
+        width:50%;
+        height:2.24em;
+        
+        background: url(./images/logo_gdg.png) no-repeat -0px 00px;
+        background-size: 1.3em 2.24em;
+        
+    }
+
+
+    img[alt*=icon]{
+        position: absolute;
+        right: 5%;
+        top: 45%;
+        width: 20%;
+        min-height:100pt;
+    }
+}

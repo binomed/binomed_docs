@@ -1,44 +1,55 @@
-/* line 1, ../scss/prez/style.scss */
+/* line 4, ../scss/prez/style.scss */
 img[alt*=logo] {
   width: 50px;
 }
 
-/* line 8, ../scss/prez/style.scss */
+/* line 10, ../scss/prez/style.scss */
 img[alt*=sommaire] {
   height: 60px;
 }
 
-/* line 12, ../scss/prez/style.scss */
-img[alt*=float-left] {
-  float: left;
-  margin-right: 40px;
+/* line 14, ../scss/prez/style.scss */
+.reveal .slides > section img[alt*=avatar] {
+  -webkit-box-shadow: #cccccc 2px 2px 2px 3px;
+  -moz-box-shadow: #cccccc 2px 2px 2px 3px;
+  box-shadow: #cccccc 2px 2px 2px 3px;
 }
 
-/* line 17, ../scss/prez/style.scss */
-img[alt*=float-right] {
-  float: right;
-  margin-left: 10px;
+/* line 18, ../scss/prez/style.scss */
+img[alt*=company_logo] {
+  position: absolute;
+  bottom: 20%;
+  left: 20%;
+  width: 150px;
 }
 
-/* line 23, ../scss/prez/style.scss */
+/* line 25, ../scss/prez/style.scss */
+img[alt*=gdg_logo] {
+  position: absolute;
+  bottom: 20%;
+  right: 20%;
+  width: 150px;
+}
+
+/* line 32, ../scss/prez/style.scss */
 div.no-bullet ~ ul {
   list-style-type: none;
 }
-/* line 26, ../scss/prez/style.scss */
+/* line 35, ../scss/prez/style.scss */
 div.no-bullet ~ ul img {
   margin: 0;
 }
-/* line 30, ../scss/prez/style.scss */
+/* line 39, ../scss/prez/style.scss */
 div.no-bullet ~ ul li {
   line-height: 60px;
 }
 
-/* line 35, ../scss/prez/style.scss */
+/* line 44, ../scss/prez/style.scss */
 div.padding ~ * {
   padding-left: 50px;
 }
 
-/* line 40, ../scss/prez/style.scss */
+/* line 49, ../scss/prez/style.scss */
 p.surround {
   font-weight: bold;
   font-size: 1em;
@@ -46,62 +57,62 @@ p.surround {
   text-align: left;
 }
 
-/* line 47, ../scss/prez/style.scss */
+/* line 56, ../scss/prez/style.scss */
 table.table_version {
   position: absolute;
   top: 4em;
 }
 
-/* line 52, ../scss/prez/style.scss */
+/* line 61, ../scss/prez/style.scss */
 table.table_version td, table.table_version th {
   font-size: 14px;
 }
 
-/* line 56, ../scss/prez/style.scss */
+/* line 65, ../scss/prez/style.scss */
 .img_version {
   margin-top: 7em;
 }
 
-/* line 60, ../scss/prez/style.scss */
-.dev_code {
+/* line 69, ../scss/prez/style.scss */
+img[alt*=dev_code] {
   position: absolute;
   top: 6em;
-  left: 15em;
+  left: 8em;
   width: 5%;
   -webkit-transform: rotate(-25deg);
   -moz-transform: rotate(-25deg);
   transform: rotate(-25deg);
 }
 
-/* line 70, ../scss/prez/style.scss */
-.dev_gen {
+/* line 79, ../scss/prez/style.scss */
+img[alt*=dev_gen] {
   position: absolute;
-  top: 9.4em;
-  left: 15em;
+  top: 8.4em;
+  left: 8em;
   -webkit-transform: rotate(36deg);
   -moz-transform: rotate(36deg);
   transform: rotate(36deg);
   width: 5%;
 }
 
-/* line 80, ../scss/prez/style.scss */
-.dev_res {
+/* line 89, ../scss/prez/style.scss */
+img[alt*=dev_res] {
   position: absolute;
-  left: 15em;
-  top: 16em;
+  left: 8em;
+  top: 13em;
   width: 5%;
   -webkit-transform: rotate(-100deg);
   -moz-transform: rotate(-100deg);
   transform: rotate(-100deg);
 }
 
-/* line 90, ../scss/prez/style.scss */
-.dev_manifest {
+/* line 99, ../scss/prez/style.scss */
+img[alt*=dev_manifest] {
   position: absolute;
-  left: 15em;
-  top: 23em;
+  left: 8em;
+  top: 17em;
   width: 5%;
-  -webkit-transform: rotate(20deg);
-  -moz-transform: rotate(20deg);
-  transform: rotate(20deg);
+  -webkit-transform: rotate(15deg);
+  -moz-transform: rotate(15deg);
+  transform: rotate(15deg);
 }

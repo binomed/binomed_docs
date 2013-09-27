@@ -123,6 +123,10 @@ $footer-height : 60px;
         left:100px;
         margin-bottom:40px;
     }
+    
+    pre code{
+        max-height:500px;
+    }   
 }
 
 section > footer{
@@ -185,19 +189,71 @@ div.transition{
 
 div.transition~h1{
   color: white;
+  width:70%;
   line-height: 100%;
   @include box-shadow(white 0px 0px 0px);     
   @include text-shadow(rgba(black, 1) 0px 0px 0);
 
 }
 
-img[alt*=icon]{
-  position: absolute;
-  right: 5%;
-  top: 45%;
-  width: 20%;   
-}
+/**
+* IMAGE 
+*
+*/
 
+.reveal .slides > section{
+
+    img[alt*=icon]{
+      position: absolute;
+      right: 5%;
+      top: 45%;
+      width: 20%;   
+    }
+    
+    img[alt*=center]{
+        display:block;
+        margin:auto;   
+    }
+    
+    img[alt*=full-width]{
+        width : 100%;   
+    }
+    
+    img[alt*=full-height]{
+        height:100%;
+    }
+    
+    img[alt*=float-left]{
+      float: left;
+      margin-right: 40px;
+    }
+    
+    img[alt*=float-right]{
+      float: right;
+      margin-left: 10px;
+    }
+    
+    img[alt*=h-100]{height:100px;}
+    img[alt*=h-200]{height:200px;}
+    img[alt*=h-300]{height:300px;}
+    img[alt*=h-400]{height:400px;}
+    img[alt*=h-500]{height:500px;}
+    img[alt*=h-600]{height:600px;}
+    img[alt*=h-700]{height:700px;}
+    img[alt*=h-800]{height:800px;}
+    img[alt*=h-900]{height:900px;}
+    
+    img[alt*=w-100]{width:100px;}
+    img[alt*=w-200]{width:200px;}
+    img[alt*=w-300]{width:300px;}
+    img[alt*=w-400]{width:400px;}
+    img[alt*=w-500]{width:500px;}
+    img[alt*=w-600]{width:600px;}
+    img[alt*=w-700]{width:700px;}
+    img[alt*=w-800]{width:800px;}
+    img[alt*=w-900]{width:900px;}
+
+}
 
 
 // Theme template ------------------------------
