@@ -1,6 +1,7 @@
-# Android Cours
 
-## titre 2
+# Android 
+
+## Cours EPSI 2013 - I5 - 01
 
 
 ##==##
@@ -8,29 +9,17 @@
 
 ###  Jean-François GARREAU
 
-![avatar](/assets/images/jf.png "un titre")
+![avatar float-left](/assets/images/jf.png)
 
 
 * Consultant IT chez SQLI
- +
- +
 * Développeur Android à mes heures perdues
- +
- +
 * Un des membres fondateur du GDG Nantes
- +
- +
-
 * Créateur de CineShowTime  ![logo](/assets/images/cineshowtime.png)
- +
- +
 
 ![logo](/assets/images/twitter-icon.png)
 
 @gdgnantes / @binomed / @uncle_bens1
- +
- +
- +
 
 ![logo](/assets/images/google-Plus-icon.png)
 
@@ -50,24 +39,19 @@ http://gplus.to/jefBinomed
 -->
 
 
-## Sommaire
+## Sommaire ## 
 
+<div class="no-bullet"></div>
 
-![sommaire](/assets/images/android_cupcake.jpg)
- 
-![sommaire](/assets/images/android_donut.jpg)
+* ![sommaire](/assets/images/android_cupcake.jpg) 
+* ![sommaire](/assets/images/android_donut.jpg) Android ?
+* ![sommaire](/assets/images/android_eclair.jpg) Concepts 
+* ![sommaire](/assets/images/android_froyo.png) Economiquement intéressant ?
+* ![sommaire](/assets/images/android_gingerbread.jpg) Développement 
+* ![sommaire](/assets/images/android_honeycomb.png) Liens
+* ![sommaire](/assets/images/android_icecreamsandwich.jpg) Questions
+* ![sommaire](/assets/images/android_jellybean.png)
 
-![sommaire](/assets/images/android_eclair.jpg)
-
-![sommaire](/assets/images/android_froyo.png)
-
-![sommaire](/assets/images/android_gingerbread.jpg)
-
-![sommaire](/assets/images/android_honeycomb.png)
-
-![sommaire](/assets/images/android_icecreamsandwich.jpg)
-
-![sommaire](/assets/images/android_jellybean.png)
 <footer/>
 ##==##
 <!--
@@ -81,14 +65,14 @@ http://gplus.to/jefBinomed
 //  
 -->
 
-[role="intro fond_2"]
-## Android ?
+<div class='transition'></div>
 
-![icone](/assets/images/android_donut.jpg)
+# Android ?
+
+![icon](/assets/images/android_donut.jpg)
 
 
 <aside class="notes">
-====
 Modèle choisi
 
 Architecture
@@ -99,7 +83,6 @@ Avantages
 
 Inconvéninents
 </aside>
-<footer/>
 ##==##
 
 ## Android
@@ -117,7 +100,6 @@ Inconvéninents
 ** Créé en 2007 à l’initiative de google.
 
 <aside class="notes">
-====
 Quelques débats existent quand à la main mise sur android par google…
 </aside>
 <footer/>
@@ -169,7 +151,6 @@ Quelques débats existent quand à la main mise sur android par google…
 ** Tout le code est converti en .dex (dalvik Executable) avant d’être envoyé sur le téléphone.
 
 <aside class="notes">
-====
 Il existe aussi la possibilité de coder en php via un framework externe ASE (ajoute un interpreteur)
 
 sinon google autorise avec le NDK du developpement C C++
@@ -190,15 +171,16 @@ Sinon des solutions comme PhoneGap ou HTML5 via une webview !
 
  De plus en plus de frameworks sont compatibles Android 
 
-** REST
+	* REST
 
-** Xstream
+	* Xstream
 
-** Spring
+	* Spring
 
 * Le monde Java est très riche en tutoriels en tout genre.
 
 * Google travaille activement à enrichir le framework
+
 <footer/>
 ##==##
 
@@ -224,21 +206,20 @@ Sinon des solutions comme PhoneGap ou HTML5 via une webview !
 ![](/assets/images/chart.png)
 
 
-Version|Codename|API|Distribution
--------|--------|---|------------
-1.6|Donut|4|0.2%
-2.1|Eclair|7|2.4%
-2.2|Froyo|8|9.0%
-2.3 - 2.3.2|Gingerbread|9|0.2%
-2.3.3 - 2.3.7||10|47.4%
-3.1|Honeycomb|12|0.4%
-3.2||13|1.1%
-4.0.3 - 4.0.4|Ice Cream Sandwich|15|29.1%
-4.1|Jelly Bean|16|9.0%
-4.2||17|1.2%
+|Version|Codename|API|Distribution|
+|:-----:|:------:|:-:|:----------:|
+|1.6|Donut|4|0.2%|
+|2.1|Eclair|7|2.4%|
+|2.2|Froyo|8|9.0%|
+|2.3 - 2.3.2|Gingerbread|9|0.2%|
+|2.3.3 - 2.3.7||10|47.4%|
+|3.1|Honeycomb|12|0.4%|
+|3.2||13|1.1%|
+|4.0.3 - 4.0.4|Ice Cream Sandwich|15|29.1%|
+|4.1|Jelly Bean|16|9.0%|
+|4.2||17|1.2%|
 
 <aside class="notes">
-====
 Les evolutions d’api ! Car comme le système est neuf, il évolue souvent et donc il faut faire des fois du code spécifique par target.
 
 Concernant openGL on est obligé de faire du spécifique par téléphone. Des frameworks arrivent pour aider AndEngine, PlayN 
@@ -258,14 +239,14 @@ Android avait pour vocation de poser des choses communes mais au final on consta
 //      
 -->
 
-[role="intro fond_2"]
-## Concepts
+<div class='transition'></div>
 
-![icone](/assets/images/android_eclair.jpg)
+# Concepts
+
+![icon](/assets/images/android_eclair.jpg)
 
 
 <aside class="notes">
-====
 Activity
 
 Fragments
@@ -282,7 +263,6 @@ Broadcast recivers
 
 Le reste
 </aside>
-<footer/>
 ##==##
 
 ## Concepts
@@ -300,7 +280,6 @@ Le reste
 * Une activité peut posséder des filtres de lancements
 
 <aside class="notes">
-====
 Les filtres servent par exemple à définir quelle sera l'activité principale quand on lance l'application
 </aside>
 <footer/>
@@ -335,7 +314,6 @@ Quand un process est trop longtemps mis en tache de fond il peut être killé
 ![](/assets/images/fragments.png)
 
 <aside class="notes">
-====
 Les fragments sont la base à utiliser quand on envisage un développement
 </aside>
 <footer/>
@@ -363,7 +341,6 @@ Les fragments sont la base à utiliser quand on envisage un développement
 * N'a pas besoin de couche graphique
 
 <aside class="notes">
-====
 Les services sont très utiles pour gérer tous les traitements un minimum longs
 
 Attention cependant à bien les lancer dans des threads car sinon il bloquent le process qui en est à l'origine.
@@ -381,7 +358,6 @@ Donner un exemple de lecteur MP3 Ou alors d'avoir les accès HTTP
 ![](/assets/images/service_lifecycle.png)
 
 <aside class="notes">
-====
 Comme vous pouvez le voir, un service à la possibilité de communiquer avec un Binder (souvent son appelant) de cette manière on peut tenir au courant l'ihm des avancées du service.
 </aside>
 <footer/>
@@ -404,7 +380,6 @@ Comme vous pouvez le voir, un service à la possibilité de communiquer avec un 
 * En mode broadcast
 
 <aside class="notes">
-====
 L'intent est très très important car sans lui les différents processus (activités, services, …) ne pourraient pas communiquer.
 
 Si on veut faire passer des objets complexes, il faut que nos objets implémentent une certaine interface
@@ -426,7 +401,6 @@ Expliquer en quoi c'est puissant les boradcast ! Sms etc ...
 * On peut définir ses propres contentProvider
 
 <aside class="notes">
-====
 De cette manière on peut accéder facilement aux données du téléphone
 
 On peut aussi offrir la possibilité de toucher aux données de son application.
@@ -442,7 +416,6 @@ On peut aussi offrir la possibilité de toucher aux données de son application.
 * C'est ce qui permet d'intercepter les messages du téléphone et les intents des autres applications
 
 <aside class="notes">
-====
 De cette manière on peut agir sur la réception d'un SMS ou d'un appel.
 </aside>
 <footer/>
@@ -473,7 +446,6 @@ De cette manière on peut agir sur la réception d'un SMS ou d'un appel.
 
 
 <aside class="notes">
-====
 Il resterait encore plein de notions à traiter mais parlons rapidement de celles là.
 
 Les widgets sont des éléments graphiques propres à android et disponible uniquement depuis l'application de bureau d'android. Les widgets sont des éléments indépendants ou non de l'application auquel ils appartiennent.
@@ -501,11 +473,11 @@ Encore bien d'autres choses....
 
 
 
-[role="intro fond_2"]
-## Economiquement Intéressant ?
+<div class='transition'></div>
 
-![icone](/assets/images/android_froyo.png)
-<footer/>
+# Economiquement Intéressant ?
+
+![icon](/assets/images/android_froyo.png)
 ##==##
 
 
@@ -529,7 +501,6 @@ Encore bien d'autres choses....
 
 
 <aside class="notes">
-====
 Les premiers utilisateurs étaient les déçus d'iphone et surtout des geeks =» on recherche beaucoup du gratuit
 
 Il faut lancer une dynamique de payement =» ce n'est pas par ce que notre application est développée par un amateur qu'elle ne mérite pas une rétribution
@@ -560,7 +531,6 @@ L'arrivée du paiment in app est une grande avancée dans la monétisation des a
 ** ...
 
 <aside class="notes">
-====
 Parler des pays ayant le market payant
 </aside>
 <footer/>
@@ -576,17 +546,16 @@ Parler des pays ayant le market payant
 // 
 -->
 
-[role="intro fond_2"]
-## Développement
+<div class='transition'></div>
 
-![icone](/assets/images/android_gingerbread.jpg)
+# Développement
+
+![icon](/assets/images/android_gingerbread.jpg)
 
 
 <aside class="notes">
-====
 Les composants graphiques
 </aside>
-<footer/>
 ##==##
 
 
@@ -607,7 +576,6 @@ Les composants graphiques
 * Multi résolution
 
 <aside class="notes">
-====
 On peut aussi simuler les perturbation réseaux
 
 On peut faire du debug
@@ -673,7 +641,6 @@ Parler de ce qu'on ne peut pas faire : BluTooth, NFC, Caméra c'est pas éviden
 [pull-right]#Et bien d'autres ...#
 
 <aside class="notes">
-====
 Et il en existe encore pleins d'autres … TimePicket, DatePicker ....
 </aside>
 <footer/>
@@ -702,7 +669,6 @@ Et il en existe encore pleins d'autres … TimePicket, DatePicker ....
 ![](/assets/images/project_1.jpg)
 
 <aside class="notes">
-====
 On défini le nom du projet, 
 
 La version android visée
@@ -754,7 +720,6 @@ Le manifest
 
 
 <aside class="notes">
-====
 Le projet est constitué d'une partie statique (votre code, vos ressources)
 
 Et d'une partie dynamique (la partie gen) contenant toutes les constantes.
@@ -787,7 +752,6 @@ On peut voir différents répertoire en fonction de la résolution
 
 
 <aside class="notes">
-====
 Déclaration d'un sumple texte dans une vue. On remarque que le texte provient d'une ressource
 
 Parler de l'aspect multi résolution
@@ -826,7 +790,6 @@ On peut aussi affecter des thèmes très simplement à nos applications
 ```
 
 <aside class="notes">
-====
 On retrouve le nom de l'application, l'icone, la déclaration de l'activité principale
 </aside>
 <footer/>
@@ -842,11 +805,12 @@ On retrouve le nom de l'application, l'icone, la déclaration de l'activité pri
 //   
 -->
 
-[role="intro fond_2"]
-## Liens
+<div class='transition'></div>
 
-![icone](/assets/images/android_honeycomb.png)
-<footer/>
+# Liens
+
+![icon](/assets/images/android_honeycomb.png)
+
 ##==##
 ## Liens
 
@@ -886,7 +850,8 @@ Github Jean-François :  https://github.com/organizations/binomed
 //   
 -->
 
-[role="intro fond_fin"]
-## Questions
+<div class='transition'></div>
 
-![icone](/assets/images/andquestionsag.png)
+# Questions
+
+![icon](/assets/images/andquestionsag.png)
