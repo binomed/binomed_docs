@@ -51,7 +51,7 @@
 @mixin bodyBackground() {
 	@include radial-gradient( rgba(247,242,211,1), rgba(255,255,255,1) );
 }*/
-/* line 93, ../../scss/theme/gdg.scss */
+/* line 96, ../../scss/theme/gdg.scss */
 .reveal .slides > section, .reveal .slides > section > section {
   position: absolute;
   font-family: "Open Sans", Arial, sans-serif;
@@ -60,7 +60,7 @@
   text-align: left;
   padding: 20px 40px 60px 40px;
 }
-/* line 101, ../../scss/theme/gdg.scss */
+/* line 104, ../../scss/theme/gdg.scss */
 .reveal .slides > section h2, .reveal .slides > section > section h2 {
   font-family: "Open Sans";
   font-size: 1.7em;
@@ -73,7 +73,7 @@
   color: white;
   text-align: center;
 }
-/* line 115, ../../scss/theme/gdg.scss */
+/* line 118, ../../scss/theme/gdg.scss */
 .reveal .slides > section h3, .reveal .slides > section > section h3 {
   font-family: "Open Sans";
   font-size: 1em;
@@ -83,7 +83,7 @@
   margin-bottom: 40px;
 }
 
-/* line 125, ../../scss/theme/gdg.scss */
+/* line 128, ../../scss/theme/gdg.scss */
 section > footer {
   position: absolute;
   bottom: 0;
@@ -97,7 +97,7 @@ section > footer {
   background-image: linear-gradient(left, #3c78d8, #3c78d8 25%, #cc0000 25%, #cc0000 50%, #ffd966 50%, #ffd966 75%, #6aa84f 75%, #6aa84f);
 }
 
-/* line 135, ../../scss/theme/gdg.scss */
+/* line 138, ../../scss/theme/gdg.scss */
 section > footer:after {
   position: absolute;
   content: ' Gdg';
@@ -112,12 +112,56 @@ section > footer:after {
   background-size: 1.3em 2.24em;
 }
 
-/* line 152, ../../scss/theme/gdg.scss */
+/* line 155, ../../scss/theme/gdg.scss */
 .reveal .slides > section img {
   border: 0px none black;
   -webkit-box-shadow: white 0px 0px 0px;
   -moz-box-shadow: white 0px 0px 0px;
   box-shadow: white 0px 0px 0px;
+}
+
+/* line 160, ../../scss/theme/gdg.scss */
+thead {
+  color: white;
+  background-color: #3c78d8;
+}
+
+/* line 167, ../../scss/theme/gdg.scss */
+tbody tr:nth-child(even) {
+  background-color: white;
+}
+/* line 171, ../../scss/theme/gdg.scss */
+tbody tr:nth-child(odd) {
+  background-color: #EAEAEA;
+}
+
+/* line 176, ../../scss/theme/gdg.scss */
+div.transition {
+  position: absolute;
+  height: 100%;
+  width: 70%;
+  background-color: #3f3f3f;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* line 186, ../../scss/theme/gdg.scss */
+div.transition ~ h1 {
+  color: white;
+  line-height: 100%;
+  -webkit-box-shadow: white 0px 0px 0px;
+  -moz-box-shadow: white 0px 0px 0px;
+  box-shadow: white 0px 0px 0px;
+  text-shadow: black 0px 0px 0;
+}
+
+/* line 194, ../../scss/theme/gdg.scss */
+img[alt*=icon] {
+  position: absolute;
+  right: 5%;
+  top: 45%;
+  width: 20%;
 }
 
 /*********************************************

@@ -1,38 +1,44 @@
 /* line 1, ../scss/prez/style.scss */
-img[alt=logo] {
+img[alt*=logo] {
   width: 50px;
 }
 
-/*
- Theme: Default
- Fonts: Oswald
+/* line 8, ../scss/prez/style.scss */
+img[alt*=sommaire] {
+  height: 60px;
+}
 
- <link href="http://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
-
-*/
-/* line 13, ../scss/prez/style.scss */
-img.float-left {
+/* line 12, ../scss/prez/style.scss */
+img[alt*=float-left] {
   float: left;
   margin-right: 40px;
 }
 
-/* line 18, ../scss/prez/style.scss */
-img.float-right {
+/* line 17, ../scss/prez/style.scss */
+img[alt*=float-right] {
   float: right;
   margin-left: 10px;
 }
 
-/* line 24, ../scss/prez/style.scss */
-img[alt=icone] {
-  width: 50px;
+/* line 23, ../scss/prez/style.scss */
+div.no-bullet ~ ul {
+  list-style-type: none;
+}
+/* line 26, ../scss/prez/style.scss */
+div.no-bullet ~ ul img {
+  margin: 0;
+}
+/* line 30, ../scss/prez/style.scss */
+div.no-bullet ~ ul li {
+  line-height: 60px;
 }
 
-/* line 28, ../scss/prez/style.scss */
-img[alt=sommaire] {
-  height: 60px;
+/* line 35, ../scss/prez/style.scss */
+div.padding ~ * {
+  padding-left: 50px;
 }
 
-/* line 33, ../scss/prez/style.scss */
+/* line 40, ../scss/prez/style.scss */
 p.surround {
   font-weight: bold;
   font-size: 1em;
@@ -40,23 +46,23 @@ p.surround {
   text-align: left;
 }
 
-/* line 40, ../scss/prez/style.scss */
+/* line 47, ../scss/prez/style.scss */
 table.table_version {
   position: absolute;
   top: 4em;
 }
 
-/* line 45, ../scss/prez/style.scss */
+/* line 52, ../scss/prez/style.scss */
 table.table_version td, table.table_version th {
   font-size: 14px;
 }
 
-/* line 49, ../scss/prez/style.scss */
+/* line 56, ../scss/prez/style.scss */
 .img_version {
   margin-top: 7em;
 }
 
-/* line 53, ../scss/prez/style.scss */
+/* line 60, ../scss/prez/style.scss */
 .dev_code {
   position: absolute;
   top: 6em;
@@ -67,7 +73,7 @@ table.table_version td, table.table_version th {
   transform: rotate(-25deg);
 }
 
-/* line 63, ../scss/prez/style.scss */
+/* line 70, ../scss/prez/style.scss */
 .dev_gen {
   position: absolute;
   top: 9.4em;
@@ -78,7 +84,7 @@ table.table_version td, table.table_version th {
   width: 5%;
 }
 
-/* line 73, ../scss/prez/style.scss */
+/* line 80, ../scss/prez/style.scss */
 .dev_res {
   position: absolute;
   left: 15em;
@@ -89,7 +95,7 @@ table.table_version td, table.table_version th {
   transform: rotate(-100deg);
 }
 
-/* line 83, ../scss/prez/style.scss */
+/* line 90, ../scss/prez/style.scss */
 .dev_manifest {
   position: absolute;
   left: 15em;

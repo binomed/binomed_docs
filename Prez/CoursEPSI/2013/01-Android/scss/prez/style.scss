@@ -1,32 +1,39 @@
-img[alt=logo]{
+img[alt*=logo]{
     width:50px;   
 }
 
-/*
- Theme: Default
- Fonts: Oswald
 
- <link href="http://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+$sommaire-img-height : 60px;
 
-*/
+img[alt*=sommaire]{
+  height: $sommaire-img-height;
+}
 
-img.float-left{
+img[alt*=float-left]{
   float: left;
   margin-right: 40px;
 }
 
-img.float-right{
+img[alt*=float-right]{
   float: right;
   margin-left: 10px;
 }
 
 
-img[alt=icone]{
-    width:50px;   
+div.no-bullet~ul{
+  list-style-type: none;
+
+  img{
+    margin:0; 
+  }
+
+  li{
+    line-height: $sommaire-img-height;
+  }
 }
 
-img[alt=sommaire]{
-  height: 60px;
+div.padding~*{
+  padding-left: 50px;
 }
 
 
