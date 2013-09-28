@@ -36,6 +36,16 @@
 <footer/>
 
 ##==##
+
+<div class="photo-slide"></div>
+
+# un super titre de transition
+
+![photo-slide](/assets/images/iron_droid.jpg)
+
+<footer/>
+
+##==##
 <!--
 //     _____    ____    __  __   __  __              _____   _____    ______ 
 //    / ____|  / __ \  |  \/  | |  \/  |     /\     |_   _| |  __ \  |  ____|
@@ -843,3 +853,36 @@ Github Jean-François :  https://github.com/organizations/binomed
 # Questions
 
 ![icon](/assets/images/andquestionsag.png)
+
+
+##==##
+
+<div class="last-slide"></div>
+
+<div class="topic-title"></div>
+
+# Cours Mobilité
+
+<div class="presenter"></div>
+
+# **Jean-François Garreau**
+
+<div class="gdg-rule"></div>
+
+# GDG Nantes Leader
+
+<div class="work-rule"></div>
+
+# Ingénieur SQLI
+
+<div class="email"></div>
+
+# **jef**@gdgnantes.com
+
+<div class="thank-message"></div>
+
+# **Merci**
+
+![avatar](/assets/images/jf.jpg)
+
+<footer/>
