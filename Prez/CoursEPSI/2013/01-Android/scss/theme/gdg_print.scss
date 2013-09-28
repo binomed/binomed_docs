@@ -17,15 +17,15 @@
     footer:after{
         position:absolute;
         content:' Gdg';
-        padding-left:calc(1.3em + 5px);
+        padding-left:calc(1.3em + 5pt);
         font-size:0.6em;
         font-weight:600;
-        bottom:10px;
-        left:10px;
+        bottom:10pt;
+        left:10pt;
         width:50%;
         height:2.24em;
         
-        background: url(./images/logo_gdg.png) no-repeat -0px 00px;
+        background: url(./images/logo_gdg.png) no-repeat -0pt 00pt;
         background-size: 1.3em 2.24em;
         
     }
@@ -38,4 +38,59 @@
         width: 20%;
         min-height:100pt;
     }
+    
+    img[alt*=h-100]{height:auto;}
+    img[alt*=h-200]{height:auto;}
+    img[alt*=h-300]{height:auto;}
+    img[alt*=h-400]{height:auto;}
+    img[alt*=h-500]{height:auto;}
+    img[alt*=h-600]{height:auto;}
+    img[alt*=h-700]{height:auto;}
+    img[alt*=h-800]{height:auto;}
+    img[alt*=h-900]{height:auto;}
+    
+    img[alt*=w-100]{width:auto;}
+    img[alt*=w-200]{width:auto;}
+    img[alt*=w-300]{width:auto;}
+    img[alt*=w-400]{width:auto;}
+    img[alt*=w-500]{width:auto;}
+    img[alt*=w-600]{width:auto;}
+    img[alt*=w-700]{width:auto;}
+    img[alt*=w-800]{width:auto;}
+    img[alt*=w-900]{width:auto;}
+    
+    img[alt*=hp-100]{height:100pt;}
+    img[alt*=hp-200]{height:200pt;}
+    img[alt*=hp-300]{height:300pt;}
+    img[alt*=hp-400]{height:400pt;}
+    img[alt*=hp-500]{height:500pt;}
+    img[alt*=hp-600]{height:600pt;}
+    img[alt*=hp-700]{height:700pt;}
+    img[alt*=hp-800]{height:800pt;}
+    img[alt*=hp-900]{height:900pt;}
+    
+    img[alt*=wp-100]{width:100pt;}
+    img[alt*=wp-200]{width:200pt;}
+    img[alt*=wp-300]{width:300pt;}
+    img[alt*=wp-400]{width:400pt;}
+    img[alt*=wp-500]{width:500pt;}
+    img[alt*=wp-600]{width:600pt;}
+    img[alt*=wp-700]{width:700pt;}
+    img[alt*=wp-800]{width:800pt;}
+    img[alt*=wp-900]{width:900pt;}
+
+    div.hidden-print+*{
+        display:none;   
+    }
+    
+      img[alt*=title]{
+        position:absolute;
+        max-width:50%;
+        height:400px;
+        min-height:400px;
+        top:10%;
+        left:50%;
+        margin-left:-25%;
+    }
 }
+

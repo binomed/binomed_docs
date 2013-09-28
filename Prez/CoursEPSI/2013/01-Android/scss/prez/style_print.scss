@@ -1,14 +1,20 @@
 
+img[alt*=avatar]{
+    width:200pt;
+    min-height:200pt;
+}
+
+
 img[alt*=company_logo]{
     top: 20mm;
-    width:150pt;
-    min-height:150pt;
+    width:100pt;
+    min-height:100pt;
 }
 
 img[alt*=gdg_logo]{
     top: 20mm;
-    width:150pt;
-    min-height:150pt;
+    width:100pt;
+    min-height:100pt;
 }
 
 
@@ -35,7 +41,10 @@ img[alt*=dev_res]{
 
 img[alt*=dev_manifest]{
   left: 7em;
-  top: 11em;
+  top: 12em;
   width: 30pt;
   min-height:30pt;
+  -webkit-transform: rotate(-20deg);
+  -moz-transform: rotate(-20deg);
+  transform: rotate(-20deg);
 }

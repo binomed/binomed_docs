@@ -1,18 +1,24 @@
 /* line 2, ../scss/prez/style_print.scss */
-img[alt*=company_logo] {
-  top: 20mm;
-  width: 150pt;
-  min-height: 150pt;
+img[alt*=avatar] {
+  width: 200pt;
+  min-height: 200pt;
 }
 
 /* line 8, ../scss/prez/style_print.scss */
-img[alt*=gdg_logo] {
+img[alt*=company_logo] {
   top: 20mm;
-  width: 150pt;
-  min-height: 150pt;
+  width: 100pt;
+  min-height: 100pt;
 }
 
-/* line 15, ../scss/prez/style_print.scss */
+/* line 14, ../scss/prez/style_print.scss */
+img[alt*=gdg_logo] {
+  top: 20mm;
+  width: 100pt;
+  min-height: 100pt;
+}
+
+/* line 21, ../scss/prez/style_print.scss */
 img[alt*=dev_code] {
   top: 0em;
   left: 7em;
@@ -20,7 +26,7 @@ img[alt*=dev_code] {
   min-height: 30pt;
 }
 
-/* line 22, ../scss/prez/style_print.scss */
+/* line 28, ../scss/prez/style_print.scss */
 img[alt*=dev_gen] {
   top: 2.4em;
   left: 7em;
@@ -28,7 +34,7 @@ img[alt*=dev_gen] {
   min-height: 30pt;
 }
 
-/* line 29, ../scss/prez/style_print.scss */
+/* line 35, ../scss/prez/style_print.scss */
 img[alt*=dev_res] {
   left: 7em;
   top: 7em;
@@ -36,10 +42,13 @@ img[alt*=dev_res] {
   min-height: 30pt;
 }
 
-/* line 36, ../scss/prez/style_print.scss */
+/* line 42, ../scss/prez/style_print.scss */
 img[alt*=dev_manifest] {
   left: 7em;
-  top: 11em;
+  top: 12em;
   width: 30pt;
   min-height: 30pt;
+  -webkit-transform: rotate(-20deg);
+  -moz-transform: rotate(-20deg);
+  transform: rotate(-20deg);
 }

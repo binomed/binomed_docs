@@ -1,6 +1,25 @@
-# Android 
+<div class="first-slide"></div>
 
-## Cours EPSI 2013 - I5 - 01
+# **GDG DevFest**
+
+## 2013 Season
+
+### year.mm.dd Meeting Name @ **Where**
+
+
+##==##
+
+<div class="title"></div>
+
+# **Cours Android 5ème année**
+
+## Cours Mobilité
+
+### Cours 01 - Présentation de la plateforme
+
+![title](/assets/images/Android-Developers.png)
+
+<footer/>
 
 
 ##==##
@@ -8,7 +27,7 @@
 
 ###  Jean-François GARREAU
 
-![avatar center w-200](/assets/images/jf.jpg)
+![avatar center w-300 wp-200](/assets/images/jf.jpg)
 
 
 ![company_logo](/assets/images/sqli_logo.png)
@@ -101,7 +120,7 @@ Quelques débats existent quand à la main mise sur android par google…
 
 ### Architecture
 
-![center h-500](/assets/images/system-architecture.jpg)
+![center h-600 hp-400](/assets/images/system-architecture.jpg)
 <footer/>
 ##==##
 
@@ -188,7 +207,8 @@ Sinon des solutions comme PhoneGap ou HTML5 via une webview !
 
 ### Fragmentation
 
-![float-left w-300](/assets/images/chart.png)
+<div class="hidden-print"></div>
+![float-left w-500 wp-200](/assets/images/chart.png)
 
 
 |Version|Codename|API|Distribution|
@@ -272,7 +292,7 @@ Les filtres servent par exemple à définir quelle sera l'activité principale q
 
 ### Cycle de vie des activités
 
-![center h-500](/assets/images/activity_lifecycle.png)
+![center h-700 hp-400](/assets/images/activity_lifecycle.png)
 
 <aside class="notes">
 Quand un process est trop longtemps mis en tache de fond il peut être killé
@@ -293,7 +313,7 @@ Quand un process est trop longtemps mis en tache de fond il peut être killé
 
 * Un fragment possède son propre cycle de vie
 
-![center h-300](/assets/images/fragments.png)
+![center h-400 hp-200](/assets/images/fragments.png)
 
 <aside class="notes">
 Les fragments sont la base à utiliser quand on envisage un développement
@@ -306,7 +326,7 @@ Les fragments sont la base à utiliser quand on envisage un développement
 
 ### Cycle de vie des fragments
 
-![center h-500](/assets/images/fragment_lifecycle.png)
+![center h-700 hp-400](/assets/images/fragment_lifecycle.png)
 <footer/>
 ##==##
 
@@ -337,7 +357,7 @@ Donner un exemple de lecteur MP3 Ou alors d'avoir les accès HTTP
 
 ### Cycle de vie  des services
 
-![center h-500](/assets/images/service_lifecycle.png)
+![center h-700 hp-400](/assets/images/service_lifecycle.png)
 
 <aside class="notes">
 Comme vous pouvez le voir, un service à la possibilité de communiquer avec un Binder (souvent son appelant) de cette manière on peut tenir au courant l'ihm des avancées du service.
@@ -548,7 +568,7 @@ Les composants graphiques
 
 ### Emulateur
 
-![center h-300](/assets/images/emulator.png)
+![center h-400 hp-300](/assets/images/emulator.png)
 
 * Permet d'émuler efficacement le téléphone
  * GPS
@@ -600,11 +620,11 @@ Parler de ce qu'on ne peut pas faire : BluTooth, NFC, Caméra c'est pas éviden
 
 * Gallery, GridView et ListView
 
-![float-left w-300](/assets/images/GalleryView.png)
+![float-left w-300 wp-200](/assets/images/GalleryView.png)
 
-![float-right w-300](/assets/images/GridView.png)
+![float-right w-300 wp-200](/assets/images/GridView.png)
 
-![center w-300](/assets/images/ListView.png)
+![center w-300 wp-200](/assets/images/ListView.png)
 <footer/>
 ##==##
 
@@ -647,7 +667,7 @@ Et il en existe encore pleins d'autres … TimePicket, DatePicker ....
 
 ### Hello World
 
-![center](/assets/images/project_1.jpg)
+![center ](/assets/images/project_1.jpg)
 
 <aside class="notes">
 On défini le nom du projet, 
@@ -670,7 +690,7 @@ On définit une Activité par défaut
 
 ### Le Projet
 
-![float-left h-500](/assets/images/project_3.png)
+![float-left h-600 hp-400](/assets/images/project_3.png)
 
 ![dev_code](/assets/images//arrow_left.png)
 

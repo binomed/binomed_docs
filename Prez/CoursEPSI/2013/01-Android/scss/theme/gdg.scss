@@ -127,7 +127,125 @@ $footer-height : 60px;
     pre code{
         max-height:500px;
     }   
+    
+    /**
+    * FIRST SLIDE
+    */
+    
+    div.first-slide{
+        position:absolute;
+        top:50%;
+        margin-top:-110px;
+        left:40%;
+        width:116px;
+        height:220px;
+        background: url(./images/logo_gdg.png) no-repeat -0px 00px;
+        background-size: 116px 220px; 
+    }
+    
+    div.first-slide~h1{
+        font-family: "Open Sans";
+        font-size:2em;
+        height:2em;
+        font-weight:600;
+        position:absolute;
+        top:50%;
+        margin-top:-100px;
+        color : $google-grey;
+        width:calc(60% - 116px);
+        left:calc(40% + 116px);
+        text-overflow:ellipsis;
+        text-transform:none;
+        @include box-shadow(white 0px 0px 0px);     
+        @include text-shadow(rgba(black, 1) 0px 0px 0);
+    }
+    
+    div.first-slide~h2{
+        background:none;
+        font-family: "Open Sans";
+        font-size:1.7em;
+        height:1.7em;
+        font-weight:400;
+        position:absolute;
+        top:calc(50% + 2em);
+        margin-top:-100px;
+        color : $google-grey;
+        width:calc(60% - 116px);
+        left:calc(40% + 116px);
+        text-overflow:ellipsis;
+        text-transform:none;
+        padding:0;
+        text-align:left;
+    }
+    
+    div.first-slide~h3{
+        color : $google-red;
+        position:absolute;
+        width:60%;
+        top:calc(50% + 116px);
+        left:40%;
+    }
+    
+    /**
+    * Title présentation 
+    */
+    
+      
+    div.title~h1{
+        position:absolute;
+        top:calc(50% + 2em);
+        left:0;
+        height:4em;
+        width:100%;
+        font-family: "Open Sans";
+        line-height:2em;
+        font-size:2em;
+        font-weight:600;
+        color : $google-grey;
+        text-align:center;
+        text-overflow:ellipsis;
+        text-transform:none;
+        @include box-shadow(white 0px 0px 0px);     
+        @include text-shadow(rgba(black, 1) 0px 0px 0);
+    }
+    
+    div.title~h2{
+        position:absolute;
+        top:0;
+        left:0;
+        height:1.7em;
+        width:100%;
+        background:none;
+        font-family: "Open Sans";
+        font-size:1.7em;
+        line-height:1.7em;
+        font-weight:400;
+        color : $google-grey;
+        text-overflow:ellipsis;
+        text-transform:none;
+        text-align:center;
+    }
+    
+    div.title~h3{
+        position:absolute;
+        left:0;
+        bottom:$footer-height;
+        color : $google-grey;
+        width:100%;
+        text-align:center;
+    }
+    
+    img[alt*=title]{
+        position:absolute;
+        max-width:50%;
+        height:40%;
+        top:10%;
+        left:50%;
+        margin-left:-25%;
+    }
 }
+
+
 
 section > footer{
     position:absolute;
