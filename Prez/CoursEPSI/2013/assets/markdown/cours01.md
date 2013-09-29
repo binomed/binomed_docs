@@ -305,17 +305,13 @@ Sinon des solutions comme PhoneGap ou HTML5 via une webview !
 
 * Android est libre et en Java
 
- De plus en plus de frameworks sont compatibles Android 
-
-	* REST
-
-	* Xstream
-
-	* Spring
+ La grande majorité des frameworks java proposent des adpations android
 
 * Le monde Java est très riche en tutoriels en tout genre.
 
 * Google travaille activement à enrichir le framework
+
+* La communauté est très active et propose de nombreuses librairies !
 
 <footer/>
 ##==##
@@ -376,9 +372,9 @@ Android avait pour vocation de poser des choses communes mais au final on consta
 
 <div class='transition'></div>
 
-# Concepts
+# Concepts 
 
-![icon](/assets/images/android_froyo.jpg)
+![icon](/assets/images/android_froyo.png)
 
 
 <aside class="notes">
@@ -403,6 +399,8 @@ Le reste
 ## Concepts
 
 ### Activity
+
+![float-right](/assets/images/ui_overview_home_screen.png)
 
 * Base graphique
 
@@ -475,6 +473,12 @@ Les fragments sont la base à utiliser quand on envisage un développement
 
 * N'a pas besoin de couche graphique
 
+* Les services doivent être bindés pour communiquer avec les activités
+
+<br>
+
+![center w-600 wp-500](assets/images/banner-process.png)
+
 <aside class="notes">
 Les services sont très utiles pour gérer tous les traitements un minimum longs
 
@@ -488,7 +492,7 @@ Donner un exemple de lecteur MP3 Ou alors d'avoir les accès HTTP
 
 ## Concepts
 
-### Cycle de vie  des services
+### Cycle de vie des services
 
 ![center h-700 hp-400](/assets/images/service_lifecycle.png)
 
@@ -502,6 +506,8 @@ Comme vous pouvez le voir, un service à la possibilité de communiquer avec un 
 
 ### Intent
 
+![float-right w-200 wp-200](assets/images/webintent-logo.jpg)
+
 * Gestion des messages dans Android
 
 * Ils peuvent transporter des informations
@@ -510,9 +516,14 @@ Comme vous pouvez le voir, un service à la possibilité de communiquer avec un 
 
   Mais on peut envoyer des objets complexes
 
+
+
 * Plusieurs applications peuvent les réceptionner
 
 * En mode broadcast
+
+* Peuvent être adressés à des activités, services, broadcastReceiver
+
 
 <aside class="notes">
 L'intent est très très important car sans lui les différents processus (activités, services, …) ne pourraient pas communiquer.
@@ -531,9 +542,20 @@ Expliquer en quoi c'est puissant les boradcast ! Sms etc ...
 
 ### ContentProvider
 
+![float-right w-200 wp-200](assets/images/Database_1.png)
+
 * Sorte de base de données partagées
 
 * On peut définir ses propres contentProvider
+
+* Les données sont structurée en tables
+
+
+* Propose une interface standard permettant de séparer le processus de la base des autres processus
+
+* Est à utiliser si l'on veut partager ses données avec d'autres applications
+
+* Sinon il faut passer par une base SQLITE.
 
 <aside class="notes">
 De cette manière on peut accéder facilement aux données du téléphone
@@ -550,8 +572,16 @@ On peut aussi offrir la possibilité de toucher aux données de son application.
 
 * C'est ce qui permet d'intercepter les messages du téléphone et les intents des autres applications
 
+* Se déclare avec le tag **receiver**
+
+* Par défaut un broadCastReceiver n'est pas appelé dans un ordre précis.
+
+
+
 <aside class="notes">
 De cette manière on peut agir sur la réception d'un SMS ou d'un appel.
+
+Utiliser android:priority pour forcer un ordre
 </aside>
 <footer/>
 ##==##
@@ -559,25 +589,58 @@ De cette manière on peut agir sur la réception d'un SMS ou d'un appel.
 
 ## Concepts
 
+### Widgets
+
+* Composants graphiques déportés sur la "home" du téléphone
+
+* Peuvent êtreredimensionnable
+* Peut contenir des images / des listes / des pages. 
+
+ <br>
+
+ ![center](assets/images/widgets_info.png)
+
+<footer /> 
+
+##==##
+
+## Concepts
+
+### Sécurité
+
+![float-right h-500 hp-400](assets/images/auth.jpg)
+
+Une application n'a accès à des données / sensors du téléphone que si elle en a obtenue l'autorisation ! 
+
+<br>
+On doit donc spécifier lors de la conception si l'on souhaite accéder à une fonctionnalité du téléphone ou alors à une api.
+
+
+<footer />
+
+##==##
+
+## Concepts
+
 ### Quelques autres concepts
-
-* Les widgets
-
-* SQL
 
 * L’internationalisation
 
-* Le draw9Patch
+* Les Outils
 
 * Natif
 
 * Sensors
 
+* GCM
+
 * Graphique : 
 
-* Canvas
+ * Canvas
 
-* OpenGL ES
+ * OpenGL ES
+
+ * SurfaceView
 
 
 <aside class="notes">
@@ -596,25 +659,6 @@ Encore bien d'autres choses....
 <footer/>
 
 ##==##
-<!--
-//    ______    _____    ____    _   _    ____    __  __   _____    ____    _    _   ______   __  __   ______   _   _   _______ 
-//   |  ____|  / ____|  / __ \  | \ | |  / __ \  |  \/  | |_   _|  / __ \  | |  | | |  ____| |  \/  | |  ____| | \ | | |__   __|
-//   | |__    | |      | |  | | |  \| | | |  | | | \  / |   | |   | |  | | | |  | | | |__    | \  / | | |__    |  \| |    | |   
-//   |  __|   | |      | |  | | | . ` | | |  | | | |\/| |   | |   | |  | | | |  | | |  __|   | |\/| | |  __|   | . ` |    | |   
-//   | |____  | |____  | |__| | | |\  | | |__| | | |  | |  _| |_  | |__| | | |__| | | |____  | |  | | | |____  | |\  |    | |   
-//   |______|  \_____|  \____/  |_| \_|  \____/  |_|  |_| |_____|  \___\_\  \____/  |______| |_|  |_| |______| |_| \_|    |_|   
-//                                                                                                                              
-//   
--->
-
-
-
-<div class='transition'></div>
-
-# Le monde du mobile ?
-
-![icon](/assets/images/android_froyo.png)
-##==##
 
 
 <!--
@@ -632,13 +676,30 @@ Encore bien d'autres choses....
 
 # Développement
 
-![icon](/assets/images/android_gingerbread.png)
+![icon](/assets/images/android_gingerbread.jpg)
 <aside class="notes">
 Les composants graphiques
 </aside>
 ##==##
 
 
+## Développement
+
+### L'environement de développement
+
+2 solutions officellement soutenues par Google : 
+
+<div class="no-bullet"></div>
+
+* ![w-100 wp-100](assets/images/eclipse.png) Eclipse et son plugin ADT
+
+<br>
+
+* ![w-100 wp-100](assets/images/android_studio.png) Android Studio basé sur IntelliJ
+
+<footer />
+
+##==##
 
 
 ## Développement
@@ -666,8 +727,28 @@ On peut faire des captures d'écrans
 Parler de ce qu'on ne peut pas faire : BluTooth, NFC, Caméra c'est pas évident, ...
 </aside>
 <footer/>
+
 ##==##
 
+## Développement
+
+### Genymotion
+
+Il s'agit d'un autre émulateur basé sur VirtualBox et offrant des performances meilleurs !
+
+![center h-400 hp-300 float-right](assets/images/GenyMotion.png)
+
+On peut facilement simuler : 
+
+* GPS 
+
+* Rotation
+
+* Caméra
+
+<footer />
+
+##==##
 
 ## Développement
 
@@ -801,8 +882,31 @@ On peut voir différents répertoire en fonction de la résolution
 
 
 ##==##
+
+## Développement
+
+### Les ressources
+
+* drawable : Tous les xml d'images
+
+* drawable-*dpi : toutes les images (fichiers optimisés pour la densité concernée)
+
+* Layout* : les layouts xml de présentation
+
+* values* : les chaines de caractères, styles, thèmes
+
+* menu : les menus xml
+
+
+<footer />
+
+##==##
+
 ## Développement
 ### Le layout
+
+Il s'agit d'un fichier xml séparant la couche présentation de la couche de code.
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -832,6 +936,8 @@ On peut aussi affecter des thèmes très simplement à nos applications
 ## Développement
 
 ### Manifest.xml
+
+Fichier des méta données du projet ! Toutes les autorisations sont précisées ici.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -875,7 +981,117 @@ On retrouve le nom de l'application, l'icone, la déclaration de l'activité pri
 
 # Taches Asynchrones
 
-![icon](/assets/images/android_honneycomb.jpg)
+![icon](/assets/images/android_honeycomb.png)
+
+
+##==##
+
+## Taches Asyncrhones
+
+### ANR
+
+ANR = **Application Not Responding**, Ce message est lancé quand une application ne répond pas et qu'elle est considérée comme bloquée. L'utilisateur sera donc invité à arrêter l'application même si cette dernière avait encore des taches à effecter...
+
+<br>
+Elle est déclanchée :
+
+* 5s après qu'une interaction a été demandée et qu'aucune réponse n'a été fournie
+
+* 10s après qu'un broadcastReceiver s'est lancé
+
+![center w-400 wp-300](assets/images/anr.png)
+
+<footer />
+
+##==##
+
+## Taches Asynchrones
+
+### Solutions
+
+#### AsyncTasks : 
+
+Thread lancées hors du UI Thread avec un callBack synchronisé sur le UI Thread. Possibilité d'interagir avec le UI Thread.
+L'asyncTask est fortement liée à la classe qui l'a lancée et celà peut poser des problèmes.
+
+#### Services : 
+
+Thread lancées hors du UI Thread mais étant détaché de la vie de l'activité appelante ! Il n'est pas syncrhonisé par défaut avec l'activité appelante ce qui complexifie la communication.
+
+#### Loaders : 
+
+Ils sont dédiés aux chargements de cursor (résultats issus de la base de donnée). Nous ne reviendrons pas dessus
+
+<footer />
+
+##==##
+
+## Taches asyncrhones
+
+### AsynTask
+
+Il s'agit d'une classe 
+
+```java
+private class BigCalcul extends AsyncTask<Void, Integer, Void>
+{
+  protected void onPreExecute() {
+    // Interaction avec l'UI pour notifier le début (UI Syncrhone)
+  }
+  protected void onProgressUpdate(Integer... values){
+    // Permet de notifier de l'avancement (UI Synchrone)
+  }
+  protected Void doInBackground(Void... arg0) {
+    // Tache long (UI Asynchrone)
+    return null;
+  }
+  protected void onPostExecute(Void result) {
+    // Interaction avec l'UI pour notifier la fin (UI Syncrhone)
+  }
+}
+```
+<footer />
+
+##==##
+
+## Taches asyncrhones
+
+### AsynTask
+
+Se lance très facilement
+
+```java
+mButton.setOnClickListener(new OnClickListener(){
+  
+  @Override
+  public void onClick(View arg0){
+    BigCalcul calcul = new BigCalcul();
+    calcul.execute();
+
+  }
+
+});
+```
+<footer />
+
+##==##
+
+## Taches Asyncrhones
+
+### AsyncTask
+
+#### Avantages : 
+
+* Facile à mettre en oeuvre
+
+* Fait ce qu'on lui demande
+
+<br><br>
+#### Inconvénients : 
+
+* Peut être à l'origine de memory leaks !
+
+<footer />
 
 
 ##==##
