@@ -18,15 +18,15 @@
 
 // Include theme-specific fonts
 @font-face {
-	font-family: 'League Gothic';
-	src: url('../../reveal/lib/font/league_gothic-webfont.eot');
-	src: url('../../reveal/lib/font/league_gothic-webfont.eot?#iefix') format('embedded-opentype'),
-		 url('../../reveal/lib/font/league_gothic-webfont.woff') format('woff'),
-		 url('../../reveal/lib/font/league_gothic-webfont.ttf') format('truetype'),
-		 url('../../reveal/lib/font/league_gothic-webfont.svg#LeagueGothicRegular') format('svg');
+    font-family: 'League Gothic';
+    src: url('../../reveal/lib/font/league_gothic-webfont.eot');
+    src: url('../../reveal/lib/font/league_gothic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../reveal/lib/font/league_gothic-webfont.woff') format('woff'),
+         url('../../reveal/lib/font/league_gothic-webfont.ttf') format('truetype'),
+         url('../../reveal/lib/font/league_gothic-webfont.svg#LeagueGothicRegular') format('svg');
 
-	font-weight: normal; 
-	font-style: normal;
+    font-weight: normal; 
+    font-style: normal;
 }
 
 @font-face {
@@ -77,7 +77,7 @@ $heading1TextShadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b
 // Background generator
 /*
 @mixin bodyBackground() {
-	@include radial-gradient( rgba(247,242,211,1), rgba(255,255,255,1) );
+    @include radial-gradient( rgba(247,242,211,1), rgba(255,255,255,1) );
 }*/
 
 

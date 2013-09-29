@@ -120,12 +120,7 @@
 .reveal .slides > section pre code, .reveal .slides > section > section pre code {
   max-height: 500px;
 }
-/* line 150, ../../scss/theme/gdg.scss */
-.reveal .slides > section blockquote, .reveal .slides > section > section blockquote {
-  background: rgba(0, 0, 0, 0.1);
-  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.2);
-}
-/* line 159, ../../scss/theme/gdg.scss */
+/* line 154, ../../scss/theme/gdg.scss */
 .reveal .slides > section div.first-slide, .reveal .slides > section > section div.first-slide {
   position: absolute;
   top: 50%;
@@ -136,7 +131,7 @@
   background: url(./images/logo_gdg.png) no-repeat 0px 0px;
   background-size: 116px 220px;
 }
-/* line 170, ../../scss/theme/gdg.scss */
+/* line 165, ../../scss/theme/gdg.scss */
 .reveal .slides > section div.first-slide ~ h1, .reveal .slides > section > section div.first-slide ~ h1 {
   font-family: "Open Sans";
   font-size: 2em;
@@ -155,7 +150,7 @@
   box-shadow: white 0px 0px 0px;
   text-shadow: black 0px 0px 0;
 }
-/* line 187, ../../scss/theme/gdg.scss */
+/* line 182, ../../scss/theme/gdg.scss */
 .reveal .slides > section div.first-slide ~ h2, .reveal .slides > section > section div.first-slide ~ h2 {
   background: none;
   font-family: "Open Sans";
@@ -173,7 +168,7 @@
   padding: 0;
   text-align: left;
 }
-/* line 205, ../../scss/theme/gdg.scss */
+/* line 200, ../../scss/theme/gdg.scss */
 .reveal .slides > section div.first-slide ~ h3, .reveal .slides > section > section div.first-slide ~ h3 {
   color: #cc0000;
   position: absolute;
@@ -181,7 +176,7 @@
   top: calc(50% + 116px);
   left: 40%;
 }
-/* line 218, ../../scss/theme/gdg.scss */
+/* line 213, ../../scss/theme/gdg.scss */
 .reveal .slides > section div.title ~ h1, .reveal .slides > section > section div.title ~ h1 {
   position: absolute;
   top: calc(50% + 2em);
@@ -201,7 +196,7 @@
   box-shadow: white 0px 0px 0px;
   text-shadow: black 0px 0px 0;
 }
-/* line 236, ../../scss/theme/gdg.scss */
+/* line 231, ../../scss/theme/gdg.scss */
 .reveal .slides > section div.title ~ h2, .reveal .slides > section > section div.title ~ h2 {
   position: absolute;
   top: 0;
@@ -218,7 +213,7 @@
   text-transform: none;
   text-align: center;
 }
-/* line 253, ../../scss/theme/gdg.scss */
+/* line 248, ../../scss/theme/gdg.scss */
 .reveal .slides > section div.title ~ h3, .reveal .slides > section > section div.title ~ h3 {
   position: absolute;
   left: 0;
@@ -227,7 +222,7 @@
   width: 100%;
   text-align: center;
 }
-/* line 262, ../../scss/theme/gdg.scss */
+/* line 257, ../../scss/theme/gdg.scss */
 .reveal .slides > section img[alt*=title], .reveal .slides > section img.title, .reveal .slides > section > section img[alt*=title], .reveal .slides > section > section img.title {
   position: absolute;
   max-width: 50%;
@@ -236,7 +231,7 @@
   left: 50%;
   margin-left: -25%;
 }
-/* line 275, ../../scss/theme/gdg.scss */
+/* line 270, ../../scss/theme/gdg.scss */
 .reveal .slides > section div.last-slide, .reveal .slides > section > section div.last-slide {
   position: absolute;
   left: 0;
@@ -246,7 +241,7 @@
   background-color: #3f3f3f;
   z-index: -100;
 }
-/* line 285, ../../scss/theme/gdg.scss */
+/* line 280, ../../scss/theme/gdg.scss */
 .reveal .slides > section div.last-slide ~ h1, .reveal .slides > section > section div.last-slide ~ h1 {
   position: absolute;
   color: white;
@@ -261,7 +256,7 @@
   width: 100%;
   left: 0;
 }
-/* line 298, ../../scss/theme/gdg.scss */
+/* line 293, ../../scss/theme/gdg.scss */
 .reveal .slides > section div.last-slide ~ div.presenter + h1, .reveal .slides > section > section div.last-slide ~ div.presenter + h1 {
   top: calc(1.7em);
   height: 2em;
@@ -269,7 +264,7 @@
   font-size: 2em;
   font-weight: 600;
 }
-/* line 306, ../../scss/theme/gdg.scss */
+/* line 301, ../../scss/theme/gdg.scss */
 .reveal .slides > section div.last-slide ~ div.topic-title + h1, .reveal .slides > section > section div.last-slide ~ div.topic-title + h1 {
   top: 0;
   height: 1.7em;
@@ -277,7 +272,7 @@
   line-height: 1.7em;
   font-weight: 400;
 }
-/* line 314, ../../scss/theme/gdg.scss */
+/* line 309, ../../scss/theme/gdg.scss */
 .reveal .slides > section div.last-slide ~ div.gdg-rule + h1, .reveal .slides > section > section div.last-slide ~ div.gdg-rule + h1 {
   top: calc(1.7em + 3em + 2em);
   height: 1em;
@@ -285,7 +280,7 @@
   line-height: 1em;
   font-weight: 400;
 }
-/* line 322, ../../scss/theme/gdg.scss */
+/* line 317, ../../scss/theme/gdg.scss */
 .reveal .slides > section div.last-slide ~ div.work-rule + h1, .reveal .slides > section > section div.last-slide ~ div.work-rule + h1 {
   top: calc(50% + 90px);
   height: 1em;
@@ -293,7 +288,7 @@
   line-height: 1em;
   font-weight: 400;
 }
-/* line 330, ../../scss/theme/gdg.scss */
+/* line 325, ../../scss/theme/gdg.scss */
 .reveal .slides > section div.last-slide ~ div.email + h1, .reveal .slides > section > section div.last-slide ~ div.email + h1 {
   top: calc(50% + 90px + 2em);
   height: 1em;
@@ -301,7 +296,7 @@
   line-height: 1em;
   font-weight: 400;
 }
-/* line 338, ../../scss/theme/gdg.scss */
+/* line 333, ../../scss/theme/gdg.scss */
 .reveal .slides > section div.last-slide ~ div.thank-message + h1, .reveal .slides > section > section div.last-slide ~ div.thank-message + h1 {
   bottom: 1em;
   height: 2em;
@@ -309,7 +304,7 @@
   line-height: 2em;
   font-weight: 600;
 }
-/* line 347, ../../scss/theme/gdg.scss */
+/* line 342, ../../scss/theme/gdg.scss */
 .reveal .slides > section div.last-slide ~ * img[alt*=avatar], .reveal .slides > section div.last-slide ~ * img.avatar, .reveal .slides > section > section div.last-slide ~ * img[alt*=avatar], .reveal .slides > section > section div.last-slide ~ * img.avatar {
   position: absolute;
   width: 200px;
@@ -319,7 +314,7 @@
   margin-left: -100px;
   margin-top: -150px;
 }
-/* line 361, ../../scss/theme/gdg.scss */
+/* line 356, ../../scss/theme/gdg.scss */
 .reveal .slides > section div.transition, .reveal .slides > section > section div.transition {
   position: absolute;
   height: 100%;
@@ -329,7 +324,7 @@
   left: 0;
   z-index: -1;
 }
-/* line 371, ../../scss/theme/gdg.scss */
+/* line 366, ../../scss/theme/gdg.scss */
 .reveal .slides > section div.transition ~ h1, .reveal .slides > section > section div.transition ~ h1 {
   color: white;
   width: 70%;
@@ -339,14 +334,14 @@
   box-shadow: white 0px 0px 0px;
   text-shadow: black 0px 0px 0;
 }
-/* line 381, ../../scss/theme/gdg.scss */
+/* line 376, ../../scss/theme/gdg.scss */
 .reveal .slides > section div.transition ~ * img[alt*=icon], .reveal .slides > section div.transition ~ * img.icon, .reveal .slides > section > section div.transition ~ * img[alt*=icon], .reveal .slides > section > section div.transition ~ * img.icon {
   position: absolute;
   right: 5%;
   top: 45%;
   width: 20%;
 }
-/* line 392, ../../scss/theme/gdg.scss */
+/* line 387, ../../scss/theme/gdg.scss */
 .reveal .slides > section div.photo-slide ~ h1, .reveal .slides > section > section div.photo-slide ~ h1 {
   position: absolute;
   top: 25%;
@@ -368,7 +363,7 @@
   box-shadow: white 0px 0px 0px;
   text-shadow: black 0px 0px 0;
 }
-/* line 413, ../../scss/theme/gdg.scss */
+/* line 408, ../../scss/theme/gdg.scss */
 .reveal .slides > section div.photo-slide ~ * img[alt*=photo-slide], .reveal .slides > section img.photo-slide, .reveal .slides > section > section div.photo-slide ~ * img[alt*=photo-slide], .reveal .slides > section > section img.photo-slide {
   position: absolute;
   top: 0;
@@ -380,7 +375,7 @@
   z-index: -10;
 }
 
-/* line 430, ../../scss/theme/gdg.scss */
+/* line 425, ../../scss/theme/gdg.scss */
 section > footer {
   position: absolute;
   bottom: 0;
@@ -395,7 +390,7 @@ section > footer {
   background-size: 100% 5px;
 }
 
-/* line 441, ../../scss/theme/gdg.scss */
+/* line 436, ../../scss/theme/gdg.scss */
 section > footer:before {
   position: absolute;
   content: '';
@@ -407,7 +402,7 @@ section > footer:before {
   z-index: -2;
 }
 
-/* line 454, ../../scss/theme/gdg.scss */
+/* line 449, ../../scss/theme/gdg.scss */
 section > footer:after {
   position: absolute;
   content: ' Gdg';
@@ -422,7 +417,7 @@ section > footer:after {
   background-size: 1.3em 2.24em;
 }
 
-/* line 471, ../../scss/theme/gdg.scss */
+/* line 466, ../../scss/theme/gdg.scss */
 .reveal .slides > section img {
   border: 0px none black;
   -webkit-box-shadow: white 0px 0px 0px;
@@ -430,17 +425,17 @@ section > footer:after {
   box-shadow: white 0px 0px 0px;
 }
 
-/* line 476, ../../scss/theme/gdg.scss */
+/* line 471, ../../scss/theme/gdg.scss */
 thead {
   color: white;
   background-color: #3c78d8;
 }
 
-/* line 483, ../../scss/theme/gdg.scss */
+/* line 478, ../../scss/theme/gdg.scss */
 tbody tr:nth-child(even) {
   background-color: white;
 }
-/* line 487, ../../scss/theme/gdg.scss */
+/* line 482, ../../scss/theme/gdg.scss */
 tbody tr:nth-child(odd) {
   background-color: #EAEAEA;
 }
@@ -449,98 +444,98 @@ tbody tr:nth-child(odd) {
 * IMAGE 
 *
 */
-/* line 500, ../../scss/theme/gdg.scss */
+/* line 495, ../../scss/theme/gdg.scss */
 .reveal .slides > section img[alt*=center], .reveal .slides > section .center, .reveal .slides > section .center + * {
   display: block;
   margin: auto;
 }
-/* line 505, ../../scss/theme/gdg.scss */
+/* line 500, ../../scss/theme/gdg.scss */
 .reveal .slides > section img[alt*=full-width], .reveal .slides > section .full-width, .reveal .slides > section .full-width + * {
   width: 100%;
 }
-/* line 509, ../../scss/theme/gdg.scss */
+/* line 504, ../../scss/theme/gdg.scss */
 .reveal .slides > section img[alt*=full-height], .reveal .slides > section .full-height, .reveal .slides > section .full-height + * {
   height: 100%;
 }
-/* line 513, ../../scss/theme/gdg.scss */
+/* line 508, ../../scss/theme/gdg.scss */
 .reveal .slides > section img[alt*=float-left], .reveal .slides > section .float-let, .reveal .slides > section .float-left + * {
   float: left;
   margin-right: 40px;
 }
-/* line 518, ../../scss/theme/gdg.scss */
+/* line 513, ../../scss/theme/gdg.scss */
 .reveal .slides > section img[alt*=float-right], .reveal .slides > section .float-right, .reveal .slides > section .float-right + * {
   float: right;
   margin-left: 10px;
 }
-/* line 523, ../../scss/theme/gdg.scss */
+/* line 518, ../../scss/theme/gdg.scss */
 .reveal .slides > section img[alt*=h-100], .reveal .slides > section .h-100, .reveal .slides > section .h-100 + * {
   height: 100px;
 }
-/* line 524, ../../scss/theme/gdg.scss */
+/* line 519, ../../scss/theme/gdg.scss */
 .reveal .slides > section img[alt*=h-200], .reveal .slides > section .h-200, .reveal .slides > section .h-200 + * {
   height: 200px;
 }
-/* line 525, ../../scss/theme/gdg.scss */
+/* line 520, ../../scss/theme/gdg.scss */
 .reveal .slides > section img[alt*=h-300], .reveal .slides > section .h-300, .reveal .slides > section .h-300 + * {
   height: 300px;
 }
-/* line 526, ../../scss/theme/gdg.scss */
+/* line 521, ../../scss/theme/gdg.scss */
 .reveal .slides > section img[alt*=h-400], .reveal .slides > section .h-400, .reveal .slides > section .h-400 + * {
   height: 400px;
 }
-/* line 527, ../../scss/theme/gdg.scss */
+/* line 522, ../../scss/theme/gdg.scss */
 .reveal .slides > section img[alt*=h-500], .reveal .slides > section .h-500, .reveal .slides > section .h-500 + * {
   height: 500px;
 }
-/* line 528, ../../scss/theme/gdg.scss */
+/* line 523, ../../scss/theme/gdg.scss */
 .reveal .slides > section img[alt*=h-600], .reveal .slides > section .h-600, .reveal .slides > section .h-600 + * {
   height: 600px;
 }
-/* line 529, ../../scss/theme/gdg.scss */
+/* line 524, ../../scss/theme/gdg.scss */
 .reveal .slides > section img[alt*=h-700], .reveal .slides > section .h-700, .reveal .slides > section .h-700 + * {
   height: 700px;
 }
-/* line 530, ../../scss/theme/gdg.scss */
+/* line 525, ../../scss/theme/gdg.scss */
 .reveal .slides > section img[alt*=h-800], .reveal .slides > section .h-800, .reveal .slides > section .h-800 + * {
   height: 800px;
 }
-/* line 531, ../../scss/theme/gdg.scss */
+/* line 526, ../../scss/theme/gdg.scss */
 .reveal .slides > section img[alt*=h-900], .reveal .slides > section .h-900, .reveal .slides > section .h-900 + * {
   height: 900px;
 }
-/* line 533, ../../scss/theme/gdg.scss */
+/* line 528, ../../scss/theme/gdg.scss */
 .reveal .slides > section img[alt*=w-100], .reveal .slides > section .w-100, .reveal .slides > section .w-100 + * {
   width: 100px;
 }
-/* line 534, ../../scss/theme/gdg.scss */
+/* line 529, ../../scss/theme/gdg.scss */
 .reveal .slides > section img[alt*=w-200], .reveal .slides > section .w-200, .reveal .slides > section .w-200 + * {
   width: 200px;
 }
-/* line 535, ../../scss/theme/gdg.scss */
+/* line 530, ../../scss/theme/gdg.scss */
 .reveal .slides > section img[alt*=w-300], .reveal .slides > section .w-300, .reveal .slides > section .w-300 + * {
   width: 300px;
 }
-/* line 536, ../../scss/theme/gdg.scss */
+/* line 531, ../../scss/theme/gdg.scss */
 .reveal .slides > section img[alt*=w-400], .reveal .slides > section .w-400, .reveal .slides > section .w-400 + * {
   width: 400px;
 }
-/* line 537, ../../scss/theme/gdg.scss */
+/* line 532, ../../scss/theme/gdg.scss */
 .reveal .slides > section img[alt*=w-500], .reveal .slides > section .w-500, .reveal .slides > section .w-500 + * {
   width: 500px;
 }
-/* line 538, ../../scss/theme/gdg.scss */
+/* line 533, ../../scss/theme/gdg.scss */
 .reveal .slides > section img[alt*=w-600], .reveal .slides > section .w-600, .reveal .slides > section .w-600 + * {
   width: 600px;
 }
-/* line 539, ../../scss/theme/gdg.scss */
+/* line 534, ../../scss/theme/gdg.scss */
 .reveal .slides > section img[alt*=w-700], .reveal .slides > section .w-700, .reveal .slides > section .w-700 + * {
   width: 700px;
 }
-/* line 540, ../../scss/theme/gdg.scss */
+/* line 535, ../../scss/theme/gdg.scss */
 .reveal .slides > section img[alt*=w-800], .reveal .slides > section .w-800, .reveal .slides > section .w-800 + * {
   width: 800px;
 }
-/* line 541, ../../scss/theme/gdg.scss */
+/* line 536, ../../scss/theme/gdg.scss */
 .reveal .slides > section img[alt*=w-900], .reveal .slides > section .w-900, .reveal .slides > section .w-900 + * {
   width: 900px;
 }

@@ -1,21 +1,21 @@
 <div class="first-slide"></div>
 
-# **Cours Mobilité**
+# **GDG DevFest**
 
-## 2013 - I5
+## 2013 Season
 
-### 2013.10.02 Epsi @ **Nantes**
+### year.mm.dd Meeting Name @ **Where**
 
 
 ##==##
 
 <div class="title"></div>
 
-# **Cours Android / HTML5 **
+# **Cours Android 5ème année**
 
 ## Cours Mobilité
 
-### Cours 01 - Présentation Android
+### Cours 01 - Présentation de la plateforme
 
 ![title](/assets/images/Android-Developers.png)
 
@@ -32,6 +32,16 @@
 
 ![company_logo](/assets/images/sqli_logo.png)
 ![gdg_logo](/assets/images/GDG-Logo-carre.png)
+
+<footer/>
+
+##==##
+
+<div class="photo-slide"></div>
+
+# un super titre de transition
+
+![photo-slide](/assets/images/iron_droid.jpg)
 
 <footer/>
 
@@ -53,150 +63,17 @@
 <div class="no-bullet"></div>
 
 * ![sommaire](/assets/images/android_cupcake.jpg) 
-* ![sommaire](/assets/images/android_donut.jpg) Le monde du mobile
-* ![sommaire](/assets/images/android_eclair.jpg) Android ? 
-* ![sommaire](/assets/images/android_froyo.png) Concepts
-* ![sommaire](/assets/images/android_gingerbread.jpg) Développement
-* ![sommaire](/assets/images/android_honeycomb.png) Taches Aynscrhones 
-* ![sommaire](/assets/images/android_icecreamsandwich.jpg) Base de données
+* ![sommaire](/assets/images/android_donut.jpg) Android ?
+* ![sommaire](/assets/images/android_eclair.jpg) Concepts 
+* ![sommaire](/assets/images/android_froyo.png) Economiquement intéressant ?
+* ![sommaire](/assets/images/android_gingerbread.jpg) Développement 
+* ![sommaire](/assets/images/android_honeycomb.png) Liens
+* ![sommaire](/assets/images/android_icecreamsandwich.jpg) Questions
 * ![sommaire](/assets/images/android_jellybean.png)
 
 <footer/>
 
 ##==##
-
-<!--
-  __  __  ____  _   _ _____  ______   __  __  ____  ____ _____ _      ______ 
- |  \/  |/ __ \| \ | |  __ \|  ____| |  \/  |/ __ \|  _ \_   _| |    |  ____|
- | \  / | |  | |  \| | |  | | |__    | \  / | |  | | |_) || | | |    | |__   
- | |\/| | |  | | . ` | |  | |  __|   | |\/| | |  | |  _ < | | | |    |  __|  
- | |  | | |__| | |\  | |__| | |____  | |  | | |__| | |_) || |_| |____| |____ 
- |_|  |_|\____/|_| \_|_____/|______| |_|  |_|\____/|____/_____|______|______|
-                                                                             
--->
-
-<div class='transition'></div>
-
-# Le monde du mobile ?
-
-![icon](/assets/images/android_donut.jpg)
-
-##==##
-
-
-## Le monde du mobile ?
-
-* Nous parlons ici du monde mobile moderne dont l'arrivée a été révolutionnée par l'arrivée de l'Iphone en 2007
-
-<br>
-  Le téléphone devient donc un objet du quotidien pour faire tout et n'importe quoi. 
-
-
-> "Il y a une application pour ça..."
-
-
-
-<aside class="notes">
-
-</aside>
-<footer/>
-##==##
-
-## Le monde du mobile ?
-
-
-L'usage se révèle cependant fort pratique !
-
-* Utilisation au travail
-
-* Accès à l'information partout n'importe quand 
-
-* Création d'application spécifiques.
-
-
-<aside class="notes">
-
-</aside>
-<footer/>
-
-
-##==##
-
-
-## Le monde du mobile ?
-
-### Les acteurs actuels 
-
-![w-200](/assets/images/iphone_logo.jpg) 
-![w-200](/assets/images/android.png) 
-![w-200](/assets/images/windows-phone-8-logo.jpg)
-![w-200](/assets/images/blackberry-logo1.jpg) 
-
-![w-200](/assets/images/firefox-os.png)
-![w-200](/assets/images/tizen-logo-white-800.jpg)
-![w-200](/assets/images/Logo_phonegap.png)
-![h-200](/assets/images/html5_logo.jpg)
-
-<aside class="notes">
-
-</aside>
-<footer/>
-
-##==##
-
-<div class="photo-slide"></div>
-
-![photo-slide](/assets/images/device_fragmentation_bis.jpg);
-
-# Le monde du mobile ?
-
-<footer/>
-
-<aside class="notes">
-Qu'est ce qui frappe ? Taille / nombre / puissance
-</aside>
-
-##==##
-
-## Le monde du mobile ?
-
-### Considérations importantes ! 
-
-* Les téléphones ont des capacités réduites !
-
-* L'écran d'un téléphone est petit
-
-  Il faut penser à son ergonomie ! Aller à l'essentiel
-
-* On doit optimiser ! 
-
-![center w-300](/assets/images/globe-world-phone-300x300.jpg)
-
-
-<footer/>
-
-<aside class="notes">
-Pas que des S4 sur le marché
-</aside>
-
-##==##
-
-## Le monde du mobile ?
-
-### Les pays émergents
-
-![center](/assets/images/global-mobile-usage-2012.jpg)
-
-![center](/assets/images/Mobile-growth-rates-20121.png)
-
-<footer/>
-
-<aside class="notes">
-Grosse montée des pays émergents ! 
-</aside>
-
-##==##
-
 <!--
 //               _   _   _____    _____     ____    _____   _____  
 //       /\     | \ | | |  __ \  |  __ \   / __ \  |_   _| |  __ \ 
@@ -212,7 +89,7 @@ Grosse montée des pays émergents !
 
 # Android ?
 
-![icon](/assets/images/android_eclair.jpg)
+![icon](/assets/images/android_donut.jpg)
 
 
 <aside class="notes">
@@ -378,7 +255,7 @@ Android avait pour vocation de poser des choses communes mais au final on consta
 
 # Concepts
 
-![icon](/assets/images/android_froyo.jpg)
+![icon](/assets/images/android_eclair.jpg)
 
 
 <aside class="notes">
@@ -611,12 +488,68 @@ Encore bien d'autres choses....
 
 <div class='transition'></div>
 
-# Le monde du mobile ?
+# Economiquement Intéressant ?
 
 ![icon](/assets/images/android_froyo.png)
 ##==##
 
 
+## Economiquement Intéressant ?
+
+* Amalgame open source = gratuit
+
+  Beaucoup d'applications sont gratuites et les gens ont du mal à acheter encore sur Android.
+
+    * L'Iphone reste un meilleur vecteur.
+
+    * Les développeurs doivent oser vendre !
+
+* Le problème de compatibilité n'arrange pas la commercialisation
+
+* La pub est par contre plus rémunératrice.
+
+* Nombre grandissant d'activations.
+
+* Paiement « in App » =» très bon compromis !
+
+
+<aside class="notes">
+Les premiers utilisateurs étaient les déçus d'iphone et surtout des geeks =» on recherche beaucoup du gratuit
+
+Il faut lancer une dynamique de payement =» ce n'est pas par ce que notre application est développée par un amateur qu'elle ne mérite pas une rétribution
+
+L'arrivée du paiment in app est une grande avancée dans la monétisation des applications
+</aside>
+<footer/>
+##==##
+
+## Economiquement Intéressant ?
+
+### L'android market
+
+* Moyen officiel de distribuer ses applications
+
+* Pourcentage 70% développeur, 30% google
+
+* L'android market n'est pas le seul market : 
+
+    * Amazon
+
+    * AppsLib (Archos)
+
+    * SlideMe
+
+    * Camangi
+
+    * ...
+
+<aside class="notes">
+Parler des pays ayant le market payant
+</aside>
+<footer/>
+
+
+##==##
 <!--
 //    _____    ______  __      __  ______   _         ____    _____    _____    ______   __  __   ______   _   _   _______ 
 //   |  __ \  |  ____| \ \    / / |  ____| | |       / __ \  |  __ \  |  __ \  |  ____| |  \/  | |  ____| | \ | | |__   __|
@@ -632,13 +565,13 @@ Encore bien d'autres choses....
 
 # Développement
 
-![icon](/assets/images/android_gingerbread.png)
+![icon](/assets/images/android_gingerbread.jpg)
+
+
 <aside class="notes">
 Les composants graphiques
 </aside>
 ##==##
-
-
 
 
 ## Développement
@@ -859,42 +792,97 @@ On retrouve le nom de l'application, l'icone, la déclaration de l'activité pri
 </aside>
 <footer/>
 ##==##
-
 <!--
-            _______     ___   _  _____ _    _ _____   ____  _   _ ______ 
-     /\    / ____\ \   / / \ | |/ ____| |  | |  __ \ / __ \| \ | |  ____|
-    /  \  | (___  \ \_/ /|  \| | |    | |__| | |__) | |  | |  \| | |__   
-   / /\ \  \___ \  \   / | . ` | |    |  __  |  _  /| |  | | . ` |  __|  
-  / ____ \ ____) |  | |  | |\  | |____| |  | | | \ \| |__| | |\  | |____ 
- /_/    \_\_____/   |_|  |_| \_|\_____|_|  |_|_|  \_\\____/|_| \_|______|
-
--->
-
-
-<div class='transition'></div>
-
-# Taches Asynchrones
-
-![icon](/assets/images/android_honneycomb.jpg)
-
-
-##==##
-
-<!--
-  ____  _____  
- |  _ \|  __ \ 
- | |_) | |  | |
- |  _ <| |  | |
- | |_) | |__| |
- |____/|_____/ 
-             
+//    _        _____   ______   _   _    _____ 
+//   | |      |_   _| |  ____| | \ | |  / ____|
+//   | |        | |   | |__    |  \| | | (___  
+//   | |        | |   |  __|   | . ` |  \___ \ 
+//   | |____   _| |_  | |____  | |\  |  ____) |
+//   |______| |_____| |______| |_| \_| |_____/ 
+//                                             
+//   
 -->
 
 <div class='transition'></div>
 
-# Base de données
+# Liens
 
-![icon](/assets/images/android_icecreamsandwich.jpg)
+![icon](/assets/images/android_honeycomb.png)
+
+##==##
+## Liens
+
+* Android
+
+http://developer.android.com/index.html 
+
+http://android.git.kernel.org/ 
+
+http://androidcookbook.oreilly.com/ 
+
+* Graphiques 
+
+23 liens graphiques : http://goo.gl/9yxu6
+
+Création d'icones : http://goo.gl/zCxLd
+
+http://www.iconfinder.com/
+
+http://www.androiduipatterns.com/
+
+Préconisations Google : http://goo.gl/OsR2L
+
+* Projets :
+
+Github Jean-François :  https://github.com/organizations/binomed
+<footer/>
+##==##
+<!--
+//     ____    _    _   ______    _____   _______   _____    ____    _   _    _____ 
+//    / __ \  | |  | | |  ____|  / ____| |__   __| |_   _|  / __ \  | \ | |  / ____|
+//   | |  | | | |  | | | |__    | (___      | |      | |   | |  | | |  \| | | (___  
+//   | |  | | | |  | | |  __|    \___ \     | |      | |   | |  | | | . ` |  \___ \ 
+//   | |__| | | |__| | | |____   ____) |    | |     _| |_  | |__| | | |\  |  ____) |
+//    \___\_\  \____/  |______| |_____/     |_|    |_____|  \____/  |_| \_| |_____/ 
+//                                                                                  
+//   
+-->
+
+<div class='transition'></div>
+
+# Questions
+
+![icon](/assets/images/andquestionsag.png)
 
 
 ##==##
+
+<div class="last-slide"></div>
+
+<div class="topic-title"></div>
+
+# Cours Mobilité
+
+<div class="presenter"></div>
+
+# **Jean-François Garreau**
+
+<div class="gdg-rule"></div>
+
+# GDG Nantes Leader
+
+<div class="work-rule"></div>
+
+# Ingénieur SQLI
+
+<div class="email"></div>
+
+# **jef**@gdgnantes.com
+
+<div class="thank-message"></div>
+
+# **Merci**
+
+![avatar](/assets/images/jf.jpg)
+
+<footer/>
