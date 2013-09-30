@@ -1094,6 +1094,105 @@ mButton.setOnClickListener(new OnClickListener(){
 <footer />
 
 
+##==## 
+
+## Taches Asyncrhones
+
+### Services
+
+
+* Comme pour les asyncTask sont des composants permettant le lancement de taches en background.
+
+* Un service n'est pas forcément lancé par une activité ! Il peut être lancé par un broadcast receiver.
+
+* Un service est donc indépendant de toute IHM => une application peut exister à travers simplement un service.
+
+* Il existe 2 classes à hériter : 
+
+ * Service : Le on reste dans le Thread d'appel ! 
+
+ * IntentService : On est dans un Thread séparé et les messages sont traités à la suite les uns des autres.
+
+<footer />
+
+##==##
+
+## Taches Asyncrhones
+
+### Services
+
+![center h-700 hp-400](/assets/images/service_lifecycle.png)
+
+<footer />
+
+##==## 
+
+## Taches Asyncrhones
+
+### Services
+
+La notion de binding sert assurer la communication avec le processus appelant pour passer des objets / informations.
+
+![center h-500 hp-300](/assets/images/service_binding_tree_lifecycle.png)
+
+<footer />
+
+##==## 
+
+## Taches Asyncrhones
+
+### Services 
+
+```java
+public class HelloIntentService extends IntentService {
+
+  public HelloIntentService() {
+    super("HelloIntentService");
+  }
+
+  protected void onHandleIntent(Intent intent) {
+    //  Long task
+  }
+}
+```
+
+Chaque Intent est placé dans une Queue qui est passée à onHandleIntent. Un service s'arrête une fois que tous les intents on été traites, on passe alors dans stopSelf();
+
+<footer />
+
+##==## 
+
+## Taches Asyncrhones
+
+### Services 
+
+
+```java
+public class HelloService extends Service {
+ 
+  public void onCreate() {
+    // Lancement d'un éventuel Thread avec la tache longue
+  }
+
+  public int onStartCommand(Intent intent, int flags, int startId) {
+    // Définit la politique de lancement du Service ainsi que le lancement de la tache longue
+    return START_STICKY;
+  }
+
+  public IBinder onBind(Intent intent) {
+    // Bind le service
+    return null;
+  }
+  
+  public void onDestroy() {
+    // Appelé à la destruction
+  }
+}
+```
+
+
+<footer />
+
 ##==##
 
 <!--
@@ -1114,3 +1213,27 @@ mButton.setOnClickListener(new OnClickListener(){
 
 
 ##==##
+
+## Base de données
+
+
+Il y a plusieurs possibilités pour stocker des donneés sur Android : 
+
+<br><br>
+
+<div class="float-left w-800 wp-700"></div>
+
+* SharedPreferences : ensemble de clés valeurs 
+
+* Internal Storage : Stockage de fichiers dans l'application 
+
+* External Storage : Stockage de fichiers en public sur la carte SD
+
+* SQLite Database : Stockage structué en base de données
+
+* Network connections : Stockage des données sur un serveur distant.
+
+![w-200 wp-200](assets/images/Database_1.png)
+
+
+<footer />
