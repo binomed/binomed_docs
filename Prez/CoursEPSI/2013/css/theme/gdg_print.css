@@ -4,12 +4,9 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 2mm;
-  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #3c78d8), color-stop(25%, #3c78d8), color-stop(25%, #cc0000), color-stop(50%, #cc0000), color-stop(50%, #ffd966), color-stop(75%, #ffd966), color-stop(75%, #6aa84f), color-stop(100%, #6aa84f));
-  background-image: -webkit-linear-gradient(left, #3c78d8, #3c78d8 25%, #cc0000 25%, #cc0000 50%, #ffd966 50%, #ffd966 75%, #6aa84f 75%, #6aa84f);
-  background-image: -moz-linear-gradient(left, #3c78d8, #3c78d8 25%, #cc0000 25%, #cc0000 50%, #ffd966 50%, #ffd966 75%, #6aa84f 75%, #6aa84f);
-  background-image: -o-linear-gradient(left, #3c78d8, #3c78d8 25%, #cc0000 25%, #cc0000 50%, #ffd966 50%, #ffd966 75%, #6aa84f 75%, #6aa84f);
-  background-image: linear-gradient(left, #3c78d8, #3c78d8 25%, #cc0000 25%, #cc0000 50%, #ffd966 50%, #ffd966 75%, #6aa84f 75%, #6aa84f);
+  height: 48pt;
+  background-position: 0 calc(48pt - 3pt);
+  z-index: -100;
 }
 /* line 17, ../../scss/theme/gdg_print.scss */
 .reveal .slides > section footer:after {
@@ -34,147 +31,147 @@
   min-height: 100pt;
 }
 /* line 42, ../../scss/theme/gdg_print.scss */
-.reveal .slides > section img[alt*=h-100], .reveal .slides > section .h-100 {
+.reveal .slides > section img[alt*=h-100], .reveal .slides > section .h-100, .reveal .slides > section .h-100 + * {
   height: auto;
 }
 /* line 43, ../../scss/theme/gdg_print.scss */
-.reveal .slides > section img[alt*=h-200], .reveal .slides > section .h-200 {
+.reveal .slides > section img[alt*=h-200], .reveal .slides > section .h-200, .reveal .slides > section .h-200 + * {
   height: auto;
 }
 /* line 44, ../../scss/theme/gdg_print.scss */
-.reveal .slides > section img[alt*=h-300], .reveal .slides > section .h-300 {
+.reveal .slides > section img[alt*=h-300], .reveal .slides > section .h-300, .reveal .slides > section .h-300 + * {
   height: auto;
 }
 /* line 45, ../../scss/theme/gdg_print.scss */
-.reveal .slides > section img[alt*=h-400], .reveal .slides > section .h-400 {
+.reveal .slides > section img[alt*=h-400], .reveal .slides > section .h-400, .reveal .slides > section .h-400 + * {
   height: auto;
 }
 /* line 46, ../../scss/theme/gdg_print.scss */
-.reveal .slides > section img[alt*=h-500], .reveal .slides > section .h-500 {
+.reveal .slides > section img[alt*=h-500], .reveal .slides > section .h-500, .reveal .slides > section .h-500 + * {
   height: auto;
 }
 /* line 47, ../../scss/theme/gdg_print.scss */
-.reveal .slides > section img[alt*=h-600], .reveal .slides > section .h-600 {
+.reveal .slides > section img[alt*=h-600], .reveal .slides > section .h-600, .reveal .slides > section .h-600 + * {
   height: auto;
 }
 /* line 48, ../../scss/theme/gdg_print.scss */
-.reveal .slides > section img[alt*=h-700], .reveal .slides > section .h-700 {
+.reveal .slides > section img[alt*=h-700], .reveal .slides > section .h-700, .reveal .slides > section .h-700 + * {
   height: auto;
 }
 /* line 49, ../../scss/theme/gdg_print.scss */
-.reveal .slides > section img[alt*=h-800], .reveal .slides > section .h-800 {
+.reveal .slides > section img[alt*=h-800], .reveal .slides > section .h-800, .reveal .slides > section .h-800 + * {
   height: auto;
 }
 /* line 50, ../../scss/theme/gdg_print.scss */
-.reveal .slides > section img[alt*=h-900], .reveal .slides > section .h-900 {
+.reveal .slides > section img[alt*=h-900], .reveal .slides > section .h-900, .reveal .slides > section .h-900 + * {
   height: auto;
 }
 /* line 52, ../../scss/theme/gdg_print.scss */
-.reveal .slides > section img[alt*=w-100], .reveal .slides > section .w-100 {
+.reveal .slides > section img[alt*=w-100], .reveal .slides > section .w-100, .reveal .slides > section .w-100 + * {
   width: auto;
 }
 /* line 53, ../../scss/theme/gdg_print.scss */
-.reveal .slides > section img[alt*=w-200], .reveal .slides > section .w-200 {
+.reveal .slides > section img[alt*=w-200], .reveal .slides > section .w-200, .reveal .slides > section .w-200 + * {
   width: auto;
 }
 /* line 54, ../../scss/theme/gdg_print.scss */
-.reveal .slides > section img[alt*=w-300], .reveal .slides > section .w-300 {
+.reveal .slides > section img[alt*=w-300], .reveal .slides > section .w-300, .reveal .slides > section .w-300 + * {
   width: auto;
 }
 /* line 55, ../../scss/theme/gdg_print.scss */
-.reveal .slides > section img[alt*=w-400], .reveal .slides > section .w-400 {
+.reveal .slides > section img[alt*=w-400], .reveal .slides > section .w-400, .reveal .slides > section .w-400 + * {
   width: auto;
 }
 /* line 56, ../../scss/theme/gdg_print.scss */
-.reveal .slides > section img[alt*=w-500], .reveal .slides > section .w-500 {
+.reveal .slides > section img[alt*=w-500], .reveal .slides > section .w-500, .reveal .slides > section .w-500 + * {
   width: auto;
 }
 /* line 57, ../../scss/theme/gdg_print.scss */
-.reveal .slides > section img[alt*=w-600], .reveal .slides > section .w-600 {
+.reveal .slides > section img[alt*=w-600], .reveal .slides > section .w-600, .reveal .slides > section .w-600 + * {
   width: auto;
 }
 /* line 58, ../../scss/theme/gdg_print.scss */
-.reveal .slides > section img[alt*=w-700], .reveal .slides > section .w-700 {
+.reveal .slides > section img[alt*=w-700], .reveal .slides > section .w-700, .reveal .slides > section .w-700 + * {
   width: auto;
 }
 /* line 59, ../../scss/theme/gdg_print.scss */
-.reveal .slides > section img[alt*=w-800], .reveal .slides > section .w-800 {
+.reveal .slides > section img[alt*=w-800], .reveal .slides > section .w-800, .reveal .slides > section .w-800 + * {
   width: auto;
 }
 /* line 60, ../../scss/theme/gdg_print.scss */
-.reveal .slides > section img[alt*=w-900], .reveal .slides > section .w-900 {
+.reveal .slides > section img[alt*=w-900], .reveal .slides > section .w-900, .reveal .slides > section .w-900 + * {
   width: auto;
 }
 /* line 62, ../../scss/theme/gdg_print.scss */
-.reveal .slides > section img[alt*=hp-100], .reveal .slides > section .hp-100 {
+.reveal .slides > section img[alt*=hp-100], .reveal .slides > section .hp-100, .reveal .slides > section .hp-100 + * {
   height: 100pt;
 }
 /* line 63, ../../scss/theme/gdg_print.scss */
-.reveal .slides > section img[alt*=hp-200], .reveal .slides > section .hp-200 {
+.reveal .slides > section img[alt*=hp-200], .reveal .slides > section .hp-200, .reveal .slides > section .hp-200 + * {
   height: 200pt;
 }
 /* line 64, ../../scss/theme/gdg_print.scss */
-.reveal .slides > section img[alt*=hp-300], .reveal .slides > section .hp-300 {
+.reveal .slides > section img[alt*=hp-300], .reveal .slides > section .hp-300, .reveal .slides > section .hp-300 + * {
   height: 300pt;
 }
 /* line 65, ../../scss/theme/gdg_print.scss */
-.reveal .slides > section img[alt*=hp-400], .reveal .slides > section .hp-400 {
+.reveal .slides > section img[alt*=hp-400], .reveal .slides > section .hp-400, .reveal .slides > section .hp-400 + * {
   height: 400pt;
 }
 /* line 66, ../../scss/theme/gdg_print.scss */
-.reveal .slides > section img[alt*=hp-500], .reveal .slides > section .hp-500 {
+.reveal .slides > section img[alt*=hp-500], .reveal .slides > section .hp-500, .reveal .slides > section .hp-500 + * {
   height: 500pt;
 }
 /* line 67, ../../scss/theme/gdg_print.scss */
-.reveal .slides > section img[alt*=hp-600], .reveal .slides > section .hp-600 {
+.reveal .slides > section img[alt*=hp-600], .reveal .slides > section .hp-600, .reveal .slides > section .hp-600 + * {
   height: 600pt;
 }
 /* line 68, ../../scss/theme/gdg_print.scss */
-.reveal .slides > section img[alt*=hp-700], .reveal .slides > section .hp-700 {
+.reveal .slides > section img[alt*=hp-700], .reveal .slides > section .hp-700, .reveal .slides > section .hp-700 + * {
   height: 700pt;
 }
 /* line 69, ../../scss/theme/gdg_print.scss */
-.reveal .slides > section img[alt*=hp-800], .reveal .slides > section .hp-800 {
+.reveal .slides > section img[alt*=hp-800], .reveal .slides > section .hp-800, .reveal .slides > section .hp-800 + * {
   height: 800pt;
 }
 /* line 70, ../../scss/theme/gdg_print.scss */
-.reveal .slides > section img[alt*=hp-900], .reveal .slides > section .hp-900 {
+.reveal .slides > section img[alt*=hp-900], .reveal .slides > section .hp-900, .reveal .slides > section .hp-900 + * {
   height: 900pt;
 }
 /* line 72, ../../scss/theme/gdg_print.scss */
-.reveal .slides > section img[alt*=wp-100], .reveal .slides > section .wp-100 {
+.reveal .slides > section img[alt*=wp-100], .reveal .slides > section .wp-100, .reveal .slides > section .wp-100 + * {
   width: 100pt;
 }
 /* line 73, ../../scss/theme/gdg_print.scss */
-.reveal .slides > section img[alt*=wp-200], .reveal .slides > section .wp-200 {
+.reveal .slides > section img[alt*=wp-200], .reveal .slides > section .wp-200, .reveal .slides > section .wp-200 + * {
   width: 200pt;
 }
 /* line 74, ../../scss/theme/gdg_print.scss */
-.reveal .slides > section img[alt*=wp-300], .reveal .slides > section .wp-300 {
+.reveal .slides > section img[alt*=wp-300], .reveal .slides > section .wp-300, .reveal .slides > section .wp-300 + * {
   width: 300pt;
 }
 /* line 75, ../../scss/theme/gdg_print.scss */
-.reveal .slides > section img[alt*=wp-400], .reveal .slides > section .wp-400 {
+.reveal .slides > section img[alt*=wp-400], .reveal .slides > section .wp-400, .reveal .slides > section .wp-400 + * {
   width: 400pt;
 }
 /* line 76, ../../scss/theme/gdg_print.scss */
-.reveal .slides > section img[alt*=wp-500], .reveal .slides > section .wp-500 {
+.reveal .slides > section img[alt*=wp-500], .reveal .slides > section .wp-500, .reveal .slides > section .wp-500 + * {
   width: 500pt;
 }
 /* line 77, ../../scss/theme/gdg_print.scss */
-.reveal .slides > section img[alt*=wp-600], .reveal .slides > section .wp-600 {
+.reveal .slides > section img[alt*=wp-600], .reveal .slides > section .wp-600, .reveal .slides > section .wp-600 + * {
   width: 600pt;
 }
 /* line 78, ../../scss/theme/gdg_print.scss */
-.reveal .slides > section img[alt*=wp-700], .reveal .slides > section .wp-700 {
+.reveal .slides > section img[alt*=wp-700], .reveal .slides > section .wp-700, .reveal .slides > section .wp-700 + * {
   width: 700pt;
 }
 /* line 79, ../../scss/theme/gdg_print.scss */
-.reveal .slides > section img[alt*=wp-800], .reveal .slides > section .wp-800 {
+.reveal .slides > section img[alt*=wp-800], .reveal .slides > section .wp-800, .reveal .slides > section .wp-800 + * {
   width: 800pt;
 }
 /* line 80, ../../scss/theme/gdg_print.scss */
-.reveal .slides > section img[alt*=wp-900], .reveal .slides > section .wp-900 {
+.reveal .slides > section img[alt*=wp-900], .reveal .slides > section .wp-900, .reveal .slides > section .wp-900 + * {
   width: 900pt;
 }
 /* line 82, ../../scss/theme/gdg_print.scss */
@@ -199,4 +196,13 @@
 .reveal .slides > section div.photo-slide ~ * img[alt*=photo-slide], .reveal .slides > section img.photo-slide {
   min-width: 100vmax;
   min-height: 100vmin;
+}
+/* line 105, ../../scss/theme/gdg_print.scss */
+.reveal .slides > section div.last-slide ~ * img[alt*=avatar], .reveal .slides > section div.last-slide ~ * img.avatar {
+  width: 100pt;
+  min-height: 100pt;
+  height: auto;
+  top: 27vmin;
+  margin-left: -50pt;
+  margin-top: 0;
 }

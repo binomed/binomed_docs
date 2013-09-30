@@ -127,15 +127,15 @@ L'usage se révèle cependant fort pratique !
 
 ### Les acteurs actuels 
 
-![w-200](/assets/images/iphone_logo.jpg) 
-![w-200](/assets/images/android.png) 
-![w-200](/assets/images/windows-phone-8-logo.jpg)
-![w-200](/assets/images/blackberry-logo1.jpg) 
+![w-200 wp-100](/assets/images/iphone_logo.jpg) 
+![w-200 wp-100](/assets/images/android.png) 
+![w-200 wp-100](/assets/images/windows-phone-8-logo.jpg)
+![w-200 wp-100](/assets/images/blackberry-logo1.jpg) 
 
-![w-200](/assets/images/firefox-os.png)
-![w-200](/assets/images/tizen-logo-white-800.jpg)
-![w-200](/assets/images/Logo_phonegap.png)
-![h-200](/assets/images/html5_logo.jpg)
+![w-200 wp-100](/assets/images/firefox-os.png)
+![w-200 wp-100](/assets/images/tizen-logo-white-800.jpg)
+![w-200 wp-100](/assets/images/Logo_phonegap.png)
+![h-200 wp-100](/assets/images/html5_logo.jpg)
 
 <aside class="notes">
 
@@ -185,9 +185,9 @@ Pas que des S4 sur le marché
 
 ### Les pays émergents
 
-![center](/assets/images/global-mobile-usage-2012.jpg)
+![center hp-200](/assets/images/global-mobile-usage-2012.jpg)
 
-![center](/assets/images/Mobile-growth-rates-20121.png)
+![center hp-200](/assets/images/Mobile-growth-rates-20121.png)
 
 <footer/>
 
@@ -400,7 +400,7 @@ Le reste
 
 ### Activity
 
-![float-right](/assets/images/ui_overview_home_screen.png)
+<div class="float-left w-800 wp-400"></div>
 
 * Base graphique
 
@@ -411,6 +411,8 @@ Le reste
   Définition xml des éléments graphiques
 
 * Une activité peut posséder des filtres de lancements
+
+![](/assets/images/ui_overview_home_screen.png)
 
 <aside class="notes">
 Les filtres servent par exemple à définir quelle sera l'activité principale quand on lance l'application
@@ -477,7 +479,7 @@ Les fragments sont la base à utiliser quand on envisage un développement
 
 <br>
 
-![center w-600 wp-500](assets/images/banner-process.png)
+![center w-600 hp-100](assets/images/banner-process.png)
 
 <aside class="notes">
 Les services sont très utiles pour gérer tous les traitements un minimum longs
@@ -506,7 +508,7 @@ Comme vous pouvez le voir, un service à la possibilité de communiquer avec un 
 
 ### Intent
 
-![float-right w-200 wp-200](assets/images/webintent-logo.jpg)
+<div class="float-left w-800 wp-400"></div>
 
 * Gestion des messages dans Android
 
@@ -516,6 +518,8 @@ Comme vous pouvez le voir, un service à la possibilité de communiquer avec un 
 
   Mais on peut envoyer des objets complexes
 
+
+![w-200 wp-200](assets/images/webintent-logo.jpg)
 
 
 * Plusieurs applications peuvent les réceptionner
@@ -542,7 +546,7 @@ Expliquer en quoi c'est puissant les boradcast ! Sms etc ...
 
 ### ContentProvider
 
-![float-right w-200 wp-200](assets/images/Database_1.png)
+<div class="float-left w-800 wp-400"></div>
 
 * Sorte de base de données partagées
 
@@ -550,6 +554,7 @@ Expliquer en quoi c'est puissant les boradcast ! Sms etc ...
 
 * Les données sont structurée en tables
 
+![w-200 wp-200](assets/images/Database_1.png)
 
 * Propose une interface standard permettant de séparer le processus de la base des autres processus
 
@@ -613,7 +618,9 @@ Utiliser android:priority pour forcer un ordre
 Une application n'a accès à des données / sensors du téléphone que si elle en a obtenue l'autorisation ! 
 
 <br>
-On doit donc spécifier lors de la conception si l'on souhaite accéder à une fonctionnalité du téléphone ou alors à une api.
+On doit donc spécifier lors de la conception de son application si l'on souhaite accéder à une fonctionnalité du téléphone ou alors à une api.
+
+Il en est de même pour l'accès à des content providers distant ou des fonctionnalités d'autres applications.
 
 
 <footer />
@@ -999,6 +1006,8 @@ Elle est déclanchée :
 
 * 10s après qu'un broadcastReceiver s'est lancé
 
+<div class="hidden-print"></div>
+
 ![center w-400 wp-300](assets/images/anr.png)
 
 <footer />
@@ -1018,11 +1027,13 @@ L'asyncTask est fortement liée à la classe qui l'a lancée et celà peut poser
 
 Thread lancées hors du UI Thread mais étant détaché de la vie de l'activité appelante ! Il n'est pas syncrhonisé par défaut avec l'activité appelante ce qui complexifie la communication.
 
-#### Loaders : 
 
-Ils sont dédiés aux chargements de cursor (résultats issus de la base de donnée). Nous ne reviendrons pas dessus
 
 <footer />
+
+<aside class="notes">
+Loaders ! pour charger depuis la base !
+</aside>
 
 ##==##
 
@@ -1195,6 +1206,28 @@ public class HelloService extends Service {
 
 ##==##
 
+## Taches Asyncrhones
+
+### Communication entre processus
+
+Deux possibilités pour faire communiquer un service avec une Activité : 
+
+* **AIDL** pour Android Interface Definition Language
+
+  Il s'agit d'une interface de communication entre un service et une activité. Les objets passant par l'interface devront être Parcelable (sorte de serialisable). On doit aussi déclarer son interface en utilisant l'extension **.aidl**. La classe sera générée par le framework Android
+
+* En utilisant un Messenger
+
+  Il s'agit de passer des objets déjà existants dans le framework et permettant de se syncrhoniser avec le UI Thread : les Handlers ! 
+
+<footer />
+
+<aside class="notes">
+Messager : Chaque partie est abonnée à l'autre et utilise des Messages !
+</aside>
+
+##==##
+
 <!--
   ____  _____  
  |  _ \|  __ \ 
@@ -1219,9 +1252,10 @@ public class HelloService extends Service {
 
 Il y a plusieurs possibilités pour stocker des donneés sur Android : 
 
+<div class="hidden-print"></div>
 <br><br>
 
-<div class="float-left w-800 wp-700"></div>
+<div class="float-left w-800 wp-500"></div>
 
 * SharedPreferences : ensemble de clés valeurs 
 
@@ -1233,7 +1267,251 @@ Il y a plusieurs possibilités pour stocker des donneés sur Android :
 
 * Network connections : Stockage des données sur un serveur distant.
 
-![w-200 wp-200](assets/images/Database_1.png)
+![w-200 wp-100](assets/images/Database_1.png)
 
 
 <footer />
+
+##==##
+
+## Base de données
+
+### SharedPreferences
+
+Ensemble de clés / valeurs permettant de stockée le plus souvent des informations de type préférences utilisateurs.
+
+```java
+public class Calc extends Activity {
+    public static final String PREFS_NAME = "MyPrefsFile";
+
+    protected void onCreate(Bundle state){
+       super.onCreate(state);
+       // Restore preferences
+       SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+       boolean silent = settings.getBoolean("silentMode", false);
+    }
+
+    protected void onStop(){
+       super.onStop();
+      // We need an Editor object to make preference changes.
+      // All objects are from android.context.Context
+      SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+      SharedPreferences.Editor editor = settings.edit();
+      editor.putBoolean("silentMode", mSilentMode);
+      // Commit the edits!
+      editor.commit();
+    }
+}
+```
+
+<footer />
+
+##==##
+
+## Base de données
+
+### Internal Storage
+
+Permet de stocker dans une partie privée de l'application. 
+
+```java
+String FILENAME = "hello_file";
+String string = "hello world!";
+
+FileOutputStream fos = openFileOutput(FILENAME, Context.MODE_PRIVATE);
+fos.write(string.getBytes());
+fos.close();
+```
+
+<footer />
+
+##==##
+
+## Base de données
+
+### External Storage
+
+```java
+boolean mExternalStorageAvailable = false;
+boolean mExternalStorageWriteable = false;
+String state = Environment.getExternalStorageState();
+
+if (Environment.MEDIA_MOUNTED.equals(state)) {
+    // We can read and write the media
+    mExternalStorageAvailable = mExternalStorageWriteable = true;
+} else if (Environment.MEDIA_MOUNTED_READ_ONLY.equals(state)) {
+    // We can only read the media
+    mExternalStorageAvailable = true;
+    mExternalStorageWriteable = false;
+} else {
+    // Something else is wrong. It may be one of many other states, but all we need
+    //  to know is we can neither read nor write
+    mExternalStorageAvailable = mExternalStorageWriteable = false;
+}
+```
+
+<footer/>
+
+##==##
+
+## Base de données
+
+### SQLite 
+
+Mise en place d'un schéma classique avec des colonnes
+
+```java
+public class DictionaryOpenHelper extends SQLiteOpenHelper {
+
+    private static final int DATABASE_VERSION = 2;
+    private static final String DICTIONARY_TABLE_NAME = "dictionary";
+    private static final String DICTIONARY_TABLE_CREATE =
+                "CREATE TABLE " + DICTIONARY_TABLE_NAME + " (" +
+                KEY_WORD + " TEXT, " +
+                KEY_DEFINITION + " TEXT);";
+
+    DictionaryOpenHelper(Context context) {
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
+    }
+
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+        db.execSQL(DICTIONARY_TABLE_CREATE);
+    }
+}
+```
+
+<footer />
+
+##==##
+
+## Base de données
+
+### SQLite Helper méthodes spécifiques
+
+On peut gèrer facilement les versions grace à la méthode suivante : 
+
+```java
+  public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+    // Faire tout ce qu'on veut pour la migration
+  }
+```
+
+L'accès se fait comme suit : 
+
+```java
+    mDbHelper = new DictionaryOpenHelper(mCtx);
+    mDb = mDbHelper.getWritableDatabase();
+    mDb.setLockingEnabled(true);
+```
+
+<footer />
+
+##==##
+
+## Base de données
+
+### Content Provider
+
+Offre une api plus haut niveau sur l'accès à notre base SQLlite en vue de l'offrir à d'autres applications.
+
+* Un content provider s'accède à partir d'une URL
+
+* On accède à un content provider de puis la méthode getContentProvider()
+
+* On récupère un Cursor quand on requête un ContentProvider. La requête se décompose comme suit : 
+
+ * Uri d'accès au content provider
+
+ * *projection* : Colonnes à récuper
+
+ * *selection* : Critères de sélection (where)
+
+ * *selectionArgs* : Valeurs associés à la sélection
+
+ * *order* : Order de tri par nom des colonnes.
+
+<footer />
+
+##==##
+
+## Base de données
+
+### Content Provider - Requête 
+
+
+```java
+// Arguments
+String[] mSelectionArgs = {""};
+
+// Text à chercher
+mSearchString = mSearchWord.getText().toString();
+
+
+mSelectionClause = UserDictionary.Words.WORD + " = ?";
+mSelectionArgs[0] = mSearchString;
+
+mCursor = getContentResolver().query(
+    UserDictionary.Words.CONTENT_URI,  // The content URI of the words table
+    mProjection,                       // The columns to return for each row
+    mSelectionClause                   // Either null, or the word the user entered
+    mSelectionArgs,                    // Either empty, or the string the user entered
+    mSortOrder);                       // The sort order for the returned rows
+```
+
+<footer />
+
+##==##
+
+## Base de données
+
+### Content Provider - Insert
+
+
+```java
+// Uri du content provider
+Uri mNewUri;
+
+// objet clé valeurs servant à l'insertion
+ContentValues mNewValues = new ContentValues();
+
+mNewValues.put(UserDictionary.Words.APP_ID, "example.user");
+mNewValues.put(UserDictionary.Words.LOCALE, "en_US");
+mNewValues.put(UserDictionary.Words.WORD, "insert");
+mNewValues.put(UserDictionary.Words.FREQUENCY, "100");
+
+mNewUri = getContentResolver().insert(
+    UserDictionary.Word.CONTENT_URI,   // the user dictionary content URI
+    mNewValues                          // the values to insert
+);
+```
+
+<footer />
+
+##==##
+
+<div class="last-slide"></div>
+
+<div class="topic-title"></div>
+
+# Cours Mobilité - 01 Android
+
+<div class="presenter"></div>
+
+# **Jean-François Garreau**
+
+<div class="gdg-rule"></div>
+
+# GDG Nantes Leader
+
+<div class="work-rule"></div>
+
+# Ingénieur SQLI
+
+<div class="thank-message"></div>
+
+# **Merci**
+
+![avatar](/assets/images/jf.jpg)
+
+<footer/>
