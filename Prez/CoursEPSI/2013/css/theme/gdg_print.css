@@ -6,7 +6,7 @@
   width: 100%;
   height: 48pt;
   background-position: 0 calc(48pt - 3pt);
-  z-index: -100;
+  z-index: -2;
 }
 /* line 17, ../../scss/theme/gdg_print.scss */
 .reveal .slides > section footer:after {
@@ -194,15 +194,14 @@
 }
 /* line 100, ../../scss/theme/gdg_print.scss */
 .reveal .slides > section div.photo-slide ~ * img[alt*=photo-slide], .reveal .slides > section img.photo-slide {
-  min-width: 100vmax;
-  min-height: 100vmin;
+  min-height: 500pt;
 }
-/* line 105, ../../scss/theme/gdg_print.scss */
+/* line 104, ../../scss/theme/gdg_print.scss */
 .reveal .slides > section div.last-slide ~ * img[alt*=avatar], .reveal .slides > section div.last-slide ~ * img.avatar {
   width: 100pt;
   min-height: 100pt;
   height: auto;
-  top: 27vmin;
+  top: 200pt;
   margin-left: -50pt;
   margin-top: 0;
 }

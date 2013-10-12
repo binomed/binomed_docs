@@ -98,15 +98,14 @@
     }
     
      div.photo-slide~* img[alt*=photo-slide], img.photo-slide{
-        min-width:100vmax;
-        min-height:100vmin;
+        min-height:500pt;
     }
 
      div.last-slide~* img[alt*=avatar], div.last-slide~* img.avatar{
         width: 100pt;
         min-height: 100pt;
         height: auto;
-        top: 27vmin;
+        top: 200pt;
         margin-left: -50pt;
         margin-top: 0;
     }
