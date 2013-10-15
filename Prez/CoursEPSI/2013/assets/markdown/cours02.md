@@ -74,7 +74,7 @@
 * Il s'agit de la notion d'application web au sens moderne ou encore Single Page Application.
 
 <br><br>
-On distingue la RIA du site Web ! 
+On distingue le RIA du site Web ! 
 <br><br>
 Dans ce type d'application, un simple navigateur suffit à afficher l'application
 
@@ -96,7 +96,7 @@ Dans ce type d'application, un simple navigateur suffit à afficher l'applicatio
 <br>
 Il s'agit donc de pages dynamiques dont le contenu change de façon dynamique en fonction des actions de l'utilisateur. 
 
-Le DHTML ne fait pas référence à une technologie en particulier mais correspond plus à un concepts
+Le DHTML ne fait pas référence à une technologie en particulier mais correspond plus à un concept
 
 
 <aside class="notes">
@@ -109,7 +109,7 @@ Repose sur le JS et l'arbre DOM !
 
 <u>Avantages</u>
 
-* Accèssible de partout
+* Accessible partout
 
 * Cross Plateforme
 
@@ -164,7 +164,7 @@ GWT : Java / Flex : ActionScript
 
 * Derrière le mythe, il y a la réalité 
 
-![center w-600 wp-500](assets/images/navigateurs_internet.png)
+![center w-600 wp-300](assets/images/navigateurs_internet.png)
 
 
 <footer/>
@@ -208,7 +208,7 @@ exposer débat et incompréhensions !
 
 * Fut créé par Microsoft comme un composant ActiveX à travers le XMLHttpRequest. 
 
-* Fut vraiment répendu à partir entre 2002 et 2005
+* Fut vraiment répendu entre 2002 et 2005
 
 <aside class="notes">
 
@@ -302,7 +302,7 @@ HTML5 n'est rien sans le javascript
 
 <br><br><br>
 
-![center h-200 hp-200](/assets/images/html5-infographics-features.jpg)
+![center h-200 hp-100](/assets/images/html5-infographics-features.jpg)
 
 <aside class="notes">
 
@@ -507,13 +507,13 @@ xhr.open("GET", "handlingData.php?param1=value1&param2=value2", true);
 xhr.send(null);
 ```
 
-open s'utilise de cette façon : open(sMethod, sUrl, bAsync)
+* open s'utilise de cette façon : open(sMethod, sUrl, bAsync)
 
-* sMethod : la méthode de transfert : GET ou POST;
+ * sMethod : la méthode de transfert : GET ou POST;
 
-* sUrl : la page qui donnera suite à la requête. Ça peut être une page dynamique (PHP, CFM, ASP) ou une page statique (TXT, XML...);
+ * sUrl : la page qui donnera suite à la requête. Ça peut être une page dynamique (PHP, CFM, ASP) ou une page statique (TXT, XML...);
 
-* bAsync : définit si le mode de transfert est asynchrone ou non (synchrone). Dans ce cas, mettez true . Ce paramètre est optionnel et vaut true par défaut, mais il est courant de le définir quand même (je le fais par habitude).
+ * bAsync : définit si le mode de transfert est asynchrone ou non (synchrone). Dans ce cas, mettez true . Ce paramètre est optionnel et vaut true par défaut.
 
 
 <aside class="notes">
@@ -540,9 +540,10 @@ Poissibilité d'encoder les paramètres !
 
 ```javascript
 var sVar1 = encodeURIComponent("contenu avec des espaces");
-var sVar2 = encodeURIComponent("je vois que vous êtes un bon élève... oopa !");
+var sVar2 = encodeURIComponent("je vois que vous êtes un bon élève... ");
  
-xhr.open("GET", "handlingData.php?variable1=" + sVar1 + "&variable2= " + sVar2, true);
+xhr.open("GET", "handlingData.php?variable1=" + sVar1 
+      + "&variable2= " + sVar2, true);
 xhr.send(null);
 ```
 
@@ -577,31 +578,28 @@ xhr.send(null);
 
 ### SSE Serveur Sent Event
 
-Le sse a l'intérêt d'être basé sur une simple HttpServlet !
+Le sse a la force d'être basé sur une simple HttpServlet !
 
 ```javascript
 if (!!window.EventSource) {
-  var source = new EventSource('stream.php');
-
-  source.addEventListener('message', function(e) {
-    console.log(e.data);
-  }, false);
-
-  source.addEventListener('open', function(e) {
-    // Connection was opened.
-  }, false);
-
-  source.addEventListener('error', function(e) {
-    if (e.readyState == EventSource.CLOSED) {
-      // Connection was closed.
-    }
-  }, false);
+ var source = new EventSource('stream.php');
+ source.addEventListener('message', function(e) {
+  console.log(e.data);
+ }, false);
+ source.addEventListener('open', function(e) {
+ // Connection was opened.
+ }, false);
+ source.addEventListener('error', function(e) {
+  if (e.readyState == EventSource.CLOSED) {
+    // Connection was closed.
+  }
+ }, false);
 } else {
   // Result to xhr polling :(
 }
 ```
 
-Tout se passe sur l'écoute d'événements ! on va écouter un type d'événements et cela conditionnera la données réceptionnée
+Tout se passe sur l'écoute d'événements ! on va écouter un type d'événement et cela conditionnera les données réceptionnées
 
 <aside class="notes">
 Parler du LongPolling
@@ -695,6 +693,7 @@ Parler du LongPolling
 
 Basé sur le protocol HTTP !  Mais nécessite un objet spécifique côté serveur !
 
+
 ```javascript
 var connection = new WebSocket('ws://html5rocks.websocket.org/echo');
 
@@ -713,6 +712,19 @@ connection.onmessage = function (e) {
   console.log('Server: ' + e.data);
 };
 ```
+
+<aside class="notes">
+les données sont dispo sour E.DATA ! 
+</aside>
+<footer/>
+
+##==##
+
+
+## Interractions asyncrhones
+
+### WebSockets
+
 
 * <em>onopen</em> : Fonction appelée lors de l'ouverture de la websocket.
 
@@ -885,7 +897,7 @@ Mais ça vaut le coup d'en parler !
 
 <br><br>
 
-* Template Tag : Il s'agit de template html. Dans le sens de la réutisabilité ! On va déclare un élément <strong>'```<template>```'</strong> et ce dernier contiendra du html définissant. L'intérêt est qu'il est inactif tant que l'on ne l'a pas activé => Il n'y a pas de chargement de données, pas de chargement de scripts si on en a pas besoin !
+* Template Tag : Il s'agit de template html. Dans le sens de la réutisabilité ! On va déclarer un élément <strong>'```<template>```'</strong> et ce dernier contiendra du html. L'intérêt est qu'il est inactif tant que l'on ne l'a pas activé => Il n'y a pas de chargement de données, pas de chargement de scripts si on en a pas besoin !
 
 
 <footer />
@@ -901,7 +913,6 @@ Mais ça vaut le coup d'en parler !
 ### Pourquoi en parler ?
 
 <br>
-<br>
 
 1. Car c'est l'avenir du web ! 
 
@@ -911,7 +922,7 @@ Mais ça vaut le coup d'en parler !
 
  2. AngularJS : Un framework javascript offrant un pseudo mécanisme de templating fort pratique et permettant une réelle réutilisation du code. Developpé par Google
 
- 3. Brick : Librairie Javacript offrant un ensemble de nouvelles balises graphiques réutilisables pour se facilité l'écriture d'applications web. Développé par Mozilla
+ 3. Brick : Librairie Javacript offrant un ensemble de nouvelles balises graphiques réutilisables pour se faciliter l'écriture d'applications web. Développé par Mozilla
 
 
 <footer />
@@ -1019,7 +1030,6 @@ if (localStorage){
   localStorage.clear();
 }
 ```
-<br>
 
 * 2 premières lignes : on met à jour une donnée
 
@@ -1046,7 +1056,7 @@ if (localStorage){
 
 <br>
 
-* Commence à être répendu IE10 et autres
+* Commence à être répendu pour IE10 et autres
 
 * Stockage plus performant
 
@@ -1124,6 +1134,18 @@ gdgnamespace.indexedDB.open = function() {
 };
 ```
 
+
+<footer />
+
+##==##
+
+## Base de données
+
+### IndexedDB
+
+#### 2 : Création d'un Object Store
+
+
 On a créé une "table" todo qui devra systématiquement contenir un champ "timeStamp" !
 On a aussi ajouté un index sur notre base pour mieux la requêter
 
@@ -1161,6 +1183,17 @@ gdgnamespace.indexedDB.addTodo = function(todoText) {
 };
 ```
 
+<footer />
+
+##==##
+
+## Base de données
+
+### IndexedDB
+
+#### 3 : Ajout d'un objet dans la base
+
+
 On doit récupérer le ObjectStore de notre base de données pour ajouter une données dans la "table" ! 
 
 <footer />
@@ -1195,6 +1228,24 @@ gdgnamespace.indexedDB.getAllTodoItems = function() {
   cursorRequest.onerror = gdgnamespace.indexedDB.onerror;
 };
 ```
+
+
+
+<footer />
+
+<aside class="notes">
+Demander si cursor ça va pour tout le monde ?
+</aside>
+
+##==##
+
+## Base de données
+
+### IndexedDB
+
+#### 4 : Requêtons la base
+
+
 
 On ne peut manipuler un Cursor que dans une transaction !
 
