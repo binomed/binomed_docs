@@ -932,6 +932,65 @@ mAdapter.setNdefPushMessageCallback(this, this);
 
 ##==##
 
+## Implementation
+
+### Card Emulation
+
+![float-left w-500](assets/images/secure-element.png)
+
+![w-500](assets/images/host-based-card.png)
+
+=> You have to subscribe your application to and AID (Application ID)
+
+<footer/>
+
+<aside class="notes">
+Principe d'inscriptions ! à un AID
+</aside>
+
+
+##==##
+
+## Implementation
+
+### Card Emulation
+
+**Override the manifest.xml**
+
+<br>
+
+```xml
+<uses-feature android:required="true" android:name="android.hardware.nfc.hce"/>
+```
+
+<br>
+
+**Then override a service **HostApduService**
+
+<br>
+
+```java
+public class MyHostApduService extends HostApduService {
+    @Override
+    public byte[] processCommandApdu(byte[] apdu, Bundle extras) {
+       ...
+    }
+    @Override
+    public void onDeactivated(int reason) {
+       ...
+    }   
+}
+```
+
+<footer/>
+
+<aside class="notes">
+Première méthode sert à détecter les messages arrivants
+</aside>
+
+
+##==##
+
 <!--
 //    _   _   ______            
 //   | \ | | |  ____|     /\    
