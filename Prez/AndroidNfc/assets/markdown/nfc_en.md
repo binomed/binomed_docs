@@ -940,12 +940,16 @@ mAdapter.setNdefPushMessageCallback(this, this);
 
 ![w-500](assets/images/host-based-card.png)
 
-=> You have to subscribe your application to and AID (Application ID)
+* You have to subscribe your application to and AID (Application ID)
+* Restrict to NFC-A readers
+
 
 <footer/>
 
 <aside class="notes">
 Principe d'inscriptions ! à un AID
+
+On garde la possibilité de passer par un secure Element ! 
 </aside>
 
 
@@ -965,7 +969,7 @@ Principe d'inscriptions ! à un AID
 
 <br>
 
-**Then override a service **HostApduService**
+Then override a service **HostApduService**
 
 <br>
 
@@ -985,7 +989,53 @@ public class MyHostApduService extends HostApduService {
 <footer/>
 
 <aside class="notes">
-Première méthode sert à détecter les messages arrivants
+Première méthode sert à détecter les messages arrivants avec le code APDU
+Renvoie null si pas dispo !
+</aside>
+
+##==##
+
+## Implementation
+
+### Card Emulation
+
+**Service declaration in the manifest.xml**
+
+<br>
+
+```xml
+<service android:name=".MyHostApduService" android:exported="true"
+        android:permission="android.permission.BIND_NFC_SERVICE">
+    <intent-filter>
+        <action android:name="android.nfc.cardemulation.action.HOST_APDU_SERVICE"/>
+    </intent-filter>
+    <meta-data android:name="android.nfc.cardemulation.host_apdu_service"
+        android:resource="@xml/apduservice"/>
+</service>
+```
+
+<br>
+
+And the xml with the **AID** (resources/xml/apduservice.xml)
+
+<br>
+
+```xml
+<host-apdu-service xmlns:android="http://schemas.android.com/apk/res/android"
+           android:description="@string/servicedesc" 
+           android:requireDeviceUnlock="false">
+    <aid-group android:description="@string/aiddescription" 
+                android:category="other">
+        <aid-filter android:name="F0010203040506"/>
+        <aid-filter android:name="F0394148148100"/>
+    </aid-group>
+</host-apdu-service>
+```
+
+<footer/>
+
+<aside class="notes">
+Noter le requireDeviceUnlock ! ça permet l'action sans déverouiller ! 
 </aside>
 
 
