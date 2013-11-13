@@ -1388,7 +1388,7 @@ Sample available here : [Play Store](https://play.google.com/store/apps/details?
 
 ## Links
 
-*  http://goo.gl/O3ryH The presentation
+*  http://goo.gl/vc3kqE The presentation
 
 * [NFC Forum specifications](http://www.nfc-forum.org/specs/spec_list/)
 
