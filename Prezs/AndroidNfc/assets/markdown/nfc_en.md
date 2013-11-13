@@ -17,7 +17,7 @@
 
 ### New Future Communication
 
-![title](/assets/images/nfa_large.png)
+![title](assets/images/nfa_large.png)
 
 <footer/>
 
@@ -27,11 +27,11 @@
 
 ###  Jean-François GARREAU
 
-![avatar center w-300 wp-200](/assets/images/jf.jpg)
+![avatar center w-300 wp-200](assets/images/jf.jpg)
 
 
-![company_logo](/assets/images/sqli_logo.png)
-![gdg_logo](/assets/images/GDG-Logo-carre.png)
+![company_logo](assets/images/sqli_logo.png)
+![gdg_logo](assets/images/GDG-Logo-carre.png)
 
 <footer/>
 
@@ -1443,4 +1443,4 @@ Sample available here : [Play Store](https://play.google.com/store/apps/details?
 
 # **Merci**
 
-![avatar](/assets/images/jf.jpg)
+![avatar](assets/images/jf.jpg)
