@@ -1,0 +1,228 @@
+/* line 4, ../scss/prez/style.scss */
+img[alt*=logo] {
+  width: 50px;
+}
+
+/* line 10, ../scss/prez/style.scss */
+img[alt*=sommaire] {
+  height: 60px;
+}
+
+/* line 14, ../scss/prez/style.scss */
+.reveal .slides > section img[alt*=avatar] {
+  -webkit-box-shadow: #cccccc 2px 2px 2px 3px;
+  -moz-box-shadow: #cccccc 2px 2px 2px 3px;
+  box-shadow: #cccccc 2px 2px 2px 3px;
+}
+
+/* line 18, ../scss/prez/style.scss */
+.reveal .slides > section img[alt*=title] {
+  height: auto;
+  width: auto;
+  margin-left: -128px;
+}
+
+/* line 25, ../scss/prez/style.scss */
+img[alt*=company_logo] {
+  position: absolute;
+  bottom: 20%;
+  left: 20%;
+  width: 200px;
+}
+
+/* line 32, ../scss/prez/style.scss */
+img[alt*=gdg_logo] {
+  position: absolute;
+  bottom: 20%;
+  right: 20%;
+  width: 200px;
+}
+
+/* line 39, ../scss/prez/style.scss */
+div.no-bullet ~ ul {
+  list-style-type: none;
+}
+/* line 42, ../scss/prez/style.scss */
+div.no-bullet ~ ul img {
+  margin: 0;
+}
+/* line 46, ../scss/prez/style.scss */
+div.no-bullet ~ ul li {
+  line-height: 60px;
+}
+
+/* line 51, ../scss/prez/style.scss */
+div.padding ~ * {
+  padding-left: 50px;
+}
+
+/* line 56, ../scss/prez/style.scss */
+p.surround {
+  font-weight: bold;
+  font-size: 1em;
+  color: #DA0E1A;
+  text-align: left;
+}
+
+/* line 63, ../scss/prez/style.scss */
+table.table_version {
+  position: absolute;
+  top: 4em;
+}
+
+/* line 68, ../scss/prez/style.scss */
+table.table_version td, table.table_version th {
+  font-size: 14px;
+}
+
+/* line 72, ../scss/prez/style.scss */
+.img_version {
+  margin-top: 7em;
+}
+
+/*
+ Theme: Default
+ Fonts: Oswald
+
+ <link href="http://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+
+*/
+/* line 85, ../scss/prez/style.scss */
+img.float-left {
+  float: left;
+  margin-right: 40px;
+}
+
+/* line 90, ../scss/prez/style.scss */
+img.float-right {
+  float: right;
+  margin-left: 10px;
+}
+
+/* line 95, ../scss/prez/style.scss */
+#ndef_header {
+  height: 90px;
+  width: 510px;
+  position: absolute;
+  top: 275px;
+  background: rgba(252, 203, 206, 0.5);
+}
+
+/* line 104, ../scss/prez/style.scss */
+#ndef_length_type {
+  height: 90px;
+  width: 510px;
+  position: absolute;
+  top: 365px;
+  background: rgba(252, 203, 206, 0.5);
+}
+
+/* line 112, ../scss/prez/style.scss */
+#ndef_length_payload {
+  height: 90px;
+  width: 510px;
+  position: absolute;
+  top: 455px;
+  background: rgba(252, 203, 206, 0.5);
+}
+
+/* line 120, ../scss/prez/style.scss */
+#ndef_type_id {
+  height: 175px;
+  width: 510px;
+  position: absolute;
+  top: 545px;
+  background: rgba(252, 203, 206, 0.5);
+}
+
+/* line 128, ../scss/prez/style.scss */
+#ndef_payload {
+  height: 90px;
+  width: 510px;
+  position: absolute;
+  top: 720px;
+  background: rgba(252, 203, 206, 0.5);
+}
+
+/* line 136, ../scss/prez/style.scss */
+pre.java.redux code.java, pre.xml.redux code.xml {
+  font-size: 0.6em;
+}
+
+/**
+* Common overrides
+*/
+/* line 145, ../scss/prez/style.scss */
+img.company_logo {
+  position: absolute;
+  bottom: 20%;
+  left: 20%;
+  width: 150px;
+}
+
+/* line 152, ../scss/prez/style.scss */
+img.gdg_logo {
+  position: absolute;
+  bottom: 20%;
+  right: 20%;
+  width: 150px;
+}
+
+/* line 159, ../scss/prez/style.scss */
+section.intro.pagetransition > h2 {
+  left: 65%;
+  top: 20%;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+/* line 168, ../scss/prez/style.scss */
+.avatar {
+  -moz-box-shadow: 2px 2px 2px 3px #CCCCCC;
+  -webkit-box-shadow: 2px 2px 2px 3px #CCCCCC;
+  box-shadow: 2px 2px 2px 3px #CCCCCC;
+  width: 200px;
+}
+
+/* line 176, ../scss/prez/style.scss */
+.logo_twitter, .logo_gplus {
+  position: absolute;
+  width: 40px;
+  right: 35%;
+}
+
+/* line 181, ../scss/prez/style.scss */
+.logo_twitter {
+  bottom: 5%;
+}
+
+/* line 185, ../scss/prez/style.scss */
+.logo_gplus {
+  bottom: 15%;
+}
+
+/* line 189, ../scss/prez/style.scss */
+.twitters_account, .gplus_account {
+  position: absolute;
+  font-size: 20px;
+  right: 11%;
+}
+
+/* line 195, ../scss/prez/style.scss */
+.twitters_account {
+  bottom: 6%;
+}
+
+/* line 200, ../scss/prez/style.scss */
+.gplus_account {
+  bottom: 17%;
+}
+
+/* line 204, ../scss/prez/style.scss */
+.lien_prez {
+  position: absolute;
+  top: 30%;
+  right: 15%;
+}
