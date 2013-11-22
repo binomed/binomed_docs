@@ -56,7 +56,8 @@
 * Installation des environnements
 * Orientation API
 * Device Motion API
-* WebAudio API
+* Light API
+* Proximity API
 * GetUserMedia
 * Vibration API
 * WebSpeech API
@@ -138,6 +139,10 @@
 
 
 ##==##
+
+Pensez à activer sous chrome beta les fonctionnalités javascript expérimentales :)
+
+Penser à désactiver la rotation automatique des téléphones ! 
 
 <!--
 //     ____  _____  _____ ______ _   _ _______    _______ _____ ____  _   _ 
@@ -269,6 +274,16 @@ Pair à Pair : 2 Appareils
 
 ##==##
 
+
+Jouer avec les constraintes
+var vgaConstraints = {
+  video: {
+    mandatory: {
+      maxWidth: 640,
+      maxHeight: 360
+    }
+  }
+};
 ## Uses
 ### Read mode
 
