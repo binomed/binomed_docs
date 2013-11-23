@@ -140,9 +140,62 @@
 
 ##==##
 
-Pensez à activer sous chrome beta les fonctionnalités javascript expérimentales :)
+## Environnement
 
-Penser à désactiver la rotation automatique des téléphones ! 
+* Installer NodeJS : http://nodesjs.org
+  * Penser à ajouter node au Path de l'environnement
+
+<br>
+
+* Installer sur son mobile : 
+ * Chrome Beta
+ * FireFox
+
+<br>
+
+* Installer Chrome ou Firefox sur son pc.
+
+<br>
+
+* Activer les fonctionnalités javascript expérimentales sous Chrome Beta : 
+ * Nouvel Onglet 
+ * chrome://flags
+
+<br>
+
+* Désactiver les rotations automatiques des téléphones !
+
+<footer/>
+
+##==##
+
+## Environnement
+
+* Récupérer le projet sur github : http://goo.gl/nbh1y9
+
+<br>
+
+* Clonnez le répository ou alors récupérer le zip (Download ZIP)
+
+* Copier le contenu du répertoire 'CodeLab/00-Base' dans le répertoire de votre choix
+
+<br>
+
+* Ouvrir une ligne de commande et faire : 
+
+```sh
+$ cd leCheminJusquauRepertoireCopié
+
+$ npm install
+
+$ node server.js
+```
+
+* Ouvrir votre navigateur sur l'url : http://localhost:8080/html
+
+<footer/>
+
+##==##
 
 <!--
 //     ____  _____  _____ ______ _   _ _______    _______ _____ ____  _   _ 
@@ -164,94 +217,260 @@ Penser à désactiver la rotation automatique des téléphones !
 ##==##
 
 ## Device Orientation
-**2004**
 
-  Nokia, Philips and Sony create the NFC Forum
+3 Axes : **Alpha, Gamma, Beta**
 
-<br>
+Se fait à plat ! 
 
-**2006**
-  
-   First NFC Tags specifications
-   
-   First NFC Phone  : Nokia 6131
+<br><br><br>
 
-<br>
+![float-left w-300](assets/images/device-orientation-z.jpg)
 
-**2009**
-  
-  Add of P2P protocol. 
- 
+![float-left w-300](assets/images/device-orientation-y.jpg)
 
-<br>
-**2010**
-  
-  First NFC Android phone
+![float-left w-300](assets/images/device-orientation-x.jpg)
 
 <footer/>
 
 <aside class="notes">
-NFC Forum = 140 Company today. Unifed protocols
+Subtilité : ça marche mieux si le téléphone est a plat
 </aside>
+
+##==##
+
+## Device Orientation
+
+
+* rendez vous dans /javascript/components/orientation.js
+<br><br>
+
+```javascript
+if(window.DeviceOrientationEvent) {
+  window.addEventListener("deviceorientation", process, false);
+} else {
+  // Le navigateur ne supporte pas l'événement deviceorientation
+}
+
+function process(event) {
+  var alpha = event.alpha;
+  var beta = event.beta;
+  var gamma = event.gamma;
+   
+}
+```
+
+<footer/>
+
+<aside class="notes">
+Subtilité : ça marche mieux si le téléphone est a plat
+</aside>
+
+##==##
+
+## Orientation
+
+### Cas Pratique
+
+![center w-800](assets/images/combination-lock-icon.jpg)
+
+<footer/>
 
 ##==##
 
 <!--
-//   __          ________ ____            _    _ _____ _____ ____  
-//   \ \        / /  ____|  _ \      /\  | |  | |  __ \_   _/ __ \ 
-//    \ \  /\  / /| |__  | |_) |    /  \ | |  | | |  | || || |  | |
-//     \ \/  \/ / |  __| |  _ <    / /\ \| |  | | |  | || || |  | |
-//      \  /\  /  | |____| |_) |  / ____ \ |__| | |__| || || |__| |
-//       \/  \/   |______|____/  /_/    \_\____/|_____/_____\____/ 
-//                                                                 
-//     
+//    _____  ________      _______ _____ ______   __  __  ____ _______ _____ ____  _   _ 
+//   |  __ \|  ____\ \    / /_   _/ ____|  ____| |  \/  |/ __ \__   __|_   _/ __ \| \ | |
+//   | |  | | |__   \ \  / /  | || |    | |__    | \  / | |  | | | |    | || |  | |  \| |
+//   | |  | |  __|   \ \/ /   | || |    |  __|   | |\/| | |  | | | |    | || |  | | . ` |
+//   | |__| | |____   \  /   _| || |____| |____  | |  | | |__| | | |   _| || |__| | |\  |
+//   |_____/|______|   \/   |_____\_____|______| |_|  |_|\____/  |_|  |_____\____/|_| \_|
+//                                                                                       
+//    
 -->
 
 <div class='transition'></div>
 
-# Web Audio API
+# Device Motion API
 
-![icon](assets/images/HTML5audio1.jpg)
+![icon](assets/images/device_motion.jpg)
 
 ##==##
 
-## Standards
-**3 communications modes :**
+## Device Motion API
 
-![float-left w-200](assets/images/smart_card_nfc.jpg)
-Card emulation
-  
-<br>
-<br>
-<br>
-<br>
+![center w-800](assets/images/device_motion.jpg)
 
-![float-left w-200](assets/images/social-nfc-tags.jpg)
-Read / Write
-  
 <br>
-<br>
-<br>
-<br>
-
-![float-left w-200](assets/images/nfc_p2p.jpg)
-Peer to Peer
-  
-<br>
-<br>
-<br>
+On peut tenir comptes de l'accélération classique ou avec prise en charge de la gravité !
 
 <footer/>
 
 <aside class="notes">
-Normes Régies par le NFC Forum !
 
-Emulation= Simulation interface carte à puce
-
-Lecture / Ecriture : Tag
-
-Pair à Pair : 2 Appareils
 </aside>
+
+##==##
+
+## Device Motion API
+
+
+On s'intéresse à l'accélération x
+
+* rendez vous dans /javascript/components/devicemotion.js
+
+<br><br>
+
+
+```javascript
+// Listener of devieMotion
+var deviceMotionListener = function(event){        
+  var x = event.acceleration.x;
+  var y = event.acceleration.y;
+  var z = event.acceleration.z;
+  socket.sendDeviceMotion(Math.abs(x));
+  currentPercent+=Math.abs(x);
+  updatePercent();
+}
+
+// We add the listener
+function register(){
+  window.addEventListener('devicemotion', deviceMotionListener, false);
+}
+```
+
+<footer/>
+
+##==##
+
+## Device Orientation
+
+### Cas pratique
+
+![center w-800](assets/images/chargebatterylonger.jpg)
+
+<footer/>
+
+##==##
+
+<!--
+//    _____  _____   ______   _______ __  __ _____ _________     __
+//   |  __ \|  __ \ / __ \ \ / /_   _|  \/  |_   _|__   __\ \   / /
+//   | |__) | |__) | |  | \ V /  | | | \  / | | |    | |   \ \_/ / 
+//   |  ___/|  _  /| |  | |> <   | | | |\/| | | |    | |    \   /  
+//   | |    | | \ \| |__| / . \ _| |_| |  | |_| |_   | |     | |   
+//   |_|    |_|  \_\\____/_/ \_\_____|_|  |_|_____|  |_|     |_|   
+//                                                                 
+//    
+-->
+
+<div class='transition'></div>
+
+# Proximity
+
+![icon](assets/images/proximity.jpg)
+
+##==##
+
+## Proximity
+
+Firefox uniquement ! 
+
+* Renvoie des valeurs entre 0 et 5 (0 étant proche)
+
+* rendez vous dans /javascript/components/proximity.js
+
+<br><br>
+
+
+```javascript
+var deviceProximityHandler = function(event) {
+  var value = Math.round(event.value);            
+  socket.sendProximity(value);
+  manageProximityValue(value);
+}
+
+function register(){
+  window.addEventListener('deviceproximity', deviceProximityHandler, false);
+}
+
+function unregister(){
+  window.removeEventListener('deviceproximity', deviceProximityHandler, false);
+}
+```
+
+<footer/>
+
+##==##
+
+## Proximity
+
+### Cas pratique
+
+![center w-800](assets/images/push-button.jpg)
+
+<footer/>
+
+##==##
+
+<!--
+//    _      _____ _____ _    _ _______ 
+//   | |    |_   _/ ____| |  | |__   __|
+//   | |      | || |  __| |__| |  | |   
+//   | |      | || | |_ |  __  |  | |   
+//   | |____ _| || |__| | |  | |  | |   
+//   |______|_____\_____|_|  |_|  |_|   
+//                                      
+//   
+-->
+
+
+<div class='transition'></div>
+
+# Light 
+
+![icon](assets/images/light_detector.jpg)
+
+##==##
+
+
+## Light
+
+Firefox uniquement ! 
+
+* Renvoie des valeurs entre 0 et > 1000 (0 étant sombre)
+
+* Est dépendant du téléphone et de l'implementation
+
+* On a 2 façon de faire =>
+ * Gestion par valeur
+ * Gestion par états : Dim / Normal / Bright
+
+* rendez vous dans /javascript/components/light.js
+
+<br><br>
+
+```javascript
+var deviceLightHandler = function(event) {
+ var value = Math.min(45, event.value);
+ percent = Math.round((value / 45) * 100);
+ socket.sendLight(percent); 
+ updateLight();
+}
+
+window.addEventListener('devicelight', deviceLightHandler, false);
+```
+
+<footer/>
+
+##==##
+
+## Light
+
+### Cas pratique
+
+![center w-400](assets/images/Hanging_Bulb.jpg)
+
+<footer/>
 
 ##==##
 
@@ -274,8 +493,13 @@ Pair à Pair : 2 Appareils
 
 ##==##
 
+## User Media
 
-Jouer avec les constraintes
+* Encore dépendant des navigateurs ! Modernizr à la rescousse.
+
+* Possibilité de préciser ce qu'on récupère et on peut séparer les flux ! 
+
+```javascript
 var vgaConstraints = {
   video: {
     mandatory: {
@@ -284,24 +508,65 @@ var vgaConstraints = {
     }
   }
 };
-## Uses
-### Read mode
-
+```
 <br>
 
-![float-left w-300](assets/images/social-nfc-tags.jpg)
-
-![float-left w-300](assets/images/recharge_nfc.jpg)
-
-![w-300](assets/images/foursquare-nfc.png)
+* Devient intéressant s'il est mixé avec des effets ou des canvas.
 
 <footer/>
 
 <aside class="notes">
-Infos complementaires sur des produits  /////// GEOLOC /////// URLS
 
-Codes promos ////// Dématérialisation de cartes
 </aside>
+
+##==##
+
+## User Media
+
+* rendez vous dans /javascript/components/usermedia.js
+
+```javascript
+// We define the video constraints
+var constraints = {video: true};
+
+// We get the correct navigator method
+var gUM = Modernizr.prefixed('getUserMedia', navigator);
+
+// We manage an error while getting the stream
+function handleUserMediaError(error){
+  console.log('navigator.getUserMedia error: ', error);
+}
+
+// We manage the success of getting the stream
+function handleUserMedia(stream){
+  localStream = stream;
+  video.src = window.URL.createObjectURL(stream);
+  video.play();
+  videoParent.addClass('rotate');
+}
+
+gUM(constraints, handleUserMedia, handleUserMediaError);
+
+```
+
+
+<footer/>
+
+<aside class="notes">
+
+</aside>
+
+##==##
+
+## User Media
+
+### Cas pratique
+
+![center w-400](assets/images/css3-transform-rotateX-perspective.png)
+
+<footer/>
+
+##==##
 
 <!--
 //   __      _______ ____  _____         _______ _____ ____  _   _ 
@@ -314,8 +579,6 @@ Codes promos ////// Dématérialisation de cartes
 //   
 -->
 
-##==##
-
 <div class='transition'></div>
 
 # Vibration
@@ -324,11 +587,28 @@ Codes promos ////// Dématérialisation de cartes
 
 ##==##
 
-## Implementation
-### 2010 : Read / Write
+## Vibration
+
+* Vibre selon un temps donné ! 
+
+* Peut faire vibrer tout un ensmble de temps
+ * n = temps à vibrer
+ * n+1 = temps entre vibration n et n+2
 
 
-![center h-500](assets/images/read_nfc.jpg)
+```javascript
+window.navigator.vibrate(arrayOfVibration);
+```
+
+<footer/>
+
+##==##
+
+## Vibration
+
+### Cas pratique
+
+![center w-400](assets/images/morse1.jpg)
 
 <footer/>
 
@@ -353,32 +633,38 @@ Codes promos ////// Dématérialisation de cartes
 
 ##==##
 
-## Why ?
+## Web Speech
 
-**NFC & Android = byte[] !**
+* Uniquement sur Chrome
 
+* Un tag existe pour gagner en code 
 
-  How to write "Hello World"
+```html
+<input x-webkit-speech>
+```
 
 <br>
 
-```java
-byte[] languageData = "en".getBytes();
+* Il reste plus intéressant d'utiliser la librairie Javascript
 
-byte[] textData = "Hello World".getBytes(record.getEncoding());
-byte[] payload = new byte[1 + languageData.length + textData.length];
+* Manque encore cependant de précision pour de la commande vocale => avoir des textes approximatifs de détection
 
-byte status = (byte) 0x00;
-payload[0] = status;
-System.arraycopy(languageData, 0, payload, 1, languageData.length);
-System.arraycopy(textData, 0, payload, 1 + languageData.length
-      , textData.length);
-
-NdefRecord ndefRecord = new NdefRecord(NdefRecord.TNF_WELL_KNOWN
-      , NdefRecord.RTD_TEXT
-      , record.getId()
-      , payload);
+```javascript
+var recognition = new webkitSpeechRecognition();
+recognition.lang = 'fr-FR';
+recognition.continuous = true;
+recognition.interimResults = true;
 ```
+
+<footer/>
+
+##==##
+
+## Web Speech API
+
+### Cas pratique
+
+![center w-600](assets/images/background.png)
 
 <footer/>
 
