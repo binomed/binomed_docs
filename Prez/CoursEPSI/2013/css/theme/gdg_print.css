@@ -178,6 +178,9 @@
 .reveal .slides > section div.hidden-print + * {
   display: none;
 }
+.reveal .slides > section div.hidden-normal + * {
+  display: inherit;
+}
 /* line 86, ../../scss/theme/gdg_print.scss */
 .reveal .slides > section img[alt*=title], .reveal .slides > section img.title {
   position: absolute;

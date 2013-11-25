@@ -700,3 +700,7 @@ body {
   -o-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
 }
+
+.reveal .slides > section div.hidden-normal + * {
+  display: none;
+}

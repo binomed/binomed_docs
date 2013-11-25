@@ -82,6 +82,10 @@
     div.hidden-print+*{
         display:none;   
     }
+
+    div.hidden-normal+*{
+        display:inherit;   
+    }
     
     img[alt*=title], img.title{
         position:absolute;

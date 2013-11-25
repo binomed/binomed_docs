@@ -421,7 +421,9 @@ $footer-height : 60px;
         z-index:-10;
     }
     
-   
+   div.hidden-normal+*{
+        display:none;   
+    }
     
 }
 
