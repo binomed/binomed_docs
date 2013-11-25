@@ -2,6 +2,10 @@
   "author": "JefBinomed",
   "name": "SpeakerWS",
   "version": "1.0.0",
+  "repository" :
+  { "type" : "git"
+  , "url" : "https://github.com/binomed/binomed_docs.git"
+  },
   "dependencies": {},
   "devDependencies": {
     "grunt": "~0.4.1",

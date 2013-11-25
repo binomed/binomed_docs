@@ -15,9 +15,9 @@
 
 ## Cours Mobilité
 
-### Cours 03 - Localisation & Animations
+### Cours 03 - Sensors
 
-![title center](/assets/images/localisation_icone.jpg)
+![title](/assets/images/localisation_icone.jpg)
 
 <footer/>
 
@@ -36,1262 +36,1051 @@
 
 ## Sommaire ## 
 
-* RIA
-* AJAX
-* HTML5 = spécificités
-* Taches Asyncrhones
-* Webcomponents
-* Stockage
+* Les Sensors ?
+
+<br>
+
+* Localisation - Android
+
+<br>
+
+* Sensors - Android
+
+<br>
+
+* Localisation - HTML5
+
+<br>
+
+* Sensors - HTML5
+
+<br>
 
 <footer/>
+
+
+<!--
+//     _____                               
+//    / ____|                              
+//   | (___   ___ _ __  ___  ___  _ __ ___ 
+//    \___ \ / _ \ '_ \/ __|/ _ \| '__/ __|
+//    ____) |  __/ | | \__ \ (_) | |  \__ \
+//   |_____/ \___|_| |_|___/\___/|_|  |___/
+//                                         
+//   
+-->
+
+##==##
+
+
+<div class='transition'></div>
+
+# Les Sensors
+
+![icon](/assets/images/HTML5_Device_Access.png)
+
+##==##
+
+
+## Les Sensors ?
+
+### Qu'est ce que les sensors ?
+
+*Capteurs* en Français, est un mécanisme permettant de transformer un les résultats d'un appareil en données interprétables. C'est à dire que l'on peut analyser les donées sorties d'un détecteur tel que le giroscope, ...
+
+<br>
+
+* Exemples de sensors connus : 
+
+ * GPS
+ * Giroscope
+ * Caméra
+ * ...
+
+<aside class="notes">
+Nous allons voir GPS & Giroscope
+</aside>
+
+<footer/>
+
 
 ##==##
 
 <!--
-  _____  _____          
- |  __ \|_   _|   /\    
- | |__) | | |    /  \   
- |  _  /  | |   / /\ \  
- | | \ \ _| |_ / ____ \ 
- |_|  \_\_____/_/    \_\
-                        
-                                                                                           
+//    _      ____   _____                     _   _ _____  _____   ____ _____ _____   
+//   | |    / __ \ / ____|              /\   | \ | |  __ \|  __ \ / __ \_   _|  __ \  
+//   | |   | |  | | |       ______     /  \  |  \| | |  | | |__) | |  | || | | |  | | 
+//   | |   | |  | | |      |______|   / /\ \ | . ` | |  | |  _  /| |  | || | | |  | | 
+//   | |___| |__| | |____            / ____ \| |\  | |__| | | \ \| |__| || |_| |__| | 
+//   |______\____/ \_____|          /_/    \_\_| \_|_____/|_|  \_\\____/_____|_____/  
+//                                                                                    
+//                                                                                  
 -->
 
 <div class='transition'></div>
 
-# RIA
+# Localisation - Android
+
+![icon](/assets/images/android-logo-white.png)
+
+##==##
+
+
+## La localisation
+
+### Le GPS
+
+Sur Android, on peut récupérer la localisation du téléphone selon plusieurs précisions : 
+
+<br>
+
+* GPS : précision de ~5m
+* GSM : précision de ~50m
+* Wifi : précision de ~1km
+
+<br>
+
+Les **google play services** sont fortement recommandés pour utiliser la géolicalisation dans Android.
+
+
+<aside class="notes">
+
+</aside>
+<footer/>
+
+##==##
+
+## La localisation
+
+### Les Google Play Services ?
+
+Ce sont un ensemble de librairies android permettant d'accéder de façon uniforme entre les plateformes à des apis développées par Google. On peut ainsi retrouver dans les Google Play Services : 
+
+* Localisation
+* Jeux
+* Google + (sign IN)
+* Maps
+* Publicité
+* Wallet
+
+<br>
+
+Cela sous présente sous la forme d'une librairie Android que l'on doit ajouter à son projet.
+
+<br>
+
+Cela est souvent lié aussi à un compte Google et à la Console API
+
+
+<aside class="notes">
+Expliquer rapidement le principe de la console API
+</aside>
+<footer/>
+
+##==##
+
+## La localisation
+
+### Notre cas
+
+Nous n'allons cependant pas voir l'utilisation des Google Play Services et nous allons nous attarder sur la récupération classique de l'adresse d'une personne et l'affichage de l'adresse correspondante.
+
+<br>
+
+Objects à prendre en comptes : 
+
+* **LocationManager** : Service de base permettant d'accéder aux données GPS du téléphone et revnoyant l'information de position. On peut positionner un listener sur cet objet pour être au courant des changements de place du téléphone
+
+
+<aside class="notes">
+On peut récupérer la dernière position ! 
+</aside>
+<footer/>
+
+##==##
+
+## La localisation
+
+### Notre cas
+
+
+<br>
+
+Objects à prendre en comptes : 
+
+
+* **Geocoder** : Il s'agit d'un objet permettant de transformer des coordonnées GPS en adresse lisible et inversement. Ainsi, vous pouvez à l'aide de cet objet être capable de trouver les coordonnées GPS d'une adresse. **/!\ ** cet objet fait appel à un service Google et donc ne peut pas fonctionner offline contrairement au GPS.
+
+<aside class="notes">
+On peut récupérer la dernière position ! 
+</aside>
+<footer/>
+
+##==##
+
+## La localisation
+
+
+* La localisation est disponible via un service : LocationManager
+
+```java
+LocationManager lm = context.getSystemService(Context.LOCATION_SERVICE);
+```
+
+<br>
+
+*  Le geocoder se récupère sur un contexte applicatif : 
+
+```java
+Geocoder geocoder = new Geocoder(context, Locale.getDefault());
+```
+
+<br>
+
+* Comme pour beaucoup d'autres choses, une autorisation est nécessaire : 
+
+```xml
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+```
+
+
+<aside class="notes">
+Le coarse est le minimum mais est moins précis
+Le fine permet d'aller plus loin et demande aussi le COARSE
+</aside>
+<footer/>
+
+
+##==##
+
+## La localisation
+
+### Récupération des informations en temps réel
+
+
+```java
+public class ShowLocationActivity extends Activity implements LocationListener {
+  private LocationManager locationManager;
+  private LocationProvider provider;
+  
+  @Override
+  public void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.main);
+    // Get the location manager
+    locationManager = (LocationManager) 
+        getSystemService(Context.LOCATION_SERVICE);
+    
+    //    
+    provider = LocationManager.GPS_PROVIDER;
+    Location location = locationManager.getLastKnownLocation(provider);
+  }
+    
+  
+} 
+```
+
+
+<aside class="notes">
+Suite slide suivant
+</aside>
+<footer/>
+
+##==##
+
+
+## La localisation
+
+### Récupération des informations en temps réel
+
+
+```java
+protected void onResume() {
+ super.onResume();
+ locationManager.requestLocationUpdates(provider, 400, 1, this);
+}
+protected void onPause() {
+ super.onPause();
+ locationManager.removeUpdates(this);
+}
+public void onLocationChanged(Location location) {
+ int lat = (int) (location.getLatitude());
+ int lng = (int) (location.getLongitude());
+}
+public void onStatusChanged(String provider, int status, Bundle extras) {
+ // TODO Auto-generated method stub
+}
+public void onProviderEnabled(String provider) {
+ // TODO
+}
+public void onProviderDisabled(String provider) {
+ // TODO
+}
+```
+
+
+<aside class="notes">
+request : 400 : 400ms, 1 : 1 metre minimum de déplacement, this : listener
+</aside>
+<footer/>
+
+##==##
+
+## La localisation
+
+### Récupération des informations en temps réel
+
+
+```java
+public void onLocationChanged(Location location) {
+ int lat = (int) (location.getLatitude());
+ int lng = (int) (location.getLongitude());
+ Geocoder geocoder = new Geocoder(this, Locale.getDefault());
+
+ List<Adress> adresses = geocoder.getFromLocation(location);
+ if (adresses != null && adresses.length > 0){
+  for(Adress : adress : adresses){
+   Log.i(adress.toString());
+  }
+ }
+}
+```
+
+
+<aside class="notes">
+
+</aside>
+<footer/>
+
+##==##
+
+
+<!--
+
+//     _____                                  _   _ _____  _____   ____ _____ _____  
+//    / ____|                           /\   | \ | |  __ \|  __ \ / __ \_   _|  __ \ 
+//   | (___   ___ _ __    ______       /  \  |  \| | |  | | |__) | |  | || | | |  | |
+//    \___ \ / _ \ '_ \  |______|     / /\ \ | . ` | |  | |  _  /| |  | || | | |  | |
+//    ____) |  __/ | | |             / ____ \| |\  | |__| | | \ \| |__| || |_| |__| |
+//   |_____/ \___|_| |_|            /_/    \_\_| \_|_____/|_|  \_\\____/_____|_____/ 
+//                                                                                   
+//   
+-->
+
+<div class='transition'></div>
+
+# Sensors - Android
+
+![icon](/assets/images/android-logo-white.png)
+
+##==##
+
+
+## Sensors 
+
+### Android
+
+Sur Android il en existe une multitude : 
+
+<br>
+
+* Accéléromètre
+* Température
+* Gravité
+* Gyroscope
+* Lumière
+* Accélération
+* Champ Magnétique
+* Pression
+* Proximité
+* Humidité
+* Rotation
+
+<footer/>
+
+<aside class="notes">
+
+</aside>
+
+##==##
+
+## Sensors
+
+
+Globalement, les sensors se récupère à travers un objet nommé **SensorManager**, ce dernier est un service Android qui vous donne accès au sensor souhaité.
+<br>
+
+Ce dernier sera par la suite observé par un listener qui recevra en fonction du sensor un tableau de données disponibles dans une unité bien précise. Par exemple : 
+ * L'accéléromètre renvoie un tableau de données [x,y,z] en m/s²
+ * Le Giroscope renvoie un tableau de rotation autour des axes [x,y,z] en rad/s
+
+Vous pourrez trouver toutes les informations correspondantes aux sensors sur ces pages : 
+
+ * Sensor Motion : http://goo.gl/1iq3dY
+ * Sensor Position : http://goo.gl/M4wtvG
+ * Sensor Environnement : http://goo.gl/d4o3IL
+
+
+
+<footer/>
+
+<aside class="notes">
+Globallement chacun a son unité ! mais se récupèrent tous de la même manière
+</aside>
+
+
+##==##
+
+
+## Sensors
+
+### Android
+
+
+Récupartion du service de sensors : 
+
+<br>
+
+```java
+private SensorManager mSensorManager;
+private Sensor mLight;
+
+@Override
+public final void onCreate(Bundle savedInstanceState) {
+ super.onCreate(savedInstanceState);
+ setContentView(R.layout.main);
+
+ mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+ mLight = mSensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
+}
+```
+
+
+
+<footer/>
+
+<aside class="notes">
+Suite slide suivant
+</aside>
+
+##==##
+
+## Sensors
+
+### Android
+
+
+Récupartion du service de sensors : 
+
+<br>
+
+```java
+public class SensorActivity extends Activity implements SensorEventListener {
+ public final void onAccuracyChanged(Sensor sensor, int accuracy) {
+  // Do something here if sensor accuracy changes.
+}
+ public final void onSensorChanged(SensorEvent event) {
+  // Many sensors return 3 values, one for each axis.
+  float lux = event.values[0];
+ }
+ protected void onResume() {
+  super.onResume();
+  mSensorManager.registerListener(this, mLight, 
+    SensorManager.SENSOR_DELAY_NORMAL);
+ }
+ protected void onPause() {
+  super.onPause();
+  mSensorManager.unregisterListener(this);
+ }
+}
+```
+
+
+
+<footer/>
+
+<aside class="notes">
+Delay normal = 200 000 micro seconds
+Delay Game = 20 000 micro / Delay UI = 60 000 micro / 
+Delay Fastest = 0 !
+Depuis 3.0 on peut spécifier son délai !
+</aside>
+
+##==##
+
+<!--
+//     _____ ______ _   _            _    _ _______ __  __ _      _____ 
+//    / ____|  ____| \ | |          | |  | |__   __|  \/  | |    | ____|
+//   | (___ | |__  |  \| |  ______  | |__| |  | |  | \  / | |    | |__  
+//    \___ \|  __| | . ` | |______| |  __  |  | |  | |\/| | |    |___ \ 
+//    ____) | |____| |\  |          | |  | |  | |  | |  | | |____ ___) |
+//   |_____/|______|_| \_|          |_|  |_|  |_|  |_|  |_|______|____/ 
+//                                                                      
+//      
+-->
+
+
+<div class='transition'></div>
+
+# Sensors - HTML5
 
 ![icon](/assets/images/html5_logo.jpg)
 
 ##==##
 
+## Sensors
 
-## Le RIA
+### HTML5
 
-### Rich Internet Application
+Contrairement à Android où l'on demande la permission au moment de l'installation, avec HTML5, on demande l'autorisation à l'utilisateur au moment où l'on a besoin d'accéder à la fonctionnalité.
 
-* Il s'agit de la notion d'application web au sens moderne ou encore Single Page Application.
-
-<br><br>
-On distingue le RIA du site Web ! 
-<br><br>
-Dans ce type d'application, un simple navigateur suffit à afficher l'application
-
-
-<aside class="notes">
-
-</aside>
-<footer/>
-
-##==##
-
-
-## Le RIA
-
-### DHTML
-
-* Le RIA ne fait pas tout, le DHTML est au coeur du processus.
-
-<br>
-Il s'agit donc de pages dynamiques dont le contenu change de façon dynamique en fonction des actions de l'utilisateur. 
-
-Le DHTML ne fait pas référence à une technologie en particulier mais correspond plus à un concept
-
-
-<aside class="notes">
-Repose sur le JS et l'arbre DOM !
-</aside>
-<footer/>
-##==##
-
-## RIA
-
-<u>Avantages</u>
-
-* Accessible partout
-
-* Cross Plateforme
-
-* Pas d'installation
-
-* Mise à jour simplifiée (dépend quand même de la solution choisie)
-
-<u>Inconvénients</u>
-
-* Référencement difficile
-
-* Etre Cross browser ça peut être très compliqué !
-
-
-<aside class="notes">
-MAJ : parler de l'AppCache
-</aside>
-<footer/>
-
-
-##==##
-
-
-## RIA
-
-### Les acteurs actuels 
-
-* GWT
-* Flex
-* JavaFX
-* ExtJS
-* AngularJS
-* Dojo
-* ...
-
-<aside class="notes">
-GWT : Java / Flex : ActionScript
-</aside>
-<footer/>
-
-##==##
-
-## RIA 
-
-### Vs Applications Native ?
-
-* Ne doit pas être considéré comme un remplaçant des applications natives !
-
-* Le besoin doit être étudié ! 
-
-* La fragmentation existe
-
-* Derrière le mythe, il y a la réalité 
-
-![center w-600 wp-300](assets/images/navigateurs_internet.png)
-
+Dans html5 les sensors s'accèdent tous en fonction d'une api qui leur est propre et tous les sensors ne sont pas dispo pour tous les navigateurs : 
 
 <footer/>
 
 <aside class="notes">
-exposer débat et incompréhensions !
+
+Dire que c'est toujours Asyncrhrone ! 
 </aside>
 
 ##==##
 
-<!--
-               _         __   __
-     /\       | |  /\    \ \ / /
-    /  \      | | /  \    \ V / 
-   / /\ \ _   | |/ /\ \    > <  
-  / ____ \ |__| / ____ \  / . \ 
- /_/    \_\____/_/    \_\/_/ \_\
-     
--->
+## Sensors
 
-<div class='transition'></div>
+### HTML5
 
-# AJAX
-
-![icon](/assets/images/ajax.png)
-
-
-<aside class="notes">
-</aside>
-##==##
-
-## AJAX
-
-### Asynchronous Javascript And Xml
-
-* L'asynchrone au coeur du fonctionnement des appels.
-
-* Les appels sont faits via le XMLHttpRequest
-
-* La communication se fait maintenant le plus souvent en JSON 
-
-* Fut créé par Microsoft comme un composant ActiveX à travers le XMLHttpRequest. 
-
-* Fut vraiment répendu entre 2002 et 2005
-
-<aside class="notes">
-
-</aside>
-<footer/>
-##==##
-
-## AJAX
-
-### Modèle Syncrhone (Appli web classique)
-
-![center w-900 wp-600](assets/images/classic_web_flow.png)
-
-<aside class="notes">
-
-</aside>
-<footer/>
-
-
-##==##
-
-## AJAX
-
-### Modèle Asyncrhone
-
-![center w-900 wp-600](assets/images/ajax_flow.png)
-
-<aside class="notes">
-
-</aside>
-<footer/>
-
-##==##
-
-
-## AJAX
-
-### La philosophie
-
-On lance une requête sans attendre la réponse !
 
 <br>
 
-  * Interaction plus forte
-
-  * On doit repenser notre modèle
-
-  * On accepte de travailler avec des données qui ne sont pas à jour 
+|Navigateur|Location|Vibration|orientation|devicemotion|
+|-----|------|-|----------|----------|
+|Android|x|-|x|x|
+|Chrome|x|-|x|x|
+|Chrome Beta|x|x|x|x|
+|Firefox|x|x|x|x|
+|Safari|x|-|x|x|
+|IE Mobile|x|-|x|x|
 
 <footer/>
 
-##==##
-<!--
-  _    _ _______ __  __ _      _____ 
- | |  | |__   __|  \/  | |    | ____|
- | |__| |  | |  | \  / | |    | |__  
- |  __  |  | |  | |\/| | |    |___ \ 
- | |  | |  | |  | |  | | |____ ___) |
- |_|  |_|  |_|  |_|  |_|______|____/ 
-           
--->
-
-<div class='transition'></div>
-
-# HTML5 : les concepts 
-
-![icon](/assets/images/HTML5-CSS-JS.png)
-
-
 <aside class="notes">
+Expliquer chaque sensor
+
 </aside>
+
 ##==##
 
-## HTML5
+## Sensors
 
-### C'est quoi ?
+### HTML5
 
 
-![center h-600 hp-400](/assets/images/html5_css_javascript.png)
+<br><br>
 
-<aside class="notes">
-HTML5 n'est rien sans le javascript
-</aside>
+|Navigateur|light|proximity|usermedia|webSpeech|
+|-----|------|-|----------|----------|
+|Android|-|-|4+|-|
+|Chrome|-|-|x|x|
+|Chrome Beta|-|-|x|x|
+|Firefox|x|x|x|-|
+|Safari|-|-|-|-|
+|IE Mobile|-|-|-|-|
+
 <footer/>
+
+<aside class="notes">
+Expliquer chaque sensor
+En gros vérifier à chaque fois ! 
+</aside>
+
 ##==##
 
+## Sensors
 
-## HTML5
+### Orientation
 
-### Concrètement
+3 Axes : **Alpha, Gamma, Beta**
+
+Se fait à plat ! 
 
 <br><br><br>
 
-![center h-200 hp-100](/assets/images/html5-infographics-features.jpg)
+![float-left w-300 wp-200](assets/images/device-orientation-z.jpg)
 
-<aside class="notes">
+![float-left w-300  wp-200](assets/images/device-orientation-y.jpg)
 
-</aside>
-<footer/>
-##==##
-
-
-## HTML5
-
-### Concrètement
-
-<br><br>
-
-![center h-400 hp-300](/assets/images/html5-infographics-features-web.jpg)
-
-<aside class="notes">
-
-</aside>
-<footer/>##==##
-
-
-## HTML5
-
-### Et pour le mobile ?
-
-<br><br>
-
-![center h-400 hp-300](/assets/images/html5-infographics-features-mobile.jpg)
-
-<aside class="notes">
-
-</aside>
-<footer/>
-##==##
-
-
-## HTML5
-
-### Nouvelles balises
-
-* Un ensemble de nouvelles balises ont été définies pour mieux structurer son html : 
-
-  > header, footer, asside, article, section, figure, nav, details, audio, video, canvas...
-
-
-* Une simplication de l'entête html a aussi été prévu : 
-
-```html
-<!DOCTYPE html>
-```
-
-Suffit pour spécifier le contenu du fichier
-
-<aside class="notes">
-
-</aside>
-<footer/>
-
-##==##
-
-## HTML5
-
-### Nouvelles balises
-
-![center w-900 wp-600](assets/images/semantique.jpg)
-
-<aside class="notes">
-
-</aside>
-<footer/>
-##==##
-
-
-## HTML5
-
-### Concrètement ça nous sert à quoi ?
-
-* On donne plus de sens à nos pages => On simplifie notre arbre DOM
-
-* On a plus besoin de plugins pour lire des vidéos, jouer des sons, animer des objets => Un simple mobile peut faire tourner des applications riches ! 
-
-<br>
-
-![center w-800 wp-600](assets/images/flash-dead.png)
+![float-left w-300  wp-200](assets/images/device-orientation-x.jpg)
 
 <footer/>
-##==##
-
-## HTML5
-
-### Pour le mobile
-
-Il y a un ensemble de choses à prendre en comptes quand on fait du full mobile 
-
-<br>
-
- * Ajouter dans la balise head
-
-```html
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-```
-
-<br>
-
- * Le click n'existe pas ! Vive le touch
-
-<br>
-
- * Le mobile ce n'est pas que pour les téléphones ! Il faut utiliser les media quieries
-
- <br>
-
- * <span style="color:red"><em>LE HTML5 N'EST PAS LA SOLUTION A TOUT</em></span>
-
-<aside class="notes">
-ça sert à ne pas zommer et autoriser le multi touch
-Parler de l'amalgame html5 un seul dev 
-</aside>
-<footer/>
-
-
-##==##
-
-
-<!--
-            _______     ___   _  _____ _____  _    _  ____  _   _ ______  _____ 
-     /\    / ____\ \   / / \ | |/ ____|  __ \| |  | |/ __ \| \ | |  ____|/ ____|
-    /  \  | (___  \ \_/ /|  \| | |    | |__) | |__| | |  | |  \| | |__  | (___  
-   / /\ \  \___ \  \   / | . ` | |    |  _  /|  __  | |  | | . ` |  __|  \___ \ 
-  / ____ \ ____) |  | |  | |\  | |____| | \ \| |  | | |__| | |\  | |____ ____) |
- /_/    \_\_____/   |_|  |_| \_|\_____|_|  \_\_|  |_|\____/|_| \_|______|_____/ 
-      
--->
-
-<div class='transition'></div>
-
-# Interractions asyncrhones
-
-![icon](/assets/images/webworker.jpg)
-<aside class="notes">
-
-</aside>
-##==##
-
-
-## Interractions asyncrhones
-
-### Interractions serveur 
-
-<br><br>
-
-* AJAX avec un appel serveur classique
-
-<br><br>
-
-* SSE pour Server Send Event => push serveur
-
-<br><br>
-
-* WebSockets => communication bidirectionnelle
-
-<br><br>
-
-* Techniques de Fallback basées sur du polling !
-
-<footer />
-
-<aside class="notes">
-Parler du principe du fallback !
-</aside>
-
-##==##
-
-
-## Interractions asyncrhones
-
-### Appels Ajax
-
-![center h-400 hp-300](/assets/images/temps_reel.png)
-
-<br><br>
-
-L'appareil est à l'origine de l'appel !
 
 <aside class="notes">
 
 </aside>
-<footer/>
 
 ##==##
 
+## Sensors
 
-## Interractions asyncrhones
+### Orientation
 
-### Appels Ajax : création
+
+<br><br><br>
+
 
 ```javascript
-var xhr = new XMLHttpRequest(); 
- 
-xhr.open("GET", "handlingData.php?param1=value1&param2=value2", true);
-xhr.send(null);
-```
-
-* open s'utilise de cette façon : open(sMethod, sUrl, bAsync)
-
- * sMethod : la méthode de transfert : GET ou POST;
-
- * sUrl : la page qui donnera suite à la requête. Ça peut être une page dynamique (PHP, CFM, ASP) ou une page statique (TXT, XML...);
-
- * bAsync : définit si le mode de transfert est asynchrone ou non (synchrone). Dans ce cas, mettez true . Ce paramètre est optionnel et vaut true par défaut.
-
-
-<aside class="notes">
-Parler du passage de paramètres !
-</aside>
-<footer/>
-
-##==##
-
-
-## Interractions asyncrhones
-
-### Appels Ajax : création
-
-```javascript
-var xhr = new XMLHttpRequest(); 
- 
-xhr.open("POST", "handlingData.php", true);
-xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-xhr.send("param1=value2&param2=value2");
-```
-<br>
-Poissibilité d'encoder les paramètres ! 
-
-```javascript
-var sVar1 = encodeURIComponent("contenu avec des espaces");
-var sVar2 = encodeURIComponent("je vois que vous êtes un bon élève... ");
- 
-xhr.open("GET", "handlingData.php?variable1=" + sVar1 
-      + "&variable2= " + sVar2, true);
-xhr.send(null);
-```
-
-
-<aside class="notes">
-
-</aside>
-<footer/>
-
-##==##
-
-
-## Interractions asyncrhones
-
-### SSE Serveur Sent Event
-
-![center h-400 hp-300](/assets/images/temps_reel_sse.png)
-
-<br>
-
- L'information provient du serveur
-
-<aside class="notes">
-
-</aside>
-<footer/>
-
-##==##
-
-
-## Interractions asyncrhones
-
-### SSE Serveur Sent Event
-
-Le sse a la force d'être basé sur une simple HttpServlet !
-
-```javascript
-if (!!window.EventSource) {
- var source = new EventSource('stream.php');
- source.addEventListener('message', function(e) {
-  console.log(e.data);
- }, false);
- source.addEventListener('open', function(e) {
- // Connection was opened.
- }, false);
- source.addEventListener('error', function(e) {
-  if (e.readyState == EventSource.CLOSED) {
-    // Connection was closed.
-  }
- }, false);
+if(window.DeviceOrientationEvent) {
+  window.addEventListener("deviceorientation", process, false);
 } else {
-  // Result to xhr polling :(
+  // Le navigateur ne supporte pas l'événement deviceorientation
+}
+
+function process(event) {
+  var alpha = event.alpha;
+  var beta = event.beta;
+  var gamma = event.gamma;
+   
 }
 ```
 
-Tout se passe sur l'écoute d'événements ! on va écouter un type d'événement et cela conditionnera les données réceptionnées
-
-<aside class="notes">
-Parler du LongPolling
-</aside>
 <footer/>
-
-##==##
-
-
-## Interractions asyncrhones
-
-### SSE Serveur Sent Event : Format d'échange
-
-Pour bien communiquer le SSE nécessite un format
-
-```javascript
-event: update\n
-id:12221\n
-retry: 10000\n
-data: first line data\n
-data: last line data\n\n
-```
-
-* <em>event</em> : Définit le type d'événement (obligatoire)
-
-* <em>id</em> : Définit un identifiant unique pour notre message (optionnel)
-
-* <em>retry</em> : Définit le délai de reconnection automatique du navigateur en cas de perte de connection (par défaut 3s). Cette variable est en millisecondes (optionnel)
-
-* <em>event</em> : Définit les données. Chaque ligne doit être suivit d'un "\n" et la dernière ligne doit avoir "\n\n" (obligatoire)
-
-
-<aside class="notes">
-Parler du LongPolling
-</aside>
-<footer/>
-
-##==##
-
-
-## Interractions asyncrhones
-
-### SSE Serveur Sent Event : Format d'échange
-
-####Exemple d'envoie d'un JSON
-
-<br><br>
-```javascript
-event: userlogon\n
-data: {"username": "jefBinomed"}\n\n
-
-
-event: message\n
-data: {\n
-data: "msg": "hello world",\n
-data: "id": 12345\n
-data: }\n\n
-```
-
-
-<aside class="notes">
-Parler du LongPolling
-</aside>
-<footer/>
-
-
-##==##
-
-
-## Interractions asyncrhones
-
-### WebSockets
-
-![center h-400 hp-300](/assets/images/temps_reel_websockets.png)
-
-<br>
-
- La communication est bidirectionnelle
 
 <aside class="notes">
 
 </aside>
-<footer/>
 
 ##==##
 
+## Sensors
 
-## Interractions asyncrhones
+### DeviceMotion
 
-### WebSockets
 
-Basé sur le protocol HTTP !  Mais nécessite un objet spécifique côté serveur !
+<br><br><br>
 
 
 ```javascript
-var connection = new WebSocket('ws://html5rocks.websocket.org/echo');
-
-// When the connection is open, send some data to the server
-connection.onopen = function () {
-  connection.send('Ping'); // Send the message 'Ping' to the server
-};
-
-// Log errors
-connection.onerror = function (error) {
-  console.log('WebSocket Error ' + error);
-};
-
-// Log messages from the server
-connection.onmessage = function (e) {
-  console.log('Server: ' + e.data);
-};
-```
-
-<aside class="notes">
-les données sont dispo sour E.DATA ! 
-</aside>
-<footer/>
-
-##==##
-
-
-## Interractions asyncrhones
-
-### WebSockets
-
-
-* <em>onopen</em> : Fonction appelée lors de l'ouverture de la websocket.
-
-* <em>onerror</em> : Fonction appelée lors de la réception d'une erreur
-
-* <em>onmessage</em> : Fonction appelée lors de la réception d'un message
-
-<aside class="notes">
-les données sont dispo sour E.DATA ! 
-</aside>
-<footer/>
-
-##==##
-
-
-## Interractions asyncrhones
-
-### WebSockets envoie de messages
-
-
-<br><br>
-```javascript
-var connection = new WebSocket('ws://html5rocks.websocket.org/echo');
-
-
-connection.send(message);
-
-```
-
-
-<aside class="notes">
-les données sont dispo sour E.DATA ! 
-</aside>
-<footer/>
-
-
-##==##
-
-## Interractions asyncrhones
-
-### WebWorkers
-
-
-La solution à cette fenêtre ! 
-
-<br><br>
-
-![center w-600 wp-600](assets/images/javascript_unresponsive.webp)
-
-
-<aside class="notes">
-
-</aside>
-<footer/>
-
-##==##
-
-## Interractions asyncrhones
-
-### WebWorkers
-
-
-<u>Main.js</u>
-
-<br>
-
-```javascript
-var worker = new Worker('doWork.js');
-
-worker.addEventListener('message', function(e) {
-  console.log('Worker said: ', e.data);
-}, false);
-
-worker.postMessage('Hello World'); // Send data to our worker.
-```
-
-<br>
-
-1. Déclaration du fichier javascript comprennant la tache longue
-
-2. Ecoute des données provenant du worker
-
-3. Démarage et envoie de données au worker ! 
-
-
-<aside class="notes">
-2 choses un prog principal et un JS exécuté dans un autre thread ! 
-</aside>
-<footer/>
-
-##==##
-
-## Interractions asyncrhones
-
-### WebWorkers
-
-<u>doWork.js</u>
-
-<br>
-
-```javascript
-self.addEventListener('message', function(e) {
-  self.postMessage(e.data);
-  self.close();
-}, false);
-```
-
-<br>
-
-1. Ecoute des données du pogramme principal
-
-2. Envoie de données à ce dernier
-
-3. Arret du worker. On pourrait aussi utilser depuis le main.js : 
-
-<br>
-
-```javascript
-worker.terminate();
-```
-
-<aside class="notes">
-
-</aside>
-<footer/>
-
-##==##
-
-<!--
- __          ________ ____   _____ ____  __  __ _____   ____  _   _ ______ _   _ _______ _____ 
- \ \        / /  ____|  _ \ / ____/ __ \|  \/  |  __ \ / __ \| \ | |  ____| \ | |__   __/ ____|
-  \ \  /\  / /| |__  | |_) | |   | |  | | \  / | |__) | |  | |  \| | |__  |  \| |  | | | (___  
-   \ \/  \/ / |  __| |  _ <| |   | |  | | |\/| |  ___/| |  | | . ` |  __| | . ` |  | |  \___ \ 
-    \  /\  /  | |____| |_) | |___| |__| | |  | | |    | |__| | |\  | |____| |\  |  | |  ____) |
-     \/  \/   |______|____/ \_____\____/|_|  |_|_|     \____/|_| \_|______|_| \_|  |_| |_____/ 
-         
--->
-
-
-<div class='transition'></div>
-
-# WebComponents
-
-![icon](/assets/images/webcomponents.png)
-
-
-##==##
-
-## WebComponents
-
-Il s'agit de l'enrichissement de la sémantique web et donc de la création de composants graphiques réutilisables ! 
-
-
-![center h-600 hp-400](assets/images/caniuse_webcomponents.png)
-
-<footer />
-
-<aside class="notes">
-On est vraiment dans de l'urly
-Mais ça vaut le coup d'en parler ! 
-</aside>
-
-##==##
-
-## WebComponents
-
-### Vocabulaire associé
-
-* Shadow DOM : concept du remplacement du contenu d'une balise html par un ou N tag html => L'objectif est de cacher le cotenu affiché dans l'écriture du html initial. Les contrôles associés sont aussi disponibles.
-
-<br><br>
-
-* Template Tag : Il s'agit de template html. Dans le sens de la réutisabilité ! On va déclarer un élément <strong>'```<template>```'</strong> et ce dernier contiendra du html. L'intérêt est qu'il est inactif tant que l'on ne l'a pas activé => Il n'y a pas de chargement de données, pas de chargement de scripts si on en a pas besoin !
-
-
-<footer />
-
-<aside class="notes">
-
-</aside>
-
-##==##
-
-## WebComponents
-
-### Pourquoi en parler ?
-
-<br>
-
-1. Car c'est l'avenir du web ! 
-
-2. Car c'est déjà présent (et pas que par les navigateurs)
-
- 1. Polymer.js : Un polyfill puissant permettant l'émulation de nombreuses fonctionnalités des webComponents
-
- 2. AngularJS : Un framework javascript offrant un pseudo mécanisme de templating fort pratique et permettant une réelle réutilisation du code. Developpé par Google
-
- 3. Brick : Librairie Javacript offrant un ensemble de nouvelles balises graphiques réutilisables pour se faciliter l'écriture d'applications web. Développé par Mozilla
-
-
-<footer />
-
-<aside class="notes">
-Expliquer Polyfill
-Polymer : l'ultime mais compliqué
-AngularJS : très bien mais nécessite de suivre les principes du framework
-Brick : pratique pour l'utilisation de graphiques !
-</aside>
-
-##==##
-
-<!--
-   _____ _______ ____   _____ _  __          _____ ______ 
-  / ____|__   __/ __ \ / ____| |/ /    /\   / ____|  ____|
- | (___    | | | |  | | |    | ' /    /  \ | |  __| |__   
-  \___ \   | | | |  | | |    |  <    / /\ \| | |_ |  __|  
-  ____) |  | | | |__| | |____| . \  / ____ \ |__| | |____ 
- |_____/   |_|  \____/ \_____|_|\_\/_/    \_\_____|______|
-                                                          
-         
--->
-
-<div class='transition'></div>
-
-# Base de données
-
-![icon](/assets/images/html5-local-storage.jpg)
-
-
-##==##
-
-## Base de données
-
-
-Il y a plusieurs possibilités pour stocker des donneés sur HTML5 : 
-
-<br><br>
-
-* FileWriter API : Uniquement sur Chrome aujourd'hui
-
-<br>
-
-* SessionStorage : Système de clés valeurs disponible uniquement pour une session
-
-<br>
-
-* LocalStorage : Système de clés valeurs disponible depuis IE7
-
-<br>
-
-* IndexedDB : Système de base de données orienté document (NoSQL)
-
-
-
-<footer />
-<aside class="notes">
-On ne parlera pas de FileWriter
-</aside>
-
-##==##
-
-## Base de données
-
-### LocalStorage & SessionStorage
-
-
-<u>Avantages</u>
-
-<br>
-
-* Implémentation très simple et même API ! 
-
-* Disponible même sur IE7 ! 
-
-<br>
-
-<u>Inconvénients</u>
-
-<br>
-
-* Pas évident à réquêter 
-
-* Ne stocke que des chaines de caractères ! => Dans le cas de la manipulation d'objets, on est obligé de parser / formater notre objet.
-
-<footer />
-
-##==##
-
-## Base de données
-
-### LocalStorage & SessionStorage
-
-c'est accessible directement avec la propriété javascript <strong>'localStorage'</strong> ou <strong>'sessionStorage'</strong>
-
-```javascript
-if (localStorage){
-  localStorage['maCle'] = 'maValeur';
-  localStorage.setitem('maCle2', 'maValeur');
-  var valeur = localStorage['maCle'];
-  var valeur2 = localStorage.getitem('maCle2');
-  var key = localStorage.key(1);
-  localStrorage.removeItem('maCle');
-  localStorage.clear();
+// Listener of devieMotion
+var deviceMotionListener = function(event){        
+  var x = event.acceleration.x;
+  var y = event.acceleration.y;
+  var z = event.acceleration.z;
+  socket.sendDeviceMotion(Math.abs(x));
+  currentPercent+=Math.abs(x);
+  updatePercent();
+}
+
+// We add the listener
+function register(){
+  window.addEventListener('devicemotion', deviceMotionListener, false);
 }
 ```
 
-* 2 premières lignes : on met à jour une donnée
+<footer/>
 
-* 2 suivantes : on récupère une donnée
-
-* key(index) : on récupère la clé à l'index indiqué
-
-* removeItem(clé) : supprimer la donnée du storage
-
-* clear() : vide le storage
-
-
-
-<footer />
+<aside class="notes">
+Peut tenir compte de la gravité ! 
+</aside>
 
 ##==##
 
-## Base de données
+## Sensors
 
-### IndexedDB
+### Proximity
 
+Firefox uniquement ! 
 
-<u>Avantages</u>
+* Renvoie des valeurs entre 0 et 5 (0 étant proche)
 
-<br>
+<br><br>
 
-* Commence à être répendu pour IE10 et autres
-
-* Stockage plus performant
-
-* Possiblité de requêtage (/!\ pas de SQL pour autant)
-
-<br>
-
-<u>Inconvénients</u>
-
-<br>
-
-* Plus compliqué à mettre en oeuvre
-
-* Asyncrhone => ça peut complexifier l'écriture du code
-
-<footer />
-
-##==##
-
-## Base de données
-
-### IndexedDB
-
-#### 1 : Ouverture
 
 ```javascript
-var gdgnamespace = {};
-gdgnamespace.indexedDB = {};
-gdgnamespace.indexedDB.db = null;
+var deviceProximityHandler = function(event) {
+  var value = Math.round(event.value);            
+  socket.sendProximity(value);
+  manageProximityValue(value);
+}
 
-gdgnamespace.indexedDB.open = function() {
-  var version = 1;
-  var request = indexedDB.open("todos", version);
+function register(){
+  window.addEventListener('deviceproximity', deviceProximityHandler, false);
+}
 
-  request.onsuccess = function(e) {
-    gdgnamespace.indexedDB.db = e.target.result;
-    // Do some more stuff in a minute
-  };
-
-  request.onerror = gdgnamespace.indexedDB.onerror;
-};
+function unregister(){
+  window.removeEventListener('deviceproximity', deviceProximityHandler, false);
+}
 ```
 
-On créer une base de données nommée "todos"
+<footer/>
 
-<footer />
-
+<aside class="notes">
+existe aussi le user proximity
+</aside>
 
 ##==##
 
-## Base de données
+## Sensors
 
-### IndexedDB
+### Light
 
-#### 2 : Création d'un Object Store
+Firefox uniquement ! 
 
-Un object Store est l'équivalent d'une table SQL, il doit être déclaré pour être persisté
+* Renvoie des valeurs entre 0 et > 1000 (0 étant sombre)
+
+* Est dépendant du téléphone et de l'implementation
+
+* On a 2 façon de faire =>
+ * Gestion par valeur
+ * Gestion par états : Dim / Normal / Bright
+
+<br><br>
 
 ```javascript
-gdgnamespace.indexedDB.open = function() {
-  var version = 1;
-  var request = indexedDB.open("todos", version);
-  // We can only create Object stores in a versionchange transaction.
-  request.onupgradeneeded = function(e) {
-    var db = e.target.result;
-    // A versionchange transaction is started automatically.
-    e.target.transaction.onerror = gdgnamespace.indexedDB.onerror;
-    if(db.objectStoreNames.contains("todo")) {
-      db.deleteObjectStore("todo");
+var deviceLightHandler = function(event) {
+ var value = Math.min(45, event.value);
+ percent = Math.round((value / 45) * 100);
+ socket.sendLight(percent); 
+ updateLight();
+}
+
+window.addEventListener('devicelight', deviceLightHandler, false);
+```
+
+<footer/>
+
+<aside class="notes">
+existe aussi le user proximity
+</aside>
+
+##==##
+
+## Sensors
+
+### User Media
+
+* Encore dépendant des navigateurs ! Modernizr à la rescousse.
+
+* Possibilité de préciser ce qu'on récupère et on peut séparer les flux ! 
+
+```javascript
+var vgaConstraints = {
+  video: {
+    mandatory: {
+      maxWidth: 640,
+      maxHeight: 360
     }
-    var store = db.createObjectStore("todo",
-      {keyPath: "timeStamp"});
-    store.createIndex('name', 'name',{unique:false});
-  };
+  }
 };
 ```
+<br>
 
+* Devient intéressant s'il est mixé avec des effets ou des canvas.
 
-<footer />
+* Ou encore plus sympa pour faire une visio via le webRTC !
 
-##==##
-
-## Base de données
-
-### IndexedDB
-
-#### 2 : Création d'un Object Store
-
-
-On a créé une "table" todo qui devra systématiquement contenir un champ "timeStamp" !
-On a aussi ajouté un index sur notre base pour mieux la requêter
-
-<footer />
-
-##==##
-
-## Base de données
-
-### IndexedDB
-
-#### 3 : Ajout d'un objet dans la base
-
-
-
-```javascript
-gdgnamespace.indexedDB.addTodo = function(todoText) {
-  var db = gdgnamespace.indexedDB.db;
-  var trans = db.transaction(["todo"], "readwrite");
-  var store = trans.objectStore("todo");
-  var request = store.put({
-    "name":"myTask"
-    "text": todoText,
-    "timeStamp" : new Date().getTime()
-  });
-
-  request.onsuccess = function(e) {
-    // Re-render all the todo's
-    gdgnamespace.indexedDB.getAllTodoItems();
-  };
-
-  request.onerror = function(e) {
-    console.log(e.value);
-  };
-};
-```
-
-<footer />
-
-##==##
-
-## Base de données
-
-### IndexedDB
-
-#### 3 : Ajout d'un objet dans la base
-
-
-On doit récupérer le ObjectStore de notre base de données pour ajouter une données dans la "table" ! 
-
-<footer />
-
-##==##
-
-## Base de données
-
-### IndexedDB
-
-#### 4 : Requêtons la base
-
-
-
-```javascript
-gdgnamespace.indexedDB.getAllTodoItems = function() {
-  var todos = document.getElementById("todoItems");
-  todos.innerHTML = "";
-  var db = gdgnamespace.indexedDB.db;
-  var trans = db.transaction(["todo"], "readwrite");
-  var store = trans.objectStore("todo");
-  // Get everything in the store;
-  var keyRange = IDBKeyRange.lowerBound(0);
-  var cursorRequest = store.openCursor(keyRange);
-  cursorRequest.onsuccess = function(e) {
-    var result = e.target.result;
-    if(!!result == false)
-      return;
-    renderTodo(result.value);
-    result.continue();
-  };
-  cursorRequest.onerror = gdgnamespace.indexedDB.onerror;
-};
-```
-
-
-
-<footer />
-
-<aside class="notes">
-Demander si cursor ça va pour tout le monde ?
-</aside>
-
-##==##
-
-## Base de données
-
-### IndexedDB
-
-#### 4 : Requêtons la base
-
-
-
-On ne peut manipuler un Cursor que dans une transaction !
-
-Quand on manipule IDKeyRange, on requête sur l'id de l'objet ! 
-
-<footer />
-
-<aside class="notes">
-Demander si cursor ça va pour tout le monde ?
-</aside>
-
-##==##
-
-## Base de données
-
-### IndexedDB
-
-#### 5 : Supprimons une donnée
-
-
-
-```javascript
-gdgnamespace.indexedDB.deleteTodo = function(id) {
-  var db = gdgnamespace.indexedDB.db;
-  var trans = db.transaction(["todo"], "readwrite");
-  var store = trans.objectStore("todo");
-
-  var request = store.delete(id);
-
-  request.onsuccess = function(e) {
-    gdgnamespace.indexedDB.getAllTodoItems();  // Refresh the screen
-  };
-
-  request.onerror = function(e) {
-    console.log(e);
-  };
-};
-```
-
-<footer />
+<footer/>
 
 <aside class="notes">
 
 </aside>
 
 ##==##
+
+## Sensors
+
+### User Media
+
+```javascript
+// We define the video constraints
+var constraints = {video: true};
+
+// We get the correct navigator method
+var gUM = Modernizr.prefixed('getUserMedia', navigator);
+
+// We manage an error while getting the stream
+function handleUserMediaError(error){
+  console.log('navigator.getUserMedia error: ', error);
+}
+
+// We manage the success of getting the stream
+function handleUserMedia(stream){
+  localStream = stream;
+  video.src = window.URL.createObjectURL(stream);
+  video.play();
+  videoParent.addClass('rotate');
+}
+
+gUM(constraints, handleUserMedia, handleUserMediaError);
+
+```
+
+
+<footer/>
+
+<aside class="notes">
+
+</aside>
+
+##==##
+
+
+## Sensors
+
+### Vibration
+
+* Vibre selon un temps donné ! 
+
+<br>
+
+* Peut faire vibrer tout un ensmble de temps
+ * n = temps à vibrer
+ * n+1 = temps entre vibration n et n+2
+
+<br>
+
+```javascript
+window.navigator.vibrate(arrayOfVibration);
+```
+
+
+<footer/>
+
+<aside class="notes">
+
+</aside>
+
+##==##
+
+
+## Sensors
+
+### WebSpeech
+
+* Uniquement sur Chrome
+
+* Un tag existe pour gagner en code 
+
+```html
+<input x-webkit-speech>
+```
+
+<br>
+
+* Il reste plus intéressant d'utiliser la librairie Javascript
+
+* Manque encore cependant de précision pour de la commande vocale => avoir des textes approximatifs de détection
+
+```javascript
+var recognition = new webkitSpeechRecognition();
+recognition.lang = 'fr-FR';
+recognition.continuous = true;
+recognition.interimResults = true;
+
+recognition.start();
+recognition.stop();
+```
+
+<footer/>
+
+<aside class="notes">
+se stope automatiquement toutes les minutes
+expliquer les paramètres
+</aside>
+
+##==##
+
+## Sensors
+
+### WebSpeech
+
+
+```javascript
+recognition.onresult = function(event){
+  for (var i = event.resultIndex; i < event.results.length; i++){    
+    if (event.results[i].isFinal){
+      console.log('>>>>>Transcript : '+event.results[i][0].transcript);      
+    }
+  }
+};
+recognition.onend = function(){
+  console.log('End of recognition');
+};
+recognition.onerror = function(event) {
+  if (event.error == 'no-speech') {
+    console.log('No Speech');
+  }
+  if (event.error == 'audio-capture') {
+    console.log('No microphone')
+  }
+  if (event.error == 'not-allowed') {
+    console.log('Not Allowed');
+  }
+};     
+```
+
+<footer/>
+
+<aside class="notes">
+/!\ A l'approximation dans les résultats ! 
+</aside>
+
+##==##
+
+
+<!--
+
+//    _      ____   _____            _    _ _______ __  __ _      _____ 
+//   | |    / __ \ / ____|          | |  | |__   __|  \/  | |    | ____|
+//   | |   | |  | | |       ______  | |__| |  | |  | \  / | |    | |__  
+//   | |   | |  | | |      |______| |  __  |  | |  | |\/| | |    |___ \ 
+//   | |___| |__| | |____           | |  | |  | |  | |  | | |____ ___) |
+//   |______\____/ \_____|          |_|  |_|  |_|  |_|  |_|______|____/ 
+//                                                                      
+//   
+-->
+
+
+<div class='transition'></div>
+
+# Localisation - HTML5
+
+![icon](/assets/images/html5_logo.jpg)
+
+##==##
+
+## Localisation
+
+### HTML5
+
+* Comme pour le reste des sensors, la géolocalisation se fait via l'accès à une méthode particulière. Comme les autres sensors, la géolocalisation est asyncrhone.
+* Trois méthodes sont présentes : 
+
+ * getCurentPosition : position à un instant T.
+ * watchPosition : position en permanence.
+ * clearWatch : retire l'observation de la position permanente.
+
+
+
+<footer/>
+
+<aside class="notes">
+Info sert à connaître l'état, doit être pris en comptes
+</aside>
+
+##==##
+
+## Localisation
+
+### HTML5
+
+* On récupère un objet avec les propriétés suivantes : 
+ * latitude
+ * longitude
+ * altitude
+ * speed
+ * infos
+
+
+<footer/>
+
+<aside class="notes">
+Info sert à connaître l'état, doit être pris en comptes
+</aside>
+
+##==##
+
+## Localisation
+
+### HTML5
+
+```javascript
+function maPosition(position) {
+  var infopos = "Position déterminée :\n";
+  infopos += "Latitude : "+position.coords.latitude +"\n";
+  infopos += "Longitude: "+position.coords.longitude+"\n";
+  infopos += "Altitude : "+position.coords.altitude +"\n";
+  document.getElementById("infoposition").innerHTML = infopos;
+}
+function showError(error){
+ switch(error.code) 
+  {
+  case error.PERMISSION_DENIED:
+  case error.POSITION_UNAVAILABLE:
+  case error.TIMEOUT:
+  case error.UNKNOWN_ERROR:
+  }
+}
+if(navigator.geolocation)
+  navigator.geolocation.getCurrentPosition(maPosition, showError);
+```
+
+<footer/>
+
+<aside class="notes">
+
+</aside>
+
+##==##
+
+## Localisation
+
+### HTML5
+
+On peut passer des options pour compléter la requête
+
+```javascript
+navigator.geolocation.getCurrentPosition(maPosition, showError,
+  {
+   enableHighAccuracy : true,
+   timeout : 10000,
+   maximumAge : 10000
+  }
+);
+```
+
+
+* enableHighAccuracy : (true ou false > valeur par défaut) obtient une position plus précise via GPS
+
+* timeout : (type long ou Infinity > valeur par défaut) durée avant renvoi vers la function d'erreur
+
+* maximumAge : (type long ou Infinity, 0 > valeur par défaut) durée de la mise en cache de la position courante, si maximumAge:0 alors la position ne viendra jamais du cache, elle sera toujours renouvelée
+
+<footer/>
+
+<aside class="notes">
+
+</aside>
+
+##==##
+
+## Localisation
+
+### HTML5
+
+Seule cette API vous donne accès à la position GPS mais si vous voulez avoir accès à une donnée type adresse postale, il faudra utiliser une librairie tierce : 
+
+* Google Maps 
+* OSM 
+* Bing
+* Yahoo
+
+<br>
+<!--
+// http://wiki.openstreetmap.org/wiki/Nominatim#Reverse%5FGeocoding%5F.2F%5FAddress%5Flookup
+// http://nominatim.openstreetmap.org/reverse?format=json&lat=52.5487429714954&lon=-1.81602098644987&zoom=18&addressdetails=1
+-->
+
+
+<footer/>
+
+<aside class="notes">
+
+</aside>
+
+##==##
+
+
+
 
 <div class="last-slide"></div>
 
