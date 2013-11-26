@@ -17,7 +17,7 @@
 
 ### New Future Communication
 
-![title](/assets/images/nfa_large.png)
+![title](assets/images/nfa_large.png)
 
 <footer/>
 
@@ -27,11 +27,11 @@
 
 ###  Jean-François GARREAU
 
-![avatar center w-300 wp-200](/assets/images/jf.jpg)
+![avatar center w-300 wp-200](assets/images/jf.jpg)
 
 
-![company_logo](/assets/images/sqli_logo.png)
-![gdg_logo](/assets/images/GDG-Logo-carre.png)
+![company_logo](assets/images/sqli_logo.png)
+![gdg_logo](assets/images/GDG-Logo-carre.png)
 
 <footer/>
 
@@ -1388,7 +1388,7 @@ Sample available here : [Play Store](https://play.google.com/store/apps/details?
 
 ## Links
 
-*  http://goo.gl/O3ryH The presentation
+*  http://goo.gl/vc3kqE The presentation
 
 * [NFC Forum specifications](http://www.nfc-forum.org/specs/spec_list/)
 
@@ -1443,4 +1443,4 @@ Sample available here : [Play Store](https://play.google.com/store/apps/details?
 
 # **Merci**
 
-![avatar](/assets/images/jf.jpg)
+![avatar](assets/images/jf.jpg)
