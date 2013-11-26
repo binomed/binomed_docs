@@ -1,3 +1,5 @@
+
+
 <div class="first-slide"></div>
 
 # **Workshop HTML5**
@@ -63,6 +65,8 @@
 * WebSpeech API
 
 <footer/>
+
+<!--<script type="text/javascript">helloSommaire();</script>-->
 
 ##==##
 

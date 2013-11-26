@@ -1,28 +1,452 @@
-/* line 4, ../scss/prez/style.scss */
+/*
+* Directives
+*/
+/* line 9, ../scss/prez/anims.scss */
+.qrCodeDirective {
+  text-align: center;
+}
+
+/* line 13, ../scss/prez/anims.scss */
+.qrCodeDirective ul {
+  list-style: none;
+}
+
+/* line 17, ../scss/prez/anims.scss */
+.qrCodeDirective img {
+  margin: auto;
+}
+
+/***
+ *       ____       _            _        _   _             
+ *      / __ \     (_)          | |      | | (_)            
+ *     | |  | |_ __ _  ___ _ __ | |_ __ _| |_ _  ___  _ __  
+ *     | |  | | '__| |/ _ \ '_ \| __/ _` | __| |/ _ \| '_ \ 
+ *     | |__| | |  | |  __/ | | | || (_| | |_| | (_) | | | |
+ *      \____/|_|  |_|\___|_| |_|\__\__,_|\__|_|\___/|_| |_|
+ *                                                          
+ *                                                          
+ */
+/* line 32, ../scss/prez/anims.scss */
+.orientation {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 500px;
+}
+
+/* line 40, ../scss/prez/anims.scss */
+.safe_lock_funny_win {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-image: url("../assets/images/excited-adventure-time.gif");
+  background-size: 400px 224px;
+  background-repeat: no-repeat;
+  width: 400px;
+  height: 224px;
+  margin-left: -200px;
+  margin-top: -112px;
+}
+
+/* line 54, ../scss/prez/anims.scss */
+.safe_lock_door {
+  position: absolute;
+  background-image: url("../assets/images/fabric_plaid.png");
+  left: 50%;
+  top: 0;
+  width: 400px;
+  height: 400px;
+  margin-left: -200px;
+}
+
+@media only screen and (min-width: 769px) {
+  /* line 65, ../scss/prez/anims.scss */
+  .safe_lock_door.open {
+    -webkit-animation: openAnimation 2s 1 ease;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform: perspective(1000) rotateY(-90deg);
+    -webkit-transform-origin: 0% 0%;
+    -moz-animation-name: openAnimation 2s 1 ease;
+    -moz-transform-style: preserve-3d;
+    -moz-transform: perspective(1000) rotateY(-90deg);
+    -moz-transform-origin: 0% 0%;
+    animation-name: openAnimation 2s 1 ease;
+    transform-style: preserve-3d;
+    transform: perspective(1000) rotateY(-90deg);
+    transform-origin: 0% 0%;
+  }
+}
+/* line 87, ../scss/prez/anims.scss */
+.safe_lock_bg {
+  position: absolute;
+  background-image: url("../assets/images/safe_lock_bg.png");
+  background-size: 300px;
+  background-repeat: no-repeat;
+  left: 50%;
+  top: 50%;
+  width: 300px;
+  height: 300px;
+  margin-left: -150px;
+  margin-top: -150px;
+}
+
+/* line 100, ../scss/prez/anims.scss */
+.safe_lock {
+  position: absolute;
+  background-image: url("../assets/images/safe_lock.png");
+  background-size: 300px;
+  background-repeat: no-repeat;
+  left: 50%;
+  top: 50%;
+  width: 300px;
+  height: 300px;
+  margin-left: -150px;
+  margin-top: -150px;
+}
+
+@keyframes openAnimation {
+  /* line 114, ../scss/prez/anims.scss */
+  from {
+    transform-style: preserve-3d;
+    transform: perspective(1000) rotateY(0deg);
+    transform-origin: 0% 0%;
+  }
+
+  /* line 119, ../scss/prez/anims.scss */
+  to {
+    transform-style: preserve-3d;
+    transform: perspective(1000) rotateY(-90deg);
+    transform-origin: 0% 0%;
+  }
+}
+
+@-webkit-keyframes openAnimation {
+  /* line 126, ../scss/prez/anims.scss */
+  from {
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform: perspective(1000) rotateY(0deg);
+    -webkit-transform-origin: 0% 0%;
+  }
+
+  /* line 131, ../scss/prez/anims.scss */
+  to {
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform: perspective(1000) rotateY(-90deg);
+    -webkit-transform-origin: 0% 0%;
+  }
+}
+
+@-moz-keyframes openAnimation {
+  /* line 138, ../scss/prez/anims.scss */
+  from {
+    -moz-transform-style: preserve-3d;
+    -moz-transform: perspective(1000) rotateY(0deg);
+    -moz-transform-origin: 0% 0%;
+  }
+
+  /* line 143, ../scss/prez/anims.scss */
+  to {
+    -moz-transform-style: preserve-3d;
+    -moz-transform: perspective(1000) rotateY(-90deg);
+    -moz-transform-origin: 0% 0%;
+  }
+}
+
+/***
+ *      __  __       _   _             
+ *     |  \/  |     | | (_)            
+ *     | \  / | ___ | |_ _  ___  _ __  
+ *     | |\/| |/ _ \| __| |/ _ \| '_ \ 
+ *     | |  | | (_) | |_| | (_) | | | |
+ *     |_|  |_|\___/ \__|_|\___/|_| |_|
+ *                                     
+ *                                     
+ */
+/* line 161, ../scss/prez/anims.scss */
+.devicemotion {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 480px;
+}
+
+/* line 169, ../scss/prez/anims.scss */
+.devicemotion-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-image: url("../assets/images/empty-battery.png");
+  background-size: 300px 480px;
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 480px;
+  margin-left: -150px;
+  margin-top: -240px;
+}
+
+/* line 182, ../scss/prez/anims.scss */
+.devicemotion-percent {
+  position: absolute;
+  left: 50%;
+  bottom: 40px;
+  width: 300px;
+  margin-left: -150px;
+  background-color: #91fc74;
+  border-radius: 30px;
+}
+
+/***
+ *      _____               _           _ _         
+ *     |  __ \             (_)         (_) |        
+ *     | |__) | __ _____  ___ _ __ ___  _| |_ _   _ 
+ *     |  ___/ '__/ _ \ \/ / | '_ ` _ \| | __| | | |
+ *     | |   | | | (_) >  <| | | | | | | | |_| |_| |
+ *     |_|   |_|  \___/_/\_\_|_| |_| |_|_|\__|\__, |
+ *                                             __/ |
+ *                                            |___/ 
+ */
+/* line 206, ../scss/prez/anims.scss */
+.proximity {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 480px;
+}
+
+/* line 214, ../scss/prez/anims.scss */
+.push_button {
+  position: relative;
+  width: 200px;
+  color: #FFF;
+  display: block;
+  text-decoration: none;
+  margin: 0 auto;
+  border-radius: 5px;
+  border: solid 1px #D94E3B;
+  background: #cb3b27;
+  text-align: center;
+  padding: 20px 30px;
+  -webkit-transition: all 0.1s;
+  -moz-transition: all 0.1s;
+  transition: all 0.1s;
+  -webkit-box-shadow: 0px 9px 0px #84261a;
+  -moz-box-shadow: 0px 9px 0px #84261a;
+  box-shadow: 0px 9px 0px #84261a;
+}
+
+/* line 234, ../scss/prez/anims.scss */
+.push_button.press {
+  -webkit-box-shadow: 0px 2px 0px #84261a;
+  -moz-box-shadow: 0px 2px 0px #84261a;
+  box-shadow: 0px 2px 0px #84261a;
+  position: relative;
+  top: 7px;
+}
+
+/***
+ *      _      _       _     _   
+ *     | |    (_)     | |   | |  
+ *     | |     _  __ _| |__ | |_ 
+ *     | |    | |/ _` | '_ \| __|
+ *     | |____| | (_| | | | | |_ 
+ *     |______|_|\__, |_| |_|\__|
+ *                __/ |          
+ *               |___/           
+ */
+/* line 254, ../scss/prez/anims.scss */
+#light {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  top: 0;
+  left: 0;
+}
+
+/* line 262, ../scss/prez/anims.scss */
+.light-bg {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  top: 50%;
+  left: 50%;
+  margin-left: -250px;
+  margin-top: -250px;
+}
+
+/***
+ *      _    _            __  __          _ _       
+ *     | |  | |          |  \/  |        | (_)      
+ *     | |  | |___  ___  | \  / | ___  __| |_  __ _ 
+ *     | |  | / __|/ _ \ | |\/| |/ _ \/ _` | |/ _` |
+ *     | |__| \__ \  __/ | |  | |  __/ (_| | | (_| |
+ *      \____/|___/\___| |_|  |_|\___|\__,_|_|\__,_|
+ *                                                  
+ *                                                  
+ */
+/* line 284, ../scss/prez/anims.scss */
+.usermedia {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 600px;
+}
+
+/* line 292, ../scss/prez/anims.scss */
+.videoParent {
+  position: absolute;
+  left: 50%;
+  top: 250px;
+  width: 500px;
+  margin-left: -250px;
+}
+
+/* line 300, ../scss/prez/anims.scss */
+.videoParent.rotate {
+  -webkit-animation: rotateAnimation 10s infinite ease;
+  -moz-animation-name: rotateAnimation 10s infinite ease;
+  animation-name: rotateAnimation 10s infinite ease;
+}
+
+@keyframes rotateAnimation {
+  /* line 312, ../scss/prez/anims.scss */
+  from {
+    transform-style: preserve-3d;
+    transform: perspective(1000) rotateY(0deg);
+    /*transform-origin: 0% 0%;*/
+  }
+
+  /* line 317, ../scss/prez/anims.scss */
+  to {
+    transform-style: preserve-3d;
+    transform: perspective(1000) rotateY(360deg);
+    /*transform-origin: 0% 0%;*/
+  }
+}
+
+@-webkit-keyframes rotateAnimation {
+  /* line 324, ../scss/prez/anims.scss */
+  from {
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform: perspective(1000) rotateY(0deg);
+    /*-webkit-transform-origin: 0% 0%;*/
+  }
+
+  /* line 329, ../scss/prez/anims.scss */
+  to {
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform: perspective(1000) rotateY(360deg);
+    /*-webkit-transform-origin: 0% 0%;*/
+  }
+}
+
+@-moz-keyframes rotateAnimation {
+  /* line 336, ../scss/prez/anims.scss */
+  from {
+    -moz-transform-style: preserve-3d;
+    -moz-transform: perspective(1000) rotateY(0deg);
+    /*-moz-transform-origin: 0% 0%;*/
+  }
+
+  /* line 341, ../scss/prez/anims.scss */
+  to {
+    -moz-transform-style: preserve-3d;
+    -moz-transform: perspective(1000) rotateY(360deg);
+    /*-moz-transform-origin: 0% 0%;*/
+  }
+}
+
+/***
+ *     __      ___ _               _   _             
+ *     \ \    / (_) |             | | (_)            
+ *      \ \  / / _| |__  _ __ __ _| |_ _  ___  _ __  
+ *       \ \/ / | | '_ \| '__/ _` | __| |/ _ \| '_ \ 
+ *        \  /  | | |_) | | | (_| | |_| | (_) | | | |
+ *         \/   |_|_.__/|_|  \__,_|\__|_|\___/|_| |_|
+ *                                                   
+ *                                                   
+ */
+/* line 362, ../scss/prez/anims.scss */
+#vibration {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 500px;
+}
+
+/***
+ *     __          __  _        _____                      _     
+ *     \ \        / / | |      / ____|                    | |    
+ *      \ \  /\  / /__| |__   | (___  _ __   ___  ___  ___| |__  
+ *       \ \/  \/ / _ \ '_ \   \___ \| '_ \ / _ \/ _ \/ __| '_ \ 
+ *        \  /\  /  __/ |_) |  ____) | |_) |  __/  __/ (__| | | |
+ *         \/  \/ \___|_.__/  |_____/| .__/ \___|\___|\___|_| |_|
+ *                                   | |                         
+ *                                   |_|                         
+ */
+/* line 381, ../scss/prez/anims.scss */
+#webspeech {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 530px;
+}
+
+/* line 389, ../scss/prez/anims.scss */
+#mic {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  margin-left: -25px;
+  background-image: url(../assets/images/mic.gif);
+}
+
+/* line 399, ../scss/prez/anims.scss */
+#mic.animate {
+  background-image: url(../assets/images/mic-animate.gif);
+}
+
+/* line 403, ../scss/prez/anims.scss */
+#webspeech canvas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -250px;
+  margin-top: -200px;
+}
+
+/* line 5, ../scss/prez/style.scss */
 img[alt*=logo] {
   width: 50px;
 }
 
-/* line 10, ../scss/prez/style.scss */
+/* line 11, ../scss/prez/style.scss */
 img[alt*=sommaire] {
   height: 60px;
 }
 
-/* line 14, ../scss/prez/style.scss */
+/* line 15, ../scss/prez/style.scss */
 .reveal .slides > section img[alt*=avatar] {
   -webkit-box-shadow: #cccccc 2px 2px 2px 3px;
   -moz-box-shadow: #cccccc 2px 2px 2px 3px;
   box-shadow: #cccccc 2px 2px 2px 3px;
 }
 
-/* line 18, ../scss/prez/style.scss */
+/* line 19, ../scss/prez/style.scss */
 .reveal .slides > section img[alt*=title] {
   height: auto;
   width: auto;
   margin-left: -128px;
 }
 
-/* line 25, ../scss/prez/style.scss */
+/* line 26, ../scss/prez/style.scss */
 img[alt*=company_logo] {
   position: absolute;
   bottom: 20%;
@@ -30,7 +454,7 @@ img[alt*=company_logo] {
   width: 200px;
 }
 
-/* line 32, ../scss/prez/style.scss */
+/* line 33, ../scss/prez/style.scss */
 img[alt*=gdg_logo] {
   position: absolute;
   bottom: 20%;
@@ -38,25 +462,25 @@ img[alt*=gdg_logo] {
   width: 200px;
 }
 
-/* line 39, ../scss/prez/style.scss */
+/* line 40, ../scss/prez/style.scss */
 div.no-bullet ~ ul {
   list-style-type: none;
 }
-/* line 42, ../scss/prez/style.scss */
+/* line 43, ../scss/prez/style.scss */
 div.no-bullet ~ ul img {
   margin: 0;
 }
-/* line 46, ../scss/prez/style.scss */
+/* line 47, ../scss/prez/style.scss */
 div.no-bullet ~ ul li {
   line-height: 60px;
 }
 
-/* line 51, ../scss/prez/style.scss */
+/* line 52, ../scss/prez/style.scss */
 div.padding ~ * {
   padding-left: 50px;
 }
 
-/* line 56, ../scss/prez/style.scss */
+/* line 57, ../scss/prez/style.scss */
 p.surround {
   font-weight: bold;
   font-size: 1em;
@@ -64,18 +488,18 @@ p.surround {
   text-align: left;
 }
 
-/* line 63, ../scss/prez/style.scss */
+/* line 64, ../scss/prez/style.scss */
 table.table_version {
   position: absolute;
   top: 4em;
 }
 
-/* line 68, ../scss/prez/style.scss */
+/* line 69, ../scss/prez/style.scss */
 table.table_version td, table.table_version th {
   font-size: 14px;
 }
 
-/* line 72, ../scss/prez/style.scss */
+/* line 73, ../scss/prez/style.scss */
 .img_version {
   margin-top: 7em;
 }
@@ -87,19 +511,19 @@ table.table_version td, table.table_version th {
  <link href="http://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 
 */
-/* line 85, ../scss/prez/style.scss */
+/* line 86, ../scss/prez/style.scss */
 img.float-left {
   float: left;
   margin-right: 40px;
 }
 
-/* line 90, ../scss/prez/style.scss */
+/* line 91, ../scss/prez/style.scss */
 img.float-right {
   float: right;
   margin-left: 10px;
 }
 
-/* line 95, ../scss/prez/style.scss */
+/* line 96, ../scss/prez/style.scss */
 #ndef_header {
   height: 90px;
   width: 510px;
@@ -108,7 +532,7 @@ img.float-right {
   background: rgba(252, 203, 206, 0.5);
 }
 
-/* line 104, ../scss/prez/style.scss */
+/* line 105, ../scss/prez/style.scss */
 #ndef_length_type {
   height: 90px;
   width: 510px;
@@ -117,7 +541,7 @@ img.float-right {
   background: rgba(252, 203, 206, 0.5);
 }
 
-/* line 112, ../scss/prez/style.scss */
+/* line 113, ../scss/prez/style.scss */
 #ndef_length_payload {
   height: 90px;
   width: 510px;
@@ -126,7 +550,7 @@ img.float-right {
   background: rgba(252, 203, 206, 0.5);
 }
 
-/* line 120, ../scss/prez/style.scss */
+/* line 121, ../scss/prez/style.scss */
 #ndef_type_id {
   height: 175px;
   width: 510px;
@@ -135,7 +559,7 @@ img.float-right {
   background: rgba(252, 203, 206, 0.5);
 }
 
-/* line 128, ../scss/prez/style.scss */
+/* line 129, ../scss/prez/style.scss */
 #ndef_payload {
   height: 90px;
   width: 510px;
@@ -144,7 +568,7 @@ img.float-right {
   background: rgba(252, 203, 206, 0.5);
 }
 
-/* line 136, ../scss/prez/style.scss */
+/* line 137, ../scss/prez/style.scss */
 pre.java.redux code.java, pre.xml.redux code.xml {
   font-size: 0.6em;
 }
@@ -152,7 +576,7 @@ pre.java.redux code.java, pre.xml.redux code.xml {
 /**
 * Common overrides
 */
-/* line 145, ../scss/prez/style.scss */
+/* line 146, ../scss/prez/style.scss */
 img.company_logo {
   position: absolute;
   bottom: 20%;
@@ -160,7 +584,7 @@ img.company_logo {
   width: 150px;
 }
 
-/* line 152, ../scss/prez/style.scss */
+/* line 153, ../scss/prez/style.scss */
 img.gdg_logo {
   position: absolute;
   bottom: 20%;
@@ -168,7 +592,7 @@ img.gdg_logo {
   width: 150px;
 }
 
-/* line 159, ../scss/prez/style.scss */
+/* line 160, ../scss/prez/style.scss */
 section.intro.pagetransition > h2 {
   left: 65%;
   top: 20%;
@@ -178,7 +602,7 @@ section.intro.pagetransition > h2 {
   transform: rotate(0deg);
 }
 
-/* line 168, ../scss/prez/style.scss */
+/* line 169, ../scss/prez/style.scss */
 .avatar {
   -moz-box-shadow: 2px 2px 2px 3px #CCCCCC;
   -webkit-box-shadow: 2px 2px 2px 3px #CCCCCC;
@@ -186,41 +610,41 @@ section.intro.pagetransition > h2 {
   width: 200px;
 }
 
-/* line 176, ../scss/prez/style.scss */
+/* line 177, ../scss/prez/style.scss */
 .logo_twitter, .logo_gplus {
   position: absolute;
   width: 40px;
   right: 35%;
 }
 
-/* line 181, ../scss/prez/style.scss */
+/* line 182, ../scss/prez/style.scss */
 .logo_twitter {
   bottom: 5%;
 }
 
-/* line 185, ../scss/prez/style.scss */
+/* line 186, ../scss/prez/style.scss */
 .logo_gplus {
   bottom: 15%;
 }
 
-/* line 189, ../scss/prez/style.scss */
+/* line 190, ../scss/prez/style.scss */
 .twitters_account, .gplus_account {
   position: absolute;
   font-size: 20px;
   right: 11%;
 }
 
-/* line 195, ../scss/prez/style.scss */
+/* line 196, ../scss/prez/style.scss */
 .twitters_account {
   bottom: 6%;
 }
 
-/* line 200, ../scss/prez/style.scss */
+/* line 201, ../scss/prez/style.scss */
 .gplus_account {
   bottom: 17%;
 }
 
-/* line 204, ../scss/prez/style.scss */
+/* line 205, ../scss/prez/style.scss */
 .lien_prez {
   position: absolute;
   top: 30%;
