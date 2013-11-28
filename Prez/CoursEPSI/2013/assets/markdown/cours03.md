@@ -1086,7 +1086,7 @@ Seule cette API vous donne accès à la position GPS mais si vous voulez avoir a
 
 <div class="topic-title"></div>
 
-# Cours Mobilité - 02 HTML5
+# Cours Mobilité - 03 HTML5 - Android
 
 <div class="presenter"></div>
 

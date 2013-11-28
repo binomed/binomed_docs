@@ -281,6 +281,26 @@ Subtilité : ça marche mieux si le téléphone est a plat
 
 ##==##
 
+## Orientation
+
+<div class="controlsSensor">
+  <div id="startOrientation" class='btnStart push_button'>Demarer</div>
+  <div id="stopOrientation" class='btnStop push_button'>Arrêter</div>
+</div>
+<div class="sensorExample">
+  <div class="orientation">
+    <div class="safe_lock_funny_win visible-md visible-lg"></div>
+    <div class="safe_lock_door">
+      <div class="safe_lock_bg"></div>
+      <div class="safe_lock"></div>
+    </div>
+  </div>
+</div>
+
+<footer/>
+
+##==##
+
 <!--
 //    _____  ________      _______ _____ ______   __  __  ____ _______ _____ ____  _   _ 
 //   |  __ \|  ____\ \    / /_   _/ ____|  ____| |  \/  |/ __ \__   __|_   _/ __ \| \ | |
@@ -356,6 +376,23 @@ function register(){
 
 ##==##
 
+## DeviceMotion
+
+<div class="controlsSensor">
+  <div id="startDeviceMotion" class='btnStart push_button'>Demarer</div>
+  <div id="stopDeviceMotion" class='btnStop push_button'>Arrêter</div>
+</div>
+<div class="sensorExample">
+  <div class="devicemotion">  
+    <div class="devicemotion-percent"></div>
+    <div class="devicemotion-bg"></div>
+  </div>
+</div>
+
+<footer/>
+
+##==##
+
 <!--
 //    _____  _____   ______   _______ __  __ _____ _________     __
 //   |  __ \|  __ \ / __ \ \ / /_   _|  \/  |_   _|__   __\ \   / /
@@ -413,6 +450,23 @@ function unregister(){
 ![center w-800](assets/images/push-button.jpg)
 
 <footer/>
+
+##==##
+
+## Proximity
+
+<div class="controlsSensor">
+  <div id="startProximity" class='btnStart push_button'>Demarer</div>
+  <div id="stopProximity" class='btnStop push_button'>Arrêter</div>
+</div>
+<div class="sensorExample">
+  <div id="proximity">
+    <div class="push_button">Push Me ! </div>
+  </div>
+</div>
+
+<footer/>
+
 
 ##==##
 
@@ -475,6 +529,23 @@ window.addEventListener('devicelight', deviceLightHandler, false);
 ![center w-400](assets/images/Hanging_Bulb.jpg)
 
 <footer/>
+
+##==##
+
+## Light
+
+<div class="controlsSensor">
+  <div id="startLight" class='btnStart push_button'>Demarer</div>
+  <div id="stopLight" class='btnStop push_button'>Arrêter</div>
+</div>
+<div class="sensorExample">
+   <div id="light">
+    <div class="light-bg"></div>
+  </div>
+</div>
+
+<footer/>
+
 
 ##==##
 
@@ -569,6 +640,25 @@ gUM(constraints, handleUserMedia, handleUserMediaError);
 ![center w-400](assets/images/css3-transform-rotateX-perspective.png)
 
 <footer/>
+
+##==##
+
+## User Media
+
+<div class="controlsSensor">
+  <div id="startUserMedia" class='btnStart push_button'>Demarer</div>
+  <div id="stopUserMedia" class='btnStop push_button'>Arrêter</div>
+</div>
+<div class="sensorExample">
+  <div id="usermedia">
+    <div class="videoParent">
+      <video id="streamVideo" width="500px"></video>
+    </div>
+  </div>
+</div>
+
+<footer/>
+
 
 ##==##
 

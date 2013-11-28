@@ -16,6 +16,34 @@
   margin: auto;
 }
 
+/* line 23, ../scss/prez/anims.scss */
+.reveal .controlsSensor {
+  position: absolute;
+  width: 600px;
+  left: 50%;
+  top: 150px;
+  margin-left: -300px;
+  height: 100px;
+}
+/* line 32, ../scss/prez/anims.scss */
+.reveal .sensorExample {
+  position: absolute;
+  width: 1000px;
+  height: 600px;
+  top: 280px;
+  left: 50%;
+  margin-left: -500px;
+}
+/* line 41, ../scss/prez/anims.scss */
+.reveal .btnStart.push_button {
+  display: inline-block;
+}
+/* line 45, ../scss/prez/anims.scss */
+.reveal .btnStop.push_button {
+  display: inline-block;
+  margin-left: 20px;
+}
+
 /***
  *       ____       _            _        _   _             
  *      / __ \     (_)          | |      | | (_)            
@@ -26,17 +54,67 @@
  *                                                          
  *                                                          
  */
-/* line 32, ../scss/prez/anims.scss */
-.orientation {
+/* line 63, ../scss/prez/anims.scss */
+.reveal {
+  @keyframes openAnimation {
+    /* line 148, ../scss/prez/anims.scss */
+    from {
+      transform-style: preserve-3d;
+      transform: perspective(1000) rotateY(0deg);
+      transform-origin: 0% 0%;
+    }
+
+    /* line 153, ../scss/prez/anims.scss */
+    to {
+      transform-style: preserve-3d;
+      transform: perspective(1000) rotateY(-90deg);
+      transform-origin: 0% 0%;
+    }
+}
+
+  @-webkit-keyframes openAnimation {
+    /* line 160, ../scss/prez/anims.scss */
+    from {
+      -webkit-transform-style: preserve-3d;
+      -webkit-transform: perspective(1000) rotateY(0deg);
+      -webkit-transform-origin: 0% 0%;
+    }
+
+    /* line 165, ../scss/prez/anims.scss */
+    to {
+      -webkit-transform-style: preserve-3d;
+      -webkit-transform: perspective(1000) rotateY(-90deg);
+      -webkit-transform-origin: 0% 0%;
+    }
+}
+
+  @-moz-keyframes openAnimation {
+    /* line 172, ../scss/prez/anims.scss */
+    from {
+      -moz-transform-style: preserve-3d;
+      -moz-transform: perspective(1000) rotateY(0deg);
+      -moz-transform-origin: 0% 0%;
+    }
+
+    /* line 177, ../scss/prez/anims.scss */
+    to {
+      -moz-transform-style: preserve-3d;
+      -moz-transform: perspective(1000) rotateY(-90deg);
+      -moz-transform-origin: 0% 0%;
+    }
+}
+
+}
+/* line 66, ../scss/prez/anims.scss */
+.reveal .orientation {
   position: relative;
   top: 0;
   left: 0;
   width: 100%;
   height: 500px;
 }
-
-/* line 40, ../scss/prez/anims.scss */
-.safe_lock_funny_win {
+/* line 74, ../scss/prez/anims.scss */
+.reveal .safe_lock_funny_win {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -48,9 +126,8 @@
   margin-left: -200px;
   margin-top: -112px;
 }
-
-/* line 54, ../scss/prez/anims.scss */
-.safe_lock_door {
+/* line 88, ../scss/prez/anims.scss */
+.reveal .safe_lock_door {
   position: absolute;
   background-image: url("../assets/images/fabric_plaid.png");
   left: 50%;
@@ -59,10 +136,9 @@
   height: 400px;
   margin-left: -200px;
 }
-
 @media only screen and (min-width: 769px) {
-  /* line 65, ../scss/prez/anims.scss */
-  .safe_lock_door.open {
+  /* line 99, ../scss/prez/anims.scss */
+  .reveal .safe_lock_door.open {
     -webkit-animation: openAnimation 2s 1 ease;
     -webkit-transform-style: preserve-3d;
     -webkit-transform: perspective(1000) rotateY(-90deg);
@@ -77,8 +153,8 @@
     transform-origin: 0% 0%;
   }
 }
-/* line 87, ../scss/prez/anims.scss */
-.safe_lock_bg {
+/* line 121, ../scss/prez/anims.scss */
+.reveal .safe_lock_bg {
   position: absolute;
   background-image: url("../assets/images/safe_lock_bg.png");
   background-size: 300px;
@@ -90,9 +166,8 @@
   margin-left: -150px;
   margin-top: -150px;
 }
-
-/* line 100, ../scss/prez/anims.scss */
-.safe_lock {
+/* line 134, ../scss/prez/anims.scss */
+.reveal .safe_lock {
   position: absolute;
   background-image: url("../assets/images/safe_lock.png");
   background-size: 300px;
@@ -105,54 +180,6 @@
   margin-top: -150px;
 }
 
-@keyframes openAnimation {
-  /* line 114, ../scss/prez/anims.scss */
-  from {
-    transform-style: preserve-3d;
-    transform: perspective(1000) rotateY(0deg);
-    transform-origin: 0% 0%;
-  }
-
-  /* line 119, ../scss/prez/anims.scss */
-  to {
-    transform-style: preserve-3d;
-    transform: perspective(1000) rotateY(-90deg);
-    transform-origin: 0% 0%;
-  }
-}
-
-@-webkit-keyframes openAnimation {
-  /* line 126, ../scss/prez/anims.scss */
-  from {
-    -webkit-transform-style: preserve-3d;
-    -webkit-transform: perspective(1000) rotateY(0deg);
-    -webkit-transform-origin: 0% 0%;
-  }
-
-  /* line 131, ../scss/prez/anims.scss */
-  to {
-    -webkit-transform-style: preserve-3d;
-    -webkit-transform: perspective(1000) rotateY(-90deg);
-    -webkit-transform-origin: 0% 0%;
-  }
-}
-
-@-moz-keyframes openAnimation {
-  /* line 138, ../scss/prez/anims.scss */
-  from {
-    -moz-transform-style: preserve-3d;
-    -moz-transform: perspective(1000) rotateY(0deg);
-    -moz-transform-origin: 0% 0%;
-  }
-
-  /* line 143, ../scss/prez/anims.scss */
-  to {
-    -moz-transform-style: preserve-3d;
-    -moz-transform: perspective(1000) rotateY(-90deg);
-    -moz-transform-origin: 0% 0%;
-  }
-}
-
 /***
  *      __  __       _   _             
  *     |  \/  |     | | (_)            
@@ -163,17 +190,16 @@
  *                                     
  *                                     
  */
-/* line 161, ../scss/prez/anims.scss */
-.devicemotion {
+/* line 196, ../scss/prez/anims.scss */
+.reveal .devicemotion {
   position: relative;
   top: 0;
   left: 0;
   width: 100%;
   height: 480px;
 }
-
-/* line 169, ../scss/prez/anims.scss */
-.devicemotion-bg {
+/* line 204, ../scss/prez/anims.scss */
+.reveal .devicemotion-bg {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -185,9 +211,8 @@
   margin-left: -150px;
   margin-top: -240px;
 }
-
-/* line 182, ../scss/prez/anims.scss */
-.devicemotion-percent {
+/* line 217, ../scss/prez/anims.scss */
+.reveal .devicemotion-percent {
   position: absolute;
   left: 50%;
   bottom: 40px;
@@ -207,17 +232,16 @@
  *                                             __/ |
  *                                            |___/ 
  */
-/* line 206, ../scss/prez/anims.scss */
-.proximity {
+/* line 242, ../scss/prez/anims.scss */
+.reveal .proximity {
   position: relative;
   top: 0;
   left: 0;
   width: 100%;
   height: 480px;
 }
-
-/* line 214, ../scss/prez/anims.scss */
-.push_button {
+/* line 250, ../scss/prez/anims.scss */
+.reveal .push_button {
   position: relative;
   width: 200px;
   color: #FFF;
@@ -236,9 +260,8 @@
   -moz-box-shadow: 0px 9px 0px #84261a;
   box-shadow: 0px 9px 0px #84261a;
 }
-
-/* line 234, ../scss/prez/anims.scss */
-.push_button.press {
+/* line 270, ../scss/prez/anims.scss */
+.reveal .push_button.press {
   -webkit-box-shadow: 0px 2px 0px #84261a;
   -moz-box-shadow: 0px 2px 0px #84261a;
   box-shadow: 0px 2px 0px #84261a;
@@ -256,17 +279,16 @@
  *                __/ |          
  *               |___/           
  */
-/* line 254, ../scss/prez/anims.scss */
-#light {
+/* line 291, ../scss/prez/anims.scss */
+.reveal #light {
   position: relative;
   width: 100%;
   height: 500px;
   top: 0;
   left: 0;
 }
-
-/* line 262, ../scss/prez/anims.scss */
-.light-bg {
+/* line 299, ../scss/prez/anims.scss */
+.reveal .light-bg {
   position: absolute;
   width: 500px;
   height: 500px;
@@ -286,77 +308,78 @@
  *                                                  
  *                                                  
  */
-/* line 284, ../scss/prez/anims.scss */
-.usermedia {
+/* line 322, ../scss/prez/anims.scss */
+.reveal {
+  @keyframes rotateAnimation {
+    /* line 351, ../scss/prez/anims.scss */
+    from {
+      transform-style: preserve-3d;
+      transform: perspective(1000) rotateY(0deg);
+      /*transform-origin: 0% 0%;*/
+    }
+
+    /* line 356, ../scss/prez/anims.scss */
+    to {
+      transform-style: preserve-3d;
+      transform: perspective(1000) rotateY(360deg);
+      /*transform-origin: 0% 0%;*/
+    }
+}
+
+  @-webkit-keyframes rotateAnimation {
+    /* line 363, ../scss/prez/anims.scss */
+    from {
+      -webkit-transform-style: preserve-3d;
+      -webkit-transform: perspective(1000) rotateY(0deg);
+      /*-webkit-transform-origin: 0% 0%;*/
+    }
+
+    /* line 368, ../scss/prez/anims.scss */
+    to {
+      -webkit-transform-style: preserve-3d;
+      -webkit-transform: perspective(1000) rotateY(360deg);
+      /*-webkit-transform-origin: 0% 0%;*/
+    }
+}
+
+  @-moz-keyframes rotateAnimation {
+    /* line 375, ../scss/prez/anims.scss */
+    from {
+      -moz-transform-style: preserve-3d;
+      -moz-transform: perspective(1000) rotateY(0deg);
+      /*-moz-transform-origin: 0% 0%;*/
+    }
+
+    /* line 380, ../scss/prez/anims.scss */
+    to {
+      -moz-transform-style: preserve-3d;
+      -moz-transform: perspective(1000) rotateY(360deg);
+      /*-moz-transform-origin: 0% 0%;*/
+    }
+}
+
+}
+/* line 323, ../scss/prez/anims.scss */
+.reveal .usermedia {
   position: relative;
   top: 0;
   left: 0;
   width: 100%;
   height: 600px;
 }
-
-/* line 292, ../scss/prez/anims.scss */
-.videoParent {
+/* line 331, ../scss/prez/anims.scss */
+.reveal .videoParent {
   position: absolute;
   left: 50%;
   top: 250px;
   width: 500px;
   margin-left: -250px;
 }
-
-/* line 300, ../scss/prez/anims.scss */
-.videoParent.rotate {
+/* line 339, ../scss/prez/anims.scss */
+.reveal .videoParent.rotate {
   -webkit-animation: rotateAnimation 10s infinite ease;
   -moz-animation-name: rotateAnimation 10s infinite ease;
   animation-name: rotateAnimation 10s infinite ease;
-}
-
-@keyframes rotateAnimation {
-  /* line 312, ../scss/prez/anims.scss */
-  from {
-    transform-style: preserve-3d;
-    transform: perspective(1000) rotateY(0deg);
-    /*transform-origin: 0% 0%;*/
-  }
-
-  /* line 317, ../scss/prez/anims.scss */
-  to {
-    transform-style: preserve-3d;
-    transform: perspective(1000) rotateY(360deg);
-    /*transform-origin: 0% 0%;*/
-  }
-}
-
-@-webkit-keyframes rotateAnimation {
-  /* line 324, ../scss/prez/anims.scss */
-  from {
-    -webkit-transform-style: preserve-3d;
-    -webkit-transform: perspective(1000) rotateY(0deg);
-    /*-webkit-transform-origin: 0% 0%;*/
-  }
-
-  /* line 329, ../scss/prez/anims.scss */
-  to {
-    -webkit-transform-style: preserve-3d;
-    -webkit-transform: perspective(1000) rotateY(360deg);
-    /*-webkit-transform-origin: 0% 0%;*/
-  }
-}
-
-@-moz-keyframes rotateAnimation {
-  /* line 336, ../scss/prez/anims.scss */
-  from {
-    -moz-transform-style: preserve-3d;
-    -moz-transform: perspective(1000) rotateY(0deg);
-    /*-moz-transform-origin: 0% 0%;*/
-  }
-
-  /* line 341, ../scss/prez/anims.scss */
-  to {
-    -moz-transform-style: preserve-3d;
-    -moz-transform: perspective(1000) rotateY(360deg);
-    /*-moz-transform-origin: 0% 0%;*/
-  }
 }
 
 /***
@@ -369,8 +392,8 @@
  *                                                   
  *                                                   
  */
-/* line 362, ../scss/prez/anims.scss */
-#vibration {
+/* line 402, ../scss/prez/anims.scss */
+.reveal #vibration {
   position: relative;
   top: 0;
   left: 0;
@@ -388,17 +411,16 @@
  *                                   | |                         
  *                                   |_|                         
  */
-/* line 381, ../scss/prez/anims.scss */
-#webspeech {
+/* line 423, ../scss/prez/anims.scss */
+.reveal #webspeech {
   position: relative;
   top: 0;
   left: 0;
   width: 100%;
   height: 530px;
 }
-
-/* line 389, ../scss/prez/anims.scss */
-#mic {
+/* line 431, ../scss/prez/anims.scss */
+.reveal #mic {
   position: absolute;
   top: 0;
   left: 50%;
@@ -407,14 +429,12 @@
   margin-left: -25px;
   background-image: url(../assets/images/mic.gif);
 }
-
-/* line 399, ../scss/prez/anims.scss */
-#mic.animate {
+/* line 441, ../scss/prez/anims.scss */
+.reveal #mic.animate {
   background-image: url(../assets/images/mic-animate.gif);
 }
-
-/* line 403, ../scss/prez/anims.scss */
-#webspeech canvas {
+/* line 445, ../scss/prez/anims.scss */
+.reveal #webspeech canvas {
   position: absolute;
   top: 50%;
   left: 50%;
