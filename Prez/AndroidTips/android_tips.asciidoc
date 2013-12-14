@@ -388,7 +388,7 @@ BIEN !
 public View getView(int position, View convertView, ViewGroup parent) {
 	View rowView = null;
 
-	<mark>if (convertView == null){</mark>
+	&lt;mark&gt;if (convertView == null){&lt;/mark&gt;
 	    LayoutInflater inflater = (LayoutInflater) context
 	        .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 	    rowView = inflater.inflate(R.layout.rowlayout, parent, false);
