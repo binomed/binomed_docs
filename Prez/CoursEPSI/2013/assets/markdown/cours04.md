@@ -195,7 +195,7 @@ Expliquer ce que veut dire rendre plat
 
 ### Grid Layout
 
-Il s'agit d'une grille optimisée permettant de mettre tous ces objets au même niveau
+Il s'agit d'une grille optimisée permettant de mettre tous ses objets au même niveau
 
 ![w-600 wp-500 center](/assets/images/grid_layout_example.png)
 
@@ -414,7 +414,7 @@ On verra ça en tp !
 
 Idem mais en 3D et en plus permet de détecter l'overDraw
 
-![h-600 hp-500 center](/assets/images/android_node_inspector.png)
+![h-600 hp-400 center](/assets/images/android_node_inspector.png)
 
 
 <aside class="notes">
@@ -431,9 +431,8 @@ Pas un outils officiel !
 
 ### Draw9Patch
 
-Permet
 
-![h-600 hp-500 center](/assets/images/d9p.png)
+![h-600 hp-400 center](/assets/images/d9p.png)
 
 
 <aside class="notes">
@@ -454,7 +453,7 @@ Pas un outils officiel !
 Permet entre autre de déterminer l'overdraw (4.2 +)
 
 
-![h-600 hp-500 center](/assets/images/overdraw.png)
+![h-600 hp-400 center](/assets/images/overdraw.png)
 
 
 <aside class="notes">
@@ -494,7 +493,7 @@ Pas un outils officiel !
 
 Rappel
 
-![h-600 hp-500 center](/assets/images/fragments.png)
+![h-600 hp-400 center](/assets/images/fragments.png)
 
 
 <aside class="notes">
@@ -513,7 +512,7 @@ Pourquoi utiliser cela ?
 
 <br>
 
-* Car ça permet d'avoir des bloc de code graphiques réutilisables
+* Car ça permet d'avoir des blocs de code graphiques réutilisables
 
 <br>
 
@@ -539,7 +538,7 @@ Comment code-t-on cela ?
 
 <br>
 
-Il y a 2 manières d'instancier des Fragements
+Il y a 2 manières d'instancier des Fragments
 
 * De façon "statique" via les layouts xml
 
@@ -553,7 +552,7 @@ Dans tous les cas, nous devons avoir une classe héritant de ```android.app.Frag
 
 
 <aside class="notes">
-Expliquer la différence entre les héritage
+Expliquer la différence entre les héritages
 </aside>
 
 <footer/>
@@ -841,7 +840,7 @@ L'application doit tourner sur un téléphone au minimum sous Froyo et le télé
 
 * Wallet : intégration de la platforme de paiement
 
-* Google Analytics : Données statistiques sur votre application
+* Google Analytics : Statistiques sur votre application
 
 * Google mobile Ads : publicité dans votre application
 
@@ -895,6 +894,19 @@ Comme pour les layouts, les chaines de caractères sont gérés via des fichiers
 <br>
 
 Il convient de les mettre dans des fichiers xml en respectant le même nom de clé pour chaque langue ainsi que leur nombre
+
+
+<aside class="notes">
+
+</aside>
+
+<footer/>
+
+##==##
+
+## Internationnalisation
+
+<br>
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
