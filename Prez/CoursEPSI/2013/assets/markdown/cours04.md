@@ -397,7 +397,7 @@ public View getView(int position, View convertView, ViewGroup parent) {
 
 Outils permettant d'afficher l'arbroscence d'une activité
 
-![w-700 wp-500 center](/assets/images/hierarchy_viewer_01.png)
+![w-700 hp-300 center](/assets/images/hierarchy_viewer_01.png)
 
 
 <aside class="notes">
