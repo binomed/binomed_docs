@@ -519,10 +519,201 @@ TODO slide accrochez vous !
 
 2 choses à retenir : 
 
-Il y a d'une part, une notion d'offre et de demande pour communiquer mais aussi une notion de 
+Il y a d'une part, une notion d'offre et de demande pour communiquer mais aussi une notion de chemin à emprunter ! 
+
+Il s'agit du **Signaling** ! 
+
+ * Quel type de média et format je supporte. Ce que je veux envoyer
+ * Sur quel type d'infrastructure réseau je suis ? 
 
 
 <aside class="notes">
+Chemin = ICE = passer les proxys
+</aside>
+<footer/>
+
+##==##
+
+## RTCPeerConnection
+
+### Gestion de l'offre
+
+
+1. Alice appelle la méthode ```createOffer()```
+1. Dans le callback, Alice appelle ```setLocalDesctiption()```
+1. Alice sérialise l'offre et l'envoie à Eve
+1. Eve appelle la méthode ```setRemoteDescription()``` avec l'offre
+1. Eve appelle la méthode ```createAnswer()```
+1. Eve appelle la méthode ```setLocalDescription()``` avec la réponse envoyé à Alice
+1. Alice reçoit la réponse et appelle ```setRemoteDescription()```
+
+
+<aside class="notes">
+Chemin = ICE = passer les proxys
+la description contient de infos du genre qualité de vidéo, résolution, ...
+</aside>
+<footer/>
+
+##==##
+
+## RTCPeerConnection
+
+### Gestion du Chemin **Ice Candidate**
+
+ICE pour Interactive Connectivity Establishement
+
+1. Alice & Eve on leurs RTCPeerConnection
+1. En cas de succès de chaque côté les icecanditate sont envoyés
+1. Alice sérialise ses IceCandidates et les envoie à Eve
+1. Eve reçoit les IceCandidates d'Alice et appelle ```addIceCandidate()```
+1. Eve sérialise ses IceCandidates et les envoie à Alice
+1. Alice reçoit les IceCandidates d'Eve et appelle ```addIceCandidate()```
+1. Les 2 savent comment communiquer.
+
+
+<aside class="notes">
+ICE = Framework de connection de peers ! 
+Au mieu connecté direct en UDP
+Après connecté en TCP / via des serveurs de relais
+</aside>
+<footer/>
+
+##==##
+
+## RTCPeerConnection
+
+### Possibilités de signaling
+
+Pour faire ça, on peut utiliser : 
+
+* Du LongPolling / Comet
+* XHR + SSE
+* **WebSokects** (le plus naturel)
+
+
+<aside class="notes">
+WebSocket est le plus naturels car bidirectionnel / Si WebRTC toléré, WebSocket est toloré aussi / Utilisation du TLS pour les proxy
+</aside>
+<footer/>
+
+##==##
+
+## RTCPeerConnection
+
+### <a href="http://en.wikipedia.org/wiki/Interactive_Connectivity_Establishment" title="Wikipedia ICE article">ICE</a>  : Framework de connection
+
+Il cherche le meilleur chemin pour chaque appels
+
+![center](/assets/images/icestats.png)
+
+<aside class="notes">
+le plus souvent on est sur des stun et au pire on passe sur des turn
+Actuellement 1 appel sur 7 est sur STUN
+</aside>
+<footer/>
+
+
+##==##
+
+## RTCPeerConnection
+
+### STUN / TURN
+
+* STUN = Simple Traversal of UDP through NATs
+* TURN = Traversal Using Relays around NAT
+
+![center](/assets/images/STUNandTURN.png)
+
+
+<aside class="notes">
+STUN : protocole client-serveur permettant à un client UDP situé derrière un routeur NAT de découvrir son adresse IP publique ainsi que le type du routeur NAT
+TURN: Serveur de relais à travers les NAT
+STUN sert à trouver les ip / TURN relais les données ! 
+Des serveurs publiques existents
+</aside>
+<footer/>
+
+##==##
+
+<div class='transition'></div>
+
+## RTCDataChannel
+
+
+<aside class="notes">
+</aside>
+
+##==##
+
+## RTCDataChannel
+
+Canal de communication de données binaires / textuelles
+
+Même API que les WebSockets
+
+/!\ à la version utilisée, cette norme est arrivée après !
+
+Se fait sur une PeerConnection
+
+<aside class="notes">
+
+</aside>
+<footer/>
+
+##==##
+
+## RTCDataChannel
+
+
+
+```javascript
+var pc = new webkitRTCPeerConnection(servers,
+  {optional: [{RtpDataChannels: true}]});
+
+pc.ondatachannel = function(event) {
+  receiveChannel = event.channel;
+  receiveChannel.onmessage = function(event){
+    document.querySelector("div#receive").innerHTML = event.data;
+  };
+};
+
+sendChannel = pc.createDataChannel("sendDataChannel", {reliable: false});
+
+document.querySelector("button#send").onclick = function (){
+  var data = document.querySelector("textarea#send").value;
+  sendChannel.send(data);
+};
+```
+
+
+<aside class="notes">
+
+</aside>
+<footer/>
+
+
+
+##==##
+
+## RTCPeerConnection
+
+TODO vérifier l'ordre  !
+
+
+<aside class="notes">
+Chemin = ICE = passer les proxys
+</aside>
+<footer/>
+
+##==##
+
+## STUN & TURN
+
+STUN : Servers permettant d
+
+
+<aside class="notes">
+Expliquer pour on a besoin de serveurs (proxy, firewall,...)
 </aside>
 <footer/>
 

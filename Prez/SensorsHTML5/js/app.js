@@ -38,11 +38,11 @@ $(function(){
 		// We get the html elements
 		var lock = $('.safe_lock');
 		// We get the correct css prefix
-		var prefix = Modernizr.prefixed('transform');
+		var prefixRotation = Modernizr.prefixed('transform');
 
 		// According to the number of unlock, we just turn the image or we open the door
 		function updateRotation(zAlpha){
-		 lock.css(prefix,'rotateZ('+zAlpha+'deg)');
+		 lock.css(prefixRotation,'rotateZ('+zAlpha+'deg)');
 		}
 
 	
@@ -128,15 +128,16 @@ $(function(){
 		//  The percent of luminosity
 		var percent = 50;
 		// The prefix to use for the gradient
-		var prefix = Modernizr.prefixed('transform') === 'WebkitTransform' ? '-webkit-' : "-moz-";
+		var prefixLight = Modernizr.prefixed('transform') === 'transform' ? '-webkit-' : "-moz-";
 
 		// We update the css Style
 		function updateLight(data){
+			prefixLight = '-webkit-';
 			percent = data;
-			var style = prefix+'radial-gradient(center, '
+			var style = prefixLight+'radial-gradient(center, '
 			    +' ellipse cover, '
 			    +' rgba(198,197,145,1) 0%,'
-			    +' rgba(0,0,0,1) '+percent+'%'
+			    +' rgba(0,0,0,1) '+percent+'%)'
 			    ;
 			lightElt.style.background = style;
 		}
