@@ -1,10 +1,10 @@
 @charset "CP850";
-@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
 /**
  * Beige theme for reveal.js.
  *
  * Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
  */
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
 @font-face {
   font-family: 'League Gothic';
   src: url("../../reveal/lib/font/league_gothic-webfont.eot");
@@ -127,7 +127,7 @@
   left: 40%;
   width: 116px;
   height: 220px;
-  background: url(./images/logo_gdg.png) no-repeat 0px 0px;
+  background: url(./images/logo_devfest.png) no-repeat 0px 0px;
   background-size: 116px 220px;
 }
 /* line 170, ../../scss/theme/gdg.scss */
@@ -383,7 +383,6 @@ section > footer {
   height: 60px;
   background-color: white;
   background-image: -moz-linear-gradient(left, #3c78d8, #3c78d8 25%, #cc0000 25%, #cc0000 50%, #ffd966 50%, #ffd966 75%, #6aa84f 75%, #6aa84f);
-  background-image: -o-linear-gradient(left, #3c78d8, #3c78d8 25%, #cc0000 25%, #cc0000 50%, #ffd966 50%, #ffd966 75%, #6aa84f 75%, #6aa84f);
   background-image: -webkit-linear-gradient(left, #3c78d8, #3c78d8 25%, #cc0000 25%, #cc0000 50%, #ffd966 50%, #ffd966 75%, #6aa84f 75%, #6aa84f);
   background-image: linear-gradient(to right, #3c78d8, #3c78d8 25%, #cc0000 25%, #cc0000 50%, #ffd966 50%, #ffd966 75%, #6aa84f 75%, #6aa84f);
   background-size: 100% 5px;
@@ -430,104 +429,18 @@ tbody tr:nth-child(odd) {
   background-color: #EAEAEA;
 }
 
-/**
-* IMAGE 
-*
-*/
+/* line 483, ../../scss/theme/gdg.scss */
+div.copyright {
+  font-size: 0.6em;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
 /* line 491, ../../scss/theme/gdg.scss */
-.reveal .slides > section img[alt*=center], .reveal .slides > section .center, .reveal .slides > section .center + * {
-  display: block;
-  margin: auto;
-}
-/* line 496, ../../scss/theme/gdg.scss */
-.reveal .slides > section img[alt*=full-width], .reveal .slides > section .full-width, .reveal .slides > section .full-width + * {
-  width: 100%;
-}
-/* line 500, ../../scss/theme/gdg.scss */
-.reveal .slides > section img[alt*=full-height], .reveal .slides > section .full-height, .reveal .slides > section .full-height + * {
-  height: 100%;
-}
-/* line 504, ../../scss/theme/gdg.scss */
-.reveal .slides > section img[alt*=float-left], .reveal .slides > section .float-let, .reveal .slides > section .float-left + * {
-  float: left;
-  margin-right: 40px;
-}
-/* line 509, ../../scss/theme/gdg.scss */
-.reveal .slides > section img[alt*=float-right], .reveal .slides > section .float-right, .reveal .slides > section .float-right + * {
-  float: right;
-  margin-left: 10px;
-}
-/* line 514, ../../scss/theme/gdg.scss */
-.reveal .slides > section img[alt*=h-100], .reveal .slides > section .h-100, .reveal .slides > section .h-100 + * {
-  height: 100px;
-}
-/* line 515, ../../scss/theme/gdg.scss */
-.reveal .slides > section img[alt*=h-200], .reveal .slides > section .h-200, .reveal .slides > section .h-200 + * {
-  height: 200px;
-}
-/* line 516, ../../scss/theme/gdg.scss */
-.reveal .slides > section img[alt*=h-300], .reveal .slides > section .h-300, .reveal .slides > section .h-300 + * {
-  height: 300px;
-}
-/* line 517, ../../scss/theme/gdg.scss */
-.reveal .slides > section img[alt*=h-400], .reveal .slides > section .h-400, .reveal .slides > section .h-400 + * {
-  height: 400px;
-}
-/* line 518, ../../scss/theme/gdg.scss */
-.reveal .slides > section img[alt*=h-500], .reveal .slides > section .h-500, .reveal .slides > section .h-500 + * {
-  height: 500px;
-}
-/* line 519, ../../scss/theme/gdg.scss */
-.reveal .slides > section img[alt*=h-600], .reveal .slides > section .h-600, .reveal .slides > section .h-600 + * {
-  height: 600px;
-}
-/* line 520, ../../scss/theme/gdg.scss */
-.reveal .slides > section img[alt*=h-700], .reveal .slides > section .h-700, .reveal .slides > section .h-700 + * {
-  height: 700px;
-}
-/* line 521, ../../scss/theme/gdg.scss */
-.reveal .slides > section img[alt*=h-800], .reveal .slides > section .h-800, .reveal .slides > section .h-800 + * {
-  height: 800px;
-}
-/* line 522, ../../scss/theme/gdg.scss */
-.reveal .slides > section img[alt*=h-900], .reveal .slides > section .h-900, .reveal .slides > section .h-900 + * {
-  height: 900px;
-}
-/* line 524, ../../scss/theme/gdg.scss */
-.reveal .slides > section img[alt*=w-100], .reveal .slides > section .w-100, .reveal .slides > section .w-100 + * {
-  width: 100px;
-}
-/* line 525, ../../scss/theme/gdg.scss */
-.reveal .slides > section img[alt*=w-200], .reveal .slides > section .w-200, .reveal .slides > section .w-200 + * {
-  width: 200px;
-}
-/* line 526, ../../scss/theme/gdg.scss */
-.reveal .slides > section img[alt*=w-300], .reveal .slides > section .w-300, .reveal .slides > section .w-300 + * {
-  width: 300px;
-}
-/* line 527, ../../scss/theme/gdg.scss */
-.reveal .slides > section img[alt*=w-400], .reveal .slides > section .w-400, .reveal .slides > section .w-400 + * {
-  width: 400px;
-}
-/* line 528, ../../scss/theme/gdg.scss */
-.reveal .slides > section img[alt*=w-500], .reveal .slides > section .w-500, .reveal .slides > section .w-500 + * {
-  width: 500px;
-}
-/* line 529, ../../scss/theme/gdg.scss */
-.reveal .slides > section img[alt*=w-600], .reveal .slides > section .w-600, .reveal .slides > section .w-600 + * {
-  width: 600px;
-}
-/* line 530, ../../scss/theme/gdg.scss */
-.reveal .slides > section img[alt*=w-700], .reveal .slides > section .w-700, .reveal .slides > section .w-700 + * {
-  width: 700px;
-}
-/* line 531, ../../scss/theme/gdg.scss */
-.reveal .slides > section img[alt*=w-800], .reveal .slides > section .w-800, .reveal .slides > section .w-800 + * {
-  width: 800px;
-}
-/* line 532, ../../scss/theme/gdg.scss */
-.reveal .slides > section img[alt*=w-900], .reveal .slides > section .w-900, .reveal .slides > section .w-900 + * {
-  width: 900px;
+div.copyright:before {
+  content: "@";
 }
 
 /*********************************************

@@ -29,21 +29,6 @@ img[alt*=gdg_logo]{
     width:200px;
 }
 
-div.no-bullet~ul{
-  list-style-type: none;
-
-  img{
-    margin:0; 
-  }
-
-  li{
-    line-height: $sommaire-img-height;
-  }
-}
-
-div.padding~*{
-  padding-left: 50px;
-}
 
 
 p.surround{
@@ -53,55 +38,42 @@ color: #DA0E1A;
 text-align: left;
 }
 
-table.table_version{
-  position: absolute;
-  top: 4em;
+
+.reveal .slides > section pre{
+  font-size: 0.90em;
+  width: inherit;
 }
 
-table.table_version td, table.table_version th {
-  font-size: 14px;
+.reveal .slides > section pre > code{
+  max-height: 700px;
 }
 
-.img_version{
-  margin-top:7em;
+/*
+UserMedia use case
+*/
+.slideWithGetUserMedia, .slideWithAsciiCam{
+
+  width:100%;
+  height: 70%;
+  text-align: center;
+  position: relative;
+
 }
 
-img[alt*=dev_code]{
-  position: absolute;
-  top: 6em;
-  left: 8em;
-  width: 5%;
-  -webkit-transform: rotate(-25deg);
-  -moz-transform: rotate(-25deg);
-  transform: rotate(-25deg);
+.firstUserMediaBtn, .asciiCamBtn{
+  bottom: 0;
+  font-size: 1em;
 }
 
-img[alt*=dev_gen]{
-  position: absolute;
-  top: 8.4em;
-  left: 8em;
-  -webkit-transform: rotate(36deg);
-  -moz-transform: rotate(36deg);
-  transform: rotate(36deg);
-  width: 5%;
+.copyright.black{
+  color: grey;
+  bottom: 20px;
 }
 
-img[alt*=dev_res]{
-  position: absolute;
-  left: 8em;
-  top: 13em;
-  width: 5%;
-  -webkit-transform: rotate(-100deg);
-  -moz-transform: rotate(-100deg);
-  transform: rotate(-100deg);
-}
-
-img[alt*=dev_manifest]{
-  position: absolute;
-  left: 8em;
-  top: 18em;
-  width: 5%;
-  -webkit-transform: rotate(-30deg);
-  -moz-transform: rotate(-30deg);
-  transform: rotate(-30deg);
+.reveal section pre#asciiText{
+  font-size: 0.2em;
+  line-height: 0.6em;
+  box-shadow: inherit;
+  width: 850px;
+  margin: auto;
 }

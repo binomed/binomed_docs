@@ -11,7 +11,7 @@ module.exports = function (grunt) {
           index:    'index.html',
           all :     '*.html'
         },
-        js:   'js/**/*.js',
+        js:   'js/*.js',
         markdown:   'assets/**/*.md',
         css: {
           all :'css/**/*.css',
