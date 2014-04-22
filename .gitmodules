@@ -1,0 +1,9 @@
+[submodule "Tools/reveal"]
+	path = Tools/reveal
+	url = https://github.com/hakimel/reveal.js.git
+[submodule "Tools/reveal-md-style-bootstrap"]
+	path = Tools/reveal-md-style-bootstrap
+	url = https://github.com/binomed/reveal-md-style-bootstrap.git
+[submodule "Tools/sockets-notes"]
+	path = Tools/sockets-notes
+	url = https://github.com/VinsiInnovation/revealjs-sockets-notes.git
