@@ -15,11 +15,11 @@
 
 ###  Jean-François GARREAU
 
-![avatar center w-300 wp-200](/assets/images/jf.jpg)
+![avatar center w-300 wp-200](assets/images/jf.jpg)
 
 
-![company_logo](/assets/images/sqli_logo.png)
-![gdg_logo](/assets/images/GDG-Logo-carre.png)
+![company_logo](assets/images/sqli_logo.png)
+![gdg_logo](assets/images/GDG-Logo-carre.png)
 
 <footer/>
 
@@ -65,7 +65,7 @@
 
 # Un peu d'histoire ?
 
-![icon](/assets/images/library.png)
+![icon](assets/images/library.png)
 
 
 ##==##
@@ -110,7 +110,7 @@ Ils ont tous un browser !
 
 <div class="photo-slide"></div>
 
-![photo-slide](/assets/images/evolution.png);
+![photo-slide](assets/images/evolution.png);
 
 
 <aside class="notes">
@@ -139,7 +139,7 @@ Qui fait du peer2peer
 
 ### Est ce normal que le peer2peer soit ça ! 
 
-![center hp-200](/assets/images/no.png)
+![center hp-200](assets/images/no.png)
 
 
 <aside class="notes">
@@ -152,7 +152,7 @@ Qui fait du peer2peer
 
 ### Ne devrait-il pas ressembler à ça ? 
 
-![center hp-200](/assets/images/yes.png)
+![center hp-200](assets/images/yes.png)
 
 
 <aside class="notes">
@@ -223,7 +223,7 @@ Fragments ! (4)
 # WebRTC 
 
 
-![icon](/assets/images/google-webrtc-logo1.png)
+![icon](assets/images/google-webrtc-logo1.png)
 
 
 <aside class="notes">
@@ -235,7 +235,7 @@ Fragments ! (4)
 
 <br><br>
 
-![center](/assets/images/web_rtc_what.jpg)
+![center](assets/images/web_rtc_what.jpg)
 
 
 <aside class="notes">
@@ -445,7 +445,7 @@ Pas dispo dans les extensions chrome
 
 <br><br>
 
-![full-height center](/assets/images/file.png)
+![full-height center](assets/images/file.png)
 
 <aside class="notes">
 getUM ne peut être lancé en local (hors serveur)
@@ -545,7 +545,7 @@ WebAudio = post traitement du son ! (compatible RTC Peer Connection)
 # RTCPeerConnection
 
 
-![icon](/assets/images/share.png)
+![icon](assets/images/share.png)
 
 
 <aside class="notes">
@@ -556,9 +556,9 @@ WebAudio = post traitement du son ! (compatible RTC Peer Connection)
 
 ## GetUserMedia + RTCPeerConnection = 
 
-![float-left w-500](/assets/images/caller.jpg)
+![float-left w-500](assets/images/caller.jpg)
 
-![float-left w-500](/assets/images/callee.jpg)
+![float-left w-500](assets/images/callee.jpg)
 
 <aside class="notes">
 </aside>
@@ -734,7 +734,7 @@ Il cherche le meilleur chemin pour chaque appels.
 1. Après on est connecté en TCP / HTTP 
 1. En dernier via des serveurs de relais
 
-![center h-400](/assets/images/icestats.png)
+![center h-400](assets/images/icestats.png)
 
 <aside class="notes">
 le plus souvent on est sur des stun et au pire on passe sur des turn
@@ -752,7 +752,7 @@ Actuellement 1 appel sur 7 est sur STUN
 * STUN = Simple Traversal of UDP through NATs
 * TURN = Traversal Using Relays around NAT
 
-![center](/assets/images/STUNandTURN.png)
+![center](assets/images/STUNandTURN.png)
 
 
 <aside class="notes">
@@ -1072,7 +1072,7 @@ C'était simple et ça peut l'être
 
 # **Merci**
 
-![avatar](/assets/images/jf.jpg)
+![avatar](assets/images/jf.jpg)
 
 <div class="copyright">images provent des slides de SamDutton</div>
 
