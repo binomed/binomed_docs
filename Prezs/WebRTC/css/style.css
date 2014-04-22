@@ -1,0 +1,93 @@
+/* line 4, ../scss/prez/style.scss */
+img[alt*=logo] {
+  width: 50px;
+}
+
+/* line 10, ../scss/prez/style.scss */
+img[alt*=sommaire] {
+  height: 60px;
+}
+
+/* line 14, ../scss/prez/style.scss */
+.reveal .slides > section img[alt*=avatar] {
+  -moz-box-shadow: #cccccc 2px 2px 2px 3px;
+  -webkit-box-shadow: #cccccc 2px 2px 2px 3px;
+  box-shadow: #cccccc 2px 2px 2px 3px;
+}
+
+/* line 18, ../scss/prez/style.scss */
+img[alt*=company_logo] {
+  position: absolute;
+  bottom: 20%;
+  left: 20%;
+  width: 200px;
+}
+
+/* line 25, ../scss/prez/style.scss */
+img[alt*=gdg_logo] {
+  position: absolute;
+  bottom: 20%;
+  right: 20%;
+  width: 200px;
+}
+
+/* line 34, ../scss/prez/style.scss */
+p.surround {
+  font-weight: bold;
+  font-size: 1em;
+  color: #DA0E1A;
+  text-align: left;
+}
+
+/* line 42, ../scss/prez/style.scss */
+.reveal .slides > section pre {
+  font-size: 0.90em;
+  width: inherit;
+}
+
+/* line 47, ../scss/prez/style.scss */
+.reveal .slides > section pre > code {
+  max-height: 700px;
+}
+
+/*
+UserMedia use case
+*/
+/* line 54, ../scss/prez/style.scss */
+.slideWithGetUserMedia, .slideWithAsciiCam {
+  width: 100%;
+  height: 70%;
+  text-align: center;
+  position: relative;
+}
+
+/* line 63, ../scss/prez/style.scss */
+.firstUserMediaBtn, .asciiCamBtn {
+  bottom: 0;
+  font-size: 1em;
+}
+
+/* line 68, ../scss/prez/style.scss */
+.copyright.black {
+  color: grey;
+  bottom: 20px;
+}
+
+/* line 73, ../scss/prez/style.scss */
+.reveal section pre#asciiText {
+  background-color: black;
+  color: #00CC00;
+  font-size: 0.25em;
+  line-height: 0.6em;
+  box-shadow: inherit;
+  width: 715px;
+  margin: auto;
+}
+
+/* line 83, ../scss/prez/style.scss */
+#remoteVideo {
+  width: 430px;
+  position: absolute;
+  top: 50%;
+  margin-top: -25%;
+}
