@@ -2,3 +2,4 @@ reveal
 node_modules
 .sass-cache
 libs/reveal-md-style-bootstrap
+libs/highlight.js

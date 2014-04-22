@@ -679,6 +679,7 @@ ICE pour Interactive Connectivity Establishement
 ICE = Framework de connection de peers ! 
 Au mieu connecté direct en UDP
 Après connecté en TCP / via des serveurs de relais
+Le ice est fait en parallèle dès qu'une peerconnection se lance
 </aside>
 <footer/>
 
@@ -695,19 +696,6 @@ Après connecté en TCP / via des serveurs de relais
 <aside class="notes">
 Ok mais comment fait-on ça ?
 </aside>
-
-
-##==##
-
-## RTCPeerConnection
-
-TODO vérifier l'ordre  !
-
-
-<aside class="notes">
-Chemin = ICE = passer les proxys
-</aside>
-<footer/>
 
 
 ##==##

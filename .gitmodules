@@ -7,3 +7,6 @@
 [submodule "Tools/sockets-notes"]
 	path = Tools/sockets-notes
 	url = https://github.com/VinsiInnovation/revealjs-sockets-notes.git
+[submodule "Tools/highlight.js"]
+	path = Tools/highlight.js
+	url = https://github.com/isagalaev/highlight.js.git
