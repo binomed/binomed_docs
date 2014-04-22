@@ -1,5 +1,7 @@
 reveal
+libs/sockets-notes
 node_modules
 .sass-cache
 libs/reveal-md-style-bootstrap
 libs/highlight.js
+server/node_modules

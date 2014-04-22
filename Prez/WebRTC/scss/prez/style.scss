@@ -71,9 +71,18 @@ UserMedia use case
 }
 
 .reveal section pre#asciiText{
-  font-size: 0.2em;
+  background-color: black;
+  color: #00CC00;
+  font-size: 0.25em;
   line-height: 0.6em;
   box-shadow: inherit;
-  width: 850px;
+  width: 715px;
   margin: auto;
+}
+
+#remoteVideo{
+  width: 430px;
+  position: absolute;
+  top: 50%;
+  margin-top: -25%;
 }

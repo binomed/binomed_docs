@@ -6,8 +6,7 @@
 
 ### 2014.24.04 Devfest @ **Marseille**
 
-<div id="remoteVideo"></div>
- TODO faire le souriez vous êtes filmé ! 
+<video id="remoteVideo" autoplay="autoplay" muted="true"></video> 
 
 
 ##==##
@@ -90,7 +89,6 @@
 
 
 <aside class="notes">
-
 </aside>
 <footer/>
 ##==##
@@ -145,7 +143,6 @@ Qui fait du peer2peer
 
 
 <aside class="notes">
-
 </aside>
 <footer/>
 
@@ -159,7 +156,6 @@ Qui fait du peer2peer
 
 
 <aside class="notes">
-
 </aside>
 <footer/>
 
@@ -217,7 +213,6 @@ Fragments ! (4)
 <h1>WebRTC était la solution !</h1>
 
 <aside class="notes">
-
 </aside>
 <footer/>
 
@@ -333,7 +328,6 @@ Se récupère simplement sur **```navigator.getUserMedia()```**
 Peut être conditionné par plusieurs paramètres.
 
 <aside class="notes">
-
 </aside>
 <footer/>
 
@@ -417,7 +411,6 @@ navigator.webkitGetUserMedia(constraints, gotStream);
 </div>
 
 <aside class="notes">
-
 </aside>
 <footer/>
 
@@ -486,7 +479,6 @@ On peut choisir :
 <aside class="notes">
 Dispo en chrome stable pour android
 https://simpl.info/getusermedia/sources/
-
 </aside>
 <footer/>
 
@@ -857,7 +849,6 @@ document.querySelector("button#send").onclick = function (){
 
 
 <aside class="notes">
-
 </aside>
 <footer/>
 
@@ -926,7 +917,6 @@ En gros y a pas de secret, pensez HTTPS et WSS !
 ![icon](assets/images/developpment.svg)
 
 <aside class="notes">
-
 </aside>
 <footer/>
 
@@ -1028,7 +1018,6 @@ C'était simple et ça peut l'être
 
 
 <aside class="notes">
-
 </aside>
 ##==##
 

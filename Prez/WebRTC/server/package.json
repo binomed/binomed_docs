@@ -1,0 +1,9 @@
+{
+  "author": "jefBinomed",
+  "name": "devfest-slides-2014",
+  "dependencies": {
+    "socket.io": "~0.9.14",
+    "connect" : "~2.8.4",
+    "node-static" : "~0.6.9"
+  }
+}

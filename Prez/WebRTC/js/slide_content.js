@@ -27,6 +27,8 @@ function(){
 		// We init the first slide
 		slideChanged();
 		Reveal.addEventListener( 'slidechanged', slideChanged);
+
+		AppSlideWebRTC.initPrez();
 	}
 
 	
