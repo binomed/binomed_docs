@@ -139,7 +139,7 @@ Qui fait du peer2peer
 
 ## En parlant de Peer2Peer ?
 
-Est ce normal que le Peer2Peer soit comme ça ?
+Est-ce normal que le Peer2Peer soit comme ça ?
 
 ![center hp-200](assets/images/no.png)
 
@@ -179,7 +179,7 @@ Et si ?
 
 <br>
 
-<div class="fragment"><ul><li>On avait pas à se soucier d'installer un plugin ! 
+<div class="fragment"><ul><li>On n'avait pas à se soucier d'installer un plugin ! 
 </li></ul></div>
 
 <br>
@@ -256,7 +256,7 @@ RTC pour **Real Time Communication**
 
 <br>
 
-* Etablir une connection entre 2 hôtes
+* Etablir une connexion entre 2 hôtes
 
 <br>
 
@@ -264,7 +264,7 @@ RTC pour **Real Time Communication**
 
 <br>
 
-* Communication d'autres types de données
+* Communiquer d'autres types de données
 
 <aside class="notes">
 Créé en 2013
@@ -304,7 +304,7 @@ On va dans chaque API
 
 ## WebRTC
 
-Architechture
+Architecture
 
 ![center h-600](assets/images/webrtcArchitecture.png)
 
@@ -318,10 +318,10 @@ Architechture
 
 
 <br>
-Réprésente un ensemble de stream de médias syncrhonisés !
+Représente un ensemble de stream de médias synchronisés !
 
 <br>
-Peut réprésenter plusieurs flux vidéo / audio sous forme de pistes
+Peut représenter plusieurs flux vidéo / audio sous forme de pistes
 
 <br>
 Se récupère simplement sur **```navigator.getUserMedia()```**
@@ -654,7 +654,7 @@ Gestion de l'offre
 1. Alice sérialise l'offre et l'envoie à Eve
 1. Eve appelle la méthode **```setRemoteDescription()```** avec l'offre
 1. Eve appelle la méthode **```createAnswer()```**
-1. Eve appelle la méthode **```setLocalDescription()```** avec la réponse envoyé à Alice
+1. Eve appelle la méthode **```setLocalDescription()```** avec la réponse envoyée à Alice
 1. Alice reçoit la réponse et appelle **```setRemoteDescription()```**
 
 
@@ -682,7 +682,7 @@ ICE pour **Interactive Connectivity Establishement**
 
 
 <aside class="notes">
-ICE = Framework de connection de peers ! 
+ICE = Framework de connexion de peers ! 
 Au mieu connecté direct en UDP
 Après connecté en TCP / via des serveurs de relais
 Le ice est fait en parallèle dès qu'une peerconnection se lance
@@ -740,7 +740,7 @@ Demander si les gens connaissent ?
 
 ## RTCPeerConnection
 
-<a href="http://en.wikipedia.org/wiki/Interactive_Connectivity_Establishment" title="Wikipedia ICE article">ICE</a>  : Framework de connection
+<a href="http://en.wikipedia.org/wiki/Interactive_Connectivity_Establishment" title="Wikipedia ICE article">ICE</a>  : Framework de connexion
 
 Il cherche le meilleur chemin pour chaque appel.
 
@@ -945,7 +945,7 @@ En gros y a pas de secret, pensez HTTPS et WSS !
 
  <br>
 
- * [Adapter.js](https://code.google.com/p/webrtc/source/browse/trunk/samples/apprtc/js/base/adapter.js) : une librairie qui supprime les prefixes et armonise les différences entre Chrome & Firefox
+ * [Adapter.js](https://code.google.com/p/webrtc/source/browse/trunk/samples/apprtc/js/base/adapter.js) : une librairie qui supprime les préfixes et harmonise les différences entre Chrome & Firefox
 
  <br> 
 
@@ -1043,7 +1043,7 @@ C'était simple et ça peut l'être
 
 <br><br>
 
-**WebRTC** est une technologie prometeuse et riche en possibilités.
+**WebRTC** est une technologie prometteuse et riche en possibilités.
 
 <br>
 
