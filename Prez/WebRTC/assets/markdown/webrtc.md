@@ -4,7 +4,9 @@
 
 ## Devfest Marseille
 
-### 2014.24.04 Devfest @ **Marseille**
+### 2014.24.04 Devfest @ **Marseille** <br><br>http://goo.gl/B6Phir
+
+
 
 <video id="remoteVideo" autoplay="autoplay" muted="true"></video> 
 
@@ -13,7 +15,7 @@
 
 ## Qui suis-je ?
 
-###  Jean-François GARREAU
+### Jean-François GARREAU
 
 ![avatar center w-300 wp-200](assets/images/jf.jpg)
 
@@ -135,9 +137,9 @@ Qui fait du peer2peer
 
 ##==##
 
-## En parlant du Peer2Peer ?
+## En parlant de Peer2Peer ?
 
-### Est ce normal que le peer2peer soit ça ! 
+Est ce normal que le Peer2Peer soit comme ça ?
 
 ![center hp-200](assets/images/no.png)
 
@@ -148,9 +150,9 @@ Qui fait du peer2peer
 
 ##==##
 
-## En parlant du Peer2Peer ?
+## En parlant de Peer2Peer ?
 
-### Ne devrait-il pas ressembler à ça ? 
+Ne devrait-il pas ressembler à ça ? 
 
 ![center hp-200](assets/images/yes.png)
 
@@ -163,21 +165,21 @@ Qui fait du peer2peer
 
 ## Faisons nos courses
 
-### Et si ? 
+Et si ? 
 
 <br><br>
 
-<div class="fragment"><ul><li>On avait la possibilité de gérer une communication réseaux propre entre pc
+<div class="fragment"><ul><li>On avait la possibilité de gérer une communication réseau propre entre pc.
 </li></ul></div>
 
 <br>
 
-<div class="fragment"><ul><li>On avait la possibilité de ne pas soucier de l'encodage de nos vidéos 
+<div class="fragment"><ul><li>On avait la possibilité de ne pas se soucier de l'encodage de nos vidéos.
 </li></ul></div>
 
 <br>
 
-<div class="fragment"><ul><li>On avait pas à ce soucier d'installer un plugin ! 
+<div class="fragment"><ul><li>On avait pas à se soucier d'installer un plugin ! 
 </li></ul></div>
 
 <br>
@@ -210,7 +212,7 @@ Fragments ! (4)
 
 
 <br><br><br><br>
-<h1>WebRTC était la solution !</h1>
+<h1>WebRTC était la solution ?</h1>
 
 <aside class="notes">
 </aside>
@@ -246,7 +248,7 @@ Fragments ! (4)
 
 ## WebRTC
 
-### RTC pour Real Time Communication
+RTC pour **Real Time Communication**
 
 <br><br><br>
 
@@ -274,7 +276,7 @@ Parler des problèmes derrières la vidéo et l'audio (hardware / encodage / ...
 
 ## WebRTC
 
-### Concrètement ?
+Concrètement ?
 
 <br>
 
@@ -302,7 +304,7 @@ On va dans chaque API
 
 ## WebRTC
 
-### Architechture
+Architechture
 
 ![center h-600](assets/images/webrtcArchitecture.png)
 
@@ -319,7 +321,7 @@ On va dans chaque API
 Réprésente un ensemble de stream de médias syncrhonisés !
 
 <br>
-Peut réprésenter plusieurs flux vidéo / audio sous formes de pistes
+Peut réprésenter plusieurs flux vidéo / audio sous forme de pistes
 
 <br>
 Se récupère simplement sur **```navigator.getUserMedia()```**
@@ -345,7 +347,7 @@ Peut être conditionné par plusieurs paramètres.
 
 ## GetUserMedia
 
-### Un peu de code
+Un peu de code
 
 ```javascript
 var constraints = {video: true};
@@ -371,7 +373,7 @@ navigator.getUserMedia(constraints, successCallback, errorCallback);
 
 ## GetUserMedia
 
-### Un peu de code
+Un peu de code
 
 ```javascript
 var constraints = {
@@ -401,7 +403,7 @@ navigator.webkitGetUserMedia(constraints, gotStream);
 
 ## GetUserMedia
 
-### Cas pratique ! 
+Cas pratique ! 
 
 <div class="slideWithGetUserMedia">
 	<video class="firstUserMedia" width='600px'></video>
@@ -418,7 +420,7 @@ navigator.webkitGetUserMedia(constraints, gotStream);
 
 ## GetUserMedia
 
-### Parlons sécurité !
+Parlons sécurité !
 
 <br><br>
 
@@ -430,7 +432,7 @@ navigator.webkitGetUserMedia(constraints, gotStream);
 
 <br><br>
 
- * Après on peut changer les paramètres dans chrome
+ * On peut changer les paramètres dans chrome
 
 
 
@@ -458,7 +460,7 @@ Sinon erreur GET_PERMISSION_DENIED
 
 ## GetUserMedia
 
-### Parlons des possibilités
+Parlons des possibilités (contraintes)
 
 <br>
 
@@ -466,15 +468,15 @@ On peut choisir :
 
 <br>
 
- * sa résolution
+ * Sa résolution
 
 <br><br>
 
- * Sa source (```front-facing``` ou ```rear-facing``` : Chrome Beta)
+ * Sa source 
 
 <br><br>
 
- * récupérer son écran ou son onglet ! 
+ * Récupérer son écran ou son onglet ! 
 
 <aside class="notes">
 Dispo en chrome stable pour android
@@ -488,17 +490,25 @@ https://simpl.info/getusermedia/sources/
 
 ## GetUserMedia
 
-### Konami code ! 
+Konami code ! 
 
 <br>
 On peut aussi : 
 
-* enregister du son (http://simpl.info/mediarecorder)
-* faire des photos de son flux 
-* mixer son flux avec un canva : 
-* mixer son flux avec WebAudio
+* Enregister du son (http://simpl.info/mediarecorder)
 
-<br><br>
+<br>
+
+* Faire des photos depuis son flux 
+
+<br>
+
+* Mixer son flux avec un canvas
+
+<br>
+
+* Mixer son flux avec WebAudio
+
 
 <div class="fragment">
 	<blockquote>	
@@ -519,7 +529,7 @@ WebAudio = post traitement du son ! (compatible RTC Peer Connection)
 
 ## GetUserMedia
 
-### Démo ! 
+Démo ! 
 
 <div class="slideWithAsciiCam">
 	<video id="asciiCam" autoplay style='display:none'></video>
@@ -568,19 +578,19 @@ WebAudio = post traitement du son ! (compatible RTC Peer Connection)
 
 ## RTCPeerConnection
 
-### Sert à : 
+Sert à : 
 
 <br><br>
  
- * résoudre les problèmes de communications multimédia (codec, résolutions, ...)
+ * Résoudre les problèmes de communication multimédia (codec, résolutions, ...)
 
 <br><br>
 
- * identifier les adresse des hôtes
+ * Identifier les adresses des hôtes
 
 <br><br>
 
- * échanger les données 
+ * Echanger les données 
 
 
 <aside class="notes">
@@ -605,7 +615,7 @@ WebAudio = post traitement du son ! (compatible RTC Peer Connection)
 
 ## RTCPeerConnection
 
-### Principe de l'offre et de la demande
+Principe de l'offre et de la demande
 
 2 choses à retenir : 
 <br>
@@ -616,11 +626,15 @@ Il y a d'une part, une notion d'offre et de demande pour communiquer mais aussi 
 
 Il s'agit du **Signaling** ! 
 
- * Quel type de média et format je supporte. Ce que je veux envoyer
+ * Quel type de média et format je supporte ? 
 
 <br>
 
- * Sur quel type d'infrastructure réseau je suis ? 
+ * Que puis-je envoyer ?
+
+<br>
+
+ * Quel est mon type d'infrastructure réseau ? 
 
 
 <aside class="notes">
@@ -632,7 +646,7 @@ Chemin = ICE = passer les proxys
 
 ## RTCPeerConnection
 
-### Gestion de l'offre
+Gestion de l'offre
 
 
 1. Alice appelle la méthode **```createOffer()```**
@@ -654,16 +668,16 @@ la description contient de infos du genre qualité de vidéo, résolution, ...
 
 ## RTCPeerConnection
 
-### Gestion du Chemin **Ice Candidate**
+Gestion du Chemin **Ice Candidate**
 
-ICE pour Interactive Connectivity Establishement
+ICE pour **Interactive Connectivity Establishement**
 
-1. Alice & Eve on leurs RTCPeerConnection
-1. En cas de succès de chaque côté les icecanditate sont envoyés
-1. Alice sérialise ses IceCandidates et les envoie à Eve
-1. Eve reçoit les IceCandidates d'Alice et appelle **```addIceCandidate()```**
-1. Eve sérialise ses IceCandidates et les envoie à Alice
-1. Alice reçoit les IceCandidates d'Eve et appelle **```addIceCandidate()```**
+1. Alice & Eve ont leur RTCPeerConnection
+1. En cas de succès de chaque côté les *IceCanditates* sont envoyées
+1. Alice sérialise ses *IceCandidates* et les envoie à Eve
+1. Eve reçoit les *IceCandidates* d'Alice et appelle **```addIceCandidate()```**
+1. Eve sérialise ses *IceCandidates* et les envoie à Alice
+1. Alice reçoit les *IceCandidates* d'Eve et appelle **```addIceCandidate()```**
 1. Les 2 savent comment communiquer.
 
 
@@ -694,9 +708,9 @@ Ok mais comment fait-on ça ?
 
 ## RTCPeerConnection
 
-### Possibilités de signaling
+Comment fait-on le **signaling** ?
 
-Pour faire ça, on peut utiliser : 
+On peut utiliser : 
 
 <br>
 
@@ -710,7 +724,7 @@ Pour faire ça, on peut utiliser :
 
 * **WebSokects**
   * Plus naturel car bidirectionnel
-  * Si le webRTC est supporté, alors le webRTC est supporté
+  * Si le webRTC est supporté, alors les webSockets sont supportés
   * Peut aussi utiliser le TLS
 
 <br><br>
@@ -726,11 +740,11 @@ Demander si les gens connaissent ?
 
 ## RTCPeerConnection
 
-### <a href="http://en.wikipedia.org/wiki/Interactive_Connectivity_Establishment" title="Wikipedia ICE article">ICE</a>  : Framework de connection
+<a href="http://en.wikipedia.org/wiki/Interactive_Connectivity_Establishment" title="Wikipedia ICE article">ICE</a>  : Framework de connection
 
-Il cherche le meilleur chemin pour chaque appels.
+Il cherche le meilleur chemin pour chaque appel.
 
-1. Au mieu, on est connecté direct en UDP
+1. Au mieux, on est connecté directement en UDP
 1. Après on est connecté en TCP / HTTP 
 1. En dernier via des serveurs de relais
 
@@ -747,10 +761,10 @@ Actuellement 1 appel sur 7 est sur STUN
 
 ## RTCPeerConnection
 
-### STUN / TURN
+STUN / TURN
 
-* STUN = Simple Traversal of UDP through NATs
-* TURN = Traversal Using Relays around NAT
+* STUN = **Simple Traversal of UDP through NATs**
+* TURN = **Traversal Using Relays around NAT**
 
 ![center](assets/images/STUNandTURN.png)
 
@@ -771,7 +785,7 @@ Des serveurs publiques existents
 
 ##==##
 
-# c'est bientôt la fin
+# C'est bientôt la fin
 
 <div class="photo-slide"></div>
 
@@ -818,6 +832,7 @@ Se fait sur une PeerConnection
 
 <aside class="notes">
 Expliquer les possibilités 
+cf slide à la fin
 </aside>
 <footer/>
 
@@ -873,7 +888,7 @@ document.querySelector("button#send").onclick = function (){
  
 <br>
 
- * Cryptage des données et médias
+ * Cryptage des données et des médias
 
 <br>
 
@@ -1019,6 +1034,64 @@ C'était simple et ça peut l'être
 
 <aside class="notes">
 </aside>
+
+##==##
+
+
+## Conclusion
+
+
+<br><br>
+
+**WebRTC** est une technologie prometeuse et riche en possibilités.
+
+<br>
+
+WebRTC = getUserMedia + RTCPeerConnection + RTCDataChannel
+
+<br>
+
+=> Il n'y a pas que de la visio dans le WebRTC ! 
+
+<br>
+
+**/!\ Limitation de 12 peerConnections ouvertes en même temps.**
+
+
+
+
+<aside class="notes">
+</aside>
+
+##==##
+
+
+## Conclusion
+
+
+
+Tenez comptes des comptabilités ! 
+
+<br><br>
+
+|Browser|UserMedia|RTCPeerConnection|RTCDataChannel|
+|-----|------|-|----------|
+|Chrome desktop|18.0.1008+|20+|26+|
+|Chrome Android|29+|29+|29+|
+|Opera|18+|18+|18+|
+|Opera for Android|20+|20+|20+|
+|FireFox|17+|22+|22+|
+
+<br>
+
+http://iswebrtcreadyyet.com/
+
+
+
+<aside class="notes">
+</aside>
+
+
 ##==##
 
 ## Liens
@@ -1029,6 +1102,8 @@ C'était simple et ça peut l'être
 
 <br>
 
+* [Cette Présentation](http://goo.gl/B6Phir)
+
 * [Présentation WebRTC Google IO ](http://simpl.info/rtc/)
 
 <br>
@@ -1038,9 +1113,10 @@ C'était simple et ça peut l'être
 <br>
 
 * HTML5 Rocks:
-	* [Getting Started With WebRTC](http://www.html5rocks.com/en/tutorials/webrtc/basics/)
-	* [Mise à jour WebRTC](http://www.html5rocks.com/en/search?q=webrtc)
-	* [Capturing audio and video in HTML5](http://www.html5rocks.com/en/tutorials/getusermedia/intro/)
+ * [Getting Started With WebRTC](http://www.html5rocks.com/en/tutorials/webrtc/basics/)
+ * [Mise à jour WebRTC](http://www.html5rocks.com/en/search?q=webrtc)
+ * [Capturing audio and video in HTML5](http://www.html5rocks.com/en/tutorials/getusermedia/intro/)
+ * [RTCDataChannel](http://www.html5rocks.com/en/tutorials/webrtc/datachannels/?redirect_from_locale=fr)
 
 
 <aside class="notes">
@@ -1074,5 +1150,5 @@ C'était simple et ça peut l'être
 
 ![avatar](assets/images/jf.jpg)
 
-<div class="copyright">images provent des slides de SamDutton</div>
+<div class="copyright">images & resources provenant des slides de SamDutton</div>
 
