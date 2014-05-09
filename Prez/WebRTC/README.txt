@@ -6,6 +6,7 @@ Add a symbolic link with :
 * /libs/sockets-notes -> {repoHome}/Tools/sockets-notes
 * /libs/reveal-md-style-bootstrap -> {repoHome}/Tools/reveal-md-style-bootstrap
 * /libs/highlight.js -> {repoHome}/Tools/highlight.js
+* /libs/highlight_reveal_fix_v8.0.js -> {repoHome}/Tools/highlight_reveal_fix_v8.0.js
 * get all mandatory dependancies for server : cd server -> npm install
 * start server for webRTC : node /server/server.js
 

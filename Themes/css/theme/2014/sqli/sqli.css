@@ -1,0 +1,586 @@
+@charset "CP850";
+@font-face {
+  font-family: "IE-DINNextLTPro-MediumCond";
+  src: url("fonts/DINNextLTPro-MediumCond.eot");
+  src: local("☺"), url("fonts/DINNextLTPro-MediumCond.woff") format("woff"), url("fonts/DINNextLTPro-MediumCond.ttf") format("truetype");
+}
+/* line 9, ../../../../scss/theme/2014/sqli/fonts.scss */
+.reveal section {
+  font-family: "IE-DINNextLTPro-MediumCond";
+}
+
+/* line 1, ../../../../scss/theme/2014/sqli/tableaux.scss */
+table {
+  width: 100%;
+  border-collapse: -moz-initial;
+  border-collapse: initial;
+  border-spacing: 2px;
+}
+
+/* line 9, ../../../../scss/theme/2014/sqli/tableaux.scss */
+table tr:nth-child(odd) {
+  background-color: rgba(214, 14, 26, 0.2);
+}
+
+/* line 12, ../../../../scss/theme/2014/sqli/tableaux.scss */
+table tr:nth-child(even) {
+  background-color: rgba(214, 14, 26, 0.1);
+}
+
+/* line 16, ../../../../scss/theme/2014/sqli/tableaux.scss */
+table th {
+  color: white;
+  font-size: 18px;
+  background: #DA0E1A;
+}
+
+/* line 22, ../../../../scss/theme/2014/sqli/tableaux.scss */
+table td, table th {
+  font-size: 18px;
+  padding: 1em 0.5em;
+}
+
+/* line 27, ../../../../scss/theme/2014/sqli/tableaux.scss */
+table td.highlight {
+  color: #515151;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(40%, #ffd14d), color-stop(80%, #f6c000)) no-repeat;
+  background: -webkit-linear-gradient(top, #ffd14d 40%, #f6c000 80%) no-repeat;
+  background: -moz-linear-gradient(top, #ffd14d 40%, #f6c000 80%) no-repeat;
+  background: -o-linear-gradient(top, #ffd14d 40%, #f6c000 80%) no-repeat;
+  background: -ms-linear-gradient(top, #ffd14d 40%, #f6c000 80%) no-repeat;
+  background: linear-gradient(to bottom, #ffd14d 40%, #f6c000 80%) no-repeat;
+}
+
+/* line 37, ../../../../scss/theme/2014/sqli/tableaux.scss */
+table.rows {
+  border-bottom: none;
+  border-right: 1px solid #797979;
+}
+
+/* line 3, ../../../../scss/theme/2014/sqli/specifics_slides.scss */
+.reveal section.first-slide {
+  position: absolute;
+  top: 0;
+  left: -400px;
+  width: 800px;
+  height: 300px;
+  padding-top: 50px;
+  background: rgba(255, 255, 255, 0.7);
+  color: #da0e1a;
+}
+/* line 14, ../../../../scss/theme/2014/sqli/specifics_slides.scss */
+.reveal section.first-slide h1 {
+  color: #3f3f3f;
+}
+
+/* line 19, ../../../../scss/theme/2014/sqli/specifics_slides.scss */
+.reveal section.who-am-i {
+  color: white;
+}
+/* line 23, ../../../../scss/theme/2014/sqli/specifics_slides.scss */
+.reveal section.who-am-i h2 {
+  font-size: 4em;
+  margin-bottom: 20px;
+}
+/* line 28, ../../../../scss/theme/2014/sqli/specifics_slides.scss */
+.reveal section.who-am-i h3 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+/* line 36, ../../../../scss/theme/2014/sqli/specifics_slides.scss */
+.reveal section.transition h1 {
+  position: absolute;
+  width: 100%;
+  height: 2em;
+  font-size: 4em;
+  line-height: 2em;
+  background: rgba(255, 255, 255, 0.7);
+  color: #da0e1a;
+  text-align: left;
+  top: 10%;
+}
+
+/*
+*
+* Controls
+*
+*/
+/* line 26, ../../../../scss/theme/2014/sqli/sqli.scss */
+.reveal .controls div.navigate-left,
+.reveal .controls div.navigate-left.enabled {
+  border-right-color: #da0e1a;
+}
+
+/* line 31, ../../../../scss/theme/2014/sqli/sqli.scss */
+.reveal .controls div.navigate-right,
+.reveal .controls div.navigate-right.enabled {
+  border-left-color: #da0e1a;
+}
+
+/* line 36, ../../../../scss/theme/2014/sqli/sqli.scss */
+.reveal .controls div.navigate-up,
+.reveal .controls div.navigate-up.enabled {
+  border-bottom-color: #da0e1a;
+}
+
+/* line 41, ../../../../scss/theme/2014/sqli/sqli.scss */
+.reveal .controls div.navigate-down,
+.reveal .controls div.navigate-down.enabled {
+  border-top-color: #da0e1a;
+}
+
+/*
+ *
+ * PROGRESS BAR
+ *
+ */
+/* line 51, ../../../../scss/theme/2014/sqli/sqli.scss */
+.reveal .progress {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* line 54, ../../../../scss/theme/2014/sqli/sqli.scss */
+.reveal .progress span {
+  background: #da0e1a;
+  -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  -ms-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  -o-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+}
+
+/*
+* Footer
+*/
+/* line 67, ../../../../scss/theme/2014/sqli/sqli.scss */
+footer.sqli-footer:after {
+  content: 'SQLI Group';
+  white-space: pre;
+  position: absolute;
+  bottom: 20px;
+  left: 40px;
+  width: calc(100% - 40px - 40px);
+  width: -webkit-calc(100% - 40px - 40px);
+  height: 45px;
+  padding-left: 60px;
+  line-height: 1em;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  background-image: url("assets/images/logo_sstxt.png");
+  background-size: 45.9375px 45px;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+}
+
+/* line 86, ../../../../scss/theme/2014/sqli/sqli.scss */
+header.sqli-header:before {
+  content: '';
+  white-space: pre;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% - 40px - 40px);
+  width: -webkit-calc(100% - 40px - 40px);
+  height: 45px;
+  padding-left: 60px;
+  line-height: 1em;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  background-image: url("assets/images/carre_haut_2.png");
+  background-size: 45.9375px 45px;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+}
+
+/* line 107, ../../../../scss/theme/2014/sqli/sqli.scss */
+.reveal .slides > section, .reveal .slides > section > section {
+  position: absolute;
+  height: calc(100% - 60px);
+  height: -webkit-calc(100% - 60px);
+  text-align: left;
+  width: calc(100% - 40px - 40px);
+  padding: 20px 40px 45px 40px;
+  z-index: -2;
+}
+/* line 117, ../../../../scss/theme/2014/sqli/sqli.scss */
+.reveal .slides > section h1, .reveal .slides > section h2, .reveal .slides > section > section h1, .reveal .slides > section > section h2 {
+  color: #da0e1a;
+}
+
+/* line 124, ../../../../scss/theme/2014/sqli/sqli.scss */
+ul {
+  margin: 10px 10px;
+}
+
+/*section > h1, section > div > h2, section > h2, section > article > div.sect2 > h3 {
+  font-weight: 600;
+  text-transform : uppercase;
+}
+
+section > h1, section.intro > h2{  
+  font-weight: 400;
+  position: absolute;
+  top: 18%;
+  left: 26%;
+  font-size: 30px;
+  line-height: 1.25em;
+  color: #DA0E1A;
+  margin-left: 10px;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  width: 40%;
+  height: 9.75%;
+  overflow: hidden;
+}
+
+section.title > div > h2, section.intro > article > div.sect2 > h3{  
+  position: absolute;
+  top: 34%;
+  left: 41%;
+  font-size: 24px;
+  line-height: 1.2em;
+  letter-spacing: 0px;
+  color: #111211;
+  margin-left: 10px;
+  width: 40%;
+  height: 8.2%;
+  overflow: hidden;
+}
+section.intro > article > div.sect2, section.title > div.subtitle{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+}
+
+section:not(.title):not(.intro) > h2 {
+  position: absolute;
+  top: 10px;
+  left: 11px;
+  width: 100%;
+  padding-left: 12%;
+  padding-right: 0.1em;
+  padding-top: 0.1em;
+  font-size: 30px;
+  line-height: 35px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #DA0E1A;
+}*/
+/* 
+
+  Slides
+
+ */
+ /*
+section:not(.title):not(.intro) > article > div.sect2 > h3 {
+  font-size: 26px;
+  line-height: 2;
+  font-weight: inherit;
+  color: #111211;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 100%;
+  padding-left: 13%;
+  padding-right: 0.1em;
+  padding-top: 1.2em;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+section.title{
+  bottom: 0px;
+  right: 0px;
+  background: url(../../images/logo.png) no-repeat 20% 60%, url(../../images/fond_1.jpg) no-repeat 100% 99%;
+  -webkit-background-size: 10% 10%, 100% 100%;
+  -moz-background-size: 10% 10%,100% 100%;
+  -o-background-size: 10% 10%,100% 100%;
+  background-size: 10% 10%,100% 100%;
+}
+section > footer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  padding-top: 65%;
+  padding-right: 0%;
+  font-size: 0.7em;
+  color: #DA0E1A;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+}
+
+section:not(.title):not(.intro):before{
+ font-size: 12pt;
+  content: "© SQLI GROUP 2013";
+  position: absolute;
+  top: 00px;
+  left: 0px;
+  background: url(../../images/carre_haut_1.png) no-repeat -0px 00px, url(../../images/carre_haut_2.png) no-repeat 5.3em 0%;
+  -webkit-background-size: 5.3em 5.3em, 10.9em 10.9em;
+  -moz-background-size: 5.3em 5.3em, 10.9em 10.9em;
+  -o-background-size: 5.3em 5.3em, 10.9em 10.9em;
+  background-size: 5.3em 5.3em, 10.9em 10.9em;
+  padding-left: 4em;
+  padding-top: 40em;
+  height: 100%;
+  line-height: 1.9;
+  z-index: 0;
+  width: 100%;
+  -webkit-border-top-left-radius: 12px;
+  -moz-border-radius-topleft: 12px;
+  -ms-border-top-left-radius: 12px;
+  -o-border-top-left-radius: 12px;
+  border-top-left-radius: 12px;
+
+}
+
+
+section:not(.title):not(.intro):after{
+  font-size: 12pt;
+  content: " ";
+  position: absolute;
+  top: 00px;
+  left: 0px;
+  background: url(../../images/logo_sstxt.png) no-repeat 51em 40em;
+  z-index: -1;
+  -webkit-background-size: 2em 2em;
+  -moz-background-size: 2em 2em;
+  -o-background-size: 2em 2em;
+  background-size: 2em 2em;
+  padding-left: 4em;
+  padding-top: 40em;
+  height: 100%;
+  line-height: 1.9;
+  width: 100%;
+}
+
+section:not(.title):not(.intro) {
+  font-size: 24px;  
+  padding: 10px 10px 40px 100px;  
+}
+section:not(.title):not(.intro) > article:not(h1):not(h2):not(footer), 
+section:not(.title):not(.intro) > :not(h1):not(h2):not(footer) {
+  padding-top: 5em;
+  padding-right: 2.5em;
+  padding-bottom: 2.6em;
+  padding-left: 4.4em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+
+
+li > div.literal > pre.literal{
+  color: rgba(0, 13, 23, 0.7);
+  font-family: "Arial Narrow", "Liberation Sans Narrow", Arial, sans-serif;
+  font-stretch: condensed; 
+}*/
+/*
+ 
+ Citations
+
+*/
+/*
+blockquote {
+  padding: 0 0 0 15px;
+  margin: 2em 2em 0 2em;
+  border-left: 5px solid #DA0E1A;
+  font-size: 0.7em;
+}
+
+blockquote:before {
+  color: #DA0E1A;
+  content: '\201C';
+  font-size: 4em;
+  font-weight: 700;
+  float: left;
+  margin-left: -.9em;
+}
+
+section blockquote p {
+  color: #1D2326;
+  font-weight: 700;
+  line-height: 1.5;
+  margin-bottom: .5em;
+  font-style: italic;
+  font-size: 3.5em;
+  font-weight: normal;
+}
+
+blockquote p em {
+  font-style: italic;
+}
+
+blockquote p:last-of-type {
+  margin-bottom: 0;
+  padding-bottom: 0.1em;
+}
+
+blockquote cite {
+  font-size: 1.5em;
+  display: block;
+  line-height: 1.8;
+  color: rgba(0, 13, 23, 0.7);
+  font-style: normal;
+  margin-top: .25em;
+}
+
+blockquote cite:before {
+  content: '\2014 \00A0';
+}*/
+/*
+  Listes
+*/
+/* line 363, ../../../../scss/theme/2014/sqli/sqli.scss */
+li {
+  margin-top: 0.7em;
+}
+
+/* line 367, ../../../../scss/theme/2014/sqli/sqli.scss */
+article div > ul > li,
+article div > ul > li > ul > li,
+article > ul > li,
+article > ul > li > ul > li {
+  list-style: none;
+}
+
+/* line 374, ../../../../scss/theme/2014/sqli/sqli.scss */
+article div > ul > li:before,
+article div > div > ul > li:before,
+article > ul > li:before {
+  content: '+';
+  display: block;
+  position: relative;
+  max-width: 0px;
+  max-height: 0px;
+  left: -0.7em;
+  top: -0.3em;
+  color: #DA0E1A;
+  font-size: 2em;
+}
+
+/* line 388, ../../../../scss/theme/2014/sqli/sqli.scss */
+article div > ul > li > ul > li:before,
+article > ul > li > ul > li:before {
+  content: " ";
+  padding-right: 14px;
+  display: block;
+  position: relative;
+  left: -0.7em;
+  top: 0.7em;
+  width: 0;
+  height: 0;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid #008fff;
+}
+
+/*
+
+Code
+
+*/
+/* line 409, ../../../../scss/theme/2014/sqli/sqli.scss */
+section pre:not(.literal) code {
+  font-family: "DejaVu Sans Mono", "Droid Sans Mono", Menlo, Monaco, "Courier New", monospace;
+  font-size: 0.7em;
+  line-height: 1.2;
+  background: #e6e6e6;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 1em;
+}
+
+/*
+
+Images and backgrounds management
+
+*/
+/*section.intro span.image > img{
+
+  display: block;
+  z-index: -1;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+  border-radius: 12px;  
+
+}
+
+section.intro img.icone{
+
+  display: block;
+  position: absolute;
+  height: 100px;
+  float:left;
+}
+
+section.intro div.sect2 > img.icone{
+  top: 5.5em;
+  left: 6em;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+
+}
+
+section.intro article > img.icone{
+  top: 11.5em;
+  left: 4em;
+
+}
+
+
+section.intro.fond_1 {
+  bottom: 0px;
+  right: 0px;
+  background: url(../../images/fond_1.jpg) no-repeat 100% 99%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-size: 100% 100%;
+}
+
+section.intro.fond_2 {
+  bottom: 0px;
+  right: 0px;
+  background: url(../../images/fond_2.jpg) no-repeat 100% 99%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-size: 100% 100%;
+}
+
+section.intro.fond_3 {
+  bottom: 0px;
+  right: 0px;
+  background: url(../../images/fond_3.jpg) no-repeat 100% 99%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-size: 100% 100%;
+}
+
+section.intro.fond_fin {
+  bottom: 0px;
+  right: 0px;
+  background: url(../../images/fond_fin.jpg) no-repeat 100% 99%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-size: 100% 100%;
+}*/
