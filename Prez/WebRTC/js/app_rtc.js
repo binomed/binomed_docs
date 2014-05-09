@@ -156,7 +156,7 @@ function(){
     isPrez = true;
     remoteVideo = document.querySelector('#remoteVideo');
   }
-  requestTurn('https://computeengineondemand.appspot.com/turn?username=41784574&key=4080218913');
+  //requestTurn('https://computeengineondemand.appspot.com/turn?username=41784574&key=4080218913');
   window.onbeforeunload = function(e){
   	sendMessage('bye');
   }
