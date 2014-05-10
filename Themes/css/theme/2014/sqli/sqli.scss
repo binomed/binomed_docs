@@ -12,9 +12,13 @@ $footer-height-title : 60px;
 $footer-bottom-title : 30px;
 $footer-height : 45px;
 $footer-bottom : 20px;
+$header-height : 283px;
 $logo_sqli_width : 49px;
 $logo_sqli_height : 48px;
+$logo_header_width : 283px;
+$logo_header_height : 283px;
 $logo_sqli_ratio : $logo_sqli_width / $logo_sqli_height;
+$logo_header_ratio : $logo_header_width / $logo_header_height;
 
 
 /*
@@ -61,7 +65,7 @@ $logo_sqli_ratio : $logo_sqli_width / $logo_sqli_height;
 }
 
 /*
-* Footer
+* Footer /  Header
 */
 
 footer.sqli-footer:after{
@@ -83,6 +87,7 @@ footer.sqli-footer:after{
     background-repeat: no-repeat;
 }
 
+
 header.sqli-header:before{
     content: '';
     white-space: pre;
@@ -91,17 +96,17 @@ header.sqli-header:before{
     left: 0;
     width:calc(100% - #{$margin-lr} - #{$margin-lr});
     width:-webkit-calc(100% - #{$margin-lr} - #{$margin-lr});
-    height:$footer-height;
-    padding-left: 60px;
-    line-height: 1em;
-    font-size: 0.8em;
-    text-transform: uppercase;
+    height:$header-height;
     background-image: url('assets/images/carre_haut_2.png');
-    background-size: ($logo_sqli_ratio * $footer-height) $footer-height;
+    background-size: ($logo_header_ratio * $header-height) $header-height;
     background-position: 0 0;
     background-repeat: no-repeat;
 }
 
+
+/*
+* Commons Slides
+*/
 
  
 .reveal .slides>section, .reveal .slides>section>section{
@@ -116,6 +121,7 @@ header.sqli-header:before{
 
   h1, h2{
     color : $red;    
+    font-size: 4em;
   }
 
 }

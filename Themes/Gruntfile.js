@@ -23,7 +23,8 @@ module.exports = function (grunt) {
           all :'scss/**/*.scss',
           dir: 'scss',
           theme:  {
-            dir : 'scss/theme'
+            dir : 'scss/theme',
+            js : 'scss/**/*.js'
           }
         },
         assets: {
@@ -66,7 +67,14 @@ module.exports = function (grunt) {
             tasks: ['compass']
         },
         js: {
-            files: ['<%= src.js %>'],
+            files: ['<%= src.js %>',],
+            options: {
+              livereload: true
+            }
+        },
+        js_theme: {
+            files: ['<%= src.sass.theme.js %>',],
+            tasks: ['copy'],
             options: {
               livereload: true
             }

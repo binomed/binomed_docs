@@ -23,9 +23,21 @@
 
 ##==##
 
+<!-- .slide: class="transition-white" -->
+
+# A White Transition Slide
+
+##==##
+
+<!-- .slide: class="transition-black" -->
+
+# A Black Transition Slide
+
+##==##
+
 <!-- .slide: data-background="/assets/images/iron_droid.jpg" data-state="hidefooter" class="transition" -->
 
-# un super titre de transition
+# A Custom Transition Slide
 
 
 
@@ -42,20 +54,12 @@
 -->
 
 
-## Sommaire ## 
+## Summary ## 
 
-<div class="no-bullet"></div>
 
-* ![sommaire](/assets/images/android_cupcake.jpg) 
-* ![sommaire](/assets/images/android_donut.jpg) Android ?
-* ![sommaire](/assets/images/android_eclair.jpg) Concepts 
-* ![sommaire](/assets/images/android_froyo.png) Economiquement intéressant ?
-* ![sommaire](/assets/images/android_gingerbread.jpg) Développement 
-* ![sommaire](/assets/images/android_honeycomb.png) Liens
-* ![sommaire](/assets/images/android_icecreamsandwich.jpg) Questions
-* ![sommaire](/assets/images/android_jellybean.png)
-
-<footer/>
+* Item 1
+* Item 2
+* Item 3
 
 ##==##
 <!--

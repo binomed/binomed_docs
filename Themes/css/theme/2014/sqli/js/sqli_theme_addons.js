@@ -14,7 +14,7 @@ var SQLI_THEME = SQLI_THEME || function(){
           if(script.src && script.src.match(/sqli_theme_addons\.js$/))
           { 
             var path = script.src;
-            return path.substring(0, path.indexOf('js/sqli_theme_addons'));
+            return path.substring(0, path.indexOf('js/sqli_theme_addons')); 
           }
         }
       return "";
@@ -45,6 +45,7 @@ var SQLI_THEME = SQLI_THEME || function(){
 
 	function hideFooter(event){
 		document.querySelector('footer.sqli-footer').style.display = 'none';
+		document.querySelector('header.sqli-header').style.display = 'none';
 
 	}
 
@@ -52,6 +53,7 @@ var SQLI_THEME = SQLI_THEME || function(){
 		var currentSlide = document.querySelector('section.present');
 		if (currentSlide && currentSlide.getAttribute('data-state') != 'hidefooter'){
 			document.querySelector('footer.sqli-footer').style.display = 'block';
+			document.querySelector('header.sqli-header').style.display = 'block';
 		}
 
 	}
@@ -60,7 +62,7 @@ var SQLI_THEME = SQLI_THEME || function(){
 		var footer = document.createElement('footer');
 		footer.classList.add('sqli-footer');
 		footer.style.display = 'none';
-		document.body.appendChild(footer);
+		document.body.appendChild(footer); 
 
 		var header = document.createElement('header');
 		header.classList.add('sqli-header');
@@ -83,6 +85,22 @@ var SQLI_THEME = SQLI_THEME || function(){
 		for (var i = 0; i < queryElementList.length; i++){
 			var element = queryElementList[i];
 			element.setAttribute('data-background',path+'/assets/images/Fd_fonce1.jpg');					
+			element.setAttribute('data-state','hidefooter');		
+		}
+
+		queryElementList = document.querySelectorAll('.reveal .slides section.transition-white');
+
+		for (var i = 0; i < queryElementList.length; i++){
+			var element = queryElementList[i];
+			element.setAttribute('data-background',path+'/assets/images/bg_72dpi_rvb.jpg');					
+			element.setAttribute('data-state','hidefooter');		
+		}
+
+		queryElementList = document.querySelectorAll('.reveal .slides section.transition-black');
+
+		for (var i = 0; i < queryElementList.length; i++){
+			var element = queryElementList[i];
+			element.setAttribute('data-background',path+'/assets/images/bg_72dpi_rvb_dark_fond_light.jpg');					
 			element.setAttribute('data-state','hidefooter');		
 		}
 
