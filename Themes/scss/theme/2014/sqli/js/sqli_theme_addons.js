@@ -25,6 +25,10 @@ var SQLI_THEME = SQLI_THEME || function(){
 
 		path = extractPath();
 
+		// FavIcon
+		manageFavIcon();
+
+
 		// Add footer
 		manageHeaderFooter();
 
@@ -43,6 +47,15 @@ var SQLI_THEME = SQLI_THEME || function(){
 		}
 	}
 
+	function manageFavIcon(){
+		var link = document.createElement('link');
+	    link.type = 'image/x-icon';
+	    link.rel = 'shortcut icon';
+	    link.href = path+'/assets/images/logo_sstxt.png';
+	    document.getElementsByTagName('head')[0].appendChild(link);
+		
+	}
+
 	function hideFooter(event){
 		document.querySelector('footer.sqli-footer').style.display = 'none';
 		document.querySelector('header.sqli-header').style.display = 'none';
@@ -50,7 +63,7 @@ var SQLI_THEME = SQLI_THEME || function(){
 	}
 
 	function showFooter(event){
-		var currentSlide = document.querySelector('section.present');
+		var currentSlide = document.querySelector('section:not(.stack).present');
 		if (currentSlide && currentSlide.getAttribute('data-state') != 'hidefooter'){
 			document.querySelector('footer.sqli-footer').style.display = 'block';
 			document.querySelector('header.sqli-header').style.display = 'block';
@@ -72,36 +85,34 @@ var SQLI_THEME = SQLI_THEME || function(){
 
 
 	function manageBackgrounds(){
-		var queryElementList = document.querySelectorAll('.reveal .slides section.first-slide');
 
-		for (var i = 0; i < queryElementList.length; i++){
-			var element = queryElementList[i];
-			element.setAttribute('data-background',path+'/assets/images/fd-couv.jpg');		
-			element.setAttribute('data-state','hidefooter');		
-		}
+		var map = {
+			'first-slide' : 'fd-couv.jpg',
+			'who-am-i' : 'Fd_fonce1.jpg',
+			'last-slide' : 'Fd_fonce1.jpg',
+			'transition-white' : 'bg_72dpi_rvb.jpg',
+			'transition-black' : 'bg_72dpi_rvb_dark_fond_light.jpg',
+			'transition-carte-rouge' : 'fd-carte.jpg',
+			'transition-carte-grise' : 'fd-carte_bis.jpg',
+			'transition-carte-marron' : 'fd-carte_ter.jpg',
+			'transition-ciel' : 'Fd-ciel.jpg',
+			'transition-ciel-gris' : 'Fd-cielgris.jpg',
+			'transition-graphic' : 'Fd-graphic.jpg',
+			'transition-mains-rouge' : 'fd-mains.jpg',
+			'transition-mains-bleu' : 'fd-profit.jpg',
+			'transition-tete-bleu' : 'fd-tete-bleu.jpg',
+			'transition-trame1' : 'Fd-trame1.jpg',
+			'transition-trame2' : 'Fd-trame2.jpg'
+		};
 
-		queryElementList = document.querySelectorAll('.reveal .slides section.who-am-i');
+		for (var key in map){
+			var queryElementList = document.querySelectorAll('.reveal .slides section.'+key);
 
-		for (var i = 0; i < queryElementList.length; i++){
-			var element = queryElementList[i];
-			element.setAttribute('data-background',path+'/assets/images/Fd_fonce1.jpg');					
-			element.setAttribute('data-state','hidefooter');		
-		}
-
-		queryElementList = document.querySelectorAll('.reveal .slides section.transition-white');
-
-		for (var i = 0; i < queryElementList.length; i++){
-			var element = queryElementList[i];
-			element.setAttribute('data-background',path+'/assets/images/bg_72dpi_rvb.jpg');					
-			element.setAttribute('data-state','hidefooter');		
-		}
-
-		queryElementList = document.querySelectorAll('.reveal .slides section.transition-black');
-
-		for (var i = 0; i < queryElementList.length; i++){
-			var element = queryElementList[i];
-			element.setAttribute('data-background',path+'/assets/images/bg_72dpi_rvb_dark_fond_light.jpg');					
-			element.setAttribute('data-state','hidefooter');		
+			for (var i = 0; i < queryElementList.length; i++){
+				var element = queryElementList[i];
+				element.setAttribute('data-background',path+'/assets/images/'+map[key]);		
+				element.setAttribute('data-state','hidefooter');		
+			}			
 		}
 
 	}

@@ -3,6 +3,7 @@ Reveal presentation for webRTC
 Add a symbolic link with : 
 
 * /reveal -> {repoHome}/Tools/reveal
+* /css/theme -> {repoHome}/Themes/css
 * /libs/sockets-notes -> {repoHome}/Tools/sockets-notes
 * /libs/reveal-md-style-bootstrap -> {repoHome}/Tools/reveal-md-style-bootstrap
 * /libs/highlight.js -> {repoHome}/Tools/highlight.js

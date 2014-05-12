@@ -7,19 +7,30 @@
 
 
 $margin-lr : 40px;
+$margin-title : 30px;
 $margin-section : 20px;
 $footer-height-title : 60px;
 $footer-bottom-title : 30px;
 $footer-height : 45px;
 $footer-bottom : 20px;
-$header-height : 150px;
+$header-white-height : 150px;
+$header-red-height : 80px;
 $logo_sqli_width : 49px;
 $logo_sqli_height : 48px;
-$logo_header_width : 283px;
-$logo_header_height : 283px;
+$logo_header_white_width : 283px;
+$logo_header_white_height : 283px;
+$logo_header_red_width : 137px;
+$logo_header_red_height : 137px;
 $logo_sqli_ratio : $logo_sqli_width / $logo_sqli_height;
-$logo_header_ratio : $logo_header_width / $logo_header_height;
+$logo_header_white_ratio : $logo_header_white_width / $logo_header_white_height;
+$logo_header_red_ratio : $logo_header_red_width / $logo_header_red_height;
 
+
+::selection {
+  color: white;
+  background: #333333;
+  text-shadow: none; 
+}
 
 /*
 *
@@ -96,10 +107,10 @@ header.sqli-header:before{
     left: 0;
     width:calc(100% - #{$margin-lr} - #{$margin-lr});
     width:-webkit-calc(100% - #{$margin-lr} - #{$margin-lr});
-    height:$header-height;
-    background-image: url('assets/images/carre_haut_2.png');
-    background-size: ($logo_header_ratio * $header-height) $header-height;
-    background-position: 0 0;
+    height:$header-white-height;
+    background-image: url('assets/images/carre_haut_1.png'), url('assets/images/carre_haut_2.png');
+    background-size: ($logo_header_red_ratio * $header-red-height) $header-red-height, ($logo_header_white_ratio * $header-white-height) $header-white-height;
+    background-position: 0 0, ($logo_header_red_ratio * $header-red-height) 0;
     background-repeat: no-repeat;
 }
 
@@ -109,7 +120,7 @@ header.sqli-header:before{
 */
 
  
-.reveal .slides>section, .reveal .slides>section>section{
+.reveal .slides>section , .reveal .slides>section>section{
   position:absolute;
   height:calc(100% - 60px);
   height:-webkit-calc(100% - 60px);
@@ -121,191 +132,35 @@ header.sqli-header:before{
 
   h1, h2{
     color : $red;    
-    font-size: 4em;
+    font-size: 3em;
   }
 
 }
+
+.reveal .slides>section>section h2{
+  //font-size: 1em;
+}
+
+/*
+* Titles Management  and Spaces
+*/
+
+.reveal .slides>section:not(.first-slide):not(.who-am-i):not(.transition):not(.transition-white):not(.transition-black)
+, .reveal .slides>section>section:not(.first-slide):not(.who-am-i):not(.transition):not(.transition-white):not(.transition-black){
+  
+
+  h1~:not(h2), h2~:not(h3){
+    margin-top: $margin-title;
+  }
+
+}
+
 
 
 ul {
     margin: 10px 10px;
 }
 
-/*section > h1, section > div > h2, section > h2, section > article > div.sect2 > h3 {
-  font-weight: 600;
-  text-transform : uppercase;
-}
-
-section > h1, section.intro > h2{  
-  font-weight: 400;
-  position: absolute;
-  top: 18%;
-  left: 26%;
-  font-size: 30px;
-  line-height: 1.25em;
-  color: #DA0E1A;
-  margin-left: 10px;
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  width: 40%;
-  height: 9.75%;
-  overflow: hidden;
-}
-
-section.title > div > h2, section.intro > article > div.sect2 > h3{  
-  position: absolute;
-  top: 34%;
-  left: 41%;
-  font-size: 24px;
-  line-height: 1.2em;
-  letter-spacing: 0px;
-  color: #111211;
-  margin-left: 10px;
-  width: 40%;
-  height: 8.2%;
-  overflow: hidden;
-}
-section.intro > article > div.sect2, section.title > div.subtitle{
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-}
-
-section:not(.title):not(.intro) > h2 {
-  position: absolute;
-  top: 10px;
-  left: 11px;
-  width: 100%;
-  padding-left: 12%;
-  padding-right: 0.1em;
-  padding-top: 0.1em;
-  font-size: 30px;
-  line-height: 35px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  color: #DA0E1A;
-}*/
-
-/* 
-
-  Slides
-
- */
- /*
-section:not(.title):not(.intro) > article > div.sect2 > h3 {
-  font-size: 26px;
-  line-height: 2;
-  font-weight: inherit;
-  color: #111211;
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  width: 100%;
-  padding-left: 13%;
-  padding-right: 0.1em;
-  padding-top: 1.2em;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-section.title{
-  bottom: 0px;
-  right: 0px;
-  background: url(../../images/logo.png) no-repeat 20% 60%, url(../../images/fond_1.jpg) no-repeat 100% 99%;
-  -webkit-background-size: 10% 10%, 100% 100%;
-  -moz-background-size: 10% 10%,100% 100%;
-  -o-background-size: 10% 10%,100% 100%;
-  background-size: 10% 10%,100% 100%;
-}
-section > footer {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  padding-top: 65%;
-  padding-right: 0%;
-  font-size: 0.7em;
-  color: #DA0E1A;
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-}
-
-section:not(.title):not(.intro):before{
- font-size: 12pt;
-  content: "© SQLI GROUP 2013";
-  position: absolute;
-  top: 00px;
-  left: 0px;
-  background: url(../../images/carre_haut_1.png) no-repeat -0px 00px, url(../../images/carre_haut_2.png) no-repeat 5.3em 0%;
-  -webkit-background-size: 5.3em 5.3em, 10.9em 10.9em;
-  -moz-background-size: 5.3em 5.3em, 10.9em 10.9em;
-  -o-background-size: 5.3em 5.3em, 10.9em 10.9em;
-  background-size: 5.3em 5.3em, 10.9em 10.9em;
-  padding-left: 4em;
-  padding-top: 40em;
-  height: 100%;
-  line-height: 1.9;
-  z-index: 0;
-  width: 100%;
-  -webkit-border-top-left-radius: 12px;
-  -moz-border-radius-topleft: 12px;
-  -ms-border-top-left-radius: 12px;
-  -o-border-top-left-radius: 12px;
-  border-top-left-radius: 12px;
-
-}
-
-
-section:not(.title):not(.intro):after{
-  font-size: 12pt;
-  content: " ";
-  position: absolute;
-  top: 00px;
-  left: 0px;
-  background: url(../../images/logo_sstxt.png) no-repeat 51em 40em;
-  z-index: -1;
-  -webkit-background-size: 2em 2em;
-  -moz-background-size: 2em 2em;
-  -o-background-size: 2em 2em;
-  background-size: 2em 2em;
-  padding-left: 4em;
-  padding-top: 40em;
-  height: 100%;
-  line-height: 1.9;
-  width: 100%;
-}
-
-section:not(.title):not(.intro) {
-  font-size: 24px;  
-  padding: 10px 10px 40px 100px;  
-}
-section:not(.title):not(.intro) > article:not(h1):not(h2):not(footer), 
-section:not(.title):not(.intro) > :not(h1):not(h2):not(footer) {
-  padding-top: 5em;
-  padding-right: 2.5em;
-  padding-bottom: 2.6em;
-  padding-left: 4.4em;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-
-
-li > div.literal > pre.literal{
-  color: rgba(0, 13, 23, 0.7);
-  font-family: "Arial Narrow", "Liberation Sans Narrow", Arial, sans-serif;
-  font-stretch: condensed; 
-}*/
 
 /*
  
@@ -313,55 +168,57 @@ li > div.literal > pre.literal{
 
 */
 
-/*
-blockquote {
-  padding: 0 0 0 15px;
-  margin: 2em 2em 0 2em;
-  border-left: 5px solid #DA0E1A;
-  font-size: 0.7em;
+
+.reveal .slides section{
+
+  blockquote {
+    padding: 0 0 0 15px;
+    margin: 2em 2em 0 2em;
+    border-left: 5px solid #DA0E1A;
+    font-size: 0.7em;
+  }
+
+  blockquote:before {
+    color: #DA0E1A;
+    content: '\201C';
+    font-size: 4em;
+    font-weight: 700;
+    float: left;
+    margin-left: -.9em;
+  }
+
+  section blockquote p {
+    color: #1D2326;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: .5em;
+    font-style: italic;
+    font-size: 3.5em;
+    font-weight: normal;
+  }
+
+  blockquote p em {
+    font-style: italic;
+  }
+
+  blockquote p:last-of-type {
+    margin-bottom: 0;
+    padding-bottom: 0.1em;
+  }
+
+  blockquote cite {
+    font-size: 1.5em;
+    display: block;
+    line-height: 1.8;
+    color: rgba(0, 13, 23, 0.7);
+    font-style: normal;
+    margin-top: .25em;
+  }
+
+  blockquote cite:before {
+    content: '\2014 \00A0';
+  }
 }
-
-blockquote:before {
-  color: #DA0E1A;
-  content: '\201C';
-  font-size: 4em;
-  font-weight: 700;
-  float: left;
-  margin-left: -.9em;
-}
-
-section blockquote p {
-  color: #1D2326;
-  font-weight: 700;
-  line-height: 1.5;
-  margin-bottom: .5em;
-  font-style: italic;
-  font-size: 3.5em;
-  font-weight: normal;
-}
-
-blockquote p em {
-  font-style: italic;
-}
-
-blockquote p:last-of-type {
-  margin-bottom: 0;
-  padding-bottom: 0.1em;
-}
-
-blockquote cite {
-  font-size: 1.5em;
-  display: block;
-  line-height: 1.8;
-  color: rgba(0, 13, 23, 0.7);
-  font-style: normal;
-  margin-top: .25em;
-}
-
-blockquote cite:before {
-  content: '\2014 \00A0';
-}*/
-
 
 /*
   Listes
@@ -370,35 +227,35 @@ li{
   margin-top: 0.7em;
 }
 
-article  div > ul > li, 
-article  div > ul > li > ul > li, 
-article > ul > li,
-article > ul > li > ul > li
+.reveal .slides section ul > li, 
+.reveal .slides section ul > li > ul > li, 
+.reveal .slides section ul > li,
+.reveal .slides section ul > li > ul > li
 {
   list-style: none;
 }
-article  div > ul > li:before, 
-article  div > div > ul > li:before, 
-article > ul > li:before{
+.reveal .slides section ul > li:before, 
+.reveal .slides section div > ul > li:before, 
+.reveal .slides section ul > li:before{
   content: '+';
   display: block;
   position: relative;
   max-width: 0px;
   max-height: 0px;
   left: -0.7em;
-  top: -0.3em;
+  top: -0.1em;
   color: #DA0E1A;
   font-size: 2em;
 }
 
-article  div > ul >li > ul > li:before, 
-article> ul >li > ul > li:before{
+.reveal .slides section ul >li > ul > li:before, 
+.reveal .slides section ul >li > ul > li:before{
 content: " ";
 padding-right: 14px;
 display: block;
 position: relative;
 left: -0.7em;
-top: 0.7em;
+top: 0.3em;
 width: 0;
 height: 0;
 border-bottom: 10px solid transparent;
@@ -412,98 +269,45 @@ border-left: 10px solid rgba(0, 143, 255,1);
 Code
 
 */
-section pre:not(.literal) code {
-  font-family: "DejaVu Sans Mono", "Droid Sans Mono", Menlo, Monaco, "Courier New", monospace;
-  font-size: 0.7em;
-  line-height: 1.2;
-  background: #e6e6e6;
-  border: 1px solid rgba(255,255,255,.2);
-  margin-bottom: 1em;
+.reveal .slides section pre:not(.literal) code {
+  font-family: "Courier New", monospace;
+  font-size: 1em;
+  line-height: 1.1em;
+  
 }
 
+.reveal .slides section p.big-code~pre:not(.literal) code{
+  font-size: 2em;
+  line-height: 2.1em;
+  
+}
 
 
 /*
-
-Images and backgrounds management
-
+* Links
 */
 
-/*section.intro span.image > img{
-
-  display: block;
-  z-index: -1;
-  position: absolute;
-  bottom: 0px;
-  right: 0px;
-  -webkit-border-radius: 12px;
-  -moz-border-radius: 12px;
-  -ms-border-radius: 12px;
-  -o-border-radius: 12px;
-  border-radius: 12px;  
-
+.reveal a:not(.image) {
+  color: $red;
+  text-decoration: none;
+  -webkit-transition: color .15s ease;
+  -moz-transition: color .15s ease;
+  -ms-transition: color .15s ease;
+  -o-transition: color .15s ease;
+  transition: color .15s ease; 
 }
 
-section.intro img.icone{
+.reveal a:not(.image):hover {
+  color: $red;
+  text-shadow: none;
+  border: none; }
 
-  display: block;
-  position: absolute;
-  height: 100px;
-  float:left;
+.reveal .roll span:after {
+  color: white;
+  background: $red; 
 }
 
-section.intro div.sect2 > img.icone{
-  top: 5.5em;
-  left: 6em;
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-
+.reveal .slides .toc a {
+  color: inherit; 
 }
 
-section.intro article > img.icone{
-  top: 11.5em;
-  left: 4em;
-
-}
-
-
-section.intro.fond_1 {
-  bottom: 0px;
-  right: 0px;
-  background: url(../../images/fond_1.jpg) no-repeat 100% 99%;
-  -webkit-background-size: 100% 100%;
-  -moz-background-size: 100% 100%;
-  -o-background-size: 100% 100%;
-  background-size: 100% 100%;
-}
-
-section.intro.fond_2 {
-  bottom: 0px;
-  right: 0px;
-  background: url(../../images/fond_2.jpg) no-repeat 100% 99%;
-  -webkit-background-size: 100% 100%;
-  -moz-background-size: 100% 100%;
-  -o-background-size: 100% 100%;
-  background-size: 100% 100%;
-}
-
-section.intro.fond_3 {
-  bottom: 0px;
-  right: 0px;
-  background: url(../../images/fond_3.jpg) no-repeat 100% 99%;
-  -webkit-background-size: 100% 100%;
-  -moz-background-size: 100% 100%;
-  -o-background-size: 100% 100%;
-  background-size: 100% 100%;
-}
-
-section.intro.fond_fin {
-  bottom: 0px;
-  right: 0px;
-  background: url(../../images/fond_fin.jpg) no-repeat 100% 99%;
-  -webkit-background-size: 100% 100%;
-  -moz-background-size: 100% 100%;
-  -o-background-size: 100% 100%;
-  background-size: 100% 100%;
-}*/

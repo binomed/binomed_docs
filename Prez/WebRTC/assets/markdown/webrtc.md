@@ -1,17 +1,16 @@
-<div class="first-slide"></div>
+<!-- .slide: class="first-slide" -->
 
 # **WebRTC**
 
-## Devfest Marseille
-
-### 2014.24.04 Devfest @ **Marseille** <br><br>http://goo.gl/B6Phir
-
+### 2014.23.05 BreizhCamp @ **Rennes** <br><br>http://goo.gl/B6Phir
 
 
 <video id="remoteVideo" autoplay="autoplay" muted="true"></video> 
 
 
 ##==##
+
+<!-- .slide: class="who-am-i" -->
 
 ## Qui suis-je ?
 
@@ -23,7 +22,6 @@
 ![company_logo](assets/images/sqli_logo.png)
 ![gdg_logo](assets/images/GDG-Logo-carre.png)
 
-<footer/>
 
 ##==##
 
@@ -31,39 +29,17 @@
 
 <div class="no-bullet"></div>
 
-<br>
-
 * Un peu d'histoire
-
-<br>
-
-* WebRTC
-
-<br>
-
+* WebRTC 
 * GetUserMedia
-
-<br>
-
 * RTCPeerConnection
-
-<br>
-
 * RTCDataChannel 
-
-<br>
-
 * Sécurisation
-
-<br>
-
 * Pour les devs
-
-<footer/>
 
 ##==##
 
-<div class='transition'></div>
+<!-- .slide: class="transition-black" -->
 
 # Un peu d'histoire ?
 
@@ -75,24 +51,18 @@
 
 ## Le web aujourd'hui ?
 
-<br><br>
 
 * Quel est le point commun entre tous ces devices ?
 
-<br><br><br><br>
+<br><br>
 
-![float-right w-400](assets/images/chromebook.jpg)
+![float-right w-350](assets/images/chromebook.jpg)
 
-![float-right w-400](assets/images/glass.jpg)
+![float-right w-350](assets/images/glass.jpg)
 
-![float-right w-400](assets/images/kindle.png)
-
-
+![float-right w-350](assets/images/kindle.png)
 
 
-<aside class="notes">
-</aside>
-<footer/>
 ##==##
 
 ## Le web aujourd'hui ?
@@ -101,10 +71,8 @@
 ![full-width](assets/images/browser-logos-2.jpg)
 
 
-<aside class="notes">
+Notes:
 Ils ont tous un browser ! 
-</aside>
-<footer/>
 
 
 ##==##
