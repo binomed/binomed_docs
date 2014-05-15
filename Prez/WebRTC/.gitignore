@@ -5,3 +5,4 @@ node_modules
 libs/reveal-md-style-bootstrap
 libs/highlight.js
 server/node_modules
+css/theme
