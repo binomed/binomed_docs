@@ -11,4 +11,5 @@ Add a symbolic link with :
 
 # For running the app ! 
 
-TODO
+1. Run the application Workshop html5
+2. Start the server for presentation with socket-notes project

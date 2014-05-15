@@ -2,9 +2,9 @@
 
 <!-- .slide: class="first-slide" -->
 
-# **Workshop HTML5**
+# **Quickie Sensors & HTML5**
 
-### 2013.11.26 Stereolux @ **Nantes**
+### 2014.05.23 Breizhcamp @ **Rennes**
 
 ![title](/assets/images/html5-device-access-logo.png)
 
@@ -42,7 +42,6 @@
 <div class="no-bullet"></div>
 
 * Un peu de théorie
-* Installation des environnements
 * Orientation API
 * Device Motion API
 * Light API
@@ -99,71 +98,6 @@
 ##==##
 
 <!--
-//    ______ _   ___      _______ _____   ____  _   _ _   _ ______ __  __ ______ _   _ _______ 
-//   |  ____| \ | \ \    / /_   _|  __ \ / __ \| \ | | \ | |  ____|  \/  |  ____| \ | |__   __|
-//   | |__  |  \| |\ \  / /  | | | |__) | |  | |  \| |  \| | |__  | \  / | |__  |  \| |  | |   
-//   |  __| | . ` | \ \/ /   | | |  _  /| |  | | . ` | . ` |  __| | |\/| |  __| | . ` |  | |   
-//   | |____| |\  |  \  /   _| |_| | \ \| |__| | |\  | |\  | |____| |  | | |____| |\  |  | |   
-//   |______|_| \_|   \/   |_____|_|  \_\\____/|_| \_|_| \_|______|_|  |_|______|_| \_|  |_|   
-//                                                                                             
-//      
--->
-
-<!-- .slide: class="transition-black" -->
-
-#  Environnement
-
-
-![icon](assets/images/nodejs.png)
-
-
-##==##
-
-## Environnement
-
-* Installer NodeJS : http://nodesjs.org
-  * Penser à ajouter node au Path de l'environnement
-
-* Installer sur son mobile : 
- * Chrome Beta
- * FireFox
-
-* Installer Chrome ou Firefox sur son pc.
-
-* Activer les fonctionnalités javascript expérimentales sous Chrome Beta : 
- * Nouvel Onglet 
- * chrome://flags
-
-* Désactiver les rotations automatiques des téléphones !
-
-
-
-##==##
-
-## Environnement
-
-* Récupérer le projet sur github : http://goo.gl/nbh1y9
-
-* Clonnez le répository ou alors récupérer le zip (Download ZIP)
-
-* Copier le contenu du répertoire 'CodeLab/00-Base' dans le répertoire de votre choix
-
-* Ouvrir une ligne de commande et faire : 
-
-<!-- .element: class="big-code" -->
-```sh
-$ cd leCheminJusquauRepertoireCopié
-$ npm install
-$ node server.js
-```
-
-* Ouvrir votre navigateur sur l'url : http://localhost:8080/html
-
-
-
-##==##
-
-<!--
 //     ____  _____  _____ ______ _   _ _______    _______ _____ ____  _   _ 
 //    / __ \|  __ \|_   _|  ____| \ | |__   __|/\|__   __|_   _/ __ \| \ | |
 //   | |  | | |__) | | | | |__  |  \| |  | |  /  \  | |    | || |  | |  \| |
@@ -206,9 +140,7 @@ Subtilité : ça marche mieux si le téléphone est a plat
 
 ## Device Orientation
 
-
-* rendez vous dans /javascript/components/orientation.js
-
+<br>
 
 ```javascript
 if(window.DeviceOrientationEvent) {
@@ -240,15 +172,18 @@ Subtilité : ça marche mieux si le téléphone est a plat
 ![center w-800](assets/images/combination-lock-icon.jpg)
 
 
-
 ##==##
+<!-- .slide: data-state="start-orientation" -->
 
 ## Orientation
 
+<!--
 <div class="controlsSensor">
   <div id="startOrientation" class='btnStart push_button'>Demarer</div>
   <div id="stopOrientation" class='btnStop push_button'>Arrêter</div>
 </div>
+-->
+
 <div class="sensorExample">
   <div class="orientation">
     <div class="safe_lock_funny_win visible-md visible-lg"></div>
@@ -274,7 +209,7 @@ Subtilité : ça marche mieux si le téléphone est a plat
 //    
 -->
 
-<!-- .slide: class="transition-black" -->
+<!-- .slide: class="transition-black" data-state="stop-orientation"-->
 
 # Device Motion API
 
@@ -300,9 +235,6 @@ Notes:
 
 
 On s'intéresse à l'accélération x
-
-* rendez vous dans /javascript/components/devicemotion.js
-
 
 
 ```javascript
@@ -336,12 +268,14 @@ function register(){
 
 ##==##
 
+<!-- .slide: data-state="start-devicemotion" -->
+
 ## DeviceMotion
 
-<div class="controlsSensor">
+<!--<div class="controlsSensor">
   <div id="startDeviceMotion" class='btnStart push_button'>Demarer</div>
   <div id="stopDeviceMotion" class='btnStop push_button'>Arrêter</div>
-</div>
+</div>-->
 <div class="sensorExample">
   <div class="devicemotion">  
     <div class="devicemotion-percent"></div>
@@ -364,7 +298,7 @@ function register(){
 //    
 -->
 
-<!-- .slide: class="transition-black" -->
+<!-- .slide: class="transition-black" data-state="stop-devicemotion"-->
 
 # Proximity
 
@@ -377,8 +311,6 @@ function register(){
 Firefox uniquement ! 
 
 * Renvoie des valeurs entre 0 et 5 (0 étant proche)
-
-* rendez vous dans /javascript/components/proximity.js
 
 
 
@@ -461,8 +393,6 @@ Firefox uniquement !
 * On a 2 façon de faire =>
  * Gestion par valeur
  * Gestion par états : Dim / Normal / Bright
-
-* rendez vous dans /javascript/components/light.js
 
 
 ```javascript
@@ -554,8 +484,6 @@ Notes:
 ##==##
 
 ## User Media
-
-* rendez vous dans /javascript/components/usermedia.js
 
 ```javascript
 // We define the video constraints
@@ -718,18 +646,6 @@ recognition.interimResults = true;
 ![center w-600](assets/images/background.png)
 
 
-
-
-<!--
-//     ____    _    _   ______    _____   _______   _____    ____    _   _    _____ 
-//    / __ \  | |  | | |  ____|  / ____| |__   __| |_   _|  / __ \  | \ | |  / ____|
-//   | |  | | | |  | | | |__    | (___      | |      | |   | |  | | |  \| | | (___  
-//   | |  | | | |  | | |  __|    \___ \     | |      | |   | |  | | | . ` |  \___ \ 
-//   | |__| | | |__| | | |____   ____) |    | |     _| |_  | |__| | | |\  |  ____) |
-//    \___\_\  \____/  |______| |_____/     |_|    |_____|  \____/  |_| \_| |_____/ 
-//                                                                                  
-//   
--->
 
 ##==##
 

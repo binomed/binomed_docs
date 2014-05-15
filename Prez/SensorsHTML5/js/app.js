@@ -27,13 +27,21 @@ $(function(){
 		** ORIENTATION
 		**/
 
-		$('#startOrientation').on('click', function(){
+		Reveal.addEventListener( 'start-orientation', function(){
+			orientationEnable = true;
+		});
+
+		Reveal.addEventListener( 'stop-orientation', function(){
+			orientationEnable = true;
+		});
+
+		/*$('#startOrientation').on('click', function(){
 			orientationEnable = true;
 		});
 
 		$('#stopOrientation').on('click', function(){
 			orientationEnable = false;
-		});
+		});*/
 
 		// We get the html elements
 		var lock = $('.safe_lock');
@@ -50,13 +58,21 @@ $(function(){
 		** DEVICEMOTION
 		**/
 
-		$('#startDeviceMotion').on('click', function(){
+		Reveal.addEventListener( 'start-devicemotion', function(){
+			deviceMotionEnable = true;
+		});
+
+		Reveal.addEventListener( 'stop-devicemotion', function(){
+			deviceMotionEnable = true;
+		});
+
+		/*$('#startDeviceMotion').on('click', function(){
 			deviceMotionEnable = true;
 		});
 
 		$('#stopDeviceMotion').on('click', function(){
 			deviceMotionEnable = false;
-		});
+		});*/
 
 		// Init the device motion element
 		var gradient = $('.devicemotion-percent');
