@@ -1,30 +1,17 @@
 
 
-<div class="first-slide"></div>
+<!-- .slide: class="first-slide" -->
 
 # **Workshop HTML5**
 
-## 2013 
-
 ### 2013.11.26 Stereolux @ **Nantes**
-
-
-##==##
-
-<div class="title"></div>
-
-# **Sensors & HTML5**
-
-## WorkShop HTML5 @ Stéréolux 2013
-
-### GDG Nantes & Stéréolux - 2013
 
 ![title](/assets/images/html5-device-access-logo.png)
 
-<footer/>
-
-
 ##==##
+
+<!-- .slide: class="who-am-i" -->
+
 ## Qui suis-je ?
 
 ###  Jean-François GARREAU
@@ -35,7 +22,7 @@
 ![company_logo](/assets/images/sqli_logo.png)
 ![gdg_logo](/assets/images/GDG-Logo-carre.png)
 
-<footer/>
+
 
 ##==##
 <!--
@@ -64,7 +51,7 @@
 * Vibration API
 * WebSpeech API
 
-<footer/>
+
 
 <!--<script type="text/javascript">helloSommaire();</script>-->
 
@@ -79,7 +66,7 @@
 //    |_|  |_|  |_|______\____/|_|  \_\_____|______|
 //                                                 
 -->     
-<div class='transition'></div>
+<!-- .slide: class="transition-black" -->
 
 # Un peu de théorie
 
@@ -94,32 +81,20 @@
 
 * Geolocation
 
- <br>
-
 * Gyroscope / Accelometer / Compass
-
- <br>
 
 * Media Capture
 
- <br>
-
 * Battery Status API
-
- <br>
 
 * Vibration API
 
- <br>
-
 * Ambient Light
-
- <br>
 
 * Proximity Event
 
 
-<footer/>
+
 
 ##==##
 
@@ -134,7 +109,7 @@
 //      
 -->
 
-<div class='transition'></div>
+<!-- .slide: class="transition-black" -->
 
 #  Environnement
 
@@ -149,27 +124,19 @@
 * Installer NodeJS : http://nodesjs.org
   * Penser à ajouter node au Path de l'environnement
 
-<br>
-
 * Installer sur son mobile : 
  * Chrome Beta
  * FireFox
 
-<br>
-
 * Installer Chrome ou Firefox sur son pc.
-
-<br>
 
 * Activer les fonctionnalités javascript expérimentales sous Chrome Beta : 
  * Nouvel Onglet 
  * chrome://flags
 
-<br>
-
 * Désactiver les rotations automatiques des téléphones !
 
-<footer/>
+
 
 ##==##
 
@@ -177,27 +144,22 @@
 
 * Récupérer le projet sur github : http://goo.gl/nbh1y9
 
-<br>
-
 * Clonnez le répository ou alors récupérer le zip (Download ZIP)
 
 * Copier le contenu du répertoire 'CodeLab/00-Base' dans le répertoire de votre choix
 
-<br>
-
 * Ouvrir une ligne de commande et faire : 
 
+<!-- .element: class="big-code" -->
 ```sh
 $ cd leCheminJusquauRepertoireCopié
-
 $ npm install
-
 $ node server.js
 ```
 
 * Ouvrir votre navigateur sur l'url : http://localhost:8080/html
 
-<footer/>
+
 
 ##==##
 
@@ -212,7 +174,7 @@ $ node server.js
 //   
 -->
 
-<div class='transition'></div>
+<!-- .slide: class="transition-black" -->
 
 # Device Orientation
 
@@ -226,7 +188,7 @@ $ node server.js
 
 Se fait à plat ! 
 
-<br><br><br>
+<br>
 
 ![float-left w-300](assets/images/device-orientation-z.jpg)
 
@@ -234,11 +196,11 @@ Se fait à plat !
 
 ![float-left w-300](assets/images/device-orientation-x.jpg)
 
-<footer/>
 
-<aside class="notes">
+
+Notes:
 Subtilité : ça marche mieux si le téléphone est a plat
-</aside>
+
 
 ##==##
 
@@ -246,7 +208,7 @@ Subtilité : ça marche mieux si le téléphone est a plat
 
 
 * rendez vous dans /javascript/components/orientation.js
-<br><br>
+
 
 ```javascript
 if(window.DeviceOrientationEvent) {
@@ -263,11 +225,11 @@ function process(event) {
 }
 ```
 
-<footer/>
 
-<aside class="notes">
+
+Notes:
 Subtilité : ça marche mieux si le téléphone est a plat
-</aside>
+
 
 ##==##
 
@@ -277,7 +239,7 @@ Subtilité : ça marche mieux si le téléphone est a plat
 
 ![center w-800](assets/images/combination-lock-icon.jpg)
 
-<footer/>
+
 
 ##==##
 
@@ -297,7 +259,7 @@ Subtilité : ça marche mieux si le téléphone est a plat
   </div>
 </div>
 
-<footer/>
+
 
 ##==##
 
@@ -312,7 +274,7 @@ Subtilité : ça marche mieux si le téléphone est a plat
 //    
 -->
 
-<div class='transition'></div>
+<!-- .slide: class="transition-black" -->
 
 # Device Motion API
 
@@ -324,14 +286,13 @@ Subtilité : ça marche mieux si le téléphone est a plat
 
 ![center w-800](assets/images/device_motion.jpg)
 
-<br>
 On peut tenir comptes de l'accélération classique ou avec prise en charge de la gravité !
 
-<footer/>
 
-<aside class="notes">
 
-</aside>
+Notes:
+
+
 
 ##==##
 
@@ -342,7 +303,6 @@ On s'intéresse à l'accélération x
 
 * rendez vous dans /javascript/components/devicemotion.js
 
-<br><br>
 
 
 ```javascript
@@ -362,7 +322,7 @@ function register(){
 }
 ```
 
-<footer/>
+
 
 ##==##
 
@@ -372,7 +332,7 @@ function register(){
 
 ![center w-800](assets/images/chargebatterylonger.jpg)
 
-<footer/>
+
 
 ##==##
 
@@ -389,7 +349,7 @@ function register(){
   </div>
 </div>
 
-<footer/>
+
 
 ##==##
 
@@ -404,7 +364,7 @@ function register(){
 //    
 -->
 
-<div class='transition'></div>
+<!-- .slide: class="transition-black" -->
 
 # Proximity
 
@@ -420,7 +380,6 @@ Firefox uniquement !
 
 * rendez vous dans /javascript/components/proximity.js
 
-<br><br>
 
 
 ```javascript
@@ -439,7 +398,7 @@ function unregister(){
 }
 ```
 
-<footer/>
+
 
 ##==##
 
@@ -449,7 +408,7 @@ function unregister(){
 
 ![center w-800](assets/images/push-button.jpg)
 
-<footer/>
+
 
 ##==##
 
@@ -465,7 +424,7 @@ function unregister(){
   </div>
 </div>
 
-<footer/>
+
 
 
 ##==##
@@ -482,7 +441,7 @@ function unregister(){
 -->
 
 
-<div class='transition'></div>
+<!-- .slide: class="transition-black" -->
 
 # Light 
 
@@ -505,7 +464,6 @@ Firefox uniquement !
 
 * rendez vous dans /javascript/components/light.js
 
-<br><br>
 
 ```javascript
 var deviceLightHandler = function(event) {
@@ -518,7 +476,7 @@ var deviceLightHandler = function(event) {
 window.addEventListener('devicelight', deviceLightHandler, false);
 ```
 
-<footer/>
+
 
 ##==##
 
@@ -528,7 +486,7 @@ window.addEventListener('devicelight', deviceLightHandler, false);
 
 ![center w-400](assets/images/Hanging_Bulb.jpg)
 
-<footer/>
+
 
 ##==##
 
@@ -544,7 +502,7 @@ window.addEventListener('devicelight', deviceLightHandler, false);
   </div>
 </div>
 
-<footer/>
+
 
 
 ##==##
@@ -560,7 +518,7 @@ window.addEventListener('devicelight', deviceLightHandler, false);
 //    
 -->
 
-<div class='transition'></div>
+<!-- .slide: class="transition-black" -->
 
 # User Media
 
@@ -584,15 +542,14 @@ var vgaConstraints = {
   }
 };
 ```
-<br>
 
 * Devient intéressant s'il est mixé avec des effets ou des canvas.
 
-<footer/>
 
-<aside class="notes">
 
-</aside>
+Notes:
+
+
 
 ##==##
 
@@ -625,11 +582,11 @@ gUM(constraints, handleUserMedia, handleUserMediaError);
 ```
 
 
-<footer/>
 
-<aside class="notes">
 
-</aside>
+Notes:
+
+
 
 ##==##
 
@@ -639,7 +596,7 @@ gUM(constraints, handleUserMedia, handleUserMediaError);
 
 ![center w-400](assets/images/css3-transform-rotateX-perspective.png)
 
-<footer/>
+
 
 ##==##
 
@@ -657,7 +614,7 @@ gUM(constraints, handleUserMedia, handleUserMediaError);
   </div>
 </div>
 
-<footer/>
+
 
 
 ##==##
@@ -673,7 +630,7 @@ gUM(constraints, handleUserMedia, handleUserMediaError);
 //   
 -->
 
-<div class='transition'></div>
+<!-- .slide: class="transition-black" -->
 
 # Vibration
 
@@ -694,7 +651,7 @@ gUM(constraints, handleUserMedia, handleUserMediaError);
 window.navigator.vibrate(arrayOfVibration);
 ```
 
-<footer/>
+
 
 ##==##
 
@@ -704,7 +661,7 @@ window.navigator.vibrate(arrayOfVibration);
 
 ![center w-400](assets/images/morse1.jpg)
 
-<footer/>
+
 
 ##==##
 
@@ -719,7 +676,7 @@ window.navigator.vibrate(arrayOfVibration);
 //   
 -->
 
-<div class='transition'></div>
+<!-- .slide: class="transition-black" -->
 
 # Web Speech API
 
@@ -733,11 +690,11 @@ window.navigator.vibrate(arrayOfVibration);
 
 * Un tag existe pour gagner en code 
 
+
 ```html
 <input x-webkit-speech>
 ```
 
-<br>
 
 * Il reste plus intéressant d'utiliser la librairie Javascript
 
@@ -750,7 +707,7 @@ recognition.continuous = true;
 recognition.interimResults = true;
 ```
 
-<footer/>
+
 
 ##==##
 
@@ -760,7 +717,7 @@ recognition.interimResults = true;
 
 ![center w-600](assets/images/background.png)
 
-<footer/>
+
 
 
 <!--
@@ -776,26 +733,17 @@ recognition.interimResults = true;
 
 ##==##
 
-<div class="last-slide"></div>
+<!-- .slide: class="last-slide" -->
 
-<div class="topic-title"></div>
 
-# Sensor & HTML5
+# <!-- .element: class="topic-title" --> Sensor & HTML5
 
-<div class="presenter"></div>
+# <!-- .element: class="presenter" --> **Jean-François Garreau  **
 
-# **Jean-François Garreau**
+# <!-- .element: class="work-rule" --> GDG Nantes Leader & Ingénieur SQLI  
 
-<div class="gdg-rule"></div>
+# <!-- .element: class="email" --> **jfgarreau**@sqli.com | @jefBinomed | http://gplus.to/jefBinomed 
 
-# GDG Nantes Leader
-
-<div class="work-rule"></div>
-
-# Ingénieur SQLI  : @binomed / http://gplus.to/jefBinomed 
-
-<div class="thank-message"></div>
-
-# **Merci**
+# <!-- .element: class="thank-message" --> Merci  
 
 ![avatar](/assets/images/jf.jpg)
