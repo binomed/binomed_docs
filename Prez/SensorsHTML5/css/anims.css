@@ -380,6 +380,10 @@
   width: 100%;
   height: 500px;
 }
+/* line 409, ../scss/prez/anims.scss */
+.reveal #vibration input {
+  font-size: 2em;
+}
 
 /***
  *     __          __  _        _____                      _     
@@ -391,7 +395,7 @@
  *                                   | |                         
  *                                   |_|                         
  */
-/* line 423, ../scss/prez/anims.scss */
+/* line 427, ../scss/prez/anims.scss */
 .reveal #webspeech {
   position: relative;
   top: 0;
@@ -399,7 +403,7 @@
   width: 100%;
   height: 530px;
 }
-/* line 431, ../scss/prez/anims.scss */
+/* line 435, ../scss/prez/anims.scss */
 .reveal #mic {
   position: absolute;
   top: 0;
@@ -409,11 +413,11 @@
   margin-left: -25px;
   background-image: url(../assets/images/mic.gif);
 }
-/* line 441, ../scss/prez/anims.scss */
+/* line 445, ../scss/prez/anims.scss */
 .reveal #mic.animate {
   background-image: url(../assets/images/mic-animate.gif);
 }
-/* line 445, ../scss/prez/anims.scss */
+/* line 449, ../scss/prez/anims.scss */
 .reveal #webspeech canvas {
   position: absolute;
   top: 50%;

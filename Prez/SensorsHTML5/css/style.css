@@ -380,6 +380,10 @@
   width: 100%;
   height: 500px;
 }
+/* line 409, ../scss/prez/anims.scss */
+.reveal #vibration input {
+  font-size: 2em;
+}
 
 /***
  *     __          __  _        _____                      _     
@@ -391,7 +395,7 @@
  *                                   | |                         
  *                                   |_|                         
  */
-/* line 423, ../scss/prez/anims.scss */
+/* line 427, ../scss/prez/anims.scss */
 .reveal #webspeech {
   position: relative;
   top: 0;
@@ -399,7 +403,7 @@
   width: 100%;
   height: 530px;
 }
-/* line 431, ../scss/prez/anims.scss */
+/* line 435, ../scss/prez/anims.scss */
 .reveal #mic {
   position: absolute;
   top: 0;
@@ -409,11 +413,11 @@
   margin-left: -25px;
   background-image: url(../assets/images/mic.gif);
 }
-/* line 441, ../scss/prez/anims.scss */
+/* line 445, ../scss/prez/anims.scss */
 .reveal #mic.animate {
   background-image: url(../assets/images/mic-animate.gif);
 }
-/* line 445, ../scss/prez/anims.scss */
+/* line 449, ../scss/prez/anims.scss */
 .reveal #webspeech canvas {
   position: absolute;
   top: 50%;
@@ -525,60 +529,10 @@ img.float-right {
   margin-left: 10px;
 }
 
-/* line 99, ../scss/prez/style.scss */
-#ndef_header {
-  height: 90px;
-  width: 510px;
-  position: absolute;
-  top: 275px;
-  background: rgba(252, 203, 206, 0.5);
-}
-
-/* line 108, ../scss/prez/style.scss */
-#ndef_length_type {
-  height: 90px;
-  width: 510px;
-  position: absolute;
-  top: 365px;
-  background: rgba(252, 203, 206, 0.5);
-}
-
-/* line 116, ../scss/prez/style.scss */
-#ndef_length_payload {
-  height: 90px;
-  width: 510px;
-  position: absolute;
-  top: 455px;
-  background: rgba(252, 203, 206, 0.5);
-}
-
-/* line 124, ../scss/prez/style.scss */
-#ndef_type_id {
-  height: 175px;
-  width: 510px;
-  position: absolute;
-  top: 545px;
-  background: rgba(252, 203, 206, 0.5);
-}
-
-/* line 132, ../scss/prez/style.scss */
-#ndef_payload {
-  height: 90px;
-  width: 510px;
-  position: absolute;
-  top: 720px;
-  background: rgba(252, 203, 206, 0.5);
-}
-
-/* line 140, ../scss/prez/style.scss */
-pre.java.redux code.java, pre.xml.redux code.xml {
-  font-size: 0.6em;
-}
-
 /**
 * Common overrides
 */
-/* line 149, ../scss/prez/style.scss */
+/* line 105, ../scss/prez/style.scss */
 img.company_logo {
   position: absolute;
   bottom: 20%;
@@ -586,7 +540,7 @@ img.company_logo {
   width: 150px;
 }
 
-/* line 156, ../scss/prez/style.scss */
+/* line 112, ../scss/prez/style.scss */
 img.gdg_logo {
   position: absolute;
   bottom: 20%;
@@ -594,7 +548,7 @@ img.gdg_logo {
   width: 150px;
 }
 
-/* line 163, ../scss/prez/style.scss */
+/* line 119, ../scss/prez/style.scss */
 section.intro.pagetransition > h2 {
   left: 65%;
   top: 20%;
@@ -604,7 +558,7 @@ section.intro.pagetransition > h2 {
   transform: rotate(0deg);
 }
 
-/* line 172, ../scss/prez/style.scss */
+/* line 128, ../scss/prez/style.scss */
 .avatar {
   -moz-box-shadow: 2px 2px 2px 3px #CCCCCC;
   -webkit-box-shadow: 2px 2px 2px 3px #CCCCCC;
@@ -612,41 +566,41 @@ section.intro.pagetransition > h2 {
   width: 200px;
 }
 
-/* line 180, ../scss/prez/style.scss */
+/* line 136, ../scss/prez/style.scss */
 .logo_twitter, .logo_gplus {
   position: absolute;
   width: 40px;
   right: 35%;
 }
 
-/* line 185, ../scss/prez/style.scss */
+/* line 141, ../scss/prez/style.scss */
 .logo_twitter {
   bottom: 5%;
 }
 
-/* line 189, ../scss/prez/style.scss */
+/* line 145, ../scss/prez/style.scss */
 .logo_gplus {
   bottom: 15%;
 }
 
-/* line 193, ../scss/prez/style.scss */
+/* line 149, ../scss/prez/style.scss */
 .twitters_account, .gplus_account {
   position: absolute;
   font-size: 20px;
   right: 11%;
 }
 
-/* line 199, ../scss/prez/style.scss */
+/* line 155, ../scss/prez/style.scss */
 .twitters_account {
   bottom: 6%;
 }
 
-/* line 204, ../scss/prez/style.scss */
+/* line 160, ../scss/prez/style.scss */
 .gplus_account {
   bottom: 17%;
 }
 
-/* line 208, ../scss/prez/style.scss */
+/* line 164, ../scss/prez/style.scss */
 .lien_prez {
   position: absolute;
   top: 30%;

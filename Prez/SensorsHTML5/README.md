@@ -13,3 +13,4 @@ Add a symbolic link with :
 
 1. Run the application Workshop html5
 2. Start the server for presentation with socket-notes project
+3. use 2 phones !

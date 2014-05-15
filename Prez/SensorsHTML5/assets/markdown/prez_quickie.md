@@ -177,13 +177,6 @@ Subtilité : ça marche mieux si le téléphone est a plat
 
 ## Orientation
 
-<!--
-<div class="controlsSensor">
-  <div id="startOrientation" class='btnStart push_button'>Demarer</div>
-  <div id="stopOrientation" class='btnStop push_button'>Arrêter</div>
-</div>
--->
-
 <div class="sensorExample">
   <div class="orientation">
     <div class="safe_lock_funny_win visible-md visible-lg"></div>
@@ -272,10 +265,7 @@ function register(){
 
 ## DeviceMotion
 
-<!--<div class="controlsSensor">
-  <div id="startDeviceMotion" class='btnStart push_button'>Demarer</div>
-  <div id="stopDeviceMotion" class='btnStop push_button'>Arrêter</div>
-</div>-->
+
 <div class="sensorExample">
   <div class="devicemotion">  
     <div class="devicemotion-percent"></div>
@@ -344,12 +334,10 @@ function unregister(){
 
 ##==##
 
+<!-- .slide: data-state="start-proximity" -->
+
 ## Proximity
 
-<div class="controlsSensor">
-  <div id="startProximity" class='btnStart push_button'>Demarer</div>
-  <div id="stopProximity" class='btnStop push_button'>Arrêter</div>
-</div>
 <div class="sensorExample">
   <div id="proximity">
     <div class="push_button">Push Me ! </div>
@@ -373,7 +361,7 @@ function unregister(){
 -->
 
 
-<!-- .slide: class="transition-black" -->
+<!-- .slide: class="transition-black" data-state="stop-proximity" -->
 
 # Light 
 
@@ -420,12 +408,11 @@ window.addEventListener('devicelight', deviceLightHandler, false);
 
 ##==##
 
+<!-- .slide: data-state="start-light" -->
+
 ## Light
 
-<div class="controlsSensor">
-  <div id="startLight" class='btnStart push_button'>Demarer</div>
-  <div id="stopLight" class='btnStop push_button'>Arrêter</div>
-</div>
+
 <div class="sensorExample">
    <div id="light">
     <div class="light-bg"></div>
@@ -448,7 +435,7 @@ window.addEventListener('devicelight', deviceLightHandler, false);
 //    
 -->
 
-<!-- .slide: class="transition-black" -->
+<!-- .slide: class="transition-black" data-state="stop-light"-->
 
 # User Media
 
@@ -527,13 +514,11 @@ Notes:
 
 
 ##==##
+<!-- .slide: data-state="start-usermedia" -->
 
 ## User Media
 
-<div class="controlsSensor">
-  <div id="startUserMedia" class='btnStart push_button'>Demarer</div>
-  <div id="stopUserMedia" class='btnStop push_button'>Arrêter</div>
-</div>
+
 <div class="sensorExample">
   <div id="usermedia">
     <div class="videoParent">
@@ -558,7 +543,7 @@ Notes:
 //   
 -->
 
-<!-- .slide: class="transition-black" -->
+<!-- .slide: class="transition-black" data-state="stop-usermedia" -->
 
 # Vibration
 
@@ -589,7 +574,16 @@ window.navigator.vibrate(arrayOfVibration);
 
 ![center w-400](assets/images/morse1.jpg)
 
+##==##
 
+## Vibration
+
+
+<div class="sensorExample">
+  <div id="vibration">
+    <input id='inputMorseText' class='form-control' type='text' placeholder='saisissez un texte et tapez sur Entrée....'>
+  </div>
+</div>
 
 ##==##
 
@@ -646,10 +640,21 @@ recognition.interimResults = true;
 ![center w-600](assets/images/background.png)
 
 
+##==##
+<!-- .slide: data-state="start-webspeech" -->
+
+## Web Speech API
+
+<div class="sensorExample">
+  <div id="webspeech">
+    <canvas id='canvasWebSpeech'>
+  </div>
+</div>
+
 
 ##==##
 
-<!-- .slide: class="last-slide" -->
+<!-- .slide: class="last-slide" data-state="stop-webspeech" -->
 
 
 # <!-- .element: class="topic-title" --> Sensor & HTML5
