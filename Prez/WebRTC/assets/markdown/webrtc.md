@@ -410,6 +410,100 @@ Dispo en chrome stable pour android
 https://simpl.info/getusermedia/sources/
 
 
+##==##
+
+## GetUserMedia
+
+Choix de résolution ou récupérer l'écran
+
+```javascript
+var constraints = {
+  video: {
+    mandatory: {
+      chromeMediaSource: 'screen', // 'tab'
+      maxWidth: 640,
+      maxHeight: 360
+    }
+  }
+};
+```
+
+Plus d'infos : http://hancke.name/webrtc/screenshare/
+
+Notes:
+
+##==##
+
+## GetUserMedia
+
+Choix de la source
+
+```javascript
+MediaStreamTrack.getSources(gotSources);
+function gotSources(sourceInfos) {
+  for (var i = 0; i != sourceInfos.length; ++i) {
+    var sourceInfo = sourceInfos[i];
+    // Object 
+    // {
+    // id : the id of source to use
+    // label : the label of source
+    // kind : the type of source ('audio, video')
+    //}    
+  }
+}
+```
+
+Notes:
+Vérifier que MediaStreamTrack existe !
+
+##==##
+
+## GetUserMedia
+
+Choix de la source
+
+```javascript
+var videoSource = videoSelect.value;
+  var constraints = {
+    video: {
+      optional: [{sourceId: videoSource}]
+    }
+  };
+navigator.getUserMedia(constraints, 
+    successCallback, 
+    errorCallback);
+}
+```
+
+Notes:
+
+##==##
+
+<!-- .slide: data-state="startUMSource" -->
+
+## GetUserMedia
+
+Choix de source ! 
+
+<div class="slideWithGetUserMedia">
+  <div class='select'>
+    <label for='audioSource'>Audio source: </label><select id='audioSource'></select>
+  </div>
+
+  <div class='select'>
+    <label for='videoSource'>Video source: </label><select id='videoSource'></select>
+  </div>
+
+  <video class="thirdUserMedia"  muted autoplay width='600px'></video>
+  <!--<video class="firstUserMedia" width='600px'></video>
+  <br>
+  <button class="firstUserMediaBtn">Miroir, mon beau miroir ...</button>-->
+
+</div>
+
+@github : https://github.com/samdutton/simpl/blob/master/getusermedia/sources
+
+Notes:
 
 
 ##==##
@@ -737,16 +831,16 @@ var pc = new webkitRTCPeerConnection(servers,
 pc.ondatachannel = function(event) {
   receiveChannel = event.channel;
   receiveChannel.onmessage = function(event){
-    document.querySelector("div#receive").innerHTML 
-        = event.data;
+    document.querySelector("div#receive")
+          .innerHTML = event.data;
   };
 };
-sendChannel = pc.createDataChannel("sendDataChannel", 
-	{reliable: false});
+sendChannel = pc.createDataChannel(
+  "sendDataChannel", {reliable: false});
 document.querySelector("button#send").onclick = 
   function (){
-  var data = document.querySelector("textarea#send")
-  .value;
+  var data = document.querySelector(
+    "textarea#send").value;
     sendChannel.send(data);
 };
 ```

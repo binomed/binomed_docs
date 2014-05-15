@@ -58,6 +58,10 @@ UserMedia use case
   text-align: center;
   position: relative;
 
+  label, select{
+    font-size: 0.8em; 
+  } 
+
 }
 
 .firstUserMediaBtn, .asciiCamBtn{
@@ -76,8 +80,14 @@ UserMedia use case
   font-size: 0.25em;
   line-height: 0.6em;
   box-shadow: inherit;
-  width: 850px;
+  width: 890px;
   margin: auto;
+}
+
+@media screen and (min-width: 1025px){
+  .reveal section pre#asciiText{
+    width: 1024px;
+  }
 }
 
 #remoteVideo{

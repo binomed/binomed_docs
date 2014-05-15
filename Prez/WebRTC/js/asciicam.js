@@ -1,5 +1,5 @@
 var CammApp = CammApp || function () {
-	var cam, intervalId, canvas, canvasCtx, ascii;
+	var cam, intervalId, canvas, canvasCtx, ascii, streamUM;
 
 	var loopSpeed = 100;
 	var width = 160;
@@ -23,6 +23,7 @@ var CammApp = CammApp || function () {
 		if (navigator.getUserMedia) {
 			navigator.getUserMedia({video: true, toString: function() { return "video"; } },
 				function successCallback(stream) {
+					streamUM = stream;
 					if(navigator.getUserMedia==navigator.mozGetUserMedia) {
 						cam.src = stream;
 					} else {
@@ -46,7 +47,10 @@ var CammApp = CammApp || function () {
 
     var stopCam = function (e) {
 		clearInterval(intervalId);
-		cam.src = "";
+		cam.src = null;
+		if (streamUM){
+			streamUM.stop();
+		}
 		if (e){
 			e.preventDefault();
 		}

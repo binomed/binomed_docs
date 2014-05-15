@@ -60,31 +60,41 @@ UserMedia use case
   text-align: center;
   position: relative;
 }
+/* line 61, ../scss/prez/style.scss */
+.slideWithGetUserMedia label, .slideWithGetUserMedia select, .slideWithAsciiCam label, .slideWithAsciiCam select {
+  font-size: 0.8em;
+}
 
-/* line 63, ../scss/prez/style.scss */
+/* line 67, ../scss/prez/style.scss */
 .firstUserMediaBtn, .asciiCamBtn {
   bottom: 0;
   font-size: 1em;
 }
 
-/* line 68, ../scss/prez/style.scss */
+/* line 72, ../scss/prez/style.scss */
 .copyright.black {
   color: grey;
   bottom: 20px;
 }
 
-/* line 73, ../scss/prez/style.scss */
+/* line 77, ../scss/prez/style.scss */
 .reveal section pre#asciiText {
   background-color: black;
   color: #00CC00;
   font-size: 0.25em;
   line-height: 0.6em;
   box-shadow: inherit;
-  width: 850px;
+  width: 890px;
   margin: auto;
 }
 
-/* line 83, ../scss/prez/style.scss */
+@media screen and (min-width: 1025px) {
+  /* line 88, ../scss/prez/style.scss */
+  .reveal section pre#asciiText {
+    width: 1024px;
+  }
+}
+/* line 93, ../scss/prez/style.scss */
 #remoteVideo {
   width: 430px;
   position: absolute;
@@ -92,7 +102,7 @@ UserMedia use case
   margin-top: -25%;
 }
 
-/* line 90, ../scss/prez/style.scss */
+/* line 100, ../scss/prez/style.scss */
 div.copyright {
   font-size: 0.6em;
   color: white;
@@ -101,7 +111,7 @@ div.copyright {
   right: 0;
 }
 
-/* line 98, ../scss/prez/style.scss */
+/* line 108, ../scss/prez/style.scss */
 div.copyright:before {
   content: "@";
 }

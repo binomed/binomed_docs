@@ -22,12 +22,8 @@ module.exports = function (grunt) {
         },
         sass: {
           all :'scss/**/*.scss',
-          dir: 'scss',
-          theme:  {
-            dir : 'scss/theme',
-            fonts : 'scss/theme/fonts',
-            images : 'scss/theme/images'
-          }
+          dir: 'scss'
+          
         },
         assets: {
           font:     'assets/font',
@@ -42,9 +38,7 @@ module.exports = function (grunt) {
     copy: {
         theme:{
             files: [
-                {expand: true, cwd: '<%= src.css.libs %>', src: ['**/*.css'], dest: '<%= src.css.dir %>'},
-                {expand: true, cwd: '<%= src.sass.theme.fonts %>', src: ['**'], dest: '<%= src.css.theme %>/fonts'},
-                {expand: true, cwd: '<%= src.sass.theme.images %>', src: ['**'], dest: '<%= src.css.theme %>/images'}
+                {expand: true, cwd: '<%= src.css.libs %>', src: ['**/*.css'], dest: '<%= src.css.dir %>'}
                 
             ]
         }
@@ -92,12 +86,6 @@ module.exports = function (grunt) {
             options:{
                 sassDir: 'scss/prez',
                 cssDir : '<%= src.css.dir %>'
-            }
-        },
-        theme:{
-            options:{
-                sassDir: 'scss/theme',
-                cssDir : '<%= src.css.theme %>'
             }
         }
         
