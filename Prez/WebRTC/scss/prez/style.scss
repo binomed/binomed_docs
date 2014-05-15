@@ -86,3 +86,15 @@ UserMedia use case
   top: 50%;
   margin-top: -25%;
 }
+
+div.copyright{
+    font-size: 0.6em;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+div.copyright:before{
+    content: '@'
+}

@@ -40,6 +40,22 @@
 # A Custom Transition Slide
 
 
+##==##
+
+<!-- .slide: class="transition-white" -->
+
+# A White Transition Slide with icon
+
+![](/assets/images/android.png) <!-- .element: class="icon" -->
+
+##==##
+
+<!-- .slide: class="transition-black" -->
+
+# A Black Transition Slide with icon
+
+![icon](/assets/images/android.png)
+
 
 ##==##
 

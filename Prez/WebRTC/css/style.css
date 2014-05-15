@@ -91,3 +91,17 @@ UserMedia use case
   top: 50%;
   margin-top: -25%;
 }
+
+/* line 90, ../scss/prez/style.scss */
+div.copyright {
+  font-size: 0.6em;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+/* line 98, ../scss/prez/style.scss */
+div.copyright:before {
+  content: "@";
+}

@@ -13,13 +13,16 @@ img[alt*=sommaire]{
 }
 
 .reveal .slides > section img[alt*=avatar]{
-    @include box-shadow(#CCCCCC 2px 2px 2px 3px);
+    @include box-shadow(#CCCCCC 2px 2px 2px 3px); 
 }
 
 .reveal .slides > section img[alt*=title]{
-  height: auto;
-  width: auto;
-  margin-left: -128px;
+  position: absolute;
+width: 200px;
+top: -274px;
+left: 50%;
+margin-left: -146px;
+  
 
 }
 

@@ -216,8 +216,21 @@ table.rows {
 .reveal .slides section.transition-black h1 {
   -moz-transform:  scale(1, 1) rotateZ(-45deg) translate(0, 400px);
   -ms-transform:  scale(1, 1) rotateZ(-45deg) translate(0, 400px);
+  -o-transform:  scale(1, 1) rotateZ(-45deg) translate(0, 400px);
   -webkit-transform:  scale(1, 1) rotateZ(-45deg) translate(0, 400px);
   transform:  scale(1, 1) rotateZ(-45deg) translate(0, 400px);
+}
+
+/* line 143, ../../../../scss/theme/2014/sqli/specifics_slides.scss */
+.reveal .slides section.transition-white img[alt*=icon],
+.reveal .slides section.transition-black img[alt*=icon],
+.reveal .slides section.transition-white img.icon,
+.reveal .slides section.transition-black img.icon {
+  position: absolute;
+  bottom: 25px;
+  right: 150px;
+  max-height: 200px;
+  max-width: 200px;
 }
 
 /* line 29, ../../../../scss/theme/2014/sqli/sqli.scss */
@@ -308,10 +321,10 @@ header.sqli-header:before {
   left: 0;
   width: calc(100% - 40px - 40px);
   width: -webkit-calc(100% - 40px - 40px);
-  height: 150px;
+  height: 120px;
   background-image: url("assets/images/carre_haut_1.png"), url("assets/images/carre_haut_2.png");
-  background-size: 80px 80px, 150px 150px;
-  background-position: 0 0, 80px 0;
+  background-size: 60px 60px, 120px 120px;
+  background-position: 0 0, 60px 0;
   background-repeat: no-repeat;
 }
 
