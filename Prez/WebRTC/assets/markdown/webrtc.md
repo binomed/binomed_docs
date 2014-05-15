@@ -974,6 +974,32 @@ webrtc.on('readyToCall', function () {
 Notes:
 Basé sur socket IO et un serveur node ! 
 
+##==##
+
+## PeerJS
+
+Fait pour du Peer2Peer
+
+```javascript
+var peer = new Peer('someid', {key: 'apikey'});
+peer.on('connection', function(conn) {
+  conn.on('data', function(data){
+    // Will print 'hi!'
+    console.log(data);
+  });
+});
+
+// Connecting peer
+var peer = new Peer('anotherid', {key: 'apikey'});
+var conn = peer.connect('someid');
+conn.on('open', function(){
+  conn.send('hi!');
+});
+```
+
+Notes:
+
+
 
 ##==##
 
