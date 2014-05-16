@@ -98,8 +98,8 @@ UserMedia use case
 #remoteVideo {
   width: 430px;
   position: absolute;
-  top: 50%;
-  margin-top: -25%;
+  top: 10px;
+  right: 10px;
 }
 
 /* line 100, ../scss/prez/style.scss */
