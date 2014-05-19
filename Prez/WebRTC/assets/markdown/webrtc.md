@@ -7,6 +7,12 @@
 
 <video id="remoteVideo" autoplay="autoplay" muted="true"></video> 
 
+##==##
+
+# Merci les sponsors !
+
+<!-- .slide: data-background="/assets/images/bzhcamp_Slide_first.png" data-state="hidefooter" class="transition" -->
+
 
 ##==##
 
@@ -1123,3 +1129,7 @@ Notes:
 
 <div class="copyright">images & resources provenant des slides de SamDutton</div>
 
+
+##==##
+
+<!-- .slide: data-background="/assets/images/bzhcamp_Slide_last.png" data-state="hidefooter" class="transition" -->
