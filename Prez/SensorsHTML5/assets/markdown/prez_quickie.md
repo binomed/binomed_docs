@@ -10,6 +10,14 @@
 
 ##==##
 
+# Merci les sponsors !
+
+<!-- .slide: data-background="/assets/images/bzhcamp_Slide_first.png" data-state="hidefooter" class="transition" -->
+
+
+
+##==##
+
 <!-- .slide: class="who-am-i" -->
 
 ## Qui suis-je ?
@@ -668,3 +676,8 @@ recognition.interimResults = true;
 # <!-- .element: class="thank-message" --> Merci  
 
 ![avatar](/assets/images/jf.jpg)
+
+
+##==##
+
+<!-- .slide: data-background="/assets/images/bzhcamp_Slide_last.png" data-state="hidefooter" class="transition" -->
