@@ -12,5 +12,7 @@ Add a symbolic link with :
 # For running the app ! 
 
 1. Run the application Workshop html5
-2. Start the server for presentation with socket-notes project
-3. use 2 phones !
+2. Start the server for presentation with socket-notes project on port 9090
+3. start localhost:8080/html for the app workshop
+4. start presentation on port 9090
+5. use 2 phones !
