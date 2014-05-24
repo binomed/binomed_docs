@@ -722,7 +722,7 @@ On peut utiliser :
 
 <br>
 
-* **WebSokects**
+* **WebSockets**
   * Plus naturel car bidirectionnel
   * Si le webRTC est supporté, alors les webSockets sont supportés
   * Peut aussi utiliser le TLS

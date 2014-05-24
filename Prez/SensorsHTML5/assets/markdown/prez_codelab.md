@@ -6,7 +6,7 @@
 
 ### 2013.11.26 Stereolux @ **Nantes**
 
-![title](/assets/images/html5-device-access-logo.png)
+![title](assets/images/html5-device-access-logo.png)
 
 ##==##
 
@@ -16,11 +16,11 @@
 
 ###  Jean-François GARREAU
 
-![avatar center w-300 wp-200](/assets/images/jf.jpg)
+![avatar center w-300 wp-200](assets/images/jf.jpg)
 
 
-![company_logo](/assets/images/sqli_logo.png)
-![gdg_logo](/assets/images/GDG-Logo-carre.png)
+![company_logo](assets/images/sqli_logo.png)
+![gdg_logo](assets/images/GDG-Logo-carre.png)
 
 
 
@@ -746,4 +746,4 @@ recognition.interimResults = true;
 
 # <!-- .element: class="thank-message" --> Merci  
 
-![avatar](/assets/images/jf.jpg)
+![avatar](assets/images/jf.jpg)

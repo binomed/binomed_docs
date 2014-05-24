@@ -11,7 +11,7 @@
 
 # Merci les sponsors !
 
-<!-- .slide: data-background="/assets/images/bzhcamp_Slide_first.png" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/bzhcamp_Slide_first.png" data-state="hidefooter" class="transition" -->
 
 
 ##==##
@@ -83,7 +83,7 @@ Ils ont tous un browser !
 
 ##==##
 
-<!-- .slide: data-background="/assets/images/evolution.png" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/evolution.png" data-state="hidefooter" class="transition" -->
 
 
 
@@ -158,7 +158,7 @@ Fragments ! (4)
 
 # Et si !
 
-<!-- .slide: data-background="/assets/images/web_rtc_chat.jpg" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/web_rtc_chat.jpg" data-state="hidefooter" class="transition" -->
 
 
 <div class="copyright">imgur</div>
@@ -613,7 +613,7 @@ Notes:
 
 # Accrochez-vous !
 
-<!-- .slide: data-background="/assets/images/hang-on-pictures.jpg" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/hang-on-pictures.jpg" data-state="hidefooter" class="transition" -->
 
 <div class="copyright">langmaidpractice.com</div>
 
@@ -696,7 +696,7 @@ Le ice est fait en parallèle dès qu'une peerconnection se lance
 
 # Déjà vu ?
 
-<!-- .slide: data-background="/assets/images/Telephone-operators.jpg" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/Telephone-operators.jpg" data-state="hidefooter" class="transition" -->
 
 
 <div class="copyright">bnb paribas fortis</div>
@@ -720,7 +720,7 @@ On peut utiliser :
 
 * XHR + SSE
 
-* **WebSokects**
+* **WebSockets**
   * Plus naturel car bidirectionnel
   * Si le webRTC est supporté, alors les webSockets sont supportés
   * Peut aussi utiliser le TLS
@@ -779,7 +779,7 @@ Des serveurs publiques existents
 
 # C'est bientôt la fin
 
-<!-- .slide: data-background="/assets/images/Rollercoaster.jpg" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/Rollercoaster.jpg" data-state="hidefooter" class="transition" -->
 
 <div class="copyright">rerb-leblog</div>
 
@@ -1020,7 +1020,7 @@ C'était simple et ça peut l'être
 ##==##
 
 
-<!-- .slide: data-background="/assets/images/the-end-is-near.jpg" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/the-end-is-near.jpg" data-state="hidefooter" class="transition" -->
 
 
 
@@ -1124,7 +1124,7 @@ Notes:
 
 # <!-- .element: class="thank-message" --> Merci  
 
-![avatar](/assets/images/jf.jpg)
+![avatar](assets/images/jf.jpg)
 
 
 <div class="copyright">images & resources provenant des slides de SamDutton</div>
@@ -1132,4 +1132,4 @@ Notes:
 
 ##==##
 
-<!-- .slide: data-background="/assets/images/bzhcamp_Slide_last.png" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/bzhcamp_Slide_last.png" data-state="hidefooter" class="transition" -->

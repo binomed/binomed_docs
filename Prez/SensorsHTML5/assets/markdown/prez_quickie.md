@@ -6,13 +6,13 @@
 
 ### 2014.05.23 Breizhcamp @ **Rennes**
 
-![title](/assets/images/html5-device-access-logo.png)
+![title](assets/images/html5-device-access-logo.png)
 
 ##==##
 
 # Merci les sponsors !
 
-<!-- .slide: data-background="/assets/images/bzhcamp_Slide_first.png" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/bzhcamp_Slide_first.png" data-state="hidefooter" class="transition" -->
 
 
 
@@ -24,11 +24,11 @@
 
 ###  Jean-François GARREAU
 
-![avatar center w-300 wp-200](/assets/images/jf.jpg)
+![avatar center w-300 wp-200](assets/images/jf.jpg)
 
 
-![company_logo](/assets/images/sqli_logo.png)
-![gdg_logo](/assets/images/GDG-Logo-carre.png)
+![company_logo](assets/images/sqli_logo.png)
+![gdg_logo](assets/images/GDG-Logo-carre.png)
 
 
 
@@ -675,9 +675,9 @@ recognition.interimResults = true;
 
 # <!-- .element: class="thank-message" --> Merci  
 
-![avatar](/assets/images/jf.jpg)
+![avatar](assets/images/jf.jpg)
 
 
 ##==##
 
-<!-- .slide: data-background="/assets/images/bzhcamp_Slide_last.png" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/bzhcamp_Slide_last.png" data-state="hidefooter" class="transition" -->
