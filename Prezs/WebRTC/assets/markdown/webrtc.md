@@ -1117,7 +1117,7 @@ Notes:
 
 # <!-- .element: class="thank-message" --> Merci  
 
-![avatar](/assets/images/jf.jpg)
+![avatar](assets/images/jf.jpg)
 
 
 <div class="copyright">images & resources provenant des slides de SamDutton</div>
