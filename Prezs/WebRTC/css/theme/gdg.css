@@ -1,10 +1,10 @@
 @charset "CP850";
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
 /**
  * Beige theme for reveal.js.
  *
  * Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
  */
-@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
 @font-face {
   font-family: 'League Gothic';
   src: url("../../reveal/lib/font/league_gothic-webfont.eot");
@@ -383,6 +383,7 @@ section > footer {
   height: 60px;
   background-color: white;
   background-image: -moz-linear-gradient(left, #3c78d8, #3c78d8 25%, #cc0000 25%, #cc0000 50%, #ffd966 50%, #ffd966 75%, #6aa84f 75%, #6aa84f);
+  background-image: -o-linear-gradient(left, #3c78d8, #3c78d8 25%, #cc0000 25%, #cc0000 50%, #ffd966 50%, #ffd966 75%, #6aa84f 75%, #6aa84f);
   background-image: -webkit-linear-gradient(left, #3c78d8, #3c78d8 25%, #cc0000 25%, #cc0000 50%, #ffd966 50%, #ffd966 75%, #6aa84f 75%, #6aa84f);
   background-image: linear-gradient(to right, #3c78d8, #3c78d8 25%, #cc0000 25%, #cc0000 50%, #ffd966 50%, #ffd966 75%, #6aa84f 75%, #6aa84f);
   background-size: 100% 5px;

@@ -179,6 +179,10 @@
   display: none;
 }
 /* line 86, ../../scss/theme/gdg_print.scss */
+.reveal .slides > section div.hidden-normal + * {
+  display: inherit;
+}
+/* line 90, ../../scss/theme/gdg_print.scss */
 .reveal .slides > section img[alt*=title], .reveal .slides > section img.title {
   position: absolute;
   max-width: 50%;
@@ -188,15 +192,15 @@
   left: 50%;
   margin-left: -25%;
 }
-/* line 96, ../../scss/theme/gdg_print.scss */
+/* line 100, ../../scss/theme/gdg_print.scss */
 .reveal .slides > section div.photo-slide ~ h1 {
   z-index: 100;
 }
-/* line 100, ../../scss/theme/gdg_print.scss */
+/* line 104, ../../scss/theme/gdg_print.scss */
 .reveal .slides > section div.photo-slide ~ * img[alt*=photo-slide], .reveal .slides > section img.photo-slide {
   min-height: 500pt;
 }
-/* line 104, ../../scss/theme/gdg_print.scss */
+/* line 108, ../../scss/theme/gdg_print.scss */
 .reveal .slides > section div.last-slide ~ * img[alt*=avatar], .reveal .slides > section div.last-slide ~ * img.avatar {
   width: 100pt;
   min-height: 100pt;

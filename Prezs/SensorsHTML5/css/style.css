@@ -54,57 +54,6 @@
  *                                                          
  *                                                          
  */
-/* line 63, ../scss/prez/anims.scss */
-.reveal {
-  @keyframes openAnimation {
-    /* line 148, ../scss/prez/anims.scss */
-    from {
-      transform-style: preserve-3d;
-      transform: perspective(1000) rotateY(0deg);
-      transform-origin: 0% 0%;
-    }
-
-    /* line 153, ../scss/prez/anims.scss */
-    to {
-      transform-style: preserve-3d;
-      transform: perspective(1000) rotateY(-90deg);
-      transform-origin: 0% 0%;
-    }
-}
-
-  @-webkit-keyframes openAnimation {
-    /* line 160, ../scss/prez/anims.scss */
-    from {
-      -webkit-transform-style: preserve-3d;
-      -webkit-transform: perspective(1000) rotateY(0deg);
-      -webkit-transform-origin: 0% 0%;
-    }
-
-    /* line 165, ../scss/prez/anims.scss */
-    to {
-      -webkit-transform-style: preserve-3d;
-      -webkit-transform: perspective(1000) rotateY(-90deg);
-      -webkit-transform-origin: 0% 0%;
-    }
-}
-
-  @-moz-keyframes openAnimation {
-    /* line 172, ../scss/prez/anims.scss */
-    from {
-      -moz-transform-style: preserve-3d;
-      -moz-transform: perspective(1000) rotateY(0deg);
-      -moz-transform-origin: 0% 0%;
-    }
-
-    /* line 177, ../scss/prez/anims.scss */
-    to {
-      -moz-transform-style: preserve-3d;
-      -moz-transform: perspective(1000) rotateY(-90deg);
-      -moz-transform-origin: 0% 0%;
-    }
-}
-
-}
 /* line 66, ../scss/prez/anims.scss */
 .reveal .orientation {
   position: relative;
@@ -179,7 +128,48 @@
   margin-left: -150px;
   margin-top: -150px;
 }
-
+@keyframes openAnimation {
+  /* line 148, ../scss/prez/anims.scss */
+  .reveal from {
+    transform-style: preserve-3d;
+    transform: perspective(1000) rotateY(0deg);
+    transform-origin: 0% 0%;
+  }
+  /* line 153, ../scss/prez/anims.scss */
+  .reveal to {
+    transform-style: preserve-3d;
+    transform: perspective(1000) rotateY(-90deg);
+    transform-origin: 0% 0%;
+  }
+}
+@-webkit-keyframes openAnimation {
+  /* line 160, ../scss/prez/anims.scss */
+  .reveal from {
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform: perspective(1000) rotateY(0deg);
+    -webkit-transform-origin: 0% 0%;
+  }
+  /* line 165, ../scss/prez/anims.scss */
+  .reveal to {
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform: perspective(1000) rotateY(-90deg);
+    -webkit-transform-origin: 0% 0%;
+  }
+}
+@-moz-keyframes openAnimation {
+  /* line 172, ../scss/prez/anims.scss */
+  .reveal from {
+    -moz-transform-style: preserve-3d;
+    -moz-transform: perspective(1000) rotateY(0deg);
+    -moz-transform-origin: 0% 0%;
+  }
+  /* line 177, ../scss/prez/anims.scss */
+  .reveal to {
+    -moz-transform-style: preserve-3d;
+    -moz-transform: perspective(1000) rotateY(-90deg);
+    -moz-transform-origin: 0% 0%;
+  }
+}
 /***
  *      __  __       _   _             
  *     |  \/  |     | | (_)            
@@ -308,57 +298,6 @@
  *                                                  
  *                                                  
  */
-/* line 322, ../scss/prez/anims.scss */
-.reveal {
-  @keyframes rotateAnimation {
-    /* line 351, ../scss/prez/anims.scss */
-    from {
-      transform-style: preserve-3d;
-      transform: perspective(1000) rotateY(0deg);
-      /*transform-origin: 0% 0%;*/
-    }
-
-    /* line 356, ../scss/prez/anims.scss */
-    to {
-      transform-style: preserve-3d;
-      transform: perspective(1000) rotateY(360deg);
-      /*transform-origin: 0% 0%;*/
-    }
-}
-
-  @-webkit-keyframes rotateAnimation {
-    /* line 363, ../scss/prez/anims.scss */
-    from {
-      -webkit-transform-style: preserve-3d;
-      -webkit-transform: perspective(1000) rotateY(0deg);
-      /*-webkit-transform-origin: 0% 0%;*/
-    }
-
-    /* line 368, ../scss/prez/anims.scss */
-    to {
-      -webkit-transform-style: preserve-3d;
-      -webkit-transform: perspective(1000) rotateY(360deg);
-      /*-webkit-transform-origin: 0% 0%;*/
-    }
-}
-
-  @-moz-keyframes rotateAnimation {
-    /* line 375, ../scss/prez/anims.scss */
-    from {
-      -moz-transform-style: preserve-3d;
-      -moz-transform: perspective(1000) rotateY(0deg);
-      /*-moz-transform-origin: 0% 0%;*/
-    }
-
-    /* line 380, ../scss/prez/anims.scss */
-    to {
-      -moz-transform-style: preserve-3d;
-      -moz-transform: perspective(1000) rotateY(360deg);
-      /*-moz-transform-origin: 0% 0%;*/
-    }
-}
-
-}
 /* line 323, ../scss/prez/anims.scss */
 .reveal .usermedia {
   position: relative;
@@ -381,7 +320,48 @@
   -moz-animation-name: rotateAnimation 10s infinite ease;
   animation-name: rotateAnimation 10s infinite ease;
 }
-
+@keyframes rotateAnimation {
+  /* line 351, ../scss/prez/anims.scss */
+  .reveal from {
+    transform-style: preserve-3d;
+    transform: perspective(1000) rotateY(0deg);
+    /*transform-origin: 0% 0%;*/
+  }
+  /* line 356, ../scss/prez/anims.scss */
+  .reveal to {
+    transform-style: preserve-3d;
+    transform: perspective(1000) rotateY(360deg);
+    /*transform-origin: 0% 0%;*/
+  }
+}
+@-webkit-keyframes rotateAnimation {
+  /* line 363, ../scss/prez/anims.scss */
+  .reveal from {
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform: perspective(1000) rotateY(0deg);
+    /*-webkit-transform-origin: 0% 0%;*/
+  }
+  /* line 368, ../scss/prez/anims.scss */
+  .reveal to {
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform: perspective(1000) rotateY(360deg);
+    /*-webkit-transform-origin: 0% 0%;*/
+  }
+}
+@-moz-keyframes rotateAnimation {
+  /* line 375, ../scss/prez/anims.scss */
+  .reveal from {
+    -moz-transform-style: preserve-3d;
+    -moz-transform: perspective(1000) rotateY(0deg);
+    /*-moz-transform-origin: 0% 0%;*/
+  }
+  /* line 380, ../scss/prez/anims.scss */
+  .reveal to {
+    -moz-transform-style: preserve-3d;
+    -moz-transform: perspective(1000) rotateY(360deg);
+    /*-moz-transform-origin: 0% 0%;*/
+  }
+}
 /***
  *     __      ___ _               _   _             
  *     \ \    / (_) |             | | (_)            
@@ -400,6 +380,10 @@
   width: 100%;
   height: 500px;
 }
+/* line 409, ../scss/prez/anims.scss */
+.reveal #vibration input {
+  font-size: 2em;
+}
 
 /***
  *     __          __  _        _____                      _     
@@ -411,7 +395,7 @@
  *                                   | |                         
  *                                   |_|                         
  */
-/* line 423, ../scss/prez/anims.scss */
+/* line 427, ../scss/prez/anims.scss */
 .reveal #webspeech {
   position: relative;
   top: 0;
@@ -419,7 +403,7 @@
   width: 100%;
   height: 530px;
 }
-/* line 431, ../scss/prez/anims.scss */
+/* line 435, ../scss/prez/anims.scss */
 .reveal #mic {
   position: absolute;
   top: 0;
@@ -429,11 +413,11 @@
   margin-left: -25px;
   background-image: url(../assets/images/mic.gif);
 }
-/* line 441, ../scss/prez/anims.scss */
+/* line 445, ../scss/prez/anims.scss */
 .reveal #mic.animate {
   background-image: url(../assets/images/mic-animate.gif);
 }
-/* line 445, ../scss/prez/anims.scss */
+/* line 449, ../scss/prez/anims.scss */
 .reveal #webspeech canvas {
   position: absolute;
   top: 50%;
@@ -454,19 +438,21 @@ img[alt*=sommaire] {
 
 /* line 15, ../scss/prez/style.scss */
 .reveal .slides > section img[alt*=avatar] {
-  -webkit-box-shadow: #cccccc 2px 2px 2px 3px;
   -moz-box-shadow: #cccccc 2px 2px 2px 3px;
+  -webkit-box-shadow: #cccccc 2px 2px 2px 3px;
   box-shadow: #cccccc 2px 2px 2px 3px;
 }
 
 /* line 19, ../scss/prez/style.scss */
 .reveal .slides > section img[alt*=title] {
-  height: auto;
-  width: auto;
-  margin-left: -128px;
+  position: absolute;
+  width: 200px;
+  top: -274px;
+  left: 50%;
+  margin-left: -146px;
 }
 
-/* line 26, ../scss/prez/style.scss */
+/* line 29, ../scss/prez/style.scss */
 img[alt*=company_logo] {
   position: absolute;
   bottom: 20%;
@@ -474,7 +460,7 @@ img[alt*=company_logo] {
   width: 200px;
 }
 
-/* line 33, ../scss/prez/style.scss */
+/* line 36, ../scss/prez/style.scss */
 img[alt*=gdg_logo] {
   position: absolute;
   bottom: 20%;
@@ -482,25 +468,25 @@ img[alt*=gdg_logo] {
   width: 200px;
 }
 
-/* line 40, ../scss/prez/style.scss */
+/* line 43, ../scss/prez/style.scss */
 div.no-bullet ~ ul {
   list-style-type: none;
 }
-/* line 43, ../scss/prez/style.scss */
+/* line 46, ../scss/prez/style.scss */
 div.no-bullet ~ ul img {
   margin: 0;
 }
-/* line 47, ../scss/prez/style.scss */
+/* line 50, ../scss/prez/style.scss */
 div.no-bullet ~ ul li {
   line-height: 60px;
 }
 
-/* line 52, ../scss/prez/style.scss */
+/* line 55, ../scss/prez/style.scss */
 div.padding ~ * {
   padding-left: 50px;
 }
 
-/* line 57, ../scss/prez/style.scss */
+/* line 60, ../scss/prez/style.scss */
 p.surround {
   font-weight: bold;
   font-size: 1em;
@@ -508,18 +494,18 @@ p.surround {
   text-align: left;
 }
 
-/* line 64, ../scss/prez/style.scss */
+/* line 67, ../scss/prez/style.scss */
 table.table_version {
   position: absolute;
   top: 4em;
 }
 
-/* line 69, ../scss/prez/style.scss */
+/* line 72, ../scss/prez/style.scss */
 table.table_version td, table.table_version th {
   font-size: 14px;
 }
 
-/* line 73, ../scss/prez/style.scss */
+/* line 76, ../scss/prez/style.scss */
 .img_version {
   margin-top: 7em;
 }
@@ -531,72 +517,22 @@ table.table_version td, table.table_version th {
  <link href="http://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 
 */
-/* line 86, ../scss/prez/style.scss */
+/* line 89, ../scss/prez/style.scss */
 img.float-left {
   float: left;
   margin-right: 40px;
 }
 
-/* line 91, ../scss/prez/style.scss */
+/* line 94, ../scss/prez/style.scss */
 img.float-right {
   float: right;
   margin-left: 10px;
 }
 
-/* line 96, ../scss/prez/style.scss */
-#ndef_header {
-  height: 90px;
-  width: 510px;
-  position: absolute;
-  top: 275px;
-  background: rgba(252, 203, 206, 0.5);
-}
-
-/* line 105, ../scss/prez/style.scss */
-#ndef_length_type {
-  height: 90px;
-  width: 510px;
-  position: absolute;
-  top: 365px;
-  background: rgba(252, 203, 206, 0.5);
-}
-
-/* line 113, ../scss/prez/style.scss */
-#ndef_length_payload {
-  height: 90px;
-  width: 510px;
-  position: absolute;
-  top: 455px;
-  background: rgba(252, 203, 206, 0.5);
-}
-
-/* line 121, ../scss/prez/style.scss */
-#ndef_type_id {
-  height: 175px;
-  width: 510px;
-  position: absolute;
-  top: 545px;
-  background: rgba(252, 203, 206, 0.5);
-}
-
-/* line 129, ../scss/prez/style.scss */
-#ndef_payload {
-  height: 90px;
-  width: 510px;
-  position: absolute;
-  top: 720px;
-  background: rgba(252, 203, 206, 0.5);
-}
-
-/* line 137, ../scss/prez/style.scss */
-pre.java.redux code.java, pre.xml.redux code.xml {
-  font-size: 0.6em;
-}
-
 /**
 * Common overrides
 */
-/* line 146, ../scss/prez/style.scss */
+/* line 105, ../scss/prez/style.scss */
 img.company_logo {
   position: absolute;
   bottom: 20%;
@@ -604,7 +540,7 @@ img.company_logo {
   width: 150px;
 }
 
-/* line 153, ../scss/prez/style.scss */
+/* line 112, ../scss/prez/style.scss */
 img.gdg_logo {
   position: absolute;
   bottom: 20%;
@@ -612,7 +548,7 @@ img.gdg_logo {
   width: 150px;
 }
 
-/* line 160, ../scss/prez/style.scss */
+/* line 119, ../scss/prez/style.scss */
 section.intro.pagetransition > h2 {
   left: 65%;
   top: 20%;
@@ -622,7 +558,7 @@ section.intro.pagetransition > h2 {
   transform: rotate(0deg);
 }
 
-/* line 169, ../scss/prez/style.scss */
+/* line 128, ../scss/prez/style.scss */
 .avatar {
   -moz-box-shadow: 2px 2px 2px 3px #CCCCCC;
   -webkit-box-shadow: 2px 2px 2px 3px #CCCCCC;
@@ -630,41 +566,41 @@ section.intro.pagetransition > h2 {
   width: 200px;
 }
 
-/* line 177, ../scss/prez/style.scss */
+/* line 136, ../scss/prez/style.scss */
 .logo_twitter, .logo_gplus {
   position: absolute;
   width: 40px;
   right: 35%;
 }
 
-/* line 182, ../scss/prez/style.scss */
+/* line 141, ../scss/prez/style.scss */
 .logo_twitter {
   bottom: 5%;
 }
 
-/* line 186, ../scss/prez/style.scss */
+/* line 145, ../scss/prez/style.scss */
 .logo_gplus {
   bottom: 15%;
 }
 
-/* line 190, ../scss/prez/style.scss */
+/* line 149, ../scss/prez/style.scss */
 .twitters_account, .gplus_account {
   position: absolute;
   font-size: 20px;
   right: 11%;
 }
 
-/* line 196, ../scss/prez/style.scss */
+/* line 155, ../scss/prez/style.scss */
 .twitters_account {
   bottom: 6%;
 }
 
-/* line 201, ../scss/prez/style.scss */
+/* line 160, ../scss/prez/style.scss */
 .gplus_account {
   bottom: 17%;
 }
 
-/* line 205, ../scss/prez/style.scss */
+/* line 164, ../scss/prez/style.scss */
 .lien_prez {
   position: absolute;
   top: 30%;

@@ -1,17 +1,15 @@
-<div class="first-slide"></div>
+<!-- .slide: class="first-slide" -->
 
 # **WebRTC**
 
-## Devfest Marseille
-
-### 2014.24.04 Devfest @ **Marseille** <br><br>http://goo.gl/B6Phir
-
+### 2014.23.05 BreizhCamp @ **Rennes** <br><br>http://goo.gl/B6Phir
 
 
 <video id="remoteVideo" autoplay="autoplay" muted="true"></video> 
 
-
 ##==##
+
+<!-- .slide: class="who-am-i" -->
 
 ## Qui suis-je ?
 
@@ -23,7 +21,6 @@
 ![company_logo](assets/images/sqli_logo.png)
 ![gdg_logo](assets/images/GDG-Logo-carre.png)
 
-<footer/>
 
 ##==##
 
@@ -31,39 +28,17 @@
 
 <div class="no-bullet"></div>
 
-<br>
-
 * Un peu d'histoire
-
-<br>
-
-* WebRTC
-
-<br>
-
+* WebRTC 
 * GetUserMedia
-
-<br>
-
 * RTCPeerConnection
-
-<br>
-
 * RTCDataChannel 
-
-<br>
-
 * Sécurisation
-
-<br>
-
 * Pour les devs
-
-<footer/>
 
 ##==##
 
-<div class='transition'></div>
+<!-- .slide: class="transition-black" -->
 
 # Un peu d'histoire ?
 
@@ -75,24 +50,18 @@
 
 ## Le web aujourd'hui ?
 
-<br><br>
 
 * Quel est le point commun entre tous ces devices ?
 
-<br><br><br><br>
+<br><br>
 
-![float-right w-400](assets/images/chromebook.jpg)
+![float-right w-350](assets/images/chromebook.jpg)
 
-![float-right w-400](assets/images/glass.jpg)
+![float-right w-350](assets/images/glass.jpg)
 
-![float-right w-400](assets/images/kindle.png)
-
-
+![float-right w-350](assets/images/kindle.png)
 
 
-<aside class="notes">
-</aside>
-<footer/>
 ##==##
 
 ## Le web aujourd'hui ?
@@ -101,24 +70,20 @@
 ![full-width](assets/images/browser-logos-2.jpg)
 
 
-<aside class="notes">
+Notes:
 Ils ont tous un browser ! 
-</aside>
-<footer/>
 
 
 ##==##
 
-
-<div class="photo-slide"></div>
-
-![photo-slide](assets/images/evolution.png);
+<!-- .slide: data-background="/assets/images/evolution.png" data-state="hidefooter" class="transition" -->
 
 
-<aside class="notes">
+
+Notes:
 Parler des nouvelles apis de plus en plus nouvelles!
 Positionner le webRTC
-</aside>
+
 
 ##==##
 
@@ -126,14 +91,13 @@ Positionner le webRTC
 
 <br><br>
 
-# Petites questions ?
+### Petites questions ?
 
-<aside class="notes">
+Notes:
 Qui lit des vidéos sur sont téléphone ?
 Qui fait de la visio ?
 Qui fait du peer2peer
-</aside>
-<footer/>
+
 
 ##==##
 
@@ -144,9 +108,8 @@ Est-ce normal que le Peer2Peer soit comme ça ?
 ![center hp-200](assets/images/no.png)
 
 
-<aside class="notes">
-</aside>
-<footer/>
+Notes:
+
 
 ##==##
 
@@ -157,9 +120,8 @@ Ne devrait-il pas ressembler à ça ?
 ![center hp-200](assets/images/yes.png)
 
 
-<aside class="notes">
-</aside>
-<footer/>
+Notes:
+
 
 ##==##
 
@@ -167,43 +129,35 @@ Ne devrait-il pas ressembler à ça ?
 
 Et si ? 
 
-<br><br>
+
 
 <div class="fragment"><ul><li>On avait la possibilité de gérer une communication réseau propre entre pc.
 </li></ul></div>
 
-<br>
-
 <div class="fragment"><ul><li>On avait la possibilité de ne pas se soucier de l'encodage de nos vidéos.
 </li></ul></div>
-
-<br>
 
 <div class="fragment"><ul><li>On n'avait pas à se soucier d'installer un plugin ! 
 </li></ul></div>
 
-<br>
-
 <div class="fragment"><ul><li>On pouvait faire cela avec notre téléphone, notre tablette, ou autre chose ?
 </li></ul></div>
-
-<aside class="notes">
+ 
+Notes:
 Fragments ! (4)
-</aside>
-<footer/>
+
 
 ##==##
 
 # Et si !
 
-<div class="photo-slide"></div>
+<!-- .slide: data-background="/assets/images/web_rtc_chat.jpg" data-state="hidefooter" class="transition" -->
 
-![photo-slide](assets/images/web_rtc_chat.jpg)
 
 <div class="copyright">imgur</div>
 
-<aside class="notes">
-</aside>
+Notes:
+
 
 ##==##
 
@@ -212,15 +166,14 @@ Fragments ! (4)
 
 
 <br><br><br><br>
-<h1>WebRTC était la solution ?</h1>
+<h3>WebRTC était la solution ?</h3>
 
-<aside class="notes">
-</aside>
-<footer/>
+Notes:
+
 
 ##==##
 
-<div class='transition'></div>
+<!-- .slide: class="transition-black" -->
 
 # WebRTC 
 
@@ -228,8 +181,8 @@ Fragments ! (4)
 ![icon](assets/images/google-webrtc-logo1.png)
 
 
-<aside class="notes">
-</aside>
+Notes:
+
 
 ##==##
 
@@ -240,9 +193,8 @@ Fragments ! (4)
 ![center](assets/images/web_rtc_what.jpg)
 
 
-<aside class="notes">
-</aside>
-<footer/>
+Notes:
+
 
 ##==##
 
@@ -250,27 +202,20 @@ Fragments ! (4)
 
 RTC pour **Real Time Communication**
 
-<br><br><br>
+<br>
 
 * Obtenir l'audio et la vidéo
 
-<br>
-
 * Etablir une connexion entre 2 hôtes
-
-<br>
 
 * Communiquer de la vidéo et de l'audio
 
-<br>
-
 * Communiquer d'autres types de données
 
-<aside class="notes">
+Notes:
 Créé en 2013
 Parler des problèmes derrières la vidéo et l'audio (hardware / encodage / ...)
-</aside>
-<footer/>
+
 
 ##==##
 
@@ -286,19 +231,14 @@ Grâce à 3 APIS web !
 
 * getUserMedia
 
-<br>
-
 * RTCPeerConnection
-
-<br>
 
 * RTCDataChannel
 
-<aside class="notes">
+Notes:
 Demander s'ils pensent savoir à quoi chaque api sert ?
 On va dans chaque API
-</aside>
-<footer/>
+
 
 ##==##
 
@@ -308,9 +248,8 @@ Architecture
 
 ![center h-600](assets/images/webrtcArchitecture.png)
 
-<aside class="notes">
-</aside>
-<footer/>
+Notes:
+
 
 ##==##
 
@@ -329,9 +268,8 @@ Se récupère simplement sur **```navigator.getUserMedia()```**
 <br>
 Peut être conditionné par plusieurs paramètres.
 
-<aside class="notes">
-</aside>
-<footer/>
+Notes:
+
 
 ##==##
 
@@ -341,7 +279,6 @@ Peut être conditionné par plusieurs paramètres.
 
 ![center h-700](assets/images/meme_show_code.jpg)
 
-<footer/>
 
 ##==##
 
@@ -356,18 +293,18 @@ function successCallback(stream) {
   var video = document.querySelector("video");
   video.src = window.URL.createObjectURL(stream);
 }
-
 function errorCallback(error) {
-  console.log("navigator.getUserMedia error: ", error);
+  console.log("navigator.getUserMedia error: ", 
+  error);
 }
-
-navigator.getUserMedia(constraints, successCallback, errorCallback);
+navigator.getUserMedia(constraints, 
+      successCallback, 
+      errorCallback);
 ```
 
-<aside class="notes">
+Notes:
 /!\ tenir compte des préfixs ! 
-</aside>
-<footer/>
+
 
 ##==##
 
@@ -382,20 +319,20 @@ var constraints = {
       minAspectRadio: 1.333
     },
     optional [
-      {maxWidth : 640},
-      {maxHeight : 480},
+    	{maxWidth : 640},
+    	{maxHeight : 480},
     ]
   },
   audio : false
 };
 
-navigator.webkitGetUserMedia(constraints, gotStream);
+navigator.webkitGetUserMedia(constraints, 
+          gotStream);
 ```
 
-<aside class="notes">
+Notes:
 /!\ tenir compte des préfixs ! 
-</aside>
-<footer/>
+
 
 ##==##
 
@@ -406,15 +343,14 @@ navigator.webkitGetUserMedia(constraints, gotStream);
 Cas pratique ! 
 
 <div class="slideWithGetUserMedia">
-  <video class="firstUserMedia" width='600px'></video>
-  <br>
-  <button class="firstUserMediaBtn">Miroir, mon beau miroir ...</button>
+	<video class="firstUserMedia" width='600px'></video>
+	<br>
+	<button class="firstUserMediaBtn">Miroir, mon beau miroir ...</button>
 
 </div>
 
-<aside class="notes">
-</aside>
-<footer/>
+Notes:
+
 
 ##==##
 
@@ -426,22 +362,17 @@ Parlons sécurité !
 
  * En https : une seule fois
 
-<br><br>
-
  * Dans les chromes apps : via le **```audioCapture```** et **```videoCapture```**
-
-<br><br>
 
  * On peut changer les paramètres dans chrome
 
 
 
-<aside class="notes">
+Notes:
 Parler du problème potentiel derrière ça
 Dans chrome & https : demandé qu'une fois 
 Pas dispo dans les extensions chrome
-</aside>
-<footer/>
+
 
 ##==##
 
@@ -449,11 +380,10 @@ Pas dispo dans les extensions chrome
 
 ![full-height center](assets/images/file.png)
 
-<aside class="notes">
+Notes:
 getUM ne peut être lancé en local (hors serveur)
 Sinon erreur GET_PERMISSION_DENIED
-</aside>
-<footer/>
+
 
 
 ##==##
@@ -470,20 +400,109 @@ On peut choisir :
 
  * Sa résolution
 
-<br><br>
-
  * Sa source 
-
-<br><br>
 
  * Récupérer son écran ou son onglet ! 
 
-<aside class="notes">
+Notes:
 Dispo en chrome stable pour android
 https://simpl.info/getusermedia/sources/
-</aside>
-<footer/>
 
+
+##==##
+
+## GetUserMedia
+
+Choix de résolution ou récupérer l'écran
+
+```javascript
+var constraints = {
+  video: {
+    mandatory: {
+      chromeMediaSource: 'screen', // 'tab'
+      maxWidth: 640,
+      maxHeight: 360
+    }
+  }
+};
+```
+
+Plus d'infos : http://hancke.name/webrtc/screenshare/
+
+Notes:
+
+##==##
+
+## GetUserMedia
+
+Choix de la source
+
+```javascript
+MediaStreamTrack.getSources(gotSources);
+function gotSources(sourceInfos) {
+  for (var i = 0; i != sourceInfos.length; ++i) {
+    var sourceInfo = sourceInfos[i];
+    // Object 
+    // {
+    // id : the id of source to use
+    // label : the label of source
+    // kind : the type of source ('audio, video')
+    //}    
+  }
+}
+```
+
+Notes:
+Vérifier que MediaStreamTrack existe !
+
+##==##
+
+## GetUserMedia
+
+Choix de la source
+
+```javascript
+var videoSource = videoSelect.value;
+  var constraints = {
+    video: {
+      optional: [{sourceId: videoSource}]
+    }
+  };
+navigator.getUserMedia(constraints, 
+    successCallback, 
+    errorCallback);
+}
+```
+
+Notes:
+
+##==##
+
+<!-- .slide: data-state="startUMSource" -->
+
+## GetUserMedia
+
+Choix de source ! 
+
+<div class="slideWithGetUserMedia">
+  <div class='select'>
+    <label for='audioSource'>Audio source: </label><select id='audioSource'></select>
+  </div>
+
+  <div class='select'>
+    <label for='videoSource'>Video source: </label><select id='videoSource'></select>
+  </div>
+
+  <video class="thirdUserMedia"  muted autoplay width='600px'></video>
+  <!--<video class="firstUserMedia" width='600px'></video>
+  <br>
+  <button class="firstUserMediaBtn">Miroir, mon beau miroir ...</button>-->
+
+</div>
+
+@github : https://github.com/samdutton/simpl/blob/master/getusermedia/sources
+
+Notes:
 
 
 ##==##
@@ -497,33 +516,26 @@ On peut aussi :
 
 * Enregister du son (http://simpl.info/mediarecorder)
 
-<br>
-
 * Faire des photos depuis son flux 
 
-<br>
-
 * Mixer son flux avec un canvas
-
-<br>
 
 * Mixer son flux avec WebAudio
 
 
 <div class="fragment">
-  <blockquote>  
-  Vers l'infini et l'au-delà ! 
-  </blockquote>
-  <img src="assets/images/buzz-leclair-inside.jpg" class="center w-300 ">
+	<blockquote>	
+	Vers l'infini et l'au-delà ! 
+	</blockquote>
+	<img src="assets/images/buzz-leclair-inside.jpg" class="center w-300 ">
 </div>
 
 
-<aside class="notes">
+Notes:
 rec son = fait sur window.url.createObjectUrl()
 photo = feinte à base canvas et de draw et save image
 WebAudio = post traitement du son ! (compatible RTC Peer Connection)
-</aside>
-<footer/>
+
 
 ##==##
 
@@ -532,25 +544,24 @@ WebAudio = post traitement du son ! (compatible RTC Peer Connection)
 Démo ! 
 
 <div class="slideWithAsciiCam">
-  <video id="asciiCam" autoplay style='display:none'></video>
-  <div id="asciiContainer">
-    <!-- The ascii art comes in the pre tag below -->
-    <pre id="asciiText"></pre>
-  </div>
-  <br>
-  <button class="asciiCamBtn">Ascii Me ...</button>
+	<video id="asciiCam" autoplay style='display:none'></video>
+	<div id="asciiContainer">
+		<!-- The ascii art comes in the pre tag below -->
+		<pre id="asciiText"></pre>
+	</div>
+	<br>
+	<button class="asciiCamBtn">Ascii Me ...</button>
 
 </div>
 
 <div class="copyright black">code from : @github.com/escobar5/asciicam</div>
 
-<aside class="notes">
-</aside>
-<footer/>
+Notes:
+
 
 ##==##
 
-<div class='transition'></div>
+<!-- .slide: class="transition-black" -->
 
 # RTCPeerConnection
 
@@ -558,8 +569,8 @@ Démo !
 ![icon](assets/images/share.png)
 
 
-<aside class="notes">
-</aside>
+Notes:
+
 
 ##==##
 
@@ -570,9 +581,8 @@ Démo !
 
 ![float-left w-500](assets/images/callee.jpg)
 
-<aside class="notes">
-</aside>
-<footer/>
+Notes:
+
 
 ##==##
 
@@ -584,31 +594,24 @@ Sert à :
  
  * Résoudre les problèmes de communication multimédia (codec, résolutions, ...)
 
-<br><br>
-
  * Identifier les adresses des hôtes
-
-<br><br>
 
  * Echanger les données 
 
 
-<aside class="notes">
-</aside>
-<footer/>
+Notes:
+
 
 ##==##
 
 # Accrochez-vous !
 
-<div class="photo-slide"></div>
-
-![photo-slide](assets/images/hang-on-pictures.jpg)
+<!-- .slide: data-background="/assets/images/hang-on-pictures.jpg" data-state="hidefooter" class="transition" -->
 
 <div class="copyright">langmaidpractice.com</div>
 
-<aside class="notes">
-</aside>
+Notes:
+
 
 
 ##==##
@@ -628,19 +631,14 @@ Il s'agit du **Signaling** !
 
  * Quel type de média et format je supporte ? 
 
-<br>
-
  * Que puis-je envoyer ?
-
-<br>
 
  * Quel est mon type d'infrastructure réseau ? 
 
 
-<aside class="notes">
+Notes:
 Chemin = ICE = passer les proxys
-</aside>
-<footer/>
+
 
 ##==##
 
@@ -658,11 +656,10 @@ Gestion de l'offre
 1. Alice reçoit la réponse et appelle **```setRemoteDescription()```**
 
 
-<aside class="notes">
+Notes:
 Chemin = ICE = passer les proxys
 la description contient de infos du genre qualité de vidéo, résolution, ...
-</aside>
-<footer/>
+
 
 ##==##
 
@@ -681,27 +678,25 @@ ICE pour **Interactive Connectivity Establishement**
 1. Les 2 savent comment communiquer.
 
 
-<aside class="notes">
+Notes:
 ICE = Framework de connexion de peers ! 
 Au mieu connecté direct en UDP
 Après connecté en TCP / via des serveurs de relais
 Le ice est fait en parallèle dès qu'une peerconnection se lance
-</aside>
-<footer/>
+
 
 ##==##
 
 # Déjà vu ?
 
-<div class="photo-slide"></div>
+<!-- .slide: data-background="/assets/images/Telephone-operators.jpg" data-state="hidefooter" class="transition" -->
 
-![photo-slide](assets/images/Telephone-operators.jpg)
 
 <div class="copyright">bnb paribas fortis</div>
 
-<aside class="notes">
+Notes:
 Ok mais comment fait-on ça ?
-</aside>
+
 
 
 ##==##
@@ -716,25 +711,18 @@ On peut utiliser :
 
 * Du LongPolling / Comet
 
-<br>
-
 * XHR + SSE
 
-<br>
-
-* **WebSokects**
+* **WebSockets**
   * Plus naturel car bidirectionnel
   * Si le webRTC est supporté, alors les webSockets sont supportés
   * Peut aussi utiliser le TLS
 
-<br><br>
 
-
-<aside class="notes">
+Notes:
 WebSocket est le plus naturels car bidirectionnel / Si WebRTC toléré, WebSocket est toloré aussi / Utilisation du TLS pour les proxy
 Demander si les gens connaissent ?
-</aside>
-<footer/>
+
 
 ##==##
 
@@ -750,11 +738,10 @@ Il cherche le meilleur chemin pour chaque appel.
 
 ![center h-400](assets/images/icestats.png)
 
-<aside class="notes">
+Notes:
 le plus souvent on est sur des stun et au pire on passe sur des turn
 Actuellement 1 appel sur 7 est sur STUN
-</aside>
-<footer/>
+
 
 
 ##==##
@@ -769,44 +756,40 @@ STUN / TURN
 ![center](assets/images/STUNandTURN.png)
 
 
-<aside class="notes">
+Notes:
 STUN : protocole client-serveur permettant à un client UDP situé derrière un routeur NAT de découvrir son adresse IP publique ainsi que le type du routeur NAT
 TURN: Serveur de relais à travers les NAT
 STUN sert à trouver les ip / TURN relais les données ! 
 Des serveurs publiques existents
-</aside>
-<footer/>
+
 
 ##==##
 
 ![center h-700](assets/images/meme_head_burning.jpg)
 
-<footer/>
 
 ##==##
 
 # C'est bientôt la fin
 
-<div class="photo-slide"></div>
-
-![photo-slide](assets/images/Rollercoaster.jpg)
+<!-- .slide: data-background="/assets/images/Rollercoaster.jpg" data-state="hidefooter" class="transition" -->
 
 <div class="copyright">rerb-leblog</div>
 
-<aside class="notes">
+Notes:
 Ok mais comment fait-on ça ?
-</aside>
+
 
 ##==##
 
-<div class='transition'></div>
+<!-- .slide: class="transition-black" -->
 
 # RTCDataChannel
 
-![icon](assets/images/channel.jpg)
+![icon](assets/images/channel.png)
 
-<aside class="notes">
-</aside>
+Notes:
+
 
 
 ##==##
@@ -830,11 +813,10 @@ Même API que les WebSockets
 <br>
 Se fait sur une PeerConnection
 
-<aside class="notes">
+Notes:
 Expliquer les possibilités 
 cf slide à la fin
-</aside>
-<footer/>
+
 
 ##==##
 
@@ -845,38 +827,37 @@ cf slide à la fin
 ```javascript
 var pc = new webkitRTCPeerConnection(servers,
   {optional: [{RtpDataChannels: true}]});
-
 pc.ondatachannel = function(event) {
   receiveChannel = event.channel;
   receiveChannel.onmessage = function(event){
-    document.querySelector("div#receive").innerHTML = event.data;
+    document.querySelector("div#receive")
+          .innerHTML = event.data;
   };
 };
-
-sendChannel = pc.createDataChannel("sendDataChannel", 
-  {reliable: false});
-
-document.querySelector("button#send").onclick = function (){
-  var data = document.querySelector("textarea#send").value;
-  sendChannel.send(data);
+sendChannel = pc.createDataChannel(
+  "sendDataChannel", {reliable: false});
+document.querySelector("button#send").onclick = 
+  function (){
+  var data = document.querySelector(
+    "textarea#send").value;
+    sendChannel.send(data);
 };
 ```
 
 
-<aside class="notes">
-</aside>
-<footer/>
+Notes:
+
 
 ##==##
 
-<div class='transition'></div>
+<!-- .slide: class="transition-black" -->
 
 # Et la sécurité ?
 
 ![icon](assets/images/lock.png)
 
-<aside class="notes">
-</aside>
+Notes:
+
 
 ##==##
 
@@ -886,27 +867,18 @@ document.querySelector("button#send").onclick = function (){
 
  * Pensée depuis le début
  
-<br>
-
  * Cryptage des données et des médias
-
-<br>
 
  * Sécurisation graphique via les autorisations !
 
-<br>
-
  ![center h-200](assets/images/allow_camera.png)
-
-<br>
 
  * Sandboxé, sans plugin !
 
-<aside class="notes">
+Notes:
 Le fait de sandboxer garanti la non altération du navigateur.
 /!\ Cependant un risque d'attaque type proxy peut être faites avec le signaling !  et donc au final capturer le flux
-</aside>
-<footer/>
+
 
 
 ##==##
@@ -916,53 +888,44 @@ Le fait de sandboxer garanti la non altération du navigateur.
 ![center](assets/images/securePathways.png)
 
 
-<aside class="notes">
+Notes:
 En gros y a pas de secret, pensez HTTPS et WSS ! 
-</aside>
-<footer/>
+
 
 
 ##==##
 
-<div class='transition'></div>
+<!-- .slide: class="transition-black" -->
 
 # Et pour les devs ?
 
 
-![icon](assets/images/developpment.svg)
+![icon](assets/images/developpment_white.svg)
 
-<aside class="notes">
-</aside>
-<footer/>
+Notes:
+
 
 ##==##
 
 ## Outils : 
 
-<br><br>
+<br>
 
  * Url dans chrome pour suivre ses applications webRTC : **```chrome://webrtc-internals```**
 
- <br>
-
  * [Adapter.js](https://code.google.com/p/webrtc/source/browse/trunk/samples/apprtc/js/base/adapter.js) : une librairie qui supprime les préfixes et harmonise les différences entre Chrome & Firefox
 
- <br> 
-
  * Librairies Vidéo / Chat : 
-  * [SimpleWebRTC](https://github.com/henrikjoreteg/SimpleWebRTC)
-  * [easyRTC](https://github.com/priologic/easyrtc)
-
-<br>
+	* [SimpleWebRTC](https://github.com/henrikjoreteg/SimpleWebRTC)
+	* [easyRTC](https://github.com/priologic/easyrtc)
 
  * Librairies orientées Peer2Peer : 
-  * [ShareFest](https://github.com/peer5/sharefest)
-  * [PeerJS](http://peerjs.com/)
+ 	* [ShareFest](https://github.com/peer5/sharefest)
+ 	* [PeerJS](http://peerjs.com/)
 
-<aside class="notes">
+Notes:
 Solutions avec leur serveur
-</aside>
-<footer/>
+
 
 
 ##==##
@@ -975,7 +938,8 @@ Solutions avec leur serveur
 <!DOCTYPE html>
 <html>
     <head>
-        < script src="http://simplewebrtc.com/latest.js"></ script>
+        < script src="http://simplewebrtc.com/
+            latest.js"></ script>
     </head>
     <body>
         <div id="localVideo"></div>
@@ -984,10 +948,9 @@ Solutions avec leur serveur
 </html>
 ```
 
-<aside class="notes">
+Notes:
 Simplement 2 balises ! gère le multi hotes
-</aside>
-<footer/>
+
 
 ##==##
 
@@ -1007,10 +970,35 @@ webrtc.on('readyToCall', function () {
 });
 ```
 
-<aside class="notes">
+Notes:
 Basé sur socket IO et un serveur node ! 
-</aside>
-<footer/>
+
+##==##
+
+## PeerJS
+
+Fait pour du Peer2Peer
+
+```javascript
+var peer = new Peer('someid', {key: 'apikey'});
+peer.on('connection', function(conn) {
+  conn.on('data', function(data){
+    // Will print 'hi!'
+    console.log(data);
+  });
+});
+
+// Connecting peer
+var peer = new Peer('anotherid', {key: 'apikey'});
+var conn = peer.connect('someid');
+conn.on('open', function(){
+  conn.send('hi!');
+});
+```
+
+Notes:
+
+
 
 ##==##
 
@@ -1018,22 +1006,20 @@ Basé sur socket IO et un serveur node !
 
 ![center h-700](assets/images/meme_easy.jpg)
 
-<aside class="notes">
+Notes:
 C'était simple et ça peut l'être
-</aside>
-<footer/>
+
 
 ##==##
 
 
-<div class="photo-slide"></div>
-
-![photo-slide](assets/images/the-end-is-near.jpg)
+<!-- .slide: data-background="/assets/images/the-end-is-near.jpg" data-state="hidefooter" class="transition" -->
 
 
 
-<aside class="notes">
-</aside>
+
+Notes:
+
 
 ##==##
 
@@ -1060,8 +1046,8 @@ WebRTC = getUserMedia + RTCPeerConnection + RTCDataChannel
 
 
 
-<aside class="notes">
-</aside>
+Notes:
+
 
 ##==##
 
@@ -1088,29 +1074,22 @@ http://iswebrtcreadyyet.com/
 
 
 
-<aside class="notes">
-</aside>
+Notes:
+
 
 
 ##==##
 
 ## Liens
 
-<br>
 
 * [Application de démo maintenue par la team WebRTC](http://apprtc.appspot.com/)
-
-<br>
 
 * [Cette Présentation](http://goo.gl/B6Phir)
 
 * [Présentation WebRTC Google IO ](http://simpl.info/rtc/)
 
-<br>
-
 * [WebRTC and Web Audio resources list](http://bit.ly/webrtcwebaudio)
-
-<br>
 
 * HTML5 Rocks:
  * [Getting Started With WebRTC](http://www.html5rocks.com/en/tutorials/webrtc/basics/)
@@ -1119,36 +1098,27 @@ http://iswebrtcreadyyet.com/
  * [RTCDataChannel](http://www.html5rocks.com/en/tutorials/webrtc/datachannels/?redirect_from_locale=fr)
 
 
-<aside class="notes">
-</aside>
-<footer/>
+Notes:
+
 
 
 ##==##
 
-<div class="last-slide"></div>
+<!-- .slide: class="last-slide" -->
 
-<div class="topic-title"></div>
 
-# WebRTC
+# <!-- .element: class="topic-title" --> WebRTC
 
-<div class="presenter"></div>
+# <!-- .element: class="presenter" --> **Jean-François Garreau  **
 
-# **Jean-François Garreau**
+# <!-- .element: class="work-rule" --> GDG Nantes Leader & Ingénieur SQLI  
 
-<div class="gdg-rule"></div>
+# <!-- .element: class="email" --> **jfgarreau**@sqli.com  
 
-# GDG Nantes Leader
+# <!-- .element: class="thank-message" --> Merci  
 
-<div class="work-rule"></div>
+![avatar](/assets/images/jf.jpg)
 
-# Ingénieur SQLI
-
-<div class="thank-message"></div>
-
-# **Merci**
-
-![avatar](assets/images/jf.jpg)
 
 <div class="copyright">images & resources provenant des slides de SamDutton</div>
 

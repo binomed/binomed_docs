@@ -1,0 +1,6 @@
+{
+"version": 3,
+"mappings": ";AAKI,8CAAkB;EACd,OAAO,EAAC,IAAI;;;AAGhB,+CAAmB;EACf,OAAO,EAAC,KAAK",
+"sources": ["../scss/bootstrap_print.scss"],
+"file": "bootstrap_print.css"
+}

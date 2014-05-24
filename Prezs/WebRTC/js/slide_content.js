@@ -13,6 +13,8 @@ function(){
 	var canvasAscii,
 		videoAscii,
 		btnAscii;
+	// SourceUserMedia
+	var videoSource;
 
 	function init(){
 		// UserMedia First Example
@@ -24,11 +26,14 @@ function(){
 		btnAscii = document.querySelector('.asciiCamBtn');
 		btnAscii.addEventListener('click',function(){CammApp.startCam()});
 
+		// UserMedia First Example
+		videoSource = document.querySelector('.thirdUserMedia');
+
 		// We init the first slide
 		slideChanged();
 		Reveal.addEventListener( 'slidechanged', slideChanged);
 
-		//AppSlideWebRTC.initPrez();
+		AppSlideWebRTC.initPrez();
 	}
 
 	
@@ -37,6 +42,7 @@ function(){
 		var currentElement = document.querySelector('section.present');
 
 		stopFirstUserMedia();
+		SourceApp.stopSource();
 		CammApp.stopCam();
 		switch (checkAllSlideWithActions(currentElement)){			
 			case 'slideWithGetUserMedia' : 
@@ -80,15 +86,18 @@ function(){
 	}
 
 	function stopFirstUserMedia(){
-		videoUM.pause();
+		if (!videoUM){
+			return;
+		}
+		//videoUM.pause();
 		if (streamUM){
-			videoUM.src = '';
+			videoUM.src = null;
 			streamUM.stop();
 			streamUM = null;
 		}
 	}
 
-
+	
 	function hasGetUserMedia() {
 	  	return !!(navigator.getUserMedia || navigator.webkitGetUserMedia ||
 	        navigator.mozGetUserMedia || navigator.msGetUserMedia);
