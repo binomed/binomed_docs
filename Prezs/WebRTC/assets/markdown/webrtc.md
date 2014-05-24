@@ -76,7 +76,7 @@ Ils ont tous un browser !
 
 ##==##
 
-<!-- .slide: data-background="/assets/images/evolution.png" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/evolution.png" data-state="hidefooter" class="transition" -->
 
 
 
@@ -151,7 +151,7 @@ Fragments ! (4)
 
 # Et si !
 
-<!-- .slide: data-background="/assets/images/web_rtc_chat.jpg" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/web_rtc_chat.jpg" data-state="hidefooter" class="transition" -->
 
 
 <div class="copyright">imgur</div>
@@ -606,7 +606,7 @@ Notes:
 
 # Accrochez-vous !
 
-<!-- .slide: data-background="/assets/images/hang-on-pictures.jpg" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/hang-on-pictures.jpg" data-state="hidefooter" class="transition" -->
 
 <div class="copyright">langmaidpractice.com</div>
 
@@ -689,7 +689,7 @@ Le ice est fait en parallèle dès qu'une peerconnection se lance
 
 # Déjà vu ?
 
-<!-- .slide: data-background="/assets/images/Telephone-operators.jpg" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/Telephone-operators.jpg" data-state="hidefooter" class="transition" -->
 
 
 <div class="copyright">bnb paribas fortis</div>
@@ -772,7 +772,7 @@ Des serveurs publiques existents
 
 # C'est bientôt la fin
 
-<!-- .slide: data-background="/assets/images/Rollercoaster.jpg" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/Rollercoaster.jpg" data-state="hidefooter" class="transition" -->
 
 <div class="copyright">rerb-leblog</div>
 
@@ -1013,7 +1013,7 @@ C'était simple et ça peut l'être
 ##==##
 
 
-<!-- .slide: data-background="/assets/images/the-end-is-near.jpg" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/the-end-is-near.jpg" data-state="hidefooter" class="transition" -->
 
 
 
