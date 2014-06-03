@@ -76,12 +76,6 @@ Ils ont tous un browser !
 
 ##==##
 
-## Le web aujourd'hui ?
-
-<br><br>
-
-##==##
-
 # Revenons donc en arrière
 
 <!-- .slide: data-background="assets/images/back-to-the-future-part-iii-original.jpg" data-state="hidefooter" class="transition" -->
@@ -95,7 +89,7 @@ Ils ont tous un browser !
 
 La visio avant c'était ça : 
 
-![center hp-200](assets/images/visio_history.jpg)
+![center h-600](assets/images/visio_history.jpg)
 
 
 Notes:
@@ -121,6 +115,12 @@ Notes:
 Notes:
 Parler des nouvelles apis de plus en plus nouvelles!
 Positionner le webRTC
+
+##==##
+
+## Le web aujourd'hui ?
+
+<br><br>
 
 
 ### Petites questions ?
