@@ -2,17 +2,10 @@
 
 # **WebRTC**
 
-### 2014.23.05 BreizhCamp @ **Rennes** <br><br>http://goo.gl/B6Phir
+### 2014.06.06 Web2Day @ **Nantes** <br><br>http://goo.gl/B6Phir
 
 
 <video id="remoteVideo" autoplay="autoplay" muted="true"></video> 
-
-##==##
-
-# Merci les sponsors !
-
-<!-- .slide: data-background="assets/images/bzhcamp_Slide_first.png" data-state="hidefooter" class="transition" -->
-
 
 ##==##
 
@@ -83,6 +76,44 @@ Ils ont tous un browser !
 
 ##==##
 
+## Le web aujourd'hui ?
+
+<br><br>
+
+##==##
+
+# Revenons donc en arrière
+
+<!-- .slide: data-background="assets/images/back-to-the-future-part-iii-original.jpg" data-state="hidefooter" class="transition" -->
+
+
+<div class="copyright">wallpaper abyss</div>
+
+##==##
+
+## Souvenez vous
+
+La visio avant c'était ça : 
+
+![center hp-200](assets/images/visio_history.jpg)
+
+
+Notes:
+
+##==##
+
+
+## Et Surtout ! 
+
+<br><br>
+
+![full-height center](assets/images/flashIcon.png)
+
+
+Notes:
+
+##==##
+
 <!-- .slide: data-background="assets/images/evolution.png" data-state="hidefooter" class="transition" -->
 
 
@@ -92,18 +123,13 @@ Parler des nouvelles apis de plus en plus nouvelles!
 Positionner le webRTC
 
 
-##==##
-
-## Le web aujourd'hui ?
-
-<br><br>
-
 ### Petites questions ?
 
 Notes:
 Qui lit des vidéos sur sont téléphone ?
 Qui fait de la visio ?
 Qui fait du peer2peer
+
 
 
 ##==##
@@ -1128,8 +1154,3 @@ Notes:
 
 
 <div class="copyright">images & resources provenant des slides de SamDutton</div>
-
-
-##==##
-
-<!-- .slide: data-background="assets/images/bzhcamp_Slide_last.png" data-state="hidefooter" class="transition" -->
