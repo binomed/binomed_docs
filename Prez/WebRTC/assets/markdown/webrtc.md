@@ -464,6 +464,52 @@ Plus d'infos : http://hancke.name/webrtc/screenshare/
 
 Notes:
 
+
+##==##
+
+## GetUserMedia
+
+Choix récupération d'une fenêtre ! 
+
+```javascript
+ chrome.desktopCapture.chooseDesktopMedia(
+         ['screen', 'window'], 
+    function (streamid) {    
+    navigator.webkitGetUserMedia({
+          audio:false,
+          video: { mandatory: { 
+               chromeMediaSource: "desktop",
+               chromeMediaSourceId: streamid } }
+      }, 
+      function(stream){// Sucess CallBack }, 
+      function(){// Error CalBack});
+});
+```
+
+<b><font color='red'>Chrome App ou Chrome Extension ! </font></b>
+
+Notes:
+
+
+##==##
+
+<!-- .slide: data-state="startUMScreen" -->
+
+## GetUserMedia
+
+Partage d'écran
+
+<div class="slideWithGetUserMedia">
+  <video class="screenUserMedia"  muted autoplay width='600px'></video>
+  <br>
+  <span><button class="desktopShareBtn">Window</button>&nbsp;&nbsp;<button class="tabShareBtn">Tab</button></span>
+ 
+</div>
+
+@github : https://github.com/samdutton/simpl/blob/master/getusermedia/sources
+
+Notes:
+
 ##==##
 
 ## GetUserMedia
@@ -536,7 +582,6 @@ Choix de source !
 @github : https://github.com/samdutton/simpl/blob/master/getusermedia/sources
 
 Notes:
-
 
 ##==##
 

@@ -44,6 +44,7 @@ function(){
 		stopFirstUserMedia();
 		SourceApp.stopSource();
 		CammApp.stopCam();
+		ScreenApp.stopScreen();
 		switch (checkAllSlideWithActions(currentElement)){			
 			case 'slideWithGetUserMedia' : 
 			break;

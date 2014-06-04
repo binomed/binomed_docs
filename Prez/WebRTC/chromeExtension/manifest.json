@@ -1,0 +1,30 @@
+{
+  "name": "WebRTC Extension Presentation",
+  "description": "WebRTC Chrome extension for webRTC Presentation",
+  "version": "1",
+  "manifest_version": 2,
+  "minimum_chrome_version": "34",
+  "icons": {
+    "16": "assets/images/icon.png",
+    "128": "assets/images/icon.png"
+  },
+  "background":{
+    "scripts":["background/background.js","libs/adapter.js"]
+  },
+  "content_scripts": [
+     {
+       "matches": ["http://*/*"],
+       "js": ["page/content_scripts.js","libs/adapter.js"]
+     }
+   ],
+  "page_action" : {
+    "default_icon" : "assets/images/icon.png",
+    "default_title": "ShareTab"
+  },
+  "permissions": [
+    "desktopCapture", "tabCapture", "tabs", "activeTab"
+  ],
+  "externally_connectable": {
+    "matches": ["*://*.example.com/*"]
+  }
+}
