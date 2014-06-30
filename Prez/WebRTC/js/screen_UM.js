@@ -55,8 +55,8 @@ var ScreenApp = ScreenApp || function () {
     if (!!streamUM) {
       videoElement.src = null;
       streamUM.stop();
+      window.postMessage({ type: "WebRTC_Prez_JefBinomed_STOP_STREAM", idVideo : 'video.screenUserMedia'}, "*");
     }
-    window.postMessage({ type: "WebRTC_Prez_JefBinomed_STOP_STREAM", idVideo : 'video.screenUserMedia'}, "*");
   }
  
 

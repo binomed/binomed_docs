@@ -81,7 +81,7 @@ function(){
 				videoUM.play();
 			}, 
 			function(error){
-
+				console.error(error);
 			}
 		);
 	}

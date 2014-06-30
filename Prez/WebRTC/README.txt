@@ -13,6 +13,8 @@ Add a symbolic link with :
 
 # For running the app ! 
 
+Open Chrome Portable 35
+
 1. open a terminal
 2. goto binomed_docs/Prez/WebRTC/server
 3. start server : node server.js
@@ -20,9 +22,6 @@ Add a symbolic link with :
 5. goto binomed_docs/Prez/WebRTC
 6. Start SpeakerWS : node libs/sockets-notes/server/src/server.js -d true
 7. open Navigator and goto localhost:8080
-8. scan the QRCode for preloading the app
-9. Close BarcodeScanner !
-10. Close tab with SpeakerWS
-11. open a new tab on chrome phone and goto : http://yourIpAdress:8080/index_phone.html (if it doesn't work for first time, alternate reload of presentation and phone)
-12. Close the app (server & tab)
-13. scan the QRCode
+8. open a new tab on chrome phone and goto : http://yourIpAdress:8080/index_phone.html (if it doesn't work for first time, alternate reload of presentation and phone)
+9. scan the QRCode for preloading the app
+10. Close the app (server & tab)

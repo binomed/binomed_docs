@@ -1,0 +1,19 @@
+/* line 2, ../scss/prez/style_print.scss */
+img[alt*=avatar] {
+  width: 200pt;
+  min-height: 200pt;
+}
+
+/* line 8, ../scss/prez/style_print.scss */
+img[alt*=company_logo] {
+  top: 20mm;
+  width: 100pt;
+  min-height: 100pt;
+}
+
+/* line 14, ../scss/prez/style_print.scss */
+img[alt*=gdg_logo] {
+  top: 20mm;
+  width: 100pt;
+  min-height: 100pt;
+}
