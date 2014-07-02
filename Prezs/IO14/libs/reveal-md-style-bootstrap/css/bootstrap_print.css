@@ -1,0 +1,10 @@
+/* line 6, ../scss/bootstrap_print.scss */
+.reveal .slides > section div.hidden-print + * {
+  display: none;
+}
+/* line 10, ../scss/bootstrap_print.scss */
+.reveal .slides > section div.hidden-normal + * {
+  display: block;
+}
+
+/*# sourceMappingURL=bootstrap_print.css.map */
