@@ -1,0 +1,10 @@
+{
+  "author": "jefBinomed",
+  "name": "io-2014",
+  "dependencies": {
+    "socket.io-client": "~0.9.14",
+    "express" : "3.x",
+    "qs" : "~0.6.6",
+    "ws" : "~0.4.31"
+  }
+}
