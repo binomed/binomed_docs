@@ -1,0 +1,169 @@
+@import "compass";
+@import "compass/css3/box-shadow";
+@import "anims";
+
+img[alt*=logo]{
+    width:50px;   
+}
+
+$sommaire-img-height : 60px;
+
+img[alt*=sommaire]{
+  height: $sommaire-img-height;
+}
+
+.reveal .slides > section img[alt*=avatar]{
+    @include box-shadow(#CCCCCC 2px 2px 2px 3px); 
+}
+
+.reveal .slides > section img[alt*=title]{
+  position: absolute;
+width: 200px;
+top: -274px;
+left: 50%;
+margin-left: -146px;
+  
+
+}
+
+img[alt*=company_logo]{
+    position: absolute;
+    bottom: 20%;
+    left: 20%;
+    width:200px;
+}
+
+img[alt*=gdg_logo]{
+    position: absolute;
+    bottom: 20%;
+    right: 20%;
+    width:200px;
+}
+
+div.no-bullet~ul{
+  list-style-type: none;
+
+  img{
+    margin:0; 
+  }
+
+  li{
+    line-height: $sommaire-img-height;
+  }
+}
+
+div.padding~*{
+  padding-left: 50px;
+}
+
+
+p.surround{
+font-weight: bold;
+font-size: 1em;
+color: #DA0E1A;
+text-align: left;
+}
+
+table.table_version{
+  position: absolute;
+  top: 4em;
+}
+
+table.table_version td, table.table_version th {
+  font-size: 14px;
+}
+
+.img_version{
+  margin-top:7em;
+}
+
+
+/*
+ Theme: Default
+ Fonts: Oswald
+
+ <link href="http://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+
+*/
+
+img.float-left{
+  float: left;
+  margin-right: 40px;
+}
+
+img.float-right{
+  float: right;
+  margin-left: 10px;
+}
+
+
+/**
+* Common overrides
+*/
+
+
+img.company_logo{
+  position:absolute;
+  bottom: 20%;
+  left: 20%;
+  width:  150px;
+}
+
+img.gdg_logo{
+  position:absolute;
+  bottom: 20%;
+  right: 20%;
+  width:  150px;
+}
+
+section.intro.pagetransition > h2{
+  left: 65%;
+  top: 20%;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);  
+  -o-transform: rotate(0deg);  
+  transform: rotate(0deg);  
+}
+
+.avatar{
+  -moz-box-shadow:  2px 2px 2px 3px #CCCCCC;        
+  -webkit-box-shadow:  2px 2px 2px 3px #CCCCCC;        
+  box-shadow:  2px 2px 2px 3px #CCCCCC;
+  width: 200px;
+}
+
+
+.logo_twitter,.logo_gplus{
+  position: absolute;
+  width: 40px;
+  right:35%;  
+}
+.logo_twitter{
+  bottom: 5%;
+}
+
+.logo_gplus{
+ bottom: 15%;
+}
+
+.twitters_account, .gplus_account{
+  position: absolute;
+  font-size: 20px;
+  right:11%; 
+}
+
+.twitters_account{
+  bottom: 6%;  
+}
+
+
+.gplus_account{
+ bottom: 17%;
+}
+
+.lien_prez{
+  position: absolute;
+  top: 30%;
+  right:15%;  
+}
+
