@@ -49,7 +49,7 @@ module.exports = function (grunt) {
     
     // Configuration du watch
     watch: {
-        html: {            
+        /*html: {            
             files: ['<%= src.html.all %>'],
             options: {
               livereload: true
@@ -60,11 +60,11 @@ module.exports = function (grunt) {
             options: {
               livereload: true
             }
-        },
+        },*/
         sass: {
             files: ['<%= src.sass.all %>'],
             tasks: ['compass']
-        },
+        }/*,
         js: {
             files: ['<%= src.js %>'],
             options: {
@@ -76,9 +76,24 @@ module.exports = function (grunt) {
             options: {
               livereload: true
             }
-        }
+        }*/
     },
     
+    browserSync: {
+        bsFiles: {
+            src : ['<%= src.css.all %>',
+                  '<%= src.html.all %>',
+                  '<%= src.js %>',
+                  '<%= src.markdown %>']
+        },
+        options: {
+            server: {
+                baseDir: "./"
+            },
+            watchTask: true 
+        }
+    },
+
       
     // Sass configuration
       
@@ -99,10 +114,12 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-browser-sync');
   grunt.loadNpmTasks('grunt-contrib-compass');
   
   // Déclaration des taches
   grunt.registerTask('prod',    ['clean', 'copy', 'compass']);
+  grunt.registerTask('serve',    ['browserSync', 'watch']);
   grunt.registerTask('default', ['prod']);
 
 };

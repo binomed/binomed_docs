@@ -2,6 +2,17 @@
 @import "compass/css3/box-shadow";
 @import "anims";
 
+@font-face {
+    font-family: "Press Start 2P";
+    src: url('../assets/fonts/PressStart2P.eot');
+    src: url('../assets/fonts/PressStart2P.eot?#iefix') format('embedded-opentype'),
+    url('../assets/fonts/PressStart2P.svg#Press Start 2P') format('svg'),
+    url('../assets/fonts/PressStart2P.woff') format('woff'),
+    url('../assets/fonts/PressStart2P.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 img[alt*=logo]{
     width:50px;   
 }
@@ -18,12 +29,10 @@ img[alt*=sommaire]{
 
 .reveal .slides > section img[alt*=title]{
   position: absolute;
-width: 200px;
-top: -274px;
-left: 50%;
-margin-left: -146px;
-  
-
+  width: 200px;
+  top: -274px;
+  left: 50%;
+  margin-left: -146px;
 }
 
 img[alt*=company_logo]{
@@ -167,3 +176,48 @@ section.intro.pagetransition > h2{
   right:15%;  
 }
 
+
+
+/*
+* Slide DevFest 
+*/
+
+#devfestnantes{
+  position: absolute;
+  font-family: "Press Start 2P";
+  background: #EFEFEF;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color:black;
+}
+
+
+#devfestnantes .title{
+  position: absolute;
+  top: 40%;
+  left: 0;
+  font-size: 1.5em;
+  width: 100%;
+  text-align: center;
+}
+
+#devfestnantes img#logo-technos{
+  position: absolute;
+  top: 50%;
+  margin-top: -469px;
+  left: -350px;
+}
+
+#devfestnantes img#tour-bretagne{
+  position: absolute;
+  top: 50%;
+  height: 900px;
+  margin-top: -450px;
+  right: -200px;
+}
+
+.green{
+  color : #93C47D;
+}

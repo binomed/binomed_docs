@@ -129,42 +129,36 @@
   margin-top: -150px;
 }
 @keyframes openAnimation {
-  /* line 148, ../scss/prez/anims.scss */
-  .reveal from {
+  from {
     transform-style: preserve-3d;
     transform: perspective(1000) rotateY(0deg);
     transform-origin: 0% 0%;
   }
-  /* line 153, ../scss/prez/anims.scss */
-  .reveal to {
+  to {
     transform-style: preserve-3d;
     transform: perspective(1000) rotateY(-90deg);
     transform-origin: 0% 0%;
   }
 }
 @-webkit-keyframes openAnimation {
-  /* line 160, ../scss/prez/anims.scss */
-  .reveal from {
+  from {
     -webkit-transform-style: preserve-3d;
     -webkit-transform: perspective(1000) rotateY(0deg);
     -webkit-transform-origin: 0% 0%;
   }
-  /* line 165, ../scss/prez/anims.scss */
-  .reveal to {
+  to {
     -webkit-transform-style: preserve-3d;
     -webkit-transform: perspective(1000) rotateY(-90deg);
     -webkit-transform-origin: 0% 0%;
   }
 }
 @-moz-keyframes openAnimation {
-  /* line 172, ../scss/prez/anims.scss */
-  .reveal from {
+  from {
     -moz-transform-style: preserve-3d;
     -moz-transform: perspective(1000) rotateY(0deg);
     -moz-transform-origin: 0% 0%;
   }
-  /* line 177, ../scss/prez/anims.scss */
-  .reveal to {
+  to {
     -moz-transform-style: preserve-3d;
     -moz-transform: perspective(1000) rotateY(-90deg);
     -moz-transform-origin: 0% 0%;
@@ -321,42 +315,36 @@
   animation-name: rotateAnimation 10s infinite ease;
 }
 @keyframes rotateAnimation {
-  /* line 351, ../scss/prez/anims.scss */
-  .reveal from {
+  from {
     transform-style: preserve-3d;
     transform: perspective(1000) rotateY(0deg);
     /*transform-origin: 0% 0%;*/
   }
-  /* line 356, ../scss/prez/anims.scss */
-  .reveal to {
+  to {
     transform-style: preserve-3d;
     transform: perspective(1000) rotateY(360deg);
     /*transform-origin: 0% 0%;*/
   }
 }
 @-webkit-keyframes rotateAnimation {
-  /* line 363, ../scss/prez/anims.scss */
-  .reveal from {
+  from {
     -webkit-transform-style: preserve-3d;
     -webkit-transform: perspective(1000) rotateY(0deg);
     /*-webkit-transform-origin: 0% 0%;*/
   }
-  /* line 368, ../scss/prez/anims.scss */
-  .reveal to {
+  to {
     -webkit-transform-style: preserve-3d;
     -webkit-transform: perspective(1000) rotateY(360deg);
     /*-webkit-transform-origin: 0% 0%;*/
   }
 }
 @-moz-keyframes rotateAnimation {
-  /* line 375, ../scss/prez/anims.scss */
-  .reveal from {
+  from {
     -moz-transform-style: preserve-3d;
     -moz-transform: perspective(1000) rotateY(0deg);
     /*-moz-transform-origin: 0% 0%;*/
   }
-  /* line 380, ../scss/prez/anims.scss */
-  .reveal to {
+  to {
     -moz-transform-style: preserve-3d;
     -moz-transform: perspective(1000) rotateY(360deg);
     /*-moz-transform-origin: 0% 0%;*/
@@ -426,24 +414,31 @@
   margin-top: -200px;
 }
 
-/* line 5, ../scss/prez/style.scss */
+@font-face {
+  font-family: "Press Start 2P";
+  src: url("../assets/fonts/PressStart2P.eot");
+  src: url("../assets/fonts/PressStart2P.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/PressStart2P.svg#Press Start 2P") format("svg"), url("../assets/fonts/PressStart2P.woff") format("woff"), url("../assets/fonts/PressStart2P.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+/* line 16, ../scss/prez/style.scss */
 img[alt*=logo] {
   width: 50px;
 }
 
-/* line 11, ../scss/prez/style.scss */
+/* line 22, ../scss/prez/style.scss */
 img[alt*=sommaire] {
   height: 60px;
 }
 
-/* line 15, ../scss/prez/style.scss */
+/* line 26, ../scss/prez/style.scss */
 .reveal .slides > section img[alt*=avatar] {
-  -moz-box-shadow: #cccccc 2px 2px 2px 3px;
-  -webkit-box-shadow: #cccccc 2px 2px 2px 3px;
-  box-shadow: #cccccc 2px 2px 2px 3px;
+  -moz-box-shadow: #CCCCCC 2px 2px 2px 3px;
+  -webkit-box-shadow: #CCCCCC 2px 2px 2px 3px;
+  box-shadow: #CCCCCC 2px 2px 2px 3px;
 }
 
-/* line 19, ../scss/prez/style.scss */
+/* line 30, ../scss/prez/style.scss */
 .reveal .slides > section img[alt*=title] {
   position: absolute;
   width: 200px;
@@ -452,7 +447,7 @@ img[alt*=sommaire] {
   margin-left: -146px;
 }
 
-/* line 29, ../scss/prez/style.scss */
+/* line 38, ../scss/prez/style.scss */
 img[alt*=company_logo] {
   position: absolute;
   bottom: 20%;
@@ -460,7 +455,7 @@ img[alt*=company_logo] {
   width: 200px;
 }
 
-/* line 36, ../scss/prez/style.scss */
+/* line 45, ../scss/prez/style.scss */
 img[alt*=gdg_logo] {
   position: absolute;
   bottom: 20%;
@@ -468,25 +463,25 @@ img[alt*=gdg_logo] {
   width: 200px;
 }
 
-/* line 43, ../scss/prez/style.scss */
+/* line 52, ../scss/prez/style.scss */
 div.no-bullet ~ ul {
   list-style-type: none;
 }
-/* line 46, ../scss/prez/style.scss */
+/* line 55, ../scss/prez/style.scss */
 div.no-bullet ~ ul img {
   margin: 0;
 }
-/* line 50, ../scss/prez/style.scss */
+/* line 59, ../scss/prez/style.scss */
 div.no-bullet ~ ul li {
   line-height: 60px;
 }
 
-/* line 55, ../scss/prez/style.scss */
+/* line 64, ../scss/prez/style.scss */
 div.padding ~ * {
   padding-left: 50px;
 }
 
-/* line 60, ../scss/prez/style.scss */
+/* line 69, ../scss/prez/style.scss */
 p.surround {
   font-weight: bold;
   font-size: 1em;
@@ -494,18 +489,18 @@ p.surround {
   text-align: left;
 }
 
-/* line 67, ../scss/prez/style.scss */
+/* line 76, ../scss/prez/style.scss */
 table.table_version {
   position: absolute;
   top: 4em;
 }
 
-/* line 72, ../scss/prez/style.scss */
+/* line 81, ../scss/prez/style.scss */
 table.table_version td, table.table_version th {
   font-size: 14px;
 }
 
-/* line 76, ../scss/prez/style.scss */
+/* line 85, ../scss/prez/style.scss */
 .img_version {
   margin-top: 7em;
 }
@@ -517,13 +512,13 @@ table.table_version td, table.table_version th {
  <link href="http://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 
 */
-/* line 89, ../scss/prez/style.scss */
+/* line 98, ../scss/prez/style.scss */
 img.float-left {
   float: left;
   margin-right: 40px;
 }
 
-/* line 94, ../scss/prez/style.scss */
+/* line 103, ../scss/prez/style.scss */
 img.float-right {
   float: right;
   margin-left: 10px;
@@ -532,7 +527,7 @@ img.float-right {
 /**
 * Common overrides
 */
-/* line 105, ../scss/prez/style.scss */
+/* line 114, ../scss/prez/style.scss */
 img.company_logo {
   position: absolute;
   bottom: 20%;
@@ -540,7 +535,7 @@ img.company_logo {
   width: 150px;
 }
 
-/* line 112, ../scss/prez/style.scss */
+/* line 121, ../scss/prez/style.scss */
 img.gdg_logo {
   position: absolute;
   bottom: 20%;
@@ -548,7 +543,7 @@ img.gdg_logo {
   width: 150px;
 }
 
-/* line 119, ../scss/prez/style.scss */
+/* line 128, ../scss/prez/style.scss */
 section.intro.pagetransition > h2 {
   left: 65%;
   top: 20%;
@@ -558,7 +553,7 @@ section.intro.pagetransition > h2 {
   transform: rotate(0deg);
 }
 
-/* line 128, ../scss/prez/style.scss */
+/* line 137, ../scss/prez/style.scss */
 .avatar {
   -moz-box-shadow: 2px 2px 2px 3px #CCCCCC;
   -webkit-box-shadow: 2px 2px 2px 3px #CCCCCC;
@@ -566,43 +561,90 @@ section.intro.pagetransition > h2 {
   width: 200px;
 }
 
-/* line 136, ../scss/prez/style.scss */
+/* line 145, ../scss/prez/style.scss */
 .logo_twitter, .logo_gplus {
   position: absolute;
   width: 40px;
   right: 35%;
 }
 
-/* line 141, ../scss/prez/style.scss */
+/* line 150, ../scss/prez/style.scss */
 .logo_twitter {
   bottom: 5%;
 }
 
-/* line 145, ../scss/prez/style.scss */
+/* line 154, ../scss/prez/style.scss */
 .logo_gplus {
   bottom: 15%;
 }
 
-/* line 149, ../scss/prez/style.scss */
+/* line 158, ../scss/prez/style.scss */
 .twitters_account, .gplus_account {
   position: absolute;
   font-size: 20px;
   right: 11%;
 }
 
-/* line 155, ../scss/prez/style.scss */
+/* line 164, ../scss/prez/style.scss */
 .twitters_account {
   bottom: 6%;
 }
 
-/* line 160, ../scss/prez/style.scss */
+/* line 169, ../scss/prez/style.scss */
 .gplus_account {
   bottom: 17%;
 }
 
-/* line 164, ../scss/prez/style.scss */
+/* line 173, ../scss/prez/style.scss */
 .lien_prez {
   position: absolute;
   top: 30%;
   right: 15%;
+}
+
+/*
+* Slide DevFest 
+*/
+/* line 185, ../scss/prez/style.scss */
+#devfestnantes {
+  position: absolute;
+  font-family: "Press Start 2P";
+  background: #EFEFEF;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: black;
+}
+
+/* line 197, ../scss/prez/style.scss */
+#devfestnantes .title {
+  position: absolute;
+  top: 40%;
+  left: 0;
+  font-size: 1.5em;
+  width: 100%;
+  text-align: center;
+}
+
+/* line 206, ../scss/prez/style.scss */
+#devfestnantes img#logo-technos {
+  position: absolute;
+  top: 50%;
+  margin-top: -469px;
+  left: -350px;
+}
+
+/* line 213, ../scss/prez/style.scss */
+#devfestnantes img#tour-bretagne {
+  position: absolute;
+  top: 50%;
+  height: 900px;
+  margin-top: -450px;
+  right: -200px;
+}
+
+/* line 221, ../scss/prez/style.scss */
+.green {
+  color: #93C47D;
 }

@@ -129,42 +129,36 @@
   margin-top: -150px;
 }
 @keyframes openAnimation {
-  /* line 148, ../scss/prez/anims.scss */
-  .reveal from {
+  from {
     transform-style: preserve-3d;
     transform: perspective(1000) rotateY(0deg);
     transform-origin: 0% 0%;
   }
-  /* line 153, ../scss/prez/anims.scss */
-  .reveal to {
+  to {
     transform-style: preserve-3d;
     transform: perspective(1000) rotateY(-90deg);
     transform-origin: 0% 0%;
   }
 }
 @-webkit-keyframes openAnimation {
-  /* line 160, ../scss/prez/anims.scss */
-  .reveal from {
+  from {
     -webkit-transform-style: preserve-3d;
     -webkit-transform: perspective(1000) rotateY(0deg);
     -webkit-transform-origin: 0% 0%;
   }
-  /* line 165, ../scss/prez/anims.scss */
-  .reveal to {
+  to {
     -webkit-transform-style: preserve-3d;
     -webkit-transform: perspective(1000) rotateY(-90deg);
     -webkit-transform-origin: 0% 0%;
   }
 }
 @-moz-keyframes openAnimation {
-  /* line 172, ../scss/prez/anims.scss */
-  .reveal from {
+  from {
     -moz-transform-style: preserve-3d;
     -moz-transform: perspective(1000) rotateY(0deg);
     -moz-transform-origin: 0% 0%;
   }
-  /* line 177, ../scss/prez/anims.scss */
-  .reveal to {
+  to {
     -moz-transform-style: preserve-3d;
     -moz-transform: perspective(1000) rotateY(-90deg);
     -moz-transform-origin: 0% 0%;
@@ -321,42 +315,36 @@
   animation-name: rotateAnimation 10s infinite ease;
 }
 @keyframes rotateAnimation {
-  /* line 351, ../scss/prez/anims.scss */
-  .reveal from {
+  from {
     transform-style: preserve-3d;
     transform: perspective(1000) rotateY(0deg);
     /*transform-origin: 0% 0%;*/
   }
-  /* line 356, ../scss/prez/anims.scss */
-  .reveal to {
+  to {
     transform-style: preserve-3d;
     transform: perspective(1000) rotateY(360deg);
     /*transform-origin: 0% 0%;*/
   }
 }
 @-webkit-keyframes rotateAnimation {
-  /* line 363, ../scss/prez/anims.scss */
-  .reveal from {
+  from {
     -webkit-transform-style: preserve-3d;
     -webkit-transform: perspective(1000) rotateY(0deg);
     /*-webkit-transform-origin: 0% 0%;*/
   }
-  /* line 368, ../scss/prez/anims.scss */
-  .reveal to {
+  to {
     -webkit-transform-style: preserve-3d;
     -webkit-transform: perspective(1000) rotateY(360deg);
     /*-webkit-transform-origin: 0% 0%;*/
   }
 }
 @-moz-keyframes rotateAnimation {
-  /* line 375, ../scss/prez/anims.scss */
-  .reveal from {
+  from {
     -moz-transform-style: preserve-3d;
     -moz-transform: perspective(1000) rotateY(0deg);
     /*-moz-transform-origin: 0% 0%;*/
   }
-  /* line 380, ../scss/prez/anims.scss */
-  .reveal to {
+  to {
     -moz-transform-style: preserve-3d;
     -moz-transform: perspective(1000) rotateY(360deg);
     /*-moz-transform-origin: 0% 0%;*/
