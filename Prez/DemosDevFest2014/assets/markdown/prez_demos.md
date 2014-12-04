@@ -6,7 +6,7 @@
 
 ### 2014.12.18 SQLI @ **Nantes**
 
-![title](assets/images/html5-device-access-logo.png)
+![title](assets/images/logo_devfest.png)
 
 ##==##
 
@@ -113,6 +113,8 @@
 
 ![h-300 float-left](assets/images/C++-logo.jpg)
 
+![h-300 float-left](assets/images/Javascript-logo.png)
+
 Notes:
 Mindstorm c'est la troisième génération 
 
@@ -130,12 +132,45 @@ Mindstorm c'est la troisième génération
 
 ##==##
 
+<!-- .slide: data-background="black" data-state="hidefooter" class="transition" -->
+
+![center h-900](assets/images/baton_de_la_mort.jpg)
+
+
+##==##
+
 ##  Myo & Mindstrom EV3
 
 ### Fonctionnement
 
 ![h-800 center](assets/images/schema_myo_ev3.png) 
 
+##==##
+
+## Myo & Mindstorm EV3
+
+### Un peu de théorie sur Myo
+
+![center h-700](assets/images/myo-overview.png)
+
+##==##
+
+## Myo & Mindstorm EV3
+
+### Un peu de théorie sur Myo
+
+![center h-500](assets/images/Mark-blog-Diagrams-01.jpg)
+
+##==##
+
+## Myo & Mindstorm EV3
+
+### Un peu de théorie sur EV3
+
+![center h-500](assets/images/ev3_sensors.jpg)
+
+Notes:
+Ne pas oublier de parler du bluetooth
 
 ##==##
 
@@ -214,393 +249,141 @@ class DataCollector : public myo::DeviceListener {
   }
 ```
 
-[fork me](https://github.com/binomed/MyoEV3/blob/master/MyoCpp/MyoWebSocket/MyoWebSocket.cpp)
-
-
-##==##
-
-<!--
-//     ____  _____  _____ ______ _   _ _______    _______ _____ ____  _   _ 
-//    / __ \|  __ \|_   _|  ____| \ | |__   __|/\|__   __|_   _/ __ \| \ | |
-//   | |  | | |__) | | | | |__  |  \| |  | |  /  \  | |    | || |  | |  \| |
-//   | |  | |  _  /  | | |  __| | . ` |  | | / /\ \ | |    | || |  | | . ` |
-//   | |__| | | \ \ _| |_| |____| |\  |  | |/ ____ \| |   _| || |__| | |\  |
-//    \____/|_|  \_\_____|______|_| \_|  |_/_/    \_\_|  |_____\____/|_| \_|
-//                                                                          
-//   
--->
-
-<!-- .slide: class="transition-black" -->
-
-# Device Orientation
-
-![icon](assets/images/device-orientation.jpg)
+[fork me - MyWebSocket.cpp](https://github.com/binomed/MyoEV3/blob/master/MyoCpp/MyoWebSocket/MyoWebSocket.cpp)
 
 ##==##
 
-## Device Orientation
+## Myo & Mindstorm EV3
 
-3 Axes : **Alpha, Gamma, Beta**
+### Côté EV3
 
-Se fait à plat ! 
+![center h-400](assets/images/ev3_ide.png)
 
-<br>
-
-![float-left w-300](assets/images/device-orientation-z.jpg)
-
-![float-left w-300](assets/images/device-orientation-y.jpg)
-
-![float-left w-300](assets/images/device-orientation-x.jpg)
-
-
-
-Notes:
-Subtilité : ça marche mieux si le téléphone est a plat
-
+[fork me - EV3](https://github.com/binomed/MyoEV3/tree/master/EV3)
 
 ##==##
 
-## Device Orientation
-
-
-* rendez vous dans /javascript/components/orientation.js
-
-
-```javascript
-if(window.DeviceOrientationEvent) {
-  window.addEventListener("deviceorientation", process, false);
-} else {
-  // Le navigateur ne supporte pas l'événement deviceorientation
-}
-
-function process(event) {
-  var alpha = event.alpha;
-  var beta = event.beta;
-  var gamma = event.gamma;
-   
-}
-```
-
-
-
-
-
-
-##==##
-
-## Orientation
-
-### Cas Pratique
-
-![center w-800](assets/images/combination-lock-icon.jpg)
-
-
-
-##==##
-
-## Orientation
-
-<div class="controlsSensor">
-  <div id="startOrientation" class='btnStart push_button'>Demarer</div>
-  <div id="stopOrientation" class='btnStop push_button'>Arrêter</div>
-</div>
-<div class="sensorExample">
-  <div class="orientation">
-    <div class="safe_lock_funny_win visible-md visible-lg"></div>
-    <div class="safe_lock_door">
-      <div class="safe_lock_bg"></div>
-      <div class="safe_lock"></div>
-    </div>
-  </div>
-</div>
-
-
-
-##==##
-
-<!--
-//    _____  ________      _______ _____ ______   __  __  ____ _______ _____ ____  _   _ 
-//   |  __ \|  ____\ \    / /_   _/ ____|  ____| |  \/  |/ __ \__   __|_   _/ __ \| \ | |
-//   | |  | | |__   \ \  / /  | || |    | |__    | \  / | |  | | | |    | || |  | |  \| |
-//   | |  | |  __|   \ \/ /   | || |    |  __|   | |\/| | |  | | | |    | || |  | | . ` |
-//   | |__| | |____   \  /   _| || |____| |____  | |  | | |__| | | |   _| || |__| | |\  |
-//   |_____/|______|   \/   |_____\_____|______| |_|  |_|\____/  |_|  |_____\____/|_| \_|
-//                                                                                       
-//    
--->
-
-<!-- .slide: class="transition-black" -->
-
-# Device Motion API
-
-![icon](assets/images/device_motion.jpg)
-
-##==##
-
-## Device Motion API
-
-![center w-800](assets/images/device_motion.jpg)
-
-On peut tenir comptes de l'accélération classique ou avec prise en charge de la gravité !
-
-
-
-Notes:
-
-
-
-##==##
-
-## Device Motion API
-
-
-On s'intéresse à l'accélération x
-
-* rendez vous dans /javascript/components/devicemotion.js
-
-
-
-```javascript
-// Listener of devieMotion
-var deviceMotionListener = function(event){        
-  var x = event.acceleration.x;
-  var y = event.acceleration.y;
-  var z = event.acceleration.z;
-  socket.sendDeviceMotion(Math.abs(x));
-  currentPercent+=Math.abs(x);
-  updatePercent();
-}
-
-// We add the listener
-function register(){
-  window.addEventListener('devicemotion', deviceMotionListener, false);
-}
-```
-
-
-
-##==##
-
-## Device Orientation
-
-### Cas pratique
-
-![center w-800](assets/images/chargebatterylonger.jpg)
-
-
-
-##==##
-
-## DeviceMotion
-
-<div class="controlsSensor">
-  <div id="startDeviceMotion" class='btnStart push_button'>Demarer</div>
-  <div id="stopDeviceMotion" class='btnStop push_button'>Arrêter</div>
-</div>
-<div class="sensorExample">
-  <div class="devicemotion">  
-    <div class="devicemotion-percent"></div>
-    <div class="devicemotion-bg"></div>
-  </div>
-</div>
-
-
-
-##==##
-
-<!--
-//    _____  _____   ______   _______ __  __ _____ _________     __
-//   |  __ \|  __ \ / __ \ \ / /_   _|  \/  |_   _|__   __\ \   / /
-//   | |__) | |__) | |  | \ V /  | | | \  / | | |    | |   \ \_/ / 
-//   |  ___/|  _  /| |  | |> <   | | | |\/| | | |    | |    \   /  
-//   | |    | | \ \| |__| / . \ _| |_| |  | |_| |_   | |     | |   
-//   |_|    |_|  \_\\____/_/ \_\_____|_|  |_|_____|  |_|     |_|   
-//                                                                 
-//    
--->
-
-<!-- .slide: class="transition-black" -->
-
-# Proximity
-
-![icon](assets/images/proximity.jpg)
-
-##==##
-
-## Proximity
-
-Firefox uniquement ! 
-
-* Renvoie des valeurs entre 0 et 5 (0 étant proche)
-
-* rendez vous dans /javascript/components/proximity.js
-
-
-
-```javascript
-var deviceProximityHandler = function(event) {
-  var value = Math.round(event.value);            
-  socket.sendProximity(value);
-  manageProximityValue(value);
-}
-
-function register(){
-  window.addEventListener('deviceproximity', deviceProximityHandler, false);
-}
-
-function unregister(){
-  window.removeEventListener('deviceproximity', deviceProximityHandler, false);
-}
-```
-
-
-
-##==##
-
-## Proximity
-
-### Cas pratique
-
-![center w-800](assets/images/push-button.jpg)
-
-
-
-##==##
-
-## Proximity
-
-<div class="controlsSensor">
-  <div id="startProximity" class='btnStart push_button'>Demarer</div>
-  <div id="stopProximity" class='btnStop push_button'>Arrêter</div>
-</div>
-<div class="sensorExample">
-  <div id="proximity">
-    <div class="push_button">Push Me ! </div>
-  </div>
-</div>
-
-
-
-
-##==##
-
-<!--
-//    _      _____ _____ _    _ _______ 
-//   | |    |_   _/ ____| |  | |__   __|
-//   | |      | || |  __| |__| |  | |   
-//   | |      | || | |_ |  __  |  | |   
-//   | |____ _| || |__| | |  | |  | |   
-//   |______|_____\_____|_|  |_|  |_|   
-//                                      
-//   
--->
-
-
-<!-- .slide: class="transition-black" -->
-
-# Light 
-
-![icon](assets/images/light_detector.jpg)
-
-##==##
-
-
-## Light
-
-Firefox uniquement ! 
-
-* Renvoie des valeurs entre 0 et > 1000 (0 étant sombre)
-
-* Est dépendant du téléphone et de l'implementation
-
-* On a 2 façon de faire =>
- * Gestion par valeur
- * Gestion par états : Dim / Normal / Bright
-
-* rendez vous dans /javascript/components/light.js
-
-
-```javascript
-var deviceLightHandler = function(event) {
- var value = Math.min(45, event.value);
- percent = Math.round((value / 45) * 100);
- socket.sendLight(percent); 
- updateLight();
-}
-
-window.addEventListener('devicelight', deviceLightHandler, false);
-```
-
-
-
-##==##
-
-## Light
-
-### Cas pratique
-
-![center w-400](assets/images/Hanging_Bulb.jpg)
-
-
-
-##==##
-
-## Light
-
-<div class="controlsSensor">
-  <div id="startLight" class='btnStart push_button'>Demarer</div>
-  <div id="stopLight" class='btnStop push_button'>Arrêter</div>
-</div>
-<div class="sensorExample">
-   <div id="light">
-    <div class="light-bg"></div>
-  </div>
-</div>
-
-
-
-
-##==##
-
-<!--
-//    _    _  _____ ______ _____    __  __ ______ _____ _____          
-//   | |  | |/ ____|  ____|  __ \  |  \/  |  ____|  __ \_   _|   /\    
-//   | |  | | (___ | |__  | |__) | | \  / | |__  | |  | || |    /  \   
-//   | |  | |\___ \|  __| |  _  /  | |\/| |  __| | |  | || |   / /\ \  
-//   | |__| |____) | |____| | \ \  | |  | | |____| |__| || |_ / ____ \ 
-//    \____/|_____/|______|_|  \_\ |_|  |_|______|_____/_____/_/    \_\
-//                                                                     
-//    
--->
-
-<!-- .slide: class="transition-black" -->
-
-# User Media
-
-![icon](assets/images/camera_icon.jpg)
-
-##==##
-
-## User Media
-
-* Encore dépendant des navigateurs ! Modernizr à la rescousse.
-
-* Possibilité de préciser ce qu'on récupère et on peut séparer les flux ! 
-
-```javascript
-var vgaConstraints = {
-  video: {
-    mandatory: {
-      maxWidth: 640,
-      maxHeight: 360
-    }
+## Myo & Mindstorm EV3
+
+### Côté Node
+
+
+package.json
+```json 
+{
+  "author": "jefBinomed",
+  "name": "MyoEV3",
+  "version": "1.0.0",
+  "dependencies": {},
+  "devDependencies": {
+    "bluetooth-serial-port": "1.1.4",
+    "express" : "3.x"
   }
-};
+}
+```
+##==##
+
+## Myo & Mindstorm EV3
+
+### Côté Node
+
+
+Obligé de composé avec le protocole de MindStorm : 
+
+* [Protocol Bluetooth EV3](http://www.mindstorms.rwth-aachen.de/trac/wiki/EV3)
+* Convertir des données textuelles en Hexa
+* Utiliser [IEEE754](http://fr.wikipedia.org/wiki/IEEE_754) comme norme pour passer les données numériques ! 
+
+Notes:
+En gros mécanisme d'entête et librairies JS pas à jour => faut tout recoder ! 
+
+##==##
+
+## Myo & Mindstorm EV3
+
+### Côté Node
+
+
+```javascript
+btSerial.on('found', function(address, name) {
+    if (name === ev3BirckName){
+      btSerial.findSerialPortChannel(address, function(channel) {
+          btSerial.connect(address, channel, function() {
+              ev3SendMessage('connect','ok');             
+              ev3SendMessage('myo','stop');
+              btSerial.on('data', function(buffer) {
+                  console.log("BLE->Datas received : ");                  
+              });
+          }, function (err) {
+              console.log('BLE->cannot connect');
+          });
+      btSerial.close();
+      }, function(){
+        console.log('BLE->no Channel found');
+      });
+    }
+});
 ```
 
-* Devient intéressant s'il est mixé avec des effets ou des canvas.
+Notes:
 
 
+##==##
+
+## Myo & Mindstorm EV3
+
+### Côté Node
+
+Ecriture
+```javascript
+function ev3SendMessage(type,message, number){
+  if (btSerial.isOpen()){
+    if (debug){
+      console.log('BLE-> Try to write : '+type+' | with message : '+message+
+      " | : "+hexUtils.toEV3(type,message, number));
+    }
+    var buffer = new Buffer(hexUtils.toEV3(type, message, number), 'hex');
+    btSerial.write(buffer, function(err, bytesWritten) {
+      if (err) console.log(err);
+      else console.log('BLE->datas write');
+    });
+
+  }else{
+    console.log('BLE->Cannot send message because blueTooth is off');
+  }
+}
+```
+
+Notes:
+
+
+##==##
+
+## Myo & Mindstorm EV3
+
+### Côté Node - Serveur
+
+```javascript
+var app = express().use(express.static('public'))
+  .use(function(req, res){
+    if (req.query.json){      
+      var dataJson = JSON.parse(req.query.json);
+      if(dataJson.pose != 'rest' && dataJson.pose != lastGesture){
+        var currentTime = new Date().getTime();
+        ...
+        // Si le Mindstorm est sous le contrôle du myo
+        if (start){
+          // Si on sère le point alors on tire un élastique
+          if (dataJson.pose === 'fist'){
+            ev3SendMessage('myo','fire');
+            ...
+          }else ...
+        }
+        // on regarde la séquence (WaveOut->WaveIn->FingerSpread)
+        ...              
+```
+
+[fork me - Node](https://github.com/binomed/MyoEV3/blob/master/NodeServer)
 
 Notes:
 
@@ -608,170 +391,50 @@ Notes:
 
 ##==##
 
-## User Media
 
-* rendez vous dans /javascript/components/usermedia.js
-
-```javascript
-// We define the video constraints
-var constraints = {video: true};
-
-// We get the correct navigator method
-var gUM = Modernizr.prefixed('getUserMedia', navigator);
-
-// We manage an error while getting the stream
-function handleUserMediaError(error){
-  console.log('navigator.getUserMedia error: ', error);
-}
-
-// We manage the success of getting the stream
-function handleUserMedia(stream){
-  localStream = stream;
-  video.src = window.URL.createObjectURL(stream);
-  video.play();
-  videoParent.addClass('rotate');
-}
-
-gUM(constraints, handleUserMedia, handleUserMediaError);
-
-```
+<!-- .slide: data-background="assets/images/leap_motion.png" data-state="hidefooter" class="transition" -->
 
 
+##==##
 
+## Leap Motion
+
+### Technos 
+
+![h-300 float-left](assets/images/HTML5_Badge_512.png) 
+
+![h-300 float-left](assets/images/Javascript-logo.png)
+
+![h-300 float-left](assets/images/css3.svg)
 
 Notes:
 
 
+##==##
+
+<!-- .slide: data-background="assets/images/MinorityReport.jpg" data-state="hidefooter" class="transition" -->
 
 ##==##
 
-## User Media
+## Leap Motion
 
-### Cas pratique
+### Fonctionnement
 
-![center w-400](assets/images/css3-transform-rotateX-perspective.png)
-
-
+![h-800 center](assets/images/schema_leap.png) 
 
 ##==##
 
-## User Media
+## Leap Motion
 
-<div class="controlsSensor">
-  <div id="startUserMedia" class='btnStart push_button'>Demarer</div>
-  <div id="stopUserMedia" class='btnStop push_button'>Arrêter</div>
-</div>
-<div class="sensorExample">
-  <div id="usermedia">
-    <div class="videoParent">
-      <video id="streamVideo" width="500px"></video>
-    </div>
-  </div>
-</div>
+### Un peu de théorie sur Leap Motion
 
-
-
+![center h-500](assets/images/Leap_InteractionBox.png)
 
 ##==##
 
-<!--
-//   __      _______ ____  _____         _______ _____ ____  _   _ 
-//   \ \    / /_   _|  _ \|  __ \     /\|__   __|_   _/ __ \| \ | |
-//    \ \  / /  | | | |_) | |__) |   /  \  | |    | || |  | |  \| |
-//     \ \/ /   | | |  _ <|  _  /   / /\ \ | |    | || |  | | . ` |
-//      \  /   _| |_| |_) | | \ \  / ____ \| |   _| || |__| | |\  |
-//       \/   |_____|____/|_|  \_\/_/    \_\_|  |_____\____/|_| \_|
-//                                                                 
-//   
--->
+## Leap Motion
 
-<!-- .slide: class="transition-black" -->
-
-# Vibration
-
-![icon](assets/images/mobile-phone-vibration.jpg)
-
-##==##
-
-## Vibration
-
-* Vibre selon un temps donné ! 
-
-* Peut faire vibrer tout un ensmble de temps
- * n = temps à vibrer
- * n+1 = temps entre vibration n et n+2
-
-
-```javascript
-window.navigator.vibrate(arrayOfVibration);
-```
-
-
-
-##==##
-
-## Vibration
-
-### Cas pratique
-
-![center w-400](assets/images/morse1.jpg)
-
-
-
-##==##
-
-<!--
-//   __          __  _        _____                      _     
-//   \ \        / / | |      / ____|                    | |    
-//    \ \  /\  / /__| |__   | (___  _ __   ___  ___  ___| |__  
-//     \ \/  \/ / _ \ '_ \   \___ \| '_ \ / _ \/ _ \/ __| '_ \ 
-//      \  /\  /  __/ |_) |  ____) | |_) |  __/  __/ (__| | | |
-//       \/  \/ \___|_.__/  |_____/| .__/ \___|\___|\___|_| |_|
-//                                 | |                         
-//   
--->
-
-<!-- .slide: class="transition-black" -->
-
-# Web Speech API
-
-![icon](assets/images/voice-recognition.js.png)
-
-##==##
-
-## Web Speech
-
-* Uniquement sur Chrome
-
-* Un tag existe pour gagner en code 
-
-
-```html
-<input x-webkit-speech>
-```
-
-
-* Il reste plus intéressant d'utiliser la librairie Javascript
-
-* Manque encore cependant de précision pour de la commande vocale => avoir des textes approximatifs de détection
-
-```javascript
-var recognition = new webkitSpeechRecognition();
-recognition.lang = 'fr-FR';
-recognition.continuous = true;
-recognition.interimResults = true;
-```
-
-
-
-##==##
-
-## Web Speech API
-
-### Cas pratique
-
-![center w-600](assets/images/background.png)
-
+### Un peu de code
 
 
 
@@ -791,14 +454,14 @@ recognition.interimResults = true;
 <!-- .slide: class="last-slide" -->
 
 
-# <!-- .element: class="topic-title" --> Sensor & HTML5
+# <!-- .element: class="topic-title" --> Démos DevFest Nantes 2014
 
 # <!-- .element: class="presenter" --> **Jean-François Garreau  **
 
-# <!-- .element: class="work-rule" --> GDG Nantes Leader & Ingénieur SQLI  
+# <!-- .element: class="work-rule" --> GDG Nantes Leader & Ingénieur Innovation SQLI  
 
 # <!-- .element: class="email" --> **jfgarreau**@sqli.com | @jefBinomed | http://gplus.to/jefBinomed 
 
 # <!-- .element: class="thank-message" --> Merci  
 
-![avatar](assets/images/jf.jpg)
+![avatar](assets/images/avata_jf_web2day.jpg)
