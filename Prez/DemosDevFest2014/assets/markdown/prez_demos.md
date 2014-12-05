@@ -91,10 +91,10 @@
 
 * 4 Démos du tonnere ;)
  * Myo EV3
- * Question pour un DevFest
  * LeapDevFest
- * Countdown
  * Skiff Simulator
+ * Question pour un DevFest
+ * Countdown
 
 
 
@@ -434,8 +434,185 @@ Notes:
 
 ## Leap Motion
 
-### Un peu de code
+### Les enjeux ?
 
+* Avoir une interaction clair 
+
+* Interagir ?
+
+* Qu'est ce qui est naturel ! 
+
+[fork me - leap devfest 2014](https://github.com/GDG-Nantes/leap-devfest2014)
+
+##==##
+
+## Leap Motion
+
+### Avoir une interaction clair
+
+
+![center w-1000](assets/images/details_leap.png)
+
+##==##
+
+## Leap Motion
+
+### Avoir une interaction clair
+
+
+![center w-800](assets/images/leap_feedback.png)
+
+
+##==##
+
+## Leap Motion
+
+### Interagir
+
+
+![center w-1000](assets/images/leap_navigation.png)
+
+##==##
+
+## Leap Motion
+
+### Interagir
+
+
+![center w-800](assets/images/leap_selection.png)
+
+##==##
+
+## Leap Motion
+
+### Interagir
+
+
+![center h-700](assets/images/leap_selection_2.png)
+
+Notes:
+Parler de l'émulation de souris
+
+
+
+##==##
+
+
+<!-- .slide: data-background="assets/images/skiff_simulator.png" data-state="hidefooter" class="transition" -->
+
+##==##
+
+##  Skiff Simulator
+
+### Technos 
+
+![h-300 float-left](assets/images/arduino_logo.jpg) 
+
+![h-300 float-left](assets/images/HTML5_Badge_512.png)
+
+![h-300 float-left](assets/images/Javascript-logo.png)
+
+![h-300 float-left](assets/images/chrome_web_store.png)
+
+![h-300 float-left](assets/images/C-language-logo.jpg)
+
+Notes:
+
+
+##==##
+
+##  Skiff Simulator
+
+### Fonctionnement
+
+![h-800 center](assets/images/schema_skiff.png) 
+
+##==##
+
+## Skiff Simulator
+
+### Un peu de théorie sur les jeux
+
+![center h-500](assets/images/diag_moteur.png)
+
+Notes: 
+Y a un framerate à respecter et chaque élément est indépendant et écrit son état à un endroit que le moteur graphique s'occupe d'écrire
+
+##==##
+
+## Skiff Simulator
+
+### Quoi choisir ?
+
+* Canvas pour la partie rendu
+
+* Utilisation du framerate interne du navigateur pour optimiser au mieux l'affichage ! 
+
+```jascript
+window.requestAnimationFrame(function callback(){});
+```
+
+* Plus de détails sur [Sonic 2 en HTML5](http://blog.sii-ouest.fr/sonic-2-en-html5/)
+
+
+Notes:
+Pourquoi utiliser un bazooka quand un peu de code simple peut faire le job ?
+
+##==##
+
+## Skiff Simulator
+
+### Pourquoi la chromeApp ?
+
+Car seul Chrome permet de lire le port série via une chromeApp ! 
+
+```javascript
+// Liste des ports séries
+chrome.serial.getDevices(callBackDevices);
+// Connexion au port série
+chrome.serial.connect(path, onOpenArduino);
+// Lecture des données
+chrome.serial.onReceive.addListener(onReadArduino);
+
+function convertArrayBufferToString(buf) {
+  return String.fromCharCode.apply(null, new Uint8Array(buf));
+}    
+
+function onReadArduino(readInfo) {
+  var str = convertArrayBufferToString(readInfo.data);
+  ...
+}
+```
+[fork me - Partie ChromeApp](https://github.com/sqli-nantes/skiff-simulator/blob/master/chromeApp/)
+
+Notes:
+Petit travers ! localstorage est asynchrone !
+
+##==##
+
+## Skiff Simulator
+
+### Côté Arduino
+
+
+```c
+long lire_distance()
+{
+  long lecture_echo;
+  digitalWrite(TriggerPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(TriggerPin, LOW);
+  lecture_echo = pulseIn(EchoPin, HIGH);
+  long cm = lecture_echo / 58;
+  //Serial.print("Distance en cm : ");
+  //Serial.println(cm); 
+  return(cm);
+}
+...
+Serial.println(distance);
+```
+
+[fork me - Partie Arduino](https://github.com/sqli-nantes/skiff-simulator/blob/master/arduino/sketch/sketch.ino)
 
 
 <!--
