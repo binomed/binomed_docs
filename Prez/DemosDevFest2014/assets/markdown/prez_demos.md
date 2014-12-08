@@ -113,7 +113,7 @@
 
 ![h-300 float-left](assets/images/C++-logo.jpg)
 
-![h-300 float-left](assets/images/Javascript-logo.png)
+![h-300 float-left](assets/images/JavaScript-logo.png)
 
 Notes:
 Mindstorm c'est la troisième génération 
@@ -403,7 +403,7 @@ Notes:
 
 ![h-300 float-left](assets/images/HTML5_Badge_512.png) 
 
-![h-300 float-left](assets/images/Javascript-logo.png)
+![h-300 float-left](assets/images/JavaScript-logo.png)
 
 ![h-300 float-left](assets/images/css3.svg)
 
@@ -510,7 +510,7 @@ Parler de l'émulation de souris
 
 ![h-300 float-left](assets/images/HTML5_Badge_512.png)
 
-![h-300 float-left](assets/images/Javascript-logo.png)
+![h-300 float-left](assets/images/JavaScript-logo.png)
 
 ![h-300 float-left](assets/images/chrome_web_store.png)
 
@@ -613,6 +613,153 @@ Serial.println(distance);
 ```
 
 [fork me - Partie Arduino](https://github.com/sqli-nantes/skiff-simulator/blob/master/arduino/sketch/sketch.ino)
+
+
+##==##
+
+
+<!-- .slide: data-background="assets/images/question_pour_un_devfest_logo.png" data-state="hidefooter" class="transition" -->
+
+##==##
+
+##  Question pour un DevFest
+
+### Technos 
+
+![h-300 float-left](assets/images/HTML5_Badge_512.png)
+
+![h-300 float-left](assets/images/JavaScript-logo.png)
+
+![h-300 float-left](assets/images/css3.svg)
+
+![h-300 float-left](assets/images/html5-device-access-logo.png)
+
+![h-300 float-left](assets/images/websocket-logo.png)
+
+![h-300 float-left](assets/images/nodejs.png)
+
+Notes:
+
+
+##==##
+
+##  Question pour un DevFest
+
+### Fonctionnement
+
+![h-800 center](assets/images/Question_Pour_Un_DevFest.png) 
+
+##==##
+
+## Question pour un DevFest
+
+### Utilisation d'un sensor
+
+
+```javascript
+// According to the value of proximity, we define if we push or unpush the button
+function manageProximityValue(value){
+  if (value < 2){
+    pushTheButton();
+  }else{
+    unPushTheButton();
+  }        
+}
+
+var deviceProximityHandler = function(event) {
+  var value = Math.round(event.value);            
+  manageProximityValue(value);
+}
+
+window.addEventListener('deviceproximity', deviceProximityHandler, false);
+
+```
+
+
+Notes:
+Firefox only :(
+
+##==##
+
+## Question pour un Devfest
+
+### Côté Node
+
+Socket.io car c'est une très bonne librairie de websockets et facile à manupuler ! 
+
+WebSockets utiles pour le contrôle des clients
+
+[fork me](https://github.com/GDG-Nantes/DevFestNantesQuizz)
+
+##==##
+
+
+<!-- .slide: data-background="assets/images/countdown.png" data-state="hidefooter" class="transition" -->
+
+##==##
+
+##  DevFest CountDown
+
+### Technos 
+
+![h-300 float-left](assets/images/HTML5_Badge_512.png)
+
+![h-300 float-left](assets/images/JavaScript-logo.png)
+
+![h-300](assets/images/css3.svg)
+
+<br><br>
+
+<a href="https://rawgit.com/GDG-Nantes/DevFestCountDown-2014/master/index.html" target="_blank">Lien</a>
+
+Notes:
+
+
+##==##
+
+##  DevFest CountDown
+
+### Pourquoi recréer le sien ?
+
+* Car aucune solution convenable
+
+* Car le code tien en très peu de lignes
+
+* Car tout se situe juste dans le css
+ * font-face
+ * projection 3D
+ * animations
+
+##==##
+
+## DevFest CountDown
+
+### Utilisation des projections 3D
+
+
+```css
+.conteneur{
+  ...
+  perspective : 500px;
+}
+
+.min.chiffre{
+  top: 280px;
+  left: 132px;
+  transform : rotateY(73deg);
+}
+
+.min.unit{
+  top: 286px;
+  left: 241px;
+  transform: rotateY(-47deg) rotateZ(-11deg) rotateX(11deg);
+}
+
+```
+[fork me](https://github.com/GDG-Nantes/DevFestCountDown-2014/)
+
+Notes:
+
 
 
 <!--
