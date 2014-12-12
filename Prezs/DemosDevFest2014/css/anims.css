@@ -1,0 +1,415 @@
+/*
+* Directives
+*/
+/* line 9, ../scss/prez/anims.scss */
+.qrCodeDirective {
+  text-align: center;
+}
+
+/* line 13, ../scss/prez/anims.scss */
+.qrCodeDirective ul {
+  list-style: none;
+}
+
+/* line 17, ../scss/prez/anims.scss */
+.qrCodeDirective img {
+  margin: auto;
+}
+
+/* line 23, ../scss/prez/anims.scss */
+.reveal .controlsSensor {
+  position: absolute;
+  width: 600px;
+  left: 50%;
+  top: 150px;
+  margin-left: -300px;
+  height: 100px;
+}
+/* line 32, ../scss/prez/anims.scss */
+.reveal .sensorExample {
+  position: absolute;
+  width: 1000px;
+  height: 600px;
+  top: 280px;
+  left: 50%;
+  margin-left: -500px;
+}
+/* line 41, ../scss/prez/anims.scss */
+.reveal .btnStart.push_button {
+  display: inline-block;
+}
+/* line 45, ../scss/prez/anims.scss */
+.reveal .btnStop.push_button {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+/***
+ *       ____       _            _        _   _             
+ *      / __ \     (_)          | |      | | (_)            
+ *     | |  | |_ __ _  ___ _ __ | |_ __ _| |_ _  ___  _ __  
+ *     | |  | | '__| |/ _ \ '_ \| __/ _` | __| |/ _ \| '_ \ 
+ *     | |__| | |  | |  __/ | | | || (_| | |_| | (_) | | | |
+ *      \____/|_|  |_|\___|_| |_|\__\__,_|\__|_|\___/|_| |_|
+ *                                                          
+ *                                                          
+ */
+/* line 66, ../scss/prez/anims.scss */
+.reveal .orientation {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 500px;
+}
+/* line 74, ../scss/prez/anims.scss */
+.reveal .safe_lock_funny_win {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-image: url("../assets/images/excited-adventure-time.gif");
+  background-size: 400px 224px;
+  background-repeat: no-repeat;
+  width: 400px;
+  height: 224px;
+  margin-left: -200px;
+  margin-top: -112px;
+}
+/* line 88, ../scss/prez/anims.scss */
+.reveal .safe_lock_door {
+  position: absolute;
+  background-image: url("../assets/images/fabric_plaid.png");
+  left: 50%;
+  top: 0;
+  width: 400px;
+  height: 400px;
+  margin-left: -200px;
+}
+@media only screen and (min-width: 769px) {
+  /* line 99, ../scss/prez/anims.scss */
+  .reveal .safe_lock_door.open {
+    -webkit-animation: openAnimation 2s 1 ease;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform: perspective(1000) rotateY(-90deg);
+    -webkit-transform-origin: 0% 0%;
+    -moz-animation-name: openAnimation 2s 1 ease;
+    -moz-transform-style: preserve-3d;
+    -moz-transform: perspective(1000) rotateY(-90deg);
+    -moz-transform-origin: 0% 0%;
+    animation-name: openAnimation 2s 1 ease;
+    transform-style: preserve-3d;
+    transform: perspective(1000) rotateY(-90deg);
+    transform-origin: 0% 0%;
+  }
+}
+/* line 121, ../scss/prez/anims.scss */
+.reveal .safe_lock_bg {
+  position: absolute;
+  background-image: url("../assets/images/safe_lock_bg.png");
+  background-size: 300px;
+  background-repeat: no-repeat;
+  left: 50%;
+  top: 50%;
+  width: 300px;
+  height: 300px;
+  margin-left: -150px;
+  margin-top: -150px;
+}
+/* line 134, ../scss/prez/anims.scss */
+.reveal .safe_lock {
+  position: absolute;
+  background-image: url("../assets/images/safe_lock.png");
+  background-size: 300px;
+  background-repeat: no-repeat;
+  left: 50%;
+  top: 50%;
+  width: 300px;
+  height: 300px;
+  margin-left: -150px;
+  margin-top: -150px;
+}
+@keyframes openAnimation {
+  from {
+    transform-style: preserve-3d;
+    transform: perspective(1000) rotateY(0deg);
+    transform-origin: 0% 0%;
+  }
+  to {
+    transform-style: preserve-3d;
+    transform: perspective(1000) rotateY(-90deg);
+    transform-origin: 0% 0%;
+  }
+}
+@-webkit-keyframes openAnimation {
+  from {
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform: perspective(1000) rotateY(0deg);
+    -webkit-transform-origin: 0% 0%;
+  }
+  to {
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform: perspective(1000) rotateY(-90deg);
+    -webkit-transform-origin: 0% 0%;
+  }
+}
+@-moz-keyframes openAnimation {
+  from {
+    -moz-transform-style: preserve-3d;
+    -moz-transform: perspective(1000) rotateY(0deg);
+    -moz-transform-origin: 0% 0%;
+  }
+  to {
+    -moz-transform-style: preserve-3d;
+    -moz-transform: perspective(1000) rotateY(-90deg);
+    -moz-transform-origin: 0% 0%;
+  }
+}
+/***
+ *      __  __       _   _             
+ *     |  \/  |     | | (_)            
+ *     | \  / | ___ | |_ _  ___  _ __  
+ *     | |\/| |/ _ \| __| |/ _ \| '_ \ 
+ *     | |  | | (_) | |_| | (_) | | | |
+ *     |_|  |_|\___/ \__|_|\___/|_| |_|
+ *                                     
+ *                                     
+ */
+/* line 196, ../scss/prez/anims.scss */
+.reveal .devicemotion {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 480px;
+}
+/* line 204, ../scss/prez/anims.scss */
+.reveal .devicemotion-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-image: url("../assets/images/empty-battery.png");
+  background-size: 300px 480px;
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 480px;
+  margin-left: -150px;
+  margin-top: -240px;
+}
+/* line 217, ../scss/prez/anims.scss */
+.reveal .devicemotion-percent {
+  position: absolute;
+  left: 50%;
+  bottom: 40px;
+  width: 300px;
+  margin-left: -150px;
+  background-color: #91fc74;
+  border-radius: 30px;
+}
+
+/***
+ *      _____               _           _ _         
+ *     |  __ \             (_)         (_) |        
+ *     | |__) | __ _____  ___ _ __ ___  _| |_ _   _ 
+ *     |  ___/ '__/ _ \ \/ / | '_ ` _ \| | __| | | |
+ *     | |   | | | (_) >  <| | | | | | | | |_| |_| |
+ *     |_|   |_|  \___/_/\_\_|_| |_| |_|_|\__|\__, |
+ *                                             __/ |
+ *                                            |___/ 
+ */
+/* line 242, ../scss/prez/anims.scss */
+.reveal .proximity {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 480px;
+}
+/* line 250, ../scss/prez/anims.scss */
+.reveal .push_button {
+  position: relative;
+  width: 200px;
+  color: #FFF;
+  display: block;
+  text-decoration: none;
+  margin: 0 auto;
+  border-radius: 5px;
+  border: solid 1px #D94E3B;
+  background: #cb3b27;
+  text-align: center;
+  padding: 20px 30px;
+  -webkit-transition: all 0.1s;
+  -moz-transition: all 0.1s;
+  transition: all 0.1s;
+  -webkit-box-shadow: 0px 9px 0px #84261a;
+  -moz-box-shadow: 0px 9px 0px #84261a;
+  box-shadow: 0px 9px 0px #84261a;
+}
+/* line 270, ../scss/prez/anims.scss */
+.reveal .push_button.press {
+  -webkit-box-shadow: 0px 2px 0px #84261a;
+  -moz-box-shadow: 0px 2px 0px #84261a;
+  box-shadow: 0px 2px 0px #84261a;
+  position: relative;
+  top: 7px;
+}
+
+/***
+ *      _      _       _     _   
+ *     | |    (_)     | |   | |  
+ *     | |     _  __ _| |__ | |_ 
+ *     | |    | |/ _` | '_ \| __|
+ *     | |____| | (_| | | | | |_ 
+ *     |______|_|\__, |_| |_|\__|
+ *                __/ |          
+ *               |___/           
+ */
+/* line 291, ../scss/prez/anims.scss */
+.reveal #light {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  top: 0;
+  left: 0;
+}
+/* line 299, ../scss/prez/anims.scss */
+.reveal .light-bg {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  top: 50%;
+  left: 50%;
+  margin-left: -250px;
+  margin-top: -250px;
+}
+
+/***
+ *      _    _            __  __          _ _       
+ *     | |  | |          |  \/  |        | (_)      
+ *     | |  | |___  ___  | \  / | ___  __| |_  __ _ 
+ *     | |  | / __|/ _ \ | |\/| |/ _ \/ _` | |/ _` |
+ *     | |__| \__ \  __/ | |  | |  __/ (_| | | (_| |
+ *      \____/|___/\___| |_|  |_|\___|\__,_|_|\__,_|
+ *                                                  
+ *                                                  
+ */
+/* line 323, ../scss/prez/anims.scss */
+.reveal .usermedia {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 600px;
+}
+/* line 331, ../scss/prez/anims.scss */
+.reveal .videoParent {
+  position: absolute;
+  left: 50%;
+  top: 250px;
+  width: 500px;
+  margin-left: -250px;
+}
+/* line 339, ../scss/prez/anims.scss */
+.reveal .videoParent.rotate {
+  -webkit-animation: rotateAnimation 10s infinite ease;
+  -moz-animation-name: rotateAnimation 10s infinite ease;
+  animation-name: rotateAnimation 10s infinite ease;
+}
+@keyframes rotateAnimation {
+  from {
+    transform-style: preserve-3d;
+    transform: perspective(1000) rotateY(0deg);
+    /*transform-origin: 0% 0%;*/
+  }
+  to {
+    transform-style: preserve-3d;
+    transform: perspective(1000) rotateY(360deg);
+    /*transform-origin: 0% 0%;*/
+  }
+}
+@-webkit-keyframes rotateAnimation {
+  from {
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform: perspective(1000) rotateY(0deg);
+    /*-webkit-transform-origin: 0% 0%;*/
+  }
+  to {
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform: perspective(1000) rotateY(360deg);
+    /*-webkit-transform-origin: 0% 0%;*/
+  }
+}
+@-moz-keyframes rotateAnimation {
+  from {
+    -moz-transform-style: preserve-3d;
+    -moz-transform: perspective(1000) rotateY(0deg);
+    /*-moz-transform-origin: 0% 0%;*/
+  }
+  to {
+    -moz-transform-style: preserve-3d;
+    -moz-transform: perspective(1000) rotateY(360deg);
+    /*-moz-transform-origin: 0% 0%;*/
+  }
+}
+/***
+ *     __      ___ _               _   _             
+ *     \ \    / (_) |             | | (_)            
+ *      \ \  / / _| |__  _ __ __ _| |_ _  ___  _ __  
+ *       \ \/ / | | '_ \| '__/ _` | __| |/ _ \| '_ \ 
+ *        \  /  | | |_) | | | (_| | |_| | (_) | | | |
+ *         \/   |_|_.__/|_|  \__,_|\__|_|\___/|_| |_|
+ *                                                   
+ *                                                   
+ */
+/* line 402, ../scss/prez/anims.scss */
+.reveal #vibration {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 500px;
+}
+/* line 409, ../scss/prez/anims.scss */
+.reveal #vibration input {
+  font-size: 2em;
+}
+
+/***
+ *     __          __  _        _____                      _     
+ *     \ \        / / | |      / ____|                    | |    
+ *      \ \  /\  / /__| |__   | (___  _ __   ___  ___  ___| |__  
+ *       \ \/  \/ / _ \ '_ \   \___ \| '_ \ / _ \/ _ \/ __| '_ \ 
+ *        \  /\  /  __/ |_) |  ____) | |_) |  __/  __/ (__| | | |
+ *         \/  \/ \___|_.__/  |_____/| .__/ \___|\___|\___|_| |_|
+ *                                   | |                         
+ *                                   |_|                         
+ */
+/* line 427, ../scss/prez/anims.scss */
+.reveal #webspeech {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 530px;
+}
+/* line 435, ../scss/prez/anims.scss */
+.reveal #mic {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  margin-left: -25px;
+  background-image: url(../assets/images/mic.gif);
+}
+/* line 445, ../scss/prez/anims.scss */
+.reveal #mic.animate {
+  background-image: url(../assets/images/mic-animate.gif);
+}
+/* line 449, ../scss/prez/anims.scss */
+.reveal #webspeech canvas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -250px;
+  margin-top: -200px;
+}

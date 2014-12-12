@@ -1,0 +1,17 @@
+@import "compass";
+
+.reveal .slides > section{
+    
+   
+    div.hidden-print+*{
+        display:none;   
+    }
+
+    div.hidden-normal+*{
+        display:block;   
+    }
+    
+}
+
+
+
