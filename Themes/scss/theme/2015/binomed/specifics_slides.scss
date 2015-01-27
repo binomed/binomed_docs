@@ -32,7 +32,7 @@
 .reveal  .slides section.who-am-i{
 	
 	color : white;
-	text-align: center;
+	text-align: left;
 
 	h2{
         @include bandeau();
@@ -44,10 +44,57 @@
 	}
 
 	h3{
+        position: absolute;
+        left: 350px;
+        top: 250px;
 		font-size: 1.2em;
         color : $medium-grey;
 		margin-bottom: 20px;	
 	}
+
+    img[alt*=avatar]{
+        position: absolute;
+        left: 100px;
+        top: 200px;
+        width: 200px;
+        margin-top: 20px;
+        @include box-shadow(#CCCCCC 2px 2px 2px 3px);
+    }
+
+    img[alt*=company_logo]{
+        position: absolute;
+        top: 480px;
+        left: 300px;
+        width:150px;
+    }
+
+    img[alt*=gdg_logo]{
+        position: absolute;
+        top: 470px;
+        right: 600px;
+        width:150px;
+    }
+
+    .twitter{
+        position:absolute;
+        top: 490px;
+        left: 800px;
+    }
+
+    .gplus{
+        position:absolute;
+        top: 550px;
+        left: 800px;
+    }
+
+    .descjf{
+        position: absolute;
+        color: $black;
+        left: 350px;
+        top: 320px;
+        width: calc(100% - 350px);
+        width: -webkit-calc(100% - 350px);
+    }
  
 	
 }
