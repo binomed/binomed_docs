@@ -199,10 +199,35 @@ Fragments ! (4)
 <!-- .slide: data-background="assets/images/web_rtc_chat.jpg" data-state="hidefooter" class="transition" -->
 
 
-<div class="copyright">imgur</div>
+<div class="copyright white">imgur</div>
 
 Notes:
+/!\ On passe sur des exemples
 
+
+##==##
+
+<!-- .slide: data-background="assets/images/Microsoft-HoloLens-Skype-RGB.jpg" data-state="hidefooter" class="transition" -->
+
+<div class="copyright white">microsoft</div>
+
+##==##
+
+<!-- .slide: data-background="assets/images/webrtc_drone.jpg" data-state="hidefooter" class="transition" -->
+
+<div class="copyright white">instructables</div>
+
+##==##
+
+<!-- .slide: data-background="assets/images/cube_slam.png" data-state="hidefooter" class="transition" -->
+
+<div class="copyright white">Google</div>
+
+##==##
+
+<!-- .slide: data-background="assets/images/bemyeyes.jpg" data-state="hidefooter" class="transition" -->
+
+<div class="copyright">Be My Eyes</div>
 
 ##==##
 
@@ -250,17 +275,15 @@ Notes:
 <br>
 
 Obtenir l'<font class="color-red">audio et la vidéo</font>
-
-<br>
-
-<font class="color-red">Etablir une connexion</font> entre 2 hôtes
-
 <br><br>
 
-Communiquer de la <font class="color-red">vidéo et de l'audio</font>
-
+<font class="color-red">Etablir une connexion</font> entre 2 hôtes
+<br>
 <br>
 
+Communiquer de la <font class="color-red">vidéo et de l'audio</font> 
+
+<br>
 Communiquer d'<font class="color-red">autres types de données</font>
 
 Notes:
@@ -278,14 +301,9 @@ Parler des problèmes derrières la vidéo et l'audio (hardware / encodage / ...
 
 Grâce à 3 APIS web ! 
 
-<br>
+getUserMedia
 
- getUserMedia
-
-<br>
 RTCPeerConnection
-
-<br>
 
 RTCDataChannel
 
@@ -313,13 +331,10 @@ Notes:
 <br>
 Représente un ensemble de <font class="color-red">stream</font> de médias synchronisés !
 
-<br>
 Peut représenter <font class="color-red">plusieurs</font> flux vidéo / audio sous forme de pistes
 
-<br>
 Se récupère simplement sur **```navigator.getUse rMedia()```**
 
-<br>
 Peut être conditionné par plusieurs paramètres.
 
 Notes:
@@ -450,9 +465,6 @@ Sinon erreur GET_PERMISSION_DENIED
 
 ### Parlons des possibilités (contraintes)
 
-<br>
-
-On peut choisir : 
 
 <br>
 
@@ -754,13 +766,13 @@ Chemin = ICE = passer les proxys
 ### Gestion de l'offre
 
 
-1. Alice appelle la méthode **```createOffer()```**
-1. Dans le callback, Alice appelle **```setLocalDesctiption()```**
-1. Alice sérialise l'offre et l'envoie à Eve
-1. Eve appelle la méthode **```setRemoteDescription()```** avec l'offre
-1. Eve appelle la méthode **```createAnswer()```**
-1. Eve appelle la méthode **```setLocalDescription()```** avec la réponse envoyée à Alice
-1. Alice reçoit la réponse et appelle **```setRemoteDescription()```**
+1. Alice appelle la méthode **<font class="color-red">createOffer()</font>**
+1. Dans le callback, Alice appelle **<font class="color-red">setLocalDesctiption()</font>**
+1. Alice <font class="color-red">sérialise l'offre</font> et l'envoie à Eve
+1. Eve appelle la méthode **<font class="color-red">setRemoteDescription()</font>** avec l'offre
+1. Eve appelle la méthode **<font class="color-red">createAnswer()</font>**
+1. Eve appelle la méthode **<font class="color-red">setLocalDescription()</font>** avec la réponse envoyée à Alice
+1. Alice reçoit la réponse et appelle **<font class="color-red">setRemoteDescription()</font>**
 
 
 Notes:
@@ -770,18 +782,25 @@ la description contient de infos du genre qualité de vidéo, résolution, ...
 
 ##==##
 
+<br><br><br><br>
+<font class="big-center">Et c'est pas fini ! </font>
+
+##==##
+
 ## RTCPeerConnection
 
 ### Gestion du Chemin **Ice Candidate**
 
 ICE pour **Interactive Connectivity Establishement**
 
-1. Alice & Eve ont leur RTCPeerConnection
-1. En cas de succès de chaque côté les *IceCanditates* sont envoyées
-1. Alice sérialise ses *IceCandidates* et les envoie à Eve
-1. Eve reçoit les *IceCandidates* d'Alice et appelle **```addIceCandidate()```**
-1. Eve sérialise ses *IceCandidates* et les envoie à Alice
-1. Alice reçoit les *IceCandidates* d'Eve et appelle **```addIceCandidate()```**
+<br><br>
+
+1. Alice & Eve ont leur <font class="color-red">RTCPeerConnection</font>
+1. En cas de succès de chaque côté les *<font class="color-red">IceCanditates</font>* sont envoyées
+1. Alice <font class="color-red">sérialise</font> ses *IceCandidates* et les envoie à Eve
+1. Eve reçoit les *IceCandidates* d'Alice et appelle **<font class="color-red">addIceCandidate()</font>**
+1. Eve <font class="color-red">sérialise</font> ses *IceCandidates* et les envoie à Alice
+1. Alice reçoit les *IceCandidates* d'Eve et appelle **<font class="color-red">addIceCandidate()</font> **
 1. Les 2 savent comment communiquer.
 
 
@@ -799,7 +818,7 @@ Le ice est fait en parallèle dès qu'une peerconnection se lance
 <!-- .slide: data-background="assets/images/Telephone-operators.jpg" data-state="hidefooter" class="transition" -->
 
 
-<div class="copyright">bnb paribas fortis</div>
+<div class="copyright white">bnb paribas fortis</div>
 
 Notes:
 Ok mais comment fait-on ça ?
@@ -812,18 +831,14 @@ Ok mais comment fait-on ça ?
 
 ### Comment fait-on le **signaling** ?
 
-On peut utiliser : 
 
-<br>
+Du LongPolling / Comet
 
-* Du LongPolling / Comet
+XHR + SSE
 
-* XHR + SSE
-
-* **WebSockets**
-  * Plus naturel car bidirectionnel
-  * Si le webRTC est supporté, alors les webSockets sont supportés
-  * Peut aussi utiliser le TLS
+**<font class="color-red">WebSockets</font>**
+  
+<font class="color-grey">Solution la plus naturelle</font>
 
 
 Notes:
@@ -835,9 +850,10 @@ Demander si les gens connaissent ?
 
 ## RTCPeerConnection
 
-<a href="http://en.wikipedia.org/wiki/Interactive_Connectivity_Establishment" title="Wikipedia ICE article">ICE</a>  : Framework de connexion
+### <a href="http://en.wikipedia.org/wiki/Interactive_Connectivity_Establishment" title="Wikipedia ICE article">ICE</a>  : Framework de connexion
 
-Il cherche le meilleur chemin pour chaque appel.
+
+<br><br>
 
 1. Au mieux, on est connecté directement en UDP
 1. Après on est connecté en TCP / HTTP 
@@ -846,6 +862,8 @@ Il cherche le meilleur chemin pour chaque appel.
 ![center h-400](assets/images/icestats.png)
 
 Notes:
+ICE = Interactive Connectivity Establishement
+Il cherche le meilleur chemin pour chaque appel.
 le plus souvent on est sur des stun et au pire on passe sur des turn
 Actuellement 1 appel sur 7 est sur STUN
 
@@ -857,10 +875,11 @@ Actuellement 1 appel sur 7 est sur STUN
 
 ### STUN / TURN
 
-* STUN = **Simple Traversal of UDP through NATs**
-* TURN = **Traversal Using Relays around NAT**
+STUN = **Simple Traversal of UDP through NATs**
 
-![center](assets/images/STUNandTURN.png)
+TURN = **Traversal Using Relays around NAT**
+
+![center h-500](assets/images/STUNandTURN.png)
 
 
 Notes:
@@ -881,7 +900,7 @@ Des serveurs publiques existents
 
 <!-- .slide: data-background="assets/images/Rollercoaster.jpg" data-state="hidefooter" class="transition" -->
 
-<div class="copyright">rerb-leblog</div>
+<div class="copyright white">rerb-leblog</div>
 
 Notes:
 Ok mais comment fait-on ça ?
@@ -905,22 +924,17 @@ Notes:
 
 <br>
 
-Canal de communication de données binaires / textuelles
+Canal de communication de <font class="color-red">données binaires / textuelles</font>
 
 <br>
 
-Même API que les WebSockets
+Même <font class="color-red">API que les WebSockets</font>
 
 
-<br>
-
-/!\ à la version utilisée, cette norme est arrivée après !
-
-
-<br>
-Se fait sur une PeerConnection
 
 Notes:
+/!\ à la version utilisée, cette norme est arrivée après !
+Se fait sur une PeerConnection
 Expliquer les possibilités 
 cf slide à la fin
 
@@ -957,6 +971,13 @@ Notes:
 
 ##==##
 
+## Par exemple
+
+![center h-500](assets/images/data_channel_use_case.png)
+
+
+##==##
+
 <!-- .slide: class="transition-black" -->
 
 # Et la sécurité ?
@@ -971,18 +992,18 @@ Notes:
 ## Sécurité
 
 <br>
-
- * Pensée depuis le début
  
- * Cryptage des données et des médias
+<font class="color-red">Cryptage</font> des données et des médias
 
- * Sécurisation graphique via les autorisations !
+<font class="color-red">Sécurisation graphique</font> via les autorisations !
 
  ![center h-200](assets/images/allow_camera.png)
 
- * Sandboxé, sans plugin !
+<font class="color-red">Sandboxé</font>, sans plugin !
 
 Notes:
+Pensée depuis le début
+Encryptage SRTP
 Le fait de sandboxer garanti la non altération du navigateur.
 /!\ Cependant un risque d'attaque type proxy peut être faites avec le signaling !  et donc au final capturer le flux
 
@@ -1085,7 +1106,7 @@ Basé sur socket IO et un serveur node !
 ## PeerJS
 
 Fait pour du Peer2Peer
-
+<br><br>
 ```javascript
 var peer = new Peer('someid', {key: 'apikey'});
 peer.on('connection', function(conn) {
@@ -1127,6 +1148,18 @@ C'était simple et ça peut l'être
 
 Notes:
 
+##==##
+
+## What's Next ?
+
+### Pleins de choses ! 
+
+Support dans IE pour <font class="color-red">ORTC</font> !
+
+ORTC (ie <font class="color-red">WebRTC 1.1</font>)
+
+Support Natif
+
 
 ##==##
 
@@ -1148,31 +1181,17 @@ WebRTC = getUserMedia + RTCPeerConnection + RTCDataChannel
 
 <br>
 
-**/!\ Limitation de 12 peerConnections ouvertes en même temps.**
-
-
 
 
 Notes:
+**/!\ Limitation de 12 peerConnections ouvertes en même temps.**
 
 
-##==##
-
-## What's Next ?
-
-### Pleins de choses ! 
-
-Support dans IE pour ORTC
-
-ORTC (ie WebRTC 1.1)
-
-Support Natif
 
 ##==##
 
 
 ## Conclusion
-
 
 
 Tenez comptes des comptabilités ! 
@@ -1211,10 +1230,14 @@ Notes:
 [WebRTC and Web Audio resources list](http://bit.ly/webrtcwebaudio)
 
 HTML5 Rocks:
- * [Getting Started With WebRTC](http://www.html5rocks.com/en/tutorials/webrtc/basics/)
- * [Mise à jour WebRTC](http://www.html5rocks.com/en/search?q=webrtc)
- * [Capturing audio and video in HTML5](http://www.html5rocks.com/en/tutorials/getusermedia/intro/)
- * [RTCDataChannel](http://www.html5rocks.com/en/tutorials/webrtc/datachannels/?redirect_from_locale=fr)
+<br><br>
+[Getting Started With WebRTC](http://www.html5rocks.com/en/tutorials/webrtc/basics/)
+
+[Mise à jour WebRTC](http://www.html5rocks.com/en/search?q=webrtc)
+
+[Capturing audio and video in HTML5](http://www.html5rocks.com/en/tutorials/getusermedia/intro/)
+
+[RTCDataChannel](http://www.html5rocks.com/en/tutorials/webrtc/datachannels/?redirect_from_locale=fr)
 
 
 Notes:
@@ -1226,12 +1249,14 @@ Notes:
 <!-- .slide: class="last-slide" -->
 
 
+<br><br>
 
-# <!-- .element: class="presenter" --> **Jean-François Garreau  **
+#  Merci  
 
+
+<br><br><br>
 Cette Présentation  [http://goo.gl/B6Phir](http://goo.gl/B6Phir)
 
-# <!-- .element: class="thank-message" --> Merci  
 
 
 <div class="copyright">images & resources provenant des slides de SamDutton</div>
