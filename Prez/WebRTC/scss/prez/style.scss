@@ -14,7 +14,7 @@ img[alt*=sommaire]{
 .reveal .slides > section img[alt*=avatar]{
   width: 200px;
   margin-top: 20px;
-    @include box-shadow(#CCCCCC 2px 2px 2px 3px);
+  @include box-shadow(#CCCCCC 2px 2px 2px 3px);
 }
 
 img[alt*=company_logo]{
