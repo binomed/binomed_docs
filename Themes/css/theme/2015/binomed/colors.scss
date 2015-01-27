@@ -1,0 +1,24 @@
+
+
+$light-grey: #ddd;
+$white: white;
+$black: #333;
+$dark-grey: #3d4349;
+$medium-grey: #333;
+$red: #e74c3c;
+
+// Background Colors
+$page-bg-color:$light-grey;
+$slide-bg-color: $white;
+$header-color: $dark-grey;
+
+// Text Colors
+$main-title-color : $red;
+$title-color : $black;
+$text-color : $medium-grey;
+
+@mixin dropshadow(){
+	box-shadow: 2px 4px 5px rgba(3,3,3,0.2);
+}
+
+ 

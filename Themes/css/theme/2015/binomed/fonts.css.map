@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": ";AAEA,OAAO;EACN,WAAW,EAAE,wFAAwF;EAClG,KAAK,ECcK,IAAM;EDbnB,SAAS,EAAE,KAAK",
+"sources": ["../../../../scss/theme/2015/binomed/fonts.scss","../../../../scss/theme/2015/binomed/colors.scss"],
+"names": [],
+"file": "fonts.css"
+}

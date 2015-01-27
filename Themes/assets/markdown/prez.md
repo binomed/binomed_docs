@@ -281,12 +281,10 @@ Some Content
 
 # <!-- .element: class="topic-title" --> Topic Title 
 
-# <!-- .element: class="presenter" --> **Jean-François Garreau  **
+<!-- .element: class="presenter" --> **Jean-François Garreau  **
 
-# <!-- .element: class="work-rule" --> GDG Nantes Leader & Ingénieur SQLI  
+<!-- .element: class="work-rule" --> GDG Nantes Leader & Ingénieur SQLI  
 
-# <!-- .element: class="email" --> **jef**@gdgnantes.com  
+<!-- .element: class="email" --> **jef**@gdgnantes.com  
 
-# <!-- .element: class="thank-message" --> Merci  
-
-![avatar](/assets/images/jf.jpg)
+<!-- .element: class="thank-message" --> Merci  
