@@ -59,7 +59,7 @@ IoT Manager, Senior innovation developper & Community Manager
 ## Le web aujourd'hui ?
 
 
-* Quel est le point commun entre tous ces devices ?
+### Quel est le point commun entre tous ces devices ?
 
 <br><br>
 
@@ -96,6 +96,7 @@ Ils ont tous un browser !
 ## Souvenez vous
 
 La visio avant c'était ça : 
+<br><br>
 
 ![center h-600](assets/images/visio_history.jpg)
 
@@ -144,7 +145,7 @@ Qui fait du peer2peer
 
 ## En parlant de Peer2Peer ?
 
-Est-ce normal que le Peer2Peer soit comme ça ?
+### Est-ce normal que le Peer2Peer soit comme ça ?
 
 ![center hp-200 h-600](assets/images/no.png)
 
@@ -156,7 +157,7 @@ Notes:
 
 ## En parlant de Peer2Peer ?
 
-Ne devrait-il pas ressembler à ça ? 
+### Ne devrait-il pas ressembler à ça ? 
 
 ![center hp-200 h-600](assets/images/yes.png)
 
@@ -168,21 +169,24 @@ Notes:
 
 ## Faisons nos courses
 
-Et si ? 
+### Et si ? 
 
 
 
-<div class="fragment"><ul><li>On avait la possibilité de gérer une communication réseau propre entre pc.
-</li></ul></div>
+<div class="fragment">On avait la possibilité de gérer une communication réseau <font class="color-red">propre entre pc.</font>
+</div>
+<br>
 
-<div class="fragment"><ul><li>On avait la possibilité de ne pas se soucier de l'encodage de nos vidéos.
-</li></ul></div>
+<div class="fragment">On avait la possibilité de <font class="color-red">ne pas se soucier de l'encodage de nos vidéos.</font>
+</div>
+<br>
 
-<div class="fragment"><ul><li>On n'avait pas à se soucier d'installer un plugin ! 
-</li></ul></div>
+<div class="fragment">On n'avait pas à se soucier d'<font class="color-red">installer un plugin !</font> 
+</div>
+<br>
 
-<div class="fragment"><ul><li>On pouvait faire cela avec notre téléphone, notre tablette, ou autre chose ?
-</li></ul></div>
+<div class="fragment">On pouvait faire cela avec notre <font class="color-red">téléphone, notre tablette, ou autre chose ?</font>
+</div>
  
 Notes:
 Fragments ! (4)
@@ -207,7 +211,7 @@ Notes:
 
 
 <br><br><br><br>
-<h3>WebRTC était la solution ?</h3>
+<font class="big-center">WebRTC était la solution ?</font>
 
 Notes:
 
@@ -241,17 +245,23 @@ Notes:
 
 ## WebRTC
 
-RTC pour **Real Time Communication**
+### RTC pour **Real Time Communication**
 
 <br>
 
-* Obtenir l'audio et la vidéo
+Obtenir l'<font class="color-red">audio et la vidéo</font>
 
-* Etablir une connexion entre 2 hôtes
+<br>
 
-* Communiquer de la vidéo et de l'audio
+<font class="color-red">Etablir une connexion</font> entre 2 hôtes
 
-* Communiquer d'autres types de données
+<br><br>
+
+Communiquer de la <font class="color-red">vidéo et de l'audio</font>
+
+<br>
+
+Communiquer d'<font class="color-red">autres types de données</font>
 
 Notes:
 Créé en 2013
@@ -262,7 +272,7 @@ Parler des problèmes derrières la vidéo et l'audio (hardware / encodage / ...
 
 ## WebRTC
 
-Concrètement ?
+### Concrètement ?
 
 <br>
 
@@ -270,11 +280,14 @@ Grâce à 3 APIS web !
 
 <br>
 
-* getUserMedia
+ getUserMedia
 
-* RTCPeerConnection
+<br>
+RTCPeerConnection
 
-* RTCDataChannel
+<br>
+
+RTCDataChannel
 
 Notes:
 Demander s'ils pensent savoir à quoi chaque api sert ?
@@ -285,7 +298,7 @@ On va dans chaque API
 
 ## WebRTC
 
-Architecture
+### Architecture
 
 ![center h-600](assets/images/webrtcArchitecture.png)
 
@@ -298,13 +311,13 @@ Notes:
 
 
 <br>
-Représente un ensemble de stream de médias synchronisés !
+Représente un ensemble de <font class="color-red">stream</font> de médias synchronisés !
 
 <br>
-Peut représenter plusieurs flux vidéo / audio sous forme de pistes
+Peut représenter <font class="color-red">plusieurs</font> flux vidéo / audio sous forme de pistes
 
 <br>
-Se récupère simplement sur **```navigator.getUserMedia()```**
+Se récupère simplement sur **```navigator.getUse rMedia()```**
 
 <br>
 Peut être conditionné par plusieurs paramètres.
@@ -325,7 +338,7 @@ Notes:
 
 ## GetUserMedia
 
-Un peu de code
+### Un peu de code
 
 ```javascript
 var constraints = {video: true};
@@ -351,7 +364,7 @@ Notes:
 
 ## GetUserMedia
 
-Un peu de code
+### Un peu de code
 
 ```javascript
 var constraints = {
@@ -381,7 +394,7 @@ Notes:
 
 ## GetUserMedia
 
-Cas pratique ! 
+### Démo ! 
 
 <div class="slideWithGetUserMedia">
 	<video class="firstUserMedia" width='600px'></video>
@@ -397,15 +410,19 @@ Notes:
 
 ## GetUserMedia
 
-Parlons sécurité !
+### Parlons sécurité !
 
 <br><br>
 
- * En https : une seule fois
+ En https : <font class="color-red">une seule fois</font>
 
- * Dans les chromes apps : via le **```audioCapture```** et **```videoCapture```**
 
- * On peut changer les paramètres dans chrome
+Dans les chromes apps : via le **```audioCapture```** et **```videoCapture```**
+
+
+
+
+On peut changer les paramètres dans chrome
 
 
 
@@ -431,7 +448,7 @@ Sinon erreur GET_PERMISSION_DENIED
 
 ## GetUserMedia
 
-Parlons des possibilités (contraintes)
+### Parlons des possibilités (contraintes)
 
 <br>
 
@@ -439,11 +456,11 @@ On peut choisir :
 
 <br>
 
- * Sa résolution
+Sa résolution
 
- * Sa source 
+Sa source 
 
- * Récupérer son écran ou son onglet ! 
+Récupérer son écran ou son onglet ! 
 
 Notes:
 Dispo en chrome stable pour android
@@ -454,7 +471,7 @@ https://simpl.info/getusermedia/sources/
 
 ## GetUserMedia
 
-Choix de résolution ou récupérer l'écran
+### Choix de résolution ou récupérer l'écran
 
 ```javascript
 var constraints = {
@@ -477,7 +494,7 @@ Notes:
 
 ## GetUserMedia
 
-Choix récupération d'une fenêtre ! 
+### Choix récupération d'une fenêtre ! 
 
 ```javascript
  chrome.desktopCapture.chooseDesktopMedia(
@@ -505,7 +522,7 @@ Notes:
 
 ## GetUserMedia
 
-Partage d'écran
+### Partage d'écran
 
 <div class="slideWithGetUserMedia">
   <video class="screenUserMedia"  muted autoplay width='600px'></video>
@@ -522,7 +539,7 @@ Notes:
 
 ## GetUserMedia
 
-Choix de la source
+### Choix de la source
 
 ```javascript
 MediaStreamTrack.getSources(gotSources);
@@ -546,7 +563,7 @@ Vérifier que MediaStreamTrack existe !
 
 ## GetUserMedia
 
-Choix de la source
+### Choix de la source
 
 ```javascript
 var videoSource = videoSelect.value;
@@ -569,7 +586,7 @@ Notes:
 
 ## GetUserMedia
 
-Choix de source ! 
+### Choix de source  - Démo ! 
 
 <div class="slideWithGetUserMedia">
   <div class='select'>
@@ -595,18 +612,18 @@ Notes:
 
 ## GetUserMedia
 
-Konami code ! 
+### Konami code ! 
 
 <br>
 On peut aussi : 
 
-* Enregister du son (http://simpl.info/mediarecorder)
+Enregister du son (http://simpl.info/mediarecorder)
 
-* Faire des photos depuis son flux 
+Faire des photos depuis son flux 
 
-* Mixer son flux avec un canvas
+Mixer son flux avec un canvas
 
-* Mixer son flux avec WebAudio
+Mixer son flux avec WebAudio
 
 
 <div class="fragment">
@@ -627,7 +644,7 @@ WebAudio = post traitement du son ! (compatible RTC Peer Connection)
 
 ## GetUserMedia
 
-Démo ! 
+### Démo ! 
 
 <div class="slideWithAsciiCam">
 	<video id="asciiCam" autoplay style='display:none'></video>
@@ -674,15 +691,17 @@ Notes:
 
 ## RTCPeerConnection
 
-Sert à : 
+### Sert à : 
 
 <br><br>
  
- * Résoudre les problèmes de communication multimédia (codec, résolutions, ...)
+Résoudre les problèmes de communication multimédia (<font class="color-red">codec, résolutions, ...</font>)
 
- * Identifier les adresses des hôtes
+<br>
+<font class="color-red">Identifier les adresses</font> des hôtes
 
- * Echanger les données 
+<br>
+Echanger les données 
 
 
 Notes:
@@ -704,22 +723,24 @@ Notes:
 
 ## RTCPeerConnection
 
-Principe de l'offre et de la demande
+### Principe de l'offre et de la demande
 
 2 choses à retenir : 
 <br>
 
-Il y a d'une part, une notion d'offre et de demande pour communiquer mais aussi une notion de chemin à emprunter ! 
+Il y a d'une part, une notion <font class="color-red">d'offre et de demande</font> pour communiquer mais aussi une notion de <font class="color-red">chemin à emprunter !</font> 
 
 <br>
 
 Il s'agit du **Signaling** ! 
 
- * Quel type de média et format je supporte ? 
+Quel <font class="color-red">type de média</font> et format je supporte ? 
 
- * Que puis-je envoyer ?
+<br>
+Que puis-je envoyer ?
 
- * Quel est mon type d'infrastructure réseau ? 
+<br>
+Quel est mon <font class="color-red">type d'infrastructure</font> réseau ? 
 
 
 Notes:
@@ -730,7 +751,7 @@ Chemin = ICE = passer les proxys
 
 ## RTCPeerConnection
 
-Gestion de l'offre
+### Gestion de l'offre
 
 
 1. Alice appelle la méthode **```createOffer()```**
@@ -751,7 +772,7 @@ la description contient de infos du genre qualité de vidéo, résolution, ...
 
 ## RTCPeerConnection
 
-Gestion du Chemin **Ice Candidate**
+### Gestion du Chemin **Ice Candidate**
 
 ICE pour **Interactive Connectivity Establishement**
 
@@ -789,7 +810,7 @@ Ok mais comment fait-on ça ?
 
 ## RTCPeerConnection
 
-Comment fait-on le **signaling** ?
+### Comment fait-on le **signaling** ?
 
 On peut utiliser : 
 
@@ -834,7 +855,7 @@ Actuellement 1 appel sur 7 est sur STUN
 
 ## RTCPeerConnection
 
-STUN / TURN
+### STUN / TURN
 
 * STUN = **Simple Traversal of UDP through NATs**
 * TURN = **Traversal Using Relays around NAT**
@@ -1137,6 +1158,18 @@ Notes:
 
 ##==##
 
+## What's Next ?
+
+### Pleins de choses ! 
+
+Support dans IE pour ORTC
+
+ORTC (ie WebRTC 1.1)
+
+Support Natif
+
+##==##
+
 
 ## Conclusion
 
@@ -1149,10 +1182,12 @@ Tenez comptes des comptabilités !
 |Browser|UserMedia|RTCPeerConnection|RTCDataChannel|
 |-----|------|-|----------|
 |Chrome desktop|18.0.1008+|20+|26+|
+|Android|Lollipop 5.0|Lollipop 5.0| Lolipop 5.0|
 |Chrome Android|29+|29+|29+|
 |Opera|18+|18+|18+|
 |Opera for Android|20+|20+|20+|
 |FireFox|17+|22+|22+|
+|IE|x|11 ORTC|11 ORTC|
 
 <br>
 
@@ -1169,15 +1204,13 @@ Notes:
 ## Liens
 
 
-* [Application de démo maintenue par la team WebRTC](http://apprtc.appspot.com/)
+[Application de démo maintenue par la team WebRTC](http://apprtc.appspot.com/)
 
-* [Cette Présentation](http://goo.gl/B6Phir)
+[Présentation WebRTC Google IO ](http://simpl.info/rtc/)
 
-* [Présentation WebRTC Google IO ](http://simpl.info/rtc/)
+[WebRTC and Web Audio resources list](http://bit.ly/webrtcwebaudio)
 
-* [WebRTC and Web Audio resources list](http://bit.ly/webrtcwebaudio)
-
-* HTML5 Rocks:
+HTML5 Rocks:
  * [Getting Started With WebRTC](http://www.html5rocks.com/en/tutorials/webrtc/basics/)
  * [Mise à jour WebRTC](http://www.html5rocks.com/en/search?q=webrtc)
  * [Capturing audio and video in HTML5](http://www.html5rocks.com/en/tutorials/getusermedia/intro/)
@@ -1193,17 +1226,12 @@ Notes:
 <!-- .slide: class="last-slide" -->
 
 
-# <!-- .element: class="topic-title" --> WebRTC
 
 # <!-- .element: class="presenter" --> **Jean-François Garreau  **
 
-# <!-- .element: class="work-rule" --> GDG Nantes Leader & Ingénieur SQLI  
-
-# <!-- .element: class="email" --> **jfgarreau**@sqli.com  
+Cette Présentation  [http://goo.gl/B6Phir](http://goo.gl/B6Phir)
 
 # <!-- .element: class="thank-message" --> Merci  
-
-![avatar](assets/images/jf.jpg)
 
 
 <div class="copyright">images & resources provenant des slides de SamDutton</div>

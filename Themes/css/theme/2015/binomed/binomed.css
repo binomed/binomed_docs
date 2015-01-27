@@ -1,8 +1,83 @@
+/* line 25, ../../../../scss/theme/2015/binomed/colors.scss */
+.binomed-red {
+  color: #e74c3c;
+}
+
+/* line 30, ../../../../scss/theme/2015/binomed/colors.scss */
+.binomed-light-grey {
+  color: #ddd;
+}
+
+/* line 34, ../../../../scss/theme/2015/binomed/colors.scss */
+.binomed-black {
+  color: #333;
+}
+
+/* line 38, ../../../../scss/theme/2015/binomed/colors.scss */
+.binomed-dark-grey {
+  color: #3d4349;
+}
+
+/* line 42, ../../../../scss/theme/2015/binomed/colors.scss */
+.binomed-medium-grey {
+  color: #817c7c;
+}
+
+/* line 25, ../../../../scss/theme/2015/binomed/colors.scss */
+.binomed-red {
+  color: #e74c3c;
+}
+
+/* line 30, ../../../../scss/theme/2015/binomed/colors.scss */
+.binomed-light-grey {
+  color: #ddd;
+}
+
+/* line 34, ../../../../scss/theme/2015/binomed/colors.scss */
+.binomed-black {
+  color: #333;
+}
+
+/* line 38, ../../../../scss/theme/2015/binomed/colors.scss */
+.binomed-dark-grey {
+  color: #3d4349;
+}
+
+/* line 42, ../../../../scss/theme/2015/binomed/colors.scss */
+.binomed-medium-grey {
+  color: #817c7c;
+}
+
 /* line 3, ../../../../scss/theme/2015/binomed/fonts.scss */
 .reveal {
   font-family: 'Helvetica Neue', Helvetica, 'Microsoft YaHei', 'WenQuanYi Micro Hei', Arial, sans-serif;
   color: #333;
   font-size: 2.5em;
+}
+
+/* line 25, ../../../../scss/theme/2015/binomed/colors.scss */
+.binomed-red {
+  color: #e74c3c;
+}
+
+/* line 30, ../../../../scss/theme/2015/binomed/colors.scss */
+.binomed-light-grey {
+  color: #ddd;
+}
+
+/* line 34, ../../../../scss/theme/2015/binomed/colors.scss */
+.binomed-black {
+  color: #333;
+}
+
+/* line 38, ../../../../scss/theme/2015/binomed/colors.scss */
+.binomed-dark-grey {
+  color: #3d4349;
+}
+
+/* line 42, ../../../../scss/theme/2015/binomed/colors.scss */
+.binomed-medium-grey {
+  color: #817c7c;
 }
 
 /* line 3, ../../../../scss/theme/2015/binomed/tableaux.scss */
@@ -54,6 +129,31 @@ table td.highlight {
 table.rows {
   border-bottom: none;
   border-right: 1px solid #797979;
+}
+
+/* line 25, ../../../../scss/theme/2015/binomed/colors.scss */
+.binomed-red {
+  color: #e74c3c;
+}
+
+/* line 30, ../../../../scss/theme/2015/binomed/colors.scss */
+.binomed-light-grey {
+  color: #ddd;
+}
+
+/* line 34, ../../../../scss/theme/2015/binomed/colors.scss */
+.binomed-black {
+  color: #333;
+}
+
+/* line 38, ../../../../scss/theme/2015/binomed/colors.scss */
+.binomed-dark-grey {
+  color: #3d4349;
+}
+
+/* line 42, ../../../../scss/theme/2015/binomed/colors.scss */
+.binomed-medium-grey {
+  color: #817c7c;
 }
 
 /* line 17, ../../../../scss/theme/2015/binomed/specifics_slides.scss */
