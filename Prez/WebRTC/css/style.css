@@ -10,28 +10,37 @@ img[alt*=sommaire] {
 
 /* line 14, ../scss/prez/style.scss */
 .reveal .slides > section img[alt*=avatar] {
-  -moz-box-shadow: #cccccc 2px 2px 2px 3px;
-  -webkit-box-shadow: #cccccc 2px 2px 2px 3px;
-  box-shadow: #cccccc 2px 2px 2px 3px;
+  width: 200px;
+  margin-top: 20px;
+  -moz-box-shadow: #CCCCCC 2px 2px 2px 3px;
+  -webkit-box-shadow: #CCCCCC 2px 2px 2px 3px;
+  box-shadow: #CCCCCC 2px 2px 2px 3px;
 }
 
-/* line 18, ../scss/prez/style.scss */
+/* line 20, ../scss/prez/style.scss */
 img[alt*=company_logo] {
   position: absolute;
-  bottom: 20%;
+  bottom: 60px;
   left: 20%;
-  width: 200px;
+  width: 150px;
 }
 
-/* line 25, ../scss/prez/style.scss */
+/* line 27, ../scss/prez/style.scss */
 img[alt*=gdg_logo] {
   position: absolute;
-  bottom: 20%;
+  bottom: 50px;
   right: 20%;
-  width: 200px;
+  width: 150px;
 }
 
-/* line 34, ../scss/prez/style.scss */
+/* line 36, ../scss/prez/style.scss */
+.reveal .slides section.first-slide h1 {
+  height: 3em;
+  line-height: 1.5em;
+  font-size: 1.5em;
+}
+
+/* line 45, ../scss/prez/style.scss */
 p.surround {
   font-weight: bold;
   font-size: 1em;
@@ -39,13 +48,13 @@ p.surround {
   text-align: left;
 }
 
-/* line 42, ../scss/prez/style.scss */
+/* line 53, ../scss/prez/style.scss */
 .reveal .slides > section pre {
   font-size: 0.90em;
   width: inherit;
 }
 
-/* line 47, ../scss/prez/style.scss */
+/* line 58, ../scss/prez/style.scss */
 .reveal .slides > section pre > code {
   max-height: 700px;
 }
@@ -53,48 +62,48 @@ p.surround {
 /*
 UserMedia use case
 */
-/* line 54, ../scss/prez/style.scss */
+/* line 65, ../scss/prez/style.scss */
 .slideWithGetUserMedia, .slideWithAsciiCam {
   width: 100%;
   height: 70%;
   text-align: center;
   position: relative;
 }
-/* line 61, ../scss/prez/style.scss */
+/* line 72, ../scss/prez/style.scss */
 .slideWithGetUserMedia label, .slideWithGetUserMedia select, .slideWithAsciiCam label, .slideWithAsciiCam select {
   font-size: 0.8em;
 }
 
-/* line 67, ../scss/prez/style.scss */
+/* line 78, ../scss/prez/style.scss */
 .firstUserMediaBtn, .asciiCamBtn, .desktopShareBtn, .tabShareBtn {
   bottom: 0;
   font-size: 1em;
 }
 
-/* line 72, ../scss/prez/style.scss */
+/* line 83, ../scss/prez/style.scss */
 .copyright.black {
   color: grey;
   bottom: 20px;
 }
 
-/* line 77, ../scss/prez/style.scss */
+/* line 88, ../scss/prez/style.scss */
 .reveal section pre#asciiText {
   background-color: black;
   color: #00CC00;
   font-size: 0.25em;
   line-height: 0.6em;
   box-shadow: inherit;
-  width: 890px;
+  text-align: center;
+  font-family: 'Courier New', 'Courier', monospace;
   margin: auto;
 }
 
-@media screen and (min-width: 1025px) {
-  /* line 88, ../scss/prez/style.scss */
-  .reveal section pre#asciiText {
+/*@media screen and (min-width: 1025px){
+  .reveal section pre#asciiText{
     width: 1024px;
   }
-}
-/* line 93, ../scss/prez/style.scss */
+}*/
+/* line 106, ../scss/prez/style.scss */
 #remoteVideo {
   width: 430px;
   position: absolute;
@@ -102,7 +111,7 @@ UserMedia use case
   right: 10px;
 }
 
-/* line 100, ../scss/prez/style.scss */
+/* line 113, ../scss/prez/style.scss */
 div.copyright {
   font-size: 0.6em;
   color: white;
@@ -111,7 +120,7 @@ div.copyright {
   right: 0;
 }
 
-/* line 108, ../scss/prez/style.scss */
+/* line 121, ../scss/prez/style.scss */
 div.copyright:before {
   content: "@";
 }

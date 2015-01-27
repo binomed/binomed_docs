@@ -12,23 +12,34 @@ img[alt*=sommaire]{
 }
 
 .reveal .slides > section img[alt*=avatar]{
+  width: 200px;
+  margin-top: 20px;
     @include box-shadow(#CCCCCC 2px 2px 2px 3px);
 }
 
 img[alt*=company_logo]{
     position: absolute;
-    bottom: 20%;
+    bottom: 60px;
     left: 20%;
-    width:200px;
+    width: 150px;
 }
 
 img[alt*=gdg_logo]{
     position: absolute;
-    bottom: 20%;
+    bottom: 50px;
     right: 20%;
-    width:200px;
+    width: 150px;
 }
 
+
+.reveal .slides section.first-slide{
+  h1{
+        height: 3em;
+        line-height: 1.5em;
+        font-size: 1.5em;
+        
+  }
+}
 
 
 p.surround{
@@ -80,15 +91,17 @@ UserMedia use case
   font-size: 0.25em;
   line-height: 0.6em;
   box-shadow: inherit;
-  width: 890px;
+  //width: 890px;
+  text-align: center;
+  font-family: 'Courier New', 'Courier', monospace;
   margin: auto;
 }
 
-@media screen and (min-width: 1025px){
+/*@media screen and (min-width: 1025px){
   .reveal section pre#asciiText{
     width: 1024px;
   }
-}
+}*/
 
 #remoteVideo{
   width: 430px;

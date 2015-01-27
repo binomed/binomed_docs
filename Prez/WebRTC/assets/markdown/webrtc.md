@@ -1,8 +1,8 @@
 <!-- .slide: class="first-slide" -->
 
-# **WebRTC**
+# **WebRTC** - Révolutionnons le partage d'informations
 
-### 2014.06.06 Web2Day @ **Nantes** <br><br>http://goo.gl/B6Phir
+### 2015.01.22 DevFest @ **Paris** <br><br>http://goo.gl/B6Phir
 
 
 <video id="remoteVideo" autoplay="autoplay" muted="true"></video> 
@@ -15,12 +15,20 @@
 
 ### Jean-François GARREAU
 
-![avatar center w-300 wp-200](assets/images/jf.jpg)
+<!-- .element: class="descjf" -->
+IoT Manager, Senior innovation developper & Community Manager
+
+![avatar w-300 wp-200](assets/images/jf.jpg)
 
 
 ![company_logo](assets/images/sqli_logo.png)
 ![gdg_logo](assets/images/GDG-Logo-carre.png)
 
+<!-- .element: class="twitter" -->
+[@jefBinomed](http://twitter.com/jefBinomed)
+
+<!-- .element: class="gplus" -->
+[+JeanFrancoisGarreau](http://plus.google.com/+JeanFrancoisGarreau)
 
 ##==##
 
@@ -138,7 +146,7 @@ Qui fait du peer2peer
 
 Est-ce normal que le Peer2Peer soit comme ça ?
 
-![center hp-200](assets/images/no.png)
+![center hp-200 h-600](assets/images/no.png)
 
 
 Notes:
@@ -150,7 +158,7 @@ Notes:
 
 Ne devrait-il pas ressembler à ça ? 
 
-![center hp-200](assets/images/yes.png)
+![center hp-200 h-600](assets/images/yes.png)
 
 
 Notes:
