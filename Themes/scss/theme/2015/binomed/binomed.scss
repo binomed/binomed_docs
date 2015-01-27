@@ -33,6 +33,10 @@ a:active, a:visited{
 }
 
 
+.reveal .slides section p+p{
+  margin-top: 40px;
+}
+
 .reveal .slides section:not(.first-slide):not(.who-am-i):not([data-background]):not([class*="transition"]):not(.transition):not(.transition-white):not(.transition-black){
 
 	width: 100%;
