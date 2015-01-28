@@ -4,7 +4,7 @@ var AnimatePhoneApp = AnimatePhoneApp || function () {
 
     var init = function () {
 		//Get all the page element we need
-        phone = document.getElementById('scene');
+        phone = document.getElementById('scene-phone');
 		
     };
 

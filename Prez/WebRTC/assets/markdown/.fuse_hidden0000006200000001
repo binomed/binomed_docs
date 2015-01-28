@@ -129,10 +129,10 @@ Positionner le webRTC
 
 ## Le web aujourd'hui ?
 
+<br><br>
+
+
 ### Petites questions ?
-
-
-![center h-600](assets/images/hands_up.jpg)
 
 Notes:
 Qui lit des vidéos sur sont téléphone ?
@@ -243,6 +243,19 @@ Notes:
 
 ##==##
 
+<!-- .slide: class="transition-black" -->
+
+# WebRTC 
+
+
+![icon](assets/images/google-webrtc-logo1.png)
+
+
+Notes:
+
+
+##==##
+
 ## WebRTC 
 
 <br><br>
@@ -306,18 +319,6 @@ On va dans chaque API
 ### Architecture
 
 ![center h-600](assets/images/webrtcArchitecture.png)
-
-Notes:
-
-##==##
-
-<!-- .slide: class="transition-black" -->
-
-# GetUserMedia
-
-
-![icon](assets/images/google-webrtc-logo1.png)
-
 
 Notes:
 
@@ -728,9 +729,7 @@ Notes:
 
 Notes:
 
-##==##
 
-<!-- .slide: data-background="assets/images/tableau_blanc_signaling.jpg" data-state="hidefooter" class="transition" -->
 
 ##==##
 
