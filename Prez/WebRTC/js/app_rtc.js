@@ -4,13 +4,16 @@ var AppSlideWebRTC = AppSlideWebRTC ||
 function(){
 
   
-  var isChannelReady;
-  var isPrez;
-  var isStarted;
-  var pc;
-  var localStream;
-  var remoteStream;
-  var turnReady;
+  var isChannelReady,
+      isPrez,
+      isStarted,
+      pc,
+      localStream,
+      remoteStream,
+      callBackDataChannel,
+      dataChannel,
+      recieveDataChannel,
+      turnReady;
 
   var pc_config = webrtcDetectedBrowser === 'firefox' ?
     {'iceServers':[{'url':'stun:23.21.150.121'}]} : // number IP
@@ -119,6 +122,7 @@ function(){
     sendMessage('got user media');
     //if (isPrez) {
       maybeStart();
+      startDataChannel();
     //}
   }
 
@@ -183,6 +187,9 @@ function(){
     pc.onaddstream = handleRemoteStreamAdded;
     pc.onremovestream = handleRemoteStreamRemoved;
 
+    listenDataChannel();
+    
+
   }
 
   function handleIceCandidate(event) {
@@ -241,35 +248,6 @@ function(){
     sendMessage(sessionDescription);
   }
 
-  function requestTurn(turn_url) {
-    var turnExists = false;
-    for (var i in pc_config.iceServers) {
-      if (pc_config.iceServers[i].url.substr(0, 5) === 'turn:') {
-        turnExists = true;
-        turnReady = true;
-        break;
-      }
-    }
-    if (!turnExists) {
-      console.log('Getting TURN server from ', turn_url);
-      // No TURN server. Get one from computeengineondemand.appspot.com:
-      var xhr = new XMLHttpRequest();
-      xhr.onreadystatechange = function(){
-        if (xhr.readyState === 4 && xhr.status === 200) {
-          var turnServer = JSON.parse(xhr.responseText);
-        	console.log('Got TURN server: ', turnServer);
-          pc_config.iceServers.push({
-            'url': 'turn:' + turnServer.username + '@' + turnServer.turn,
-            'credential': turnServer.password
-          });
-          turnReady = true;
-        }
-      };
-      xhr.open('GET', turn_url, true);
-      xhr.send();
-    }
-  }
-
   function handleRemoteStreamAdded(event) {
     console.log('Remote stream added.');
     attachMediaStream(remoteVideo, event.stream);
@@ -296,8 +274,76 @@ function(){
     isStarted = false;
     // isAudioMuted = false;
     // isVideoMuted = false;
-    pc.close();
+    if (dataChannel){
+      try{
+        dataChannel.close();        
+      }catch(e){
+      }
+    }
+    dataChannel = null;
+    if (recieveDataChannel){
+      try{
+        recieveDataChannel.close();        
+      }catch(e){
+      }
+    }
+    recieveDataChannel = null;
+    if (pc){
+      try{
+        pc.close();
+      }catch(e){        
+      }
+    }
     pc = null;
+  }
+
+  /////////////////////////////////////////////////////////
+  /////////////////////////////////////////////////////////
+  /////////////////////////////////////////////////////////
+  //////////// Data Channel
+  /////////////////////////////////////////////////////////
+  /////////////////////////////////////////////////////////
+
+  function listenDataChannel(){
+    pc.ondatachannel = function(event){
+      if (!dataChannel){        
+        dataChannel = event.channel;
+      }
+    }
+  }
+
+  function initDataChannel(){
+    if (dataChannel){
+      dataChannel.onerror = function (error) {
+        console.log("Data Channel Error:", error);
+      };
+
+      dataChannel.onopen = function () {
+        dataChannel.send("Hello World!");
+      };
+
+      dataChannel.onclose = function () {
+        console.log("The Data Channel is Closed");
+      };
+    }
+  }
+
+  function startDataChannel(){
+    var dataChannelOptions = {reliable: false};
+    dataChannel = pc.createDataChannel("dataChannelOrientationPhone", dataChannelOptions);
+    initDataChannel();
+  }
+
+  function sendMessageDataChannel(message){
+    if (dataChannel && dataChannel.readyState === 'open'){
+      dataChannel.send(JSON.stringify(message));
+    }
+  }
+  
+  function setCallBackDataChannel(callBack){
+    if (dataChannel){
+      dataChannel.onmessage = callBack;
+    }
   }
 
   ///////////////////////////////////////////
@@ -389,6 +435,9 @@ function(){
     handleUserMedia : handleUserMedia,
     hangup : hangup, 
     initPhone : initPhone,
-    initPrez : initPrez
+    initPrez : initPrez,
+    startDataChannel : startDataChannel,    
+    sendMessageDataChannel : sendMessageDataChannel,
+    setCallBackDataChannel : setCallBackDataChannel
   };
 }();

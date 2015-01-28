@@ -1,0 +1,78 @@
+@import "compass/css3/transform";
+
+.reveal .slides section .slideWithDataChannel{
+  padding-top: 100px;
+  position:relative;
+  width: 500px;
+  height: 500px;
+  margin: auto;
+}
+
+$hauteur : 296px;
+$largeur : 196px;
+$prodonfeur : 96px;
+
+.container-phone {
+  width: 300px;
+  height: 200px;
+  margin: auto;
+  position: relative;
+  -webkit-perspective: 1200px;
+  -moz-perspective: 1200px;
+  -o-perspective: 1200px;
+  perspective: 1200px;
+}
+
+#scene-phone {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  @include transform(translateZ(-50px));
+}
+
+#scene-phone figure {
+  display: block;
+  position: absolute;
+  border: 2px solid black;
+}
+
+#scene-phone .front,
+#scene-phone .back {
+  width: $largeur;
+  height: $hauteur;
+}
+
+#scene-phone .front{
+  background:#817c7c;
+}
+
+#scene-phone .back{
+  background:#333;
+}
+
+#scene-phone .right,
+#scene-phone .left {
+  width: $prodonfeur;
+  height: $hauteur;
+  left: 100px;
+  background: #3d4349;
+}
+
+#scene-phone .top,
+#scene-phone .bottom {
+  width: $largeur;
+  height: $prodonfeur;
+  top: 50px;
+  background: #3d4349;
+}
+
+#scene-phone .front  { @include transform(rotateY(   0deg ) translateZ(  50px ));}
+#scene-phone .back   { @include transform(rotateX( 180deg ) translateZ(  50px )); }
+#scene-phone .right  { @include transform(rotateY(  90deg ) translateZ(  50px )); }
+#scene-phone .left   { @include transform(rotateY( -90deg ) translateZ( 150px )); }
+#scene-phone .top    { @include transform(rotateX(  90deg ) translateZ( 100px )); }
+#scene-phone .bottom { @include transform(rotateX( -90deg ) translateZ( 200px )); }

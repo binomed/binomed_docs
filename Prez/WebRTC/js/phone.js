@@ -78,6 +78,20 @@ function(){
 	    }
 	  };
 	  navigator.getUserMedia(constraints, successCallback, errorCallback);
+
+	  // Gestion de l'orientation pour le rtcdatachannel
+	  if (window.DeviceOrientationEvent){
+	  	window.addEventListener('deviceorientation', function(eventData){
+	  		if (window.AppSlideWebRTC){
+
+		  		AppSlideWebRTC.sendMessageDataChannel({
+		  			gamma : eventData.gamma,
+		  			beta : eventData.beta,
+		  			alpha : eventData.alpha
+		  		});
+	  		}
+	  	}, false);
+	  }
 	}
 
 	videoSelect.onchange = start;

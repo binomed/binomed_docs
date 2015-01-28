@@ -968,12 +968,32 @@ document.querySelector("button#send").onclick =
 
 Notes:
 
-
 ##==##
 
 ## Par exemple
 
 ![center h-500](assets/images/data_channel_use_case.png)
+
+
+##==##
+
+<!-- .slide: data-state="startDataChannel" -->
+
+## Démo
+
+
+<div class="slideWithDataChannel">
+  <section class="container-phone">
+    <div id="scene-phone" style="transform: rotateY(20deg)">
+      <figure class="front"></figure>
+      <figure class="back"></figure>
+      <figure class="right"></figure>
+      <figure class="left"></figure>
+      <figure class="top"></figure>
+      <figure class="bottom"></figure>
+    </div>
+  </section>
+</div>
 
 
 ##==##
