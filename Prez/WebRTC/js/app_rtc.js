@@ -7,12 +7,11 @@ function(){
   var isChannelReady,
       isPrez,
       isStarted,
-      pc,
+      peerConnection,
       localStream,
       remoteStream,
       callBackDataChannel,
-      dataChannel,
-      recieveDataChannel,
+      communicationDataChannel,
       turnReady;
 
   var pc_config = webrtcDetectedBrowser === 'firefox' ?
@@ -21,7 +20,7 @@ function(){
 
   var pc_constraints = {
     'optional': [
-      {'DtlsSrtpKeyAgreement': true},
+      /*{'DtlsSrtpKeyAgreement': true},*/
       {'RtpDataChannels': true}
     ]};
 
@@ -94,14 +93,14 @@ function(){
       if (!isPrez && !isStarted) {
         maybeStart();
       }
-      pc.setRemoteDescription(new RTCSessionDescription(message));
+      peerConnection.setRemoteDescription(new RTCSessionDescription(message));
       doAnswer();
     } else if (message.type === 'answer' && isStarted) {
-      pc.setRemoteDescription(new RTCSessionDescription(message));
+      peerConnection.setRemoteDescription(new RTCSessionDescription(message));
     } else if (message.type === 'candidate' && isStarted) {
       var candidate = new RTCIceCandidate({sdpMLineIndex:message.label,
         candidate:message.candidate});
-      pc.addIceCandidate(candidate);
+      peerConnection.addIceCandidate(candidate);
     } else if (message === 'bye' && isStarted) {
       handleRemoteHangup();
     }
@@ -119,20 +118,24 @@ function(){
     localStream = stream;
     //attachMediaStream(localVideo, stream);
     //console.log('Adding local stream.');
-    sendMessage('got user media');
     //if (isPrez) {
       maybeStart();
-      startDataChannel();
     //}
+    sendMessage('got user media');
   }
 
   function maybeStart() {
-    if (!isStarted && (localStream || isPrez)  && isChannelReady) {
+    if (!isStarted /*&& /*(localStream || isPrez)*/  && isChannelReady) {
+      isStarted = true;
       createPeerConnection();
       if (!isPrez){
-        pc.addStream(localStream);
+        if (localStream){
+          peerConnection.addStream(localStream);
+        }
+        startDataChannel();
+      }else{
+        listenDataChannel();
       }
-      isStarted = true;
       if (isPrez) {
         doCall();
       }
@@ -174,8 +177,8 @@ function(){
 
   function createPeerConnection() {
     try {
-      pc = new RTCPeerConnection(pc_config, pc_constraints);
-      pc.onicecandidate = handleIceCandidate;
+      peerConnection = new RTCPeerConnection(null, pc_constraints);
+      peerConnection.onicecandidate = handleIceCandidate;
       console.log('Created RTCPeerConnnection with:\n' +
         '  config: \'' + JSON.stringify(pc_config) + '\';\n' +
         '  constraints: \'' + JSON.stringify(pc_constraints) + '\'.');
@@ -184,10 +187,10 @@ function(){
       alert('Cannot create RTCPeerConnection object.');
         return;
     }
-    pc.onaddstream = handleRemoteStreamAdded;
-    pc.onremovestream = handleRemoteStreamRemoved;
+    peerConnection.onaddstream = handleRemoteStreamAdded;
+    peerConnection.onremovestream = handleRemoteStreamRemoved;
 
-    listenDataChannel();
+    
     
 
   }
@@ -224,12 +227,12 @@ function(){
     constraints = mergeConstraints(constraints, sdpConstraints);
     console.log('Sending offer to peer, with constraints: \n' +
       '  \'' + JSON.stringify(constraints) + '\'.');
-    pc.createOffer(setLocalAndSendMessage, null, constraints);
+    peerConnection.createOffer(setLocalAndSendMessage, null, constraints);
   }
 
   function doAnswer() {
     console.log('Sending answer to peer.');
-    pc.createAnswer(setLocalAndSendMessage, null, sdpConstraints);
+    peerConnection.createAnswer(setLocalAndSendMessage, null, sdpConstraints);
   }
 
   function mergeConstraints(cons1, cons2) {
@@ -244,7 +247,7 @@ function(){
   function setLocalAndSendMessage(sessionDescription) {
     // Set Opus as the preferred codec in SDP if Opus is present.
     sessionDescription.sdp = preferOpus(sessionDescription.sdp);
-    pc.setLocalDescription(sessionDescription);
+    peerConnection.setLocalDescription(sessionDescription);
     sendMessage(sessionDescription);
   }
 
@@ -274,27 +277,21 @@ function(){
     isStarted = false;
     // isAudioMuted = false;
     // isVideoMuted = false;
-    if (dataChannel){
+    if (communicationDataChannel){
       try{
-        dataChannel.close();        
+        communicationDataChannel.close();        
       }catch(e){
       }
     }
-    dataChannel = null;
-    if (recieveDataChannel){
+    communicationDataChannel = null;
+    
+    if (peerConnection){
       try{
-        recieveDataChannel.close();        
-      }catch(e){
-      }
-    }
-    recieveDataChannel = null;
-    if (pc){
-      try{
-        pc.close();
+        peerConnection.close();
       }catch(e){        
       }
     }
-    pc = null;
+    peerConnection = null;
   }
 
   /////////////////////////////////////////////////////////
@@ -305,44 +302,56 @@ function(){
   /////////////////////////////////////////////////////////
 
   function listenDataChannel(){
-    pc.ondatachannel = function(event){
-      if (!dataChannel){        
-        dataChannel = event.channel;
+    peerConnection.ondatachannel = function(event){
+      console.info("Data Channel Arrived : "+event.channel);
+      if (!communicationDataChannel){        
+        communicationDataChannel = event.channel;
+        initDataChannel();
       }
     }
   }
 
   function initDataChannel(){
-    if (dataChannel){
-      dataChannel.onerror = function (error) {
-        console.log("Data Channel Error:", error);
+    if (communicationDataChannel){
+      communicationDataChannel.onerror = function (error) {
+        console.error(">>>>>Data Channel Error:", error);
+        console.error(error);
       };
 
-      dataChannel.onopen = function () {
-        dataChannel.send("Hello World!");
+      communicationDataChannel.onopen = function () {
+        console.info(">>>>>>Data Channel Open ! ")
+        communicationDataChannel.send("Hello World!");
       };
 
-      dataChannel.onclose = function () {
-        console.log("The Data Channel is Closed");
+      communicationDataChannel.onclose = function () {
+        console.info(">>>>The Data Channel is Closed");
       };
+
+      communicationDataChannel.onmessage = function(event){
+        console.info(">>>>> Data Channel message : "+event.data);
+      }
     }
   }
 
   function startDataChannel(){
-    var dataChannelOptions = {reliable: false};
-    dataChannel = pc.createDataChannel("dataChannelOrientationPhone", dataChannelOptions);
+    var dataChannelOptions = {
+      reliable:false/*,
+      ordered: true*/
+    };
+    communicationDataChannel = peerConnection.createDataChannel('orientation', dataChannelOptions);
+    console.info(">>>>> Create a dataChannel : orientation")
     initDataChannel();
   }
 
   function sendMessageDataChannel(message){
-    if (dataChannel && dataChannel.readyState === 'open'){
-      dataChannel.send(JSON.stringify(message));
+    if (communicationDataChannel && communicationDataChannel.readyState === 'open'){
+      communicationDataChannel.send(JSON.stringify(message));
     }
   }
   
   function setCallBackDataChannel(callBack){
-    if (dataChannel){
-      dataChannel.onmessage = callBack;
+    if (communicationDataChannel){
+      communicationDataChannel.onmessage = callBack;
     }
   }
 
