@@ -25,3 +25,12 @@ Open Chrome Portable 35
 8. open a new tab on chrome phone and goto : http://yourIpAdress:8080/index_phone.html (if it doesn't work for first time, alternate reload of presentation and phone)
 9. scan the QRCode for preloading the app
 10. Close the app (server & tab)
+
+
+
+Toute passer en localhost ! 
+1 lancer la prez
+2 lancer le WEBRTC
+3 lancer le controle !
+4 Une fois le webrtc fini couper le serveur + écran !
+desactivier la veille de l'ordi
