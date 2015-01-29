@@ -111,7 +111,7 @@
 	
 }
 
-.reveal .slides section[class~=transition] h1,
+.reveal .slides section[class*="transition"] h1,
 .reveal .slides section.transition h1,
 .reveal .slides section.transition-white h1,
 .reveal .slides section.transition-black h1{
@@ -138,4 +138,15 @@
 .reveal .slides section.transition-white h1,
 .reveal .slides section.transition-black h1{
 	@include simple-transform(1,-45deg, 0, 400px);
+}
+
+.reveal .slides section.transition-white img[alt*=icon],
+.reveal .slides section.transition-black img[alt*=icon],
+.reveal .slides section.transition-white img.icon,
+.reveal .slides section.transition-black img.icon{
+    position: absolute;
+    bottom: 25px;
+    right: 150px;
+    max-height: 200px;
+    max-width: 200px;
 }

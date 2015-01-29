@@ -10,9 +10,16 @@ function(){
 	    loadScript('http://'+window.location.hostname+':9999/socket.io/socket.io.js');
 	    setTimeout(function() {	    	
 	    	loadScript('js/app_rtc.js');
-	    	setTimeout(function() {
-	    		AppSlideWebRTC.initPhone();
-	    	}, 100);	    	
+	    	function onLoadScript(){
+	    		setTimeout(function() {
+		    		if (window.AppSlideWebRTC){
+		    			AppSlideWebRTC.initPhone();
+		    		}else{
+		    			onLoadScript();
+		    		}
+		    	}, 500);	    	
+	    	}
+	    	onLoadScript();
 	    }, 500);
 	  };
 
@@ -31,6 +38,7 @@ function(){
 	var videoSelect = document.querySelector("select#videoSource");
 	var startButton = document.querySelector("button#startWebRTC");
 	var stopButton = document.querySelector("button#stopWebRTC");
+	var channelBtn = document.querySelector("button#dataChannel");
 
 	navigator.getUserMedia = navigator.getUserMedia ||
 		navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
@@ -78,6 +86,23 @@ function(){
 	    }
 	  };
 	  navigator.getUserMedia(constraints, successCallback, errorCallback);
+
+	  // Gestion de l'orientation pour le rtcdatachannel
+	  if (window.DeviceOrientationEvent){
+	  	console.info("========= DEVICE ORIENTATION");
+	  	window.addEventListener('deviceorientation', function(eventData){
+	  		if (window.AppSlideWebRTC){
+
+		  		AppSlideWebRTC.sendMessageDataChannel({
+		  			gamma : eventData.gamma,
+		  			beta : eventData.beta,
+		  			alpha : eventData.alpha
+		  		});
+	  		}
+	  	}, false);
+	  }else{
+		console.error("========= NO DEVICE ORIENTATION");
+		}
 	}
 
 	videoSelect.onchange = start;
@@ -88,6 +113,10 @@ function(){
 
 	stopButton.addEventListener('click', function(){
 		AppSlideWebRTC.hangup();
+	});
+
+	channelBtn.addEventListener('click', function(){
+		AppSlideWebRTC.startDataChannel();
 	});
 
 	start();

@@ -44,6 +44,7 @@ function(){
 		stopFirstUserMedia();
 		SourceApp.stopSource();
 		CammApp.stopCam();
+		ScreenApp.stopScreen();
 		switch (checkAllSlideWithActions(currentElement)){			
 			case 'slideWithGetUserMedia' : 
 			break;
@@ -80,7 +81,7 @@ function(){
 				videoUM.play();
 			}, 
 			function(error){
-
+				console.error(error);
 			}
 		);
 	}

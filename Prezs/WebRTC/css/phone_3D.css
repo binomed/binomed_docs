@@ -1,0 +1,125 @@
+/* line 3, ../scss/prez/phone_3D.scss */
+.reveal .slides section .slideWithDataChannel {
+  padding-top: 100px;
+  position: relative;
+  width: 500px;
+  height: 500px;
+  margin: auto;
+}
+
+/* line 15, ../scss/prez/phone_3D.scss */
+.container-phone {
+  width: 300px;
+  height: 200px;
+  margin: auto;
+  position: relative;
+  -webkit-perspective: 1200px;
+  -moz-perspective: 1200px;
+  -o-perspective: 1200px;
+  perspective: 1200px;
+}
+
+/* line 26, ../scss/prez/phone_3D.scss */
+#scene-phone {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -moz-transform: translateZ(-50px);
+  -ms-transform: translateZ(-50px);
+  -webkit-transform: translateZ(-50px);
+  transform: translateZ(-50px);
+}
+
+/* line 37, ../scss/prez/phone_3D.scss */
+#scene-phone figure {
+  display: block;
+  position: absolute;
+  border: 2px solid black;
+}
+
+/* line 43, ../scss/prez/phone_3D.scss */
+#scene-phone .front,
+#scene-phone .back {
+  width: 196px;
+  height: 296px;
+}
+
+/* line 49, ../scss/prez/phone_3D.scss */
+#scene-phone .front {
+  background: #817c7c;
+}
+
+/* line 53, ../scss/prez/phone_3D.scss */
+#scene-phone .back {
+  background: #333;
+}
+
+/* line 57, ../scss/prez/phone_3D.scss */
+#scene-phone .right,
+#scene-phone .left {
+  width: 96px;
+  height: 296px;
+  left: 100px;
+  background: #3d4349;
+}
+
+/* line 65, ../scss/prez/phone_3D.scss */
+#scene-phone .top,
+#scene-phone .bottom {
+  width: 196px;
+  height: 96px;
+  top: 50px;
+  background: #3d4349;
+}
+
+/* line 73, ../scss/prez/phone_3D.scss */
+#scene-phone .front {
+  -moz-transform: rotateY(0deg) translateZ(50px);
+  -ms-transform: rotateY(0deg) translateZ(50px);
+  -webkit-transform: rotateY(0deg) translateZ(50px);
+  transform: rotateY(0deg) translateZ(50px);
+}
+
+/* line 74, ../scss/prez/phone_3D.scss */
+#scene-phone .back {
+  -moz-transform: rotateX(180deg) translateZ(50px);
+  -ms-transform: rotateX(180deg) translateZ(50px);
+  -webkit-transform: rotateX(180deg) translateZ(50px);
+  transform: rotateX(180deg) translateZ(50px);
+}
+
+/* line 75, ../scss/prez/phone_3D.scss */
+#scene-phone .right {
+  -moz-transform: rotateY(90deg) translateZ(50px);
+  -ms-transform: rotateY(90deg) translateZ(50px);
+  -webkit-transform: rotateY(90deg) translateZ(50px);
+  transform: rotateY(90deg) translateZ(50px);
+}
+
+/* line 76, ../scss/prez/phone_3D.scss */
+#scene-phone .left {
+  -moz-transform: rotateY(-90deg) translateZ(150px);
+  -ms-transform: rotateY(-90deg) translateZ(150px);
+  -webkit-transform: rotateY(-90deg) translateZ(150px);
+  transform: rotateY(-90deg) translateZ(150px);
+}
+
+/* line 77, ../scss/prez/phone_3D.scss */
+#scene-phone .top {
+  -moz-transform: rotateX(90deg) translateZ(100px);
+  -ms-transform: rotateX(90deg) translateZ(100px);
+  -webkit-transform: rotateX(90deg) translateZ(100px);
+  transform: rotateX(90deg) translateZ(100px);
+}
+
+/* line 78, ../scss/prez/phone_3D.scss */
+#scene-phone .bottom {
+  -moz-transform: rotateX(-90deg) translateZ(200px);
+  -ms-transform: rotateX(-90deg) translateZ(200px);
+  -webkit-transform: rotateX(-90deg) translateZ(200px);
+  transform: rotateX(-90deg) translateZ(200px);
+}
