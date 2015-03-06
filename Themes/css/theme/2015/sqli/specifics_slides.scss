@@ -10,14 +10,18 @@ $width-triangle-bas : 100px;
 
 .reveal .backgrounds .slide-background.first-slide:before{
     content:'';
-    position: fixed;
+    position: fixed;    
     top: 0;
     left: calc(50vw - #{$width-triangle});
+    background-image: url(assets/images/triangle_haut.png);
+    width: 2 * $width-triangle;
+    height: $width-triangle;
+    /*
     width: 0;
     height: 0;
     border-left: $width-triangle solid transparent;
     border-right: $width-triangle solid transparent;
-    border-top: $width-triangle solid white;
+    border-top: $width-triangle solid white;*/
     
 }
 
@@ -45,6 +49,14 @@ $width-triangle-bas : 100px;
 	padding-top: calc(#{$width-triangle} + 40px);
 	color: $white;
  
+    .logo{
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-image: url(assets/images/logo_noir.png);
+        width: 200px;
+        height: 100px;
+    }
 
  	h1{
  		color:$white;
