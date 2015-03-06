@@ -2,7 +2,7 @@
 
 # **WebRTC** - Révolutionnons le partage d'informations
 
-### 2015.01.22 DevFest @ **Paris** <br><br>http://goo.gl/B6Phir
+### 2015.01.30 DevFest @ **Paris** <br><br>http://goo.gl/B6Phir
 
 
 <video id="remoteVideo" autoplay="autoplay" muted="true"></video> 
