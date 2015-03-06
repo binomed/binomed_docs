@@ -1,0 +1,184 @@
+@import "colors";
+@import "compass/css3/transform";
+@import "compass/css3/box-shadow";
+@import "compass/css3/text-shadow";
+
+
+$width-triangle : 250px;
+$width-triangle-bas : 100px;
+
+
+.reveal .backgrounds .slide-background.first-slide:before{
+    content:'';
+    position: fixed;
+    top: 0;
+    left: calc(50vw - #{$width-triangle});
+    width: 0;
+    height: 0;
+    border-left: $width-triangle solid transparent;
+    border-right: $width-triangle solid transparent;
+    border-top: $width-triangle solid white;
+    
+}
+
+.reveal .backgrounds .slide-background.first-slide:after{
+    content:'';
+    position: fixed;
+    bottom: 0;
+    left: calc(50vw - #{$width-triangle-bas});
+    width: 0;
+    height: 0;
+    border-left: $width-triangle-bas solid transparent;
+    border-right: $width-triangle-bas solid transparent;
+    border-bottom: $width-triangle-bas solid white;
+    
+}
+
+.reveal .slides section.first-slide{
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 800px;
+	height: 300px;
+    margin-left: -400px;
+    text-align: center;
+	padding-top: calc(#{$width-triangle} + 40px);
+	color: $white;
+ 
+
+ 	h1{
+ 		color:$white;
+ 	}
+}
+
+.reveal  .slides section.who-am-i{
+	
+	color : white;
+	text-align: center;
+
+	h2{
+		font-size: 3em;
+		margin-bottom: 20px;
+	}
+
+	h3{
+		font-size: 2em;
+		margin-bottom: 20px;	
+	}
+
+	
+}
+
+
+.reveal  .slides section.last-slide{
+	
+	color : white;
+	text-align: center;
+
+	h1{
+        position:absolute;
+        color:white;
+        font-family: "DIN-Next-LT-Pro-BoldCondensed";
+        text-align:center;
+        text-overflow:ellipsis;
+        text-transform:none;
+        @include box-shadow(white 0px 0px 0px);     
+        @include text-shadow(rgba(black, 1) 0px 0px 0);
+        width:100%;
+        left:0;
+    }   
+    
+    h1.presenter{
+        top:1.5em;
+        height:2em;
+        line-height:2em;
+        font-size:2em;
+        font-weight:600;
+    }
+    
+    h1.topic-title{
+        top:0;
+        height:1.7em;
+        font-size:2em;
+        line-height:1.7em;
+        font-weight:400;
+    }
+    
+    
+    h1.work-rule{
+        top:calc(50% + 150px);
+        height:1em;
+        font-size:1em;
+        line-height:1em;
+        font-weight:400;
+    }
+    
+    h1.email{
+        top:calc(50% + 150px + 2em);
+        height:1em;
+        font-size:1em;
+        line-height:1em;
+        font-weight:400;
+    }
+    
+    h1.thank-message{
+        bottom:0em;
+        height:2em;
+        font-size:2em;
+        line-height:2em;
+        font-weight:600;
+    }
+    
+    
+    img[alt*=avatar], img.avatar{
+        position:absolute;
+        width:300px;
+        height:300px;
+        top:50%;
+        left:50%;
+        margin-left:-150px;
+        margin-top: -150px;
+    }
+
+	
+}
+
+.reveal .slides section[class*="transition"] h1,
+.reveal .slides section.transition h1,
+.reveal .slides section.transition-white h1,
+.reveal .slides section.transition-black h1{
+
+	position: absolute;
+	width: 100%;
+	height: 1.4em;
+	font-size: 2.8em;
+	line-height: 1.4em;
+	padding-left: 20px;
+	background: rgba(0,0,0,0.7);
+	color: $red;
+	text-align: left;
+	top: 10%;
+
+}
+
+.reveal .slides section.transition-black h1{
+	background: rgba(255,255,255,0.7);
+
+}
+
+
+.reveal .slides section.transition-white h1,
+.reveal .slides section.transition-black h1{
+	@include simple-transform(1,-45deg, 0, 400px);
+}
+
+.reveal .slides section.transition-white img[alt*=icon],
+.reveal .slides section.transition-black img[alt*=icon],
+.reveal .slides section.transition-white img.icon,
+.reveal .slides section.transition-black img.icon{
+    position: absolute;
+    bottom: 25px;
+    right: 150px;
+    max-height: 200px;
+    max-width: 200px;
+}

@@ -1,3 +1,5 @@
+@import "colors";
+
 table {
   width: 100%;
   border-collapse: -moz-initial;
@@ -7,16 +9,19 @@ table {
 }
 
 table tr:nth-child(odd) {
-  background-color: rgba(214,14,26,.2);
+  background-color: $white;//rgba(214,14,26,.2);
+  color: $medium-grey;
 }
 table tr:nth-child(even) {
-  background-color: rgba(214,14,26,.1);
+  background-color: $medium-grey;//rgba(214,14,26,.1);
+  color: $white;
 }
 
 table th {
   color: white;
   font-size: 18px;
-  background: #DA0E1A;
+  font-weight: 600;
+  background: $dark-grey;
 }
 
 table td, table th {

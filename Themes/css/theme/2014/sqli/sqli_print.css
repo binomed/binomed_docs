@@ -2,7 +2,7 @@
 @font-face {
   font-family: "DINNextLTPro-MediumCond";
   src: url("fonts/DINNextLTPro-MediumCond.eot");
-  src: local("☺"), url("fonts/DINNextLTPro-MediumCond.woff") format("woff"), url("fonts/DINNextLTPro-MediumCond.ttf") format("truetype");
+  src: local("Ôÿ║"), url("fonts/DINNextLTPro-MediumCond.woff") format("woff"), url("fonts/DINNextLTPro-MediumCond.ttf") format("truetype");
 }
 @font-face {
   font-family: "DIN-Next-LT-Pro-Condensed";
@@ -172,3 +172,5 @@ table.rows {
 .reveal .slides > section h1, .reveal .slides > section h2, .reveal .slides > section > section h1, .reveal .slides > section > section h2 {
   font-size: 1.5em;
 }
+
+/*# sourceMappingURL=sqli_print.css.map */

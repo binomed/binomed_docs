@@ -136,7 +136,7 @@ module.exports = function (grunt) {
   
   // Déclaration des taches
   grunt.registerTask('prod',    ['clean', 'copy', 'compass']);
-  grunt.registerTask('serve',    ['browserSync', 'watch']);
+  grunt.registerTask('serve',    ['copy', 'compass', 'browserSync', 'watch']);
   grunt.registerTask('default', ['prod']);
 
 };
