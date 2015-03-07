@@ -105,16 +105,24 @@ footer.sqli-footer:after{
 /*
 * Commons Slides
 */
-
- 
-.reveal .slides section:not(.first-slide):not(.who-am-i):not([data-background]):not([class*="transition"]):not(.transition):not(.transition-white):not(.transition-black){
+.reveal .slides section{
   position:absolute;
   height:calc(100% - 60px);
   height:-webkit-calc(100% - 60px);
-  text-align:left;
   width: calc(100% - #{$margin-lr} - #{$margin-lr});
   padding:$margin-section $margin-lr $footer-height $margin-lr;  
   z-index: -2;
+}
+ 
+.reveal .slides section:not(.first-slide):not(.who-am-i):not([data-background]):not([class*="transition"]):not(.transition):not(.transition-white):not(.transition-black){
+//.reveal .slides>section{
+  /*position:absolute;
+  height:calc(100% - 60px);
+  height:-webkit-calc(100% - 60px);*/
+  text-align:left;
+  /*width: calc(100% - #{$margin-lr} - #{$margin-lr});
+  padding:$margin-section $margin-lr $footer-height $margin-lr;  
+  z-index: -2;*/
   
 
   h1, h2{
@@ -281,14 +289,14 @@ Code
 */
 .reveal .slides section pre:not(.literal) code {
   font-family: "Courier New", monospace;
-  font-size: 1em;
-  line-height: 1.1em;
+  font-size: 0.7em;
+  line-height: 0.8em;
   
 }
 
 .reveal .slides section p.big-code~pre:not(.literal) code{
-  font-size: 2em;
-  line-height: 2.1em;
+  font-size: 1em;
+  line-height: 1.1em;
   
 }
 

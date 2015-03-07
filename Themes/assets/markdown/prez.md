@@ -2,6 +2,7 @@
 <!-- .slide: class="first-slide" -->
 
 # **Presentation Title**
+## **sub Title**
 
 ### year.mm.dd Meeting Name @ **Where**
 
@@ -47,6 +48,7 @@ IoT Manager, Senior innovation developper & Community Manager
 <!-- .slide: data-background="/assets/images/iron_droid.jpg" data-state="hidefooter" class="transition" -->
 
 # A Custom Transition Slide
+
 
 
 ##==##

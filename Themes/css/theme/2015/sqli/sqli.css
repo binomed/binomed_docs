@@ -2,7 +2,7 @@
 @font-face {
   font-family: "DINNextLTPro-MediumCond";
   src: url("fonts/DINNextLTPro-MediumCond.eot");
-  src: local("Ôÿ║"), url("fonts/DINNextLTPro-MediumCond.woff") format("woff"), url("fonts/DINNextLTPro-MediumCond.ttf") format("truetype");
+  src: local("☺"), url("fonts/DINNextLTPro-MediumCond.woff") format("woff"), url("fonts/DINNextLTPro-MediumCond.ttf") format("truetype");
 }
 @font-face {
   font-family: "DIN-Next-LT-Pro-Condensed";
@@ -125,47 +125,68 @@ table.rows {
 
 /* line 43, ../../../../scss/theme/2015/sqli/specifics_slides.scss */
 .reveal .slides section.first-slide {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 800px;
   height: 300px;
-  margin-left: -400px;
   text-align: center;
   padding-top: calc(250px + 40px);
   padding-top: -webkit-calc(250px + 40px);
   color: white;
+  text-transform: uppercase;
 }
-/* line 55, ../../../../scss/theme/2015/sqli/specifics_slides.scss */
-.reveal .slides section.first-slide .logo {
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-image: url(assets/images/logo_noir.png);
-  width: 200px;
-  height: 100px;
+/* line 52, ../../../../scss/theme/2015/sqli/specifics_slides.scss */
+.reveal .slides section.first-slide h1 {
+  font-size: 2em;
+}
+/* line 56, ../../../../scss/theme/2015/sqli/specifics_slides.scss */
+.reveal .slides section.first-slide h2 {
+  font-size: 1.5em;
+}
+/* line 60, ../../../../scss/theme/2015/sqli/specifics_slides.scss */
+.reveal .slides section.first-slide h3 {
+  position: relative;
 }
 /* line 64, ../../../../scss/theme/2015/sqli/specifics_slides.scss */
-.reveal .slides section.first-slide h1 {
-  color: white;
+.reveal .slides section.first-slide h3:before {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 5px;
+  background: white;
+  bottom: -35px;
+  left: 50%;
+  margin-left: -50px;
+}
+/* line 75, ../../../../scss/theme/2015/sqli/specifics_slides.scss */
+.reveal .slides section.first-slide h3:after {
+  content: 'Digital that works.';
+  text-transform: none;
+  text-align: center;
+  position: absolute;
+  width: 400px;
+  height: 5px;
+  bottom: -60px;
+  left: 50%;
+  margin-left: -200px;
 }
 
-/* line 69, ../../../../scss/theme/2015/sqli/specifics_slides.scss */
+/* line 88, ../../../../scss/theme/2015/sqli/specifics_slides.scss */
 .reveal .slides section.who-am-i {
   color: white;
   text-align: center;
 }
-/* line 74, ../../../../scss/theme/2015/sqli/specifics_slides.scss */
+/* line 93, ../../../../scss/theme/2015/sqli/specifics_slides.scss */
 .reveal .slides section.who-am-i h2 {
+  text-transform: uppercase;
+  color: black;
   font-size: 2.5em;
   margin-bottom: 20px;
 }
-/* line 79, ../../../../scss/theme/2015/sqli/specifics_slides.scss */
+/* line 100, ../../../../scss/theme/2015/sqli/specifics_slides.scss */
 .reveal .slides section.who-am-i h3 {
+  color: #da181a;
   font-size: 1.5em;
   margin-bottom: 20px;
 }
-/* line 84, ../../../../scss/theme/2015/sqli/specifics_slides.scss */
+/* line 106, ../../../../scss/theme/2015/sqli/specifics_slides.scss */
 .reveal .slides section.who-am-i img[alt*=avatar] {
   position: absolute;
   left: 100px;
@@ -176,33 +197,33 @@ table.rows {
   -webkit-box-shadow: #CCCCCC 2px 2px 2px 3px;
   box-shadow: #CCCCCC 2px 2px 2px 3px;
 }
-/* line 93, ../../../../scss/theme/2015/sqli/specifics_slides.scss */
+/* line 115, ../../../../scss/theme/2015/sqli/specifics_slides.scss */
 .reveal .slides section.who-am-i img[alt*=company_logo] {
   position: absolute;
   top: 480px;
   left: 300px;
   width: 150px;
 }
-/* line 100, ../../../../scss/theme/2015/sqli/specifics_slides.scss */
+/* line 122, ../../../../scss/theme/2015/sqli/specifics_slides.scss */
 .reveal .slides section.who-am-i img[alt*=gdg_logo] {
   position: absolute;
   top: 470px;
   right: 600px;
   width: 150px;
 }
-/* line 107, ../../../../scss/theme/2015/sqli/specifics_slides.scss */
+/* line 129, ../../../../scss/theme/2015/sqli/specifics_slides.scss */
 .reveal .slides section.who-am-i .twitter {
   position: absolute;
   top: 490px;
   left: 800px;
 }
-/* line 113, ../../../../scss/theme/2015/sqli/specifics_slides.scss */
+/* line 135, ../../../../scss/theme/2015/sqli/specifics_slides.scss */
 .reveal .slides section.who-am-i .gplus {
   position: absolute;
   top: 550px;
   left: 800px;
 }
-/* line 119, ../../../../scss/theme/2015/sqli/specifics_slides.scss */
+/* line 141, ../../../../scss/theme/2015/sqli/specifics_slides.scss */
 .reveal .slides section.who-am-i .descjf {
   position: absolute;
   color: white;
@@ -212,12 +233,12 @@ table.rows {
   width: -webkit-calc(100% - 350px);
 }
 
-/* line 133, ../../../../scss/theme/2015/sqli/specifics_slides.scss */
+/* line 155, ../../../../scss/theme/2015/sqli/specifics_slides.scss */
 .reveal .slides section.last-slide {
   color: white;
   text-align: center;
 }
-/* line 138, ../../../../scss/theme/2015/sqli/specifics_slides.scss */
+/* line 160, ../../../../scss/theme/2015/sqli/specifics_slides.scss */
 .reveal .slides section.last-slide h1 {
   position: absolute;
   color: white;
@@ -232,58 +253,71 @@ table.rows {
   width: 100%;
   left: 0;
 }
-/* line 151, ../../../../scss/theme/2015/sqli/specifics_slides.scss */
-.reveal .slides section.last-slide h1.presenter {
-  top: 1.5em;
-  height: 2em;
-  line-height: 2em;
-  font-size: 2em;
+/* line 173, ../../../../scss/theme/2015/sqli/specifics_slides.scss */
+.reveal .slides section.last-slide .presenter, .reveal .slides section.last-slide .work-rule, .reveal .slides section.last-slide .topic-title, .reveal .slides section.last-slide .email, .reveal .slides section.last-slide .thank-message {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  left: 0;
+}
+/* line 180, ../../../../scss/theme/2015/sqli/specifics_slides.scss */
+.reveal .slides section.last-slide .presenter {
+  color: #da181a;
+  bottom: calc(22vh - 1em);
+  height: 1.5em;
+  line-height: 1.5em;
+  font-size: 1.5em;
   font-weight: 600;
 }
-/* line 159, ../../../../scss/theme/2015/sqli/specifics_slides.scss */
-.reveal .slides section.last-slide h1.topic-title {
-  top: 0;
+/* line 189, ../../../../scss/theme/2015/sqli/specifics_slides.scss */
+.reveal .slides section.last-slide .topic-title {
+  text-transform: uppercase;
+  bottom: 22vh;
   height: 1.7em;
   font-size: 2em;
   line-height: 1.7em;
   font-weight: 400;
 }
-/* line 168, ../../../../scss/theme/2015/sqli/specifics_slides.scss */
-.reveal .slides section.last-slide h1.work-rule {
-  top: calc(50% + 150px);
+/* line 199, ../../../../scss/theme/2015/sqli/specifics_slides.scss */
+.reveal .slides section.last-slide .work-rule {
+  color: #da181a;
+  bottom: calc(22vh - 5em);
   height: 1em;
   font-size: 1em;
   line-height: 1em;
   font-weight: 400;
 }
-/* line 176, ../../../../scss/theme/2015/sqli/specifics_slides.scss */
-.reveal .slides section.last-slide h1.email {
-  top: calc(50% + 150px + 2em);
+/* line 208, ../../../../scss/theme/2015/sqli/specifics_slides.scss */
+.reveal .slides section.last-slide .email {
+  bottom: calc(22vh - 4em);
   height: 1em;
   font-size: 1em;
   line-height: 1em;
   font-weight: 400;
 }
-/* line 184, ../../../../scss/theme/2015/sqli/specifics_slides.scss */
-.reveal .slides section.last-slide h1.thank-message {
-  bottom: 0em;
+/* line 216, ../../../../scss/theme/2015/sqli/specifics_slides.scss */
+.reveal .slides section.last-slide .thank-message {
+  bottom: calc(22vh - 2em);
   height: 2em;
   font-size: 2em;
   line-height: 2em;
   font-weight: 600;
 }
-/* line 193, ../../../../scss/theme/2015/sqli/specifics_slides.scss */
-.reveal .slides section.last-slide img[alt*=avatar], .reveal .slides section.last-slide img.avatar {
+
+/* line 228, ../../../../scss/theme/2015/sqli/specifics_slides.scss */
+.reveal .slides section.last-slide:before {
+  content: '';
   position: absolute;
-  width: 300px;
-  height: 300px;
-  top: 50%;
+  top: 5vh;
   left: 50%;
-  margin-left: -150px;
-  margin-top: -150px;
+  width: 500px;
+  height: 307px;
+  margin-left: -250px;
+  background: url(assets/images/logo.png);
+  background-size: 500px 307px;
 }
 
-/* line 206, ../../../../scss/theme/2015/sqli/specifics_slides.scss */
+/* line 243, ../../../../scss/theme/2015/sqli/specifics_slides.scss */
 .reveal .slides section[class*="transition"] h1,
 .reveal .slides section.transition h1,
 .reveal .slides section.transition-white h1,
@@ -300,17 +334,17 @@ table.rows {
   margin-top: -0.7em;
 }
 
-/* line 224, ../../../../scss/theme/2015/sqli/specifics_slides.scss */
+/* line 261, ../../../../scss/theme/2015/sqli/specifics_slides.scss */
 .reveal .slides section.transition-black h1 {
   color: white;
 }
 
-/* line 228, ../../../../scss/theme/2015/sqli/specifics_slides.scss */
+/* line 265, ../../../../scss/theme/2015/sqli/specifics_slides.scss */
 .reveal .slides section.transition h1 {
   background: rgba(255, 255, 255, 0.8);
 }
 
-/* line 232, ../../../../scss/theme/2015/sqli/specifics_slides.scss */
+/* line 269, ../../../../scss/theme/2015/sqli/specifics_slides.scss */
 .reveal .slides section[class*="transition"] h1:after,
 .reveal .slides section.transition h1:after,
 .reveal .slides section.transition-white h1:after,
@@ -324,12 +358,12 @@ table.rows {
   background: #da181a;
 }
 
-/* line 245, ../../../../scss/theme/2015/sqli/specifics_slides.scss */
+/* line 282, ../../../../scss/theme/2015/sqli/specifics_slides.scss */
 .reveal .slides section.transition-black h1:after {
   background: white;
 }
 
-/* line 250, ../../../../scss/theme/2015/sqli/specifics_slides.scss */
+/* line 287, ../../../../scss/theme/2015/sqli/specifics_slides.scss */
 .reveal .slides section.transition-white img[alt*=icon],
 .reveal .slides section.transition-black img[alt*=icon],
 .reveal .slides section.transition-white img.icon,
@@ -425,35 +459,45 @@ footer.sqli-footer:after {
 /*
 * Commons Slides
 */
-/* line 110, ../../../../scss/theme/2015/sqli/sqli.scss */
-.reveal .slides section:not(.first-slide):not(.who-am-i):not([data-background]):not([class*="transition"]):not(.transition):not(.transition-white):not(.transition-black) {
+/* line 108, ../../../../scss/theme/2015/sqli/sqli.scss */
+.reveal .slides section {
   position: absolute;
   height: calc(100% - 60px);
   height: -webkit-calc(100% - 60px);
-  text-align: left;
   width: calc(100% - 40px - 40px);
   padding: 20px 40px 45px 40px;
   z-index: -2;
 }
-/* line 120, ../../../../scss/theme/2015/sqli/sqli.scss */
+
+/* line 117, ../../../../scss/theme/2015/sqli/sqli.scss */
+.reveal .slides section:not(.first-slide):not(.who-am-i):not([data-background]):not([class*="transition"]):not(.transition):not(.transition-white):not(.transition-black) {
+  /*position:absolute;
+  height:calc(100% - 60px);
+  height:-webkit-calc(100% - 60px);*/
+  text-align: left;
+  /*width: calc(100% - 40px - 40px);
+  padding:$margin-section $margin-lr $footer-height $margin-lr;  
+  z-index: -2;*/
+}
+/* line 128, ../../../../scss/theme/2015/sqli/sqli.scss */
 .reveal .slides section:not(.first-slide):not(.who-am-i):not([data-background]):not([class*="transition"]):not(.transition):not(.transition-white):not(.transition-black) h1, .reveal .slides section:not(.first-slide):not(.who-am-i):not([data-background]):not([class*="transition"]):not(.transition):not(.transition-white):not(.transition-black) h2 {
   text-transform: uppercase;
   position: relative;
   color: black;
   font-size: 1.5em;
 }
-/* line 127, ../../../../scss/theme/2015/sqli/sqli.scss */
+/* line 135, ../../../../scss/theme/2015/sqli/sqli.scss */
 .reveal .slides section:not(.first-slide):not(.who-am-i):not([data-background]):not([class*="transition"]):not(.transition):not(.transition-white):not(.transition-black) h1, .reveal .slides section:not(.first-slide):not(.who-am-i):not([data-background]):not([class*="transition"]):not(.transition):not(.transition-white):not(.transition-black) h2, .reveal .slides section:not(.first-slide):not(.who-am-i):not([data-background]):not([class*="transition"]):not(.transition):not(.transition-white):not(.transition-black) h3 {
   margin-bottom: 50px;
   text-align: left;
 }
-/* line 132, ../../../../scss/theme/2015/sqli/sqli.scss */
+/* line 140, ../../../../scss/theme/2015/sqli/sqli.scss */
 .reveal .slides section:not(.first-slide):not(.who-am-i):not([data-background]):not([class*="transition"]):not(.transition):not(.transition-white):not(.transition-black) h1 ~ h2, .reveal .slides section:not(.first-slide):not(.who-am-i):not([data-background]):not([class*="transition"]):not(.transition):not(.transition-white):not(.transition-black) h2 ~ h3, .reveal .slides section:not(.first-slide):not(.who-am-i):not([data-background]):not([class*="transition"]):not(.transition):not(.transition-white):not(.transition-black) h1 ~ h3 {
   margin-top: -30px;
   text-transform: uppercase;
   color: #da181a;
 }
-/* line 138, ../../../../scss/theme/2015/sqli/sqli.scss */
+/* line 146, ../../../../scss/theme/2015/sqli/sqli.scss */
 .reveal .slides section:not(.first-slide):not(.who-am-i):not([data-background]):not([class*="transition"]):not(.transition):not(.transition-white):not(.transition-black) h1:before, .reveal .slides section:not(.first-slide):not(.who-am-i):not([data-background]):not([class*="transition"]):not(.transition):not(.transition-white):not(.transition-black) h2:before {
   content: '';
   position: absolute;
@@ -467,14 +511,14 @@ footer.sqli-footer:after {
 /*
 * Titles Management  and Spaces
 */
-/* line 162, ../../../../scss/theme/2015/sqli/sqli.scss */
+/* line 170, ../../../../scss/theme/2015/sqli/sqli.scss */
 .reveal .slides > section:not(.first-slide):not(.who-am-i):not(.transition):not(.transition-white):not(.transition-black)
 h1 ~ :not(h2), .reveal .slides > section:not(.first-slide):not(.who-am-i):not(.transition):not(.transition-white):not(.transition-black)
 h2 ~ :not(h3), .reveal .slides > section > section:not(.first-slide):not(.who-am-i):not(.transition):not(.transition-white):not(.transition-black) h1 ~ :not(h2), .reveal .slides > section > section:not(.first-slide):not(.who-am-i):not(.transition):not(.transition-white):not(.transition-black) h2 ~ :not(h3) {
   margin-top: 30px;
 }
 
-/* line 170, ../../../../scss/theme/2015/sqli/sqli.scss */
+/* line 178, ../../../../scss/theme/2015/sqli/sqli.scss */
 ul {
   margin: 10px 10px;
 }
@@ -484,14 +528,14 @@ ul {
  Citations
 
 */
-/* line 184, ../../../../scss/theme/2015/sqli/sqli.scss */
+/* line 192, ../../../../scss/theme/2015/sqli/sqli.scss */
 .reveal .slides section blockquote {
   padding: 0 0 0 15px;
   margin: 2em 2em 0 2em;
   border-left: 5px solid #DA0E1A;
   font-size: 0.7em;
 }
-/* line 191, ../../../../scss/theme/2015/sqli/sqli.scss */
+/* line 199, ../../../../scss/theme/2015/sqli/sqli.scss */
 .reveal .slides section blockquote:before {
   color: #DA0E1A;
   content: '\201C';
@@ -500,7 +544,7 @@ ul {
   float: left;
   margin-left: -.9em;
 }
-/* line 200, ../../../../scss/theme/2015/sqli/sqli.scss */
+/* line 208, ../../../../scss/theme/2015/sqli/sqli.scss */
 .reveal .slides section section blockquote p {
   color: #1D2326;
   font-weight: 700;
@@ -510,16 +554,16 @@ ul {
   font-size: 3.5em;
   font-weight: normal;
 }
-/* line 210, ../../../../scss/theme/2015/sqli/sqli.scss */
+/* line 218, ../../../../scss/theme/2015/sqli/sqli.scss */
 .reveal .slides section blockquote p em {
   font-style: italic;
 }
-/* line 214, ../../../../scss/theme/2015/sqli/sqli.scss */
+/* line 222, ../../../../scss/theme/2015/sqli/sqli.scss */
 .reveal .slides section blockquote p:last-of-type {
   margin-bottom: 0;
   padding-bottom: 0.1em;
 }
-/* line 219, ../../../../scss/theme/2015/sqli/sqli.scss */
+/* line 227, ../../../../scss/theme/2015/sqli/sqli.scss */
 .reveal .slides section blockquote cite {
   font-size: 1.5em;
   display: block;
@@ -528,7 +572,7 @@ ul {
   font-style: normal;
   margin-top: .25em;
 }
-/* line 228, ../../../../scss/theme/2015/sqli/sqli.scss */
+/* line 236, ../../../../scss/theme/2015/sqli/sqli.scss */
 .reveal .slides section blockquote cite:before {
   content: '\2014 \00A0';
 }
@@ -536,12 +580,12 @@ ul {
 /*
   Listes
 */
-/* line 236, ../../../../scss/theme/2015/sqli/sqli.scss */
+/* line 244, ../../../../scss/theme/2015/sqli/sqli.scss */
 li {
   margin-top: 0.7em;
 }
 
-/* line 240, ../../../../scss/theme/2015/sqli/sqli.scss */
+/* line 248, ../../../../scss/theme/2015/sqli/sqli.scss */
 .reveal .slides section ul > li,
 .reveal .slides section ul > li > ul > li,
 .reveal .slides section ul > li,
@@ -549,7 +593,7 @@ li {
   list-style: none;
 }
 
-/* line 247, ../../../../scss/theme/2015/sqli/sqli.scss */
+/* line 255, ../../../../scss/theme/2015/sqli/sqli.scss */
 .reveal .slides section ul > li:before,
 .reveal .slides section div > ul > li:before,
 .reveal .slides section ul > li:before {
@@ -564,7 +608,7 @@ li {
   font-size: 2em;
 }
 
-/* line 261, ../../../../scss/theme/2015/sqli/sqli.scss */
+/* line 269, ../../../../scss/theme/2015/sqli/sqli.scss */
 .reveal .slides section ul > li > ul > li:before,
 .reveal .slides section ul > li > ul > li:before {
   content: " ";
@@ -584,23 +628,23 @@ li {
 Code
 
 */
-/* line 282, ../../../../scss/theme/2015/sqli/sqli.scss */
+/* line 290, ../../../../scss/theme/2015/sqli/sqli.scss */
 .reveal .slides section pre:not(.literal) code {
   font-family: "Courier New", monospace;
-  font-size: 1em;
-  line-height: 1.1em;
+  font-size: 0.7em;
+  line-height: 0.8em;
 }
 
-/* line 289, ../../../../scss/theme/2015/sqli/sqli.scss */
+/* line 297, ../../../../scss/theme/2015/sqli/sqli.scss */
 .reveal .slides section p.big-code ~ pre:not(.literal) code {
-  font-size: 2em;
-  line-height: 2.1em;
+  font-size: 1em;
+  line-height: 1.1em;
 }
 
 /*
 * Links
 */
-/* line 300, ../../../../scss/theme/2015/sqli/sqli.scss */
+/* line 308, ../../../../scss/theme/2015/sqli/sqli.scss */
 .reveal a:not(.image) {
   color: #da181a;
   text-decoration: none;
@@ -611,20 +655,20 @@ Code
   transition: color .15s ease;
 }
 
-/* line 310, ../../../../scss/theme/2015/sqli/sqli.scss */
+/* line 318, ../../../../scss/theme/2015/sqli/sqli.scss */
 .reveal a:not(.image):hover {
   color: #da181a;
   text-shadow: none;
   border: none;
 }
 
-/* line 315, ../../../../scss/theme/2015/sqli/sqli.scss */
+/* line 323, ../../../../scss/theme/2015/sqli/sqli.scss */
 .reveal .roll span:after {
   color: white;
   background: #da181a;
 }
 
-/* line 320, ../../../../scss/theme/2015/sqli/sqli.scss */
+/* line 328, ../../../../scss/theme/2015/sqli/sqli.scss */
 .reveal .slides .toc a {
   color: inherit;
 }

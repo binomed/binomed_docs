@@ -14,7 +14,17 @@ var SQLI_THEME = SQLI_THEME || function(){
           if(script.src && script.src.match(/sqli_theme_addons\.js$/))
           { 
             var path = script.src;
-            return path.substring(0, path.indexOf('js/sqli_theme_addons')); 
+            var parser = document.createElement('a');
+			parser.href = path;
+			 
+			parser.protocol; // => "http:"
+			parser.hostname; // => "example.com"
+			parser.port;     // => "3000"
+			parser.pathname; // => "/pathname/"
+			parser.search;   // => "?search=test"
+			parser.hash;     // => "#hash"
+			parser.host;     // => "example.com:3000"
+            return parser.pathname.substring(0, parser.pathname.indexOf('js/sqli_theme_addons')); 
           }
         }
       return "";
@@ -110,10 +120,15 @@ var SQLI_THEME = SQLI_THEME || function(){
 
 			for (var i = 0; i < queryElementList.length; i++){
 				var element = queryElementList[i];
-				element.setAttribute('data-background',path+'/assets/images/'+map[key]);		
+				element.setAttribute('data-background',path+'assets/images/'+map[key]);		
 				element.setAttribute('data-state','hidefooter');		
 			}			
 		}
+		var dataLoadElementList = document.querySelectorAll('.reveal .slides section div[data-loaded]');
+		for (var i = 0; i < dataLoadElementList.length; i++){
+				var element = dataLoadElementList[i];
+				element.removeAttribute('data-loaded');		
+			}			
 
 	}
 

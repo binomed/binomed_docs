@@ -11,11 +11,24 @@
 }
 
 
-.reveal .slides>section , .reveal .slides>section>section{
+.reveal .slides section{
 
+/*	height:100%;*/
+	margin:0;
+	padding:0;
 
     h1, h2{
         font-size: 1.5em;
     }
    
+}
+
+.reveal .slides>section:not(.first-slide):not(.who-am-i):not(.transition):not(.transition-white):not(.transition-black)
+, .reveal .slides>section>section:not(.first-slide):not(.who-am-i):not(.transition):not(.transition-white):not(.transition-black){
+  
+
+  h1~:not(h2), h2~:not(h3){
+    margin-top: 0;
+  }
+
 }
