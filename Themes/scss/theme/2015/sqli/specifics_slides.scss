@@ -4,8 +4,8 @@
 @import "compass/css3/text-shadow";
 
 
-$width-triangle : 250px;
-$width-triangle-bas : 100px;
+$width-triangle : 150px;
+$width-triangle-bas : 75px;
 
 
 .reveal .backgrounds .slide-background.first-slide:before{
@@ -15,6 +15,7 @@ $width-triangle-bas : 100px;
     left: calc(50vw - #{$width-triangle});
     left: -webkit-calc(50vw - #{$width-triangle});
     background-image: url(assets/images/triangle_haut.png);
+    background-size: 2 * $width-triangle $width-triangle;
     width: 2 * $width-triangle;
     height: $width-triangle;    
     /*
@@ -43,8 +44,8 @@ $width-triangle-bas : 100px;
 .reveal .slides section.first-slide{
 	height: 300px;
     text-align: center;
-    padding-top: calc(#{$width-triangle} + 40px);
-	padding-top: -webkit-calc(#{$width-triangle} + 40px);
+    padding-top: calc(#{$width-triangle} + 100px);
+	padding-top: -webkit-calc(#{$width-triangle} + 100px);
 	color: $white;
     text-transform: uppercase;
  
