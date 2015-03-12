@@ -2,7 +2,7 @@
 @font-face {
   font-family: "DINNextLTPro-MediumCond";
   src: url("fonts/DINNextLTPro-MediumCond.eot");
-  src: local("☺"), url("fonts/DINNextLTPro-MediumCond.woff") format("woff"), url("fonts/DINNextLTPro-MediumCond.ttf") format("truetype");
+  src: local("Ôÿ║"), url("fonts/DINNextLTPro-MediumCond.woff") format("woff"), url("fonts/DINNextLTPro-MediumCond.ttf") format("truetype");
 }
 @font-face {
   font-family: "DIN-Next-LT-Pro-Condensed";
@@ -604,7 +604,7 @@ li {
   max-width: 0px;
   max-height: 0px;
   left: -0.7em;
-  top: -0.1em;
+  top: -0.25em;
   color: #DA0E1A;
   font-size: 2em;
 }
