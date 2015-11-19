@@ -583,7 +583,7 @@ ul {
 */
 /* line 244, ../../../../scss/theme/2015/sqli/sqli.scss */
 li {
-  margin-top: 0.7em;
+  /* margin-top: 0.7em; */
 }
 
 /* line 248, ../../../../scss/theme/2015/sqli/sqli.scss */
@@ -591,22 +591,22 @@ li {
 .reveal .slides section ul > li > ul > li,
 .reveal .slides section ul > li,
 .reveal .slides section ul > li > ul > li {
-  list-style: none;
+  /* list-style: none; */
 }
 
 /* line 255, ../../../../scss/theme/2015/sqli/sqli.scss */
 .reveal .slides section ul > li:before,
 .reveal .slides section div > ul > li:before,
 .reveal .slides section ul > li:before {
-  content: '+';
-  display: block;
-  position: relative;
-  max-width: 0px;
-  max-height: 0px;
-  left: -0.7em;
-  top: -0.25em;
-  color: #DA0E1A;
-  font-size: 2em;
+  /* content: '+'; */
+  /* display: block; */
+  /* position: relative; */
+  /* max-width: 0px; */
+  /* max-height: 0px; */
+  /* left: -0.7em; */
+  /* top: -0.25em; */
+  /* color: #DA0E1A; */
+  /* font-size: 2em; */
 }
 
 /* line 269, ../../../../scss/theme/2015/sqli/sqli.scss */
