@@ -1,0 +1,103 @@
+/* line 25, theme/2015/binomed/colors.scss */
+.binomed-red {
+  color: #e74c3c;
+}
+
+/* line 30, theme/2015/binomed/colors.scss */
+.binomed-light-grey {
+  color: #ddd;
+}
+
+/* line 34, theme/2015/binomed/colors.scss */
+.binomed-black {
+  color: #333;
+}
+
+/* line 38, theme/2015/binomed/colors.scss */
+.binomed-dark-grey {
+  color: #3d4349;
+}
+
+/* line 42, theme/2015/binomed/colors.scss */
+.binomed-medium-grey {
+  color: #817c7c;
+}
+
+/* line 5, ../scss/prez/style.scss */
+img[alt*=logo] {
+  width: 50px;
+}
+
+/* line 11, ../scss/prez/style.scss */
+img[alt*=sommaire] {
+  height: 60px;
+}
+
+/* line 18, ../scss/prez/style.scss */
+div.no-bullet ~ ul {
+  list-style-type: none;
+}
+/* line 21, ../scss/prez/style.scss */
+div.no-bullet ~ ul img {
+  margin: 0;
+}
+/* line 25, ../scss/prez/style.scss */
+div.no-bullet ~ ul li {
+  line-height: 60px;
+}
+
+/* line 30, ../scss/prez/style.scss */
+div.padding ~ * {
+  padding-left: 50px;
+}
+
+/* line 35, ../scss/prez/style.scss */
+p.surround {
+  font-weight: bold;
+  font-size: 1em;
+  color: #DA0E1A;
+  text-align: left;
+}
+
+/* line 42, ../scss/prez/style.scss */
+table.table_version {
+  position: absolute;
+  top: 4em;
+}
+
+/* line 47, ../scss/prez/style.scss */
+table.table_version td, table.table_version th {
+  font-size: 14px;
+}
+
+/* line 51, ../scss/prez/style.scss */
+.img_version {
+  margin-top: 7em;
+}
+
+/* line 56, ../scss/prez/style.scss */
+.copyright.black {
+  color: grey;
+  bottom: 20px;
+}
+
+/* line 61, ../scss/prez/style.scss */
+div.copyright {
+  font-size: 0.6em;
+  color: #817c7c;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+/* line 69, ../scss/prez/style.scss */
+div.copyright.white {
+  color: white;
+}
+
+/* line 73, ../scss/prez/style.scss */
+div.copyright:before {
+  content: "@";
+}
+
+/*# sourceMappingURL=style.css.map */

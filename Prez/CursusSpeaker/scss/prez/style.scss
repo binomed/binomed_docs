@@ -1,0 +1,75 @@
+@import "compass";
+@import "compass/css3/box-shadow";
+@import "../../css/theme/2015/binomed/colors";
+
+img[alt*=logo]{
+    width:50px;   
+}
+
+$sommaire-img-height : 60px;
+
+img[alt*=sommaire]{
+  height: $sommaire-img-height;
+}
+
+
+
+
+div.no-bullet~ul{
+  list-style-type: none;
+
+  img{
+    margin:0; 
+  }
+
+  li{
+    line-height: $sommaire-img-height;
+  }
+}
+
+div.padding~*{
+  padding-left: 50px;
+}
+
+
+p.surround{
+font-weight: bold;
+font-size: 1em;
+color: #DA0E1A;
+text-align: left;
+}
+
+table.table_version{
+  position: absolute;
+  top: 4em;
+}
+
+table.table_version td, table.table_version th {
+  font-size: 14px;
+}
+
+.img_version{
+  margin-top:7em;
+}
+
+
+.copyright.black{
+  color: grey;
+  bottom: 20px;
+}
+
+div.copyright{
+    font-size: 0.6em;
+    color: $medium-grey ;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+div.copyright.white{
+  color: $white;
+}
+
+div.copyright:before{
+    content: '@'
+}
