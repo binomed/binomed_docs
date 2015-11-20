@@ -58,7 +58,7 @@ IoT Manager, Senior innovation developper & Community Manager
 
 ##==##
 
-<!-- .slide: data-background="/assets/images/ca_clown.jpg" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/ca_clown.jpg" data-state="hidefooter" class="transition" -->
 
 # Combattons nos peurs
 
@@ -69,7 +69,7 @@ IoT Manager, Senior innovation developper & Community Manager
 
 ## On a tous peur de ça !
 
-![](/assets/images/imposteur.gif) <!-- .element: class="center h-500" -->
+![](assets/images/imposteur.gif) <!-- .element: class="center h-500" -->
 
 
 Notes:
@@ -81,7 +81,7 @@ ceci dit il assure et fait croire à tout le monde qu'il traduit
 ## Mais en réalité on est ça  
 
 
-![](/assets/images/calimerisme.jpg) <!-- .element: class="center h-500" -->
+![](assets/images/calimerisme.jpg) <!-- .element: class="center h-500" -->
 
 Notes: 
 Des personnes qui n'osent pas 
@@ -90,13 +90,13 @@ Des personnes qui n'osent pas
 
 ## Pourtant on aime partager
 
-![](/assets/images/partage-de-connaissances.jpg) <!-- .element: class="float-let w-500" -->
+![](assets/images/partage-de-connaissances.jpg) <!-- .element: class="float-let w-500" -->
 
-![](/assets/images/au-secours-enfant-mord.jpg) <!-- .element: class="float-let w-500" -->
+![](assets/images/au-secours-enfant-mord.jpg) <!-- .element: class="float-let w-500" -->
 
 ##==##
 
-<!-- .slide: data-background="/assets/images/o-PUBLIC-SPEAKING-facebook.jpg" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/o-PUBLIC-SPEAKING-facebook.jpg" data-state="hidefooter" class="transition" -->
 
 # Soyons speakers
 
@@ -106,10 +106,10 @@ Des personnes qui n'osent pas
 
 ## Les différents niveau du speaker
 
-1. ![](/assets/images/Timide.jpg) <!-- .element: class="h-100" --> Le Débutant
-2. ![](/assets/images/francky_trichet.jpg) <!-- .element: class="h-100" --> Le Local
-3. ![](/assets/images/ft-l-verou.jpg) <!-- .element: class="h-100" --> Le National
-4. ![](/assets/images/musk.jpeg) <!-- .element: class="h-100" --> La Rockstar
+1. ![](assets/images/Timide.jpg) <!-- .element: class="h-100" --> Le Débutant
+2. ![](assets/images/francky_trichet.jpg) <!-- .element: class="h-100" --> Le Local
+3. ![](assets/images/ft-l-verou.jpg) <!-- .element: class="h-100" --> Le National
+4. ![](assets/images/musk.jpeg) <!-- .element: class="h-100" --> La Rockstar
 
 Notes:
 Debutant = Dans sa boite
@@ -131,7 +131,7 @@ Quelle attente ?
 
 ##==##
 
-<!-- .slide: data-background="/assets/images/notebook-581128_1280.jpg" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/notebook-581128_1280.jpg" data-state="hidefooter" class="transition" -->
 
 # Comment trouver son sujet ?
 
@@ -150,7 +150,7 @@ Quelle attente ?
 
 ## Je fais quoi ?
 
-![](/assets/images/2000px-Gartner_Hype_Cycle.svg.png) <!-- .element: class="w-800 center" -->
+![](assets/images/2000px-Gartner_Hype_Cycle.svg.png) <!-- .element: class="w-800 center" -->
 
 ##==##
 
@@ -168,14 +168,14 @@ il en existe une multitude :
 
 ## Trouver son copain / copine
 
-![](/assets/images/real_chatons_amis.jpg) <!-- .element: class="w-800 center" -->
+![](assets/images/real_chatons_amis.jpg) <!-- .element: class="w-800 center" -->
 
 Notes:
 Je voulais mettre une image de chat :p
 
 ##==##
 
-<!-- .slide: data-background="/assets/images/girl_power_poster_vintage_quote_strength_ultra_3840x2160_hd-wallpaper-1805624.jpg" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/girl_power_poster_vintage_quote_strength_ultra_3840x2160_hd-wallpaper-1805624.jpg" data-state="hidefooter" class="transition" -->
 
 # On va bosser !
 
