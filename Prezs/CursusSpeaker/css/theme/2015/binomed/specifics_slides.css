@@ -1,0 +1,255 @@
+/* line 25, ../../../../scss/theme/2015/binomed/colors.scss */
+.binomed-red {
+  color: #e74c3c;
+}
+
+/* line 30, ../../../../scss/theme/2015/binomed/colors.scss */
+.binomed-light-grey {
+  color: #ddd;
+}
+
+/* line 34, ../../../../scss/theme/2015/binomed/colors.scss */
+.binomed-black {
+  color: #333;
+}
+
+/* line 38, ../../../../scss/theme/2015/binomed/colors.scss */
+.binomed-dark-grey {
+  color: #3d4349;
+}
+
+/* line 42, ../../../../scss/theme/2015/binomed/colors.scss */
+.binomed-medium-grey {
+  color: #817c7c;
+}
+
+/* line 17, ../../../../scss/theme/2015/binomed/specifics_slides.scss */
+.reveal .slides section.first-slide {
+  position: absolute;
+  color: #e74c3c;
+  background: #ddd;
+}
+/* line 22, ../../../../scss/theme/2015/binomed/specifics_slides.scss */
+.reveal .slides section.first-slide h1 {
+  width: 100%;
+  height: 3em;
+  line-height: 3em;
+  background: #3d4349;
+  text-align: left;
+  padding-left: 20px;
+  color: white;
+  box-shadow: 2px 4px 5px rgba(3, 3, 3, 0.2);
+  margin-top: 150px;
+  font-size: 2em;
+  font-weight: 800;
+  margin-bottom: 40px;
+}
+
+/* line 32, ../../../../scss/theme/2015/binomed/specifics_slides.scss */
+.reveal .slides section.who-am-i {
+  color: white;
+  text-align: left;
+}
+/* line 37, ../../../../scss/theme/2015/binomed/specifics_slides.scss */
+.reveal .slides section.who-am-i h2 {
+  width: 100%;
+  height: 3em;
+  line-height: 3em;
+  background: #3d4349;
+  text-align: left;
+  padding-left: 20px;
+  color: white;
+  box-shadow: 2px 4px 5px rgba(3, 3, 3, 0.2);
+  line-height: 2em;
+  height: 2em;
+  font-size: 2em;
+  margin-top: -20px;
+  margin-bottom: 20px;
+}
+/* line 46, ../../../../scss/theme/2015/binomed/specifics_slides.scss */
+.reveal .slides section.who-am-i h3 {
+  position: absolute;
+  left: 350px;
+  top: 250px;
+  font-size: 1.2em;
+  color: #817c7c;
+  margin-bottom: 20px;
+}
+/* line 55, ../../../../scss/theme/2015/binomed/specifics_slides.scss */
+.reveal .slides section.who-am-i img[alt*=avatar] {
+  position: absolute;
+  left: 100px;
+  top: 200px;
+  width: 200px;
+  margin-top: 20px;
+  -moz-box-shadow: #CCCCCC 2px 2px 2px 3px;
+  -webkit-box-shadow: #CCCCCC 2px 2px 2px 3px;
+  box-shadow: #CCCCCC 2px 2px 2px 3px;
+}
+/* line 64, ../../../../scss/theme/2015/binomed/specifics_slides.scss */
+.reveal .slides section.who-am-i img[alt*=company_logo] {
+  position: absolute;
+  top: 480px;
+  left: 300px;
+  width: 150px;
+}
+/* line 71, ../../../../scss/theme/2015/binomed/specifics_slides.scss */
+.reveal .slides section.who-am-i img[alt*=gdg_logo] {
+  position: absolute;
+  top: 470px;
+  right: 600px;
+  width: 150px;
+}
+/* line 78, ../../../../scss/theme/2015/binomed/specifics_slides.scss */
+.reveal .slides section.who-am-i .twitter {
+  position: absolute;
+  top: 490px;
+  left: 800px;
+}
+/* line 84, ../../../../scss/theme/2015/binomed/specifics_slides.scss */
+.reveal .slides section.who-am-i .gplus {
+  position: absolute;
+  top: 550px;
+  left: 800px;
+}
+/* line 90, ../../../../scss/theme/2015/binomed/specifics_slides.scss */
+.reveal .slides section.who-am-i .descjf {
+  position: absolute;
+  color: #333;
+  left: 350px;
+  top: 320px;
+  width: calc(100% - 350px);
+  width: -webkit-calc(100% - 350px);
+}
+
+/* line 103, ../../../../scss/theme/2015/binomed/specifics_slides.scss */
+.reveal .slides section.last-slide {
+  text-align: center;
+}
+/* line 108, ../../../../scss/theme/2015/binomed/specifics_slides.scss */
+.reveal .slides section.last-slide .presenter {
+  color: #817c7c;
+  top: 1.5em;
+  height: 2em;
+  line-height: 2em;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+/* line 117, ../../../../scss/theme/2015/binomed/specifics_slides.scss */
+.reveal .slides section.last-slide .topic-title {
+  top: 0;
+  height: 1.7em;
+  font-size: 2em;
+  line-height: 1.7em;
+  font-weight: 800;
+}
+/* line 126, ../../../../scss/theme/2015/binomed/specifics_slides.scss */
+.reveal .slides section.last-slide .work-rule {
+  top: calc(50% + 150px);
+  height: 1em;
+  font-size: 1em;
+  line-height: 1em;
+  font-weight: 400;
+}
+/* line 134, ../../../../scss/theme/2015/binomed/specifics_slides.scss */
+.reveal .slides section.last-slide .email {
+  top: calc(50% + 150px + 2em);
+  height: 1em;
+  font-size: 1em;
+  line-height: 1em;
+  font-weight: 400;
+}
+/* line 142, ../../../../scss/theme/2015/binomed/specifics_slides.scss */
+.reveal .slides section.last-slide .thank-message {
+  bottom: 0em;
+  height: 2em;
+  font-size: 2em;
+  line-height: 2em;
+  font-weight: 600;
+}
+/* line 151, ../../../../scss/theme/2015/binomed/specifics_slides.scss */
+.reveal .slides section.last-slide img[alt*=avatar], .reveal .slides section.last-slide img.avatar {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  top: 50%;
+  left: 50%;
+  margin-left: -150px;
+  margin-top: -150px;
+}
+
+/* line 164, ../../../../scss/theme/2015/binomed/specifics_slides.scss */
+.reveal .slides section[data-background],
+.reveal .slides section[class*="transition"],
+.reveal .slides section.transition,
+.reveal .slides section.transition-white,
+.reveal .slides section.transition-black {
+  background: transparent;
+}
+
+/*.reveal .slides section[class*="transition"] h1,
+.reveal .slides section.transition h1,
+.reveal .slides section.transition-white h1,
+.reveal .slides section.transition-black h1{
+
+	position: absolute;
+	width: 100%;
+	height: 1.4em;
+	font-size: 2.8em;
+	line-height: 1.4em;
+	padding-left: 20px;
+	background: rgba(0,0,0,0.7);
+	color: $red;
+	text-align: left;
+	top: 10%;
+
+}*/
+/* line 196, ../../../../scss/theme/2015/binomed/specifics_slides.scss */
+.reveal .slides section[data-background] h1,
+.reveal .slides section[class*="transition"]
+.reveal .slides section.transition h1,
+.reveal .slides section.transition-white h1,
+.reveal .slides section.transition-black h1 {
+  width: 100%;
+  height: 3em;
+  line-height: 3em;
+  background: #3d4349;
+  text-align: left;
+  padding-left: 20px;
+  color: white;
+  box-shadow: 2px 4px 5px rgba(3, 3, 3, 0.2);
+  text-align: left;
+  padding-left: 10px;
+  font-size: 1.2em;
+}
+
+/* line 204, ../../../../scss/theme/2015/binomed/specifics_slides.scss */
+.reveal .slides section.transition-black h1 {
+  background: #ddd;
+  color: #333;
+}
+
+/* line 210, ../../../../scss/theme/2015/binomed/specifics_slides.scss */
+.reveal .slides section[data-background].transition h1 {
+  background: rgba(61, 67, 73, 0.7);
+}
+
+/*.reveal .slides section.transition-white h1,
+.reveal .slides section.transition-black h1{
+	//border-left : 5px solid $dark-grey;
+    @include bandeau();
+    
+}*/
+/* line 222, ../../../../scss/theme/2015/binomed/specifics_slides.scss */
+.reveal .slides section.transition-white img[alt*=icon],
+.reveal .slides section.transition-black img[alt*=icon],
+.reveal .slides section.transition-white img.icon,
+.reveal .slides section.transition-black img.icon {
+  position: absolute;
+  top: 2em;
+  right: 1em;
+  max-height: 200px;
+  max-width: 200px;
+}
+
+/*# sourceMappingURL=specifics_slides.css.map */
