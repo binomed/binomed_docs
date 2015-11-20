@@ -170,7 +170,7 @@ il en existe une multitude :
 
 ![](assets/images/real_chatons_amis.jpg) <!-- .element: class="w-800 center" -->
 
-Notes:
+Notes: 
 Je voulais mettre une image de chat :p
 
 ##==##
