@@ -105,4 +105,248 @@ div.copyright:before {
   content: "@";
 }
 
+/*
+* 
+* MIXINS
+**/
+/* line 85, ../scss/prez/style.scss */
+section img[alt*=h-50], section .h-50, section .h-50 + * {
+  max-height: 50px;
+  height: inherit;
+}
+
+/* line 85, ../scss/prez/style.scss */
+section img[alt*=w-50], section .w-50, section .w-50 + * {
+  max-width: 50px;
+  width: inherit;
+}
+
+/* line 85, ../scss/prez/style.scss */
+section img[alt*=h-100], section .h-100, section .h-100 + * {
+  max-height: 100px;
+  height: inherit;
+}
+
+/* line 85, ../scss/prez/style.scss */
+section img[alt*=w-100], section .w-100, section .w-100 + * {
+  max-width: 100px;
+  width: inherit;
+}
+
+/* line 85, ../scss/prez/style.scss */
+section img[alt*=h-150], section .h-150, section .h-150 + * {
+  max-height: 150px;
+  height: inherit;
+}
+
+/* line 85, ../scss/prez/style.scss */
+section img[alt*=w-150], section .w-150, section .w-150 + * {
+  max-width: 150px;
+  width: inherit;
+}
+
+/* line 85, ../scss/prez/style.scss */
+section img[alt*=h-200], section .h-200, section .h-200 + * {
+  max-height: 200px;
+  height: inherit;
+}
+
+/* line 85, ../scss/prez/style.scss */
+section img[alt*=w-200], section .w-200, section .w-200 + * {
+  max-width: 200px;
+  width: inherit;
+}
+
+/* line 85, ../scss/prez/style.scss */
+section img[alt*=h-250], section .h-250, section .h-250 + * {
+  max-height: 250px;
+  height: inherit;
+}
+
+/* line 85, ../scss/prez/style.scss */
+section img[alt*=w-250], section .w-250, section .w-250 + * {
+  max-width: 250px;
+  width: inherit;
+}
+
+/* line 85, ../scss/prez/style.scss */
+section img[alt*=h-300], section .h-300, section .h-300 + * {
+  max-height: 300px;
+  height: inherit;
+}
+
+/* line 85, ../scss/prez/style.scss */
+section img[alt*=w-300], section .w-300, section .w-300 + * {
+  max-width: 300px;
+  width: inherit;
+}
+
+/* line 85, ../scss/prez/style.scss */
+section img[alt*=h-350], section .h-350, section .h-350 + * {
+  max-height: 350px;
+  height: inherit;
+}
+
+/* line 85, ../scss/prez/style.scss */
+section img[alt*=w-350], section .w-350, section .w-350 + * {
+  max-width: 350px;
+  width: inherit;
+}
+
+/* line 85, ../scss/prez/style.scss */
+section img[alt*=h-400], section .h-400, section .h-400 + * {
+  max-height: 400px;
+  height: inherit;
+}
+
+/* line 85, ../scss/prez/style.scss */
+section img[alt*=w-400], section .w-400, section .w-400 + * {
+  max-width: 400px;
+  width: inherit;
+}
+
+/* line 85, ../scss/prez/style.scss */
+section img[alt*=h-450], section .h-450, section .h-450 + * {
+  max-height: 450px;
+  height: inherit;
+}
+
+/* line 85, ../scss/prez/style.scss */
+section img[alt*=w-450], section .w-450, section .w-450 + * {
+  max-width: 450px;
+  width: inherit;
+}
+
+/* line 85, ../scss/prez/style.scss */
+section img[alt*=h-500], section .h-500, section .h-500 + * {
+  max-height: 500px;
+  height: inherit;
+}
+
+/* line 85, ../scss/prez/style.scss */
+section img[alt*=w-500], section .w-500, section .w-500 + * {
+  max-width: 500px;
+  width: inherit;
+}
+
+/* line 85, ../scss/prez/style.scss */
+section img[alt*=h-550], section .h-550, section .h-550 + * {
+  max-height: 550px;
+  height: inherit;
+}
+
+/* line 85, ../scss/prez/style.scss */
+section img[alt*=w-550], section .w-550, section .w-550 + * {
+  max-width: 550px;
+  width: inherit;
+}
+
+/* line 85, ../scss/prez/style.scss */
+section img[alt*=h-600], section .h-600, section .h-600 + * {
+  max-height: 600px;
+  height: inherit;
+}
+
+/* line 85, ../scss/prez/style.scss */
+section img[alt*=w-600], section .w-600, section .w-600 + * {
+  max-width: 600px;
+  width: inherit;
+}
+
+/* line 85, ../scss/prez/style.scss */
+section img[alt*=h-650], section .h-650, section .h-650 + * {
+  max-height: 650px;
+  height: inherit;
+}
+
+/* line 85, ../scss/prez/style.scss */
+section img[alt*=w-650], section .w-650, section .w-650 + * {
+  max-width: 650px;
+  width: inherit;
+}
+
+/* line 85, ../scss/prez/style.scss */
+section img[alt*=h-700], section .h-700, section .h-700 + * {
+  max-height: 700px;
+  height: inherit;
+}
+
+/* line 85, ../scss/prez/style.scss */
+section img[alt*=w-700], section .w-700, section .w-700 + * {
+  max-width: 700px;
+  width: inherit;
+}
+
+/* line 85, ../scss/prez/style.scss */
+section img[alt*=h-750], section .h-750, section .h-750 + * {
+  max-height: 750px;
+  height: inherit;
+}
+
+/* line 85, ../scss/prez/style.scss */
+section img[alt*=w-750], section .w-750, section .w-750 + * {
+  max-width: 750px;
+  width: inherit;
+}
+
+/* line 85, ../scss/prez/style.scss */
+section img[alt*=h-800], section .h-800, section .h-800 + * {
+  max-height: 800px;
+  height: inherit;
+}
+
+/* line 85, ../scss/prez/style.scss */
+section img[alt*=w-800], section .w-800, section .w-800 + * {
+  max-width: 800px;
+  width: inherit;
+}
+
+/* line 85, ../scss/prez/style.scss */
+section img[alt*=h-850], section .h-850, section .h-850 + * {
+  max-height: 850px;
+  height: inherit;
+}
+
+/* line 85, ../scss/prez/style.scss */
+section img[alt*=w-850], section .w-850, section .w-850 + * {
+  max-width: 850px;
+  width: inherit;
+}
+
+/* line 85, ../scss/prez/style.scss */
+section img[alt*=h-900], section .h-900, section .h-900 + * {
+  max-height: 900px;
+  height: inherit;
+}
+
+/* line 85, ../scss/prez/style.scss */
+section img[alt*=w-900], section .w-900, section .w-900 + * {
+  max-width: 900px;
+  width: inherit;
+}
+
+/* line 85, ../scss/prez/style.scss */
+section img[alt*=h-950], section .h-950, section .h-950 + * {
+  max-height: 950px;
+  height: inherit;
+}
+
+/* line 85, ../scss/prez/style.scss */
+section img[alt*=w-950], section .w-950, section .w-950 + * {
+  max-width: 950px;
+  width: inherit;
+}
+
+/* line 85, ../scss/prez/style.scss */
+section img[alt*=h-1000], section .h-1000, section .h-1000 + * {
+  max-height: 1000px;
+  height: inherit;
+}
+
+/* line 85, ../scss/prez/style.scss */
+section img[alt*=w-1000], section .w-1000, section .w-1000 + * {
+  max-width: 1000px;
+  width: inherit;
+}
+
 /*# sourceMappingURL=style.css.map */

@@ -8,9 +8,11 @@
 
 ##==##
 
-<!-- .slide: class="transition-white" -->
+<!-- .slide: data-background="/assets/images/o-PUBLIC-SPEAKING-facebook.jpg" data-state="hidefooter" class="transition" -->
 
-# Cursus Speaker ! 
+# Cursus speakers - Session 2
+
+<div class="copyright">huffpost</div>
 
 ##==##
 
@@ -77,12 +79,12 @@ et Surement d'autres que je connais pas
 ## Confs nationnales
 ### Accessibles
 
-![](/assets/images/agiletour2015.png) <!-- .element: class="w-200 float-left" -->
-![](/assets/images/breizhcamp.svg) <!-- .element: class="w-200 float-left" -->
-![](/assets/images/logo-summercamp.png) <!-- .element: class="w-200 float-left" -->
-![](/assets/images/logo-codeurs-en-seine.png) <!-- .element: class="w-200 float-left" -->
-![](/assets/images/devfest.png) <!-- .element: class="w-200 float-left" -->
-![](/assets/images/rivieraDev.png) <!-- .element: class="w-200 float-left" -->
+![](/assets/images/agiletour2015.png) <!-- .element: class="w-300 h-100 float-left" -->
+![](/assets/images/breizhcamp.svg) <!-- .element: class="w-300 h-100 float-left" -->
+![](/assets/images/logo-summercamp.png) <!-- .element: class="w-300 h-100 float-left" -->
+![](/assets/images/logo-codeurs-en-seine.png) <!-- .element: class="w-300 h-100 float-left" -->
+![](/assets/images/devfest.png) <!-- .element: class="w-300 h-100 float-left" -->
+![](/assets/images/rivieraDev.png) <!-- .element: class="w-300 h-100 float-left" -->
 
 Notes:
 
@@ -91,13 +93,13 @@ Notes:
 ## Confs nationnales
 ### Besoin d'expérience
 
-![](/assets/images/devfest.png) <!-- .element: class="w-200 float-left" -->
-![](/assets/images/bdxio.png) <!-- .element: class="w-200 float-left" -->
-![](/assets/images/logo-parisweb.png) <!-- .element: class="w-200 float-left" -->
-![](/assets/images/kiwiparty2-logo.png) <!-- .element: class="w-200 float-left" -->
-![](/assets/images/Logo-Web2day.png) <!-- .element: class="w-200 float-left" -->
-![](/assets/images/blend_webmix.png) <!-- .element: class="w-200 float-left" -->
-![](/assets/images/seocamp.png) <!-- .element: class="w-200 float-left" -->
+![](/assets/images/devfest.png) <!-- .element: class="w-300 h-100 float-left" -->
+![](/assets/images/bdxio.png) <!-- .element: class="w-300 h-100 float-left" -->
+![](/assets/images/logo-parisweb.png) <!-- .element: class="w-300 h-100 float-left" -->
+![](/assets/images/kiwiparty2-logo.png) <!-- .element: class="w-300 h-100 float-left" -->
+![](/assets/images/Logo-Web2day.png) <!-- .element: class="w-300 h-100 float-left" -->
+![](/assets/images/blend_webmix.png) <!-- .element: class="w-300 h-100 float-left" -->
+![](/assets/images/seocamp.png) <!-- .element: class="w-300 h-100 float-left" -->
 
 
 
@@ -109,13 +111,13 @@ MAis ça peut évoluer -> devfest, on va prendre bient^ot que des bons
 ## Confs nationnales
 ### Expérimentés & Rockstars
 
-![](/assets/images/cropped-DC_Logo.png) <!-- .element: class="w-200 float-left" -->
-![](/assets/images/Devoxx-UK-NORMAL.png) <!-- .element: class="w-200 float-left" -->
-![](/assets/images/docss-logo.png) <!-- .element: class="w-200 float-left" -->
-![](/assets/images/logo-mixit.png) <!-- .element: class="w-200 float-left" -->
-![](/assets/images/scalaio_medium.png) <!-- .element: class="w-200 float-left" -->
-![](/assets/images/eclipsecon.png) <!-- .element: class="w-200 float-left" -->
-![](/assets/images/tedx.png) <!-- .element: class="w-200 float-left" -->
+![](/assets/images/cropped-DC_logo.png) <!-- .element: class="w-300 h-100 float-left" -->
+![](/assets/images/Devoxx-UK-NORMAL.png) <!-- .element: class="w-300 h-100 float-left" -->
+![](/assets/images/logo-mixit.png) <!-- .element: class="w-300 h-100 float-left" -->
+![](/assets/images/scalaio_medium.png) <!-- .element: class="w-300 h-100 float-left" -->
+![](/assets/images/eclipsecon.png) <!-- .element: class="w-300 h-100 float-left" -->
+![](/assets/images/tedx.jpg) <!-- .element: class="w-300 h-100 float-left" -->
+![](/assets/images/dotcss-logo.png) <!-- .element: class="w-300 h-100 float-left" -->
 
 
 Notes:
@@ -123,53 +125,54 @@ Notes:
 
 ##==##
 
-<!-- .slide: data-background="/assets/images/notebook-581128_1280.jpg" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="/assets/images/call-for-presentations.jpg" data-state="hidefooter" class="transition" -->
 
-# Comment trouver son sujet ?
+# CFP : mode d'emploi 
 
-<div class="copyright">ltdsamedi</div>
+<div class="copyright">ethos3</div>
 
-
-##==##
-
-## Plusieurs pistes
-
-1. Regarder ce qu'on fait 
-2. Trouver son format <!-- .element: class="fragment" -->
-3. Trouver un copain (copine) ? <!-- .element: class="fragment" -->
 
 ##==##
 
-## Je fais quoi ?
+## CFP 
 
-![](/assets/images/2000px-Gartner_Hype_Cycle.svg.png) <!-- .element: class="w-800 center" -->
+### Conseils
 
-##==##
-
-## Quel format ? 
-
-il en existe une multitude : 
-
-* Lightning talk : 5min ou 15 min
-* Tools in action : 30 min
-* Conférence : 45min / 1h 
-* Université : 2h / 3h
-* Codelabs : 2h / 3h
-
-##==##
-
-## Trouver son copain / copine
-
-![](/assets/images/real_chatons_amis.jpg) <!-- .element: class="w-800 center" -->
+1. Soyez concis
+2. Mettez vous à la place des participants  <!-- .element: class="fragment" -->
+3. Mettez vous à la place de l'organisateur <!-- .element: class="fragment" -->
+4. Expliquez votre talk <!-- .element: class="fragment" -->
+5. Donner les slides, liens vers vidéos  <!-- .element: class="fragment" -->
 
 Notes:
-Je voulais mettre une image de chat :p
+N'allez pas poster là où ça sert à rien => Retour sur les confs vue précedement ! 
+IL y a toujours un champ dans lequel on peut expliquer
+
 
 ##==##
 
-<!-- .slide: data-background="/assets/images/girl_power_poster_vintage_quote_strength_ultra_3840x2160_hd-wallpaper-1805624.jpg" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="/assets/images/Rocky-II-wallpaper-HD.jpg" data-state="hidefooter" class="transition" -->
 
-# On va bosser !
+# Bien préparer ses slides
+
+<div class="copyright">Rocky 2</div>
+
+##==##
+
+## Pas de gif
+
+Notes: 
+Juste milieu entre texte & vide
+
+
+##==##
+
+<!-- .slide: data-background="/assets/images/christina.jpg" data-state="hidefooter" class="transition" -->
+
+# Les bons conseils de christina !
+
+<div class="copyright">téléstar</div>
+
 
 
 ##==##

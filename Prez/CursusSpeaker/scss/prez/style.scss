@@ -75,3 +75,20 @@ div.copyright.white{
 div.copyright:before{
     content: '@'
 }
+
+/*
+* 
+* MIXINS
+**/
+
+@mixin img-size-prefix($prefix, $attr,$size){
+    section img[alt*=#{$prefix}-#{$size}],section .#{$prefix}-#{$size},section  .#{$prefix}-#{$size}+*{
+        max-#{$attr}: #{$size}px;
+        #{$attr}: inherit;
+    }
+}
+
+@for $i from 1 through 20{
+    @include img-size-prefix(h, height, $i * 50);
+    @include img-size-prefix(w, width, $i * 50);
+}
