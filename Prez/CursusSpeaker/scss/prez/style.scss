@@ -13,7 +13,9 @@ img[alt*=sommaire]{
 }
 
 
-
+strong{
+  font-weight:600 !important;
+}
 
 div.no-bullet~ul{
   list-style-type: none;

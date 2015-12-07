@@ -5,3 +5,5 @@ libs/reveal-md-style-bootstrap
 libs/sockets-notes
 node_modules
 .sass-cache
+scss
+css/theme
