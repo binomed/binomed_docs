@@ -1,6 +1,3 @@
-@import "compass";
-@import "compass/css3/box-shadow";
-@import "compass/css3/text-shadow";
 
 /**
  * Beige theme for reveal.js.
@@ -10,8 +7,8 @@
 
 
 // Default mixins and settings -----------------
-@import "../../reveal/css/theme/template/mixins";
-@import "../../reveal/css/theme/template/settings";
+@import "../../../../reveal/css/theme/template/mixins";
+@import "../../../../reveal/css/theme/template/settings";
 // ---------------------------------------------
 
 
@@ -19,11 +16,11 @@
 // Include theme-specific fonts
 @font-face {
     font-family: 'League Gothic';
-    src: url('../../reveal/lib/font/league_gothic-webfont.eot');
-    src: url('../../reveal/lib/font/league_gothic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../../reveal/lib/font/league_gothic-webfont.woff') format('woff'),
-         url('../../reveal/lib/font/league_gothic-webfont.ttf') format('truetype'),
-         url('../../reveal/lib/font/league_gothic-webfont.svg#LeagueGothicRegular') format('svg');
+    src: url('../../../../reveal/lib/font/league_gothic-webfont.eot');
+    src: url('../../../../reveal/lib/font/league_gothic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../../../reveal/lib/font/league_gothic-webfont.woff') format('woff'),
+         url('../../../../reveal/lib/font/league_gothic-webfont.ttf') format('truetype'),
+         url('../../../../reveal/lib/font/league_gothic-webfont.svg#LeagueGothicRegular') format('svg');
 
     font-weight: normal; 
     font-style: normal;
@@ -180,8 +177,8 @@ $footer-height : 60px;
         left:calc(40% + 116px);
         text-overflow:ellipsis;
         text-transform:none;
-        @include box-shadow(white 0px 0px 0px);     
-        @include text-shadow(rgba(black, 1) 0px 0px 0);
+        box-shadow: 0px 0px 0px white;
+        text-shadow: 0px 0px 0 rgba(black,1);
     }
     
     div.first-slide~h2{
@@ -229,8 +226,8 @@ $footer-height : 60px;
         text-align:center;
         text-overflow:ellipsis;
         text-transform:none;
-        @include box-shadow(white 0px 0px 0px);     
-        @include text-shadow(rgba(black, 1) 0px 0px 0);
+        box-shadow: 0px 0px 0px white;
+        text-shadow: 0px 0px 0 rgba(black,1);
     }
     
     div.title~h2{
@@ -289,8 +286,8 @@ $footer-height : 60px;
         text-align:center;
         text-overflow:ellipsis;
         text-transform:none;
-        @include box-shadow(white 0px 0px 0px);     
-        @include text-shadow(rgba(black, 1) 0px 0px 0);
+        box-shadow: 0px 0px 0px white;
+        text-shadow: 0px 0px 0 rgba(black,1);
         width:100%;
         left:0;
     }   
@@ -372,8 +369,8 @@ $footer-height : 60px;
       color: white;
       width:70%;
       line-height: 100%;
-      @include box-shadow(white 0px 0px 0px);     
-      @include text-shadow(rgba(black, 1) 0px 0px 0);
+      box-shadow: 0px 0px 0px white;
+      text-shadow: 0px 0px 0 rgba(black,1);
     
     }
     
@@ -405,8 +402,9 @@ $footer-height : 60px;
         text-overflow:ellipsis;
         text-transform:none;
         text-align:left;
-        @include box-shadow(white 0px 0px 0px);     
-        @include text-shadow(rgba(black, 1) 0px 0px 0);
+        box-shadow: 0px 0px 0px white;
+        text-shadow: 0px 0px 0 rgba(black,1);
+        //@include text-shadow(rgba(black, 1) 0px 0px 0);
         
     }
     
@@ -436,7 +434,7 @@ section > footer{
     width:100%;
     height:$footer-height;
     background-color: white;
-    @include background-image(linear-gradient(left, #3C78D8, #3C78D8 25%, #CC0000 25%, #CC0000 50%, #FFD966 50%, #FFD966 75%, #6AA84F 75%, #6AA84F)); 
+    background-image : linear-gradient(to right, #3C78D8, #3C78D8 25%, #CC0000 25%, #CC0000 50%, #FFD966 50%, #FFD966 75%, #6AA84F 75%, #6AA84F);
     background-size: 100% 5px;
     background-repeat: no-repeat;
     z-index: -2;
@@ -463,7 +461,7 @@ section > footer:after{
 
 .reveal .slides>section img{
     border:0px none black;
-     @include box-shadow(white 0px 0px 0px);     
+    box-shadow: 0px 0px 0px white;
 }
 
 thead{
@@ -537,5 +535,5 @@ tbody{
 
 
 // Theme template ------------------------------
-@import "../../reveal/css/theme/template/theme";
+@import "../../../../reveal/css/theme/template/theme";
 // ---------------------------------------------

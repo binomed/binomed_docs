@@ -1,7 +1,4 @@
 @import "colors";
-@import "compass/css3/transform";
-@import "compass/css3/box-shadow";
-@import "compass/css3/text-shadow";
 
 $width-triangle : 250px;
 $width-triangle-bas : 100px;
@@ -69,7 +66,7 @@ $width-triangle-bas : 100px;
         width: 200px;
         min-height: 150px;
         margin-top: 20px;
-        @include box-shadow(#CCCCCC 2px 2px 2px 3px);
+        box-shadow: #000 2px 2px 4px 1px;
     }
 
     img[alt*=company_logo]{

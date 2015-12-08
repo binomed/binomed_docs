@@ -1,108 +1,16 @@
-/* line 25, ../../../../scss/theme/2015/binomed/colors.scss */
 .binomed-red {
-  color: #e74c3c;
-}
+  color: #e74c3c; }
 
-/* line 30, ../../../../scss/theme/2015/binomed/colors.scss */
 .binomed-light-grey {
-  color: #ddd;
-}
+  color: #ddd; }
 
-/* line 34, ../../../../scss/theme/2015/binomed/colors.scss */
 .binomed-black {
-  color: #333;
-}
+  color: #333; }
 
-/* line 38, ../../../../scss/theme/2015/binomed/colors.scss */
 .binomed-dark-grey {
-  color: #3d4349;
-}
+  color: #3d4349; }
 
-/* line 42, ../../../../scss/theme/2015/binomed/colors.scss */
 .binomed-medium-grey {
-  color: #817c7c;
-}
+  color: #817c7c; }
 
-/*.reveal .slides section.first-slide:after{
-    content:'';
-	position: absolute;
-	bottom: 130px;
-	left: 170px;
-	width: 800px;
-	height: 250px; 
-	padding-top: 50px;
-	background: rgba(255,255,255,0.7);
-	
-}
-
-.reveal .slides section.first-slide{
-
-    padding-left: 190px !important;
-    padding-top: 500px !important;
-
-    h1{
-        font-size: 2.5em;
-    }
-    
-}
-
-.reveal  .slides section.last-slide{
-	
-	color : white;
-	text-align: center;
-
-    
-    h1.presenter{
-        top:2.8em;
-        height:1.5em;
-        line-height:1.5em; 
-        font-size:1.5em;
-    }
-    
-    h1.topic-title{
-        top:1.5em;
-        height:1.7em;
-        font-size:1.5em;
-        line-height:1.7em;
-        font-weight:400;
-    }
-    
-        
-    img[alt*=avatar], img.avatar{
-        position:absolute;
-        width:130pt;
-        min-height: 130pt;
-        height: auto;
-        top: 200px;
-        margin-left: -50pt;
-        margin-top: 0;
-    }
-
-	
-}
-
-.reveal .slides section[class*="transition"] h1,
-.reveal .slides section.transition h1,
-.reveal .slides section.transition-white h1,
-.reveal .slides section.transition-black h1{
-
-	height: 2.0em;
-	font-size: 1.7em;
-	line-height: 2.0em;
-	padding-left: 20px;	
-	top: 10%;
-
-}
-
-.reveal .slides section.transition-white img[alt*=icon],
-.reveal .slides section.transition-black img[alt*=icon],
-.reveal .slides section.transition-white img.icon,
-.reveal .slides section.transition-black img.icon{
-    position: absolute;
-    top: 600px;
-    right: 140px;
-    max-height: 140px;
-    max-width: 140px;
-}*/
-
-/*# sourceMappingURL=specifics_slides_print.css.map */
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInRoZW1lLzIwMTUvYmlub21lZC9jb2xvcnMuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUF3QkEsWUFBWSxDQUFBO0VBQ1gsS0FBSyxFQWpCQSxPQUFPLEdBa0JaOztBQUdELG1CQUFtQixDQUFBO0VBQ2xCLEtBQUssRUE1Qk8sSUFBSSxHQTZCaEI7O0FBRUQsY0FBYyxDQUFBO0VBQ2IsS0FBSyxFQTdCRSxJQUFJLEdBOEJWOztBQUVELGtCQUFrQixDQUFBO0VBQ2pCLEtBQUssRUFoQ0ssT0FBTyxHQWlDakI7O0FBRUQsb0JBQW9CLENBQUE7RUFDbkIsS0FBSyxFQXRDTyxPQUFPLEdBdUNuQiIsImZpbGUiOiJ0aGVtZS8yMDE1L2Jpbm9tZWQvc3BlY2lmaWNzX3NsaWRlc19wcmludC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJcblxuJGxpZ2h0LWdyZXk6ICNkZGQ7XG4kd2hpdGU6IHdoaXRlO1xuJG1lZGl1bS1ncmV5OiAjODE3YzdjO1xuJGJsYWNrOiAjMzMzO1xuJGRhcmstZ3JleTogIzNkNDM0OTtcbiRkYXJrLWdyZXktYWxwaGEgOiByZ2JhKDYxLDY3LDczLDAuNyk7XG4kcmVkOiAjZTc0YzNjO1xuXG4vLyBCYWNrZ3JvdW5kIENvbG9yc1xuJHBhZ2UtYmctY29sb3I6JGxpZ2h0LWdyZXk7XG4kc2xpZGUtYmctY29sb3I6ICR3aGl0ZTtcbiRoZWFkZXItY29sb3I6ICRkYXJrLWdyZXk7XG5cbi8vIFRleHQgQ29sb3JzXG4kbWFpbi10aXRsZS1jb2xvciA6ICRyZWQ7XG4kdGl0bGUtY29sb3IgOiAkbWVkaXVtLWdyZXk7XG4kdGV4dC1jb2xvciA6ICRibGFjaztcblxuQG1peGluIGRyb3BzaGFkb3coKXtcblx0Ym94LXNoYWRvdzogMnB4IDRweCA1cHggcmdiYSgzLDMsMywwLjIpO1xufVxuXG4uYmlub21lZC1yZWR7XG5cdGNvbG9yOiAkcmVkO1xufVxuXG5cbi5iaW5vbWVkLWxpZ2h0LWdyZXl7XG5cdGNvbG9yOiAkbGlnaHQtZ3JleTsgXG59XG5cbi5iaW5vbWVkLWJsYWNre1xuXHRjb2xvcjokYmxhY2s7XG4gfVxuXG4gLmJpbm9tZWQtZGFyay1ncmV5e1xuIFx0Y29sb3I6JGRhcmstZ3JleTtcbiB9XG5cbiAuYmlub21lZC1tZWRpdW0tZ3JleXtcbiBcdGNvbG9yOiAkbWVkaXVtLWdyZXk7XG4gfVxuIl0sInNvdXJjZVJvb3QiOiIvc291cmNlLyJ9 */
