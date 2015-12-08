@@ -151,6 +151,33 @@ IL y a toujours un champ dans lequel on peut expliquer
 
 ##==##
 
+## Le titre
+
+Il doit être clair et expliquer ce que vous allez présenter ou alors, il doit être attirant ! 
+
+Notes:
+Parler de mon talk webRTC ! très mauvais choix de titre ! 
+
+##==##
+
+## La description
+
+Il doit être suffisement court pour ne pas endormir les gens mais en meme temps suffisement détaillé pour leur donner envie de venir.
+
+Il ne faut pas hésiter à dévoiler un peu son plan et le niveau de la conf pour que les gens sachent s'ils doivent venir où non à votre conférence.
+
+##==##
+
+## Notes pour les organisateurs
+
+Il faut être complet, là, il est clairement question de convaincre le jury. 
+
+* Exemples de codes
+* Slides mis à dispo
+* Vidéos ...
+
+##==##
+
 <!-- .slide: data-background="/assets/images/Rocky-II-wallpaper-HD.jpg" data-state="hidefooter" class="transition" -->
 
 # Bien préparer ses slides
@@ -161,8 +188,106 @@ IL y a toujours un champ dans lequel on peut expliquer
 
 ## Pas de gif
 
+![](/assets/images/first_gif.gif) <!-- .element: class="w-600 center" -->
+
 Notes: 
 Juste milieu entre texte & vide
+
+##==##
+
+<!-- .slide: data-background="/assets/images/second_gif.gif" data-state="hidefooter" class="transition" -->
+
+##==##
+
+<!-- .slide: data-background="/assets/images/third_gif.gif" data-state="hidefooter" class="transition" -->
+
+
+<div class="copyright">bon y a un moment où faut arrêter</div>
+
+##==##
+
+## Bref ! 
+
+![](/assets/images/stop_it.jpg) <!-- .element: class="w-600 center" -->
+
+##==##
+
+## Posez vous ces questions :
+
+1. Qui est mon auditoir ? 
+2. Qu'attendent-ils ?
+3. Est ce que mes slides doivents être compréhensible sans le texte qui va avec ?
+4. Dois-je mettre des gifs ?
+
+Notes: 
+L'auditoire indique
+
+##==##
+
+# Conseils
+
+<!-- .slide: data-background="/assets/images/copcop-jesus.jpg" data-state="hidefooter" class="transition" -->
+
+<div class="copyright">copcop</div>
+
+##==##
+
+<br><br><br>
+
+> Misez sur la simplicité ! <!-- .element class="big-text" -->
+
+##==##
+
+## Car avec un titre ça fait trop
+
+### Quand en plus y a un sous titre ! 
+
+<br><br><br>
+
+<!-- .slide: class="surcharge" -->
+
+> Evitez les slides trop chargés  ! <!-- .element class="big-text" -->
+
+##==##
+
+<!-- .slide: data-background="#ffffff" data-state="hidefooter" class="white transition" -->
+
+<br><br><br>
+
+Mais pas sans style non plus  ! <!-- .element class="big-text arial" -->
+
+
+##==##
+
+<br><br><br>
+
+> Bref ! trouvez le juste milieu entre contenu & espaces vides <!-- .element class="big-text" -->
+
+Notes: 
+Les images & gif peuvent etre utiles 
+
+##==##
+
+<br><br><br>
+
+![](/assets/images/rdj_thanks.gif) <!-- .element: class="w-600 center" style="width:600px;" -->
+
+##==## 
+
+## Conseils Bis
+
+* Faites des transitions / breaks
+
+<br><br>
+
+* Montrez du code ou des démos 
+
+<br><br>
+
+* Aérez vos slides
+
+Notes:
+Parlez du livecoding
 
 
 ##==##
@@ -173,6 +298,11 @@ Juste milieu entre texte & vide
 
 <div class="copyright">téléstar</div>
 
+##==##
+
+/!\ à votre image !
+
+Comment se lancer ?
 
 
 ##==##
