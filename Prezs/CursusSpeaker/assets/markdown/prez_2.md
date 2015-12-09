@@ -8,7 +8,7 @@
 
 ##==##
 
-<!-- .slide: data-background="/assets/images/o-PUBLIC-SPEAKING-facebook.jpg" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/o-PUBLIC-SPEAKING-facebook.jpg" data-state="hidefooter" class="transition" -->
 
 # Cursus speakers - Session 2
 
@@ -27,7 +27,7 @@
 
 ##==##
 
-<!-- .slide: data-background="/assets/images/choix_conf.jpg" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/choix_conf.jpg" data-state="hidefooter" class="transition" -->
 
 # Ou aller ?
 
@@ -40,10 +40,10 @@
 
 ### Rappelez vous Les différents niveau du speaker
 
-1. ![](/assets/images/Timide.jpg) <!-- .element: class="h-100" --> Le Débutant
-2. ![](/assets/images/francky_trichet.jpg) <!-- .element: class="h-100" --> Le Local
-3. ![](/assets/images/ft-l-verou.jpg) <!-- .element: class="h-100" --> Le National
-4. ![](/assets/images/musk.jpeg) <!-- .element: class="h-100" --> La Rockstar
+1. ![](assets/images/Timide.jpg) <!-- .element: class="h-100" --> Le Débutant
+2. ![](assets/images/francky_trichet.jpg) <!-- .element: class="h-100" --> Le Local
+3. ![](assets/images/ft-l-verou.jpg) <!-- .element: class="h-100" --> Le National
+4. ![](assets/images/musk.jpeg) <!-- .element: class="h-100" --> La Rockstar
 
 Notes:
 Debutant = Dans sa boite
@@ -79,12 +79,12 @@ et Surement d'autres que je connais pas
 ## Confs nationnales
 ### Accessibles
 
-![](/assets/images/agiletour2015.png) <!-- .element: class="w-300 h-100 float-left" -->
-![](/assets/images/breizhcamp.svg) <!-- .element: class="w-300 h-100 float-left" -->
-![](/assets/images/logo-summercamp.png) <!-- .element: class="w-300 h-100 float-left" -->
-![](/assets/images/logo-codeurs-en-seine.png) <!-- .element: class="w-300 h-100 float-left" -->
-![](/assets/images/devfest.png) <!-- .element: class="w-300 h-100 float-left" -->
-![](/assets/images/rivieraDev.png) <!-- .element: class="w-300 h-100 float-left" -->
+![](assets/images/agiletour2015.png) <!-- .element: class="w-300 h-100 float-left" -->
+![](assets/images/breizhcamp.svg) <!-- .element: class="w-300 h-100 float-left" -->
+![](assets/images/logo-summercamp.png) <!-- .element: class="w-300 h-100 float-left" -->
+![](assets/images/logo-codeurs-en-seine.png) <!-- .element: class="w-300 h-100 float-left" -->
+![](assets/images/devfest.png) <!-- .element: class="w-300 h-100 float-left" -->
+![](assets/images/rivieraDev.png) <!-- .element: class="w-300 h-100 float-left" -->
 
 Notes:
 
@@ -93,13 +93,13 @@ Notes:
 ## Confs nationnales
 ### Besoin d'expérience
 
-![](/assets/images/devfest.png) <!-- .element: class="w-300 h-100 float-left" -->
-![](/assets/images/bdxio.png) <!-- .element: class="w-300 h-100 float-left" -->
-![](/assets/images/logo-parisweb.png) <!-- .element: class="w-300 h-100 float-left" -->
-![](/assets/images/kiwiparty2-logo.png) <!-- .element: class="w-300 h-100 float-left" -->
-![](/assets/images/Logo-Web2day.png) <!-- .element: class="w-300 h-100 float-left" -->
-![](/assets/images/blend_webmix.png) <!-- .element: class="w-300 h-100 float-left" -->
-![](/assets/images/seocamp.png) <!-- .element: class="w-300 h-100 float-left" -->
+![](assets/images/devfest.png) <!-- .element: class="w-300 h-100 float-left" -->
+![](assets/images/bdxio.png) <!-- .element: class="w-300 h-100 float-left" -->
+![](assets/images/logo-parisweb.png) <!-- .element: class="w-300 h-100 float-left" -->
+![](assets/images/kiwiparty2-logo.png) <!-- .element: class="w-300 h-100 float-left" -->
+![](assets/images/Logo-Web2day.png) <!-- .element: class="w-300 h-100 float-left" -->
+![](assets/images/blend_webmix.png) <!-- .element: class="w-300 h-100 float-left" -->
+![](assets/images/seocamp.png) <!-- .element: class="w-300 h-100 float-left" -->
 
 
 
@@ -111,13 +111,13 @@ MAis ça peut évoluer -> devfest, on va prendre bient^ot que des bons
 ## Confs nationnales
 ### Expérimentés & Rockstars
 
-![](/assets/images/cropped-DC_logo.png) <!-- .element: class="w-300 h-100 float-left" -->
-![](/assets/images/Devoxx-UK-NORMAL.png) <!-- .element: class="w-300 h-100 float-left" -->
-![](/assets/images/logo-mixit.png) <!-- .element: class="w-300 h-100 float-left" -->
-![](/assets/images/scalaio_medium.png) <!-- .element: class="w-300 h-100 float-left" -->
-![](/assets/images/eclipsecon.png) <!-- .element: class="w-300 h-100 float-left" -->
-![](/assets/images/tedx.jpg) <!-- .element: class="w-300 h-100 float-left" -->
-![](/assets/images/dotcss-logo.png) <!-- .element: class="w-300 h-100 float-left" -->
+![](assets/images/cropped-DC_logo.png) <!-- .element: class="w-300 h-100 float-left" -->
+![](assets/images/Devoxx-UK-NORMAL.png) <!-- .element: class="w-300 h-100 float-left" -->
+![](assets/images/logo-mixit.png) <!-- .element: class="w-300 h-100 float-left" -->
+![](assets/images/scalaio_medium.png) <!-- .element: class="w-300 h-100 float-left" -->
+![](assets/images/eclipsecon.png) <!-- .element: class="w-300 h-100 float-left" -->
+![](assets/images/tedx.jpg) <!-- .element: class="w-300 h-100 float-left" -->
+![](assets/images/dotcss-logo.png) <!-- .element: class="w-300 h-100 float-left" -->
 
 
 Notes:
@@ -125,7 +125,7 @@ Notes:
 
 ##==##
 
-<!-- .slide: data-background="/assets/images/call-for-presentations.jpg" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/call-for-presentations.jpg" data-state="hidefooter" class="transition" -->
 
 # CFP : mode d'emploi 
 
@@ -178,7 +178,7 @@ Il faut être complet, là, il est clairement question de convaincre le jury.
 
 ##==##
 
-<!-- .slide: data-background="/assets/images/Rocky-II-wallpaper-HD.jpg" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/Rocky-II-wallpaper-HD.jpg" data-state="hidefooter" class="transition" -->
 
 # Bien préparer ses slides
 
@@ -188,18 +188,18 @@ Il faut être complet, là, il est clairement question de convaincre le jury.
 
 ## Pas de gif
 
-![](/assets/images/first_gif.gif) <!-- .element: class="w-600 center" -->
+![](assets/images/first_gif.gif) <!-- .element: class="w-600 center" -->
 
 Notes: 
 Juste milieu entre texte & vide
 
 ##==##
 
-<!-- .slide: data-background="/assets/images/second_gif.gif" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/second_gif.gif" data-state="hidefooter" class="transition" -->
 
 ##==##
 
-<!-- .slide: data-background="/assets/images/third_gif.gif" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/third_gif.gif" data-state="hidefooter" class="transition" -->
 
 
 <div class="copyright">bon y a un moment où faut arrêter</div>
@@ -208,7 +208,7 @@ Juste milieu entre texte & vide
 
 ## Bref ! 
 
-![](/assets/images/stop_it.jpg) <!-- .element: class="w-600 center" -->
+![](assets/images/stop_it.jpg) <!-- .element: class="w-600 center" -->
 
 ##==##
 
@@ -226,7 +226,7 @@ L'auditoire indique
 
 # Conseils
 
-<!-- .slide: data-background="/assets/images/copcop-jesus.jpg" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/copcop-jesus.jpg" data-state="hidefooter" class="transition" -->
 
 <div class="copyright">copcop</div>
 
@@ -270,7 +270,7 @@ Les images & gif peuvent etre utiles
 
 <br><br><br>
 
-![](/assets/images/rdj_thanks.gif) <!-- .element: class="w-600 center" style="width:600px;" -->
+![](assets/images/rdj_thanks.gif) <!-- .element: class="w-600 center" style="width:600px;" -->
 
 ##==## 
 
@@ -298,7 +298,7 @@ Parlez du livecoding
 
 ##==##
 
-<!-- .slide: data-background="/assets/images/christina.jpg" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/christina.jpg" data-state="hidefooter" class="transition" -->
 
 # Les bons conseils de christina !
 
@@ -308,11 +308,11 @@ Parlez du livecoding
 
 # Le Jour J 
 
-<!-- .slide: data-background="/assets/images/o-PUBLIC-SPEAKING-facebook.jpg" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/o-PUBLIC-SPEAKING-facebook.jpg" data-state="hidefooter" class="transition" -->
 
 ##==##
 
-<!-- .slide: data-background="/assets/images/le-grand-saut.jpg" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/le-grand-saut.jpg" data-state="hidefooter" class="transition" -->
 
 # Se lancer
 
@@ -325,7 +325,7 @@ Mémoriser sa présentation ou alors anecdote
 
 # /!\ à votre image !
 
-<!-- .slide: data-background="/assets/images/fashion-fail.jpg" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/fashion-fail.jpg" data-state="hidefooter" class="transition" -->
 
 Notes:
 Attention au sexisme, aux propos tenus etc...
@@ -335,7 +335,7 @@ Attention au sexisme, aux propos tenus etc...
 # Poser des questions
 
 
-<!-- .slide: data-background="/assets/images/Foire-aux-questions_w1024h500.png" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/Foire-aux-questions_w1024h500.png" data-state="hidefooter" class="transition" -->
 
 <div class="copyright black">covoiturage</div>
 
@@ -346,7 +346,7 @@ Voir si les gens connaissent, sonder son auditoire !
 
 # Faire des pauses
 
-<!-- .slide: data-background="/assets/images/pause.jpg" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/pause.jpg" data-state="hidefooter" class="transition" -->
 
 <div class="copyright black">etudiant astucieux</div>
 
@@ -357,7 +357,7 @@ Laisser le temps aux gens de digérer => Soit l'humour mais pas trop, soit des q
 
 # Osez dire : je ne sais pas   
 
-<!-- .slide: data-background="/assets/images/i_dunno.png" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/i_dunno.png" data-state="hidefooter" class="transition" -->
 
 <div class="copyright black">ironrex007 deviantart</div>
 
@@ -368,7 +368,7 @@ Vous n'^etes pas infaiible
 
 # Expliquez ce que vous faites
 
-<!-- .slide: data-background="/assets/images/dev_boite_noire.jpg" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/dev_boite_noire.jpg" data-state="hidefooter" class="transition" -->
 
 <div class="copyright black">next impact</div>
 
@@ -379,7 +379,7 @@ En cas de pépins, expliquez, ne laisser pas un blanc
 
 # Ayez un plan B
 
-<!-- .slide: data-background="/assets/images/macgyver.jpg" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/macgyver.jpg" data-state="hidefooter" class="transition" -->
 
 
 <div class="copyright black">esprit ciné</div>
