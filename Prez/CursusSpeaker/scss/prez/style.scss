@@ -78,6 +78,36 @@ p.big-text{
   font-size:2em;
 }
 
+section.surcharge:before{
+  content: '';
+  background-image: url(../../assets/images/sqli_logo.png);
+  width: 189px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 200;
+  left: -173px;
+}
+
+section.surcharge:after{
+  content: '';
+  background-image: url(../../assets/images/sqli_logo.png);
+  width: 189px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 200;
+  right: 173px;
+}
+
+section.white{
+  background: white;
+}
+
+p.big-text.arial{
+  font-family: serif;
+}
+
 /*
 * 
 * MIXINS
