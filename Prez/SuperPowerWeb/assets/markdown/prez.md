@@ -1,10 +1,9 @@
 
 <!-- .slide: class="first-slide" -->
 
-# **Cursus Speaker**
-## **Session 1**
+# **Les Nouveaux Supers Pouvoirs du Web**
 
-### 2015.11.19 SQLI @ **Nantes**
+### 2015.02.05 DevFest @ **Paris**
 
 
 ##==##
