@@ -1,5 +1,6 @@
 var eddystoneBeacon = require('eddystone-beacon');
 
+
 var uuid = '10ee03676f6f2e672f39744275366c0000000000';
 uuid = '1006'
 
