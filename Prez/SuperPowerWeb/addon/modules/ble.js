@@ -19,3 +19,7 @@ var url = `http://${ip.ip}:${port}`;
 
 eddystoneBeacon.advertiseUrl(url);
 
+server.registerEvent('ble', 'changeAdvert', function(msg){
+	eddystoneBeacon.advertiseUrl(msg.url);
+});
+
