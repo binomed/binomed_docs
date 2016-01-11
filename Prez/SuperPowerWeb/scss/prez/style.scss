@@ -4,11 +4,19 @@ img[alt*=logo]{
     width:50px;   
 }
 
-$sommaire-img-height : 60px;
 
-img[alt*=sommaire]{
-  height: $sommaire-img-height;
+.reveal .slides section.first-slide{
+  height: 100%;
+
+  h1{
+    height: 3em;
+    line-height: 3em;
+    font-size: 1.5em;
+        
+  }
 }
+
+$sommaire-img-height : 60px;
 
 
 strong{
@@ -32,26 +40,6 @@ div.padding~*{
 }
 
 
-p.surround{
-font-weight: bold;
-font-size: 1em;
-color: #DA0E1A;
-text-align: left;
-}
-
-table.table_version{
-  position: absolute;
-  top: 4em;
-}
-
-table.table_version td, table.table_version th {
-  font-size: 14px;
-}
-
-.img_version{
-  margin-top:7em;
-}
-
 
 .copyright.black{
   color: grey;
@@ -62,7 +50,7 @@ div.copyright{
     font-size: 0.6em;
     color: $medium-grey ;
     position: absolute;
-    bottom: 0;
+    bottom: 20px;
     right: 0;
 }
 
@@ -74,53 +62,108 @@ div.copyright:before{
     content: '@'
 }
 
-p.big-text{
-  font-size:2em;
-}
+.reveal .slides section[data-background].transition.qui-veut-gagner{
 
-section.surcharge:before{
-  content: '';
-  background-image: url(../../assets/images/sqli_logo.png);
-  width: 189px;
+  $height_question : 3em;
+  $width_triangle_question : 50px;
+  $height_resp : 1.5em;
+  $width_triangle_resp : 20px;
+
   height: 100%;
-  position: absolute;
-  top: 0;
-  z-index: 200;
-  left: -173px;
+
+  h1{
+    position:absolute;
+    font-size: $height_question / 3;
+    line-height : $height_question / 3;
+    width:80%;
+    margin-left:-40%;
+    left: 50%;
+    bottom : 300px;
+    height: $height_question;
+    background: black;
+    color: white;
+    border: solid blue 2px;  
+  }
+
+  h1:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -($width_triangle_question - 1px);
+    width: 0;
+    height: 0;
+    border-top: calc( #{$height_question} / 2 + 2px) solid transparent;
+    border-right: $width_triangle_question solid black;
+    border-bottom: calc( #{$height_question} / 2 + 2px) solid transparent;
+  }
+ 
+  h1:after{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -($width_triangle_question - 1px);
+    width: 0;
+    height: 0;
+    border-top: calc( #{$height_question} / 2 + 2px) solid transparent;
+    border-left: $width_triangle_question solid black;
+    border-bottom: calc( #{$height_question} / 2 + 2px) solid transparent;
+  }
+
+  h2{
+    position:absolute;
+    font-size: $height_resp / 2;
+    line-height : $height_resp / 2;
+    width:40%;
+    height: $height_resp;
+    background: black;
+    color: white;
+    border: solid blue 2px;  
+  }
+
+  h2:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -($width_triangle_resp - 1px);
+    width: 0;
+    height: 0;
+    border-top: calc( #{$height_resp} / 2 + 2px) solid transparent;
+    border-right: $width_triangle_resp solid black;
+    border-bottom: calc( #{$height_resp} / 2 + 2px) solid transparent;
+  }
+
+  h2:after{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -($width_triangle_resp - 1px);
+    width: 0;
+    height: 0;
+    border-top: calc( #{$height_resp} / 2 + 2px) solid transparent;
+    border-left: $width_triangle_resp solid black;
+    border-bottom: calc( #{$height_resp} / 2 + 2px) solid transparent;
+  }
+
+  h2:nth-of-type(1), h2:nth-of-type(2){
+    left:10px;
+  }
+
+  h2:nth-of-type(3), h2:nth-of-type(4){
+    left:calc(50% + 10px);
+  }
+
+  h2:nth-of-type(1), h2:nth-of-type(3){
+    bottom:200px;
+  }
+
+  h2:nth-of-type(2), h2:nth-of-type(4){
+    bottom:100px;
+  }
+
+  .chart-resp{
+    position: absolute;
+    right: 100px;
+    background: black;
+  }
 }
 
-section.surcharge:after{
-  content: '';
-  background-image: url(../../assets/images/sqli_logo.png);
-  width: 189px;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  z-index: 200;
-  right: 173px;
-}
-
-section.white{
-  background: white;
-}
-
-p.big-text.arial{
-  font-family: serif;
-}
-
-/*
-* 
-* MIXINS
-**/
-
-@mixin img-size-prefix($prefix, $attr,$size){
-    section img[alt*=#{$prefix}-#{$size}],section .#{$prefix}-#{$size},section  .#{$prefix}-#{$size}+*{
-        max-#{$attr}: #{$size}px;
-        #{$attr}: inherit;
-    }
-}
-
-@for $i from 1 through 20{
-    @include img-size-prefix(h, height, $i * 50);
-    @include img-size-prefix(w, width, $i * 50);
-}

@@ -1,10 +1,10 @@
+<!-- .slide: data-background="/assets/images/super_hero_fotolia.png" data-state="hidefooter" class="transition first-slide" -->
 
-<!-- .slide: class="first-slide" -->
-
-# **Les Nouveaux Supers Pouvoirs du Web**
+# Les nouveaux supers pouvoirs du web
 
 ### 2015.02.05 DevFest @ **Paris**
 
+<div class="copyright white">fotolia</div>
 
 ##==##
 
@@ -32,13 +32,39 @@ IoT Manager, Senior innovation developper & Community Manager
 
 ##==##
 
-<!-- .slide: class="transition-white" -->
+<!-- .slide: data-background="/assets/images/gad_qui_veut_gagner.jpg" data-state="hidefooter" class="transition qui-veut-gagner" -->
 
-# Cursus Speaker ! 
+
+# question
+
+## reponse A
+
+## reponse B
+
+## reponse C
+
+## reponse D
 
 ##==##
 
-## De quoi on va parler ?
+<!-- .slide: data-background="/assets/images/gad_qui_veut_gagner.jpg" data-state="hidefooter" class="transition qui-veut-gagner" -->
+
+
+<canvas id="chart_question_1" width="200" height="300" class="chart-resp"></canvas>
+
+# question
+
+## reponse A
+
+## reponse B
+
+## reponse C
+
+## reponse D
+
+##==##
+
+## Petit Quizz
 
 1. Aujourd'hui 
     * Combattons nos peurs

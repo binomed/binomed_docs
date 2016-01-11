@@ -2,7 +2,9 @@
   "author": "JefBinomed",
   "name": "SuperPowerWeb",
   "version": "1.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "chart.js": "^1.0.2"
+  },
   "devDependencies": {
     "browser-sync": "^2.6.9",
     "gulp": "^3.8.11",
