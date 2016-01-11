@@ -15,7 +15,7 @@ if (!ip){
 
 var url = `http://${ip.ip}:${port}`;
 
-//url = 'http://goo.gl/KsQhXJ'; // DevFest Nantes
+url = 'http://goo.gl/KsQhXJ'; // DevFest Nantes
 
 eddystoneBeacon.advertiseUrl(url);
 

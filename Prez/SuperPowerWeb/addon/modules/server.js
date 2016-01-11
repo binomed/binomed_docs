@@ -1,5 +1,6 @@
-var app = require('express')(),
-	http = require('http').Server(app),
+var express = require('express'),
+	app = express(),
+	http = require('http').createServer(app),
 	io = require('socket.io')(http);
 
 const port = 9000;
@@ -9,9 +10,7 @@ var callBacksAction = [];
 /*
 Init Server
 */
-app.get('/', function(req, res){
-  res.sendFile(__dirname + '/index.html');
-});
+app.use(express.static(__dirname+'/..'));
 
 http.listen(port, function(){
   console.log(`listening on *:${port}`);

@@ -13,15 +13,16 @@ var browserify = require("browserify");
 var source = require('vinyl-source-stream');
 var reload = browserSync.reload;
 
-gulp.task('serv_node', shell.task(['sudo node app.js']));
+gulp.task('serv_node', shell.task(['sudo node app_node_prez.js']));
 
 gulp.task('watch',['browserify_app', 'browserify_prez', 'sass'], function(){
   browserSync.init({
-    proxy : 'http://localhost:8080'
+    proxy : 'http://localhost:9000'
   });
   gulp.watch("./sass/**/*.scss", ['sass']);
   gulp.watch("./scripts/app/**/*.js", ['browserify_app']);  
   gulp.watch("./scripts/prez/**/*.js", ['browserify_prez']);  
+  gulp.watch("./scripts/game/**/*.js", ['browserify_game']);  
   gulp.watch("./**/*.html").on('change', reload);  
   gulp.watch("./bundle_*.js").on('change', reload);
 });
@@ -51,6 +52,17 @@ gulp.task('browserify_app',function(){
       this.emit('end');
     })    
     .pipe(source('bundle_app.js'))
+    .pipe(gulp.dest('./'));
+});
+
+gulp.task('browserify_game',function(){
+  return browserify(['./scripts/game/game.js'], {debug:true})
+    .bundle()    
+    .on('error', function(err){
+      console.log(err);
+      this.emit('end');
+    })    
+    .pipe(source('bundle_game.js'))
     .pipe(gulp.dest('./'));
 });
 
