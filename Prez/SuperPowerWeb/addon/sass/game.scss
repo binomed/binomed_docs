@@ -4,4 +4,10 @@ html, body{
 	min-height:100%;
 	min-width:100%;
 	display:flex;
+	background:url(../assets/imgs/abyss.jpg);
+	color:white;
+
 }
+
+@import "../scss/prez/qui_veut_gagner";
+@include qui-veut-gagner("");

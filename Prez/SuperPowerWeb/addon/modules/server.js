@@ -3,8 +3,6 @@ var express = require('express'),
 	http = require('http').createServer(app),
 	io = require('socket.io')(http);
 
-const port = 9000;
-
 var callBacksAction = [];
 
 /*
@@ -12,9 +10,12 @@ Init Server
 */
 app.use(express.static(__dirname+'/..'));
 
-http.listen(port, function(){
-  console.log(`listening on *:${port}`);
-});
+function init(port){
+	http.listen(port, function(){
+	  console.log(`listening on *:${port}`);
+	});
+	
+}
 
 /*
 Init WebSocket
@@ -73,7 +74,7 @@ function unregisterEvent(id, key){
 
 
 module.exports = {
+	init : init,
 	registerEvent : registerEvent,
-	unregisterEvent : unregisterEvent,
-	port : port
+	unregisterEvent : unregisterEvent
 };
