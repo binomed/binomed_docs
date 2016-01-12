@@ -13,11 +13,20 @@ var browserify = require("browserify");
 var source = require('vinyl-source-stream');
 var reload = browserSync.reload;
 
-gulp.task('serv_node', shell.task(['sudo node app_node_prez.js']));
+var port = 9000;
 
-gulp.task('watch',['browserify_app', 'browserify_prez', 'sass'], function(){
+gulp.task('set_port_game', function(){
+  port = 8000;
+});
+
+gulp.task('serv_node_app', shell.task(['sudo node app_node_prez.js']));
+
+gulp.task('serv_node_game', shell.task(['sudo node app_node_game.js']));
+
+gulp.task('watch',['browserify_app', 'browserify_prez', 'browserify_game', 'sass'], function(){
   browserSync.init({
-    proxy : 'http://localhost:9000'
+    port : 3010,
+    proxy :  'http://localhost:'+port
   });
   gulp.watch("./sass/**/*.scss", ['sass']);
   gulp.watch("./scripts/app/**/*.js", ['browserify_app']);  
@@ -29,7 +38,13 @@ gulp.task('watch',['browserify_app', 'browserify_prez', 'sass'], function(){
 
 gulp.task('serve', function(){  
   runSequence(
-    ['watch', 'serv_node']
+    ['watch', 'serv_node_app']
+  );  
+});
+
+gulp.task('serve_game', function(){  
+  runSequence(
+    ['set_port_game','watch', 'serv_node_game']
   );  
 });
 
