@@ -21,7 +21,7 @@ gulp.task('set_port_game', function(){
 
 gulp.task('serv_node_app', shell.task(['sudo node app_node_prez.js']));
 
-gulp.task('serv_node_game', shell.task(['sudo node app_node_game.js']));
+gulp.task('serv_node_game', shell.task(['node app_node_game.js']));
 
 gulp.task('watch',['browserify_app', 'browserify_prez', 'browserify_game', 'sass'], function(){
   browserSync.init({
