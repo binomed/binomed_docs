@@ -4,10 +4,54 @@ html, body{
 	min-height:100%;
 	min-width:100%;
 	display:flex;
-	background:url(../assets/imgs/abyss.jpg);
+	background: rgb(76,76,76); /* Old browsers */
+	background: -moz-radial-gradient(center, ellipse cover, rgba(76,76,76,1) 0%, rgba(89,89,89,1) 0%, rgba(17,17,17,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(76,76,76,1)), color-stop(0%,rgba(89,89,89,1)), color-stop(100%,rgba(17,17,17,1))); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(76,76,76,1) 0%,rgba(89,89,89,1) 0%,rgba(17,17,17,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover, rgba(76,76,76,1) 0%,rgba(89,89,89,1) 0%,rgba(17,17,17,1) 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover, rgba(76,76,76,1) 0%,rgba(89,89,89,1) 0%,rgba(17,17,17,1) 100%); /* IE10+ */
+	background: radial-gradient(ellipse at center, rgba(76,76,76,1) 0%,rgba(89,89,89,1) 0%,rgba(17,17,17,1) 100%); /* W3C */
 	color:white;
 
 }
 
 @import "../scss/prez/qui_veut_gagner";
-@include qui-veut-gagner("");
+$height_question : 6rem;
+$width_triangle_question : 20px;
+$height_resp : 4rem;
+$width_triangle_resp : 10px;
+@include qui-veut-gagner("", 
+  $height_question,
+  $width_triangle_question, 
+  $height_resp,
+  $width_triangle_resp);
+
+#content{
+	dislay:flex;
+	flex:1;
+}
+
+.qui-veut-gagner{
+	dislay:flex;
+	flex:1;
+	padding-top : 50px;
+	.resp{
+		width:80%;
+		text-align:center;
+	}
+
+	.resp.select{
+		background: green;
+	}
+	.resp.select:before{
+		border-right-color: green;
+	}
+	.resp.select:after{
+		border-left-color: green;
+	}
+}
+
+.hide{
+	display:none;
+}
+

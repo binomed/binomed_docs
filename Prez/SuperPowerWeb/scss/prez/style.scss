@@ -63,4 +63,15 @@ div.copyright:before{
 }
 
 @import "qui_veut_gagner";
-@include qui-veut-gagner(".reveal .slides section[data-background].transition");
+$height_question : 8rem;
+$width_triangle_question : 50px;
+$height_resp : 4rem;
+$width_triangle_resp : 20px;
+.reveal .slides section[data-background].transition.qui-veut-gagner{
+  height: 100%;
+}
+@include qui-veut-gagner(".reveal .slides section[data-background].transition ", 
+  $height_question,
+  $width_triangle_question,
+  $height_resp,
+  $width_triangle_resp);

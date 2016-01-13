@@ -35,32 +35,37 @@ IoT Manager, Senior innovation developper & Community Manager
 <!-- .slide: data-background="/assets/images/gad_qui_veut_gagner.jpg" data-state="hidefooter" class="transition qui-veut-gagner" -->
 
 
-# question
-
-## reponse A
-
-## reponse B
-
-## reponse C
-
-## reponse D
+<div class="qui-veut-gagner">
+    <div class="question"> question</div>
+    <div class="row">
+        <div class="resp"> reponse A</div>
+        <div class="resp"> reponse C</div>
+    </div>
+    <div class="row">
+        <div class="resp"> reponse B</div>
+        <div class="resp"> reponse D</div>
+    </div>
+</div>
 
 ##==##
 
 <!-- .slide: data-background="/assets/images/gad_qui_veut_gagner.jpg" data-state="hidefooter" class="transition qui-veut-gagner" -->
 
 
-<canvas id="chart_question_1" width="200" height="300" class="chart-resp"></canvas>
 
-# question
-
-## reponse A
-
-## reponse B
-
-## reponse C
-
-## reponse D
+<div class="qui-veut-gagner">
+    <canvas id="chart_question_1" width="200" height="300" class="chart-resp"></canvas>
+    <div class="question"> question</div>
+    <div class="row">
+        <div class="resp"> reponse A</div>
+        <div class="resp"> reponse C</div>
+        
+    </div>
+    <div class="row">
+        <div class="resp"> reponse B</div>
+        <div class="resp"> reponse D</div>     
+    </div>
+</div>
 
 ##==##
 
