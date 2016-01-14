@@ -1,3 +1,5 @@
+'use strict'
+
 var express = require('express'),
 	app = express(),
 	http = require('http').createServer(app),
@@ -46,6 +48,7 @@ function configEvt(msg){
 			elt.callback(msg);
 		}
 	});
+	io.emit('config', msg);
 }
 
 /*
@@ -72,9 +75,14 @@ function unregisterEvent(id, key){
 }
 
 
+function specifyRoute(path, callback){
+	app.get(path, callback);
+}
+
 
 module.exports = {
 	init : init,
 	registerEvent : registerEvent,
-	unregisterEvent : unregisterEvent
+	unregisterEvent : unregisterEvent,
+	specifyRoute : specifyRoute
 };

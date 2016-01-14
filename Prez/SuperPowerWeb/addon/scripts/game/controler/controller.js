@@ -1,15 +1,14 @@
 'use strict'
 var rvModel = require('../model/rivetsModel'),
-	utils = require('./utils/utils'),
-	gameModel = {
-		allowResp : true
-	}, 
+	utils = require('../utils/utils'),
+	gameModel = require('../model/gameModel'), 
 	socket = null;
 
 function clickResp(event){
  
-	utils.rippleEffect(event);	 
-	console.log("click !");
+ 	if (!rvModel.hideMessage){
+ 		return;
+ 	}
 	let elt = event.srcElement;
 	let sendMessage = true;
 	let type = 'newResp';
@@ -48,7 +47,7 @@ function clickResp(event){
 			}
 		break;
 		case "respC":
-		value = 'C';
+			value = 'C';
 			if (rvModel.respASelect 
 				|| rvModel.respBSelect 
 				|| rvModel.respDSelect){
@@ -84,6 +83,7 @@ function clickResp(event){
 	if (sendMessage){
 		socket.emit('config',{
 			type : 'game',
+			id : gameModel.id,
 			eventType : type,
 			resp : value
 		});
@@ -100,10 +100,18 @@ function initController(){
 		socket = io.connect();
 	}
 	socket.on('config', function (data) {
-		console.log(data);
+		if (data.type === 'game' && data.eventType === 'changeQuestion'){
+			rvModel.hideMessage = true;
+			rvModel.repA = data.repA;
+			rvModel.repB = data.repB;
+			rvModel.repC = data.repC;
+			rvModel.repD = data.repD;
+		}else if (data.type === 'game' && data.eventType === 'hideQuestion'){
+			rvModel.hideMessage = false;
+		}
 	});
 }
 
-module.export = {
+module.exports = {
 	initController : initController
 }

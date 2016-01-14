@@ -1,3 +1,5 @@
+'use strict'
+
 var eddystoneBeacon = require('eddystone-beacon'),
 	server = require('./server'),
 	networks = require('./ips');

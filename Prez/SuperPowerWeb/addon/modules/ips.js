@@ -1,3 +1,5 @@
+'use strict'
+
 var os = require('os');
 var ifaces=os.networkInterfaces();
 var jsonNetWork = [];

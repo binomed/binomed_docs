@@ -23,5 +23,15 @@ Reveal.addEventListener( 'ready', function( event ) {
     	// String - Scale label font colour
     	scaleFontColor: "orange",
 	});
+
+
+	if (io && location.port && location.port === "3000"){
+		let socket = io.connect("http://localhost:8000");
+		require('./game/prez_game').init(socket);
+	}else if (io && location.port && location.port === "9000"){
+		let socket = io.connect("http://jef.binomed.fr:8000");
+		require('./game/prez_game').init(socket);
+	}	
+
 	
 } );
