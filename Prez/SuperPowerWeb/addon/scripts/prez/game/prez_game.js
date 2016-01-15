@@ -1,6 +1,9 @@
 'use strict'
 
-var socket = null;
+var config = require('../config/config'),
+	socket = null;
+
+	
 
 function hideQuestion(){	
 	socket.emit('config',{
@@ -29,8 +32,26 @@ function init(socketToSet){
 	Reveal.addEventListener('question-1', function(){
 		changeQuestion(1);
 	});
-	Reveal.addEventListener('previous-question-1', hideQuestion);
-	Reveal.addEventListener('resp-question-1', hideQuestion);
+	Reveal.addEventListener('resp-question-1', function(){
+		hideQuestion();
+		let myHeaders = new Headers();
+		let myInit = { method: 'GET',
+               headers: myHeaders,
+               mode: 'cors',
+               cache: 'default' };
+
+		let myRequest = new Request(`${config.address}/score/1`,myInit);
+		fetch(myRequest)
+		.then(function(response){
+			return response.json();
+		})
+		.then(function(json){
+			console.log(json);
+		});
+
+	});
+	Reveal.addEventListener('quit-question', hideQuestion);
+
 }
 
 module.exports = {

@@ -4,6 +4,9 @@ var rvModel = require('../model/rivetsModel'),
 	gameModel = require('../model/gameModel'), 
 	socket = null;
 
+
+
+
 function clickResp(event){
  
  	if (!rvModel.hideMessage){
@@ -110,6 +113,52 @@ function initController(){
 			rvModel.hideMessage = false;
 		}
 	});
+
+	let myHeaders = new Headers();
+	let myInit = { method: 'GET',
+	       headers: myHeaders,
+	       mode: 'cors',
+	       cache: 'default' };
+
+	let myRequest = new Request(`/currentState`,myInit);
+	fetch(myRequest)
+	.then(function(response){
+		return response.json();
+	})
+	.then(function(json){
+		if (json.hideQuestion){
+			rvModel.hideMessage = !json.hideQuestion;
+		}
+		if (json.score && json.score.users && json.score.users[gameModel.id]){
+			switch(json.score.users[gameModel.id]){
+				case 'A':
+					rvModel.respASelect = true;
+					rvModel.respBSelect = false;
+					rvModel.respCSelect = false;
+					rvModel.respDSelect = false;
+					break;
+				case 'B':
+					rvModel.respASelect = false;
+					rvModel.respBSelect = true;
+					rvModel.respCSelect = false;
+					rvModel.respDSelect = false;
+					break;
+				case 'C':
+					rvModel.respASelect = false;
+					rvModel.respBSelect = false;
+					rvModel.respCSelect = true;
+					rvModel.respDSelect = false;
+					break;
+				case 'D':
+					rvModel.respASelect = false;
+					rvModel.respBSelect = false;
+					rvModel.respCSelect = false;
+					rvModel.respDSelect = true;
+					break;
+			}
+		}		
+	});
+
 }
 
 module.exports = {

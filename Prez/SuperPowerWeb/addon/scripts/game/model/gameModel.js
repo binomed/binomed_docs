@@ -1,6 +1,7 @@
 'use strict'
 
-var idUser = 'user'+new Date().getTime();
+var idUser = localStorage['userId'] ? localStorage['userId'] : 'user'+new Date().getTime();
+localStorage['userId'] = idUser;
 
 module.exports = {
 	id : idUser,

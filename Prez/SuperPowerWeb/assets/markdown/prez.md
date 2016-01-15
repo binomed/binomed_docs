@@ -8,7 +8,7 @@
 
 ##==##
 
-<!-- .slide: class="who-am-i" data-state="previous-question-1"-->
+<!-- .slide: class="who-am-i" data-state="quit-question"-->
 
 ## Qui suis-je ?
 
@@ -58,8 +58,7 @@ IoT Manager, Senior innovation developper & Community Manager
     <div class="question"> question</div>
     <div class="row">
         <div class="resp"> reponse A</div>
-        <div class="resp"> reponse C</div>
-        
+        <div class="resp"> reponse C</div>        
     </div>
     <div class="row">
         <div class="resp"> reponse B</div>

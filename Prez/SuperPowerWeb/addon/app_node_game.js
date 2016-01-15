@@ -6,28 +6,30 @@ server.init(port);
 
 
 var scores = {},
-	index = 0;
+	index = 0, 
+	hideQuestion = true;
 
 function callBackGame(msg){
+	console.log(msg);
 	switch (msg.eventType){
 		case 'newResp':
 		case 'reSend':{
 			let currentScore = scores[`question_${index}`];
 			if (msg.eventType === 'reSend'){
 				let previousRep = currentScore.users[msg.id];
-				switch(msg.resp){
+				resp: switch(previousRep){
 					case 'A':
 						currentScore.repA--;
-						break;
+						break resp;
 					case 'B':
 						currentScore.repB--;
-						break;
+						break resp;
 					case 'C':
 						currentScore.repC--;
-						break;
+						break resp;
 					case 'D':
 						currentScore.repD--;
-						break;
+						break resp;
 				}
 			}
 			currentScore.users[msg.id] = msg.resp;
@@ -48,22 +50,29 @@ function callBackGame(msg){
 			break;
 		}
 		case 'changeQuestion':
+			hideQuestion = false;
 			index = msg.index;
-			scores[`question_${index}`] = {
-				users : {},
-				repA : 0,
-				repB : 0,
-				repC : 0,
-				repD : 0,
+			if (!scores[`question_${index}`]){				
+				scores[`question_${index}`] = {
+					users : {},
+					repA : 0,
+					repB : 0,
+					repC : 0,
+					repD : 0,
+				};
 			}
 		break;
+		case 'hideQuestion':
+			hideQuestion = true;
+		break;
 	}
-	console.log(msg);
+	
 }
 
 server.registerEvent('gameServer','game', callBackGame);
 
 server.specifyRoute('/score/:index', function(req, res){
+
 	let questionIndex = req.params.index;
 	let currentScore = scores[`question_${questionIndex}`];
 	if (currentScore){
@@ -71,4 +80,14 @@ server.specifyRoute('/score/:index', function(req, res){
 	}else{
 		res.send({type:'error unkown index'});
 	}
+});
+
+server.specifyRoute('/currentState', function(req, res){
+
+	res.json({
+		'index' : index,
+		'hideQuestion' : hideQuestion,
+		score : index ? scores[`question_${index}`] : {}
+	});
+	
 });

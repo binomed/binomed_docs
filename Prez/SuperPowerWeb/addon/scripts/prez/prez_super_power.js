@@ -1,5 +1,7 @@
 'use strict'
 
+var config = require('./config/config');
+
 Reveal.addEventListener( 'ready', function( event ) {
     // event.currentSlide, event.indexh, event.indexv
 	var ctx = document.getElementById("chart_question_1").getContext("2d");
@@ -25,11 +27,9 @@ Reveal.addEventListener( 'ready', function( event ) {
 	});
 
 
-	if (io && location.port && location.port === "3000"){
-		let socket = io.connect("http://localhost:8000");
-		require('./game/prez_game').init(socket);
-	}else if (io && location.port && location.port === "9000"){
-		let socket = io.connect("http://jef.binomed.fr:8000");
+
+	if (io && config.address){
+		let socket = io.connect(config.address);
 		require('./game/prez_game').init(socket);
 	}	
 
