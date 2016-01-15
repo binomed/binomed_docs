@@ -75,3 +75,19 @@ $width_triangle_resp : 20px;
   $width_triangle_question,
   $height_resp,
   $width_triangle_resp);
+
+.reveal .slides section[data-background].transition .qui-veut-gagner{
+ 
+  .resp.good.show{
+    transition: background 1s;
+    background: green;
+  }
+  .resp.good.show:before{
+    transition: border-right-color 1s;
+    border-right-color: green;
+  }
+  .resp.good.show:after{
+    transition: border-left-color 1s;
+    border-left-color: green;
+  }
+}

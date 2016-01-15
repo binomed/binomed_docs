@@ -54,15 +54,15 @@ IoT Manager, Senior innovation developper & Community Manager
 
 
 <div class="qui-veut-gagner">
-    <canvas id="chart_question_1" width="200" height="300" class="chart-resp"></canvas>
+    <canvas id="chart_question_1" width="200" height="200" class="chart-resp"></canvas>
     <div class="question"> question</div>
     <div class="row">
-        <div class="resp"> reponse A</div>
-        <div class="resp"> reponse C</div>        
+        <div class="resp repA good"> reponse A</div>
+        <div class="resp repB"> reponse C</div>        
     </div>
     <div class="row">
-        <div class="resp"> reponse B</div>
-        <div class="resp"> reponse D</div>     
+        <div class="resp repC"> reponse B</div>
+        <div class="resp repD"> reponse D</div>     
     </div>
 </div>
 
