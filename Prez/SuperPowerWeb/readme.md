@@ -7,3 +7,6 @@ Add a symbolic link with :
 
 
 For the server part, to run it follow the installation needed for https://github.com/sandeepmistry/bleno. Use Chrome Dev for physical Web
+
+
+DONT FORGET for LINUX TO Stop BLUETOOTH (Bleno )
