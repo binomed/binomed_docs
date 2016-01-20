@@ -4,7 +4,8 @@
     height: 100%;
     display:flex;
     flex-direction:column;
-    padding-top:calc(100vh - (1 * (#{$height_question} + #{$height_resp})) - 80px );
+    padding-bottom: 40px;
+    justify-content : flex-end;
 
     .question, .resp{
       position:relative;
@@ -22,7 +23,7 @@
       width: 0;
       height: 0;      
     }
-
+ 
     .question{
       
       font-size: 3rem;
