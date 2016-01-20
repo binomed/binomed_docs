@@ -82,15 +82,7 @@ http://goo.gl/iQiTvZ
 
 * Gyroscope / Accelometer / Compass
 
-* Media Capture
-
-* Battery Status API
-
-* Vibration API
-
-* Ambient Light
-
-* Proximity Event
+* Proximity
 
 
 ##==##
@@ -128,7 +120,9 @@ http://goo.gl/iQiTvZ
     </div>
 </div>
 
+##==##
 
+## Liste de ce que l'on va voir
 
 ##==##
 
