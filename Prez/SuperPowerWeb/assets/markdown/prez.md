@@ -88,6 +88,7 @@ http://goo.gl/iQiTvZ
 ##==##
 
 <!-- .slide: data-background="/assets/images/gad_qui_veut_gagner.jpg" data-state="hidefooter" class="transition qui-veut-gagner" data-state="question-1"-->
+<div class="url_jeux">http://goo.gl/iQiTvZ</div>
 
 <div class="qui-veut-gagner">
     <div class="question"> Lequel de ces sensors n'est pas accessible depuis le web ?</div>
@@ -105,6 +106,7 @@ http://goo.gl/iQiTvZ
 
 <!-- .slide: data-background="/assets/images/gad_qui_veut_gagner.jpg" data-state="hidefooter" class="transition qui-veut-gagner" data-state="resp-question-1"-->
 
+<div class="url_jeux">http://goo.gl/iQiTvZ</div>
 
 
 <div class="qui-veut-gagner">
