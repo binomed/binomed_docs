@@ -3,7 +3,8 @@
 var eddystoneBeacon = null,//require('eddystone-beacon'),
 	server = require('./server'),
 	networks = require('./ips'),
-	bleno = require('bleno');
+    electronic = require('./electronic'),
+	bleno = require('bleno'),;
 
 const port = 9000;
 
@@ -28,13 +29,12 @@ server.registerEvent('ble', 'changeAdvert', function(msg){
 });
 
 /*
-BLE Tests ! 
-
+BLE Service
 */
 
 // Characteristic
 
-var uuidCharacteristic = '11111111222233334444000000000010';
+const uuidCharacteristic = '11111111222233334444000000000010';
 
 // new characteristic added to the service
 var CharTest = new bleno.Characteristic({
@@ -54,17 +54,21 @@ var CharTest = new bleno.Characteristic({
 		    data.writeUInt8(1, 0);
 		    callback(this.RESULT_SUCCESS, data);
     	}
-        /*if(offset > data.length) {
-            callback(bleno.Characteristic.RESULT_INVALID_OFFSET);
-        } else {
-            callback(bleno.Characteristic.RESULT_SUCCESS, data.slice(offset));
-        }*/
     },
     onWriteRequest : function(newData, offset, withoutResponse, callback) {
         if(offset > 0) {
             callback(bleno.Characteristic.RESULT_INVALID_OFFSET);
         } else {
-            console.log(newData.toString('utf8'));
+            var action = newData.toString('utf8');
+            console.log(action);
+            if (action === 'blink'){
+                electronic.blink();
+            }else if (action === 'stop'){
+                electronic.stopLed();
+            }else if (action.indexOf('bright') != -1){
+                var power = Math.min(255, Math.max(+action.substr(action.indexOf(":")+1, action.length))); 
+                electronic.brightnessLed(power);
+            }
             data = newData;
             callback(bleno.Characteristic.RESULT_SUCCESS);
         }
@@ -73,7 +77,7 @@ var CharTest = new bleno.Characteristic({
 
 // Service
 
-var uuidService = '11111111222233334444000000000000';
+const uuidService = '11111111222233334444000000000000';
 
 var myTestService =  new bleno.PrimaryService({
     uuid : uuidService,
@@ -84,16 +88,16 @@ var myTestService =  new bleno.PrimaryService({
 
 // Bleno
 
+const deviceName = electronic.isRapberry() ? "RpiJefLedDevice" : "JefLedDevice";
+
 bleno.on('stateChange', function(state) {
     console.log('on -> stateChange: ' + state);
     if (state === 'poweredOn') {
-        bleno.startAdvertising('MyDevice',[uuidService]);
+        bleno.startAdvertising(deviceName,[uuidService]);
     } else {
         bleno.stopAdvertising();
     }
 });
-
-var data = new Buffer('Send me some data to display');
 
 bleno.on('advertisingStart', function(error) {
     console.log('on -> advertisingStart: ' + (error ? 'error ' + error : 'success'));
@@ -101,5 +105,3 @@ bleno.on('advertisingStart', function(error) {
         bleno.setServices([myTestService]);
     }
 });
-
-var toUse = 'b1a67521-52eb-4d36-e13e-357d7c225465';
