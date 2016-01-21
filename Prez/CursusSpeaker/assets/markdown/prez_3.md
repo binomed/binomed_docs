@@ -26,22 +26,31 @@
 
 ##==##
 
-
 ## Sachez gagner vos bons points 
 
 * Conf Locale : 
  * Dans son entreprise : 1pt
- * Dans sa ville : 2pt
- * Dans une autre ville : 5pt
+ * Dans sa ville : 2pts / max 10pts si reproduit régulièrement
+ * Dans une autre ville : 5pts / max 20pts si reproduit régulièrement
 * Nationnal :
- * Dans sa ville : 10pt
- * Dans une autre ville : 15pt
+ * Dans sa ville : 10pts 
+ * Dans une autre ville : 15pts /max 30 pts si reproduit régulièrement
+* Conférence proposée en binome : 5pts / Peut être plus en fonction du binome
+
+Notes:
+
+##==##
+
+## Sachez gagner vos bons points 
+
 * Réseaux sociaux
  * Twitter / G+ :
-  * Avec beaucoup de follower : 3pt
-  * Avec une activité intéressante : 5pt
- * Blog technique :  10pt
-* Conférence proposée en binome : 5pt
+  * Avec beaucoup de follower : 3pts / max 20pts si vraiment beaucoup de followers (des milliers)
+  * Avec une activité intéressante : 5pts / max 10pts si le contenu est pertinant
+ * Blog technique :  10pts / max 40pts si le contenu est pertinant 
+ * Avoir une renommée numérique : 50pts
+* Travailler son réseau
+ * Discuter / sympatiser avec les personnes influentes : 30pts
 
 Notes:
 
@@ -56,8 +65,9 @@ Notes:
 |Nantes JUG|1pt pour le quickie|
 |GDG Nantes|5pts pour la conf|
 |Agile Nantes|5pts|
-|Nantes JS|6pts car voté par le public|
+|Nantes JS|10pts car voté par le public|
 |Human Talk|1pt|
+|User group externe|15pts|
 
 Notes:
 
@@ -69,11 +79,11 @@ Notes:
 ||Conférence|Point nécessaires|
 |----|-----|------|
 |![](assets/images/agiletour2015.png) <!-- .element: class="w-100 h-50 float-left" -->|Agile Tour|10pts|
-|![](assets/images/breizhcamp.svg) <!-- .element: class="w-100 h-50 float-left" -->|Breizhcamp|10pts|
-|![](assets/images/logo-summercamp.png) <!-- .element: class="w-100 h-50 float-left" -->|JugSummerCamp|15pts|
-|![](assets/images/logo-codeurs-en-seine.png) <!-- .element: class="w-100 h-50 float-left" -->|Codeurs en Seine|15pt|
-|![](assets/images/devfest.png) <!-- .element: class="w-100 h-50 float-left" -->|DevFest (Hors Nantes)|10pts si sujet Google|
-|![](assets/images/rivieraDev.png) <!-- .element: class="w-100 h-50 float-left" -->|Riviera Dev|15pts|
+|![](assets/images/breizhcamp.svg) <!-- .element: class="w-100 h-50 float-left" -->|Breizhcamp|15pts|
+|![](assets/images/logo-summercamp.png) <!-- .element: class="w-100 h-50 float-left" -->|JugSummerCamp|20pts|
+|![](assets/images/logo-codeurs-en-seine.png) <!-- .element: class="w-100 h-50 float-left" -->|Codeurs en Seine|20pt|
+|![](assets/images/devfest.png) <!-- .element: class="w-100 h-50 float-left" -->|DevFest (Hors Nantes)|20pts si sujet Google|
+|![](assets/images/rivieraDev.png) <!-- .element: class="w-100 h-50 float-left" -->|Riviera Dev|20pts|
 
 
 Notes:
@@ -86,10 +96,10 @@ Notes:
 ||Conférence|Point nécessaires|
 |----|-----|------|
 |![](assets/images/devfest.png) <!-- .element: class="w-100 h-50 float-left" -->|DevFest Nantes|30pts|
-|![](assets/images/bdxio.png) <!-- .element: class="w-100 h-50 float-left" -->|Bdx.IO|20pts|
+|![](assets/images/bdxio.png) <!-- .element: class="w-100 h-50 float-left" -->|Bdx.IO|30pts|
 |![](assets/images/logo-parisweb.png) <!-- .element: class="w-100 h-50 float-left" -->|Paris Web|30pts|
 |![](assets/images/kiwiparty2-logo.png) <!-- .element: class="w-100 h-50 float-left" -->|Kiwi Party|30pts|
-|![](assets/images/blend_webmix.png) <!-- .element: class="w-100 h-50 float-left" -->|Blend Web Mix|30pts|
+|![](assets/images/blend_webmix.png) <!-- .element: class="w-100 h-50 float-left" -->|Blend Web Mix|40pts|
 |![](assets/images/seocamp.png) <!-- .element: class="w-100 h-50 float-left" -->|SEO Camp|30pts|
 
 
