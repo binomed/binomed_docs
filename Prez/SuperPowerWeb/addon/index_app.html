@@ -9,14 +9,24 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
 	<meta name="apple-mobile-web-app-title" content="Phaser App">-->
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+	<link rel="stylesheet" href="./node_modules/angular-material/angular-material.min.css">
+	<link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.min.css">
 </head>
-<body>
-	Hello World<br>
+<body ng-app="SuperPowerApp">
+	
+	<app>
+	</app>
+
+
 	<button id="clickMe">click Me</button><br>
 	<button id="clickMeInfo">click Me Info</button><br>
 	
 	<div id="output"></div>
 	<!--<script src="/socket.io/socket.io.js"></script>-->
+	<script src="./node_modules/angular/angular.js"></script> 
+	<script src="./node_modules/angular-aria/angular-aria.js"></script> 
+	<script src="./node_modules/angular-animate/angular-animate.js"></script> 
+	<script src="./node_modules/angular-material/angular-material.js"></script> 
 	<script src="./bundle_app.js"></script>
 </body>
 </html>

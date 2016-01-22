@@ -1,0 +1,19 @@
+<div layout="column" id="mainContainer" ng-cloak>
+    <md-toolbar >
+        <div class="md-toolbar-tools">
+            <h2 class="md-flex">Super Power App</h2>
+        </div>
+    </md-toolbar>
+    <md-list >
+        <md-list-item class="secondary-button-padding" ng-click="app.openDialog($event,'ble')">
+        	<md-button class="md-fab md-primary" aria-label="bluetooth">
+        		<i class="fa fa-bluetooth fa-2x fa-inverse"></i>
+        	</md-button>
+            <p>Bluetooth</p>
+        </md-list-item>
+        <md-list-item class="secondary-button-padding" ng-click="doPrimaryAction($event)">
+            <p>Click anywhere to fire the primary action, or the button to fire the secondary</p>
+            <md-button class="md-secondary" ng-click="doSecondaryAction($event)">More Info</md-button>
+        </md-list-item>
+    </md-list>
+</div>

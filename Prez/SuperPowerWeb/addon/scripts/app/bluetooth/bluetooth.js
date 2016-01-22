@@ -88,7 +88,7 @@ function processCharacteristic(type, data, callback){
 		}else{
 			let data = new DataView(buffer);
 		    let dataDecrypt = data.getUint8(0);
-		    callback({type: 'read' : value : dataDecrypt});
+		    callback({type: 'read' , value : dataDecrypt});
 		    console.log('ReceiveDatas %s', dataDecrypt);
 		}
 	}).catch(function(error){
@@ -97,7 +97,21 @@ function processCharacteristic(type, data, callback){
 	});
 }
 
-module.exports = {
-	writeData : processCharacteristic
+
+
+function BleController($mdDialog){
+	this.close = function(){
+		$mdDialog.hide();
+	} 
+
+	this.turnOn = function(){
+		console.log('Turn On ! ');
+		
+	}
 }
+
+
+module.exports = BleController;/*{
+	writeData : processCharacteristic
+}*/
 

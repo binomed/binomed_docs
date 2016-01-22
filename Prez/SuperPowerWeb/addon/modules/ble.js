@@ -4,7 +4,7 @@ var eddystoneBeacon = null,//require('eddystone-beacon'),
 	server = require('./server'),
 	networks = require('./ips'),
     electronic = require('./electronic'),
-	bleno = require('bleno'),;
+	bleno = require('bleno');
 
 const port = 9000;
 
@@ -64,10 +64,10 @@ var CharTest = new bleno.Characteristic({
             if (action === 'blink'){
                 electronic.blink();
             }else if (action === 'stop'){
-                electronic.stopLed();
+                electronic.stop();
             }else if (action.indexOf('bright') != -1){
                 var power = Math.min(255, Math.max(+action.substr(action.indexOf(":")+1, action.length))); 
-                electronic.brightnessLed(power);
+                electronic.brightness(power);
             }
             data = newData;
             callback(bleno.Characteristic.RESULT_SUCCESS);
@@ -88,7 +88,7 @@ var myTestService =  new bleno.PrimaryService({
 
 // Bleno
 
-const deviceName = electronic.isRapberry() ? "RpiJefLedDevice" : "JefLedDevice";
+const deviceName = electronic.isRaspberry() ? "RpiJefLedDevice" : "JefLedDevice";
 
 bleno.on('stateChange', function(state) {
     console.log('on -> stateChange: ' + state);

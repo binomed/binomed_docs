@@ -4,21 +4,24 @@ var five = require("johnny-five"),
 	Raspi = null,	
 	os = require("os"),
 	board = null,
-	portLed = 13,
+	portLed = 11,
 	led = null;
 
 try{
 	Raspi = require("raspi-io");
 	board = new five.Board({io: new Raspi()});
 	portLed = "P1-7";
+	console.log("On Rpi");
 }catch(e){
 	Raspi = null;
 	board = new five.Board();
+	console.log("On Computer");
 }
 
 
 board.on("ready", function() {
   led = new five.Led(portLed);
+
 });
 
 function brightnessLed(power){
@@ -44,9 +47,11 @@ function isRaspberry(){
 	return Raspi;
 }
 
+
+
 module.exports = {
-	brightnessLed : brightnessLed,
+	brightness : brightnessLed,
 	blink : blink,
-	stop : stop, 
-	isRapberry : isRapberry
+	stop : stopLed, 
+	isRaspberry : isRaspberry
 }
