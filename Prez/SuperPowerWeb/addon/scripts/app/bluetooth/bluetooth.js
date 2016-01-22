@@ -17,7 +17,8 @@ function str2ab(str) {
 }
 
 var serverGATT = null,
-	serviceGATT = null;
+	serviceGATT = null,
+	characteristicGATT = null;
 
 function initBle(){
 	return new Promise(function(resolve, reject){
@@ -25,7 +26,7 @@ function initBle(){
 			filters: [{ name: 'RpiJefLedDevice' }, { name: 'JefLedDevice' }]
 		})
 		.then(function(device) {
-		   document.querySelector('#output').textContent = 'connecting...';
+		   console.log("Connecting...");
 		   return device.connectGATT();
 		 })
 		.then(function(server) {
@@ -36,6 +37,7 @@ function initBle(){
 		   return new Promise(function(resolveService, rejectService) {
 		     setTimeout(function() {
 		     	try{
+		     		console.log("Try to get Service");
 		       		resolveService(server.getPrimaryService(serviceUUID));
 		     	}catch(err){
 		     		rejectService(err);
@@ -55,7 +57,7 @@ function initBle(){
 
 function getService(){
 	return new Promise(function(resolve, reject){
-		if (serverGATT && serverGATT.connected){
+		if (serverGATT && serverGATT.connected && serviceGATT){
 			resolve(serviceGATT);
 		}else{
 			initBle()
@@ -69,21 +71,41 @@ function getService(){
 	});
 }
 
+function getCharacteristic(){
+	return new Promise(function(resolve, reject){
+		if (characteristicGATT){
+			resolve(characteristicGATT);
+		}else{
+			getService()
+			.then(function(service){
+				console.log("Try to get Characteritic : %O",service);
+				return service.getCharacteristic(characteristicWriteUUID);
+			})
+			.then(function(characteritic){
+				characteristicGATT = characteritic;
+				resolve(characteritic);
+			}).catch(function(error){
+				reject(error);
+			});
+		}
+	});
+}
+
 function processCharacteristic(type, data, callback){
-	getService()
-	.then(function(service){
-		console.log("Try to get Characteritic : %O",service);
-		return service.getCharacteristic(characteristicWriteUUID);
-	}).then(function(characteristic){
+	getCharacteristic()
+	.then(function(characteristic){
 		if (type === 'write'){			
 			console.log("Try to write value : %O",characteristic);
 			return characteristic.writeValue(str2ab(data));
 		}else{
+			console.log("Try to read value : %O",characteristic);
 			return characteristic.readValue();
 		}
 	}).then(function(buffer){
 		if (type === 'write'){
-			callback({type: 'write', value : true});			
+			if(callback){
+				callback({type: 'write', value : true});			
+			}
 			console.info("Write datas ! ");
 		}else{
 			let data = new DataView(buffer);
@@ -93,22 +115,53 @@ function processCharacteristic(type, data, callback){
 		}
 	}).catch(function(error){
 		console.error(error);
-		callback({type : 'error', value : error});
+		if (callback) {
+
+			callback({type : 'error', value : error});
+		}
 	});
 }
 
 
 
-function BleController($mdDialog){
+function BleController($mdDialog, $timeout){
+
+	this.sliderActiv = false;
+	this.currentTimer = null;
+	this.power = 125;
+
 	this.close = function(){
 		$mdDialog.hide();
 	} 
 
 	this.turnOn = function(){
-		console.log('Turn On ! ');
-		
+		processCharacteristic('write', "on");
+	}
+
+	this.blink = function(){
+		processCharacteristic('write', "blink");
+	}
+
+	this.turnOff = function(){
+		processCharacteristic('write', "off");
+	}
+	
+	/*this.$watch('power', function(newPower, oldPower){
+		processCharacteristic('write', "bright:"+newPower);
+	});*/
+
+	this.activSlider = function(){
+		if (this.currentTimer){
+			this.currentTimer.cancel();
+		}
+		this.sliderActiv = true;
+		this.currentTimer = $timeout(function(context){
+			context.sliderActiv = false;
+		},5000,true, this);
 	}
 }
+
+BleController.$inject = ['$mdDialog', '$timeout']
 
 
 module.exports = BleController;/*{

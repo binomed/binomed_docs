@@ -5,15 +5,11 @@
         </div>
     </md-toolbar>
     <md-list >
-        <md-list-item class="secondary-button-padding" ng-click="app.openDialog($event,'ble')">
-        	<md-button class="md-fab md-primary" aria-label="bluetooth">
-        		<i class="fa fa-bluetooth fa-2x fa-inverse"></i>
+        <md-list-item class="secondary-button-padding" ng-click="app.openDialog($event,action.idAction)" ng-repeat="action in app.actions">
+        	<md-button class="md-fab md-primary" aria-label="{{action.label}}">
+        		<i class="fa fa-2x fa-inverse" ng-class="action.icon"></i>
         	</md-button>
-            <p>Bluetooth</p>
-        </md-list-item>
-        <md-list-item class="secondary-button-padding" ng-click="doPrimaryAction($event)">
-            <p>Click anywhere to fire the primary action, or the button to fire the secondary</p>
-            <md-button class="md-secondary" ng-click="doSecondaryAction($event)">More Info</md-button>
-        </md-list-item>
+            <p>{{action.label}}</p>
+        </md-list-item>        
     </md-list>
 </div>

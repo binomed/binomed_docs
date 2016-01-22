@@ -24,6 +24,12 @@ board.on("ready", function() {
 
 });
 
+function on(){
+	if (led){
+		led.on();
+	}
+}
+
 function brightnessLed(power){
 	if (led){
 		led.brightness(power);
@@ -53,5 +59,6 @@ module.exports = {
 	brightness : brightnessLed,
 	blink : blink,
 	stop : stopLed, 
+	on : on,
 	isRaspberry : isRaspberry
 }

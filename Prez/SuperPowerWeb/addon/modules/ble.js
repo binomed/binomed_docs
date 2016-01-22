@@ -61,7 +61,9 @@ var CharTest = new bleno.Characteristic({
         } else {
             var action = newData.toString('utf8');
             console.log(action);
-            if (action === 'blink'){
+            if (action === 'on'){
+                electronic.on();
+            }else if (action === 'blink'){
                 electronic.blink();
             }else if (action === 'stop'){
                 electronic.stop();

@@ -1,4 +1,8 @@
 <md-dialog aria-label="Bluetooth" ng-cloak>
-	<md-button ng-click="bleCtrl.turnOn()">Turn ON</md-button>
-	<md-button ng-click="bleCtrl.close()">Close</md-button>
+	<md-button class="md-raised md-primary" ng-click="bleCtrl.turnOn()">Turn ON</md-button>
+	<md-button class="md-raised md-primary md-hue-1" ng-click="bleCtrl.activSlider()">Play with Slider</md-button>
+	<md-slider flex md-discrete ng-disabled="!bleCtrl.sliderActiv" ng-model="bleCtrl.power" step="1" min="1" max="255" aria-label="power"></md-slider>
+	<md-button class="md-raised md-primary md-hue-2" ng-click="bleCtrl.blink()">Blink</md-button>
+	<md-button class="md-raised md-accent" ng-click="bleCtrl.turnOff()">Turn Off</md-button>
+	<md-button class="md-raised md-warn" ng-click="bleCtrl.close()">Close</md-button>
 </md-dialog>
