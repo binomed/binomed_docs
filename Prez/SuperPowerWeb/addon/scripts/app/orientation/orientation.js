@@ -17,8 +17,17 @@
 		window.removeEventListener('deviceorientation', deviceOrientationListener, false);
 	}
 
+function OrientationControler($mdDialog){
 
-module.exports = {
-	register : register,
-	register : unregister
+	this.turnOn = function(){
+		register();
+	}
+
+	this.close = function(){
+		unregister();
+		$mdDialog.hide();
+	}
 }
+
+
+module.exports = OrientationControler;

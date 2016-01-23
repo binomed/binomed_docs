@@ -19,8 +19,17 @@
 	window.removeEventListener('devicelight', deviceLightHandler, false);
 	}
 
+function LightControler($mdDialog){
 
-module.exports = {
-	register : register,
-	register : unregister
+	this.turnOn = function(){
+		register();
+	}
+
+	this.close = function(){
+		unregister();
+		$mdDialog.hide();
+	}
 }
+
+
+module.exports = LightControler;
