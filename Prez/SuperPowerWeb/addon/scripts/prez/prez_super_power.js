@@ -8,8 +8,9 @@ Reveal.addEventListener( 'ready', function( event ) {
 
 
 	if (io && config.address){
-		let socket = io.connect(config.address);
-		require('./game/prez_game').init(socket);
+		let socketGame = io.connect(config.address);
+		require('./game/prez_game').init(socketGame);
+		let socketPrez = io.connect(config.address);
 	}	
 
 	
