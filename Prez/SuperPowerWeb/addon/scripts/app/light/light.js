@@ -9,7 +9,6 @@ var deviceLightHandler = function(event) {
 	var value = Math.min(45, event.value);        
 	let percent = Math.round((value / 45) * 100);       
 	socket.sendMessage({type: 'light', value : percent});
-	//updateLight(); 
 }
 
 // We add the listener

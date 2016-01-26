@@ -51,8 +51,7 @@ var CharTest = new bleno.Characteristic({
             }else if (action.indexOf('bright') != -1){
                 var power = Math.min(255, Math.max(+action.substr(action.indexOf(":")+1, action.length))); 
                 electronic.brightness(power);
-            }
-            data = newData;
+            }            
             callback(bleno.Characteristic.RESULT_SUCCESS);
         }
     }

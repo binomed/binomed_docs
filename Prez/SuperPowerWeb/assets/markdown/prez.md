@@ -195,12 +195,13 @@ Subtilité : ça marche mieux si le téléphone est a plat
 
 
 ##==##
+<!-- .slide: data-state="stop-orientation" -->
 
 ## Orientation
 
 ### Cas Pratique
 
-![center w-800](assets/images/combination-lock-icon.jpg)
+![center w-600](assets/images/combination-lock-icon.jpg)
 
 
 ##==##
@@ -214,6 +215,14 @@ Subtilité : ça marche mieux si le téléphone est a plat
     <div class="safe_lock_door">
       <div class="safe_lock_bg"></div>
       <div class="safe_lock"></div>
+    </div>
+    <div class="resp">
+      <div class="value"></div>     
+      <div class="chevrons">
+        <i class="first fa fa-times-circle"></i> 
+        <i class="second fa fa-times-circle"></i> 
+        <i class="third fa fa-times-circle"></i> 
+      </div>
     </div>
   </div>
 </div>

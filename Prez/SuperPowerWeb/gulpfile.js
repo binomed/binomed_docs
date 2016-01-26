@@ -15,7 +15,7 @@ var reload = browserSync.reload;
 
 var port = 8000;
 
-gulp.task('serv_node_app', shell.task(['sudo node addon/app_prez_server.js']));
+gulp.task('serv_node_app', shell.task(['node addon/app_prez_server.js']));
 
 gulp.task('watch',['browserify_app', 'browserify_prez', 'browserify_game', 'sass_prez', 'sass_addon'], function(){
   browserSync.init({
