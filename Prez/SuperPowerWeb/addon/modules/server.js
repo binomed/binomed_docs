@@ -10,7 +10,7 @@ var callBacksAction = [];
 /*
 Init Server
 */
-app.use(express.static(__dirname+'/..'));
+app.use(express.static(__dirname+'/../..'));
 
 function init(port){
 	http.listen(port, function(){

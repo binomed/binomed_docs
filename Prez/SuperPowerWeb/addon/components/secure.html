@@ -1,0 +1,13 @@
+<md-dialog aria-label="Secure" ng-cloak>
+	<md-toolbar class="md-primary">
+		<div class="md-toolbar-tools">
+        <h2>Restricted Area</h2>        
+      </div>
+	</md-toolbar>
+	<md-input-container>
+        <label>Password</label>
+        <input ng-model="secureCtrl.pwd" type="password">
+      </md-input-container>
+    <h2 ng-show="secureCtrl.notvalid">Mot de passe invalide</h2>
+	<md-button class="md-raised md-warn" ng-click="secureCtrl.try()">Valid</md-button>
+</md-dialog>

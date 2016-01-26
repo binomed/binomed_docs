@@ -19,6 +19,15 @@ angular.module("SuperPowerApp", ['ngMaterial'])
 				{label : "Voice", icon : 'fa-microphone', idAction: 'mic'}
 			];
 
+			$mdDialog.show({
+				controllerAs : 'secureCtrl',
+				templateUrl: '../../components/secure.html',
+				controller: require('../app/secure/secure'),
+				parent : angular.element(document.querySelector('#mainContainer')),
+				targetEvent : event,
+				fullScreen : true
+			});
+
 			this.openDialog = function(event, type){
 				console.log('Open Dialog');
 				if (type === 'ble'){

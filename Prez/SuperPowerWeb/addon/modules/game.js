@@ -1,13 +1,9 @@
 'use strict'
 
-var server = require("./modules/server");
-const port = 8000;
-server.init(port);
-
-
 var scores = {},
 	index = 0, 
 	hideQuestion = true;
+
 
 function callBackGame(msg){
 	console.log(msg);
@@ -69,25 +65,32 @@ function callBackGame(msg){
 	
 }
 
-server.registerEvent('gameServer','game', callBackGame);
 
-server.specifyRoute('/score/:index', function(req, res){
+function initGameServer(server){
+	server.registerEvent('gameServer','game', callBackGame);
 
-	let questionIndex = req.params.index;
-	let currentScore = scores[`question_${questionIndex}`];
-	if (currentScore){
-		res.json(currentScore);
-	}else{
-		res.send({type:'error unkown index'});
-	}
-});
+	server.specifyRoute('/score/:index', function(req, res){
 
-server.specifyRoute('/currentState', function(req, res){
-
-	res.json({
-		'index' : index,
-		'hideQuestion' : hideQuestion,
-		score : index ? scores[`question_${index}`] : {}
+		let questionIndex = req.params.index;
+		let currentScore = scores[`question_${questionIndex}`];
+		if (currentScore){
+			res.json(currentScore);
+		}else{
+			res.send({type:'error unkown index'});
+		}
 	});
-	
-});
+
+	server.specifyRoute('/currentState', function(req, res){
+
+		res.json({
+			'index' : index,
+			'hideQuestion' : hideQuestion,
+			score : index ? scores[`question_${index}`] : {}
+		});
+		
+	});
+}
+
+module.exports = {
+	initGameServer : initGameServer
+};
