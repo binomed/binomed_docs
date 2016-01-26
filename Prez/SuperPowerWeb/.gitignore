@@ -9,3 +9,4 @@ addon/node_modules
 addon/.sass-cache
 css/theme
 scss/theme
+npm-debug.log
