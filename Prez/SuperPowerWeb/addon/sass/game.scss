@@ -28,12 +28,19 @@ $width_triangle_resp : 10px;
   $width_triangle_resp);
 
 #content{
-	dislay:flex;
+	display:flex;
 	flex:1;
+	flex-direction:column;
+	justify-content:space-between;
+
+	.wait_message{
+		text-align:center;
+		margin:auto;
+	}
 }
 
 .qui-veut-gagner{
-	dislay:flex;
+	display:flex;
 	flex:1;
 	padding-top : 50px;
 	.resp{

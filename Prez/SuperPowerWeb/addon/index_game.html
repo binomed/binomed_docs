@@ -13,11 +13,11 @@
 <body>
 	
 	<script src="/socket.io/socket.io.js"></script>
-	<script src="./node_modules/rivets/dist/rivets.bundled.min.js"></script>
+	<script src="/node_modules/rivets/dist/rivets.bundled.min.js"></script>
 
 	
 	<div id="content">
-		<div class="qui-veut-gagner" rv-show="hideMessage">
+		<div class="qui-veut-gagner" rv-show="showQuestion">
 			<div class="row">
 		        <div id="respA" class="resp fab" rv-text="repA" rv-on-click="clickResp" rv-class-select="respASelect" ></div>
 		    </div>
@@ -33,6 +33,10 @@
 		</div>
 		<div class="wait_message " rv-hide="hideMessage">
 			En Attente 
+		</div>
+		<div class="wait_message "  rv-show="notcompatible">
+			Désolé mais votre navigateur n'est pas compatible avec les fonctionnalités requises pour jouer. Veuillez télécharger chrome ou firefox. <br>
+			Si c'est déjà le cas, désolé mais regardez donc la prez !
 		</div>
 	</div>
 

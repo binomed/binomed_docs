@@ -1,7 +1,8 @@
 'use strict'
 var rvModel = require('../model/rivetsModel'),
 	utils = require('../utils/utils'),
-	gameModel = require('../model/gameModel'), 
+	gameModel = require('../model/gameModel'),
+	compat = require('../utils/compat'), 
 	socket = null;
 
 
@@ -95,9 +96,17 @@ function clickResp(event){
 }
 
 function initController(){
+
+	if (!compat()){
+		rvModel.hideMessage = true;
+		rvModel.showQuestion = false;
+		rvModel.notcompatible = true;
+		return;
+	}
+
 	rvModel.clickResp = clickResp;
 
-	if (location.port && location.port === "3010"){
+	if (location.port && location.port === "3000"){
 		socket = io.connect("http://localhost:8000");
 	}else{
 		socket = io.connect();
@@ -105,12 +114,14 @@ function initController(){
 	socket.on('config', function (data) {
 		if (data.type === 'game' && data.eventType === 'changeQuestion'){
 			rvModel.hideMessage = true;
+			rvModel.showQuestion = true;
 			rvModel.repA = data.repA;
 			rvModel.repB = data.repB;
 			rvModel.repC = data.repC;
 			rvModel.repD = data.repD;
 		}else if (data.type === 'game' && data.eventType === 'hideQuestion'){
 			rvModel.hideMessage = false;
+			rvModel.showQuestion = false;
 		}
 	});
 
@@ -128,6 +139,7 @@ function initController(){
 	.then(function(json){
 		if (json.hideQuestion){
 			rvModel.hideMessage = !json.hideQuestion;
+			rvModel.showQuestion = rvModel.hideMessage;
 		}
 		if (json.score && json.score.users && json.score.users[gameModel.id]){
 			switch(json.score.users[gameModel.id]){

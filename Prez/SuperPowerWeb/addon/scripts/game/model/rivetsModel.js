@@ -1,7 +1,9 @@
 'use strict'
 
 module.exports = {
-	hideMessage : true, 
+	showQuestion : true, 
+	hideMessage : true,
+	notcompatible : false,
 	repA : 'reponse A',
 	repB : 'reponse B',
 	repC : 'reponse C',
