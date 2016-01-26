@@ -429,6 +429,8 @@ window.addEventListener('devicelight', deviceLightHandler, false);
 
 ##==##
 
+<!-- .slide: data-state="stop-light" -->
+
 ## Light
 
 ### Cas pratique
