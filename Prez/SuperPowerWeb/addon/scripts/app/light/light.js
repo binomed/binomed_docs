@@ -1,25 +1,29 @@
 'use strict';
 
- 	// The handler
-	var deviceLightHandler = function(event) {
-		// The value will live between 0 and ~150
-		// But when it is 45 is a high lumonsity
-		var value = Math.min(45, event.value);        
-		percent = Math.round((value / 45) * 100);       
-		//socket.sendLight(percent);
-		//updateLight(); 
-	}
+let socket = null;
 
-	// We add the listener
-	function register(){
+// The handler
+var deviceLightHandler = function(event) {
+	// The value will live between 0 and ~150
+	// But when it is 45 is a high lumonsity
+	var value = Math.min(45, event.value);        
+	let percent = Math.round((value / 45) * 100);       
+	socket.sendMessage({type: 'light', value : percent});
+	//updateLight(); 
+}
+
+// We add the listener
+function register(){
 	window.addEventListener('devicelight', deviceLightHandler, false);
-	}
+}
 
-	function unregister(){
+function unregister(){
 	window.removeEventListener('devicelight', deviceLightHandler, false);
-	}
+}
 
-function LightControler($mdDialog){
+function LightControler($mdDialog, SocketService){
+
+	socket = SocketService;
 
 	this.turnOn = function(){
 		register();
@@ -31,5 +35,6 @@ function LightControler($mdDialog){
 	}
 }
 
+LightControler.$inject = ['$mdDialog', 'SocketService']
 
 module.exports = LightControler;

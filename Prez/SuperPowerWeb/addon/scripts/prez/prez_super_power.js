@@ -10,8 +10,15 @@ Reveal.addEventListener( 'ready', function( event ) {
 	if (io && config.address){
 		let socketGame = io.connect(config.address);
 		require('./game/prez_game').init(socketGame);
-		let socketPrez = io.connect(config.address);
-	}	
+		let socketPrez = null;
+		if (config.local){
+			socketPrez = socketGame; 
+		}else{
+			socketPrez = io.connect(config.address);
+		}
 
+		require('./sensors/light').init(socketPrez);
+	}	
+ 
 	
 } );
