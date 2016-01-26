@@ -10,3 +10,5 @@ For the server part, to run it follow the installation needed for https://github
 
 
 DONT FORGET for LINUX TO Stop BLUETOOTH (Bleno )
+
+DONT FORGET TO BE ROOT ! 
