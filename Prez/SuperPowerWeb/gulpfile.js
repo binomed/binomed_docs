@@ -19,7 +19,7 @@ gulp.task('serv_node_app', shell.task(['sudo node addon/app_prez_server.js']));
 
 gulp.task('watch',['browserify_app', 'browserify_prez', 'browserify_game', 'sass_prez', 'sass_addon'], function(){
   browserSync.init({
-    port : 3010,
+    port : 3000,
     proxy :  'http://localhost:'+port
   });
   gulp.watch("./scss/**/*.scss", ['sass_prez']);
@@ -84,7 +84,7 @@ gulp.task('browserify_game',function(){
 });
 
 gulp.task('browserify_prez',function(){
-  return browserify(['./addonscripts/prez/prez_super_power.js'], {debug:true})
+  return browserify(['./addon/scripts/prez/prez_super_power.js'], {debug:true})
     .bundle()    
     .on('error', function(err){
       console.log(err);
