@@ -6,9 +6,11 @@ angular.module("SuperPowerApp", ['ngMaterial'])
     .primaryPalette('red')
     .accentPalette('orange');
 })
-.directive('app', ['$mdDialog', '$timeout', function($mdDialog, $timeout){
+.service('SocketService', require('./socket/sockets'))
+.directive('app', ['$mdDialog', '$timeout', 'SocketService',
+	function($mdDialog, $timeout, SocketService){
 	return {
-		templateUrl: '../../components/app.html',
+		templateUrl: './components/app.html',
 		controllerAs : 'app',
 		bindToController : true,
 		controller: function(){
@@ -21,8 +23,8 @@ angular.module("SuperPowerApp", ['ngMaterial'])
 
 			$mdDialog.show({
 				controllerAs : 'secureCtrl',
-				templateUrl: '../../components/secure.html',
-				controller: require('../app/secure/secure'),
+				templateUrl: './components/secure.html',
+				controller: require('./secure/secure'),
 				parent : angular.element(document.querySelector('#mainContainer')),
 				targetEvent : event,
 				fullScreen : true
@@ -33,8 +35,8 @@ angular.module("SuperPowerApp", ['ngMaterial'])
 				if (type === 'ble'){
 					$mdDialog.show({
 						controllerAs : 'bleCtrl',
-						templateUrl: '../../components/bluetooth.html',
-						controller: require('../app/bluetooth/bluetooth'),
+						templateUrl: './components/bluetooth.html',
+						controller: require('./bluetooth/bluetooth'),
 						parent : angular.element(document.querySelector('#mainContainer')),
 						targetEvent : event,
 						fullScreen : true
@@ -42,8 +44,8 @@ angular.module("SuperPowerApp", ['ngMaterial'])
 				}else if (type === 'light'){
 					$mdDialog.show({
 						controllerAs : 'lightCtrl',
-						templateUrl: '../../components/light.html',
-						controller: require('../app/light/light'),
+						templateUrl: './components/light.html',
+						controller: require('./light/light'),
 						parent : angular.element(document.querySelector('#mainContainer')),
 						targetEvent : event,
 						fullScreen : true
@@ -51,8 +53,8 @@ angular.module("SuperPowerApp", ['ngMaterial'])
 				}else if (type === 'orientation'){
 					$mdDialog.show({
 						controllerAs : 'orientationCtrl',
-						templateUrl: '../../components/orientation.html',
-						controller: require('../app/orientation/orientation'),
+						templateUrl: './components/orientation.html',
+						controller: require('./orientation/orientation'),
 						parent : angular.element(document.querySelector('#mainContainer')),
 						targetEvent : event,
 						fullScreen : true
@@ -60,8 +62,8 @@ angular.module("SuperPowerApp", ['ngMaterial'])
 				}else if (type === 'mic'){
 					$mdDialog.show({
 						controllerAs : 'voiceCtrl',
-						templateUrl: '../../components/voice.html',
-						controller: require('../app/voice/voice'),
+						templateUrl: './components/voice.html',
+						controller: require('./voice/voice'),
 						parent : angular.element(document.querySelector('#mainContainer')),
 						targetEvent : event,
 						fullScreen : true
@@ -71,8 +73,6 @@ angular.module("SuperPowerApp", ['ngMaterial'])
 		}
 	}
 }]);
-
-var ble = require('./bluetooth/bluetooth');
 
 
 function pageLoad(){	
