@@ -1,27 +1,32 @@
 'use strict';
 
-	// Listener of devieMotion
-	var deviceMotionListener = function(event){        
-		var x = event.acceleration.x;
-		var y = event.acceleration.y;
-		var z = event.acceleration.z;
-		currentPercent+=Math.abs(x);
-		//socket.sendDeviceMotion(Math.abs(x));
-		//updatePercent();
-	}
+let callback = null;
 
-	// We add the listener
-	function register(){
-		window.addEventListener('devicemotion', deviceMotionListener, false);
-	}
+// Listener of devieMotion
+var deviceMotionListener = function(event){        
+	var x = event.acceleration.x;
+	var y = event.acceleration.y;
+	var z = event.acceleration.z;
+	callback(Math.abs(x));
+	//updatePercent();
+}
 
-	function unregister(){
-		window.removeEventListener('devicemotion', deviceMotionListener, false);        
-	}
+// We add the listener
+function register(){
+	window.addEventListener('devicemotion', deviceMotionListener, false);
+}
 
+function unregister(){
+	window.removeEventListener('devicemotion', deviceMotionListener, false);        
+}
+
+function init(callbackMotion){
+	callback = callbackMotion
+}
 
 
 module.exports = {
 	register : register,
-	register : unregister
+	unregister : unregister,
+	init : init
 }

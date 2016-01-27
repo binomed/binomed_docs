@@ -291,6 +291,8 @@ function register(){
 
 ##==##
 
+<!-- .slide: data-state="stop-devicemotion" -->
+
 ## Device Orientation
 
 ### Cas pratique
@@ -307,9 +309,21 @@ function register(){
 
 
 <div class="sensorExample">
-  <div class="devicemotion">  
-    <div class="devicemotion-percent"></div>
-    <div class="devicemotion-bg"></div>
+  <div class="devicemotion">
+    <div class="team">
+      <div class="battery-parent">
+        <div id="battery-1"></div>
+        <div class="team-name">Team Firefox</div>
+      </div>
+    </div>
+    <div class="team">
+      <div class="battery-parent">
+        <div id="battery-2"></div>
+        <div class="team-name">Team Chrome</div>
+      </div>
+    </div>
+    <div class="win firefox"></div>
+    <div class="win chrome"></div>
   </div>
 </div>
 

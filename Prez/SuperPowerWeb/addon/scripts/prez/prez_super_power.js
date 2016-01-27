@@ -12,13 +12,17 @@ Reveal.addEventListener( 'ready', function( event ) {
 		require('./game/prez_game').init(socketGame);
 		let socketPrez = null;
 		if (config.local){
-			socketPrez = socketGame;  
+			socketPrez = socketGame;   
 		}else{
 			socketPrez = io.connect(config.address);
 		}
-
-		require('./sensors/light').init(socketPrez);
-		require('./sensors/orientation').init(socketPrez);
+ 
+ 		setTimeout(function() {
+			require('./sensors/light').init(socketPrez);
+			require('./sensors/orientation').init(socketPrez);
+			require('./sensors/devicemotion').init(socketPrez);
+ 			
+ 		}, 1000);
 	}	
  
 	
