@@ -230,6 +230,36 @@ Subtilité : ça marche mieux si le téléphone est a plat
 
 
 ##==##
+<!-- .slide: class="transition-black" data-state="stop-orientation"-->
+
+## Compatibilité
+
+<div class="compat">
+  <div class="chrome">
+    <div class="desktop"></div>
+    <div class="os"></div>
+    <div class="android"></div>
+    <div class="ios"></div>
+  </div>
+  <div class="firefox">
+    <div class="desktop"></div>
+    <div class="os"></div>
+    <div class="android"></div>
+    <div class="ios"></div>
+  </div>
+  <div class="edge">
+    <div class="desktop"></div>
+  </div>
+  <div class="ie">
+    <div class="old"></div>
+    <div class="new"></div>
+  </div>
+  <div class="safari">
+    <div class="ios"></div>
+  </div>
+</div>
+
+##==##
 
 <!--
 //    _____  ________      _______ _____ ______   __  __  ____ _______ _____ ____  _   _ 
@@ -241,8 +271,6 @@ Subtilité : ça marche mieux si le téléphone est a plat
 //                                                                                       
 //    
 -->
-
-<!-- .slide: class="transition-black" data-state="stop-orientation"-->
 
 # Device Motion API
 
