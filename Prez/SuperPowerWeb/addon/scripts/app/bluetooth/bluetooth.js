@@ -18,7 +18,8 @@ function str2ab(str) {
 
 var serverGATT = null,
 	serviceGATT = null,
-	characteristicGATT = null;
+	characteristicGATT = null,
+	encoder = new TextEncoder();
 
 function initBle(){
 	return new Promise(function(resolve, reject){
@@ -96,7 +97,7 @@ function processCharacteristic(type, data, callback){
 	.then(function(characteristic){
 		if (type === 'write'){			
 			console.log("Try to write value : %O",characteristic);
-			return characteristic.writeValue(str2ab(data));
+			return characteristic.writeValue(encoder.encode(data));
 		}else{
 			console.log("Try to read value : %O",characteristic);
 			return characteristic.readValue();
@@ -146,13 +147,13 @@ function BleController($mdDialog, $timeout){
 		processCharacteristic('write', "off");
 	}
 	
-	/*this.$watch('power', function(newPower, oldPower){
-		processCharacteristic('write', "bright:"+newPower);
-	});*/
+	this.changePower = function(){
+		processCharacteristic('write', "bright:"+this.power);
+	};
 
 	this.activSlider = function(){
 		if (this.currentTimer){
-			this.currentTimer.cancel();
+			$timeout.cancel(this.currentTimer);
 		}
 		this.sliderActiv = true;
 		this.currentTimer = $timeout(function(context){

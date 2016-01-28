@@ -2,7 +2,8 @@
 
 var eddystoneBeacon = null,//require('eddystone-beacon'),	
     electronic = require('./electronic'),
-	bleno = require('bleno');
+	bleno = require('bleno'),
+    StringDecoder = require('string_decoder').StringDecoder;
 
 //var url = `http://${ip.ip}:${port}`;
 var url = 'http://goo.gl/KsQhXJ'; // DevFest Nantes
@@ -13,9 +14,14 @@ var url = 'http://goo.gl/KsQhXJ'; // DevFest Nantes
 BLE Service
 */
 
+function ab2str(buf) {
+  return String.fromCharCode.apply(null, new Uint16Array(buf));
+}
+
 // Characteristic
 
 const uuidCharacteristic = '11111111222233334444000000000010';
+const decoder = new StringDecoder('utf-8');
 
 // new characteristic added to the service
 var CharTest = new bleno.Characteristic({
@@ -40,13 +46,14 @@ var CharTest = new bleno.Characteristic({
         if(offset > 0) {
             callback(bleno.Characteristic.RESULT_INVALID_OFFSET);
         } else {
-            var action = newData.toString('utf8');
-            console.log(action);
+
+            var action = decoder.write(newData);
+            console.log(`${action}!`);
             if (action === 'on'){
-                electronic.on();
+                electronic.on();                
             }else if (action === 'blink'){
                 electronic.blink();
-            }else if (action === 'stop'){
+            }else if (action === 'off'){
                 electronic.stop();
             }else if (action.indexOf('bright') != -1){
                 var power = Math.min(255, Math.max(+action.substr(action.indexOf(":")+1, action.length))); 
@@ -82,8 +89,12 @@ bleno.on('stateChange', function(state) {
 });
 
 bleno.on('advertisingStart', function(error) {
-    console.log('on -> advertisingStart: ' + (error ? 'error ' + error : 'success'));
+    if(error){ console.log("Adv error",error); }
     if (!error) {
+        console.log('on -> advertisingStart: ' + (error ? 'error ' + error : 'success'));
         bleno.setServices([myTestService]);
-    }
+    }else{
+        bleno.stopAdvertising();
+        bleno.startAdvertising(deviceName,[uuidService]);
+    }    
 });

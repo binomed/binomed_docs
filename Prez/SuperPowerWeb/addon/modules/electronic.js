@@ -21,37 +21,45 @@ try{
 
 board.on("ready", function() {
   led = new five.Led(portLed);
+  console.log("Board Ready");
 
 });
 
 function on(){
+	console.log("Electronic->On");
 	if (led){
 		led.on();
+		console.log("Turn On Led");
 	}
 }
 
 function brightnessLed(power){
+	console.log("Electronic->BrightnessLed : "+power);
 	if (led){
 		led.brightness(power);
 	}
 }
 
 function blink(){
+	console.log("Electronic->Blink");
 	if (led){
 		led.blink(500);
 	}
 }
 
 function stopLed(){
+	console.log("Electronic->Stop");
 	if (led) {
 		led.stop();
 		led.off();
+		console.log("Stop & off led");
 	}
 }
 
 function isRaspberry(){
 	return Raspi;
 }
+
 
 
 
