@@ -1,0 +1,123 @@
+/*
+  Compat
+*/
+
+$browser-size : 128px;
+$mini-browser-size : 64px;
+
+
+@mixin variante($browser, $mini, $name, $path){
+  .#{$browser} .#{$mini}:before{
+    content:'';
+    position:absolute;
+    width: $mini-browser-size;
+    height: $mini-browser-size;
+    top:50%;
+    left:-1.5*$mini-browser-size;
+    margin-top: -$mini-browser-size/2;
+  }
+
+  .#{$browser} .#{$mini}{
+    position:relative;
+    display:flex;
+    flex-direction: column;
+    margin:30px;    
+  }
+
+
+  .#{$browser} .#{$mini}:before{
+    background:url(../../assets/images/#{$path}.png);
+    background-size:$mini-browser-size;
+  }
+  .#{$browser} .#{$mini}.partial:before{
+    background:url(../../assets/images/partial_#{$path}.png);
+    background-size:$mini-browser-size;
+  }
+  .#{$browser} .#{$mini}.unsupport:before{
+    background:url(../../assets/images/unsupport_#{$path}.png);
+    background-size:$mini-browser-size;
+  }
+  .#{$browser} .#{$mini}:after{
+    content: $name;
+    position:absolute;
+    font-size:15px;
+    width:$mini-browser-size;
+    height:10px;
+    bottom:-25px;
+    left:-1.5*$mini-browser-size;
+  }
+}
+
+.reveal .slides section .compat{
+  display: flex;
+  padding-top: 130px;
+  /*width: 100%;
+  height: 100%;*/
+  justify-content: space-between;
+
+  .chrome, .firefox, .edge, .ie, .safari{
+    position:relative;
+    display:flex;
+    flex-direction: column;
+  }
+  
+  .chrome:before, .firefox:before, .edge:before, .ie:before, .safari:before{
+    content:'';
+    position:absolute;
+    width: $browser-size;
+    height: $browser-size;
+    top:-$browser-size;
+    left: 50%;
+    margin-left: -$browser-size/2;
+  }
+
+  .chrome:before{    
+    background:url(../../assets/images/chrome_256x256.png);
+    background-size:$browser-size;
+  }
+  .firefox:before{    
+    background:url(../../assets/images/firefox_256x256.png);
+    background-size:$browser-size;
+  }
+  .edge:before{    
+    background:url(../../assets/images/edge_256x256.png);
+    background-size:$browser-size;
+  }
+  .ie:before{    
+    background:url(../../assets/images/internet-explorer-tile_256x256.png);
+    background-size:$browser-size;
+  }
+  .safari:before{    
+    background:url(../../assets/images/safari-ios_256x256.png);
+    background-size:$browser-size;
+  } 
+
+  /*
+    Chrome Variantes
+  */
+
+  @include variante(chrome, desktop, "desktop", chrome_256x256);
+  @include variante(chrome, os, "OS", chrome_256x256);
+  @include variante(chrome, android, "android", chrome-android_256x256);
+  @include variante(chrome, android-beta, "android beta", chrome-beta-android_256x256);
+  @include variante(chrome, android-dev, "android dev", chrome-dev-android_256x256);
+  @include variante(chrome, chromium, "chromium", chromium_256x256);
+  @include variante(chrome, ios, "ios", chrome-android_256x256);
+
+  @include variante(firefox, desktop, "desktop", firefox_256x256);
+  @include variante(firefox, desktop-nightly, "desktop-nigthly", firefox-nightly_256x256);
+  @include variante(firefox, os, "OS", firefox_256x256);
+  @include variante(firefox, android, "android", firefox_256x256);
+  @include variante(firefox, android-beta, "android beta", firefox-beta_256x256);
+  @include variante(firefox, ios, "ios", firefox_256x256);
+
+  @include variante(edge, desktop, "desktop", edge_256x256);
+  @include variante(ie, old, "ie7-", internet-explorer_256x256);
+  @include variante(ie, new, "ie8+", internet-explorer-tile_256x256);
+
+  @include variante(safari, ios, "ios", safari-ios_256x256);
+  
+  
+
+}
+
