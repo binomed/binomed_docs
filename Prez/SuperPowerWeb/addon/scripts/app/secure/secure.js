@@ -1,16 +1,8 @@
 'use strict'
 
-function calculateAddress(){
-	if (location.port && (location.port === "3000")){
-		return "http://localhost:8000"
-	}else if (location.port && location.port === "8000"){
-		return "http://jef.binomed.fr:8000";
-	}else{
-		return null;	
-	} 
-}
+var model = null;
 
-var address = calculateAddress();
+
 
 function doRequest($mdDialog, context, pwd){
 	let myHeaders = new Headers();
@@ -18,8 +10,9 @@ function doRequest($mdDialog, context, pwd){
            headers: myHeaders,
            mode: 'cors',
            cache: 'default' };
+    let address = model.getAddress();
 
-	let myRequest = new Request(`${address}/password/${pwd}`,myInit);
+	let myRequest = new Request(`http://${address}/password/${pwd}`,myInit);
 	fetch(myRequest)
 	.then(function(response){
 		return response.json();
@@ -28,7 +21,9 @@ function doRequest($mdDialog, context, pwd){
 		// On ne retraire pas une question déjà traitée
 		if (json.auth){
 			localStorage['pwd'] = pwd;
-			$mdDialog.hide();
+			if (location.search === ""){
+				$mdDialog.hide();
+			}
 		}else{
 			context.notvalid = true;
 		}
@@ -37,17 +32,26 @@ function doRequest($mdDialog, context, pwd){
 	});
 }
 
-function SecureCtrl($mdDialog){
+function SecureCtrl($mdDialog, ModelService){
 	
+	model = ModelService;
 	this.notvalid = false;
+	let context = this;
+
+	model.checkAddress()
+	.then(function(){		
+		if (localStorage['pwd']){
+			doRequest($mdDialog, context, localStorage['pwd']);
+		}
+	})
 
 	this.try = function(){
-		doRequest($mdDialog, this, this.pwd);
+		doRequest($mdDialog, context, context.pwd);
 	}
 
-	if (localStorage['pwd']){
-		doRequest($mdDialog, this, localStorage['pwd']);
-	}
+
 }
+
+SecureCtrl.$inject = ['$mdDialog', 'ModelService'];
 
 module.exports = SecureCtrl;
