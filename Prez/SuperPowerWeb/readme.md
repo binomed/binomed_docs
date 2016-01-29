@@ -12,3 +12,13 @@ For the server part, to run it follow the installation needed for https://github
 DONT FORGET for LINUX TO Stop BLUETOOTH (Bleno )
 
 DONT FORGET TO BE ROOT ! 
+
+
+
+Remote debug firefox : 
+->./adb forward tcp:6000 localfilesystem:/data/data/org.mozilla.fennec/firefox-debugger-socket
+-> ./adb forward tcp:6000 localfilesystem:/data/data/org.mozilla.firefox_beta/firefox-debugger-socket
+
+
+Remote debug chromium : 
+sudo chown root:root chrome_sandbox && sudo chmod 4755 chrome_sandbox &&     export CHROME_DEVEL_SANDBOX="$PWD/chrome_sandbox"
