@@ -1,0 +1,13 @@
+<md-dialog aria-label="Camera" ng-cloak>
+	<md-toolbar class="md-primary">
+		<div class="md-toolbar-tools">
+        <h2>Camera</h2>        
+      </div>
+	</md-toolbar>
+	<video id="myVideo" height="150px"></video>
+	<select id="videoSource"></select>
+	<canvas id="myCanvas" height="150px" style=""></canvas>
+	<md-button class="md-raised md-primary" ng-click="cameraCtrl.turnOn()">Turn ON</md-button>
+	<md-button class="md-raised md-primary" ng-click="cameraCtrl.photo()">Photo ! </md-button>
+	<md-button class="md-raised md-warn" ng-click="cameraCtrl.close()">Close</md-button>
+</md-dialog>

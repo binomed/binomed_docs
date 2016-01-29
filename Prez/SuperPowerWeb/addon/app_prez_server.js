@@ -27,4 +27,8 @@ server.specifyRoute('/password/:pwd', function(req, res){
 	
 });
 
+server.specifyRoute('/ip', function(req,res){
+	res.json(networks);
+});
+
 game.initGameServer(server);

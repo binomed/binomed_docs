@@ -21,6 +21,8 @@ Reveal.addEventListener( 'ready', function( event ) {
 			require('./sensors/light').init(socketPrez);
 			require('./sensors/orientation').init(socketPrez);
 			require('./sensors/devicemotion').init(socketPrez);
+			require('./sensors/voice').init(socketPrez);
+			require('./sensors/usermedia').init(socketPrez);
  			
  		}, 1000);
 	}	

@@ -7,6 +7,7 @@ angular.module("SuperPowerApp", ['ngMaterial'])
     .accentPalette('orange');
 })
 .service('SocketService', require('./socket/sockets'))
+.service('ModelService', require('./util/model'))
 .directive('app', ['$mdDialog', '$timeout', 'SocketService',
 	function($mdDialog, $timeout, SocketService){
 	return {
@@ -18,17 +19,40 @@ angular.module("SuperPowerApp", ['ngMaterial'])
 				{label : "Bluetooth", icon : 'fa-bluetooth', idAction: 'ble'},
 				{label : "Light", icon : 'fa-lightbulb-o', idAction: 'light'},
 				{label : "Orientation", icon : 'fa-compass', idAction: 'orientation'},
+				{label : "UserMedia", icon : 'fa-camera', idAction: 'camera'},
+				{label : "Proximity", icon : 'fa-rss', idAction: 'proximity'},
 				{label : "Voice", icon : 'fa-microphone', idAction: 'mic'}
 			];
 
-			$mdDialog.show({
-				controllerAs : 'secureCtrl',
-				templateUrl: './components/secure.html',
-				controller: require('./secure/secure'),
-				parent : angular.element(document.querySelector('#mainContainer')),
-				targetEvent : event,
-				fullScreen : true
-			});
+			
+			
+
+			if (window.location.search === '?proximity'){
+				$mdDialog.show({
+					controllerAs : 'proximityCtrl',
+					templateUrl: './components/proximity.html',
+					controller: require('./proximity/proximity'),
+					parent : angular.element(document.querySelector('#mainContainer')),
+					fullScreen : true
+				});
+			}else if (window.location.search === '?speech'){
+				$mdDialog.show({
+					controllerAs : 'voiceCtrl',
+					templateUrl: './components/voice.html',
+					controller: require('./voice/voice'),
+					parent : angular.element(document.querySelector('#mainContainer')),
+					fullScreen : true
+				});
+			}else{
+				$mdDialog.show({
+					controllerAs : 'secureCtrl',
+					templateUrl: './components/secure.html',
+					controller: require("./secure/secure"),
+					parent : angular.element(document.querySelector('#mainContainer')),
+					//targetEvent : event,
+					fullScreen : true
+				});
+			}
 
 			this.openDialog = function(event, type){
 				console.log('Open Dialog');
@@ -64,6 +88,24 @@ angular.module("SuperPowerApp", ['ngMaterial'])
 						controllerAs : 'voiceCtrl',
 						templateUrl: './components/voice.html',
 						controller: require('./voice/voice'),
+						parent : angular.element(document.querySelector('#mainContainer')),
+						targetEvent : event,
+						fullScreen : true
+					});
+				}else if (type === 'proximity'){
+					$mdDialog.show({
+						controllerAs : 'proximityCtrl',
+						templateUrl: './components/proximity.html',
+						controller: require('./proximity/proximity'),
+						parent : angular.element(document.querySelector('#mainContainer')),
+						targetEvent : event,
+						fullScreen : true
+					});
+				}else if (type === 'camera'){
+					$mdDialog.show({
+						controllerAs : 'cameraCtrl',
+						templateUrl: './components/usermedia.html',
+						controller: require('./usermedia/usermedia'),
 						parent : angular.element(document.querySelector('#mainContainer')),
 						targetEvent : event,
 						fullScreen : true

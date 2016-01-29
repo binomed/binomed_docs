@@ -607,7 +607,8 @@ Notes:
 <div class="sensorExample">
   <div id="usermedia">
     <div class="videoParent">
-      <video id="streamVideo" width="500px"></video>
+    <img id="photoStream">
+      
     </div>
   </div>
 </div>
@@ -717,6 +718,7 @@ recognition.interimResults = true;
 
 
 ##==##
+<!-- .slide: data-state="stop-webspeech" -->
 
 ## Web Speech API
 
@@ -740,7 +742,7 @@ recognition.interimResults = true;
 
 ##==##
 
-<!-- .slide: class="last-slide" -->
+<!-- .slide: class="last-slide" data-state="stop-webspeech" -->
 
 
 
