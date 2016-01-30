@@ -5,6 +5,7 @@ var rvModel = require('../model/rivetsModel'),
 	compat = require('../utils/compat'), 	
 	questions = require('../questions/questions'),
 	shake = require('../shake/shake'),
+	visibility = require('../sensors/visibility'),
 	socket = null;
 
 
@@ -34,6 +35,7 @@ function initController(){
 		socket = io.connect();
 	}	
 
+	visibility.init(socket);
 	questions.init(socket);
 	shake.init(socket);
 	

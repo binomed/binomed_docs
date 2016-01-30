@@ -21,6 +21,7 @@ function choiceTeam(event){
 function callBackMotion(move){
 	let team = localStorage['team'];
 	socket.emit('sensor', {
+		id : gameModel.id,
 		type:'devicemotion',
 		'team' : team,
 		value: move

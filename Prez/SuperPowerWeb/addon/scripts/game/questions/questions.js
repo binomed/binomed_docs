@@ -2,7 +2,9 @@
 
 let rvModel = require('../model/rivetsModel'),
 	gameModel = require('../model/gameModel'),
-	socket = null;
+	vibration = require('../sensors/vibration'),
+	socket = null,
+	value = null;
 
 function clickResp(event){
  
@@ -12,7 +14,6 @@ function clickResp(event){
 	let elt = event.srcElement;
 	let sendMessage = true;
 	let type = 'newResp';
-	let value = null;
 	switch (elt.id){
 		case "respA":
 			value = 'A';
@@ -92,7 +93,8 @@ function clickResp(event){
 }
 
 
-function init(socket){
+function init(socketToSet){
+	socket = socketToSet;
 	rvModel.clickResp = clickResp;
 
 	let myHeaders = new Headers();
@@ -112,12 +114,19 @@ function init(socket){
 			rvModel.repB = data.repB;
 			rvModel.repC = data.repC;
 			rvModel.repD = data.repD;
+			value = null;
 		}else if (data.type === 'game' && data.eventType === 'hideQuestion'){
 			localStorage['game'] = "questions";
 			rvModel.hideMessage = false;
 			rvModel.showQuestion = false;
 			rvModel.gameQuestion = true;
 			rvModel.gameShake = false;
+		}else if (data.type === 'game' && data.eventType === 'answer'){
+			if (value === data.value){
+				vibration.vibrate([200,100,200]);
+			}else{
+				vibration.vibrate([1000]);
+			}
 		}
 	});
 

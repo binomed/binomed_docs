@@ -3,8 +3,9 @@
 
     height: 100%;
     display:flex;
+    position:relative;
     flex-direction:column;
-    padding-bottom: 40px;
+    bottom: 50px;
     justify-content : flex-end;
 
     .question, .resp{

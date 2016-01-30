@@ -11,6 +11,6 @@
 
 
 module.exports = {
-	register : register,
-	register : unregister
+	vibrate : vibrate,
+	unregister : unregister
 }

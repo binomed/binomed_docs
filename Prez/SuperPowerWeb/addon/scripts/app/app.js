@@ -31,7 +31,7 @@ angular.module("SuperPowerApp", ['ngMaterial'])
 				$mdDialog.show({
 					controllerAs : 'proximityCtrl',
 					templateUrl: './components/proximity.html',
-					controller: require('./proximity/proximity'),
+					controller: require('./sensors/proximity'),
 					parent : angular.element(document.querySelector('#mainContainer')),
 					fullScreen : true
 				});
@@ -39,7 +39,7 @@ angular.module("SuperPowerApp", ['ngMaterial'])
 				$mdDialog.show({
 					controllerAs : 'voiceCtrl',
 					templateUrl: './components/voice.html',
-					controller: require('./voice/voice'),
+					controller: require('./sensors/voice'),
 					parent : angular.element(document.querySelector('#mainContainer')),
 					fullScreen : true
 				});
@@ -60,7 +60,7 @@ angular.module("SuperPowerApp", ['ngMaterial'])
 					$mdDialog.show({
 						controllerAs : 'bleCtrl',
 						templateUrl: './components/bluetooth.html',
-						controller: require('./bluetooth/bluetooth'),
+						controller: require('./sensors/bluetooth'),
 						parent : angular.element(document.querySelector('#mainContainer')),
 						targetEvent : event,
 						fullScreen : true
@@ -69,7 +69,7 @@ angular.module("SuperPowerApp", ['ngMaterial'])
 					$mdDialog.show({
 						controllerAs : 'lightCtrl',
 						templateUrl: './components/light.html',
-						controller: require('./light/light'),
+						controller: require('./sensors/light'),
 						parent : angular.element(document.querySelector('#mainContainer')),
 						targetEvent : event,
 						fullScreen : true
@@ -78,7 +78,7 @@ angular.module("SuperPowerApp", ['ngMaterial'])
 					$mdDialog.show({
 						controllerAs : 'orientationCtrl',
 						templateUrl: './components/orientation.html',
-						controller: require('./orientation/orientation'),
+						controller: require('./sensors/orientation'),
 						parent : angular.element(document.querySelector('#mainContainer')),
 						targetEvent : event,
 						fullScreen : true
@@ -87,7 +87,7 @@ angular.module("SuperPowerApp", ['ngMaterial'])
 					$mdDialog.show({
 						controllerAs : 'voiceCtrl',
 						templateUrl: './components/voice.html',
-						controller: require('./voice/voice'),
+						controller: require('./sensors/voice'),
 						parent : angular.element(document.querySelector('#mainContainer')),
 						targetEvent : event,
 						fullScreen : true
@@ -96,7 +96,7 @@ angular.module("SuperPowerApp", ['ngMaterial'])
 					$mdDialog.show({
 						controllerAs : 'proximityCtrl',
 						templateUrl: './components/proximity.html',
-						controller: require('./proximity/proximity'),
+						controller: require('./sensors/proximity'),
 						parent : angular.element(document.querySelector('#mainContainer')),
 						targetEvent : event,
 						fullScreen : true
@@ -105,7 +105,7 @@ angular.module("SuperPowerApp", ['ngMaterial'])
 					$mdDialog.show({
 						controllerAs : 'cameraCtrl',
 						templateUrl: './components/usermedia.html',
-						controller: require('./usermedia/usermedia'),
+						controller: require('./sensors/usermedia'),
 						parent : angular.element(document.querySelector('#mainContainer')),
 						targetEvent : event,
 						fullScreen : true

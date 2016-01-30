@@ -6,15 +6,17 @@ let motionEnable = false,
 	battery2Elt = null,
 	chargeBattery1 = 0,
 	chargeBattery2 = 0,
-	winner = null;
+	winner = null,
+	fullValue1 = 10000,
+	fullValue2 = 10000,
+	mapUsersActiv = {};
 
-const fullValue = 10000;
+
 
 
 function batUpdate(team, charge) {
 	let col = [],
 	elt = null;
-  //console.log("Charge: ",charge);
   if (team === "1") {
   	elt = battery1Elt;
     // Red - Danger!
@@ -35,14 +37,23 @@ function init(socket){
 
 	socket.on('sensor', function(msg){
 		if (motionEnable && msg.type === 'devicemotion'){
-			if (!winner && msg.team){				
+			if (!winner && msg.team){
+				let tmpUserTeam = mapUsersActiv[msg.id];
+				if (!tmpUserTeam){
+					mapUsersActiv[msg.id] = msg.team;
+					if (msg.team === "1"){
+						fullValue1+= 10000;
+					}else if (msg.team === "2"){
+						fullValue2+= 10000;
+					}
+				}				
 				let percent = 0;
 				if (msg.team === "1"){
 					chargeBattery1+= msg.value;
-					percent = Math.round((chargeBattery1 / fullValue) *100);
+					percent = Math.round((chargeBattery1 / fullValue1) *100);
 				}else{
 					chargeBattery2+= msg.value;
-					percent = Math.round((chargeBattery2 / fullValue) *100);
+					percent = Math.round((chargeBattery2 / fullValue2) *100);
 				}
 
 				batUpdate(msg.team, Math.min(percent,90));

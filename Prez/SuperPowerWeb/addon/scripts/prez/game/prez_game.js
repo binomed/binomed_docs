@@ -71,7 +71,16 @@ function processScore(index){
 		});
 
 		setTimeout(function() {
-			document.querySelector(`[data-state=resp-question-${index}] .resp.good`).classList.add('show');
+			let goodAnswerElt = document.querySelector(`[data-state=resp-question-${index}] .resp.good`);
+			let anwser = goodAnswerElt.classList.contains('repA') ? 'A' :
+						 goodAnswerElt.classList.contains('repB') ? 'B' :
+						 goodAnswerElt.classList.contains('repC') ? 'C' : 'D';
+			socket.emit('config',{
+				type : 'game',
+				eventType : 'answer',
+				value : anwser
+			});			 
+			goodAnswerElt.classList.add('show');
 		}, 5000);
 
 

@@ -1,9 +1,31 @@
 'use strict'
 
+var fs = require('fs');
+
+var localServer = false;
+if (process.argv.length > 2){
+	localServer = process.argv[2] === "-l";
+}
+var protocol = localServer ? 'http' : 'https';
+var privateKey = localServer ? null : fs.readFileSync('/etc/letsencrypt/live/binomed.fr/privkey1.pem');
+var certificate = localServer ? null : fs.readFileSync('/etc/letsencrypt/live/binomed.fr/cert1.pem');
+var options = localServer ? {} : {
+	key: privateKey,
+	cert: certificate
+};
+
+
 var express = require('express'),
 	app = express(),
-	http = require('http').createServer(app),
-	io = require('socket.io')(http);
+	http = null,
+	io = null;
+if (localServer){
+	http = require(protocol).createServer(app);
+}else{
+	http = require(protocol).createServer(options, app);
+
+}
+io = require('socket.io')(http);
 
 var callBacksAction = [];
 

@@ -94,10 +94,10 @@ http://goo.gl/iQiTvZ
     <div class="question"> Lequel de ces sensors n'est pas accessible depuis le web ?</div>
     <div class="row">
         <div class="resp repA"> NFC</div>
-        <div class="resp repC"> Magnetometre</div>
+        <div class="resp repB"> Magnetometre</div>
     </div>
     <div class="row">
-        <div class="resp repB"> Bluetooth</div>
+        <div class="resp repC"> Bluetooth</div>
         <div class="resp repD"> Accelerometre</div>
     </div>
 </div>
@@ -114,7 +114,7 @@ http://goo.gl/iQiTvZ
     <div class="question"> Lequel de ces sensors n'est pas accessible depuis le web ?</div>
     <div class="row">
         <div class="resp repA"> NFC</div>
-        <div class="resp repB good"> Magnetometre C</div>        
+        <div class="resp repB good"> Magnetometre</div>        
     </div>
     <div class="row">
         <div class="resp repC"> Bluetooth</div>
