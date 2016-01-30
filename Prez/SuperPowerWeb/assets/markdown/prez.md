@@ -31,6 +31,18 @@ IoT Manager, Senior innovation developper & Community Manager
 
 ##==##
 
+<!-- .slide: data-background="/assets/images/once-upon-a-time.jpg" data-state="hidefooter" class="transition"-->
+
+##==##
+
+# Les applications natives
+
+<br><br>
+
+![center](/assets/images/native-app-illustration_1x.jpg)
+
+##==##
+
 ## Programme 
 
 <div class="no-bullet"></div>
