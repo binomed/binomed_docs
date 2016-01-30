@@ -130,7 +130,16 @@ function init(socketToSet){
 		}
 	});
 
-	let myRequest = new Request(`/currentState`,myInit);
+	let protocol = '';
+    let scheme = ''
+    let basicHost = ''
+    if (location.host && location.host.indexOf('localhost') === -1){
+    	protocol = 'https';
+    	scheme = '://';
+    	basicHost = 'binomed.fr:8000';
+    }
+
+	let myRequest = new Request(`${protocol}${scheme}${basicHost}/currentState`,myInit);
 	fetch(myRequest)
 	.then(function(response){
 		return response.json();

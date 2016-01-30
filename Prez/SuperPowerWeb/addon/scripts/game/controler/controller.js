@@ -32,7 +32,7 @@ function initController(){
 	if (location.port && location.port === "3000"){
 		socket = io.connect("http://localhost:8000");
 	}else{ 
-		socket = io.connect();
+		socket = io.connect("https://binomed.fr:8000");
 	}	
 
 	visibility.init(socket);

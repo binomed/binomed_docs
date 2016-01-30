@@ -15,8 +15,16 @@ function calculateAddress(){
 	           headers: myHeaders,
 	           mode: 'cors',
 	           cache: 'default' };
+	    let protocol = '';
+	    let scheme = ''
+	    let basicHost = ''
+	    if (location.host && location.host.indexOf('localhost') === -1){
+	    	protocol = 'https';
+	    	scheme = '://';
+	    	basicHost = 'binomed.fr:8000';
+	    }
 
-		let myRequest = new Request(`/ip`,myInit);
+		let myRequest = new Request(`${protocol}${scheme}${basicHost}/ip`,myInit);
 		fetch(myRequest)
 		.then(function(response){
 			return response.json();
