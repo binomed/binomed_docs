@@ -13,6 +13,9 @@ DONT FORGET for LINUX TO Stop BLUETOOTH (Bleno )
 
 DONT FORGET TO BE ROOT ! 
 
+Connexion à la RPI : 
+$ ssh pi@raspberrypi
+password : raspberry
 
 
 Remote debug firefox : 
