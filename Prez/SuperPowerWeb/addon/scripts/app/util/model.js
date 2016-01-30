@@ -1,6 +1,8 @@
 'use strict'
 
-var address = null;
+var address = null,
+	ioAddress = null,
+	ssl = false;
 
 function calculateAddress(){
 	return new Promise(function(resolve, reject){
@@ -28,11 +30,15 @@ function calculateAddress(){
 				});
 				if (wlan0){
 					address = `${wlan0.ip}:3000`;
+					ioAddress = `${wlan0.ip}:8000`;
 				}else{
 					address = "localhost:3000";
+					ioAddress = "localhost:8000";
 				}
 			}else if (location.port && location.port === "8000"){
-				address = "jef.binomed.fr:8000";
+				address = "binomed.fr:8000";
+				ioAddress = "binomed.fr:8000";
+				ssl = true;
 			}else{
 				address = null;
 			} 
@@ -46,9 +52,17 @@ calculateAddress();
 
 function ModelService(){
 
+	this.isSSL = function(){
+		return ssl;
+	}
+
 	this.getAddress = function(){
 		return address;
 	}	
+
+	this.getIoAddress = function(){
+		return ioAddress;
+	}
 
 	this.checkAddress = calculateAddress;
 

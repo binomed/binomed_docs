@@ -8,8 +8,11 @@ angular.module("SuperPowerApp", ['ngMaterial'])
 })
 .service('SocketService', require('./socket/sockets'))
 .service('ModelService', require('./util/model'))
-.directive('app', ['$mdDialog', '$timeout', 'SocketService',
-	function($mdDialog, $timeout, SocketService){
+.directive('app', ['$mdDialog', '$timeout', 'SocketService', 'ModelService',
+	function($mdDialog, $timeout, SocketService, ModelService){
+
+		SocketService.connect(ModelService);
+
 	return {
 		templateUrl: './components/app.html',
 		controllerAs : 'app',

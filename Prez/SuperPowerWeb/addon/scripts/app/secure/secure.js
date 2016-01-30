@@ -11,8 +11,9 @@ function doRequest($mdDialog, context, pwd){
            mode: 'cors',
            cache: 'default' };
     let address = model.getAddress();
+    let protocol = model.isSSL() ? 'https' : 'http';
 
-	let myRequest = new Request(`http://${address}/password/${pwd}`,myInit);
+	let myRequest = new Request(`${protocol}://${address}/password/${pwd}`,myInit);
 	fetch(myRequest)
 	.then(function(response){
 		return response.json();
