@@ -25,3 +25,7 @@ Remote debug firefox :
 
 Remote debug chromium : 
 sudo chown root:root chrome_sandbox && sudo chmod 4755 chrome_sandbox &&     export CHROME_DEVEL_SANDBOX="$PWD/chrome_sandbox"
+
+Urls de jeux : 
+* binomed url => http://goo.gl/iQiTvZ
+* Raw git => https://goo.gl/Kp7Cyi

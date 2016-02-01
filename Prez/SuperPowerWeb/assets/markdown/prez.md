@@ -35,21 +35,42 @@ IoT Manager, Senior innovation developper & Community Manager
 
 ##==##
 
+<!-- .slide: data-background="/assets/images/HTML5_yellow_detail.jpg" data-state="hidefooter" class="transition"-->
+
+# Un combat vieux comme le monde
+
+<div class="copyright black">from digital</div>
+
+
+##==##
+
 # Les applications natives
 
 <br><br>
 
 ![center](/assets/images/native-app-illustration_1x.jpg)
 
+
 ##==##
 
-## Programme 
+<!-- .slide: class="flex-p" -->
 
-<div class="no-bullet"></div>
+# Elles se croyaient au dessus de tout ! 
 
-* Un peu de théorie
-* Des démos
-* Du fun
+
+![h-300](/assets/images/irondroid.jpg)
+![h-300](/assets/images/ironman-osx_240.jpg)
+
+<div class="copyright black">_IronDroid_, Jamie BiversProduct</div>
+
+##==##
+
+
+# Mais ça c'était avant
+
+
+![h-500 center](/assets/images/html5-superheros.png)
+
 
 
 ##==##
@@ -59,9 +80,15 @@ IoT Manager, Senior innovation developper & Community Manager
 
 ![h400 float-left](/assets/images/Fil_rouge.jpg)
 
-![h400](/assets/images/qr_code_jeux.png)
+![h400 binomed](/assets/images/qr_code_jeux.png)
 
-http://goo.gl/iQiTvZ
+![h400 rawgit](/assets/images/qr_code_jeux_rawgit.png)
+
+<br>
+
+<div class="url_jeux binomed">http://goo.gl/iQiTvZ</div>
+<div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
+
 
 
 
@@ -100,7 +127,9 @@ http://goo.gl/iQiTvZ
 ##==##
 
 <!-- .slide: data-background="/assets/images/gad_qui_veut_gagner.jpg" data-state="hidefooter" class="transition qui-veut-gagner" data-state="question-1"-->
-<div class="url_jeux">http://goo.gl/iQiTvZ</div>
+<div class="url_jeux binomed">http://goo.gl/iQiTvZ</div>
+<div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
+
 
 <div class="qui-veut-gagner">
     <div class="question"> Lequel de ces sensors n'est pas accessible depuis le web ?</div>

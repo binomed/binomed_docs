@@ -5,6 +5,19 @@ img[alt*=logo]{
 }
 
 
+body .reveal .slides.binomed{
+  .url_jeux.rawgit, img[alt*=rawgit]{
+    display:none;
+  }
+  
+}
+
+body .reveal .slides.rawgit{
+  .url_jeux.binomed, img[alt*=binomed]{
+    display:none;
+  }
+}
+
 .reveal .slides section.first-slide{
   height: 100%;
 
@@ -96,7 +109,11 @@ $width_triangle_resp : 20px;
   }
 }
 
+.reveal .slides section.flex-p p{
+  display:flex;
+  justify-content: space-around;
 
+}
 
 @import "compat";
 @import "sensors";
