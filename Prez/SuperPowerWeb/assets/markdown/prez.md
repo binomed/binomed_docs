@@ -43,8 +43,13 @@ IoT Manager, Senior innovation developper & Community Manager
 
 
 ##==##
+<!-- .slide: data-background="#3d4349" class="transition"-->
 
-# Les applications natives
+![center h-700](/assets/images/civil_war.jpg)
+
+##==##
+
+# Un combat inégal au début
 
 <br><br>
 
@@ -71,7 +76,11 @@ IoT Manager, Senior innovation developper & Community Manager
 
 ![h-500 center](/assets/images/html5-superheros.png)
 
+##==##
 
+<!-- .slide: data-background="#3d4349" class="transition"-->
+
+![center h-700](/assets/images/inception_webapp.jpg)
 
 ##==##
 
@@ -86,8 +95,8 @@ IoT Manager, Senior innovation developper & Community Manager
 
 <br>
 
-<div class="url_jeux binomed">http://goo.gl/iQiTvZ</div>
-<div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
+<div class="url_jeux binomed grey">http://goo.gl/iQiTvZ</div>
+<div class="url_jeux rawgit grey">https://goo.gl/Kp7Cyi</div>
 
 
 

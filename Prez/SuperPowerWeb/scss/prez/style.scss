@@ -8,8 +8,7 @@ img[alt*=logo]{
 body .reveal .slides.binomed{
   .url_jeux.rawgit, img[alt*=rawgit]{
     display:none;
-  }
-  
+  }  
 }
 
 body .reveal .slides.rawgit{
@@ -88,6 +87,10 @@ $width_triangle_resp : 20px;
   $width_triangle_question,
   $height_resp,
   $width_triangle_resp);
+
+.url_jeux.grey a{
+  color:#3d4349;
+}
 
 .url_jeux a{
   color:white;
