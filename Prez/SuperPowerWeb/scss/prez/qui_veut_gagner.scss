@@ -7,6 +7,7 @@
     flex-direction:column;
     bottom: 50px;
     justify-content : flex-end;
+    font-family : "Comic Sans MS", cursive, sans-serif;
 
     .question, .resp{
       position:relative;
@@ -27,13 +28,17 @@
  
     .question{
       
-      font-size: 3rem;
-      line-height : $height_question / 3;
+      font-size: 2.5rem;
+      line-height : $height_question;
       width:80%;
       margin-left:-40%;
       left: 50%;
       height: $height_question;      
       margin-bottom:20px;
+    }
+
+    .question.two-line{
+      line-height:$height_question / 2;
     }
 
     .question:before{
@@ -58,11 +63,14 @@
 
     .resp{
       font-size:1rem;
-      //font-size: $height_resp / 2;
-      line-height : $height_resp / 2;
+      line-height : $height_resp;
       width:40%;
       margin: 0 40px;
       height: $height_resp;
+    }
+
+    .resp.two-line{
+      line-height: $height_resp / 2;
     }
 
     .resp:before{

@@ -97,7 +97,14 @@ function init(socketToSet){
 	Reveal.addEventListener('resp-question-1', function(){
 		hideQuestion();
 		processScore(1);
+	});
 
+	Reveal.addEventListener('question-2', function(){
+		changeQuestion(2);
+	});
+	Reveal.addEventListener('resp-question-2', function(){
+		hideQuestion();
+		processScore(2);
 	});
 	Reveal.addEventListener('quit-question', hideQuestion);
 

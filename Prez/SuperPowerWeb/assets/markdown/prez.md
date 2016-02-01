@@ -82,8 +82,30 @@ IoT Manager, Senior innovation developper & Community Manager
 
 ![center h-700](/assets/images/inception_webapp.jpg)
 
+
 ##==##
 
+
+## De quoi parle-t-on ?
+
+
+* Sensors : 
+ * Geolocation
+ * Gyroscope / Accelometer / Compass
+ * Proximity
+ * ...
+
+<br>
+
+* Nouvelles possibilités : 
+ * Offline
+ * Base de données
+ * Raccourcis applicatifs
+
+
+##==##
+
+<!-- .slide: data-state="quit-question" -->
 
 ## Et si on jouait ?
 
@@ -99,82 +121,372 @@ IoT Manager, Senior innovation developper & Community Manager
 <div class="url_jeux rawgit grey">https://goo.gl/Kp7Cyi</div>
 
 
-
-
-
 ##==##
 
-<!--
-//  _______ _    _ ______ ____  _____  _____ ______ 
-// |__   __| |  | |  ____/ __ \|  __ \|_   _|  ____|
-//    | |  | |__| | |__ | |  | | |__) | | | | |__   
-//    | |  |  __  |  __|| |  | |  _  /  | | |  __|  
-//    | |  | |  | | |___| |__| | | \ \ _| |_| |____ 
-//    |_|  |_|  |_|______\____/|_|  \_\_____|______|
-//                                                 
--->     
-<!-- .slide: class="transition-black" -->
+<!-- .slide: data-background="/assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="question-1"-->
 
-# Un peu de théorie
-
-![icon](assets/images/HTML5_Device_Access.png)
-
-##==##
-
-
-## Device Access
-
-### Kesako ?
-
-* Geolocation
-
-* Gyroscope / Accelometer / Compass
-
-* Proximity
-
-
-##==##
-
-<!-- .slide: data-background="/assets/images/gad_qui_veut_gagner.jpg" data-state="hidefooter" class="transition qui-veut-gagner" data-state="question-1"-->
 <div class="url_jeux binomed">http://goo.gl/iQiTvZ</div>
 <div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
 
 
 <div class="qui-veut-gagner">
-    <div class="question"> Lequel de ces sensors n'est pas accessible depuis le web ?</div>
+    <div class="question two-line"> Grâce à quoi puis-je lancer une application web si je suis à proximité d'une balise bluettooth ? </div>
     <div class="row">
-        <div class="resp repA"> NFC</div>
-        <div class="resp repB"> Magnetometre</div>
+        <div class="resp repA"> IBeacon</div>
+        <div class="resp repB"> Physical Web</div>
     </div>
     <div class="row">
-        <div class="resp repC"> Bluetooth</div>
-        <div class="resp repD"> Accelerometre</div>
+        <div class="resp repC"> Ok Google</div>
+        <div class="resp repD"> La réponse D</div>
     </div>
 </div>
 
 ##==##
 
-<!-- .slide: data-background="/assets/images/gad_qui_veut_gagner.jpg" data-state="hidefooter" class="transition qui-veut-gagner" data-state="resp-question-1"-->
+<!-- .slide: data-background="/assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="resp-question-1"-->
 
-<div class="url_jeux">http://goo.gl/iQiTvZ</div>
+<div class="url_jeux binomed">http://goo.gl/iQiTvZ</div>
+<div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
 
 
 <div class="qui-veut-gagner">
     <canvas id="chart_question_1" width="200" height="200" class="chart-resp"></canvas>
-    <div class="question"> Lequel de ces sensors n'est pas accessible depuis le web ?</div>
+   <div class="question two-line"> Grâce à quoi puis-je lancer une application web si je suis à proximité d'une balise bluettooth ? </div>
     <div class="row">
-        <div class="resp repA"> NFC</div>
-        <div class="resp repB good"> Magnetometre</div>        
+        <div class="resp repA"> IBeacon</div>
+        <div class="resp repB good"> Physical Web</div>        
     </div>
     <div class="row">
-        <div class="resp repC"> Bluetooth</div>
-        <div class="resp repD"> Accelerometre</div>     
+        <div class="resp repC"> Ok Google</div>
+        <div class="resp repD"> La réponse D</div>     
     </div>
 </div>
 
 ##==##
 
-## Liste de ce que l'on va voir
+<!--
+//    _____  _               _           ___          __  _      
+//   |  __ \| |             (_)         | \ \        / / | |     
+//   | |__) | |__  _   _ ___ _  ___ __ _| |\ \  /\  / /__| |__   
+//   |  ___/| '_ \| | | / __| |/ __/ _` | | \ \/  \/ / _ \ '_ \  
+//   | |    | | | | |_| \__ \ | (_| (_| | |  \  /\  /  __/ |_) | 
+//   |_|    |_| |_|\__, |___/_|\___\__,_|_|   \/  \/ \___|_.__/  
+//                  __/ |                                        
+//              |___/                                        
+ -->
+
+<!-- .slide: class="transition-black" data-state="quit-question" -->
+
+# Le Physical Web
+
+![icon](assets/images/physical_web.png)
+
+##==##
+
+<!-- .slide: data-background="#3d4349" class="transition"-->
+
+![center h-700](/assets/images/inception_physical_web.jpg)
+
+
+
+##==## 
+
+## Physical Web
+
+### Origines & possibilités
+
+ * Apparu en 2015 : [Projet Physical Web](https://google.github.io/physical-web/)
+ * Basé sur Eddystone et plus précisement sur les [Eddystone-URL](https://github.com/google/eddystone/tree/master/eddystone-url)
+ * S'utilise avec des devices BLE
+ * A besoin d'une application détectant le physical Web (Chrome / Firefox)
+
+##==## 
+
+## Physical Web
+
+### Restrictions 
+
+ * Site accessible sur l'internet mondial
+ * L'url est limité par la norme eddystone => Il vaut mieux utiliser des shorts urls
+ * Avant BLE 4.1, le device doit changer de mode pour échanger avec le téléphone une fois la détection effecutée
+ * Doit être activé dans chrome (chrome://flags)
+
+##==##
+
+<!-- .slide: data-background="#3d4349" class="transition"-->
+
+![center h-600](/assets/images/demo_time.jpg)
+
+##==##
+
+
+## Compatibilité
+
+<div class="compat">
+  <div class="chrome">
+    <div class="desktop unsupport">-</div>
+    <div class="os partial">-</div>
+    <div class="android-dev">48+</div>
+    <div class="ios">44+</div>
+  </div>
+  <div class="firefox">
+    <div class="desktop unsupport">-</div>
+    <div class="os partial">-</div>
+    <div class="android unsupport">-</div>
+    <div class="ios unsupport">-</div>
+  </div>
+  <div class="edge">
+    <div class="desktop unsupport">-</div>
+  </div>
+  <div class="ie">
+    <div class="old unsupport">-</div>
+    <div class="new unsupport">-</div>
+  </div>
+  <div class="safari">
+    <div class="ios unsupport">-</div>
+  </div>
+</div>
+
+##==##
+
+<!--
+//    ____  _            _              _   _     
+//   |  _ \| |          | |            | | | |    
+//   | |_) | |_   _  ___| |_ ___   ___ | |_| |__  
+//   |  _ <| | | | |/ _ \ __/ _ \ / _ \| __| '_ \ 
+//   | |_) | | |_| |  __/ || (_) | (_) | |_| | | |
+//   |____/|_|\__,_|\___|\__\___/ \___/ \__|_| |_|
+//                                                
+//                                                  
+-->     
+
+<!-- .slide: data-background="#3d4349" class="transition"-->
+
+![center h-600](/assets/images/inception_bluetooth.jpg)
+
+##==##
+
+<!-- .slide: class="transition-black" -->
+
+# Web Bluetooth
+
+![icon](assets/images/bluetooth_logo.png)
+
+
+##==##
+
+## Web Bluetooth
+
+### Un peu de vocabulaire !
+
+* **GATT** : Generic Attribute Profile 
+
+* **ATT** : Attribute Protocol
+
+* Un device bluetooth expose plusieurs services
+
+* Chaque service expose plusieurs caractérisques
+
+* Chaque caractéristique peut être lue / écrite / passée en mode notification (en fonction de sa configuration)
+
+* Chaque devices / services / caractérisques sont identifés par des uuid
+
+##==##
+
+### Utilisation
+
+* Https Only
+* Activation dans chrome via les flags
+* Accès à l'objet ```navigator.bluetooth```
+* Basé sur les promises
+
+
+[activation webbluetooth sous lolippo](http://stackoverflow.com/questions/34810194/can-i-try-web-bluetooth-on-chrome-for-android-lollipop)
+
+##==##
+
+## Récupération par nom de service
+
+```javascript
+navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }] })
+.then(device => {...})
+.catch(error => { console.log(error); });
+```
+
+##==##
+
+## Récupération par nom de device
+
+```javascript
+navigator.bluetooth.requestDevice({ filters: [{ name: ['MyDevice'] }] })
+.then(device => {...})
+.catch(error => { console.log(error); });
+```
+
+##==##
+
+## Connexion à un device
+
+```javascript
+navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }] })
+.then(device => {
+  return device.connectGATT();
+})
+.catch(error => { console.log(error); });
+```
+
+
+##==##
+
+## Lecture d'une caractéristique
+
+```javascript
+navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }] })
+.then(device => {
+  return device.connectGATT();
+})
+.then(service => {
+  // Getting Battery Level Characteristic...
+  return service.getCharacteristic('battery_level');
+})
+.then(characteristic => {
+  // Reading Battery Level...
+  return characteristic.readValue();
+})
+.then(value => {
+  // In Chrome 50+, a DataView is returned instead of an ArrayBuffer.
+  value = value.buffer ? value : new DataView(value);
+  console.log('Battery percentage is ' + value.getUint8(0));
+})
+.catch(error => { console.log(error); });
+```
+
+
+##==##
+
+## Ecrire dans une caractéristique
+
+```javascript
+navigator.bluetooth.requestDevice({ filters: [{ services: ['heart_rate'] }] })
+.then(device => device.connectGATT())
+.then(server => server.getPrimaryService('heart_rate'))
+.then(service => service.getCharacteristic('heart_rate_control_point'))
+.then(characteristic => {
+  // Writing 1 is the signal to reset energy expended.
+  var resetEnergyExpended = new Uint8Array([1]);
+  return characteristic.writeValue(resetEnergyExpended);
+})
+.then(() => {
+  console.log('Energy expended has been reset.');
+})
+.catch(error => { console.log(error); });
+```
+
+##==##
+
+<!-- .slide: data-background="#3d4349" class="transition"-->
+
+![center h-600](/assets/images/demo_time.jpg)
+
+##==##
+
+
+## Compatibilité
+
+<div class="compat">
+  <div class="chrome">
+    <div class="desktop unsupport">-</div>
+    <div class="os">45+</div>
+    <div class="chromium">48+</div>
+    <div class="android-dev">48+</div>
+  </div>
+  <div class="firefox">
+    <div class="desktop unsupport">-</div>
+    <div class="os partial">draft</div>
+    <div class="android unsupport">-</div>
+    <div class="ios unsupport">-</div>
+  </div>
+  <div class="edge">
+    <div class="desktop unsupport">Consider</div>
+  </div>
+  <div class="ie">
+    <div class="old unsupport">-</div>
+    <div class="new unsupport">-</div>
+  </div>
+  <div class="safari">
+    <div class="ios unsupport">-</div>
+  </div>
+</div>
+
+
+##==##
+
+<!--
+//                                      
+//                                      
+//    ___  ___ _ __  ___  ___  _ __ ___ 
+//   / __|/ _ \ '_ \/ __|/ _ \| '__/ __|
+//   \__ \  __/ | | \__ \ (_) | |  \__ \
+//   |___/\___|_| |_|___/\___/|_|  |___/
+//                                      
+//     
+-->
+
+<!-- .slide: data-background="#3d4349" class="transition"-->
+
+![center h-600](/assets/images/inception_sensors.jpg)
+
+##==##
+
+<!-- .slide: class="transition-black" data-state="quit-question"-->
+
+
+# Sensors 
+
+![icon](assets/images/html5-device-access-logo.png)
+
+
+##==##
+
+<!-- .slide: data-background="/assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="question-2"-->
+
+<div class="url_jeux binomed">http://goo.gl/iQiTvZ</div>
+<div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
+
+
+<div class="qui-veut-gagner">
+    <div class="question two-line"> Lequel de ces sensors n'est pas accessible depuis le web ?</div>
+    <div class="row">
+        <div class="resp repA"> Magnetometre</div>
+        <div class="resp repB"> Accelerometre</div>
+    </div>
+    <div class="row">
+        <div class="resp repC"> Bluetooth</div>
+        <div class="resp repD"> La réponse D</div>
+    </div>
+</div>
+
+##==##
+
+<!-- .slide: data-background="/assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="resp-question-2"-->
+
+<div class="url_jeux binomed">http://goo.gl/iQiTvZ</div>
+<div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
+
+
+<div class="qui-veut-gagner">
+    <canvas id="chart_question_2" width="200" height="200" class="chart-resp"></canvas>
+    <div class="question two-line"> Lequel de ces sensors n'est pas accessible depuis le web ?</div>
+    <div class="row">
+        <div class="resp repA good"> Magnetometre</div>
+        <div class="resp repB "> Accelerometre</div>        
+    </div>
+    <div class="row">
+        <div class="resp repC"> Bluetooth</div>
+        <div class="resp repD"> La réponse D</div>     
+    </div>
+</div>
+
 
 ##==##
 
@@ -189,7 +501,8 @@ IoT Manager, Senior innovation developper & Community Manager
 //   
 -->
 
-<!-- .slide: class="transition-black" -->
+<!-- .slide: class="transition-black" data-state="quit-question"-->
+
 
 # Device Orientation
 
