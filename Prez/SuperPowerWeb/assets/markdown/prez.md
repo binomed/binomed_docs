@@ -196,7 +196,7 @@ IoT Manager, Senior innovation developper & Community Manager
 ### Origines & possibilités
 
  * Apparu en 2015 : [Projet Physical Web](https://google.github.io/physical-web/)
- * Basé sur Eddystone et plus précisement sur les [Eddystone-URL](https://github.com/google/eddystone/tree/master/eddystone-url)
+ * Basé sur Eddystone et plus précisément sur les [Eddystone-URL](https://github.com/google/eddystone/tree/master/eddystone-url)
  * S'utilise avec des devices BLE
  * A besoin d'une application détectant le physical Web (Chrome / Firefox)
 
@@ -208,7 +208,7 @@ IoT Manager, Senior innovation developper & Community Manager
 
  * Site accessible sur l'internet mondial
  * L'url est limité par la norme eddystone => Il vaut mieux utiliser des shorts urls
- * Avant BLE 4.1, le device doit changer de mode pour échanger avec le téléphone une fois la détection effecutée
+ * Avant BLE 4.1, le device doit changer de mode pour échanger avec le téléphone une fois la détection effectuée
  * Doit être activé dans chrome (chrome://flags)
 
 ##==##
@@ -285,11 +285,11 @@ IoT Manager, Senior innovation developper & Community Manager
 
 * Un device bluetooth expose plusieurs services
 
-* Chaque service expose plusieurs caractérisques
+* Chaque service expose plusieurs caractéristiques
 
 * Chaque caractéristique peut être lue / écrite / passée en mode notification (en fonction de sa configuration)
 
-* Chaque devices / services / caractérisques sont identifés par des uuid
+* Chaque devices / services / caractéristiques sont identités par des uuid
 
 ##==##
 
@@ -300,9 +300,9 @@ IoT Manager, Senior innovation developper & Community Manager
 * Activation dans chrome via les flags : ```chrome://flags/#enable-web-bluetooth```
 * Accès à l'objet ```navigator.bluetooth```
 * Basé sur les promises
+* [Documentation](https://developers.google.com/web/updates/2015/07/interact-with-ble-devices-on-the-web)
 
-
-[activation webbluetooth sous lolippo](http://stackoverflow.com/questions/34810194/can-i-try-web-bluetooth-on-chrome-for-android-lollipop)
+[activation webbluetooth sous lolipop](http://stackoverflow.com/questions/34810194/can-i-try-web-bluetooth-on-chrome-for-android-lollipop)
 
 ##==##
 
@@ -365,7 +365,7 @@ navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }]
 
 ##==##
 
-## Ecrire dans une caractéristique
+## Écrire dans une caractéristique
 
 ```javascript
 navigator.bluetooth.requestDevice({ filters: [{ services: ['heart_rate'] }] })
@@ -517,6 +517,71 @@ button.addEventListener('click', function() {
     </div>
 </div>
 
+##==##
+
+<!--
+//   __      ___ _               _   _             
+//   \ \    / (_) |             | | (_)            
+//    \ \  / / _| |__  _ __ __ _| |_ _  ___  _ __  
+//     \ \/ / | | '_ \| '__/ _` | __| |/ _ \| '_ \ 
+//      \  /  | | |_) | | | (_| | |_| | (_) | | | |
+//       \/   |_|_.__/|_|  \__,_|\__|_|\___/|_| |_|
+//                                                 
+//   
+-->
+
+<!-- .slide: class="transition-black" -->
+
+# Vibration
+
+![icon](assets/images/mobile-phone-vibration.jpg)
+
+##==##
+
+## Vibration
+
+* Vibre selon un temps donné ! 
+
+* Peut faire vibrer tout un ensmble de temps
+ * n = temps à vibrer
+ * n+1 = temps entre vibration n et n+2
+
+
+```javascript
+window.navigator.vibrate(arrayOfVibration);
+```
+
+[Docummentation](https://developer.mozilla.org/fr/docs/Web/API/Vibration_API)
+
+##==##
+<!-- .slide: data-state="stop-usermedia"-->
+
+## Compatibilité
+
+<div class="compat">
+  <div class="chrome">
+    <div class="desktop">32+</div>
+    <div class="os">32+</div>
+    <div class="android">32+</div>
+    <div class="ios">32+</div>
+  </div>
+  <div class="firefox">
+    <div class="desktop">11+</div>
+    <div class="os">11+</div>
+    <div class="android">11+</div>
+    <div class="ios">11+</div>
+  </div>
+  <div class="edge">
+    <div class="desktop unsupport">draft</div>
+  </div>
+  <div class="ie">
+    <div class="old unsupport">7</div>
+    <div class="new unsupport">11</div>
+  </div>
+  <div class="safari">
+    <div class="ios unsupport">-</div>
+  </div>
+</div>
 
 ##==##
 
@@ -559,6 +624,7 @@ Se fait à plat !
 
 </div>
 
+[Documentation](https://developer.mozilla.org/en-US/docs/Web/API/Detecting_device_orientation)
 
 Notes:
 Subtilité : ça marche mieux si le téléphone est a plat
@@ -682,7 +748,7 @@ Subtilité : ça marche mieux si le téléphone est a plat
 
 On peut tenir comptes de l'accélération classique ou avec prise en charge de la gravité !
 
-
+[Documentation](https://developer.mozilla.org/fr/docs/Web/API/DeviceMotionEvent)
 
 Notes:
 
@@ -701,10 +767,8 @@ On s'intéresse à l'accélération x
 var deviceMotionListener = function(event){        
   var x = event.acceleration.x;
   var y = event.acceleration.y;
-  var z = event.acceleration.z;
-  socket.sendDeviceMotion(Math.abs(x));
-  currentPercent+=Math.abs(x);
-  updatePercent();
+  var z = event.acceleration.z;  
+  var yGravity = event.accelerationIncludingGrativity.y;
 }
 
 // We add the listener
@@ -813,25 +877,22 @@ function register(){
 
 * Renvoie des valeurs entre 0 et > 1000 (0 étant sombre)
 
-* Est dépendant du téléphone et de l'implementation
+* Est dépendant du téléphone et de l’implémentation
 
 * On a 2 façon de faire =>
- * Gestion par valeur
+ * Gestion par valeur (lux)
  * Gestion par états : Dim / Normal / Bright
 
 
 ```javascript
 var deviceLightHandler = function(event) {
- var value = Math.min(45, event.value);
- percent = Math.round((value / 45) * 100);
- socket.sendLight(percent); 
- updateLight();
+ var value = Math.min(45, event.value); 
 }
 
 window.addEventListener('devicelight', deviceLightHandler, false);
 ```
 
-
+[Documentation](https://developer.mozilla.org/en-US/docs/Web/API/Ambient_Light_Events)
 
 ##==##
 
@@ -1062,69 +1123,7 @@ Notes:
 </div>
 
 
-##==##
 
-<!--
-//   __      ___ _               _   _             
-//   \ \    / (_) |             | | (_)            
-//    \ \  / / _| |__  _ __ __ _| |_ _  ___  _ __  
-//     \ \/ / | | '_ \| '__/ _` | __| |/ _ \| '_ \ 
-//      \  /  | | |_) | | | (_| | |_| | (_) | | | |
-//       \/   |_|_.__/|_|  \__,_|\__|_|\___/|_| |_|
-//                                                 
-//   
--->
-
-<!-- .slide: class="transition-black" -->
-
-# Vibration
-
-![icon](assets/images/mobile-phone-vibration.jpg)
-
-##==##
-
-## Vibration
-
-* Vibre selon un temps donné ! 
-
-* Peut faire vibrer tout un ensmble de temps
- * n = temps à vibrer
- * n+1 = temps entre vibration n et n+2
-
-
-```javascript
-window.navigator.vibrate(arrayOfVibration);
-```
-
-##==##
-<!-- .slide: data-state="stop-usermedia"-->
-
-## Compatibilité
-
-<div class="compat">
-  <div class="chrome">
-    <div class="desktop">32+</div>
-    <div class="os">32+</div>
-    <div class="android">32+</div>
-    <div class="ios">32+</div>
-  </div>
-  <div class="firefox">
-    <div class="desktop">11+</div>
-    <div class="os">11+</div>
-    <div class="android">11+</div>
-    <div class="ios">11+</div>
-  </div>
-  <div class="edge">
-    <div class="desktop unsupport">draft</div>
-  </div>
-  <div class="ie">
-    <div class="old unsupport">7</div>
-    <div class="new unsupport">11</div>
-  </div>
-  <div class="safari">
-    <div class="ios unsupport">-</div>
-  </div>
-</div>
 
 
 ##==##
@@ -1150,17 +1149,18 @@ window.navigator.vibrate(arrayOfVibration);
 
 ## Proximity
 
+### Device Proximity
+
 Firefox uniquement ! 
 
 * Renvoie des valeurs entre 0 et 5 (0 étant proche)
 
+<br>
 
 
 ```javascript
 var deviceProximityHandler = function(event) {
-  var value = Math.round(event.value);            
-  socket.sendProximity(value);
-  manageProximityValue(value);
+  console.log(event.value);            
 }
 
 function register(){
@@ -1172,31 +1172,64 @@ function unregister(){
 }
 ```
 
-
-
 ##==##
 
 ## Proximity
 
-### Cas pratique
+### User Proximity
 
-![center w-800](assets/images/push-button.jpg)
+Firefox uniquement ! 
 
+* Renvoie des valeurs entre true à l'attribut near
 
+<br>
+
+```javascript
+var userProximityHandler = function(event) {
+  if (event.near){
+    console.log("Near ! ");
+  }
+}
+
+function register(){
+  window.addEventListener('userproximity', userProximityHandler, false);
+}
+
+function unregister(){
+  window.removeEventListener('userproximity', userProximityHandler, false);
+}
+```
+
+[Documentation complète](https://developer.mozilla.org/fr/docs/WebAPI/Proximity)
 
 ##==##
 
-<!-- .slide: data-state="start-proximity" -->
+## Compatibilité
 
-## Proximity
-
-<div class="sensorExample">
-  <div id="proximity">
-    <div class="push_button">Push Me ! </div>
+<div class="compat">
+  <div class="chrome">
+    <div class="desktop unsupport">-</div>
+    <div class="os unsupport">-</div>
+    <div class="android unsupport">-</div>
+    <div class="ios unsupport">-</div>
+  </div>
+  <div class="firefox">
+    <div class="desktop">42+</div>
+    <div class="os">42+</div>
+    <div class="android">42+</div>
+    <div class="ios">42+</div>
+  </div>
+  <div class="edge">
+    <div class="desktop unsupport">-</div>
+  </div>
+  <div class="ie">
+    <div class="old unsupport">7</div>
+    <div class="new unsupport">11</div>
+  </div>
+  <div class="safari">
+    <div class="ios unsupport">-</div>
   </div>
 </div>
-
-
 
 
 ##==##
@@ -1222,51 +1255,216 @@ function unregister(){
 
 ## Web Speech
 
-* Uniquement sur Chrome
-
 * Un tag existe pour gagner en code 
 
+<br>
 
 ```html
 <input x-webkit-speech>
 ```
 
-
 * Il reste plus intéressant d'utiliser la librairie Javascript
 
 * Manque encore cependant de précision pour de la commande vocale => avoir des textes approximatifs de détection
+* Va de paire avec la synthèse vocale disponible aussi 
+
+
+[Documentation complète](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API)
+
+##==## 
+
+## Web Speech
+
+### Utilisation 
 
 ```javascript
 var recognition = new webkitSpeechRecognition();
 recognition.lang = 'fr-FR';
 recognition.continuous = true;
 recognition.interimResults = true;
+
+recognition.start();
+recognition.onresult = function(event) {
+  var finalStr = event.results[0][0].transcript;
+  console.log('Confidence: ' + finalStr); 
+}
 ```
 
 
+##==##
+
+## Web Speech
+
+### Grammar
+
+Afin d'améliorer la reconnaissance des textes, il est possible de définir une grammaire
+
+```javascript
+var grammar = '#JSGF V1.0; grammar colors; public <color> = aqua | azure | beige | bisque | black | [LOTS MORE COLOURS] ;'
+var recognition = new SpeechRecognition();
+var speechRecognitionList = new SpeechGrammarList();
+speechRecognitionList.addFromString(grammar, 1);
+recognition.grammars = speechRecognitionList;
+//recognition.continuous = false;
+recognition.lang = 'en-US';
+recognition.interimResults = false;
+recognition.maxAlternatives = 1;
+```
 
 ##==##
 <!-- .slide: data-state="stop-webspeech" -->
 
-## Web Speech API
+## Web Speech Synthesis
 
-### Cas pratique
+### Les possibilités d’accessibilités disponibles directement dans une page web
 
-![center w-600](assets/images/background.png)
+```javascript
+var synth = window.speechSynthesis;
 
+var utterThis = new SpeechSynthesisUtterance(inputTxt.value);
+utterThis.voice = 'fr-FR';
+utterThis.pitch = pitch.value;
+utterThis.rate = rate.value;
+synth.speak(utterThis);
+```
 
 ##==##
-<!-- .slide: data-state="start-webspeech" -->
 
-## Web Speech API
+<!-- .slide: data-background="#3d4349" class="transition" data-state="start-webspeech"-->
 
-<div class="sensorExample">
-  <div id="webspeech">
-    <canvas id='canvasWebSpeech'>
+![center h-600](/assets/images/demo_time.jpg)
+
+##==##
+<!-- .slide: data-state="stop-webspeech"-->
+
+## Compatibilité
+
+<div class="compat">
+  <div class="chrome">
+    <div class="desktop">25+</div>
+    <div class="os">25+</div>
+    <div class="android">35+</div>
+    <div class="ios unsupport">-</div>
+  </div>
+  <div class="firefox">
+    <div class="desktop">45+</div>
+    <div class="os">45+</div>
+    <div class="android unsupport">-</div>
+    <div class="ios unsupport">-</div>
+  </div>
+  <div class="edge">
+    <div class="desktop unsupport">draft</div>
+  </div>
+  <div class="ie">
+    <div class="old unsupport">-</div>
+    <div class="new unsupport">-</div>
+  </div>
+  <div class="safari">
+    <div class="ios unsupport">-</div>
   </div>
 </div>
 
 
+##==##
+
+<!-- .slide: data-background="#3d4349" class="transition" data-state="quit-question"-->
+
+![center h-700](/assets/images/inception_more.jpg)
+
+
+
+##==##
+
+<!-- .slide: data-background="/assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="question-1"-->
+
+<div class="url_jeux binomed">http://goo.gl/iQiTvZ</div>
+<div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
+
+
+<div class="qui-veut-gagner">
+    <div class="question two-line"> Laquelle de ces API ne fait pas encore partie d'une roadmap pour le web ? </div>
+    <div class="row">
+        <div class="resp repA"> WebNFC</div>
+        <div class="resp repB"> Sensors Génériques</div>
+    </div>
+    <div class="row">
+        <div class="resp repC"> FingerPrint</div>
+        <div class="resp repD"> La réponse D</div>
+    </div>
+</div>
+
+##==##
+
+<!-- .slide: data-background="/assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="resp-question-1"-->
+
+<div class="url_jeux binomed">http://goo.gl/iQiTvZ</div>
+<div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
+
+
+<div class="qui-veut-gagner">
+    <canvas id="chart_question_1" width="200" height="200" class="chart-resp"></canvas>
+   <div class="question two-line"> Laquelle de ces API ne fait pas encore partie d'une roadmap pour le web ?  </div>
+    <div class="row">
+        <div class="resp repA"> WebNFC</div>
+        <div class="resp repB"> Sensors Génériques</div>        
+    </div>
+    <div class="row">
+        <div class="resp repC good"> FingerPrint</div>
+        <div class="resp repD"> La réponse D</div>     
+    </div>
+</div>
+
+
+##==##
+
+<!-- .slide: class="transition-black" data-state="quit-question" -->
+
+# Tout le reste !
+
+![center h-500](assets/images/buzz.jpg)
+
+
+##==##
+
+##USB
+
+##==##
+
+## Sensors Génériques
+
+##==##
+
+## WebNFC
+
+
+##==##
+
+## Notification
+
+Regarder si ça marche si le navigateur n'est pas au premier plan ?
+
+##==## 
+
+## Cycle de vie
+
+##==##
+
+## Gestion du offline
+
+=> Inception
+
+##==##
+
+## AppManifest
+
+=> Inception
+
+
+##==## 
+
+## Conclusion
+
+image indiana jones
 
 ##==##
 
