@@ -1,12 +1,14 @@
 'use strict'
 
 var config = require('../config/config'),
+	audio = require('./audio'),
 	socket = null,
 	scoreIndex = {};
 
 
 
 function hideQuestion(){	
+	audio.stop();
 	socket.emit('config',{
 		type : 'game',
 		eventType : 'hideQuestion'
@@ -14,6 +16,7 @@ function hideQuestion(){
 }
 
 function changeQuestion(index){
+	audio.playPublic();
 	socket.emit('config',{
 		type : 'game',
 		eventType : 'changeQuestion',
@@ -39,6 +42,7 @@ function processScore(index){
 		return response.json();
 	})
 	.then(function(json){
+		audio.playWait();
 		// On ne retraire pas une question déjà traitée
 		if (scoreIndex[`question_${index}`]){
 			return;
@@ -71,6 +75,7 @@ function processScore(index){
 		});
 
 		setTimeout(function() {
+			audio.playResp();
 			let goodAnswerElt = document.querySelector(`[data-state=resp-question-${index}] .resp.good`);
 			let anwser = goodAnswerElt.classList.contains('repA') ? 'A' :
 						 goodAnswerElt.classList.contains('repB') ? 'B' :

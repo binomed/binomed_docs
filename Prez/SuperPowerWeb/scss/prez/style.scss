@@ -118,5 +118,11 @@ $width_triangle_resp : 20px;
 
 }
 
+.reveal .slides section pre code.toHilight mark.dilluate{
+  background-color: inherit;
+  color: inherit;
+  opacity: 0.5;
+}
+
 @import "compat";
 @import "sensors";

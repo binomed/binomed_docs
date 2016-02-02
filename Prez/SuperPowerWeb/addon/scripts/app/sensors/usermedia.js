@@ -77,9 +77,9 @@ function CameraCtrl($mdDialog, SocketService){
 
   this.photo = function(){
     var context = canvas.getContext('2d');
-    canvas.width = 112;
-    canvas.height = 150;
-    context.drawImage(videoElement, 0, 0, 112, 150);
+    canvas.width = videoElement.videoWidth;
+    canvas.height = videoElement.videoHeight;
+    context.drawImage(videoElement, 0, 0, videoElement.videoWidth, videoElement.videoHeight);
   
     var data = canvas.toDataURL('image/png');
     console.log(data);

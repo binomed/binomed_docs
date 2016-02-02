@@ -295,8 +295,9 @@ IoT Manager, Senior innovation developper & Community Manager
 
 ### Utilisation
 
-* Https Only
-* Activation dans chrome via les flags
+* **Https** Only <!-- .element: style="color:red" -->
+* **BLE** Only ! 
+* Activation dans chrome via les flags : ```chrome://flags/#enable-web-bluetooth```
 * Accès à l'objet ```navigator.bluetooth```
 * Basé sur les promises
 
@@ -382,6 +383,35 @@ navigator.bluetooth.requestDevice({ filters: [{ services: ['heart_rate'] }] })
 .catch(error => { console.log(error); });
 ```
 
+##==##
+
+## Les webcomponents à la rescousse 
+
+[+Francois Beaufort](https://plus.google.com/u/0/+FrancoisBeaufort) a écrit webcomponent pour se simplifier la chose
+
+
+```html
+<platinum-bluetooth-device services-filter='["battery_service"]'>
+  <platinum-bluetooth-service service='battery_service'>
+    <platinum-bluetooth-characteristic characteristic='battery_level'>
+    </platinum-bluetooth-characteristic>
+  </platinum-bluetooth-service>
+</platinum-bluetooth-device>
+```
+
+```javascript
+var bluetoothDevice = document.querySelector('platinum-bluetooth-device');
+var batteryLevel = document.querySelector('platinum-bluetooth-characteristic');
+
+button.addEventListener('click', function() {
+  bluetoothDevice.request().then(function() {
+    return batteryLevel.read().then(function(value) {
+      console.log('Battery Level is ' + value.getUint8(0) + '%');
+    });
+  })
+  .catch(function(error) { });
+});
+```
 ##==##
 
 <!-- .slide: data-background="#3d4349" class="transition"-->
@@ -491,14 +521,14 @@ navigator.bluetooth.requestDevice({ filters: [{ services: ['heart_rate'] }] })
 ##==##
 
 <!--
-//     ____  _____  _____ ______ _   _ _______    _______ _____ ____  _   _ 
-//    / __ \|  __ \|_   _|  ____| \ | |__   __|/\|__   __|_   _/ __ \| \ | |
-//   | |  | | |__) | | | | |__  |  \| |  | |  /  \  | |    | || |  | |  \| |
-//   | |  | |  _  /  | | |  __| | . ` |  | | / /\ \ | |    | || |  | | . ` |
-//   | |__| | | \ \ _| |_| |____| |\  |  | |/ ____ \| |   _| || |__| | |\  |
-//    \____/|_|  \_\_____|______|_| \_|  |_/_/    \_\_|  |_____\____/|_| \_|
-//                                                                          
-//   
+//     ____       _            _        _   _             
+//    / __ \     (_)          | |      | | (_)            
+//   | |  | |_ __ _  ___ _ __ | |_ __ _| |_ _  ___  _ __  
+//   | |  | | '__| |/ _ \ '_ \| __/ _` | __| |/ _ \| '_ \ 
+//   | |__| | |  | |  __/ | | | || (_| | |_| | (_) | | | |
+//    \____/|_|  |_|\___|_| |_|\__\__,_|\__|_|\___/|_| |_|
+//                                                        
+//  
 -->
 
 <!-- .slide: class="transition-black" data-state="quit-question"-->
@@ -510,6 +540,8 @@ navigator.bluetooth.requestDevice({ filters: [{ services: ['heart_rate'] }] })
 
 ##==##
 
+
+
 ## Device Orientation
 
 3 Axes : **Alpha, Gamma, Beta**
@@ -517,13 +549,15 @@ navigator.bluetooth.requestDevice({ filters: [{ services: ['heart_rate'] }] })
 Se fait à plat ! 
 
 <br>
+<div>
 
-![float-left w-300](assets/images/device-orientation-z.jpg)
+![h-300](assets/images/device-orientation-z.jpg)
 
-![float-left w-300](assets/images/device-orientation-y.jpg)
+![h-300](assets/images/device-orientation-y.jpg)
 
-![float-left w-300](assets/images/device-orientation-x.jpg)
+![h-300](assets/images/device-orientation-x.jpg)
 
+</div>
 
 
 Notes:
@@ -599,40 +633,40 @@ Subtilité : ça marche mieux si le téléphone est a plat
 
 <div class="compat">
   <div class="chrome">
-    <div class="desktop">28+</div>
-    <div class="os">28+</div>
-    <div class="android-beta">28+</div>
-    <div class="ios">28+</div>
+    <div class="desktop">7+</div>
+    <div class="os">7+</div>
+    <div class="android">7+</div>
+    <div class="ios">7+</div>
   </div>
   <div class="firefox">
-    <div class="desktop">28+</div>
-    <div class="os">28+</div>
-    <div class="android">28+</div>
-    <div class="ios">28+</div>
+    <div class="desktop">6+</div>
+    <div class="os">6+</div>
+    <div class="android">6+</div>
+    <div class="ios">6+</div>
   </div>
   <div class="edge">
-    <div class="desktop">28+</div>
+    <div class="desktop">10240+</div>
   </div>
   <div class="ie">
-    <div class="old">7</div>
-    <div class="new">9</div>
+    <div class="old unsupport">7</div>
+    <div class="new">11</div>
   </div>
   <div class="safari">
-    <div class="ios unsupport">-</div>
+    <div class="ios">4.3</div>
   </div>
 </div>
 
 ##==##
 
 <!--
-//    _____  ________      _______ _____ ______   __  __  ____ _______ _____ ____  _   _ 
-//   |  __ \|  ____\ \    / /_   _/ ____|  ____| |  \/  |/ __ \__   __|_   _/ __ \| \ | |
-//   | |  | | |__   \ \  / /  | || |    | |__    | \  / | |  | | | |    | || |  | |  \| |
-//   | |  | |  __|   \ \/ /   | || |    |  __|   | |\/| | |  | | | |    | || |  | | . ` |
-//   | |__| | |____   \  /   _| || |____| |____  | |  | | |__| | | |   _| || |__| | |\  |
-//   |_____/|______|   \/   |_____\_____|______| |_|  |_|\____/  |_|  |_____\____/|_| \_|
-//                                                                                       
-//    
+//    _____             _          __  __       _   _             
+//   |  __ \           (_)        |  \/  |     | | (_)            
+//   | |  | | _____   ___  ___ ___| \  / | ___ | |_ _  ___  _ __  
+//   | |  | |/ _ \ \ / / |/ __/ _ \ |\/| |/ _ \| __| |/ _ \| '_ \ 
+//   | |__| |  __/\ V /| | (_|  __/ |  | | (_) | |_| | (_) | | | |
+//   |_____/ \___| \_/ |_|\___\___|_|  |_|\___/ \__|_|\___/|_| |_|
+//                                                                
+//
 -->
 <!-- .slide: class="transition-black" -->
 
@@ -719,22 +753,394 @@ function register(){
   </div>
 </div>
 
+##==##
+<!-- .slide: data-state="stop-devicemotion"-->
+
+## Compatibilité
+
+<div class="compat">
+  <div class="chrome">
+    <div class="desktop">7+</div>
+    <div class="os">7+</div>
+    <div class="android">7+</div>
+    <div class="ios">7+</div>
+  </div>
+  <div class="firefox">
+    <div class="desktop">6+</div>
+    <div class="os">6+</div>
+    <div class="android">6+</div>
+    <div class="ios">6+</div>
+  </div>
+  <div class="edge">
+    <div class="desktop">10240+</div>
+  </div>
+  <div class="ie">
+    <div class="old unsupport">7</div>
+    <div class="new">11</div>
+  </div>
+  <div class="safari">
+    <div class="ios">4.3</div>
+  </div>
+</div>
+
 
 
 ##==##
 
 <!--
-//    _____  _____   ______   _______ __  __ _____ _________     __
-//   |  __ \|  __ \ / __ \ \ / /_   _|  \/  |_   _|__   __\ \   / /
-//   | |__) | |__) | |  | \ V /  | | | \  / | | |    | |   \ \_/ / 
-//   |  ___/|  _  /| |  | |> <   | | | |\/| | | |    | |    \   /  
-//   | |    | | \ \| |__| / . \ _| |_| |  | |_| |_   | |     | |   
-//   |_|    |_|  \_\\____/_/ \_\_____|_|  |_|_____|  |_|     |_|   
-//                                                                 
+//    _      _       _     _   
+//   | |    (_)     | |   | |  
+//   | |     _  __ _| |__ | |_ 
+//   | |    | |/ _` | '_ \| __|
+//   | |____| | (_| | | | | |_ 
+//   |______|_|\__, |_| |_|\__|
+//              __/ |          
+//             |___/           
+-->
+
+
+<!-- .slide: class="transition-black"-->
+
+# Light 
+
+![icon](assets/images/light_detector.jpg)
+
+##==##
+
+
+## Light
+
+
+* Renvoie des valeurs entre 0 et > 1000 (0 étant sombre)
+
+* Est dépendant du téléphone et de l'implementation
+
+* On a 2 façon de faire =>
+ * Gestion par valeur
+ * Gestion par états : Dim / Normal / Bright
+
+
+```javascript
+var deviceLightHandler = function(event) {
+ var value = Math.min(45, event.value);
+ percent = Math.round((value / 45) * 100);
+ socket.sendLight(percent); 
+ updateLight();
+}
+
+window.addEventListener('devicelight', deviceLightHandler, false);
+```
+
+
+
+##==##
+
+<!-- .slide: data-state="stop-light" -->
+
+## Light
+
+### Cas pratique
+
+![center w-400](assets/images/Hanging_Bulb.jpg)
+
+
+
+##==##
+
+<!-- .slide: data-state="start-light" -->
+
+## Light
+
+
+<div class="sensorExample">
+   <div id="light">
+    <div class="light-bg"></div>
+  </div>
+</div>
+
+##==##
+<!-- .slide: data-state="stop-light"-->
+
+## Compatibilité
+
+<div class="compat">
+  <div class="chrome">
+    <div class="desktop unsupport">-</div>
+    <div class="os unsupport">-</div>
+    <div class="chromium">50+</div>
+    <div class="ios unsupport">-</div>
+  </div>
+  <div class="firefox">
+    <div class="desktop">42+</div>
+    <div class="os">42+</div>
+    <div class="android">42+</div>
+    <div class="ios">42+</div>
+  </div>
+  <div class="edge">
+    <div class="desktop unsupport">-</div>
+  </div>
+  <div class="ie">
+    <div class="old unsupport">7</div>
+    <div class="new unsupport">11</div>
+  </div>
+  <div class="safari">
+    <div class="ios unsupport">-</div>
+  </div>
+</div>
+
+
+
+
+##==##
+
+<!--
+//    _    _  _____ ______ _____    __  __ ______ _____ _____          
+//   | |  | |/ ____|  ____|  __ \  |  \/  |  ____|  __ \_   _|   /\    
+//   | |  | | (___ | |__  | |__) | | \  / | |__  | |  | || |    /  \   
+//   | |  | |\___ \|  __| |  _  /  | |\/| |  __| | |  | || |   / /\ \  
+//   | |__| |____) | |____| | \ \  | |  | | |____| |__| || |_ / ____ \ 
+//    \____/|_____/|______|_|  \_\ |_|  |_|______|_____/_____/_/    \_\
+//                                                                     
 //    
 -->
 
-<!-- .slide: class="transition-black" data-state="stop-devicemotion"-->
+<!-- .slide: class="transition-black" -->
+
+# User Media
+
+![icon](assets/images/camera_icon.jpg)
+
+##==##
+
+## User Media
+
+* Encore dépendant des navigateurs !
+
+* Possibilité de préciser ce qu'on récupère et on peut séparer les flux ! 
+* Sélection de la source / Récupération de l'audio
+
+```javascript
+var vgaConstraints = {
+  video: {
+    mandatory: {
+      maxWidth: 640,
+      maxHeight: 360
+    }
+  }
+};
+```
+
+* Devient intéressant s'il est mixé avec des effets ou des canvas.
+* **HTTPS** only ! 
+* 2 versions l'api
+
+##==##
+
+## User Media
+
+### Différence entre les 2 versions ?
+
+* V1 approche événementielle
+* V2 approche avec des promises et simplifie le fonctionnement de récupération des objets associés (plus récent => moins de compatibilité)
+
+Notes:
+
+
+
+##==##
+
+## User Media
+
+### V1
+
+```javascript
+// We define the video constraints
+var constraints = {video: true};
+
+// We manage an error while getting the stream
+function handleUserMediaError(error){
+  console.log('navigator.getUserMedia error: ', error);
+}
+
+// We manage the success of getting the stream
+function handleUserMedia(stream){
+  localStream = stream;
+  video.src = window.URL.createObjectURL(stream);
+  video.play();
+}
+
+navigator.getUserMedia(constraints, handleUserMedia, handleUserMediaError);
+
+```
+
+
+
+##==##
+
+## User Media
+
+### V2
+
+<pre class="javascript"><code class='toHilight'>
+<mark class="dilluate">// We define the video constraints
+var constraints = {video: true};
+// We manage an error while getting the stream
+function handleUserMediaError(error){
+  console.log('navigator.getUserMedia error: ', error);
+}
+// We manage the success of getting the stream
+function handleUserMedia(stream){
+  localStream = stream;
+  video.src = window.URL.createObjectURL(stream);</mark>
+  video.onloadedmetadata = function(e){
+    video.play();
+  }<mark class="dilluate">
+}
+</mark>navigator.mediaDevices.getUserMedia(constraints)
+  .then(handleUserMedia).catch(handleUserMediaError);</code></pre>
+
+Toujours besoin de adapter.js pour faire marcher correctement ! 
+
+
+Notes:
+
+
+
+##==##
+
+## User Media
+
+### Cas pratique
+
+![center w-600](assets/images/photographer.jpg)
+
+
+
+##==##
+<!-- .slide: data-state="start-usermedia" -->
+
+## User Media
+
+
+<div class="sensorExample">
+  <div id="usermedia">
+    <div class="videoParent">
+    <img id="photoStream" height="600px">
+      
+    </div>
+  </div>
+</div>
+
+##==##
+<!-- .slide: data-state="stop-usermedia"-->
+
+## Compatibilité
+
+<div class="compat">
+  <div class="chrome">
+    <div class="desktop">21+</div>
+    <div class="os">21+</div>
+    <div class="android">21+</div>
+    <div class="ios unsupport">-</div>
+  </div>
+  <div class="firefox">
+    <div class="desktop">42+</div>
+    <div class="os">42+</div>
+    <div class="android">42+</div>
+    <div class="ios">42+</div>
+  </div>
+  <div class="edge">
+    <div class="desktop">12</div>
+  </div>
+  <div class="ie">
+    <div class="old unsupport">7</div>
+    <div class="new unsupport">11</div>
+  </div>
+  <div class="safari">
+    <div class="ios unsupport">-</div>
+  </div>
+</div>
+
+
+##==##
+
+<!--
+//   __      ___ _               _   _             
+//   \ \    / (_) |             | | (_)            
+//    \ \  / / _| |__  _ __ __ _| |_ _  ___  _ __  
+//     \ \/ / | | '_ \| '__/ _` | __| |/ _ \| '_ \ 
+//      \  /  | | |_) | | | (_| | |_| | (_) | | | |
+//       \/   |_|_.__/|_|  \__,_|\__|_|\___/|_| |_|
+//                                                 
+//   
+-->
+
+<!-- .slide: class="transition-black" -->
+
+# Vibration
+
+![icon](assets/images/mobile-phone-vibration.jpg)
+
+##==##
+
+## Vibration
+
+* Vibre selon un temps donné ! 
+
+* Peut faire vibrer tout un ensmble de temps
+ * n = temps à vibrer
+ * n+1 = temps entre vibration n et n+2
+
+
+```javascript
+window.navigator.vibrate(arrayOfVibration);
+```
+
+##==##
+<!-- .slide: data-state="stop-usermedia"-->
+
+## Compatibilité
+
+<div class="compat">
+  <div class="chrome">
+    <div class="desktop">32+</div>
+    <div class="os">32+</div>
+    <div class="android">32+</div>
+    <div class="ios">32+</div>
+  </div>
+  <div class="firefox">
+    <div class="desktop">11+</div>
+    <div class="os">11+</div>
+    <div class="android">11+</div>
+    <div class="ios">11+</div>
+  </div>
+  <div class="edge">
+    <div class="desktop unsupport">draft</div>
+  </div>
+  <div class="ie">
+    <div class="old unsupport">7</div>
+    <div class="new unsupport">11</div>
+  </div>
+  <div class="safari">
+    <div class="ios unsupport">-</div>
+  </div>
+</div>
+
+
+##==##
+
+<!--
+//    _____               _           _ _         
+//   |  __ \             (_)         (_) |        
+//   | |__) | __ _____  ___ _ __ ___  _| |_ _   _ 
+//   |  ___/ '__/ _ \ \/ / | '_ ` _ \| | __| | | |
+//   | |   | | | (_) >  <| | | | | | | | |_| |_| |
+//   |_|   |_|  \___/_/\_\_|_| |_| |_|_|\__|\__, |
+//                                           __/ |
+//                                          |___/ 
+-->
+
+<!-- .slide: class="transition-black" -->
 
 # Proximity
 
@@ -792,247 +1198,6 @@ function unregister(){
 
 
 
-
-##==##
-
-<!--
-//    _      _____ _____ _    _ _______ 
-//   | |    |_   _/ ____| |  | |__   __|
-//   | |      | || |  __| |__| |  | |   
-//   | |      | || | |_ |  __  |  | |   
-//   | |____ _| || |__| | |  | |  | |   
-//   |______|_____\_____|_|  |_|  |_|   
-//                                      
-//   
--->
-
-
-<!-- .slide: class="transition-black" data-state="stop-proximity" -->
-
-# Light 
-
-![icon](assets/images/light_detector.jpg)
-
-##==##
-
-
-## Light
-
-Firefox uniquement ! 
-
-* Renvoie des valeurs entre 0 et > 1000 (0 étant sombre)
-
-* Est dépendant du téléphone et de l'implementation
-
-* On a 2 façon de faire =>
- * Gestion par valeur
- * Gestion par états : Dim / Normal / Bright
-
-
-```javascript
-var deviceLightHandler = function(event) {
- var value = Math.min(45, event.value);
- percent = Math.round((value / 45) * 100);
- socket.sendLight(percent); 
- updateLight();
-}
-
-window.addEventListener('devicelight', deviceLightHandler, false);
-```
-
-
-
-##==##
-
-<!-- .slide: data-state="stop-light" -->
-
-## Light
-
-### Cas pratique
-
-![center w-400](assets/images/Hanging_Bulb.jpg)
-
-
-
-##==##
-
-<!-- .slide: data-state="start-light" -->
-
-## Light
-
-
-<div class="sensorExample">
-   <div id="light">
-    <div class="light-bg"></div>
-  </div>
-</div>
-
-
-
-
-##==##
-
-<!--
-//    _    _  _____ ______ _____    __  __ ______ _____ _____          
-//   | |  | |/ ____|  ____|  __ \  |  \/  |  ____|  __ \_   _|   /\    
-//   | |  | | (___ | |__  | |__) | | \  / | |__  | |  | || |    /  \   
-//   | |  | |\___ \|  __| |  _  /  | |\/| |  __| | |  | || |   / /\ \  
-//   | |__| |____) | |____| | \ \  | |  | | |____| |__| || |_ / ____ \ 
-//    \____/|_____/|______|_|  \_\ |_|  |_|______|_____/_____/_/    \_\
-//                                                                     
-//    
--->
-
-<!-- .slide: class="transition-black" data-state="stop-light"-->
-
-# User Media
-
-![icon](assets/images/camera_icon.jpg)
-
-##==##
-
-## User Media
-
-* Encore dépendant des navigateurs ! Modernizr à la rescousse.
-
-* Possibilité de préciser ce qu'on récupère et on peut séparer les flux ! 
-
-```javascript
-var vgaConstraints = {
-  video: {
-    mandatory: {
-      maxWidth: 640,
-      maxHeight: 360
-    }
-  }
-};
-```
-
-* Devient intéressant s'il est mixé avec des effets ou des canvas.
-
-
-
-Notes:
-
-
-
-##==##
-
-## User Media
-
-```javascript
-// We define the video constraints
-var constraints = {video: true};
-
-// We get the correct navigator method
-var gUM = Modernizr.prefixed('getUserMedia', navigator);
-
-// We manage an error while getting the stream
-function handleUserMediaError(error){
-  console.log('navigator.getUserMedia error: ', error);
-}
-
-// We manage the success of getting the stream
-function handleUserMedia(stream){
-  localStream = stream;
-  video.src = window.URL.createObjectURL(stream);
-  video.play();
-  videoParent.addClass('rotate');
-}
-
-gUM(constraints, handleUserMedia, handleUserMediaError);
-
-```
-
-
-
-
-Notes:
-
-
-
-##==##
-
-## User Media
-
-### Cas pratique
-
-![center w-400](assets/images/css3-transform-rotateX-perspective.png)
-
-
-
-##==##
-<!-- .slide: data-state="start-usermedia" -->
-
-## User Media
-
-
-<div class="sensorExample">
-  <div id="usermedia">
-    <div class="videoParent">
-    <img id="photoStream">
-      
-    </div>
-  </div>
-</div>
-
-
-
-
-##==##
-
-<!--
-//   __      _______ ____  _____         _______ _____ ____  _   _ 
-//   \ \    / /_   _|  _ \|  __ \     /\|__   __|_   _/ __ \| \ | |
-//    \ \  / /  | | | |_) | |__) |   /  \  | |    | || |  | |  \| |
-//     \ \/ /   | | |  _ <|  _  /   / /\ \ | |    | || |  | | . ` |
-//      \  /   _| |_| |_) | | \ \  / ____ \| |   _| || |__| | |\  |
-//       \/   |_____|____/|_|  \_\/_/    \_\_|  |_____\____/|_| \_|
-//                                                                 
-//   
--->
-
-<!-- .slide: class="transition-black" data-state="stop-usermedia" -->
-
-# Vibration
-
-![icon](assets/images/mobile-phone-vibration.jpg)
-
-##==##
-
-## Vibration
-
-* Vibre selon un temps donné ! 
-
-* Peut faire vibrer tout un ensmble de temps
- * n = temps à vibrer
- * n+1 = temps entre vibration n et n+2
-
-
-```javascript
-window.navigator.vibrate(arrayOfVibration);
-```
-
-
-
-##==##
-
-## Vibration
-
-### Cas pratique
-
-![center w-400](assets/images/morse1.jpg)
-
-##==##
-
-## Vibration
-
-
-<div class="sensorExample">
-  <div id="vibration">
-    <input id='inputMorseText' class='form-control' type='text' placeholder='saisissez un texte et tapez sur Entrée....'>
-  </div>
-</div>
 
 ##==##
 
