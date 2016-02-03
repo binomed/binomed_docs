@@ -8,12 +8,12 @@ if (process.argv.length > 2){
 }
 var protocol = localServer ? 'http' : 'https';
 var privateKey = localServer ? null : fs.readFileSync('/etc/letsencrypt/live/binomed.fr/privkey.pem');
-var certificate = localServer ? null : fs.readFileSync('/etc/letsencrypt/live/binomed.fr/cert.pem');
-var certifAuth = localServer ? null : fs.readFileSync('/etc/letsencrypt/live/binomed.fr/le-acme.pem');
+var certificate = localServer ? null : fs.readFileSync('/etc/letsencrypt/live/binomed.fr/fullchain.pem');
+//var certifAuth = localServer ? null : fs.readFileSync('/etc/letsencrypt/live/binomed.fr/le-acme.pem');
 var options = localServer ? {} : {
 	key: privateKey,
-	cert: certificate,
-	ca: certifAuth
+	cert: certificate/*,
+	ca: certifAuth*/
 };
 
 

@@ -24,9 +24,10 @@ Reveal.addEventListener( 'ready', function( event ) {
 	setTimeout(function() {
     	postProdCodeHilight();
 	}, 500);
-		
 	
-	if (io && config.address){
+	let inIFrame = window.top != window.self;
+	
+	if (!inIFrame && io && config.address){
 		let socketGame = io.connect(config.address);
 		require('./game/prez_game').init(socketGame);
 		let socketPrez = null;

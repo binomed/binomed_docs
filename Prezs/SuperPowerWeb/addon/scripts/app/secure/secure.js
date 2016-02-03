@@ -1,6 +1,7 @@
 'use strict'
 
-var model = null;
+var model = null,
+	socket = null;
 
 
 
@@ -22,6 +23,10 @@ function doRequest($mdDialog, context, pwd){
 		// On ne retraire pas une question déjà traitée
 		if (json.auth){
 			localStorage['pwd'] = pwd;
+			socket.sendMessage({
+				type: 'ble',
+				action: 'stopPhysicalWeb'
+			})
 			if (location.search === ""){
 				$mdDialog.hide();
 			}
@@ -33,8 +38,9 @@ function doRequest($mdDialog, context, pwd){
 	});
 }
 
-function SecureCtrl($mdDialog, ModelService){
+function SecureCtrl($mdDialog, ModelService, SocketService){
 	
+	socket = SocketService;
 	model = ModelService;
 	this.notvalid = false;
 	let context = this;
@@ -53,6 +59,6 @@ function SecureCtrl($mdDialog, ModelService){
 
 }
 
-SecureCtrl.$inject = ['$mdDialog', 'ModelService'];
+SecureCtrl.$inject = ['$mdDialog', 'ModelService', 'SocketService'];
 
 module.exports = SecureCtrl;
