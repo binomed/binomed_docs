@@ -111,6 +111,7 @@ socket.on('connect', function () { console.log("socket connected"); });
 
 socket.on('sensor', function(message){
     if (message.type === 'ble' && message.action === "stopPhysicalWeb"){
+        console.log('Receive stop PhysicalWeb Instruction ! ');
         bleno.stopAdvertising(function(){
             configureBleno();
         });
