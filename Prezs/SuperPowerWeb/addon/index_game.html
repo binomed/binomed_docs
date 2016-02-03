@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Qui veut gagner des supers pouvoirs en masse</title>
+    <link rel="stylesheet" type="text/css" href="css/game.css">
+    <!--<meta name="HandheldFriendly" content="true" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="apple-mobile-web-app-title" content="Phaser App">-->
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <link rel="icon" type="image/png" href="./assets/images/binomed_wet_asphalt.png">
+</head>
+
+<body>
+    <script src="../node_modules/socket.io-client/socket.io.js"></script>
+    <!--<script src="/socket.io/socket.io.js"></script>-->
+    <script src="../node_modules/rivets/dist/rivets.bundled.min.js"></script>
+    <div id="content">
+        <div id="content-question-game" class="content-game" rv-show="gameQuestion" style="display:none;">
+            <div class="qui-veut-gagner" rv-show="showQuestion" style="display:none;">
+                <div class="row">
+                    <div id="respA" class="resp fab" rv-text="repA" rv-on-click="clickResp" rv-class-select="respASelect"></div>
+                </div>
+                <div class="row">
+                    <div id="respB" class="resp fab" rv-text="repB" rv-on-click="clickResp" rv-class-select="respBSelect"></div>
+                </div>
+                <div class="row">
+                    <div id="respC" class="resp fab" rv-text="repC" rv-on-click="clickResp" rv-class-select="respCSelect"></div>
+                </div>
+                <div class="row">
+                    <div id="respD" class="resp fab" rv-text="repD" rv-on-click="clickResp" rv-class-select="respDSelect"></div>
+                </div>
+            </div>
+            <div class="wait_message " rv-hide="hideMessage" style="display:none;">
+                <h1>En Attente</h1>
+            </div>
+            <div class="wait_message " rv-show="notcompatible" style="display:none;">
+                Désolé mais votre navigateur n'est pas compatible avec les fonctionnalités requises pour jouer. Veuillez télécharger chrome ou firefox.
+                <br> Si c'est déjà le cas, désolé mais regardez donc la prez !
+            </div>
+        </div>
+        <div id="content-game-shake" class="content-game" rv-show="gameShake" style="display:none;">
+        	<div class="parent-choice" rv-show="showChoice">
+        		<h1>Choississez votre camp ! 
+        		</h1>
+        		<div class="choice chrome" rv-on-click="choiceTeam">
+        			Chrome
+        		</div>
+        		<div class="choice firefox" rv-on-click="choiceTeam">
+        			Firefox
+        		</div>
+        	</div>
+        	<div class="parent-smartphone" rv-show="showPhone">
+	        	<div class='smartphone' >
+				  <div class='content'></div>
+				</div>
+				<h1>Secouez moi !</h1>
+        	</div>
+        </div>
+    </div>
+    <script src="./bundle_game.js"></script>
+</body>
+
+</html>

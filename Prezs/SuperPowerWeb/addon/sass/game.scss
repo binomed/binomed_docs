@@ -1,0 +1,225 @@
+html, body{
+	margin:0;
+	padding:0;
+	min-height:100%;
+	min-width:100%;
+	display:flex;
+	background: rgb(76,76,76); /* Old browsers */
+	background: -moz-radial-gradient(center, ellipse cover, rgba(76,76,76,1) 0%, rgba(89,89,89,1) 0%, rgba(17,17,17,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(76,76,76,1)), color-stop(0%,rgba(89,89,89,1)), color-stop(100%,rgba(17,17,17,1))); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(76,76,76,1) 0%,rgba(89,89,89,1) 0%,rgba(17,17,17,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover, rgba(76,76,76,1) 0%,rgba(89,89,89,1) 0%,rgba(17,17,17,1) 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover, rgba(76,76,76,1) 0%,rgba(89,89,89,1) 0%,rgba(17,17,17,1) 100%); /* IE10+ */
+	background: radial-gradient(ellipse at center, rgba(76,76,76,1) 0%,rgba(89,89,89,1) 0%,rgba(17,17,17,1) 100%); /* W3C */
+	color:white;
+	font-family : 'Helvetica Neue', Helvetica, 'Microsoft YaHei', 'WenQuanYi Micro Hei', Arial, sans-serif
+
+}
+
+@import "../../scss/prez/qui_veut_gagner";
+$height_question : 6rem;
+$width_triangle_question : 20px;
+$height_resp : 4rem;
+$width_triangle_resp : 10px;
+@include qui-veut-gagner("", 
+  $height_question,
+  $width_triangle_question, 
+  $height_resp,
+  $width_triangle_resp);
+
+#content{
+	display:flex;
+	flex:1;
+	flex-direction:column;
+	justify-content:space-between;
+
+	.wait_message{
+		text-align:center;
+		margin:auto;
+	}
+
+	.content-game{
+		display:flex;
+		flex:1;
+		flex-direction:column;
+		justify-content:space-between;
+	}
+}
+
+.qui-veut-gagner{
+	display:flex;
+	flex:1;
+	padding-top : 50px;
+	.resp{
+		width:80%;
+		text-align:center;
+	}
+
+	.resp.select{
+		background: green;
+	}
+	.resp.select:before{
+		border-right-color: green;
+	}
+	.resp.select:after{
+		border-left-color: green;
+	}
+}
+
+.hide{
+	display:none;
+}
+
+
+/*
+RIPPLE EFFECT
+*/
+
+.ripple{
+	position: relative;
+  	overflow:hidden;
+}
+
+.ripple-effect{
+  position: absolute;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  background: white;
+
+    
+  animation: ripple-animation 2s;
+}
+
+
+@keyframes ripple-animation {
+    from {
+      transform: scale(1);
+      opacity: 0.4;
+    }
+    to {
+      transform: scale(100);
+      opacity: 0;
+    }
+}
+
+
+/*
+	Shake Phone
+*/
+
+//* Colors *//
+$phone-color: #eee;
+$screen-color: #9b3c6f;
+
+.parent-smartphone {
+	margin:auto;
+	text-algin:center;
+}
+
+$size-logo : 100px;
+
+.parent-choice{
+	flex:1;
+	display:flex;
+	flex-direction:column;
+	justify-content:space-between;
+	text-align:center;
+
+	.choice{
+		position:relative;
+		text-align:center;
+		margin:auto;
+	}
+	
+	.choice::before{
+		content: '';
+	    width: $size-logo;
+	    height: $size-logo;
+	    position: absolute;
+	    top: -$size-logo;
+	    left: 50%;
+	    margin-left: -$size-logo / 2;
+	}
+
+	.choice.chrome::before{
+		background: url(../assets/images/appicns-Chrome-icon.png);	    
+	    background-size: $size-logo;
+	}
+	.choice.firefox::before{
+		background: url(../assets/images/appicns_Firefox.png);
+	    background-size: $size-logo;
+	    
+	}
+}
+
+/* Smartphone */
+
+.parent-smartphone{
+	margin: auto;
+    justify-content: inherit;
+    text-align: center;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.smartphone {
+	width: 80px;
+	height: 120px;
+	margin: 40px 0 0 0;
+	border: 5px darken($phone-color, 5%) solid;
+	border-top-width: 15px;
+	border-bottom-width: 20px;	 
+	border-radius: 4px;
+  animation: smartphone 2s ease-in-out infinite;
+ }
+
+@keyframes smartphone {
+  0% { transform: rotate(0deg); 
+       opacity: 1; }
+  15% { transform: rotate(-30deg);
+        opacity: 1; }
+  30% { transform: rotate(30deg);
+        opacity: 1; }
+  45% { transform: rotate(-30deg);
+        opacity: 1; }
+  60% { transform: rotate(30deg);
+        opacity: 1; }
+  75% { transform: rotate(-30deg);
+        opacity: 1; }
+  100% { transform: rotate(30deg); 
+         opacity: 1;}
+}
+
+.smartphone:before {
+	content: '';
+	display: block;
+	width: 10px;
+	height: 3px;
+	margin: -9px auto;
+	background: darken($phone-color, 15%);
+	border-radius: 4px;
+}
+
+.smartphone:after {
+	content: '';
+	display: block;
+	width: 12px;
+	height: 12px;
+	margin: 4px auto;
+	background: darken($phone-color, 15%);
+	border-radius: 10px;
+}
+
+.smartphone .content {
+	width: 60px;
+	height: 100px;
+	margin: 15px 0 0 0;
+	padding: 10px;
+	background: $screen-color;
+	color: darken($screen-color, 10%);
+	font-size: 0.5em;
+	overflow: hidden; }

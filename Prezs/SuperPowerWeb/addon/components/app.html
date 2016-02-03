@@ -1,0 +1,15 @@
+<div layout="column" id="mainContainer" ng-cloak>
+    <md-toolbar >
+        <div class="md-toolbar-tools">
+            <h2 class="md-flex">Super Power App</h2>
+        </div>
+    </md-toolbar>
+    <md-list >
+        <md-list-item class="secondary-button-padding" ng-click="app.openDialog($event,action.idAction)" ng-repeat="action in app.actions">
+        	<md-button class="md-fab md-primary" aria-label="{{action.label}}">
+        		<i class="fa fa-2x fa-inverse" ng-class="action.icon"></i>
+        	</md-button>
+            <p>{{action.label}}</p>
+        </md-list-item>        
+    </md-list>
+</div>
