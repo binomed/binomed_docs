@@ -109,7 +109,7 @@ var socket = localServer ? io("http://localhost:8000") : io("https://binomed.fr:
 
 socket.on('connect', function () { console.log("socket connected"); });
 
-socket.on('config', function(message){
+socket.on('sensor', function(message){
     if (message.type === 'ble' && message.action === "stopPhysicalWeb"){
         bleno.stopAdvertising(function(){
             configureBleno();
@@ -120,6 +120,7 @@ socket.on('config', function(message){
 if (!directBle){
 
     var url = 'https://goo.gl/F0N5Ke'; // https://binomed.fr:8000/addon.index_app.html
+    url = 'https://goo.gl/A7vNiK';  //https://rawgit.com/binomed/binomed_docs/gh-pages/Tests/addon/index_app.html
 
     eddystoneBeacon.advertiseUrl(url);
 
