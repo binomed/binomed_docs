@@ -111,20 +111,20 @@ socket.on('connect', function () { console.log("socket connected"); });
 
 socket.on('config', function(message){
     if (message.type === 'ble' && message.action === "stopPhysicalWeb"){
-        
+
         configureBleno();
     }
 });
 
-if (!directBle){
+//if (!directBle){
 
     var url = 'https://goo.gl/F0N5Ke'; // https://binomed.fr:8000/addon.index_app.html
 
     eddystoneBeacon.advertiseUrl(url);
 
-}else{
+//}else{
     configureBleno();
-}
+//}
 
 
 
