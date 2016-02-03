@@ -77,14 +77,7 @@ var myTestService =  new bleno.PrimaryService({
 const deviceName = electronic.isRaspberry() ? "RpiJefLedDevice" : "JefLedDevice";
 
 function configureBleno(){
-    bleno.on('stateChange', function(state) {
-        console.log('on -> stateChange: ' + state);
-        if (state === 'poweredOn') {
-            bleno.startAdvertising(deviceName,[uuidService]);
-        } else {
-            bleno.stopAdvertising();
-        }
-    });
+    bleno.startAdvertising(deviceName,[uuidService]);
 
     bleno.on('advertisingStart', function(error) {
         if(error){ console.log("Adv error",error); }
@@ -105,28 +98,35 @@ if (process.argv.length > 2){
     directBle = process.argv[2] === "-d";
 }
 
-var socket = localServer ? io("http://localhost:8000") : io("http://binomed.fr:8000");
+var socket = localServer ? io("http://localhost:8000") : io("https://binomed.fr:8000");
 
 socket.on('connect', function () { console.log("socket connected"); });
 
 socket.on('sensor', function(message){
     if (message.type === 'ble' && message.action === "stopPhysicalWeb"){
+        console.log('Receive stop PhysicalWeb Instruction ! ');
         bleno.stopAdvertising(function(){
-            configureBleno();
+            console.log("stop adversiting");
         });
+        configureBleno();
     }
 });
 
-if (!directBle){
+bleno.on('stateChange', function(state) {
+    console.log('on -> stateChange: ' + state);
+    if (state === 'poweredOn') {        
+        if (!directBle){
+            var url = 'https://goo.gl/F0N5Ke'; // https://binomed.fr:8000/addon.index_app.html
+            //url = 'https://goo.gl/A7vNiK';  //https://rawgit.com/binomed/binomed_docs/gh-pages/Tests/addon/index_app.html
 
-    var url = 'https://goo.gl/F0N5Ke'; // https://binomed.fr:8000/addon.index_app.html
-    url = 'https://goo.gl/A7vNiK';  //https://rawgit.com/binomed/binomed_docs/gh-pages/Tests/addon/index_app.html
-
-    eddystoneBeacon.advertiseUrl(url);
-
-}else{
-    configureBleno();
-}
+            eddystoneBeacon.advertiseUrl(url);
+        }else{
+            configureBleno();
+        }
+    } else {
+        bleno.stopAdvertising();
+    }
+});
 
 
 
