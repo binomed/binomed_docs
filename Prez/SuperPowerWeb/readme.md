@@ -29,3 +29,12 @@ sudo chown root:root chrome_sandbox && sudo chmod 4755 chrome_sandbox &&     exp
 Urls de jeux : 
 * binomed url => http://goo.gl/iQiTvZ
 * Raw git => https://goo.gl/Kp7Cyi
+
+
+Branchement sur Rpi Zero des pins pour l'électronique : 
+
+  usb     usb                 hdmi
+ power    hub                    ,-> cable rouge
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 x 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 x 0 0
+                                   `-> cable noir

@@ -8,7 +8,7 @@ var deviceProximityHandler = function(event) {
 	if (value === 0){
 		let address = model.getAddress();
 		let scheme = model.isSSL()  ? "https" : "http";
-		window.location = `intent://${address}/addon/index_app.html?speech#Intent;${scheme}=http;package=org.chromium.chrome;end`;
+		window.location = `intent://${address}/addon/index_app.html?speech#Intent;scheme=${scheme};package=org.chromium.chrome;end`;
 	}    
 	//socket.sendProximity(value);
 	//manageProximityValue(value);
@@ -33,16 +33,16 @@ function ProximityControler($mdDialog, ModelService){
 		}else{
 			let address = model.getAddress();
 			let scheme = model.isSSL()  ? "https" : "http";
-			//window.location = `intent://10.33.44.181:3000/addon/index_app.html#Intent;${scheme}=http;package=org.mozilla.firefox_beta;end`;
-			window.location = `intent://${address}/addon/index_app.html?proximity#Intent;${scheme}=http;package=org.mozilla.firefox_beta;end`;
+			//window.location = `intent://10.33.44.181:3000/addon/index_app.html#Intent;scheme=${scheme};package=org.mozilla.firefox_beta;end`;
+			window.location = `intent://${address}/addon/index_app.html?proximity#Intent;scheme=${scheme};package=org.mozilla.firefox_beta;end`;
 		}
 	}
 
 	this.goToChrome = function(){
 		let address = model.getAddress();
 		let scheme = model.isSSL()  ? "https" : "http";
-		//window.location = `intent://10.33.44.181:3000/addon/index_app.html#Intent;${scheme}=http;package=org.mozilla.firefox_beta;end`;
-		window.location = `intent://${address}/addon/index_app.html#Intent;${scheme}=http;package=org.chromium.chrome;action=android.intent.action.VIEW;launchFlags=0x10000000;end`;
+		//window.location = `intent://10.33.44.181:3000/addon/index_app.html#Intent;scheme=${scheme};package=org.mozilla.firefox_beta;end`;
+		window.location = `intent://${address}/addon/index_app.html#Intent;scheme=${scheme};package=org.chromium.chrome;action=android.intent.action.VIEW;launchFlags=0x10000000;end`;
 	}
 
 	this.close = function(){
