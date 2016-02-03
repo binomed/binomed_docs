@@ -19,7 +19,7 @@ function calculateAddress(){
 	    let scheme = ''
 	    let basicHost = ''
 	    if (location.host && location.host.indexOf('localhost') === -1){
-	    	protocol = 'http';
+	    	protocol = 'https';
 	    	scheme = '://';
 	    	basicHost = 'binomed.fr:8000';
 	    }
