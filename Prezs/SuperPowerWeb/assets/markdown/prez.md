@@ -1772,6 +1772,7 @@ if (typeof document.addEventListener != "undefined" &&
 
 ![center h-400](./assets/images/indiana_grall.gif)
 
+<div class="copyright">Indiana Jones</div>
 
 ##==## 
 
@@ -1780,6 +1781,7 @@ if (typeof document.addEventListener != "undefined" &&
 
 ![center h-400](./assets/images/indiana_reflexion.gif)
 
+<div class="copyright">Indiana Jones</div>
 
 ##==## 
 
@@ -1788,6 +1790,7 @@ if (typeof document.addEventListener != "undefined" &&
 
 ![center h-400](./assets/images/indiana_try.gif)
 
+<div class="copyright">Indiana Jones</div>
 
 ##==## 
 
@@ -1796,6 +1799,7 @@ if (typeof document.addEventListener != "undefined" &&
 
 ![center h-400](./assets/images/indiana_crash.gif)
 
+<div class="copyright">Indiana Jones</div>
 
 ##==## 
 
@@ -1804,6 +1808,8 @@ if (typeof document.addEventListener != "undefined" &&
 
 ![center h-400](./assets/images/indiana_win.gif)
 
+<div class="copyright">Indiana Jones</div>
+
 ##==## 
 
 ## Conclusion
@@ -1811,6 +1817,7 @@ if (typeof document.addEventListener != "undefined" &&
 
 ![center h-400](./assets/images/indiana_win_2.gif)
 
+<div class="copyright">Indiana Jones</div>
 
 ##==##
 
@@ -1826,4 +1833,4 @@ if (typeof document.addEventListener != "undefined" &&
 
 <!-- .element: class="email" --> **jef**@gdgnantes.com  
 
-<!-- .element: class="thank-message" --> Merci  
+<!-- .element: class="thank-message" --> http://goo.gl/8njYM1  

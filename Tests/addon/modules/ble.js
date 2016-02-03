@@ -1,14 +1,11 @@
 'use strict'
 
-var eddystoneBeacon = null,//require('eddystone-beacon'),	
+var eddystoneBeacon = require('eddystone-beacon'),	
     electronic = require('./electronic'),
 	bleno = require('bleno'),
+    io = require('socket.io-client'),
     StringDecoder = require('string_decoder').StringDecoder;
 
-//var url = `http://${ip.ip}:${port}`;
-var url = 'http://goo.gl/KsQhXJ'; // DevFest Nantes
-
-//eddystoneBeacon.advertiseUrl(url);
 
 /*
 BLE Service
@@ -79,22 +76,59 @@ var myTestService =  new bleno.PrimaryService({
 
 const deviceName = electronic.isRaspberry() ? "RpiJefLedDevice" : "JefLedDevice";
 
-bleno.on('stateChange', function(state) {
-    console.log('on -> stateChange: ' + state);
-    if (state === 'poweredOn') {
-        bleno.startAdvertising(deviceName,[uuidService]);
-    } else {
-        bleno.stopAdvertising();
+function configureBleno(){
+    bleno.on('stateChange', function(state) {
+        console.log('on -> stateChange: ' + state);
+        if (state === 'poweredOn') {
+            bleno.startAdvertising(deviceName,[uuidService]);
+        } else {
+            bleno.stopAdvertising();
+        }
+    });
+
+    bleno.on('advertisingStart', function(error) {
+        if(error){ console.log("Adv error",error); }
+        if (!error) {
+            console.log('on -> advertisingStart: ' + (error ? 'error ' + error : 'success'));
+            bleno.setServices([myTestService]);
+        }else{
+            bleno.stopAdvertising();
+            bleno.startAdvertising(deviceName,[uuidService]);
+        }    
+    });
+}
+
+var localServer = false;
+var directBle = false
+if (process.argv.length > 2){
+    localServer = process.argv[2] === "-l";
+    directBle = process.argv[2] === "-d";
+}
+
+var socket = localServer ? io("http://localhost:8000") : io("https://binomed.fr:8000");
+
+socket.on('connect', function () { console.log("socket connected"); });
+
+socket.on('sensor', function(message){
+    if (message.type === 'ble' && message.action === "stopPhysicalWeb"){
+        bleno.stopAdvertising(function(){
+            configureBleno();
+        });
     }
 });
 
-bleno.on('advertisingStart', function(error) {
-    if(error){ console.log("Adv error",error); }
-    if (!error) {
-        console.log('on -> advertisingStart: ' + (error ? 'error ' + error : 'success'));
-        bleno.setServices([myTestService]);
-    }else{
-        bleno.stopAdvertising();
-        bleno.startAdvertising(deviceName,[uuidService]);
-    }    
-});
+if (!directBle){
+
+    var url = 'https://goo.gl/F0N5Ke'; // https://binomed.fr:8000/addon.index_app.html
+    url = 'https://goo.gl/A7vNiK';  //https://rawgit.com/binomed/binomed_docs/gh-pages/Tests/addon/index_app.html
+
+    eddystoneBeacon.advertiseUrl(url);
+
+}else{
+    configureBleno();
+}
+
+
+
+
+

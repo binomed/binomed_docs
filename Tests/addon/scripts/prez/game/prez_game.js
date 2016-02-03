@@ -1,12 +1,14 @@
 'use strict'
 
 var config = require('../config/config'),
+	audio = require('./audio'),
 	socket = null,
 	scoreIndex = {};
 
 
 
 function hideQuestion(){	
+	audio.stop();
 	socket.emit('config',{
 		type : 'game',
 		eventType : 'hideQuestion'
@@ -14,6 +16,7 @@ function hideQuestion(){
 }
 
 function changeQuestion(index){
+	audio.playPublic();
 	socket.emit('config',{
 		type : 'game',
 		eventType : 'changeQuestion',
@@ -22,6 +25,11 @@ function changeQuestion(index){
 		repB : document.querySelector(`[data-state=question-${index}] .resp.repB`).innerHTML,
 		repC : document.querySelector(`[data-state=question-${index}] .resp.repC`).innerHTML,
 		repD : document.querySelector(`[data-state=question-${index}] .resp.repD`).innerHTML,
+
+	});
+	socket.emit('config',{
+		type : 'game',
+		eventType : 'showNotification'		
 
 	});
 }
@@ -39,6 +47,7 @@ function processScore(index){
 		return response.json();
 	})
 	.then(function(json){
+		audio.playWait();
 		// On ne retraire pas une question déjà traitée
 		if (scoreIndex[`question_${index}`]){
 			return;
@@ -71,6 +80,7 @@ function processScore(index){
 		});
 
 		setTimeout(function() {
+			audio.playResp();
 			let goodAnswerElt = document.querySelector(`[data-state=resp-question-${index}] .resp.good`);
 			let anwser = goodAnswerElt.classList.contains('repA') ? 'A' :
 						 goodAnswerElt.classList.contains('repB') ? 'B' :
@@ -97,7 +107,14 @@ function init(socketToSet){
 	Reveal.addEventListener('resp-question-1', function(){
 		hideQuestion();
 		processScore(1);
+	});
 
+	Reveal.addEventListener('question-2', function(){
+		changeQuestion(2);
+	});
+	Reveal.addEventListener('resp-question-2', function(){
+		hideQuestion();
+		processScore(2);
 	});
 	Reveal.addEventListener('quit-question', hideQuestion);
 
