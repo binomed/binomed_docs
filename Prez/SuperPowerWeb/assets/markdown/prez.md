@@ -15,7 +15,7 @@
 ### Jean-François GARREAU
 
 <!-- .element: class="descjf" -->
-IoT Manager, Senior innovation developper & Community Manager
+IoT Manager, Senior innovation developer & Community Manager
 
 ![avatar w-300 wp-200](./assets/images/jf.jpg)
 
@@ -143,7 +143,7 @@ IoT Manager, Senior innovation developper & Community Manager
 
 
 <div class="qui-veut-gagner">
-    <div class="question two-line"> Grâce à quoi puis-je lancer une application web si je suis à proximité d'une balise bluettooth ? </div>
+    <div class="question two-line"> Grâce à quoi puis-je lancer une application web si je suis à proximité d'une balise bluetooth ? </div>
     <div class="row">
         <div class="resp repA"> IBeacon</div>
         <div class="resp repB"> Physical Web</div>
@@ -164,7 +164,7 @@ IoT Manager, Senior innovation developper & Community Manager
 
 <div class="qui-veut-gagner">
     <canvas id="chart_question_1" width="200" height="200" class="chart-resp"></canvas>
-   <div class="question two-line"> Grâce à quoi puis-je lancer une application web si je suis à proximité d'une balise bluettooth ? </div>
+   <div class="question two-line"> Grâce à quoi puis-je lancer une application web si je suis à proximité d'une balise bluetooth ? </div>
     <div class="row">
         <div class="resp repA"> IBeacon</div>
         <div class="resp repB good"> Physical Web</div>        
@@ -1032,7 +1032,7 @@ window.addEventListener('devicelight', deviceLightHandler, false);
   <div class="chrome">
     <div class="desktop unsupport">-</div>
     <div class="os unsupport">-</div>
-    <div class="chromium">50+</div>
+    <div class="chromium">Dev</div>
     <div class="ios unsupport">-</div>
   </div>
   <div class="firefox">
@@ -1640,7 +1640,7 @@ if (typeof document.addEventListener != "undefined" &&
 
 ##==##
 
-## AppManifest
+## Web Manifest
 
 * Permet de spécifier des meta data sur l'application
 * Possibilité d'ajouter l'application sur le homescreen
@@ -1653,7 +1653,7 @@ if (typeof document.addEventListener != "undefined" &&
 
 ##==##
 
-## AppManifest
+## Web Manifest
 
 ### Utilisation
 
