@@ -111,21 +111,34 @@ IoT Manager, Senior innovation developper & Community Manager
 
 ![h400 float-left](./assets/images/Fil_rouge.jpg)
 
-![h400 binomed](./assets/images/qr_code_jeux.png)
+![h400 binomed](./assets/images/qr_code_jeux_https.png)
 
 ![h400 rawgit](./assets/images/qr_code_jeux_rawgit.png)
 
 <br>
 
-<div class="url_jeux binomed grey">http://goo.gl/iQiTvZ</div>
+<div class="url_jeux binomed grey">https://goo.gl/7SQoYq</div>
 <div class="url_jeux rawgit grey">https://goo.gl/Kp7Cyi</div>
 
+
+
+##==##
+
+<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="quit-question"-->
+
+<div class="url_jeux binomed">https://goo.gl/7SQoYq</div>
+<div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
+
+<div class="qui-veut-gagner">
+    <div class="question"> Préparez vous</div>
+
+</div>
 
 ##==##
 
 <!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="question-1"-->
 
-<div class="url_jeux binomed">http://goo.gl/iQiTvZ</div>
+<div class="url_jeux binomed">https://goo.gl/7SQoYq</div>
 <div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
 
 
@@ -145,7 +158,7 @@ IoT Manager, Senior innovation developper & Community Manager
 
 <!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="resp-question-1"-->
 
-<div class="url_jeux binomed">http://goo.gl/iQiTvZ</div>
+<div class="url_jeux binomed">https://goo.gl/7SQoYq</div>
 <div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
 
 
@@ -475,12 +488,24 @@ button.addEventListener('click', function() {
 
 ![icon](./assets/images/html5-device-access-logo.png)
 
+##==##
+
+<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="quit-question"-->
+
+<div class="url_jeux binomed">https://goo.gl/7SQoYq</div>
+<div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
+
+<div class="qui-veut-gagner">
+    <div class="question"> Préparez vous</div>
+
+</div>
+
 
 ##==##
 
 <!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="question-2"-->
 
-<div class="url_jeux binomed">http://goo.gl/iQiTvZ</div>
+<div class="url_jeux binomed">https://goo.gl/7SQoYq</div>
 <div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
 
 
@@ -500,7 +525,7 @@ button.addEventListener('click', function() {
 
 <!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="resp-question-2"-->
 
-<div class="url_jeux binomed">http://goo.gl/iQiTvZ</div>
+<div class="url_jeux binomed">https://goo.gl/7SQoYq</div>
 <div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
 
 
@@ -1452,13 +1477,6 @@ synth.speak(utterThis);
 
 ##==##
 
-<!-- .slide: data-background="#3d4349" class="transition" data-state="quit-question"-->
-
-![center h-700](./assets/images/inception_more.jpg)
-
-
-##==##
-
 ## Notification
 
 * Possibilité d'envoyer des notification à l'utilisateur même si la page n'est pas au premier plan ! 
@@ -1688,7 +1706,7 @@ if (typeof document.addEventListener != "undefined" &&
   </div>
   <div class="ie">
     <div class="old unsupport">-</div>
-    <div class="new">10</div>
+    <div class="new unsupport">-</div>
   </div>
   <div class="safari">
     <div class="ios unsupport">-</div>
@@ -1697,9 +1715,21 @@ if (typeof document.addEventListener != "undefined" &&
 
 ##==##
 
-<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="question-1"-->
+<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="quit-question"-->
 
-<div class="url_jeux binomed">http://goo.gl/iQiTvZ</div>
+<div class="url_jeux binomed">https://goo.gl/7SQoYq</div>
+<div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
+
+<div class="qui-veut-gagner">
+    <div class="question"> Préparez vous</div>
+
+</div>
+
+##==##
+
+<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="question-3"-->
+
+<div class="url_jeux binomed">https://goo.gl/7SQoYq</div>
 <div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
 
 
@@ -1717,14 +1747,14 @@ if (typeof document.addEventListener != "undefined" &&
 
 ##==##
 
-<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="resp-question-1"-->
+<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="resp-question-3"-->
 
-<div class="url_jeux binomed">http://goo.gl/iQiTvZ</div>
+<div class="url_jeux binomed">https://goo.gl/7SQoYq</div>
 <div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
 
 
 <div class="qui-veut-gagner">
-    <canvas id="chart_question_1" width="200" height="200" class="chart-resp"></canvas>
+    <canvas id="chart_question_3" width="200" height="200" class="chart-resp"></canvas>
    <div class="question two-line"> Laquelle de ces API ne fait pas encore partie d'une roadmap pour le web ?  </div>
     <div class="row">
         <div class="resp repA"> WebNFC</div>
@@ -1739,7 +1769,13 @@ if (typeof document.addEventListener != "undefined" &&
 
 ##==##
 
-<!-- .slide: class="transition-black" data-state="quit-question" -->
+<!-- .slide: data-background="#3d4349" class="transition" data-state="quit-question"-->
+
+![center h-700](./assets/images/inception_more.jpg)
+
+##==##
+
+<!-- .slide: class="transition-black" -->
 
 # Tout le reste !
 

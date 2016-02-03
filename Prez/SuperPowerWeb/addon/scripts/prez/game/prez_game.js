@@ -116,6 +116,14 @@ function init(socketToSet){
 		hideQuestion();
 		processScore(2);
 	});
+
+	Reveal.addEventListener('question-3', function(){
+		changeQuestion(3);
+	});
+	Reveal.addEventListener('resp-question-3', function(){
+		hideQuestion();
+		processScore(3);
+	});
 	Reveal.addEventListener('quit-question', hideQuestion);
 
 }
