@@ -105,7 +105,7 @@ if (process.argv.length > 2){
     directBle = process.argv[2] === "-d";
 }
 
-var socket = localServer ? io("http://localhost:8000") : io("https://binomed.fr:8000");
+var socket = localServer ? io("http://localhost:8000") : io("http://binomed.fr:8000");
 
 socket.on('connect', function () { console.log("socket connected"); });
 
