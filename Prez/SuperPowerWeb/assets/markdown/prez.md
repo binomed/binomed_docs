@@ -1,4 +1,4 @@
-<!-- .slide: data-background="/assets/images/super_hero_fotolia.png" data-state="hidefooter" class="transition first-slide" -->
+<!-- .slide: data-background="./assets/images/super_hero_fotolia.png" data-state="hidefooter" class="transition first-slide" -->
 
 # Les nouveaux supers pouvoirs du web
 
@@ -17,11 +17,11 @@
 <!-- .element: class="descjf" -->
 IoT Manager, Senior innovation developper & Community Manager
 
-![avatar w-300 wp-200](/assets/images/jf.jpg)
+![avatar w-300 wp-200](./assets/images/jf.jpg)
 
 
-![company_logo](/assets/images/sqli_logo.png)
-![gdg_logo](/assets/images/GDG-Logo-carre.png)
+![company_logo](./assets/images/sqli_logo.png)
+![gdg_logo](./assets/images/GDG-Logo-carre.png)
 
 <!-- .element: class="twitter" -->
 [@jefBinomed](http://twitter.com/jefBinomed)
@@ -31,11 +31,11 @@ IoT Manager, Senior innovation developper & Community Manager
 
 ##==##
 
-<!-- .slide: data-background="/assets/images/once-upon-a-time.jpg" data-state="hidefooter" class="transition"-->
+<!-- .slide: data-background="./assets/images/once-upon-a-time.jpg" data-state="hidefooter" class="transition"-->
 
 ##==##
 
-<!-- .slide: data-background="/assets/images/HTML5_yellow_detail.jpg" data-state="hidefooter" class="transition"-->
+<!-- .slide: data-background="./assets/images/HTML5_yellow_detail.jpg" data-state="hidefooter" class="transition"-->
 
 # Un combat vieux comme le monde
 
@@ -45,7 +45,7 @@ IoT Manager, Senior innovation developper & Community Manager
 ##==##
 <!-- .slide: data-background="#3d4349" class="transition"-->
 
-![center h-700](/assets/images/civil_war.jpg)
+![center h-700](./assets/images/civil_war.jpg)
 
 ##==##
 
@@ -53,7 +53,7 @@ IoT Manager, Senior innovation developper & Community Manager
 
 <br><br>
 
-![center](/assets/images/native-app-illustration_1x.jpg)
+![center](./assets/images/native-app-illustration_1x.jpg)
 
 
 ##==##
@@ -63,8 +63,8 @@ IoT Manager, Senior innovation developper & Community Manager
 # Elles se croyaient au dessus de tout ! 
 
 
-![h-300](/assets/images/irondroid.jpg)
-![h-300](/assets/images/ironman-osx_240.jpg)
+![h-300](./assets/images/irondroid.jpg)
+![h-300](./assets/images/ironman-osx_240.jpg)
 
 <div class="copyright black">_IronDroid_, Jamie BiversProduct</div>
 
@@ -74,13 +74,13 @@ IoT Manager, Senior innovation developper & Community Manager
 # Mais ça c'était avant
 
 
-![h-500 center](/assets/images/html5-superheros.png)
+![h-500 center](./assets/images/html5-superheros.png)
 
 ##==##
 
 <!-- .slide: data-background="#3d4349" class="transition"-->
 
-![center h-700](/assets/images/inception_webapp.jpg)
+![center h-700](./assets/images/inception_webapp.jpg)
 
 
 ##==##
@@ -109,11 +109,11 @@ IoT Manager, Senior innovation developper & Community Manager
 
 ## Et si on jouait ?
 
-![h400 float-left](/assets/images/Fil_rouge.jpg)
+![h400 float-left](./assets/images/Fil_rouge.jpg)
 
-![h400 binomed](/assets/images/qr_code_jeux.png)
+![h400 binomed](./assets/images/qr_code_jeux.png)
 
-![h400 rawgit](/assets/images/qr_code_jeux_rawgit.png)
+![h400 rawgit](./assets/images/qr_code_jeux_rawgit.png)
 
 <br>
 
@@ -123,7 +123,7 @@ IoT Manager, Senior innovation developper & Community Manager
 
 ##==##
 
-<!-- .slide: data-background="/assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="question-1"-->
+<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="question-1"-->
 
 <div class="url_jeux binomed">http://goo.gl/iQiTvZ</div>
 <div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
@@ -143,7 +143,7 @@ IoT Manager, Senior innovation developper & Community Manager
 
 ##==##
 
-<!-- .slide: data-background="/assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="resp-question-1"-->
+<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="resp-question-1"-->
 
 <div class="url_jeux binomed">http://goo.gl/iQiTvZ</div>
 <div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
@@ -179,13 +179,13 @@ IoT Manager, Senior innovation developper & Community Manager
 
 # Le Physical Web
 
-![icon](assets/images/physical_web.png)
+![icon](./assets/images/physical_web.png)
 
 ##==##
 
 <!-- .slide: data-background="#3d4349" class="transition"-->
 
-![center h-700](/assets/images/inception_physical_web.jpg)
+![center h-700](./assets/images/inception_physical_web.jpg)
 
 
 
@@ -215,7 +215,7 @@ IoT Manager, Senior innovation developper & Community Manager
 
 <!-- .slide: data-background="#3d4349" class="transition"-->
 
-![center h-600](/assets/images/demo_time.jpg)
+![center h-600](./assets/images/demo_time.jpg)
 
 ##==##
 
@@ -262,7 +262,7 @@ IoT Manager, Senior innovation developper & Community Manager
 
 <!-- .slide: data-background="#3d4349" class="transition"-->
 
-![center h-600](/assets/images/inception_bluetooth.jpg)
+![center h-600](./assets/images/inception_bluetooth.jpg)
 
 ##==##
 
@@ -270,7 +270,7 @@ IoT Manager, Senior innovation developper & Community Manager
 
 # Web Bluetooth
 
-![icon](assets/images/bluetooth_logo.png)
+![icon](./assets/images/bluetooth_logo.png)
 
 
 ##==##
@@ -416,7 +416,7 @@ button.addEventListener('click', function() {
 
 <!-- .slide: data-background="#3d4349" class="transition"-->
 
-![center h-600](/assets/images/demo_time.jpg)
+![center h-600](./assets/images/demo_time.jpg)
 
 ##==##
 
@@ -464,7 +464,7 @@ button.addEventListener('click', function() {
 
 <!-- .slide: data-background="#3d4349" class="transition"-->
 
-![center h-600](/assets/images/inception_sensors.jpg)
+![center h-600](./assets/images/inception_sensors.jpg)
 
 ##==##
 
@@ -473,12 +473,12 @@ button.addEventListener('click', function() {
 
 # Sensors 
 
-![icon](assets/images/html5-device-access-logo.png)
+![icon](./assets/images/html5-device-access-logo.png)
 
 
 ##==##
 
-<!-- .slide: data-background="/assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="question-2"-->
+<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="question-2"-->
 
 <div class="url_jeux binomed">http://goo.gl/iQiTvZ</div>
 <div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
@@ -498,7 +498,7 @@ button.addEventListener('click', function() {
 
 ##==##
 
-<!-- .slide: data-background="/assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="resp-question-2"-->
+<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="resp-question-2"-->
 
 <div class="url_jeux binomed">http://goo.gl/iQiTvZ</div>
 <div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
@@ -534,7 +534,7 @@ button.addEventListener('click', function() {
 
 # Vibration
 
-![icon](assets/images/mobile-phone-vibration.jpg)
+![icon](./assets/images/mobile-phone-vibration.jpg)
 
 ##==##
 
@@ -601,7 +601,7 @@ window.navigator.vibrate(arrayOfVibration);
 
 # Device Orientation
 
-![icon](assets/images/device-orientation.jpg)
+![icon](./assets/images/device-orientation.jpg)
 
 ##==##
 
@@ -616,11 +616,11 @@ Se fait à plat !
 <br>
 <div>
 
-![h-300](assets/images/device-orientation-z.jpg)
+![h-300](./assets/images/device-orientation-z.jpg)
 
-![h-300](assets/images/device-orientation-y.jpg)
+![h-300](./assets/images/device-orientation-y.jpg)
 
-![h-300](assets/images/device-orientation-x.jpg)
+![h-300](./assets/images/device-orientation-x.jpg)
 
 </div>
 
@@ -664,7 +664,7 @@ Subtilité : ça marche mieux si le téléphone est a plat
 
 ### Cas Pratique
 
-![center w-600](assets/images/combination-lock-icon.jpg)
+![center w-600](./assets/images/combination-lock-icon.jpg)
 
 
 ##==##
@@ -738,13 +738,13 @@ Subtilité : ça marche mieux si le téléphone est a plat
 
 # Device Motion API
 
-![icon](assets/images/device_motion.jpg)
+![icon](./assets/images/device_motion.jpg)
 
 ##==##
 
 ## Device Motion API
 
-![center w-800](assets/images/device_motion.jpg)
+![center w-800](./assets/images/device_motion.jpg)
 
 On peut tenir comptes de l'accélération classique ou avec prise en charge de la gravité !
 
@@ -787,7 +787,7 @@ function register(){
 
 ### Cas pratique
 
-![center w-800](assets/images/chargebatterylonger.jpg)
+![center w-800](./assets/images/chargebatterylonger.jpg)
 
 
 
@@ -848,6 +848,85 @@ function register(){
 </div>
 
 
+##==##
+
+<!--
+//    ____        _   _                  
+//   |  _ \      | | | |                 
+//   | |_) | __ _| |_| |_ ___ _ __ _   _ 
+//   |  _ < / _` | __| __/ _ \ '__| | | |
+//   | |_) | (_| | |_| ||  __/ |  | |_| |
+//   |____/ \__,_|\__|\__\___|_|   \__, |
+//                                  __/ |
+//                                 |___/ 
+-->
+
+<!-- .slide: class="transition-black"-->
+
+# Battery Status 
+
+![icon](./assets/images/empty-battery.png)
+
+##==##
+
+## Battery Status
+
+
+* Pourcentage de la batterie (et son évolution)
+
+* Téléphone branché ou non
+
+<br>
+
+```javascript
+var battery = navigator.battery || navigator.mozBattery 
+|| navigator.webkitBattery;
+
+function updateBatteryStatus() {
+  console.log("Batterie chargée à : " + battery.level * 100 + " %");
+
+  if (battery.charging) {
+    console.log("Chargement de la batterie"); 
+  }
+}
+
+battery.addEventListener("chargingchange", updateBatteryStatus);
+battery.addEventListener("levelchange", updateBatteryStatus);
+updateBatteryStatus();
+```
+
+[Documentation](https://developer.mozilla.org/fr/docs/Web/API/Battery_status_API)
+
+##==##
+<!-- .slide: data-state="stop-devicemotion"-->
+
+## Compatibilité
+
+<div class="compat">
+  <div class="chrome">
+    <div class="desktop">39+</div>
+    <div class="os">39+</div>
+    <div class="android">39+</div>
+    <div class="ios">39+</div>
+  </div>
+  <div class="firefox">
+    <div class="desktop">10+</div>
+    <div class="os">10+</div>
+    <div class="android">10+</div>
+    <div class="ios">10+</div>
+  </div>
+  <div class="edge">
+    <div class="desktop unsupport">-</div>
+  </div>
+  <div class="ie">
+    <div class="old unsupport">-</div>
+    <div class="new unsupport">-</div>
+  </div>
+  <div class="safari">
+    <div class="ios unsupport">-</div>
+  </div>
+</div>
+
 
 ##==##
 
@@ -867,7 +946,7 @@ function register(){
 
 # Light 
 
-![icon](assets/images/light_detector.jpg)
+![icon](./assets/images/light_detector.jpg)
 
 ##==##
 
@@ -902,7 +981,7 @@ window.addEventListener('devicelight', deviceLightHandler, false);
 
 ### Cas pratique
 
-![center w-400](assets/images/Hanging_Bulb.jpg)
+![center w-400](./assets/images/Hanging_Bulb.jpg)
 
 
 
@@ -969,7 +1048,7 @@ window.addEventListener('devicelight', deviceLightHandler, false);
 
 # User Media
 
-![icon](assets/images/camera_icon.jpg)
+![icon](./assets/images/camera_icon.jpg)
 
 ##==##
 
@@ -1073,7 +1152,7 @@ Notes:
 
 ### Cas pratique
 
-![center w-600](assets/images/photographer.jpg)
+![center w-600](./assets/images/photographer.jpg)
 
 
 
@@ -1143,7 +1222,7 @@ Notes:
 
 # Proximity
 
-![icon](assets/images/proximity.jpg)
+![icon](./assets/images/proximity.jpg)
 
 ##==##
 
@@ -1249,7 +1328,7 @@ function unregister(){
 
 # Web Speech API
 
-![icon](assets/images/voice-recognition.js.png)
+![icon](./assets/images/voice-recognition.js.png)
 
 ##==##
 
@@ -1332,7 +1411,7 @@ synth.speak(utterThis);
 
 <!-- .slide: data-background="#3d4349" class="transition" data-state="start-webspeech"-->
 
-![center h-600](/assets/images/demo_time.jpg)
+![center h-600](./assets/images/demo_time.jpg)
 
 ##==##
 <!-- .slide: data-state="stop-webspeech"-->
@@ -1364,18 +1443,261 @@ synth.speak(utterThis);
   </div>
 </div>
 
+##==##
+
+<!-- .slide: data-background="#3d4349" class="transition" -->
+
+![center h-700](./assets/images/inception_not_sensor.jpg)
+
 
 ##==##
 
 <!-- .slide: data-background="#3d4349" class="transition" data-state="quit-question"-->
 
-![center h-700](/assets/images/inception_more.jpg)
-
+![center h-700](./assets/images/inception_more.jpg)
 
 
 ##==##
 
-<!-- .slide: data-background="/assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="question-1"-->
+## Notification
+
+* Possibilité d'envoyer des notification à l'utilisateur même si la page n'est pas au premier plan ! 
+
+* A besoin d'autorisations pour fonctionner
+
+* Maintenant basé sur les services workers pour des histoires de d'activités
+
+* A coupler avec la PushAPI ;)
+
+<br>
+
+[Documentation](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration/showNotification) && [Old Documentation](https://developer.mozilla.org/fr/docs/Web/API/notification/Using_Web_Notifications)
+
+##==##
+
+## Notification
+
+### Utilisation
+
+```javascript
+function showNotification() {
+  Notification.requestPermission(function(result) {
+    if (result === 'granted') {
+      navigator.serviceWorker.ready.then(function(registration) {
+        registration.showNotification('Vibration Sample', {
+          body: 'Buzz! Buzz!',
+          icon: '../images/touch/chrome-touch-icon-192x192.png',
+          vibrate: [200, 100, 200, 100, 200, 100, 200],
+          tag: 'vibration-sample'
+        });
+      });
+    }
+  });
+}
+```
+
+##==##
+
+## Compatibilité
+
+<div class="compat">
+  <div class="chrome">
+    <div class="desktop">42+</div>
+    <div class="os">42+</div>
+    <div class="android">42+</div>
+    <div class="ios">42+</div>
+  </div>
+  <div class="firefox">
+    <div class="desktop">44+</div>
+    <div class="os">44+</div>
+    <div class="android">44+</div>
+    <div class="ios">44+</div>
+  </div>
+  <div class="edge">
+    <div class="desktop unsupport">-</div>
+  </div>
+  <div class="ie">
+    <div class="old unsupport">-</div>
+    <div class="new unsupport">-</div>
+  </div>
+  <div class="safari">
+    <div class="ios unsupport">-</div>
+  </div>
+</div>
+
+##==##
+
+<!-- .slide: data-background="#3d4349" class="transition" data-state="quit-question"-->
+
+![center h-700](./assets/images/inception_offline.jpg)
+
+
+##==##
+
+## Gestion du offline
+
+### Pleins d'outils à notre disposition
+
+* Stockage basique de clés valeurs avec le [LocalStorage / SessionStorage](https://developer.mozilla.org/en-US/docs/Web/API/Storage/LocalStorage)
+
+<br>
+
+* Base de données orientée objets avec [IndexDB](https://developer.mozilla.org/fr/docs/IndexedDB/Using_IndexedDB)
+
+<br>
+
+* Gestion de données cache avec [l'AppCache](https://developer.mozilla.org/fr/docs/Utiliser_Application_Cache) (Déprécié et n'est plus conseillé !)
+
+<br>
+
+* Le remplaçant de l'appCache => [Service Workers](https://developer.mozilla.org/fr/docs/Web/API/Service_Worker_API) !! 
+
+
+##==## 
+
+## Activité dans l'application ?
+
+* La [Page Visibility API](https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API) vous permet de gérer la visibilité de vos pages.
+
+<br>
+
+```javascript
+var hidden, visibilityChange; 
+if (typeof document.hidden !== "undefined") { and later support 
+  hidden = "hidden";
+  visibilityChange = "visibilitychange";
+} 
+
+function handleVisibilityChange() {
+  if (document[hidden]) {
+    // Do some stuff, unconnect things
+  } else {
+    // Do some stuff, reconnect things
+  }
+}
+
+if (typeof document.addEventListener != "undefined" && 
+  typeof document[hidden] != "undefined") {
+  // Handle page visibility change   
+  document.addEventListener(visibilityChange, handleVisibilityChange, false);
+  
+}
+```
+
+##==##
+
+## Compatibilité
+
+<div class="compat">
+  <div class="chrome">
+    <div class="desktop">33+</div>
+    <div class="os">33+</div>
+    <div class="android">33+</div>
+    <div class="ios">33+</div>
+  </div>
+  <div class="firefox">
+    <div class="desktop">18+</div>
+    <div class="os">18+</div>
+    <div class="android">18+</div>
+    <div class="ios">18+</div>
+  </div>
+  <div class="edge">
+    <div class="desktop">10</div>
+  </div>
+  <div class="ie">
+    <div class="old unsupport">-</div>
+    <div class="new">10</div>
+  </div>
+  <div class="safari">
+    <div class="ios">7</div>
+  </div>
+</div>
+
+
+##==##
+
+<!-- .slide: data-background="#3d4349" class="transition"-->
+
+![center h-700](./assets/images/inception_appmanifest.jpg)
+
+##==##
+
+## AppManifest
+
+* Permet de spécifier des meta data sur l'application
+* Possibilité d'ajouter l'application sur le homescreen
+* Possibilité de définir des paramètres de lancement : 
+ * Plein écran 
+ * Url Spécifique au démarrage 
+ * Orientation
+ * Présence de la barre de navigation 
+ * ...
+
+##==##
+
+## AppManifest
+
+### Utilisation
+
+```html
+<link rel="manifest" href="/manifest.json">
+```
+
+```json
+{
+  "short_name": "Kinlan's Amaze App",
+  "name": "Kinlan's Amazing Application ++",
+  "icons": [
+    {
+      "src": "launcher-icon-2x.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/index.html",
+  "display": "standalone",
+  "orientation": "landscape"
+}
+```
+
+[Documentation](https://developers.google.com/web/updates/2014/11/Support-for-installable-web-apps-with-webapp-manifest-in-chrome-38-for-Android)
+
+
+##==##
+
+
+<!-- .slide: data-state="quit-question"-->
+
+## Compatibilité
+
+<div class="compat">
+  <div class="chrome">
+    <div class="desktop">46+</div>
+    <div class="os">46+</div>
+    <div class="android">46+</div>
+    <div class="ios">46+</div>
+  </div>
+  <div class="firefox">
+    <div class="desktop partial">draft</div>
+    <div class="os partial">draft</div>
+    <div class="android partial">draft</div>
+    <div class="ios partial">draft</div>
+  </div>
+  <div class="edge">
+    <div class="desktop unsupport">consider</div>
+  </div>
+  <div class="ie">
+    <div class="old unsupport">-</div>
+    <div class="new">10</div>
+  </div>
+  <div class="safari">
+    <div class="ios unsupport">-</div>
+  </div>
+</div>
+
+##==##
+
+<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="question-1"-->
 
 <div class="url_jeux binomed">http://goo.gl/iQiTvZ</div>
 <div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
@@ -1395,7 +1717,7 @@ synth.speak(utterThis);
 
 ##==##
 
-<!-- .slide: data-background="/assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="resp-question-1"-->
+<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="resp-question-1"-->
 
 <div class="url_jeux binomed">http://goo.gl/iQiTvZ</div>
 <div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
@@ -1421,58 +1743,89 @@ synth.speak(utterThis);
 
 # Tout le reste !
 
-![center h-500](assets/images/buzz.jpg)
+![center h-500](./assets/images/buzz.jpg)
 
 
 ##==##
 
-##USB
+## Ce qui arrive
 
-##==##
+*  [Web USB](https://wicg.github.io/webusb/) : Interaction avec le port série depuis le web
 
-## Sensors Génériques
+<br>
 
-##==##
+* [Sensors Génériques](https://w3c.github.io/sensors/) : Ouverture de tous les types de sensors disponibles et pas encore présent => Refonte des apis actuelles 
 
-## WebNFC
+<br>
 
+* [WebNFC](http://w3c.github.io/web-nfc/index.html) :  Mise à disposition d'un lecteur NFC à utiliser sur téléphone
 
-##==##
+<br>
 
-## Notification
-
-Regarder si ça marche si le navigateur n'est pas au premier plan ?
-
-##==## 
-
-## Cycle de vie
-
-##==##
-
-## Gestion du offline
-
-=> Inception
-
-##==##
-
-## AppManifest
-
-=> Inception
+* Web Bluetooth : prise en compte des devices non BLE
 
 
 ##==## 
 
 ## Conclusion
 
-image indiana jones
+
+![center h-400](./assets/images/indiana_grall.gif)
+
+<div class="copyright">Indiana Jones</div>
+
+##==## 
+
+## Conclusion
+
+
+![center h-400](./assets/images/indiana_reflexion.gif)
+
+<div class="copyright">Indiana Jones</div>
+
+##==## 
+
+## Conclusion
+
+
+![center h-400](./assets/images/indiana_try.gif)
+
+<div class="copyright">Indiana Jones</div>
+
+##==## 
+
+## Conclusion
+
+
+![center h-400](./assets/images/indiana_crash.gif)
+
+<div class="copyright">Indiana Jones</div>
+
+##==## 
+
+## Conclusion
+
+
+![center h-400](./assets/images/indiana_win.gif)
+
+<div class="copyright">Indiana Jones</div>
+
+##==## 
+
+## Conclusion
+
+
+![center h-400](./assets/images/indiana_win_2.gif)
+
+<div class="copyright">Indiana Jones</div>
 
 ##==##
 
-<!-- .slide: class="last-slide" data-state="stop-webspeech" -->
+<!-- .slide: class="last-slide" -->
 
 
 
-# <!-- .element: class="topic-title" --> Topic Title 
+# <!-- .element: class="topic-title" --> Les supers pouvoirs du web
 
 <!-- .element: class="presenter" --> **Jean-François Garreau  **
 
@@ -1480,4 +1833,4 @@ image indiana jones
 
 <!-- .element: class="email" --> **jef**@gdgnantes.com  
 
-<!-- .element: class="thank-message" --> Merci  
+<!-- .element: class="thank-message" --> http://goo.gl/8njYM1  

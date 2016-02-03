@@ -27,6 +27,11 @@ function changeQuestion(index){
 		repD : document.querySelector(`[data-state=question-${index}] .resp.repD`).innerHTML,
 
 	});
+	socket.emit('config',{
+		type : 'game',
+		eventType : 'showNotification'		
+
+	});
 }
 
 function processScore(index){
