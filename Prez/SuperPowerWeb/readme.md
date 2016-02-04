@@ -31,10 +31,24 @@ Urls de jeux :
 * Raw git => https://goo.gl/Kp7Cyi
 
 
-Branchement sur Rpi Zero des pins pour l'électronique : 
+Rpi Zero pins for demo : 
 
   usb     usb                 hdmi
- power    hub                    ,-> cable rouge
+ power    hub                    ,-> red cable
  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 x 0 0 0
  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 x 0 0
-                                   `-> cable noir
+                                   `-> black cable
+
+
+Save life commands for bluetooth : 
+
+```sh
+# Stop service bluetooth
+$ sudo service bluetooth stop
+# Start service bluetooth (hciconfig must be down)
+$ sudo service bluetooth start
+# Start adapter bluetooth (mandatory for advertising !)
+$ sudo hciconfig hci0 up
+# Stop adapter bluetooth
+$ sudo hciconfig hci0 down
+```
