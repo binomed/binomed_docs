@@ -1,7 +1,6 @@
 'use strict'
 
-var eddystoneBeacon = require('eddystone-beacon'),	
-    electronic = require('./electronic'),
+var electronic = require('./electronic'),
 	bleno = require('bleno'),
     io = require('socket.io-client'),
     StringDecoder = require('string_decoder').StringDecoder;
@@ -77,8 +76,6 @@ var myTestService =  new bleno.PrimaryService({
 const deviceName = electronic.isRaspberry() ? "RpiJefLedDevice" : "JefLedDevice";
 
 function configureBleno(){
-    bleno.startAdvertising(deviceName,[uuidService]);
-
     bleno.on('advertisingStart', function(error) {
         if(error){ console.log("Adv error",error); }
         if (!error) {
@@ -89,6 +86,10 @@ function configureBleno(){
             bleno.startAdvertising(deviceName,[uuidService]);
         }    
     });
+
+
+    bleno.startAdvertising(deviceName,[uuidService]);
+
 }
 
 var localServer = false;
@@ -98,6 +99,10 @@ if (process.argv.length > 2){
     directBle = process.argv[2] === "-d";
 }
 
+var eddystoneBeacon = null;
+if (!directBle){
+    eddystoneBeacon = require('eddystone-beacon');
+}
 var socket = localServer ? io("http://localhost:8000") : io("https://binomed.fr:8000");
 
 socket.on('connect', function () { console.log("socket connected"); });
@@ -127,8 +132,3 @@ bleno.on('stateChange', function(state) {
         bleno.stopAdvertising();
     }
 });
-
-
-
-
-
