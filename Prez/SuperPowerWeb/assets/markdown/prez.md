@@ -600,8 +600,8 @@ window.navigator.vibrate(arrayOfVibration);
     <div class="desktop unsupport">draft</div>
   </div>
   <div class="ie">
-    <div class="old unsupport">7</div>
-    <div class="new unsupport">11</div>
+    <div class="old unsupport">-</div>
+    <div class="new unsupport">-</div>
   </div>
   <div class="safari">
     <div class="ios unsupport">-</div>
@@ -739,7 +739,7 @@ Subtilité : ça marche mieux si le téléphone est a plat
     <div class="desktop">10240+</div>
   </div>
   <div class="ie">
-    <div class="old unsupport">7</div>
+    <div class="old unsupport">-</div>
     <div class="new">11</div>
   </div>
   <div class="safari">
@@ -864,7 +864,7 @@ function register(){
     <div class="desktop">10240+</div>
   </div>
   <div class="ie">
-    <div class="old unsupport">7</div>
+    <div class="old unsupport">-</div>
     <div class="new">11</div>
   </div>
   <div class="safari">
@@ -1045,8 +1045,8 @@ window.addEventListener('devicelight', deviceLightHandler, false);
     <div class="desktop unsupport">-</div>
   </div>
   <div class="ie">
-    <div class="old unsupport">7</div>
-    <div class="new unsupport">11</div>
+    <div class="old unsupport">-</div>
+    <div class="new unsupport">-</div>
   </div>
   <div class="safari">
     <div class="ios unsupport">-</div>
@@ -1218,8 +1218,8 @@ Notes:
     <div class="desktop">12</div>
   </div>
   <div class="ie">
-    <div class="old unsupport">7</div>
-    <div class="new unsupport">11</div>
+    <div class="old unsupport">-</div>
+    <div class="new unsupport">-</div>
   </div>
   <div class="safari">
     <div class="ios unsupport">-</div>
@@ -1327,8 +1327,8 @@ function unregister(){
     <div class="desktop unsupport">-</div>
   </div>
   <div class="ie">
-    <div class="old unsupport">7</div>
-    <div class="new unsupport">11</div>
+    <div class="old unsupport">-</div>
+    <div class="new unsupport">-</div>
   </div>
   <div class="safari">
     <div class="ios unsupport">-</div>
