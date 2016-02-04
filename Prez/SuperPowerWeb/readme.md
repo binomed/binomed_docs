@@ -17,6 +17,8 @@ Connexion à la RPI :
 $ ssh pi@raspberrypi
 password : raspberry
 
+NE PAS OUBLIER DE FERMER LES ONGLETS CHROMMIUM !!! NE PAS OUBLIER DE LANCER LE SCRIPT LINUX !!!
+
 
 Remote debug firefox : 
 ->./adb forward tcp:6000 localfilesystem:/data/data/org.mozilla.fennec/firefox-debugger-socket
@@ -52,3 +54,23 @@ $ sudo hciconfig hci0 up
 # Stop adapter bluetooth
 $ sudo hciconfig hci0 down
 ```
+
+
+
+ORDER : 
+
+1. Allumer Nexus 4 et le brancher au pc
+   1.  Lancer l'application physicalWeb
+   2. Vérifier qu'il n'y a aucun onglet chromium d'ouvert !
+2. Se connecter à binomed.fr
+3. Démarer le serveur en sudo
+3. Allumer téléphone Routeur
+   1. Allumer la rpi
+   2. Se connecter en ssh à la rpi
+   3. Lancer le script linux
+   4. Démarer l'application avec sudo
+4. Lancer chromium pour le debug
+5. Lancer Chrome pour la prez ! 
+6. Démarer le serveur en local avec l'option -l
+7. Aller sur localhost:8000 -> S pour avoir les notes speakers ! 
+8. Vérifier le son
