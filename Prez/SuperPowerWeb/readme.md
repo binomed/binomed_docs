@@ -25,8 +25,20 @@ Remote debug firefox :
 -> ./adb forward tcp:6000 localfilesystem:/data/data/org.mozilla.firefox_beta/firefox-debugger-socket
 
 
+Flag exp WebBluetooth for linux : 
+```bash
+sudo service bluetooth stop
+sudo /usr/sbin/bluetoothd -d -E --nodetach
+#in bluetoothctl
+power on
+```
+
+
 Remote debug chromium : 
-sudo chown root:root chrome_sandbox && sudo chmod 4755 chrome_sandbox &&     export CHROME_DEVEL_SANDBOX="$PWD/chrome_sandbox"
+```bash
+sudo chown root:root chrome_sandbox && sudo chmod 4755 chrome_sandbox &&     
+export CHROME_DEVEL_SANDBOX="$PWD/chrome_sandbox"
+```
 
 Urls de jeux : 
 * binomed url => http://goo.gl/iQiTvZ
