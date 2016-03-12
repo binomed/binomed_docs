@@ -86,3 +86,12 @@ ORDER :
 6. Démarer le serveur en local avec l'option -l
 7. Aller sur localhost:8000 -> S pour avoir les notes speakers ! 
 8. Vérifier le son
+
+
+Platform status : 
+
+* CanIUse 
+* Edge : https://dev.windows.com/en-us/microsoft-edge/platform/status/
+* Firefox : https://platform-status.mozilla.org/
+* Chrome : https://www.chromestatus.com/features
+* Opera : Cf Chrome status

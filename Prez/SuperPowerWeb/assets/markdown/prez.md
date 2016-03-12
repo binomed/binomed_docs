@@ -2,7 +2,7 @@
 
 # Les nouveaux supers pouvoirs du web
 
-### 2015.02.05 DevFest @ **Paris**
+### 2015.03.25 Breizhcamp @ **Rennes**
 
 <div class="copyright white">fotolia</div>
 
@@ -239,14 +239,18 @@ IoT Manager, Senior innovation developer & Community Manager
   <div class="chrome">
     <div class="desktop unsupport">-</div>
     <div class="os partial">-</div>
-    <div class="android-dev">48+</div>
+    <div class="android">49+</div>
     <div class="ios">44+</div>
   </div>
   <div class="firefox">
     <div class="desktop unsupport">-</div>
-    <div class="os partial">-</div>
+    <div class="os partial">draft</div>
     <div class="android unsupport">-</div>
     <div class="ios unsupport">-</div>
+  </div>
+  <div class="opera">
+    <div class="desktop unsupport">-</div>
+    <div class="android">32+</div>
   </div>
   <div class="edge">
     <div class="desktop unsupport">-</div>
@@ -449,8 +453,12 @@ button.addEventListener('click', function() {
     <div class="android unsupport">-</div>
     <div class="ios unsupport">-</div>
   </div>
+  <div class="opera">
+    <div class="desktop unsupport">-</div>
+    <div class="android">38+</div>
+  </div>
   <div class="edge">
-    <div class="desktop unsupport">Consider</div>
+    <div class="desktop unsupport">consider</div>
   </div>
   <div class="ie">
     <div class="old unsupport">-</div>
@@ -596,8 +604,12 @@ window.navigator.vibrate(arrayOfVibration);
     <div class="android">11+</div>
     <div class="ios">11+</div>
   </div>
+  <div class="opera">
+    <div class="desktop">19+</div>
+    <div class="android">19+</div>
+  </div>
   <div class="edge">
-    <div class="desktop unsupport">draft</div>
+    <div class="desktop unsupport">consider</div>
   </div>
   <div class="ie">
     <div class="old unsupport">-</div>
@@ -735,8 +747,12 @@ Subtilité : ça marche mieux si le téléphone est a plat
     <div class="android">6+</div>
     <div class="ios">6+</div>
   </div>
+  <div class="opera">
+    <div class="desktop">15+</div>
+    <div class="android">12+</div>
+  </div>
   <div class="edge">
-    <div class="desktop">10240+</div>
+    <div class="desktop">11+</div>
   </div>
   <div class="ie">
     <div class="old unsupport">-</div>
@@ -860,8 +876,12 @@ function register(){
     <div class="android">6+</div>
     <div class="ios">6+</div>
   </div>
+  <div class="opera">
+    <div class="desktop">18+</div>
+    <div class="android">18+</div>
+  </div>
   <div class="edge">
-    <div class="desktop">10240+</div>
+    <div class="desktop">11+</div>
   </div>
   <div class="ie">
     <div class="old unsupport">-</div>
@@ -940,8 +960,12 @@ updateBatteryStatus();
     <div class="android">10+</div>
     <div class="ios">10+</div>
   </div>
+  <div class="opera">
+    <div class="desktop">35+</div>
+    <div class="android">35+</div>
+  </div>
   <div class="edge">
-    <div class="desktop unsupport">-</div>
+    <div class="desktop unsupport">consider</div>
   </div>
   <div class="ie">
     <div class="old unsupport">-</div>
@@ -1032,7 +1056,7 @@ window.addEventListener('devicelight', deviceLightHandler, false);
   <div class="chrome">
     <div class="desktop unsupport">-</div>
     <div class="os unsupport">-</div>
-    <div class="chromium">Dev</div>
+    <div class="chromium partial">draft</div>
     <div class="ios unsupport">-</div>
   </div>
   <div class="firefox">
@@ -1041,8 +1065,12 @@ window.addEventListener('devicelight', deviceLightHandler, false);
     <div class="android">42+</div>
     <div class="ios">42+</div>
   </div>
-  <div class="edge">
+  <div class="opera">
     <div class="desktop unsupport">-</div>
+    <div class="android unsupport">-</div>
+  </div>
+  <div class="edge">
+    <div class="desktop partial">Insider</div>
   </div>
   <div class="ie">
     <div class="old unsupport">-</div>
@@ -1214,8 +1242,12 @@ Notes:
     <div class="android">42+</div>
     <div class="ios">42+</div>
   </div>
+  <div class="opera">
+    <div class="desktop">12+</div>
+    <div class="android">12+</div>
+  </div>
   <div class="edge">
-    <div class="desktop">12</div>
+    <div class="desktop">12+</div>
   </div>
   <div class="ie">
     <div class="old unsupport">-</div>
@@ -1322,6 +1354,10 @@ function unregister(){
     <div class="os">42+</div>
     <div class="android">42+</div>
     <div class="ios">42+</div>
+  </div>
+  <div class="opera">
+    <div class="desktop unsupport">-</div>
+    <div class="android unsupport">-</div>
   </div>
   <div class="edge">
     <div class="desktop unsupport">-</div>
@@ -1453,11 +1489,15 @@ synth.speak(utterThis);
   <div class="firefox">
     <div class="desktop">45+</div>
     <div class="os">45+</div>
-    <div class="android unsupport">-</div>
+    <div class="android partial">draft</div>
     <div class="ios unsupport">-</div>
   </div>
+  <div class="opera">
+    <div class="desktop partial">draft</div>
+    <div class="android partial">draft</div>
+  </div>
   <div class="edge">
-    <div class="desktop unsupport">draft</div>
+    <div class="desktop partial">draft</div>
   </div>
   <div class="ie">
     <div class="old unsupport">-</div>
@@ -1531,8 +1571,12 @@ function showNotification() {
     <div class="android">44+</div>
     <div class="ios">44+</div>
   </div>
+  <div class="opera">
+    <div class="desktop">35+</div>
+    <div class="android">33+</div>
+  </div>
   <div class="edge">
-    <div class="desktop unsupport">-</div>
+    <div class="desktop partial">draft</div>
   </div>
   <div class="ie">
     <div class="old unsupport">-</div>
@@ -1619,8 +1663,12 @@ if (typeof document.addEventListener != "undefined" &&
     <div class="android">18+</div>
     <div class="ios">18+</div>
   </div>
+  <div class="opera">
+    <div class="desktop">20+</div>
+    <div class="android">20+</div>
+  </div>
   <div class="edge">
-    <div class="desktop">10</div>
+    <div class="desktop">10+</div>
   </div>
   <div class="ie">
     <div class="old unsupport">-</div>
@@ -1700,6 +1748,10 @@ if (typeof document.addEventListener != "undefined" &&
     <div class="os partial">draft</div>
     <div class="android partial">draft</div>
     <div class="ios partial">draft</div>
+  </div>
+  <div class="opera">
+    <div class="desktop">15+</div>
+    <div class="android">26+</div>
   </div>
   <div class="edge">
     <div class="desktop unsupport">consider</div>

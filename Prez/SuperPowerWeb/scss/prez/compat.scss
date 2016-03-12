@@ -55,13 +55,13 @@ $mini-browser-size : 64px;
   height: 100%;*/
   justify-content: space-between;
 
-  .chrome, .firefox, .edge, .ie, .safari{
+  .chrome, .opera, .firefox, .edge, .ie, .safari{
     position:relative;
     display:flex;
     flex-direction: column;
   }
   
-  .chrome:before, .firefox:before, .edge:before, .ie:before, .safari:before{
+  .chrome:before, .opera:before,.firefox:before, .edge:before, .ie:before, .safari:before{
     content:'';
     position:absolute;
     width: $browser-size;
@@ -77,6 +77,10 @@ $mini-browser-size : 64px;
   }
   .firefox:before{    
     background:url(../../assets/images/firefox_256x256.png);
+    background-size:$browser-size;
+  }
+  .opera:before{    
+    background:url(../../assets/images/opera_256x256.png);
     background-size:$browser-size;
   }
   .edge:before{    
@@ -104,6 +108,11 @@ $mini-browser-size : 64px;
   @include variante(chrome, chromium, "chromium", chromium_256x256);
   @include variante(chrome, ios, "ios", chrome-android_256x256);
 
+  @include variante(opera, desktop, "desktop", opera_256x256);
+  @include variante(opera, android, "android", opera_256x256);
+  @include variante(opera, android-beta, "android beta", opera-beta_256x256);
+  @include variante(opera, dev, "dev", opera-developer_256x256);
+  
   @include variante(firefox, desktop, "desktop", firefox_256x256);
   @include variante(firefox, desktop-nightly, "desktop-nigthly", firefox-nightly_256x256);
   @include variante(firefox, os, "OS", firefox_256x256);
