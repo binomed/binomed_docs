@@ -1,7 +1,8 @@
 'use strict'
 
 const serviceUUID = '11111111-2222-3333-4444-000000000000',
-	characteristicWriteUUID = '11111111-2222-3333-4444-000000000010';
+	characteristicWriteUUID = '11111111-2222-3333-4444-000000000010',
+	mbotApi = require('../mbot/mbot');  
 
 function ab2str(buf) {
   return String.fromCharCode.apply(null, new Uint16Array(buf));
