@@ -1,7 +1,7 @@
 'use strict'
 
-const DEVICE_NAME = "Makeblock_LE";
-	SERVUCE_UUID = "0000ffe1-0000-1000-8000-00805f9b34fb";
+const DEVICE_NAME = "Makeblock_LE",
+	SERVICE_UUID = "0000ffe1-0000-1000-8000-00805f9b34fb",
 	CHARACTERISTIC_UUID = "0000ffe3-0000-1000-8000-00805f9b34fb";
 
 const TYPE_MOTOR = 0x0a,
@@ -150,7 +150,7 @@ function genericControl(type, port, slot, value){
 
 module.epxorts = {
 	'DEVICE_NAME' : DEVICE_NAME,
-	'SERVUCE_UUID' : SERVUCE_UUID,
+	'SERVICE_UUID' : SERVICE_UUID,
 	'CHARACTERISTIC_UUID' : CHARACTERISTIC_UUID,
 	'TYPE_MOTOR' : TYPE_MOTOR,
 	'TYPE_RGB' : TYPE_RGB,

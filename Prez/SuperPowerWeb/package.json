@@ -3,14 +3,14 @@
   "name": "SuperPowerWeb",
   "version": "1.0.0",
   "dependencies": {
-    "chart.js": "^1.0.2",
-    "socket.io-client": "^1.4.4",
     "angular": "^1.4.9",
     "angular-animate": "^1.4.9",
     "angular-aria": "^1.4.9",
     "angular-material": "^1.0.2",
+    "chart.js": "^1.0.2",
     "font-awesome": "^4.5.0",
-    "rivets": "^0.8.1"
+    "rivets": "^0.8.1",
+    "socket.io-client": "^1.4.4"
   },
   "devDependencies": {
     "browser-sync": "^2.6.9",

@@ -4,10 +4,21 @@
         <h2>Bluetooth</h2>        
       </div>
 	</md-toolbar>
-	<md-button class="md-raised md-primary" ng-click="bleCtrl.turnOn()">Turn ON</md-button>
-	<md-button class="md-raised md-primary md-hue-1" ng-click="bleCtrl.activSlider()">Play with Slider</md-button>
-	<md-slider flex md-discrete ng-disabled="!bleCtrl.sliderActiv" ng-model="bleCtrl.power" ng-change="bleCtrl.changePower()" step="1" min="1" max="255" aria-label="power"></md-slider>
-	<md-button class="md-raised md-primary md-hue-2" ng-click="bleCtrl.blink()">Blink</md-button>
-	<md-button class="md-raised md-accent" ng-click="bleCtrl.turnOff()">Turn Off</md-button>
+	<div layout="row">
+		<div flex="20"></div>
+		<md-button class="md-raised md-primary" jf-touchstart="bleCtrl.up()" jf-touchend="bleCtrl.stop()" flex="60">Up</md-button>
+		<div flex="20"></div>
+	</div>
+	<div layout="row">
+		<md-button class="md-raised md-primary" jf-touchstart="bleCtrl.left()" jf-touchend="bleCtrl.stop()" flex="40">Left</md-button>
+		<div flex="20"></div>
+		<md-button class="md-raised md-primary" jf-touchstart="bleCtrl.right()" jf-touchend="bleCtrl.stop()"  flex="40">Right</md-button>
+	</div>
+	<div layout="row">
+		<div flex="20"></div>
+		<md-button class="md-raised md-primary" jf-touchstart="bleCtrl.down()" jf-touchend="bleCtrl.stop()"  flex="60" >Down</md-button>
+		<div flex="20"></div>
+	</div>
+	<canvas jf-colorpicker="bleCtrl.changeColor(red,blue,green)"></canvas>
 	<md-button class="md-raised md-warn" ng-click="bleCtrl.close()">Close</md-button>
 </md-dialog>

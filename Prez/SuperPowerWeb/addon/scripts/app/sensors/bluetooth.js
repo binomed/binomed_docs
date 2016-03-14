@@ -1,8 +1,6 @@
 'use strict'
 
-const serviceUUID = '11111111-2222-3333-4444-000000000000',
-	characteristicWriteUUID = '11111111-2222-3333-4444-000000000010',
-	mbotApi = require('../mbot/mbot');  
+const mbotApi = require('../mbot/mbot');  
 
 function ab2str(buf) {
   return String.fromCharCode.apply(null, new Uint16Array(buf));
@@ -25,7 +23,7 @@ var serverGATT = null,
 function initBle(){
 	return new Promise(function(resolve, reject){
 		navigator.bluetooth.requestDevice({ 
-			filters: [{ name: 'RpiJefLedDevice' }, { name: 'JefLedDevice' }]
+			filters: [{ name: mbotApi.DEVICE_NAME }], optionalServices: [mbotApi.SERVICE_UUID]
 		})
 		.then(function(device) {
 		   console.log("Connecting...");
@@ -40,7 +38,7 @@ function initBle(){
 		     setTimeout(function() {
 		     	try{
 		     		console.log("Try to get Service");
-		       		resolveService(server.getPrimaryService(serviceUUID));
+		       		resolveService(server.getPrimaryService(mbotApi.SERVICE_UUID));
 		     	}catch(err){
 		     		rejectService(err);
 		     	}
@@ -81,7 +79,7 @@ function getCharacteristic(){
 			getService()
 			.then(function(service){
 				console.log("Try to get Characteritic : %O",service);
-				return service.getCharacteristic(characteristicWriteUUID);
+				return service.getCharacteristic(mbotApi.CHARACTERISTIC_UUID);
 			})
 			.then(function(characteritic){
 				characteristicGATT = characteritic;
@@ -99,9 +97,6 @@ function processCharacteristic(type, data, callback){
 		if (type === 'write'){			
 			console.log("Try to write value : %O",characteristic);
 			return characteristic.writeValue(encoder.encode(data));
-		}else{
-			console.log("Try to read value : %O",characteristic);
-			return characteristic.readValue();
 		}
 	}).then(function(buffer){
 		if (type === 'write'){
@@ -124,46 +119,86 @@ function processCharacteristic(type, data, callback){
 	});
 }
 
+function processMotors(valueM1, valueM2){
+	getCharacteristic()
+	.then(characteristic =>{
+		return characteristic.writeValue(mbotApi.genericControl(mbotApi.TYPE_MOTOR, mbotApi.M_1, 0, valueM1));
+	}).then(()=>{
+		return characteristicGATT.writeValue(mbotApi.genericControl(mbotApi.TYPE_MOTOR, mbotApi.M_2, 0, valueM2));
+	}).then(()=>{
+		if(callback){
+			callback({type: 'write', value : true});			
+		}
+		console.info("Write datas ! ");
+	}).catch(error =>{
+		console.error(error);
+		if (callback) {
+			callback({type : 'error', value : error});
+		}
+	});
+}
 
 
-function BleController($mdDialog, $timeout){
+function BleController($mdDialog){
 
 	this.sliderActiv = false;
 	this.currentTimer = null;
 	this.power = 125;
+	this.red = 0;
 
 	this.close = function(){
+		this.stop();
 		$mdDialog.hide();
 	} 
 
-	this.turnOn = function(){
+	this.connect = function(){
 		processCharacteristic('write', "on");
 	}
 
-	this.blink = function(){
-		processCharacteristic('write', "blink");
+	this.up = function(event){
+		console.log("up");
+		processMotors(-100,100);
 	}
 
-	this.turnOff = function(){
-		processCharacteristic('write', "off");
+	this.down = function(){
+		console.log("down");
+		processMotors(100,-100);
 	}
 	
-	this.changePower = function(){
-		processCharacteristic('write', "bright:"+this.power);
+	this.left = function(){
+		console.log("left");
+		processMotors(100,100);
 	};
 
-	this.activSlider = function(){
-		if (this.currentTimer){
-			$timeout.cancel(this.currentTimer);
-		}
-		this.sliderActiv = true;
-		this.currentTimer = $timeout(function(context){
-			context.sliderActiv = false;
-		},5000,true, this);
+	this.right = function(){
+		console.log("right");
+		processMotors(-100,-100);
+	};
+
+	this.stop = function(){
+		console.log("stop");
+		processMotors(0,0);
 	}
+
+	this.changeColor = function(red,blue,green){ 
+		console.log("Change Color : %d,%d,%d",red,blue,green)
+		if (picker){
+			valueArray[0] = picker.rgb[0];
+			valueArray[1] = picker.rgb[1];
+			valueArray[2] = picker.rgb[2];
+		}
+		var rHex = valueArray[0]<<8;
+		var gHex = valueArray[1]<<16;
+		var bHex = valueArray[2]<<24;
+		var value = rHex | gHex | bHex;
+		processCharacteristic('write', mbotApi.genericControl(mbotApi.TYPE_RGB,mbotApi.PORT_6,0,value));
+		//processCharacteristic('write', "bright:"+this.power);
+	};
+
+
 }
 
-BleController.$inject = ['$mdDialog', '$timeout']
+BleController.$inject = ['$mdDialog']
 
 
 module.exports = BleController;/*{
