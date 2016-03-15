@@ -1419,7 +1419,7 @@ function unregister(){
 
 ```javascript
 var recognition = new webkitSpeechRecognition();
-recognition.lang = 'fr-FR';
+recognition.lang = voiceFR;
 recognition.continuous = true;
 recognition.interimResults = true;
 

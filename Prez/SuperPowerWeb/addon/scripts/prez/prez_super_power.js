@@ -20,14 +20,17 @@ function postProdCodeHilight(){
 
 Reveal.addEventListener( 'ready', function( event ) {
     // event.currentSlide, event.indexh, event.indexv
-	
+	console.log('RevealJS Ready');
+    
 	setTimeout(function() {
     	postProdCodeHilight();
 	}, 500);
 	
 	let inIFrame = window.top != window.self;
 	
+    
 	if (!inIFrame && io && config.address){
+        console.log("Go to condition !");
 		let socketGame = io.connect(config.address);
 		require('./game/prez_game').init(socketGame);
 		let socketPrez = null;
@@ -37,14 +40,19 @@ Reveal.addEventListener( 'ready', function( event ) {
 			socketPrez = io.connect(config.address);
 		}
  
- 		setTimeout(function() {
+ 		//setTimeout(function() {
+             console.log("Before light");
 			require('./sensors/light').init(socketPrez);
+             console.log("Before Orientation");
 			require('./sensors/orientation').init(socketPrez);
+             console.log("Before DeviceMotion");
 			require('./sensors/devicemotion').init(socketPrez);
+             console.log("Before Voice");
 			require('./sensors/voice').init(socketPrez);
+             console.log("Before UserMedia");
 			require('./sensors/usermedia').init(socketPrez);
  			
- 		}, 1000);
+ 		//}, 1000);
 	}	
  
 	

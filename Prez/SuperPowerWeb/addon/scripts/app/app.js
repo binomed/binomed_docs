@@ -105,14 +105,6 @@ angular.module("SuperPowerApp", ['ngMaterial'])
 					parent : angular.element(document.querySelector('#mainContainer')),
 					fullScreen : true
 				});
-			}else if (window.location.search === '?speech'){
-				$mdDialog.show({
-					controllerAs : 'voiceCtrl',
-					templateUrl: './components/voice.html',
-					controller: require('./sensors/voice'),
-					parent : angular.element(document.querySelector('#mainContainer')),
-					fullScreen : true
-				});
 			}else{
 				$mdDialog.show({
 					controllerAs : 'secureCtrl',

@@ -1,14 +1,16 @@
 'use strict'
 
-var model = null;
+var model = null,
+    socket = null;
 
 // The listener
 var deviceProximityHandler = function(event) {
 	var value = Math.round(event.value);        
 	if (value === 0){
-		let address = model.getAddress();
+        socket.sendMessage({type: 'voice', value : 'start'});
+		/*let address = model.getAddress();
 		let scheme = model.isSSL()  ? "https" : "http";
-		window.location = `intent://${address}/addon/index_app.html?speech#Intent;scheme=${scheme};package=org.chromium.chrome;end`;
+		window.location = `intent://${address}/addon/index_app.html?speech#Intent;scheme=${scheme};package=org.chromium.chrome;end`;*/
 	}    
 	//socket.sendProximity(value);
 	//manageProximityValue(value);
@@ -22,9 +24,10 @@ function unregister(){
 	window.removeEventListener('deviceproximity', deviceProximityHandler, false);
 }
 
-function ProximityControler($mdDialog, ModelService){
+function ProximityControler($mdDialog, ModelService, SocketService){
 
 	model = ModelService;
+    socket = SocketService;
 
 	this.turnOn = function(){
 		if (window.DeviceProximityEvent){
@@ -51,6 +54,6 @@ function ProximityControler($mdDialog, ModelService){
 	}
 }
 
-ProximityControler.$inject = ['$mdDialog', 'ModelService'];
+ProximityControler.$inject = ['$mdDialog', 'ModelService', 'SocketService'];
 
 module.exports = ProximityControler;
