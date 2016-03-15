@@ -85,6 +85,10 @@ function configEvt(msg){
 Exposed Methods
 */
 
+function broadcast(channel, msg){
+	io.emit(channel, msg);
+}
+
 function registerEvent(id, key, callback){
 	var cb = callBacksAction.find(function(elt){
 		return elt.id === id && elt.key === key;
@@ -114,5 +118,6 @@ module.exports = {
 	init : init,
 	registerEvent : registerEvent,
 	unregisterEvent : unregisterEvent,
-	specifyRoute : specifyRoute
+	specifyRoute : specifyRoute,
+	broadcast : broadcast
 };

@@ -2,7 +2,9 @@
 
 var scores = {},
 	index = 0, 
-	hideQuestion = true;
+	hideQuestion = true,
+	questionUsers = {},
+	serverPrez = null;
 
 
 function callBackGame(msg){
@@ -29,6 +31,7 @@ function callBackGame(msg){
 				}
 			}
 			currentScore.users[msg.id] = msg.resp;
+			questionUsers[msg.id] = msg;
 			switch(msg.resp){
 				case 'A':
 					currentScore.repA++;
@@ -46,6 +49,7 @@ function callBackGame(msg){
 			break;
 		}
 		case 'changeQuestion':
+			questionUsers = {};
 			hideQuestion = false;
 			index = msg.index;
 			if (!scores[`question_${index}`]){				
@@ -61,12 +65,66 @@ function callBackGame(msg){
 		case 'hideQuestion':
 			hideQuestion = true;
 		break;
+		case 'calculateWinners':
+			if(questionUsers){
+				let sortUsers = [];
+				Object.keys(questionUsers).forEach((key)=>{
+				    sortUsers.push(questionUsers[key]);  
+				});
+
+				console.log(sortUsers);
+				let idResults = sortUsers.sort((a, b)=>{
+				    if (a.resp != msg.value){
+				        return 1;
+				    }else if (b.resp != msg.value){
+				        return -1;
+				    }else{
+				        return a.timestamp - b.timestamp;
+				    }
+				})
+				.slice(0, msg.numberWinners)
+				.filter((entry)=>{
+					return entry.resp === msg.value;
+				})
+				.map((entry)=>{
+					return entry.id;
+				});
+
+				/*sortUsers.sort((a, b)=>{
+				    if (a.resp != msg.value){
+				        return 1;
+				    }else if (b.resp != msg.value){
+				        return -1;
+				    }else{
+				        return a.timestamp - b.timestamp;
+				    }
+				});
+				let sliceUsers = sortUsers.slice(0, msg.numberWinners);
+				if (sliceUsers.length <2){
+					console.log('ça va pas ! ');
+				}else{
+					console.log(sliceUsers[0]);
+					console.log(sliceUsers[1]);
+					console.log(sliceUsers.map((entry)=>{
+						return entry.id;
+					}));
+				}*/
+
+				serverPrez.broadcast('config', {
+					type: 'game',
+					eventType: 'winners',
+					value: idResults
+				});
+
+			}
+		break;
 	}
 	
 }
 
 
 function initGameServer(server){
+	serverPrez = server;
 	server.registerEvent('gameServer','game', callBackGame);
 
 	server.specifyRoute('/score/:index', function(req, res){

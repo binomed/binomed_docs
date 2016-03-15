@@ -41,6 +41,12 @@
                 Désolé mais votre navigateur n'est pas compatible avec les fonctionnalités requises pour jouer. Veuillez télécharger chrome ou firefox.
                 <br> Si c'est déjà le cas, désolé mais regardez donc la prez !
             </div>
+             <div class="wait_message " rv-show="winner" style="display:none;">
+                <h1>Vous avez gagné ! </h1>
+            </div>
+            <div class="wait_message " rv-show="looser" style="display:none;">
+                <h1>Désolé, vous n'avez pas gagné ! </h1>
+            </div>
         </div>
         <div id="content-game-shake" class="content-game" rv-show="gameShake" style="display:none;">
         	<div class="parent-choice" rv-show="showChoice">
