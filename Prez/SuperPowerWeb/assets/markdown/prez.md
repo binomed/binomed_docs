@@ -43,9 +43,8 @@ IoT Manager, Senior innovation developer & Community Manager
 
 
 ##==##
-<!-- .slide: data-background="#3d4349" class="transition"-->
+<!--  .slide: data-background="./assets/images/civil_war_full.jpg" class="transition"-->
 
-![center h-700](./assets/images/civil_war.jpg)
 
 ##==##
 
@@ -78,9 +77,7 @@ IoT Manager, Senior innovation developer & Community Manager
 
 ##==##
 
-<!-- .slide: data-background="#3d4349" class="transition"-->
-
-![center h-700](./assets/images/inception_webapp.jpg)
+<!-- .slide: data-background="./assets/images/inception_webapp_full.jpg" class="transition"-->
 
 
 ##==##
@@ -196,10 +193,7 @@ IoT Manager, Senior innovation developer & Community Manager
 
 ##==##
 
-<!-- .slide: data-background="#3d4349" class="transition"-->
-
-![center h-700](./assets/images/inception_physical_web.jpg)
-
+<!-- .slide: data-background="./assets/images/inception_physical_web_full.jpg" class="transition"-->
 
 
 ##==## 
@@ -277,9 +271,8 @@ IoT Manager, Senior innovation developer & Community Manager
 //                                                  
 -->     
 
-<!-- .slide: data-background="#3d4349" class="transition"-->
+<!-- .slide: data-background="./assets/images/inception_bluetooth_full.jpg" class="transition"-->
 
-![center h-600](./assets/images/inception_bluetooth.jpg)
 
 ##==##
 
@@ -483,9 +476,8 @@ button.addEventListener('click', function() {
 //     
 -->
 
-<!-- .slide: data-background="#3d4349" class="transition"-->
+<!-- .slide: data-background="./assets/images/inception_sensors_full.jpg" class="transition"-->
 
-![center h-600](./assets/images/inception_sensors.jpg)
 
 ##==##
 
@@ -1474,6 +1466,11 @@ synth.speak(utterThis);
 
 ![center h-600](./assets/images/demo_time.jpg)
 
+<div id="demoSpeech" style="display: none;">
+  <i class="fa fa-microphone fa-4x"></i>
+  <p id="speech_input"></p>
+</div>
+
 ##==##
 <!-- .slide: data-state="stop-webspeech"-->
 
@@ -1510,9 +1507,8 @@ synth.speak(utterThis);
 
 ##==##
 
-<!-- .slide: data-background="#3d4349" class="transition" -->
+<!-- .slide: data-background="./assets/images/inception_not_sensor_full.jpg" class="transition" -->
 
-![center h-700](./assets/images/inception_not_sensor.jpg)
 
 
 ##==##
@@ -1589,9 +1585,8 @@ function showNotification() {
 
 ##==##
 
-<!-- .slide: data-background="#3d4349" class="transition" data-state="quit-question"-->
+<!-- .slide: data-background="./assets/images/inception_offline_full.jpg" class="transition" data-state="quit-question"-->
 
-![center h-700](./assets/images/inception_offline.jpg)
 
 
 ##==##
@@ -1682,9 +1677,8 @@ if (typeof document.addEventListener != "undefined" &&
 
 ##==##
 
-<!-- .slide: data-background="#3d4349" class="transition"-->
+<!-- .slide: data-background="./assets/images/inception_appmanifest_full.jpg" class="transition"-->
 
-![center h-700](./assets/images/inception_appmanifest.jpg)
 
 ##==##
 
@@ -1821,9 +1815,8 @@ if (typeof document.addEventListener != "undefined" &&
 
 ##==##
 
-<!-- .slide: data-background="#3d4349" class="transition" data-state="quit-question"-->
+<!-- .slide: data-background="./assets/images/inception_more_full.jpg" class="transition" data-state="quit-question"-->
 
-![center h-700](./assets/images/inception_more.jpg)
 
 ##==##
 
@@ -1903,59 +1896,13 @@ if (typeof document.addEventListener != "undefined" &&
 
 ##==## 
 
-<!-- .slide: data-state="quit-question"-->
+<!-- .slide: data-state="quit-question hidefooter" data-background="./assets/images/monthy_phython_graal.jpg" class="transition"-->
 
-## Conclusion
-
-
-![center h-400](./assets/images/indiana_grall.gif)
-
-<div class="copyright">Indiana Jones</div>
-
-##==## 
-
-## Conclusion
+# Conclusion
 
 
-![center h-400](./assets/images/indiana_reflexion.gif)
+<div class="copyright">Monthy Python</div>
 
-<div class="copyright">Indiana Jones</div>
-
-##==## 
-
-## Conclusion
-
-
-![center h-400](./assets/images/indiana_try.gif)
-
-<div class="copyright">Indiana Jones</div>
-
-##==## 
-
-## Conclusion
-
-
-![center h-400](./assets/images/indiana_crash.gif)
-
-<div class="copyright">Indiana Jones</div>
-
-##==## 
-
-## Conclusion
-
-
-![center h-400](./assets/images/indiana_win.gif)
-
-<div class="copyright">Indiana Jones</div>
-
-##==## 
-
-## Conclusion
-
-
-![center h-400](./assets/images/indiana_win_2.gif)
-
-<div class="copyright">Indiana Jones</div>
 
 ##==##
 
