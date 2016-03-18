@@ -3,7 +3,12 @@
 let voiceEnable = false,
     voiceFR = null,
     synth = null,
-    recognition = null;
+    recognition = null,
+    recognitionDone = false,
+    nextSlide = false,
+    eltMic = null,
+    inputMic = null
+    ;
 
 function populateVoiceList(){    
     let voices= synth.getVoices();    
@@ -25,19 +30,30 @@ function handleVoiceResults(event){
   // The second [0] returns the SpeechRecognitionAlternative at position 0.
   // We then return the transcript property of the SpeechRecognitionAlternative object 
   var finalStr = event.results[0][0].transcript;
+  inputMic.innerHTML = finalStr;
   //diagnostic.textContent = 'Result received: ' + color + '.';
   //bg.style.backgroundColor = color;
   console.log('Confidence: ' + finalStr);
   if (finalStr.indexOf('suivant') != -1){
-  	speak("Bonjour JF, j'ai compris que tu voulais passer au slide suivant, est ce que c'est bien ça ?")
-    .then(()=>{
-        recognition.start();
-    })
-    .catch(()=>{
-        console.error("No voiceFR"); 
-    });
+  	recognition.stop();
+  	if (!recognitionDone){
+  		recognitionDone = true;
+	  	speak("Bonjour JF, j'ai compris que tu voulais passer au slide suivant, ais je bien compris ?")
+	    .then(()=>{
+	    	console.log("Fin de speech")
+	        recognition.start();
+	        eltMic.style.display = '';
+	    })
+	    .catch((e)=>{
+	    	console.error(e);
+	        console.error("No voiceFR"); 
+	    });
+	}
   }else if (finalStr.indexOf('oui') != -1){
-  	Reveal.next();
+  	if (!nextSlide){
+  		nextSlide=true;
+  		Reveal.next();
+  	}
   }
 }
 
@@ -45,6 +61,7 @@ function handleVoiceEnd(){
     // We detect the end of speechRecognition process
     console.log('End of recognition')
     recognition.stop();
+    eltMic.style.display = 'none';
 };
 
 // We detect errors
@@ -108,9 +125,15 @@ function init(socket){
 	socket.on('sensor', function(msg){
 		if (voiceEnable && msg.type === 'voice'){
             if (msg.value === 'start'){
+            	if(!eltMic){
+            		eltMic = document.getElementById('demoSpeech');
+            		inputMic = document.getElementById('speech_input');
+            	}
+            	eltMic.style.display = '';
                 recognition.start();
             }else if (msg.value === 'stop'){
                 recognition.stop();
+                eltMic.style.display = 'none';
             }
 		}
 	});
@@ -122,6 +145,10 @@ function init(socket){
 
 	Reveal.addEventListener( 'stop-webspeech', function(){
 		voiceEnable = false;
+		if (recognition){
+			recognition.stop();
+			eltMic.style.display = 'none';
+		}
 	});
 
 }
