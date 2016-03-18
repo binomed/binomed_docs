@@ -1852,8 +1852,58 @@ if (typeof document.addEventListener != "undefined" &&
 
 * Web Bluetooth : prise en compte des devices non BLE
 
+##==##
+
+<!-- .slide: data-background="./assets/images/casino.jpg" data-state="hidefooter" class="transition qui-veut-gagner" data-state="quit-question"-->
+
+# Jouons encore un peu 
+
+##==##
+
+<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="question-4"-->
+
+<div class="url_jeux binomed">https://goo.gl/7SQoYq</div>
+<div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
+
+
+<div class="qui-veut-gagner">
+    <div class="question two-line"> Quelle est la techno derrière l'ouverture des pages web depuis un beacon ?</div>
+    <div class="row">
+        <div class="resp repA"> BeaconWeb</div>
+        <div class="resp repB"> PhysicalWeb</div>
+    </div>
+    <div class="row">
+        <div class="resp repC"> IBeacon</div>
+        <div class="resp repD"> La réponse D</div>
+    </div>
+</div>
+
+##==##
+
+<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="resp-question-4"-->
+
+<div class="url_jeux binomed">https://goo.gl/7SQoYq</div>
+<div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
+
+
+<div class="qui-veut-gagner">
+    <canvas id="chart_question_4" width="200" height="200" class="chart-resp"></canvas>
+    <div class="question two-line"> Quelle est la techno derrière l'ouverture des pages web depuis un beacon ?</div>
+    <div class="row">
+        <div class="resp repA"> BeaconWeb</div>
+        <div class="resp repB good"> PhysicalWeb</div>        
+    </div>
+    <div class="row">
+        <div class="resp repC"> IBeacon</div>
+        <div class="resp repD"> La réponse D</div>     
+    </div>
+</div>
+
+
 
 ##==## 
+
+<!-- .slide: data-state="quit-question"-->
 
 ## Conclusion
 
