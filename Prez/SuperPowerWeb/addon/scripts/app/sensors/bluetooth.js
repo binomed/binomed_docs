@@ -96,7 +96,7 @@ function processCharacteristic(type, data, callback){
 	.then(function(characteristic){
 		if (type === 'write'){			
 			console.log("Try to write value : %O",characteristic);
-			return characteristic.writeValue(encoder.encode(data));
+			return characteristic.writeValue(data);
 		}
 	}).then(function(buffer){
 		if (type === 'write'){
@@ -181,15 +181,10 @@ function BleController($mdDialog){
 	}
 
 	this.changeColor = function(red,blue,green){ 
-		console.log("Change Color : %d,%d,%d",red,blue,green)
-		if (picker){
-			valueArray[0] = picker.rgb[0];
-			valueArray[1] = picker.rgb[1];
-			valueArray[2] = picker.rgb[2];
-		}
-		var rHex = valueArray[0]<<8;
-		var gHex = valueArray[1]<<16;
-		var bHex = valueArray[2]<<24;
+		console.log("Change Color : %d,%d,%d",red,green,blue);
+		var rHex = red<<8;
+		var gHex = green<<16;
+		var bHex = blue<<24;
 		var value = rHex | gHex | bHex;
 		processCharacteristic('write', mbotApi.genericControl(mbotApi.TYPE_RGB,mbotApi.PORT_6,0,value));
 		//processCharacteristic('write', "bright:"+this.power);

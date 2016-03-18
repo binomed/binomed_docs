@@ -148,7 +148,7 @@ function genericControl(type, port, slot, value){
 }
 
 
-module.epxorts = {
+module.exports = {
 	'DEVICE_NAME' : DEVICE_NAME,
 	'SERVICE_UUID' : SERVICE_UUID,
 	'CHARACTERISTIC_UUID' : CHARACTERISTIC_UUID,
@@ -165,5 +165,5 @@ module.epxorts = {
 	'PORT_8' : PORT_8,
 	'M_1' : M_1,
 	'M_2' : M_2,
-	genericControl : genericControl
+	'genericControl' : genericControl
 };
