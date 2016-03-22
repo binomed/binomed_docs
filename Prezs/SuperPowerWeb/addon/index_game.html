@@ -5,15 +5,19 @@
     <meta charset="UTF-8">
     <title>Qui veut gagner des supers pouvoirs en masse</title>
     <link rel="stylesheet" type="text/css" href="css/game.css">
+    <link rel="manifest" href="manifest_game.json">
     <!--<meta name="HandheldFriendly" content="true" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
 	<meta name="apple-mobile-web-app-title" content="Phaser App">-->
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-    <link rel="icon" type="image/png" href="./assets/images/binomed_wet_asphalt.png">
+    <link rel="icon" type="image/png" href="./assets/images/html5-superheros_512.png">
 </head>
 
 <body>
+     <div style="display:none;">
+        <h1>Qui veut gagner de l'argent en masse</h1>
+    </div>
     <script src="../node_modules/socket.io-client/socket.io.js"></script>
     <!--<script src="/socket.io/socket.io.js"></script>-->
     <script src="../node_modules/rivets/dist/rivets.bundled.min.js"></script>
@@ -39,6 +43,12 @@
             <div class="wait_message " rv-show="notcompatible" style="display:none;">
                 Désolé mais votre navigateur n'est pas compatible avec les fonctionnalités requises pour jouer. Veuillez télécharger chrome ou firefox.
                 <br> Si c'est déjà le cas, désolé mais regardez donc la prez !
+            </div>
+             <div class="wait_message " rv-show="winner" style="display:none;">
+                <h1>Vous avez gagné ! </h1>
+            </div>
+            <div class="wait_message " rv-show="looser" style="display:none;">
+                <h1>Désolé, vous n'avez pas gagné ! </h1>
             </div>
         </div>
         <div id="content-game-shake" class="content-game" rv-show="gameShake" style="display:none;">

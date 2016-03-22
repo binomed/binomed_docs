@@ -91,6 +91,16 @@ function processScore(index){
 				value : anwser
 			});			 
 			goodAnswerElt.classList.add('show');
+			if (index === 4){
+				setTimeout(function() {
+					socket.emit('config',{
+						type : 'game',
+						eventType : 'calculateWinners',
+						numberWinners : 2,
+						value : anwser
+					});		
+				}, 1000);
+			}
 		}, 5000);
 
 
@@ -124,6 +134,16 @@ function init(socketToSet){
 		hideQuestion();
 		processScore(3);
 	});
+
+	Reveal.addEventListener('question-4', function(){
+		changeQuestion(4);
+	});
+	Reveal.addEventListener('resp-question-4', function(){
+		hideQuestion();
+		processScore(4);
+	});
+
+
 	Reveal.addEventListener('quit-question', hideQuestion);
 
 }

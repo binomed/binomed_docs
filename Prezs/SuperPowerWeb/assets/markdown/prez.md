@@ -2,7 +2,7 @@
 
 # Les nouveaux supers pouvoirs du web
 
-### 2015.02.05 DevFest @ **Paris**
+### 2016 
 
 <div class="copyright white">fotolia</div>
 
@@ -43,9 +43,8 @@ IoT Manager, Senior innovation developer & Community Manager
 
 
 ##==##
-<!-- .slide: data-background="#3d4349" class="transition"-->
+<!--  .slide: data-background="./assets/images/civil_war_full.jpg" class="transition"-->
 
-![center h-700](./assets/images/civil_war.jpg)
 
 ##==##
 
@@ -78,9 +77,7 @@ IoT Manager, Senior innovation developer & Community Manager
 
 ##==##
 
-<!-- .slide: data-background="#3d4349" class="transition"-->
-
-![center h-700](./assets/images/inception_webapp.jpg)
+<!-- .slide: data-background="./assets/images/inception_webapp_full.jpg" class="transition"-->
 
 
 ##==##
@@ -105,78 +102,6 @@ IoT Manager, Senior innovation developer & Community Manager
 
 ##==##
 
-<!-- .slide: data-state="quit-question" -->
-
-## Et si on jouait ?
-
-![h400 float-left](./assets/images/Fil_rouge.jpg)
-
-![h400 binomed](./assets/images/qr_code_jeux_https.png)
-
-![h400 rawgit](./assets/images/qr_code_jeux_rawgit.png)
-
-<br>
-
-<div class="url_jeux binomed grey">https://goo.gl/7SQoYq</div>
-<div class="url_jeux rawgit grey">https://goo.gl/Kp7Cyi</div>
-
-
-
-##==##
-
-<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="quit-question"-->
-
-<div class="url_jeux binomed">https://goo.gl/7SQoYq</div>
-<div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
-
-<div class="qui-veut-gagner">
-    <div class="question"> Préparez vous</div>
-
-</div>
-
-##==##
-
-<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="question-1"-->
-
-<div class="url_jeux binomed">https://goo.gl/7SQoYq</div>
-<div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
-
-
-<div class="qui-veut-gagner">
-    <div class="question two-line"> Grâce à quoi puis-je lancer une application web si je suis à proximité d'une balise bluetooth ? </div>
-    <div class="row">
-        <div class="resp repA"> IBeacon</div>
-        <div class="resp repB"> Physical Web</div>
-    </div>
-    <div class="row">
-        <div class="resp repC"> Ok Google</div>
-        <div class="resp repD"> La réponse D</div>
-    </div>
-</div>
-
-##==##
-
-<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="resp-question-1"-->
-
-<div class="url_jeux binomed">https://goo.gl/7SQoYq</div>
-<div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
-
-
-<div class="qui-veut-gagner">
-    <canvas id="chart_question_1" width="200" height="200" class="chart-resp"></canvas>
-   <div class="question two-line"> Grâce à quoi puis-je lancer une application web si je suis à proximité d'une balise bluetooth ? </div>
-    <div class="row">
-        <div class="resp repA"> IBeacon</div>
-        <div class="resp repB good"> Physical Web</div>        
-    </div>
-    <div class="row">
-        <div class="resp repC"> Ok Google</div>
-        <div class="resp repD"> La réponse D</div>     
-    </div>
-</div>
-
-##==##
-
 <!--
 //    _____  _               _           ___          __  _      
 //   |  __ \| |             (_)         | \ \        / / | |     
@@ -188,7 +113,7 @@ IoT Manager, Senior innovation developer & Community Manager
 //              |___/                                        
  -->
 
-<!-- .slide: class="transition-black" data-state="quit-question" -->
+<!-- .slide: class="transition-black"  -->
 
 # Le Physical Web
 
@@ -196,10 +121,7 @@ IoT Manager, Senior innovation developer & Community Manager
 
 ##==##
 
-<!-- .slide: data-background="#3d4349" class="transition"-->
-
-![center h-700](./assets/images/inception_physical_web.jpg)
-
+<!-- .slide: data-background="./assets/images/inception_physical_web_full.jpg" class="transition"-->
 
 
 ##==## 
@@ -226,12 +148,6 @@ IoT Manager, Senior innovation developer & Community Manager
 
 ##==##
 
-<!-- .slide: data-background="#3d4349" class="transition"-->
-
-![center h-600](./assets/images/demo_time.jpg)
-
-##==##
-
 
 ## Compatibilité
 
@@ -239,14 +155,18 @@ IoT Manager, Senior innovation developer & Community Manager
   <div class="chrome">
     <div class="desktop unsupport">-</div>
     <div class="os partial">-</div>
-    <div class="android-dev">48+</div>
+    <div class="android">49+</div>
     <div class="ios">44+</div>
   </div>
   <div class="firefox">
     <div class="desktop unsupport">-</div>
-    <div class="os partial">-</div>
+    <div class="os partial">draft</div>
     <div class="android unsupport">-</div>
     <div class="ios unsupport">-</div>
+  </div>
+  <div class="opera">
+    <div class="desktop unsupport">-</div>
+    <div class="android">32+</div>
   </div>
   <div class="edge">
     <div class="desktop unsupport">-</div>
@@ -260,6 +180,7 @@ IoT Manager, Senior innovation developer & Community Manager
   </div>
 </div>
 
+ 
 ##==##
 
 <!--
@@ -273,9 +194,8 @@ IoT Manager, Senior innovation developer & Community Manager
 //                                                  
 -->     
 
-<!-- .slide: data-background="#3d4349" class="transition"-->
+<!-- .slide: data-background="./assets/images/inception_bluetooth_full.jpg" class="transition" data-state="quit-question"-->
 
-![center h-600](./assets/images/inception_bluetooth.jpg)
 
 ##==##
 
@@ -425,11 +345,14 @@ button.addEventListener('click', function() {
   .catch(function(error) { });
 });
 ```
+
 ##==##
 
-<!-- .slide: data-background="#3d4349" class="transition"-->
+## Open source quand tu nous tiens !
 
-![center h-600](./assets/images/demo_time.jpg)
+[+Francois Beaufort](https://plus.google.com/u/0/+FrancoisBeaufort) a aussi écrit une application pour configurer les balises Physical Web : 
+
+[Eddystone-Url Beacon Config](https://beaufortfrancois.github.io/sandbox/web-bluetooth/eddystone-url-config/index.html)
 
 ##==##
 
@@ -449,8 +372,12 @@ button.addEventListener('click', function() {
     <div class="android unsupport">-</div>
     <div class="ios unsupport">-</div>
   </div>
+  <div class="opera">
+    <div class="desktop unsupport">-</div>
+    <div class="android">38+</div>
+  </div>
   <div class="edge">
-    <div class="desktop unsupport">Consider</div>
+    <div class="desktop unsupport">consider</div>
   </div>
   <div class="ie">
     <div class="old unsupport">-</div>
@@ -475,9 +402,8 @@ button.addEventListener('click', function() {
 //     
 -->
 
-<!-- .slide: data-background="#3d4349" class="transition"-->
+<!-- .slide: data-background="./assets/images/inception_sensors_full.jpg" class="transition"-->
 
-![center h-600](./assets/images/inception_sensors.jpg)
 
 ##==##
 
@@ -487,60 +413,6 @@ button.addEventListener('click', function() {
 # Sensors 
 
 ![icon](./assets/images/html5-device-access-logo.png)
-
-##==##
-
-<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="quit-question"-->
-
-<div class="url_jeux binomed">https://goo.gl/7SQoYq</div>
-<div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
-
-<div class="qui-veut-gagner">
-    <div class="question"> Préparez vous</div>
-
-</div>
-
-
-##==##
-
-<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="question-2"-->
-
-<div class="url_jeux binomed">https://goo.gl/7SQoYq</div>
-<div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
-
-
-<div class="qui-veut-gagner">
-    <div class="question two-line"> Lequel de ces sensors n'est pas accessible depuis le web ?</div>
-    <div class="row">
-        <div class="resp repA"> Magnetometre</div>
-        <div class="resp repB"> Accelerometre</div>
-    </div>
-    <div class="row">
-        <div class="resp repC"> Bluetooth</div>
-        <div class="resp repD"> La réponse D</div>
-    </div>
-</div>
-
-##==##
-
-<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="resp-question-2"-->
-
-<div class="url_jeux binomed">https://goo.gl/7SQoYq</div>
-<div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
-
-
-<div class="qui-veut-gagner">
-    <canvas id="chart_question_2" width="200" height="200" class="chart-resp"></canvas>
-    <div class="question two-line"> Lequel de ces sensors n'est pas accessible depuis le web ?</div>
-    <div class="row">
-        <div class="resp repA good"> Magnetometre</div>
-        <div class="resp repB "> Accelerometre</div>        
-    </div>
-    <div class="row">
-        <div class="resp repC"> Bluetooth</div>
-        <div class="resp repD"> La réponse D</div>     
-    </div>
-</div>
 
 ##==##
 
@@ -596,12 +468,16 @@ window.navigator.vibrate(arrayOfVibration);
     <div class="android">11+</div>
     <div class="ios">11+</div>
   </div>
+  <div class="opera">
+    <div class="desktop">19+</div>
+    <div class="android">19+</div>
+  </div>
   <div class="edge">
-    <div class="desktop unsupport">draft</div>
+    <div class="desktop unsupport">consider</div>
   </div>
   <div class="ie">
-    <div class="old unsupport">7</div>
-    <div class="new unsupport">11</div>
+    <div class="old unsupport">-</div>
+    <div class="new unsupport">-</div>
   </div>
   <div class="safari">
     <div class="ios unsupport">-</div>
@@ -682,39 +558,6 @@ Notes:
 Subtilité : ça marche mieux si le téléphone est a plat
 
 
-##==##
-<!-- .slide: data-state="stop-orientation" -->
-
-## Orientation
-
-### Cas Pratique
-
-![center w-600](./assets/images/combination-lock-icon.jpg)
-
-
-##==##
-<!-- .slide: data-state="start-orientation" -->
-
-## Orientation
-
-<div class="sensorExample">
-  <div class="orientation">
-    <div class="safe_lock_funny_win visible-md visible-lg"></div>
-    <div class="safe_lock_door">
-      <div class="safe_lock_bg"></div>
-      <div class="safe_lock"></div>
-    </div>
-    <div class="resp">
-      <div class="value"></div>     
-      <div class="chevrons">
-        <i class="first fa fa-times-circle"></i> 
-        <i class="second fa fa-times-circle"></i> 
-        <i class="third fa fa-times-circle"></i> 
-      </div>
-    </div>
-  </div>
-</div>
-
 
 
 ##==##
@@ -735,11 +578,15 @@ Subtilité : ça marche mieux si le téléphone est a plat
     <div class="android">6+</div>
     <div class="ios">6+</div>
   </div>
+  <div class="opera">
+    <div class="desktop">15+</div>
+    <div class="android">12+</div>
+  </div>
   <div class="edge">
-    <div class="desktop">10240+</div>
+    <div class="desktop">11+</div>
   </div>
   <div class="ie">
-    <div class="old unsupport">7</div>
+    <div class="old unsupport">-</div>
     <div class="new">11</div>
   </div>
   <div class="safari">
@@ -804,43 +651,6 @@ function register(){
 
 
 
-##==##
-
-<!-- .slide: data-state="stop-devicemotion" -->
-
-## Device Orientation
-
-### Cas pratique
-
-![center w-800](./assets/images/chargebatterylonger.jpg)
-
-
-
-##==##
-
-<!-- .slide: data-state="start-devicemotion" -->
-
-## DeviceMotion
-
-
-<div class="sensorExample">
-  <div class="devicemotion">
-    <div class="team">
-      <div class="battery-parent">
-        <div id="battery-1"></div>
-        <div class="team-name">Team Firefox</div>
-      </div>
-    </div>
-    <div class="team">
-      <div class="battery-parent">
-        <div id="battery-2"></div>
-        <div class="team-name">Team Chrome</div>
-      </div>
-    </div>
-    <div class="win firefox"></div>
-    <div class="win chrome"></div>
-  </div>
-</div>
 
 ##==##
 <!-- .slide: data-state="stop-devicemotion"-->
@@ -860,11 +670,15 @@ function register(){
     <div class="android">6+</div>
     <div class="ios">6+</div>
   </div>
+  <div class="opera">
+    <div class="desktop">18+</div>
+    <div class="android">18+</div>
+  </div>
   <div class="edge">
-    <div class="desktop">10240+</div>
+    <div class="desktop">11+</div>
   </div>
   <div class="ie">
-    <div class="old unsupport">7</div>
+    <div class="old unsupport">-</div>
     <div class="new">11</div>
   </div>
   <div class="safari">
@@ -940,8 +754,12 @@ updateBatteryStatus();
     <div class="android">10+</div>
     <div class="ios">10+</div>
   </div>
+  <div class="opera">
+    <div class="desktop">35+</div>
+    <div class="android">35+</div>
+  </div>
   <div class="edge">
-    <div class="desktop unsupport">-</div>
+    <div class="desktop unsupport">consider</div>
   </div>
   <div class="ie">
     <div class="old unsupport">-</div>
@@ -998,30 +816,6 @@ window.addEventListener('devicelight', deviceLightHandler, false);
 
 [Documentation](https://developer.mozilla.org/en-US/docs/Web/API/Ambient_Light_Events)
 
-##==##
-
-<!-- .slide: data-state="stop-light" -->
-
-## Light
-
-### Cas pratique
-
-![center w-400](./assets/images/Hanging_Bulb.jpg)
-
-
-
-##==##
-
-<!-- .slide: data-state="start-light" -->
-
-## Light
-
-
-<div class="sensorExample">
-   <div id="light">
-    <div class="light-bg"></div>
-  </div>
-</div>
 
 ##==##
 <!-- .slide: data-state="stop-light"-->
@@ -1032,7 +826,7 @@ window.addEventListener('devicelight', deviceLightHandler, false);
   <div class="chrome">
     <div class="desktop unsupport">-</div>
     <div class="os unsupport">-</div>
-    <div class="chromium">Dev</div>
+    <div class="chromium partial">draft</div>
     <div class="ios unsupport">-</div>
   </div>
   <div class="firefox">
@@ -1041,12 +835,16 @@ window.addEventListener('devicelight', deviceLightHandler, false);
     <div class="android">42+</div>
     <div class="ios">42+</div>
   </div>
-  <div class="edge">
+  <div class="opera">
     <div class="desktop unsupport">-</div>
+    <div class="android unsupport">-</div>
+  </div>
+  <div class="edge">
+    <div class="desktop partial">Insider</div>
   </div>
   <div class="ie">
-    <div class="old unsupport">7</div>
-    <div class="new unsupport">11</div>
+    <div class="old unsupport">-</div>
+    <div class="new unsupport">-</div>
   </div>
   <div class="safari">
     <div class="ios unsupport">-</div>
@@ -1171,30 +969,6 @@ Notes:
 
 
 
-##==##
-
-## User Media
-
-### Cas pratique
-
-![center w-600](./assets/images/photographer.jpg)
-
-
-
-##==##
-<!-- .slide: data-state="start-usermedia" -->
-
-## User Media
-
-
-<div class="sensorExample">
-  <div id="usermedia">
-    <div class="videoParent">
-    <img id="photoStream" height="600px">
-      
-    </div>
-  </div>
-</div>
 
 ##==##
 <!-- .slide: data-state="stop-usermedia"-->
@@ -1214,12 +988,16 @@ Notes:
     <div class="android">42+</div>
     <div class="ios">42+</div>
   </div>
+  <div class="opera">
+    <div class="desktop">12+</div>
+    <div class="android">12+</div>
+  </div>
   <div class="edge">
-    <div class="desktop">12</div>
+    <div class="desktop">12+</div>
   </div>
   <div class="ie">
-    <div class="old unsupport">7</div>
-    <div class="new unsupport">11</div>
+    <div class="old unsupport">-</div>
+    <div class="new unsupport">-</div>
   </div>
   <div class="safari">
     <div class="ios unsupport">-</div>
@@ -1323,12 +1101,16 @@ function unregister(){
     <div class="android">42+</div>
     <div class="ios">42+</div>
   </div>
+  <div class="opera">
+    <div class="desktop unsupport">-</div>
+    <div class="android unsupport">-</div>
+  </div>
   <div class="edge">
     <div class="desktop unsupport">-</div>
   </div>
   <div class="ie">
-    <div class="old unsupport">7</div>
-    <div class="new unsupport">11</div>
+    <div class="old unsupport">-</div>
+    <div class="new unsupport">-</div>
   </div>
   <div class="safari">
     <div class="ios unsupport">-</div>
@@ -1383,7 +1165,7 @@ function unregister(){
 
 ```javascript
 var recognition = new webkitSpeechRecognition();
-recognition.lang = 'fr-FR';
+recognition.lang = voiceFR;
 recognition.continuous = true;
 recognition.interimResults = true;
 
@@ -1432,11 +1214,7 @@ utterThis.rate = rate.value;
 synth.speak(utterThis);
 ```
 
-##==##
 
-<!-- .slide: data-background="#3d4349" class="transition" data-state="start-webspeech"-->
-
-![center h-600](./assets/images/demo_time.jpg)
 
 ##==##
 <!-- .slide: data-state="stop-webspeech"-->
@@ -1453,11 +1231,15 @@ synth.speak(utterThis);
   <div class="firefox">
     <div class="desktop">45+</div>
     <div class="os">45+</div>
-    <div class="android unsupport">-</div>
+    <div class="android partial">draft</div>
     <div class="ios unsupport">-</div>
   </div>
+  <div class="opera">
+    <div class="desktop partial">draft</div>
+    <div class="android partial">draft</div>
+  </div>
   <div class="edge">
-    <div class="desktop unsupport">draft</div>
+    <div class="desktop partial">draft</div>
   </div>
   <div class="ie">
     <div class="old unsupport">-</div>
@@ -1470,9 +1252,8 @@ synth.speak(utterThis);
 
 ##==##
 
-<!-- .slide: data-background="#3d4349" class="transition" -->
+<!-- .slide: data-background="./assets/images/inception_not_sensor_full.jpg" class="transition" -->
 
-![center h-700](./assets/images/inception_not_sensor.jpg)
 
 
 ##==##
@@ -1531,8 +1312,12 @@ function showNotification() {
     <div class="android">44+</div>
     <div class="ios">44+</div>
   </div>
+  <div class="opera">
+    <div class="desktop">35+</div>
+    <div class="android">33+</div>
+  </div>
   <div class="edge">
-    <div class="desktop unsupport">-</div>
+    <div class="desktop partial">draft</div>
   </div>
   <div class="ie">
     <div class="old unsupport">-</div>
@@ -1545,9 +1330,8 @@ function showNotification() {
 
 ##==##
 
-<!-- .slide: data-background="#3d4349" class="transition" data-state="quit-question"-->
+<!-- .slide: data-background="./assets/images/inception_offline_full.jpg" class="transition" data-state="quit-question"-->
 
-![center h-700](./assets/images/inception_offline.jpg)
 
 
 ##==##
@@ -1619,8 +1403,12 @@ if (typeof document.addEventListener != "undefined" &&
     <div class="android">18+</div>
     <div class="ios">18+</div>
   </div>
+  <div class="opera">
+    <div class="desktop">20+</div>
+    <div class="android">20+</div>
+  </div>
   <div class="edge">
-    <div class="desktop">10</div>
+    <div class="desktop">10+</div>
   </div>
   <div class="ie">
     <div class="old unsupport">-</div>
@@ -1634,9 +1422,8 @@ if (typeof document.addEventListener != "undefined" &&
 
 ##==##
 
-<!-- .slide: data-background="#3d4349" class="transition"-->
+<!-- .slide: data-background="./assets/images/inception_appmanifest_full.jpg" class="transition"-->
 
-![center h-700](./assets/images/inception_appmanifest.jpg)
 
 ##==##
 
@@ -1701,6 +1488,10 @@ if (typeof document.addEventListener != "undefined" &&
     <div class="android partial">draft</div>
     <div class="ios partial">draft</div>
   </div>
+  <div class="opera">
+    <div class="desktop">15+</div>
+    <div class="android">26+</div>
+  </div>
   <div class="edge">
     <div class="desktop unsupport">consider</div>
   </div>
@@ -1713,65 +1504,11 @@ if (typeof document.addEventListener != "undefined" &&
   </div>
 </div>
 
-##==##
-
-<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="quit-question"-->
-
-<div class="url_jeux binomed">https://goo.gl/7SQoYq</div>
-<div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
-
-<div class="qui-veut-gagner">
-    <div class="question"> Préparez vous</div>
-
-</div>
 
 ##==##
 
-<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="question-3"-->
+<!-- .slide: data-background="./assets/images/inception_more_full.jpg" class="transition" data-state="quit-question"-->
 
-<div class="url_jeux binomed">https://goo.gl/7SQoYq</div>
-<div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
-
-
-<div class="qui-veut-gagner">
-    <div class="question two-line"> Laquelle de ces API ne fait pas encore partie d'une roadmap pour le web ? </div>
-    <div class="row">
-        <div class="resp repA"> WebNFC</div>
-        <div class="resp repB"> Sensors Génériques</div>
-    </div>
-    <div class="row">
-        <div class="resp repC"> FingerPrint</div>
-        <div class="resp repD"> La réponse D</div>
-    </div>
-</div>
-
-##==##
-
-<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="resp-question-3"-->
-
-<div class="url_jeux binomed">https://goo.gl/7SQoYq</div>
-<div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
-
-
-<div class="qui-veut-gagner">
-    <canvas id="chart_question_3" width="200" height="200" class="chart-resp"></canvas>
-   <div class="question two-line"> Laquelle de ces API ne fait pas encore partie d'une roadmap pour le web ?  </div>
-    <div class="row">
-        <div class="resp repA"> WebNFC</div>
-        <div class="resp repB"> Sensors Génériques</div>        
-    </div>
-    <div class="row">
-        <div class="resp repC good"> FingerPrint</div>
-        <div class="resp repD"> La réponse D</div>     
-    </div>
-</div>
-
-
-##==##
-
-<!-- .slide: data-background="#3d4349" class="transition" data-state="quit-question"-->
-
-![center h-700](./assets/images/inception_more.jpg)
 
 ##==##
 
@@ -1803,57 +1540,13 @@ if (typeof document.addEventListener != "undefined" &&
 
 ##==## 
 
-## Conclusion
+<!-- .slide: data-state="quit-question hidefooter" data-background="./assets/images/monthy_phython_graal.jpg" class="transition"-->
+
+# Conclusion
 
 
-![center h-400](./assets/images/indiana_grall.gif)
+<div class="copyright">Monthy Python</div>
 
-<div class="copyright">Indiana Jones</div>
-
-##==## 
-
-## Conclusion
-
-
-![center h-400](./assets/images/indiana_reflexion.gif)
-
-<div class="copyright">Indiana Jones</div>
-
-##==## 
-
-## Conclusion
-
-
-![center h-400](./assets/images/indiana_try.gif)
-
-<div class="copyright">Indiana Jones</div>
-
-##==## 
-
-## Conclusion
-
-
-![center h-400](./assets/images/indiana_crash.gif)
-
-<div class="copyright">Indiana Jones</div>
-
-##==## 
-
-## Conclusion
-
-
-![center h-400](./assets/images/indiana_win.gif)
-
-<div class="copyright">Indiana Jones</div>
-
-##==## 
-
-## Conclusion
-
-
-![center h-400](./assets/images/indiana_win_2.gif)
-
-<div class="copyright">Indiana Jones</div>
 
 ##==##
 

@@ -86,6 +86,7 @@ function clickResp(event){
 			type : 'game',
 			id : gameModel.id,
 			eventType : type,
+			timestamp : new Date().getTime(),
 			resp : value
 		});
 	}
@@ -104,6 +105,7 @@ function init(socketToSet){
 	       cache: 'default' };
 
 	socket.on('config', function (data) {
+		console.info(data);
 		if (data.type === 'game' && data.eventType === 'changeQuestion'){
 			localStorage['game'] = "questions";
 			rvModel.gameQuestion = true;
@@ -126,6 +128,18 @@ function init(socketToSet){
 				vibration.vibrate([200,100,200]);
 			}else{
 				vibration.vibrate([1000]);
+			}
+		}else if (data.type === 'game' && data.eventType === 'winners'){
+			
+			rvModel.hideMessage = true;
+			rvModel.showQuestion = false;
+			rvModel.gameQuestion = true;
+			rvModel.gameShake = false;
+			if (data.value.indexOf(gameModel.id) != -1){
+				rvModel.winner = true;
+				vibration.vibrate([500,200,500]);
+			}else{
+				rvModel.looser = true;
 			}
 		}
 	});
