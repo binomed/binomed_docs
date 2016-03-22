@@ -102,78 +102,6 @@ IoT Manager, Senior innovation developer & Community Manager
 
 ##==##
 
-<!-- .slide: data-state="quit-question" -->
-
-## Et si on jouait ?
-
-![h400 float-left](./assets/images/Fil_rouge.jpg)
-
-![h400 binomed](./assets/images/qr_code_jeux_https.png)
-
-![h400 rawgit](./assets/images/qr_code_jeux_rawgit.png)
-
-<br>
-
-<div class="url_jeux binomed grey">https://goo.gl/7SQoYq</div>
-<div class="url_jeux rawgit grey">https://goo.gl/Kp7Cyi</div>
-
-
-
-##==##
-
-<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="quit-question"-->
-
-<div class="url_jeux binomed">https://goo.gl/7SQoYq</div>
-<div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
-
-<div class="qui-veut-gagner">
-    <div class="question"> Préparez vous</div>
-
-</div>
-
-##==##
-
-<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="question-1"-->
-
-<div class="url_jeux binomed">https://goo.gl/7SQoYq</div>
-<div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
-
-
-<div class="qui-veut-gagner">
-    <div class="question two-line"> Grâce à quoi puis-je lancer une application web si je suis à proximité d'une balise bluetooth ? </div>
-    <div class="row">
-        <div class="resp repA"> IBeacon</div>
-        <div class="resp repB"> Physical Web</div>
-    </div>
-    <div class="row">
-        <div class="resp repC"> Ok Google</div>
-        <div class="resp repD"> La réponse D</div>
-    </div>
-</div>
-
-##==##
-
-<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="resp-question-1"-->
-
-<div class="url_jeux binomed">https://goo.gl/7SQoYq</div>
-<div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
-
-
-<div class="qui-veut-gagner">
-    <canvas id="chart_question_1" width="200" height="200" class="chart-resp"></canvas>
-   <div class="question two-line"> Grâce à quoi puis-je lancer une application web si je suis à proximité d'une balise bluetooth ? </div>
-    <div class="row">
-        <div class="resp repA"> IBeacon</div>
-        <div class="resp repB good"> Physical Web</div>        
-    </div>
-    <div class="row">
-        <div class="resp repC"> Ok Google</div>
-        <div class="resp repD"> La réponse D</div>     
-    </div>
-</div>
-
-##==##
-
 <!--
 //    _____  _               _           ___          __  _      
 //   |  __ \| |             (_)         | \ \        / / | |     
@@ -185,7 +113,7 @@ IoT Manager, Senior innovation developer & Community Manager
 //              |___/                                        
  -->
 
-<!-- .slide: class="transition-black" data-state="quit-question" -->
+<!-- .slide: class="transition-black"  -->
 
 # Le Physical Web
 
@@ -217,12 +145,6 @@ IoT Manager, Senior innovation developer & Community Manager
  * L'url est limité par la norme eddystone => Il vaut mieux utiliser des shorts urls
  * Avant BLE 4.1, le device doit changer de mode pour échanger avec le téléphone une fois la détection effectuée
  * Doit être activé dans chrome (chrome://flags)
-
-##==##
-
-<!-- .slide: data-background="#3d4349" class="transition"-->
-
-![center h-600](./assets/images/demo_time.jpg)
 
 ##==##
 
@@ -258,6 +180,121 @@ IoT Manager, Senior innovation developer & Community Manager
   </div>
 </div>
 
+ ##==##
+
+<!-- .slide: -->
+
+## Et si on jouait ?
+
+![h-400](./assets/images/Fil_rouge.jpg)
+
+Bluetooth actif !
+
+##==##
+
+<!-- .slide: -->
+
+## Et si on jouait ?
+
+### Configuration android
+
+![h-500 float-left](./assets/images/physical_web_android.png)
+
+![h-500](./assets/images/physical_web_android_2.png)
+
+##==##
+
+<!-- .slide: -->
+
+## Et si on jouait ?
+
+### Configuration IOS
+
+![h-500](./assets/images/physical_web_ios.png)
+
+##==##
+
+<!-- .slide: -->
+
+## Et si on jouait ?
+
+### Résultat 
+
+![h-500 float-left](./assets/images/physical_web_android_res.png)
+
+![h-500](./assets/images/physical_web_android_res_2.png)
+
+
+##==##
+
+<!-- .slide: data-state="quit-question" -->
+
+## Et si on jouait ?
+
+![h-400 binomed](./assets/images/qr_code_jeux_https.png)
+
+![h-400 rawgit](./assets/images/qr_code_jeux_rawgit.png)
+
+<br>
+
+<div class="url_jeux binomed grey">https://goo.gl/7SQoYq</div>
+<div class="url_jeux rawgit grey">https://goo.gl/Kp7Cyi</div>
+
+
+
+##==##
+
+<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="quit-question"-->
+
+<div class="url_jeux binomed">https://goo.gl/7SQoYq</div>
+<div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
+
+<div class="qui-veut-gagner">
+    <div class="question"> Préparez vous</div>
+
+</div>
+
+##==##
+
+<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="question-1"-->
+
+<div class="url_jeux binomed">https://goo.gl/7SQoYq</div>
+<div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
+
+
+<div class="qui-veut-gagner">
+    <div class="question two-line"> Grâce à quoi puis-je controler une balise bluetooth ? </div>
+    <div class="row">
+        <div class="resp repA"> IBeacon</div>
+        <div class="resp repB"> Physical Web</div>
+    </div>
+    <div class="row">
+        <div class="resp repC"> WebBluetooth</div>
+        <div class="resp repD"> La réponse D</div>
+    </div>
+</div>
+
+##==##
+
+<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="resp-question-1"-->
+
+<div class="url_jeux binomed">https://goo.gl/7SQoYq</div>
+<div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
+
+
+<div class="qui-veut-gagner">
+    <canvas id="chart_question_1" width="200" height="200" class="chart-resp"></canvas>
+   <div class="question two-line"> Grâce à quoi puis-je lancer une balise bluetooth ? </div>
+    <div class="row">
+        <div class="resp repA"> IBeacon</div>
+        <div class="resp repB"> Physical Web</div>        
+    </div>
+    <div class="row">
+        <div class="resp repC good"> WebBluetooth</div>
+        <div class="resp repD"> La réponse D</div>     
+    </div>
+</div>
+
 ##==##
 
 <!--
@@ -271,7 +308,7 @@ IoT Manager, Senior innovation developer & Community Manager
 //                                                  
 -->     
 
-<!-- .slide: data-background="./assets/images/inception_bluetooth_full.jpg" class="transition"-->
+<!-- .slide: data-background="./assets/images/inception_bluetooth_full.jpg" class="transition" data-state="quit-question"-->
 
 
 ##==##
@@ -422,6 +459,15 @@ button.addEventListener('click', function() {
   .catch(function(error) { });
 });
 ```
+
+##==##
+
+## Open source quand tu nous tiens !
+
+[+Francois Beaufort](https://plus.google.com/u/0/+FrancoisBeaufort) a aussi écrit une application pour configurer les balises Physical Web : 
+
+[Eddystone-Url Beacon Config](https://beaufortfrancois.github.io/sandbox/web-bluetooth/eddystone-url-config/index.html)
+
 ##==##
 
 <!-- .slide: data-background="#3d4349" class="transition"-->
