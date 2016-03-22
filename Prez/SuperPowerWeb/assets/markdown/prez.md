@@ -2,7 +2,7 @@
 
 # Les nouveaux supers pouvoirs du web
 
-### 2015.03.25 Breizhcamp @ **Rennes**
+### 2016.03.25 Breizhcamp @ **Rennes**
 
 <div class="copyright white">fotolia</div>
 
