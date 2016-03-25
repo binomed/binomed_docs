@@ -36,7 +36,7 @@ function calculateAddress(){
 				let wlan0 = network.find(function(element){
 					return element.name === 'wlan0';
 				});
-				if (wlan0){
+				if (wlan0 && location.hostname != 'localhost'){
 					address = `${wlan0.ip}:3000`;
 					ioAddress = `${wlan0.ip}:8000`;
 				}else{
