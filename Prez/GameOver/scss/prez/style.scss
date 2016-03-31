@@ -1,0 +1,83 @@
+@import "theme";
+
+img[alt*=logo]{
+    width:50px;   
+}
+
+.reveal .slides section.who-am-i img[alt*=company_logo] {
+    position: absolute;
+    top: 490px;
+    left: 250px;
+    height: 100px;
+    width:inherit;
+}
+
+.reveal .slides section.first-slide{
+  height: 100%;
+
+  h1{
+    height: 3em;
+    line-height: 3em;
+    font-size: 1.5em;
+        
+  }
+}
+
+$sommaire-img-height : 60px;
+
+
+strong{
+  font-weight:600 !important;
+}
+
+div.no-bullet~ul{
+  list-style-type: none;
+
+  img{
+    margin:0; 
+  }
+
+  li{
+    line-height: $sommaire-img-height;
+  }
+}
+
+div.padding~*{
+  padding-left: 50px;
+}
+
+
+
+.copyright.black{
+  color: grey;
+  bottom: 20px;
+}
+
+div.copyright{
+    font-size: 0.6em;
+    color: $medium-grey ;
+    position: absolute;
+    bottom: 20px;
+    right: 0;
+}
+
+div.copyright.white{
+  color: $white;
+}
+
+div.copyright:before{
+    content: '@'
+}
+
+.reveal .slides section.flex-p p{
+  display:flex;
+  justify-content: space-around;
+
+}
+
+.reveal .slides section pre code.toHilight mark.dilluate{
+  background-color: inherit;
+  color: inherit;
+  opacity: 0.5;
+}
+

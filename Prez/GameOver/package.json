@@ -1,0 +1,13 @@
+{
+  "author": "JefBinomed",
+  "name": "GameOver",
+  "version": "1.0.0",
+  "devDependencies": {
+    "browser-sync": "^2.6.9",
+    "gulp": "^3.8.11",
+    "gulp-sass": "^2.0.4",
+    "gulp-sourcemaps": "^1.5.2",
+    "browserify": "^11.0.1",  
+    "vinyl-source-stream": "~1.0.0"
+  }
+}
