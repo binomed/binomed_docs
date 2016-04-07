@@ -22,6 +22,7 @@ Reveal.addEventListener( 'ready', function( event ) {
     
 	setTimeout(function() {
     	postProdCodeHilight();
+
 	}, 500);
 	
 	let inIFrame = window.top != window.self;
@@ -29,6 +30,11 @@ Reveal.addEventListener( 'ready', function( event ) {
     
 	if (!inIFrame && io){
         console.log("Go to condition !");		
+        setTimeout(function(){
+        	let iframeDemo = document.querySelector("iframe#game-demo");
+        	iframeDemo.style.height = "940px";
+        	console.log(iframeDemo.height);
+        },500);
 	}	
  
 	

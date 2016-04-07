@@ -81,3 +81,30 @@ div.copyright:before{
   opacity: 0.5;
 }
 
+.reveal .slides section .url_game{
+  position: absolute;
+  top: 50%;
+  left: -50px; 
+  font-size:30px;
+
+}
+
+.reveal .slides section .parent-demo{
+
+  position:relative;
+  width:700px;
+  margin-left:500px;
+
+
+
+  iframe#game-demo{
+    position:absolute;
+    top:-85px;
+    left:-80px;
+    width: 550px;
+    height: 880px;
+    transform: scale(0.65);
+
+  }
+}
+

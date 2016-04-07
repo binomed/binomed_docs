@@ -1,7 +1,13 @@
 @import "colors";
 
+@font-face {
+    font-family: 'Visitor';
+    src: url('../../assets/fonts/visitor1.ttf');
+}
+
+
 .reveal{ 
-	font-family: 'Helvetica Neue', Helvetica, 'Microsoft YaHei', 'WenQuanYi Micro Hei', Arial, sans-serif;
+	font-family: 'Visitor';//Helvetica Neue', Helvetica, 'Microsoft YaHei', 'WenQuanYi Micro Hei', Arial, sans-serif;
     color: $text-color;
 	font-size: 2.5em; 
 }
