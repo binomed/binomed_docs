@@ -1,0 +1,112 @@
+#prev {
+    left: 63px;
+    width: 43px;
+    background: url('../../assets/images/ui_split.png') -47px 0;
+}
+
+.row_container{
+	display:flex;
+	flex-direction: column;
+	flex:1;
+}
+
+.reveal .slides section.who-am-i .row_container{
+
+	$row0_height:29px;
+	$row1_height:8px;
+	$row2_height:28px;
+	$cel_width:32px;
+
+	
+	.title_header, .title_header:before, .title_header:after{
+		height:$row0_height;
+	}
+
+	h2, h2:before, h2:after{
+		height:$row1_height;
+	}
+
+	h2{
+		margin-top:0;
+		margin-bottom:0;
+		padding-left:0;
+		line-height:1em;
+	}
+	h2, h2:before, h2:after{
+		height:1em;
+	}
+
+	.title_footer, .title_footer:before, .title_footer:after{
+		height:$row2_height;
+	}
+
+
+	.title_header, .title_footer, h2{
+		position: relative;
+	}
+
+
+	.title_header:before, .title_footer:before, h2:before,
+	.title_header:after, .title_footer:after, h2:after{
+		content:'';
+		position:absolute;
+	}
+
+	.title_header:before, .title_footer:before, h2:before{
+		left:-$cel_width;
+		width:$cel_width;
+	}
+	.title_header:after, .title_footer:after, h2:after{
+		left:100%;
+		width:$cel_width;
+	}
+
+	.title_header{		
+		background-repeat:repeat-x;
+		background: url('../../assets/images/title_0_1.png');	
+	}
+	.title_header:before{
+		top:0;
+		background: url('../../assets/images/title_0_0.png');	
+	}
+	.title_header:after{
+		top:0;
+		background: url('../../assets/images/title_0_2.png');	
+	}
+
+	h2{
+		background-repeat:repeat;
+		background: url('../../assets/images/title_1_1.png');	
+	}
+	h2:before{
+		content:'';
+		background-repeat:repeat-y;
+		background: url('../../assets/images/title_1_0.png');	
+	}
+	h2:after{
+		content:'';
+		background-repeat:repeat-y;
+		background: url('../../assets/images/title_1_2.png');	
+	}
+
+	.title_footer{
+		background-repeat:repeat-x;
+		background: url('../../assets/images/title_2_1.png');	
+	}
+	.title_footer:before{
+		content:'';
+		background: url('../../assets/images/title_2_0.png');	
+	}
+	.title_footer:after{
+		content:'';
+		background: url('../../assets/images/title_2_2.png');	
+	}
+}
+
+.reveal .slides section.who-am-i.row_container h2{
+	content:'';
+	left: 185px;
+    width: 16px;
+    height: 36px;
+    background: url('../../assets/images/ui_split.png') -47px 0;	
+}

@@ -10,7 +10,11 @@
 
 <!-- .slide: class="who-am-i" data-state="quit-question"-->
 
-## Qui suis-je ?
+<div class="row_container">
+    <div class="title_header"></div>
+    <h2>Qui suis-je ?</h2>
+    <div class="title_footer"></div>
+</div> 
 
 ### Jean-François GARREAU
 
