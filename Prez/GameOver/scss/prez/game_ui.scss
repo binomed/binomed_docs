@@ -10,7 +10,8 @@
 	flex:1;
 }
 
-.reveal .slides section.who-am-i .row_container{
+.reveal .slides section .row_container,
+.reveal .slides section:not(.first-slide):not(.who-am-i):not([data-background]):not([class*="transition"]):not(.transition):not(.transition-white):not(.transition-black) .row_container{
 
 	$row0_height:29px;
 	$row1_height:8px;
@@ -27,8 +28,11 @@
 	}
 
 	h2{
+		color:white;
 		margin-top:0;
 		margin-bottom:0;
+		margin-left:0;
+		border-left:0;
 		padding-left:0;
 		line-height:1em;
 	}
@@ -40,7 +44,11 @@
 		height:$row2_height;
 	}
 
-
+	.title_footer:before, .title_footer:after{ 
+		height: $row2_height - 1px;
+	}
+	
+	
 	.title_header, .title_footer, h2{
 		position: relative;
 	}
@@ -53,12 +61,13 @@
 	}
 
 	.title_header:before, .title_footer:before, h2:before{
-		left:-$cel_width;
-		width:$cel_width;
+		left:-$cel_width + 1px;
+		width:$cel_width - 1px;
 	}
+
 	.title_header:after, .title_footer:after, h2:after{
 		left:100%;
-		width:$cel_width;
+		width:$cel_width - 1px;
 	}
 
 	.title_header{		
@@ -109,4 +118,16 @@
     width: 16px;
     height: 36px;
     background: url('../../assets/images/ui_split.png') -47px 0;	
+}
+
+@keyframes play {
+   100% { background-position: -96px -36px; }
+}
+
+.reveal .slides section .anim_mage {
+  width: 32px;
+  height: 36px;
+  background: url('../../assets/images/mage_m.png') 0 -36px;
+  animation: play .8s steps(3) infinite;
+  transform:scale(2);
 }
