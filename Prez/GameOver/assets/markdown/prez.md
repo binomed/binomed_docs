@@ -55,7 +55,13 @@ http://devquest2015.appspot.com
 
 <!-- .slide: data-background="./assets/images/background_sans_stands.png" data-state="hidefooter" class="transition"-->
 
-<div class="anim_mage"></div>
+<div class="row_container important">
+    <div class="title_header"></div>
+    <h2>Youpi un titre</h2>
+    <div class="title_footer"></div>
+</div> 
+
+<div class="anim_mage anim"></div>
 
 ##==##
 

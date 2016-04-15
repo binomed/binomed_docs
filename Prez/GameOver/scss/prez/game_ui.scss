@@ -124,10 +124,38 @@
    100% { background-position: -96px -36px; }
 }
 
-.reveal .slides section .anim_mage {
+@keyframes walk{
+	0%{ left:0;}
+	100%{left:90%; }
+}
+
+.reveal .slides section .anim{
   width: 32px;
   height: 36px;
-  background: url('../../assets/images/mage_m.png') 0 -36px;
-  animation: play .8s steps(3) infinite;
+  animation: play .8s steps(3) infinite, walk 10s infinite linear;
   transform:scale(2);
+  position:absolute;
+  left:0;
+  top:50vh;
+
 }
+
+.reveal .slides section .anim.anim_mage {
+  background: url('../../assets/images/mage_m.png') 0 -36px; 
+}
+.reveal .slides section .anim.anim_ninja {
+  background: url('../../assets/images/ninja_m.png') 0 -36px; 
+}
+.reveal .slides section .anim.anim_ranger {
+  background: url('../../assets/images/ranger_m.png') 0 -36px; 
+}
+.reveal .slides section .anim.anim_healer {
+  background: url('../../assets/images/healer_m.png') 0 -36px; 
+}
+.reveal .slides section .anim.anim_warior {
+  background: url('../../assets/images/warior_m.png') 0 -36px; 
+}
+.reveal .slides section .anim.anim_townfolk {
+  background: url('../../assets/images/townfolk_m.png') 0 -36px; 
+}
+
