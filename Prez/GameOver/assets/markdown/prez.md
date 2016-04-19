@@ -40,6 +40,34 @@ IoT Manager, Senior innovation developer & Community Manager
 
 ##==##
 
+<!-- .slide: data-background="./assets/images/background_sans_stands.png" data-state="hidefooter" class="transition"-->
+
+<div class="row_container important">
+    <div class="title_header"></div>
+    <h2>L'objectif initial</h2>
+    <div class="title_footer"></div>
+</div> 
+
+<div class="anim_ninja anim"></div>
+
+##==##
+
+<div class="row_container important">
+    <div class="title_header"></div>
+    <h2>Features</h2>
+    <div class="title_footer"></div>
+</div> 
+
+<br><br>
+
+* Pas d'installations 
+* Multijoueurs & temps réél <!-- .element: class="fragment" -->
+* Géolicalisation des utilisateurs <!-- .element: class="fragment" -->
+* Détection automatique de la marche <!-- .element: class="fragment" -->
+* Faible consomation de data & cpu <!-- .element: class="fragment" -->
+
+##==##
+
 
 <div class="url_game">
 http://devquest2015.appspot.com
@@ -57,21 +85,11 @@ http://devquest2015.appspot.com
 
 <div class="row_container important">
     <div class="title_header"></div>
-    <h2>Youpi un titre</h2>
+    <h2>C</h2>
     <div class="title_footer"></div>
 </div> 
 
-<div class="anim_mage anim"></div>
-
-##==##
-
-<div class="row_container important">
-    <div class="title_header"></div>
-    <h2>Youpi un titre</h2>
-    <div class="title_footer"></div>
-</div> 
-
-youpi du texte
+<div class="anim_ninja anim"></div>
 
 ##==##
 

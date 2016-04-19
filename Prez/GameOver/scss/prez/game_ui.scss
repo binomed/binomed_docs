@@ -9,6 +9,9 @@
 	flex-direction: column;
 	flex:1;
 }
+.reveal .slides section.transition .row_container{
+	margin-top:150px;
+} 
 
 .reveal .slides section .row_container,
 .reveal .slides section:not(.first-slide):not(.who-am-i):not([data-background]):not([class*="transition"]):not(.transition):not(.transition-white):not(.transition-black) .row_container{
