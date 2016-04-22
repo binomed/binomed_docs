@@ -61,7 +61,7 @@ IoT Manager, Senior innovation developer & Community Manager
 <br><br>
 
 * Pas d'installations 
-* Multijoueurs & temps réél <!-- .element: class="fragment" -->
+* Multijoueurs temps réél <!-- .element: class="fragment" -->
 * Géolicalisation des utilisateurs <!-- .element: class="fragment" -->
 * Détection automatique de la marche <!-- .element: class="fragment" -->
 * Faible consomation de data & cpu <!-- .element: class="fragment" -->
@@ -85,11 +85,29 @@ http://devquest2015.appspot.com
 
 <div class="row_container important">
     <div class="title_header"></div>
-    <h2>C</h2>
+    <h2>Ce que j'ai vraiment fait</h2>
     <div class="title_footer"></div>
 </div> 
 
-<div class="anim_ninja anim"></div>
+<div class="anim_warior anim"></div>
+
+
+##==##
+
+<div class="row_container important">
+    <div class="title_header"></div>
+    <h2>Features</h2>
+    <div class="title_footer"></div>
+</div> 
+
+<br><br>
+
+* Pas d'installations <!-- .element: class="fragment check" -->
+* Multijoueurs temps réél <!-- .element: class="fragment check" -->
+* Géolicalisation des utilisateurs <!-- .element: class="fragment uncheck" -->
+* Détection automatique de la marche <!-- .element: class="fragment" -->
+* Faible consomation de data & cpu <!-- .element: class="fragment" -->
+
 
 ##==##
 
