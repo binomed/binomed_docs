@@ -72,6 +72,7 @@ div.copyright:before{
 .reveal .slides section.flex-p p{
   display:flex;
   justify-content: space-around;
+  align-items: center;
 
 }
 
@@ -105,6 +106,43 @@ div.copyright:before{
     height: 880px;
     transform: scale(0.65);
 
+  }
+}
+
+.reveal .slides section img.map{
+  margin-top:10px;
+}
+
+.reveal .slides section div.move{
+  position:absolute;
+  top:calc(50% - 100px);
+  left:calc(50% - 200px);
+  width:100px;
+  height:200px;
+  border: black solid 3px;
+  animation: move 10s infinite linear;
+}
+
+@keyframes move{
+  0%{ 
+    left:calc(50% - 200px);
+    top:calc(50% - 100px);
+  }
+  25%{ 
+    left:calc(50% + 200px);
+    top:calc(50% - 100px);
+  }
+  50%{ 
+    left:calc(50% + 200px);
+    top:calc(50% + 150px;);
+  }
+  75%{ 
+    left:calc(50% - 200px);
+    top:calc(50% + 150px;);
+  }
+  100%{ 
+    left:calc(50% - 200px);
+    top:calc(50% - 100px);
   }
 }
 

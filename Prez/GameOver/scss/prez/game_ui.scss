@@ -162,3 +162,24 @@
   background: url('../../assets/images/townfolk_m.png') 0 -36px; 
 }
 
+.reveal .slides section ul li.check.fragment:after{
+	font-family:FontAwesome;
+	content:'\f087';
+}
+
+.reveal .slides section ul li.check{
+	color:green;
+}
+
+
+.reveal .slides section ul li.uncheck.fragment:after{
+	font-family:FontAwesome;
+	content:'\f088';
+}
+
+.reveal .slides section ul li.uncheck{
+	color:red;
+	text-decoration:line-through;
+
+}
+

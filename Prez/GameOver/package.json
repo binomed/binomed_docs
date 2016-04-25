@@ -9,5 +9,8 @@
     "gulp-sourcemaps": "^1.5.2",
     "browserify": "^11.0.1",  
     "vinyl-source-stream": "~1.0.0"
+  },
+  "dependencies":{
+    "font-awesome": "^4.5.0"
   }
 }
