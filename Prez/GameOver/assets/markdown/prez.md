@@ -62,7 +62,7 @@ IoT Manager, Senior innovation developer & Community Manager
 
 * Pas d'installations 
 * Multijoueurs temps réél <!-- .element: class="fragment" -->
-* Géolicalisation des utilisateurs <!-- .element: class="fragment" -->
+* Géolocalisation des utilisateurs <!-- .element: class="fragment" -->
 * Détection automatique de la marche <!-- .element: class="fragment" -->
 * Faible consomation de data & cpu <!-- .element: class="fragment" -->
 
@@ -104,7 +104,7 @@ http://devquest2015.appspot.com
 
 * Pas d'installations <!-- .element: class="fragment check" -->
 * Multijoueurs temps réél <!-- .element: class="fragment check" -->
-* Géolicalisation des utilisateurs <!-- .element: class="fragment uncheck" -->
+* Géolocalisation des utilisateurs <!-- .element: class="fragment uncheck" -->
 * Détection automatique de la marche <!-- .element: class="fragment uncheck" -->
 * Faible consomation de data & cpu <!-- .element: class="fragment check" -->
 
@@ -248,6 +248,9 @@ ui.context.drawImage(imgSource //L’image source
 
 ![center h-300](./assets/images/drawImage.png)
 
+Notes:
+Parler de la gestion du paralax
+
 
 ##==##
 
@@ -387,10 +390,196 @@ Parler du mécanisme de matching des events => lié
 <br>
 
 
-* Géolicalisation des utilisateurs <!-- .element: class="fragment" -->
+* Géolocalisation des utilisateurs <!-- .element: class="fragment" -->
 * Détection automatique de la marche <!-- .element: class="fragment" -->
 * Faible consomation de data & mémoire <!-- .element: class="fragment" -->
 
+
+##==##
+
+<div class="row_container important">
+    <div class="title_header"></div>
+    <h2>Géolocalisation</h2>
+    <div class="title_footer"></div>
+</div> 
+
+<br>
+
+
+* GPS Pas précis <!-- .element: class="uncheck notrayed" -->
+* Pas de ble (en 2015) <!-- .element: class="uncheck notrayed" -->
+* Ultrasons <!-- .element: class="check" -->
+
+![](./assets/images/ultrasons.png)
+
+##==##
+
+<div class="row_container important">
+    <div class="title_header"></div>
+    <h2>Géolocalisation : Ultrasons</h2>
+    <div class="title_footer"></div>
+</div> 
+
+<br>
+
+
+```javascript
+navigator.getUserMedia = ( navigator.getUserMedia ||
+                       navigator.webkitGetUserMedia ||
+                       navigator.mozGetUserMedia ||
+                       navigator.msGetUserMedia);
+
+if (navigator.getUserMedia) {
+   navigator.getUserMedia (
+      {audio: true},
+       function(localMediaStream) {
+         ...
+      },
+      function(err) {
+         console.log("The following error occured: " + err);
+      }
+   );
+} else {
+   console.log("getUserMedia not supported");
+}
+```
+
+https://bugs.chromium.org/p/webrtc/issues/detail?id=4830
+
+Notes:
+Parler du bug
+
+##==##
+
+<!-- .slide: data-background="./assets/images/mario_again.jpg" data-state="hidefooter" class="transition"-->
+
+##==##
+
+<div class="row_container important">
+    <div class="title_header"></div>
+    <h2>Détection du mouvement</h2>
+    <div class="title_footer"></div>
+</div> 
+
+<br>
+
+
+* Device Motion API  <!-- .element: class="check" -->
+* Device Orientation API <!-- .element: class="check" -->
+
+<br>
+
+```javascript
+window.addEventListener('devicemotion', motionCallBack_, false);
+
+window.addEventListener('deviceorientation', orientationCallBack_, false);
+```
+
+##==##
+
+<div class="row_container important">
+    <div class="title_header"></div>
+    <h2>Détection du mouvement : Motion</h2>
+    <div class="title_footer"></div>
+</div> 
+
+<br>
+
+```javascript
+function motionCallBack_(event){
+    if (_trackAcceleration &&  event.accelerationIncludingGravity){
+        var zValue = event.accelerationIncludingGravity.z - CONST.motion.GRAVITY;
+        _maxY = Math.max(event.accelerationIncludingGravity.y, _maxY);
+        _minY = Math.min(event.accelerationIncludingGravity.y, _minY);
+        // Initialisation
+        _arrayZ.push(zValue);
+        if (_arrayZ.length > 3){
+            _arrayZ = _arrayZ.slice(1,4);
+            // On est sur un pic
+            if (_arrayZ[1] > _arrayZ[0]
+                && _arrayZ[1] > _arrayZ[2]
+                && _arrayZ[1] > CONST.motion.STEP_ACCELERATION_Z
+                && _maxY > CONST.motion.STEP_ACCELERATION_Y ){
+                var currentTime = Date.now();
+                // On tiens comptes d'un temps de rafraischissement minimal pour éviter les événements parasites
+                if (currentTime - _lastPick > CONST.motion.STEP_RATE
+                    && Model.gameModel.parameters.motion){
+                    _lastPick = currentTime;
+                    ...
+                    _maxY = 0;
+                    _minY = 10;
+                }
+            }
+        }
+    }
+}
+
+```
+
+##==##
+
+<div class="row_container important">
+    <div class="title_header"></div>
+    <h2>Détection du mouvement : Orientation</h2>
+    <div class="title_footer"></div>
+</div> 
+
+<br>
+
+```javascript
+function orientationCallBack_(event){
+    // On ne tien comptes des pas que si le téléphone est à plat => abs(gamma) < 20 && abs(beta) < 20
+    // Le alpha représente la bousolle et nous permet de savoir où l'on est dirigé
+    _trackAcceleration = Math.abs(event.beta) < CONST.motion.LIMIT_ORIENTATION
+        && Math.abs(event.gamma) < CONST.motion.LIMIT_ORIENTATION;
+    var orientationAlert = Math.abs(event.beta) >= CONST.motion.LIMIT_ORIENTATION_ALERT
+        || Math.abs(event.gamma) >= CONST.motion.LIMIT_ORIENTATION_ALERT; 
+    _orientation = event.alpha;
+    if (Model.gameModel.parameters.motion && orientationAlert && !Model.gameModel.parameters.wrongOrientation){
+        Model.gameModel.parameters.wrongOrientation = true;
+    }else if (Model.gameModel.parameters.motion && !orientationAlert && Model.gameModel.parameters.wrongOrientation){
+        Model.gameModel.parameters.wrongOrientation = false;
+    }
+}
+
+```
+
+https://bugs.chromium.org/p/chromium/issues/detail?id=562571
+
+##==##
+
+<!-- .slide: data-background="./assets/images/mario_again.jpg" data-state="hidefooter" class="transition"-->
+
+Notes:
+Expliquer la solution de fallback
+
+##==##
+
+<div class="row_container important">
+    <div class="title_header"></div>
+    <h2>Stats</h2>
+    <div class="title_footer"></div>
+</div> 
+
+<br>
+
+![center w-1000](./assets/images/users_devquest.png)
+
+##==##
+
+<div class="row_container important">
+    <div class="title_header"></div>
+    <h2>Stats</h2>
+    <div class="title_footer"></div>
+</div> 
+
+<br>
+
+* 134 Utilisateurs <!-- .element: class="uncheck notrayed" -->
+* 36 scores <!-- .element: class="uncheck notrayed" -->
+
+Notes:
+Expliquer pourquoi
 
 ##==##
 
@@ -403,6 +592,24 @@ Parler du mécanisme de matching des events => lié
 </div> 
 
 <div class="anim_townfolk anim"></div>
+
+##==##
+
+<div class="row_container important">
+    <div class="title_header"></div>
+    <h2>Quoi faire ? </h2>
+    <div class="title_footer"></div>
+</div> 
+
+<br>
+
+* Marketing ! <!-- .element: class="fragment" -->
+* Ajout d'une aide dans le jeux <!-- .element: class="fragment" -->
+* Logos des stands sur les maisons <!-- .element: class="fragment" -->
+* Affichage des points <!-- .element: class="fragment" -->
+* Indicateurs visuels sur l'état du jeux <!-- .element: class="fragment" -->
+* Utiliser un moteur javascript ? jeux =  425Kb <!-- .element: class="fragment" -->
+
 
 ##==##
 
