@@ -155,6 +155,80 @@ Expliquer chacun et chaque roles !
 
 <div class="row_container important">
     <div class="title_header"></div>
+    <h2>Stack utilisée : Le Build</h2>
+    <div class="title_footer"></div>
+</div> 
+
+<br>
+
+![h-100](./assets/images/gulp.png)
+![h-100](./assets/images/browserify_logo.png)
+![h-100](./assets/images/sass.png)
+
+<br>
+
+* Séparation des environements : Dev vs Prod
+* Cas particulier des clés d'API
+* Build dans le répertoire dist
+
+Notes:
+Expliquer la subtilité dans l'utilisation de Appengine en local nécessitant un proxy
+
+##==##
+
+<!-- .slide: class="flex-p"-->
+
+<div class="row_container important">
+    <div class="title_header"></div>
+    <h2>Stack utilisée : Le Back</h2>
+    <div class="title_footer"></div>
+</div> 
+
+<br>
+
+![h-100](./assets/images/appengine.png)
+![h-100](./assets/images/gopher.png)
+
+<br>
+
+* Hosting gratuit
+* Hosting Scallable
+* Envie de découvrir un nouveau langage : )
+
+Notes:
+
+##==##
+
+<!-- .slide: class="flex-p"-->
+
+<div class="row_container important">
+    <div class="title_header"></div>
+    <h2>Stack utilisée : Le Front</h2>
+    <div class="title_footer"></div>
+</div> 
+
+<br>
+
+![h-100](./assets/images/HTML5_Logo_512.png)
+![h-50](./assets/images/firebase_logo.png)
+![h-100](./assets/images/javascript_logo.png)
+
+
+<br>
+
+* ES6 Modules
+* Json Data base partagée
+* Utilisation des promesses
+
+Notes:
+
+
+##==##
+
+<!-- .slide: class="flex-p"-->
+
+<div class="row_container important">
+    <div class="title_header"></div>
     <h2>Un moteur de jeux ...</h2>
     <div class="title_footer"></div>
 </div> 

@@ -32,8 +32,14 @@ Reveal.addEventListener( 'ready', function( event ) {
         console.log("Go to condition !");		
         setTimeout(function(){
         	let iframeDemo = document.querySelector("iframe#game-demo");
-        	iframeDemo.style.height = "940px";
-        	console.log(iframeDemo.height);
+        	iframeDemo.onload=function(){
+        		setTimeout(function(){
+        			iframeDemo.style.height = "940px";
+        			console.log(iframeDemo.height);
+        		},1000)
+		        //this.style.display='block';
+		        console.log('laod the iframe')
+		    };
         },500);
 	}	
  
