@@ -2,7 +2,7 @@
 
 # Les nouveaux supers pouvoirs du web
 
-### 2016.03.25 Breizhcamp @ **Rennes**
+### 2016.04.28 SNCF @ **Nantes**
 
 <div class="copyright white">fotolia</div>
 
@@ -143,8 +143,7 @@ IoT Manager, Senior innovation developer & Community Manager
 
  * Site accessible sur l'internet mondial
  * L'url est limité par la norme eddystone => Il vaut mieux utiliser des shorts urls
- * Avant BLE 4.1, le device doit changer de mode pour échanger avec le téléphone une fois la détection effectuée
- * Doit être activé dans chrome (chrome://flags)
+ 
 
 ##==##
 
