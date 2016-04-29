@@ -452,7 +452,7 @@ function initBle(){
 		})
 		.then(function(device) {
 		   console.log("Connecting...");
-		   return device.connectGATT();
+		   return device.gatt.connect();
 		 })
 		.then(function(server) {
 			serverGATT = server;
