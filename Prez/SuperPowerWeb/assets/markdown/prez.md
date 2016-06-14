@@ -2,7 +2,7 @@
 
 # Les nouveaux supers pouvoirs du web
 
-### 2016.06.14 La Poste @ **Nantes**
+### 2016.06.17 Web2Day @ **Nantes**
 
 <div class="copyright white">fotolia</div>
 
@@ -135,6 +135,9 @@ IoT Manager, Senior innovation developer & Community Manager
  * S'utilise avec des devices BLE
  * A besoin d'une application détectant le physical Web (Chrome / Firefox)
 
+Notes:
+Aujourd'hui : UID / URL / EID / TLM
+
 ##==## 
 
 ## Physical Web
@@ -144,6 +147,16 @@ IoT Manager, Senior innovation developer & Community Manager
  * Site accessible sur l'internet mondial
  * L'url est limité par la norme eddystone => Il vaut mieux utiliser des shorts urls
  
+##==## 
+
+## Physical Web
+
+### Pour quoi faire ?
+
+ ![center](./assets/images/physical_web_use_case.png)
+
+Notes:
+cas décentralisé, cas centralisé, ... 
 
 ##==##
 
@@ -342,7 +355,7 @@ navigator.bluetooth.requestDevice({ filters: [{ name: ['MyDevice'] }] })
 ```javascript
 navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }] })
 .then(device => {
-  return device.connectGATT();
+  return device.gatt.connect();
 })
 .catch(error => { console.log(error); });
 ```
@@ -355,7 +368,7 @@ navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }]
 ```javascript
 navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }] })
 .then(device => {
-  return device.connectGATT();
+  return device.gatt.connect();
 })
 .then(service => {
   // Getting Battery Level Characteristic...
@@ -380,7 +393,7 @@ navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }]
 
 ```javascript
 navigator.bluetooth.requestDevice({ filters: [{ services: ['heart_rate'] }] })
-.then(device => device.connectGATT())
+.then(device => device.gat.connect())
 .then(server => server.getPrimaryService('heart_rate'))
 .then(service => service.getCharacteristic('heart_rate_control_point'))
 .then(characteristic => {
@@ -577,7 +590,7 @@ button.addEventListener('click', function() {
 
 * Vibre selon un temps donné ! 
 
-* Peut faire vibrer tout un ensmble de temps
+* Peut faire vibrer tout un ensemble de temps
  * n = temps à vibrer
  * n+1 = temps entre vibration n et n+2
 
@@ -586,7 +599,7 @@ button.addEventListener('click', function() {
 window.navigator.vibrate(arrayOfVibration);
 ```
 
-[Docummentation](https://developer.mozilla.org/fr/docs/Web/API/Vibration_API)
+[Documentation](https://developer.mozilla.org/fr/docs/Web/API/Vibration_API)
 
 ##==##
 <!-- .slide: data-state="stop-usermedia"-->
