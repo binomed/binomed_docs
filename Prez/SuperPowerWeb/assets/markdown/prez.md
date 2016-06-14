@@ -2,7 +2,7 @@
 
 # Les nouveaux supers pouvoirs du web
 
-### 2016.04.28 SNCF @ **Nantes**
+### 2016.06.14 La Poste @ **Nantes**
 
 <div class="copyright white">fotolia</div>
 
@@ -181,47 +181,12 @@ IoT Manager, Senior innovation developer & Community Manager
 
  ##==##
 
-<!-- .slide: -->
 
 ## Et si on jouait ?
 
 ![h-400](./assets/images/Fil_rouge.jpg)
 
 Bluetooth actif !
-
-##==##
-
-<!-- .slide: -->
-
-## Et si on jouait ?
-
-### Configuration android
-
-![h-500 float-left](./assets/images/physical_web_android.png)
-
-![h-500](./assets/images/physical_web_android_2.png)
-
-##==##
-
-<!-- .slide: -->
-
-## Et si on jouait ?
-
-### Configuration IOS
-
-![h-500](./assets/images/physical_web_ios.png)
-
-##==##
-
-<!-- .slide: -->
-
-## Et si on jouait ?
-
-### Résultat 
-
-![h-500 float-left](./assets/images/physical_web_android_res.png)
-
-![h-500](./assets/images/physical_web_android_res_2.png)
 
 
 ##==##
