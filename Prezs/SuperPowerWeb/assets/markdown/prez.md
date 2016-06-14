@@ -264,7 +264,7 @@ navigator.bluetooth.requestDevice({ filters: [{ name: ['MyDevice'] }] })
 ```javascript
 navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }] })
 .then(device => {
-  return device.connectGATT();
+  return device.gatt.connect();
 })
 .catch(error => { console.log(error); });
 ```
@@ -277,7 +277,7 @@ navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }]
 ```javascript
 navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }] })
 .then(device => {
-  return device.connectGATT();
+  return device.gatt.connect();
 })
 .then(service => {
   // Getting Battery Level Characteristic...
@@ -302,7 +302,7 @@ navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }]
 
 ```javascript
 navigator.bluetooth.requestDevice({ filters: [{ services: ['heart_rate'] }] })
-.then(device => device.connectGATT())
+.then(device => device.gatt.connect())
 .then(server => server.getPrimaryService('heart_rate'))
 .then(service => service.getCharacteristic('heart_rate_control_point'))
 .then(characteristic => {
@@ -439,7 +439,7 @@ button.addEventListener('click', function() {
 
 * Vibre selon un temps donné ! 
 
-* Peut faire vibrer tout un ensmble de temps
+* Peut faire vibrer tout un ensemble de temps
  * n = temps à vibrer
  * n+1 = temps entre vibration n et n+2
 
