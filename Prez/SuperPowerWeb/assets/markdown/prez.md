@@ -458,7 +458,7 @@ button.addEventListener('click', function() {
 
 <div class="compat">
   <div class="chrome">
-    <div class="desktop unsupport">-</div>
+    <div class="desktop dev">45+</div>
     <div class="os">45+</div>
     <div class="chromium">48+</div>
     <div class="android-dev">48+</div>
@@ -1269,7 +1269,7 @@ Notes:
     <div class="new unsupport">-</div>
   </div>
   <div class="safari">
-    <div class="ios unsupport">-</div>
+    <div class="ios partial">dev</div>
   </div>
 </div>
 
@@ -1602,7 +1602,7 @@ function showNotification() {
     <div class="new unsupport">-</div>
   </div>
   <div class="safari">
-    <div class="ios unsupport">-</div>
+    <div class="ios">6</div>
   </div>
 </div>
 

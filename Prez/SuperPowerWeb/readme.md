@@ -98,3 +98,4 @@ Platform status :
 * Firefox : https://platform-status.mozilla.org/
 * Chrome : https://www.chromestatus.com/features
 * Opera : Cf Chrome status
+* Safari : https://webkit.org/status/ 
