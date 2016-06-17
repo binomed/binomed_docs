@@ -54,13 +54,18 @@ function updateRotation(zAlpha, firstValue){
 	
 }
 
-function init(socket){
+function init(socket, socketLocal){
 
-	socket.on('sensor', function(msg){
+    function callBackSensor(msg){
 		if (orientationEnable && msg.type === 'orientation'){
 			updateRotation(msg.value, msg.firstValue);
 		}
-	});
+	}
+
+	socket.on('sensor', callBackSensor);
+    if(socketLocal){
+	    socketLocal.on('sensor', callBackSensor);
+    }
 
 	lockElt = document.querySelector('.safe_lock');
 	resElt = document.querySelector('.orientation .resp .value');

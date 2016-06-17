@@ -16,13 +16,18 @@ function updateLight(data){
 	lightElt.style.background = style;
 }
 
-function init(socket){
+function init(socket, socketLocal){
 
-	socket.on('sensor', function(msg){
+    function callBackSensor(msg){
 		if (lightEnable && msg.type === 'light'){
 			updateLight(msg.value);
 		}
-	});
+	}
+
+	socket.on('sensor', callBackSensor);
+    if (socketLocal){
+	    socketLocal.on('sensor', callBackSensor);
+    }
 	lightElt = document.querySelector('.light-bg');
 
 	Reveal.addEventListener( 'start-light', function(){

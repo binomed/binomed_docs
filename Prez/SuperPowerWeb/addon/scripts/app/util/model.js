@@ -32,11 +32,15 @@ function calculateAddress(){
 		.then(function(json){
 			let network = json;
 
-			if (location.port && (location.port === "3000")){
+			if ((location.port && (location.port === "3000"))
+             || location.hostname === 'localhost'){
 				let wlan0 = network.find(function(element){
 					return element.name === 'wlan0';
 				});
-				if (wlan0 && location.hostname != 'localhost'){
+				if (location.port === "8000"){
+					address = "localhost:8000";
+					ioAddress = "localhost:8000";
+                }else if (wlan0 && location.hostname != 'localhost'){
 					address = `${wlan0.ip}:3000`;
 					ioAddress = `${wlan0.ip}:8000`;
 				}else{
