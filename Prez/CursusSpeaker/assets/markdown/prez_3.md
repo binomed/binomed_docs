@@ -4,7 +4,7 @@
 # **Cursus Speaker**
 ## **Session 3**
 
-### 2015.01.21 SQLI @ **Nantes**
+### 2016 @ **Nantes**
 
 ##==##
 
@@ -173,7 +173,7 @@ Notes:
 
 <!-- .element: class="presenter" --> **Jean-François Garreau  **
 
-<!-- .element: class="work-rule" --> GDG Nantes Leader & Ingénieur SQLI  
+<!-- .element: class="work-rule" --> GDG Nantes Leader & Ingénieur Lucca  
 
 <!-- .element: class="email" --> **jef**@gdgnantes.com  
 

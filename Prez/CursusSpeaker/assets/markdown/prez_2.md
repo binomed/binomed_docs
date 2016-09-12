@@ -4,7 +4,7 @@
 # **Cursus Speaker**
 ## **Session 2**
 
-### 2015.12.10 SQLI @ **Nantes**
+### 2016  @ **Nantes**
 
 ##==##
 
@@ -397,7 +397,7 @@ Sachez passer à autre chose ou alors avoir un plan B
 
 <!-- .element: class="presenter" --> **Jean-François Garreau  **
 
-<!-- .element: class="work-rule" --> GDG Nantes Leader & Ingénieur SQLI  
+<!-- .element: class="work-rule" --> GDG Nantes Leader & Ingénieur Lucca  
 
 <!-- .element: class="email" --> **jef**@gdgnantes.com  
 

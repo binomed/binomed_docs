@@ -3,6 +3,8 @@ cd ..\..
 set WORKING_DIRECTORY=%cd%
 echo "Set Link to Theme"
 MKLINK /D %WORKING_DIRECTORY%\Prez\CursusSpeaker\css\theme %WORKING_DIRECTORY%\Themes\css\theme
+echo "Set Link to Theme Scss"
+MKLINK /D %WORKING_DIRECTORY%\Prez\CursusSpeaker\scss\theme %WORKING_DIRECTORY%\Themes\scss\theme
 echo "Set Link to reveal"
 MKLINK /D %WORKING_DIRECTORY%\Prez\CursusSpeaker\reveal %WORKING_DIRECTORY%\Tools\reveal
 echo "Set Link to sockets-notes"

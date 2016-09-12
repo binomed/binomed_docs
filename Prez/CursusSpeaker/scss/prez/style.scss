@@ -11,6 +11,15 @@ img[alt*=sommaire]{
 }
 
 
+.reveal .slides section.who-am-i img[alt*=company_logo]{
+    position: absolute;
+    top: 480px;
+    left: 100px;
+    height: 100px;
+    width: inherit;
+}
+
+
 strong{
   font-weight:600 !important;
 }
@@ -80,7 +89,7 @@ p.big-text{
 
 section.surcharge:before{
   content: '';
-  background-image: url(../../assets/images/sqli_logo.png);
+  background-image: url(../../assets/images/lucca_logo.png);
   width: 189px;
   height: 100%;
   position: absolute;
@@ -91,7 +100,7 @@ section.surcharge:before{
 
 section.surcharge:after{
   content: '';
-  background-image: url(../../assets/images/sqli_logo.png);
+  background-image: url(../../assets/images/lucca_logo.png);
   width: 189px;
   height: 100%;
   position: absolute;
