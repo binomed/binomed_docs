@@ -4,7 +4,7 @@
 # **Cursus Speaker**
 ## **Session 2**
 
-### 2015.12.10 SQLI @ **Nantes**
+### 2016  @ **Nantes**
 
 ##==##
 
@@ -379,7 +379,7 @@ En cas de pépins, expliquez, ne laisser pas un blanc
 
 # Ayez un plan B
 
-<!-- .slide: data-background="assets/images/macgyver.jpg" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/macgyver_img.jpg" data-state="hidefooter" class="transition" -->
 
 
 <div class="copyright black">esprit ciné</div>
@@ -397,7 +397,7 @@ Sachez passer à autre chose ou alors avoir un plan B
 
 <!-- .element: class="presenter" --> **Jean-François Garreau  **
 
-<!-- .element: class="work-rule" --> GDG Nantes Leader & Ingénieur SQLI  
+<!-- .element: class="work-rule" --> GDG Nantes Leader & Ingénieur Lucca  
 
 <!-- .element: class="email" --> **jef**@gdgnantes.com  
 

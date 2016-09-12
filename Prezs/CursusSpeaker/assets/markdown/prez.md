@@ -4,7 +4,7 @@
 # **Cursus Speaker**
 ## **Session 1**
 
-### 2015.11.19 SQLI @ **Nantes**
+### 2016  @ **Nantes**
 
 
 ##==##
@@ -16,16 +16,16 @@
 ### Jean-François GARREAU
 
 <!-- .element: class="descjf" -->
-IoT Manager, Senior innovation developper & Community Manager
+Senior innovation developper & Community Manager
 
 ![avatar w-300 wp-200](assets/images/jf.jpg)
 
 
-![company_logo](assets/images/sqli_logo.png)
+![company_logo](assets/images/lucca_logo.png)
 ![gdg_logo](assets/images/GDG-Logo-carre.png)
 
 <!-- .element: class="twitter" -->
-[@jefBinomed](http://twitter.com/jefBinomed)
+[@jefBinomed](https://twitter.com/jefBinomed)
 
 <!-- .element: class="gplus" -->
 [+JeanFrancoisGarreau](http://plus.google.com/+JeanFrancoisGarreau)
@@ -170,7 +170,7 @@ il en existe une multitude :
 
 ![](assets/images/real_chatons_amis.jpg) <!-- .element: class="w-800 center" -->
 
-Notes: 
+Notes:
 Je voulais mettre une image de chat :p
 
 ##==##
@@ -190,7 +190,7 @@ Je voulais mettre une image de chat :p
 
 <!-- .element: class="presenter" --> **Jean-François Garreau  **
 
-<!-- .element: class="work-rule" --> GDG Nantes Leader & Ingénieur SQLI  
+<!-- .element: class="work-rule" --> GDG Nantes Leader & Ingénieur Lucca  
 
 <!-- .element: class="email" --> **jef**@gdgnantes.com  
 
