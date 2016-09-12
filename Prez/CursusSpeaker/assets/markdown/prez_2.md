@@ -379,7 +379,7 @@ En cas de pépins, expliquez, ne laisser pas un blanc
 
 # Ayez un plan B
 
-<!-- .slide: data-background="assets/images/macgyver.jpg" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/macgyver_img.jpg" data-state="hidefooter" class="transition" -->
 
 
 <div class="copyright black">esprit ciné</div>
