@@ -13,7 +13,7 @@
 
 ## Qui suis-je ?
 
-### Jean-François GARREAU
+### Jean-François Garreau
 
 <!-- .element: class="descjf" -->
 Senior innovation developper & Community Manager
@@ -45,16 +45,16 @@ Senior innovation developper & Community Manager
     * Combattons nos peurs
     * Ma carrière de speaker
     * Comment trouver son sujet 
-    * TP : vous aller bosser ! 
+    * TP : vous allez bosser ! 
 2. Plus tard
     * Quelle conf ? 
     * CFP ?
     * Techniques de speaker
 3. Encore plus tard
     * Encore des techniques de speaker
-    * TP : vous aller encore bosser
+    * TP : vous allez encore bosser
 4. Une fois que vous êtes choisi comme speaker
-    * On fera des répet ;)
+    * On fera des répets ;)
 
 ##==##
 
@@ -104,7 +104,7 @@ Des personnes qui n'osent pas
 
 ##==##
 
-## Les différents niveau du speaker
+## Les différents niveaux du speaker
 
 1. ![](/assets/images/Timide.jpg) <!-- .element: class="h-100" --> Le Débutant
 2. ![](/assets/images/francky_trichet.jpg) <!-- .element: class="h-100" --> Le Local
@@ -122,7 +122,7 @@ La rockstar = c'est souvent un evengeliste
 
 <!-- .slide: class="transition-black" -->
 
-# A vous !
+# À vous !
 
 Notes:
 Sonder l'auditoire pour comprendre les envies de chacun
@@ -184,9 +184,7 @@ Je voulais mettre une image de chat :p
 
 <!-- .slide: class="last-slide" -->
 
-
-
-# <!-- .element: class="topic-title" --> Topic Title 
+<!-- .element: class="thank-message" --> Merci  
 
 <!-- .element: class="presenter" --> **Jean-François Garreau  **
 
@@ -194,4 +192,3 @@ Je voulais mettre une image de chat :p
 
 <!-- .element: class="email" --> **jef**@gdgnantes.com  
 
-<!-- .element: class="thank-message" --> Merci  

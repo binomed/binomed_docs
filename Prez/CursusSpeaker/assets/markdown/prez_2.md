@@ -29,7 +29,7 @@
 
 <!-- .slide: data-background="assets/images/choix_conf.jpg" data-state="hidefooter" class="transition" -->
 
-# Ou aller ?
+# Où aller ?
 
 <div class="copyright">Michael Schuerman</div>
 
@@ -38,7 +38,7 @@
 
 ## Plusieurs catégories ! 
 
-### Rappelez vous Les différents niveau du speaker
+### Rappelez-vous Les différents niveaux du speaker
 
 1. ![](assets/images/Timide.jpg) <!-- .element: class="h-100" --> Le Débutant
 2. ![](assets/images/francky_trichet.jpg) <!-- .element: class="h-100" --> Le Local
@@ -76,7 +76,7 @@ et Surement d'autres que je connais pas
 
 ##==##
 
-## Confs nationnales
+## Confs nationales
 ### Accessibles
 
 ![](assets/images/agiletour2015.png) <!-- .element: class="w-300 h-100 float-left" -->
@@ -90,7 +90,7 @@ Notes:
 
 ##==##
 
-## Confs nationnales
+## Confs nationales
 ### Besoin d'expérience
 
 ![](assets/images/devfest.png) <!-- .element: class="w-300 h-100 float-left" -->
@@ -108,7 +108,7 @@ MAis ça peut évoluer -> devfest, on va prendre bient^ot que des bons
 
 ##==##
 
-## Confs nationnales
+## Confs nationales
 ### Expérimentés & Rockstars
 
 ![](assets/images/cropped-DC_logo.png) <!-- .element: class="w-300 h-100 float-left" -->
@@ -139,8 +139,8 @@ Notes:
 ### Conseils
 
 1. Soyez concis
-2. Mettez vous à la place des participants  <!-- .element: class="fragment" -->
-3. Mettez vous à la place de l'organisateur <!-- .element: class="fragment" -->
+2. Mettez-vous à la place des participants  <!-- .element: class="fragment" -->
+3. Mettez-vous à la place de l'organisateur <!-- .element: class="fragment" -->
 4. Expliquez votre talk <!-- .element: class="fragment" -->
 5. Donner les slides, liens vers vidéos  <!-- .element: class="fragment" -->
 
@@ -162,9 +162,9 @@ Parler de mon talk webRTC ! très mauvais choix de titre !
 
 ## La description
 
-Il doit être suffisement court pour ne pas endormir les gens mais en meme temps suffisement détaillé pour leur donner envie de venir.
+Elle doit être suffisament courte pour ne pas endormir les gens mais en meme temps suffisament détaillée pour leur donner envie de venir.
 
-Il ne faut pas hésiter à dévoiler un peu son plan et le niveau de la conf pour que les gens sachent s'ils doivent venir où non à votre conférence.
+Il ne faut pas hésiter à dévoiler un peu son plan et le niveau de la conf pour que les gens sachent s'ils doivent venir ou non à votre conférence.
 
 ##==##
 
@@ -173,7 +173,7 @@ Il ne faut pas hésiter à dévoiler un peu son plan et le niveau de la conf pou
 Il faut être complet, là, il est clairement question de convaincre le jury. 
 
 * Exemples de codes
-* Slides mis à dispo
+* Slides mises à dispo
 * Vidéos ...
 
 ##==##
@@ -212,11 +212,11 @@ Juste milieu entre texte & vide
 
 ##==##
 
-## Posez vous ces questions :
+## Posez-vous ces questions :
 
-1. Qui est mon auditoir ? 
+1. Qui est mon auditoire ? 
 2. Qu'attendent-ils ?
-3. Est ce que mes slides doivents être compréhensible sans le texte qui va avec ?
+3. Est-ce que mes slides doivent être compréhensible sans le texte qui va avec ?
 4. Dois-je mettre des gifs ?
 
 Notes: 
@@ -240,13 +240,13 @@ L'auditoire indique
 
 ## Car avec un titre ça fait trop
 
-### Quand en plus y a un sous titre ! 
+### Quand en plus y a un sous-titre ! 
 
 <br><br><br>
 
 <!-- .slide: class="surcharge" -->
 
-> Evitez les slides trop chargés  ! <!-- .element class="big-text" -->
+> Évitez les slides trop chargés  ! <!-- .element class="big-text" -->
 
 ##==##
 
@@ -261,7 +261,7 @@ Mais pas sans style non plus  ! <!-- .element class="big-text arial" -->
 
 <br><br><br>
 
-> Bref ! trouvez le juste milieu entre contenu & espaces vides <!-- .element class="big-text" -->
+> Bref ! trouvez le juste milieu entre contenus & espaces vides <!-- .element class="big-text" -->
 
 Notes: 
 Les images & gif peuvent etre utiles 
@@ -391,9 +391,7 @@ Sachez passer à autre chose ou alors avoir un plan B
 
 <!-- .slide: class="last-slide" -->
 
-
-
-# <!-- .element: class="topic-title" --> Topic Title 
+<!-- .element: class="thank-message" --> Merci  
 
 <!-- .element: class="presenter" --> **Jean-François Garreau  **
 
@@ -401,4 +399,3 @@ Sachez passer à autre chose ou alors avoir un plan B
 
 <!-- .element: class="email" --> **jef**@gdgnantes.com  
 
-<!-- .element: class="thank-message" --> Merci  
