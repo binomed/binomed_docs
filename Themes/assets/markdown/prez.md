@@ -111,6 +111,15 @@ IoT Manager, Senior innovation developper & Community Manager
 
 ##==##
 
+## Summary ## 
+
+
+1. List Item 1
+2. List Item 2
+2. List Item 3
+
+##==##
+
 
 ## Title
 

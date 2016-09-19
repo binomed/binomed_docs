@@ -13,10 +13,14 @@ body, html{
 }
 
 
-.reveal ul{
-	list-style-type: disc;
+.reveal ol, .reveal dl, .reveal ul{	
 	line-height: 1.5em;
 }
+
+.reveal ul{
+	list-style-type: disc;
+}
+
 .reveal ol, .reveal dl, .reveal ul {
 	//display: inline-block;
 	text-align: left;
@@ -24,7 +28,7 @@ body, html{
 }
 
 .reveal .slides section li p{
-	font-size: 100%
+	font-size: 100%;
 }
 
 .reveal .slides section p{
