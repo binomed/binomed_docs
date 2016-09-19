@@ -21,7 +21,7 @@ IoT Manager, Senior innovation developper & Community Manager
 ![avatar w-300 wp-200](assets/images/jf.jpg)
 
 
-![company_logo](assets/images/sqli_logo.png)
+![company_logo](assets/images/lucca_logo.png)
 ![gdg_logo](assets/images/GDG-Logo-carre.png)
 
 <!-- .element: class="twitter" -->
@@ -49,6 +49,16 @@ IoT Manager, Senior innovation developper & Community Manager
 
 # A Custom Transition Slide
 
+##==##
+
+<!-- .slide: data-background="/assets/images/iron_droid.jpg" data-state="hidefooter" class="transition no-filter" -->
+
+
+##==##
+
+<!-- .slide: data-background="#3d4349" data-state="hidefooter" class="transition" -->
+
+# A Custom Transition Slide With color
 
 
 ##==##
@@ -128,6 +138,8 @@ Quelques débats existent quand à la main mise sur android par google…
 
 ##==##
 
+<!-- .slide: class="with-code" -->
+
 ## Some Code
 
 
@@ -147,6 +159,8 @@ Quelques débats existent quand à la main mise sur android par google…
 ```
 
 ##==##
+
+<!-- .slide: class="with-code" -->
 
 ## Some BIG Code
 
@@ -170,7 +184,6 @@ Quelques débats existent quand à la main mise sur android par google…
 
 ## Links
 
-* A link
 
 http://developer.android.com/index.html 
 
@@ -290,12 +303,11 @@ Some Content
 
 
 
-# <!-- .element: class="topic-title" --> Topic Title 
+<!-- .element: class="thank-message" --> Merci  
 
 <!-- .element: class="presenter" --> **Jean-François Garreau  **
 
-<!-- .element: class="work-rule" --> GDG Nantes Leader & Ingénieur SQLI  
+<!-- .element: class="work-rule" --> GDG Nantes Leader & Ingénieur Lucca 
 
 <!-- .element: class="email" --> **jef**@gdgnantes.com  
 
-<!-- .element: class="thank-message" --> Merci  
