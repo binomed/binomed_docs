@@ -1,23 +1,7 @@
 @import "../theme/2015/binomed/colors";
 
-img[alt*=logo]{
-    width:50px;   
-}
-
 $sommaire-img-height : 60px;
 
-img[alt*=sommaire]{
-  height: $sommaire-img-height;
-}
-
-
-.reveal .slides section.who-am-i img[alt*=company_logo]{
-    position: absolute;
-    top: 480px;
-    left: 100px;
-    height: 100px;
-    width: inherit;
-}
 
 
 strong{
@@ -67,22 +51,6 @@ table.table_version td, table.table_version th {
   bottom: 20px;
 }
 
-div.copyright{
-    font-size: 0.6em;
-    color: $medium-grey ;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-}
-
-div.copyright.white{
-  color: $white;
-}
-
-div.copyright:before{
-    content: '@'
-}
-
 p.big-text{
   font-size:2em;
 }
@@ -115,6 +83,24 @@ section.white{
 
 p.big-text.arial{
   font-family: serif;
+}
+
+div.flex-hori{
+  display: flex;
+  flex-direction: row;  
+  justify-content: space-between;
+  align-items: center;
+
+  .space{
+    margin: 20px 50px;
+  }
+}
+
+div.flex-col{
+  display: flex;
+  flex-direction: column;  
+  justify-content: space-between;
+  align-items: center;
 }
 
 /*

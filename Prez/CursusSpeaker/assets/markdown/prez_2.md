@@ -8,11 +8,11 @@
 
 ##==##
 
-<!-- .slide: data-background="assets/images/o-PUBLIC-SPEAKING-facebook.jpg" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/o-PUBLIC-SPEAKING-facebook.jpg" data-state="hidefooter" class="transition" data-copyrights="true" -->
 
 # Cursus speakers - Session 2
 
-<div class="copyright">huffpost</div>
+<div class="copyrights white">huffpost</div>
 
 ##==##
 
@@ -20,30 +20,46 @@
 
 ### Aujourd'hui 
 
-* Quelle conf choisir ? 
-* CFP ?
-* Comment gérer ses slides ?
-* Techniques de speaker
+* Quelle conf choisir ? <!-- .element: class="fragment"  -->
+* CFP ? <!-- .element: class="fragment"  -->
+* Comment gérer ses slides ? <!-- .element: class="fragment"  -->
+* Techniques de speaker <!-- .element: class="fragment"  -->
 
 ##==##
 
-<!-- .slide: data-background="assets/images/choix_conf.jpg" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/choix_conf.jpg" data-state="hidefooter" class="transition" data-copyrights="true" -->
 
 # Où aller ?
 
-<div class="copyright">Michael Schuerman</div>
+<div class="copyrights">Michael Schuerman</div>
 
 ##==##
 
+<!-- .slide: data-type-show="full" -->
 
 ## Plusieurs catégories ! 
 
 ### Rappelez-vous Les différents niveaux du speaker
 
-1. ![](assets/images/Timide.jpg) <!-- .element: class="h-100" --> Le Débutant
-2. ![](assets/images/francky_trichet.jpg) <!-- .element: class="h-100" --> Le Local
-3. ![](assets/images/ft-l-verou.jpg) <!-- .element: class="h-100" --> Le National
-4. ![](assets/images/musk.jpeg) <!-- .element: class="h-100" --> La Rockstar
+<div class="flex-col">
+    <div class="flex-hori">
+        <div class="padding">
+            <img src="assets/images/Timide.jpg" class="h-200"><span>Le Débutant</span>
+        </div>
+        <div class="padding">
+            <img src="assets/images/francky_trichet.jpg" class="h-200"><span>Le Local</span>
+        </div>
+    </div>
+    <br>
+    <div class="flex-hori">
+        <div class="padding">
+            <img src="assets/images/ft-l-verou.jpg" class="h-200"><span>Le National</span>
+        </div>
+        <div class="padding">
+            <img src="assets/images/musk.jpeg" class="h-200"><span>La Rockstar</span>
+        </div>
+    </div>
+</div>
 
 Notes:
 Debutant = Dans sa boite
@@ -54,6 +70,54 @@ La rockstar = c'est souvent un evengeliste
 
 ##==##
 
+<!-- .slide: data-type-show="prez" -->
+
+## Plusieurs catégories ! 
+
+<div class="flex-col">
+    <div class="flex-hori">
+        <div class="space">
+            <img src="assets/images/Timide.jpg" class="h-200">
+        </div>
+        <div class="space">
+            <img src="assets/images/francky_trichet.jpg" class="h-200">
+        </div>
+    </div>
+    <div class="flex-hori">
+        <div class="space">
+            <img src="assets/images/ft-l-verou.jpg" class="h-200">
+        </div>
+        <div class="space">
+            <img src="assets/images/musk.jpeg" class="h-200">
+        </div>
+    </div>
+</div>
+
+Notes:
+Debutant = Dans sa boite
+Local = Users Groups locaux
+Nationnal = Il fait des confs de plus haut niveau
+La rockstar = c'est souvent un evengeliste
+
+##==##
+
+<!-- .slide: data-type-show="prez" class="transition" -->
+
+<br>
+
+![](assets/images/NANTES-TECH-LOGO.png) <!-- .element: class="w-500 center" -->
+
+Notes:
+Nantes JUG : Quickie + Conf, 1 fois / mois en général fin du mois
+GDG Nantes : Variable, au moins 1 fois / mois
+Agile Nantes : Conférence ou ateliers, 1 fois / mois
+Nantes JS : Conférences, 1 fois / mois
+Human Talk : 3 Quickies tous les 2ème mardis de chaque mois
+
+##==##
+
+<!-- .slide: data-type-show="full" -->
+
 ## Confs locales 
 ### les users groups
 
@@ -61,8 +125,19 @@ La rockstar = c'est souvent un evengeliste
 * **GDG Nantes** : Variable, au moins 1 fois / mois
 * **Agile Nantes** : Conférence ou ateliers, 1 fois / mois
 * **Nantes JS** : Conférences, 1 fois / mois
-* MachineLearning Nantes : Conférences, 1er lundi  / mois
 * **Human Talk** : 3 Quickies tous les 2ème mardis de chaque mois
+
+Notes:
+et Surement d'autres que je connais pas
+
+##==##
+
+<!-- .slide: data-type-show="full" -->
+
+## Confs locales 
+### les users groups
+
+* MachineLearning Nantes : Conférences, 1er lundi  / mois
 * Uxd Meetup : Conférences, régularité variable
 * Nantes Rb : Quickie, tous les 2 mois
 * Nantes Phyton : Conférence, 1 fois / mois
@@ -74,17 +149,36 @@ La rockstar = c'est souvent un evengeliste
 Notes:
 et Surement d'autres que je connais pas
 
+
 ##==##
 
 ## Confs nationales
 ### Accessibles
 
-![](assets/images/agiletour2015.png) <!-- .element: class="w-300 h-100 float-left" -->
-![](assets/images/breizhcamp.svg) <!-- .element: class="w-300 h-100 float-left" -->
-![](assets/images/logo-summercamp.png) <!-- .element: class="w-300 h-100 float-left" -->
-![](assets/images/logo-codeurs-en-seine.png) <!-- .element: class="w-300 h-100 float-left" -->
-![](assets/images/devfest.png) <!-- .element: class="w-300 h-100 float-left" -->
-![](assets/images/rivieraDev.png) <!-- .element: class="w-300 h-100 float-left" -->
+<div class="flex-col">
+    <div class="flex-hori">
+        <div class="space">
+            <img src="assets/images/agiletour2015.png" class="w-300 h-100">
+        </div>
+        <div class="space">
+            <img src="assets/images/breizhcamp.svg" class="w-300 h-100">
+        </div>
+        <div class="space">
+            <img src="assets/images/logo-summercamp.png" class="w-300 h-100">
+        </div>
+    </div>
+    <div class="flex-hori">
+        <div class="space">
+            <img src="assets/images/logo-codeurs-en-seine.png" class="w-300 h-100">
+        </div>
+        <div class="space">
+            <img src="assets/images/devfest.png" class="w-300 h-100">
+        </div>
+        <div class="space">
+            <img src="assets/images/rivieraDev.png" class="w-300 h-100">
+        </div>
+    </div>
+</div>
 
 Notes:
 
@@ -93,13 +187,33 @@ Notes:
 ## Confs nationales
 ### Besoin d'expérience
 
-![](assets/images/devfest.png) <!-- .element: class="w-300 h-100 float-left" -->
-![](assets/images/bdxio.png) <!-- .element: class="w-300 h-100 float-left" -->
-![](assets/images/logo-parisweb.png) <!-- .element: class="w-300 h-100 float-left" -->
-![](assets/images/kiwiparty2-logo.png) <!-- .element: class="w-300 h-100 float-left" -->
-![](assets/images/Logo-Web2day.png) <!-- .element: class="w-300 h-100 float-left" -->
-![](assets/images/blend_webmix.png) <!-- .element: class="w-300 h-100 float-left" -->
-![](assets/images/seocamp.png) <!-- .element: class="w-300 h-100 float-left" -->
+<div class="flex-col">
+    <div class="flex-hori">
+        <div class="space">
+            <img src="assets/images/devfest.png" class="w-300 h-100">
+        </div>
+        <div class="space">
+            <img src="assets/images/bdxio.png" class="w-300 h-100">
+        </div>
+        <div class="space">
+            <img src="assets/images/logo-parisweb.png" class="w-300 h-100">
+        </div>
+        <div class="space">
+            <img src="assets/images/kiwiparty2-logo.png" class="w-300 h-100">
+        </div>
+     </div>
+    <div class="flex-hori">
+        <div class="space">
+            <img src="assets/images/Logo-Web2day.png" class="w-300 h-100">
+        </div>
+        <div class="space">
+            <img src="assets/images/blend_webmix.png" class="w-300 h-100">
+        </div>
+        <div class="space">
+            <img src="assets/images/seocamp.png" class="w-300 h-100">
+        </div>
+    </div>
+</div>
 
 
 
@@ -111,25 +225,44 @@ MAis ça peut évoluer -> devfest, on va prendre bient^ot que des bons
 ## Confs nationales
 ### Expérimentés & Rockstars
 
-![](assets/images/cropped-DC_logo.png) <!-- .element: class="w-300 h-100 float-left" -->
-![](assets/images/Devoxx-UK-NORMAL.png) <!-- .element: class="w-300 h-100 float-left" -->
-![](assets/images/logo-mixit.png) <!-- .element: class="w-300 h-100 float-left" -->
-![](assets/images/scalaio_medium.png) <!-- .element: class="w-300 h-100 float-left" -->
-![](assets/images/eclipsecon.png) <!-- .element: class="w-300 h-100 float-left" -->
-![](assets/images/tedx.jpg) <!-- .element: class="w-300 h-100 float-left" -->
-![](assets/images/dotcss-logo.png) <!-- .element: class="w-300 h-100 float-left" -->
-
+<div class="flex-col">
+    <div class="flex-hori">
+        <div class="space">
+            <img src="assets/images/cropped-DC_logo.png" class="w-300 h-100">
+        </div>
+        <div class="space">
+            <img src="assets/images/Devoxx-UK-NORMAL.png" class="w-300 h-100">
+        </div>
+        <div class="space">
+            <img src="assets/images/logo-mixit.png" class="w-300 h-100">
+        </div>
+        <div class="space">
+            <img src="assets/images/scalaio_medium.png" class="w-300 h-100">
+        </div>
+    </div>
+    <div class="flex-hori">
+        <div class="space">
+            <img src="assets/images/eclipsecon.png" class="w-300 h-100">
+        </div>
+        <div class="space">
+            <img src="assets/images/tedx.jpg" class="w-300 h-100">
+        </div>
+        <div class="space">
+            <img src="assets/images/dotcss-logo.png" class="w-300 h-100">
+        </div>
+    </div>
+</div>
 
 Notes:
 
 
 ##==##
 
-<!-- .slide: data-background="assets/images/call-for-presentations.jpg" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/call-for-presentations.jpg" data-state="hidefooter" class="transition" data-copyrights="true" -->
 
 # CFP : mode d'emploi 
 
-<div class="copyright">ethos3</div>
+<div class="copyrights">ethos3</div>
 
 
 ##==##
@@ -151,6 +284,8 @@ IL y a toujours un champ dans lequel on peut expliquer
 
 ##==##
 
+<!-- .slide: data-type-show="full" -->
+
 ## Le titre
 
 Il doit être clair et expliquer ce que vous allez présenter ou alors, il doit être attirant ! 
@@ -160,6 +295,17 @@ Parler de mon talk webRTC ! très mauvais choix de titre !
 
 ##==##
 
+<!-- .slide: class="transition-white" data-type-show="prez" -->
+
+# Le titre doit donner envie
+
+Notes:
+Parler de mon talk webRTC ! très mauvais choix de titre ! 
+
+##==##
+
+<!-- .slide: data-type-show="full" -->
+
 ## La description
 
 Elle doit être suffisament courte pour ne pas endormir les gens mais en meme temps suffisament détaillée pour leur donner envie de venir.
@@ -168,21 +314,31 @@ Il ne faut pas hésiter à dévoiler un peu son plan et le niveau de la conf pou
 
 ##==##
 
-## Notes pour les organisateurs
+<!-- .slide: class="transition-white" data-type-show="prez" -->
 
-Il faut être complet, là, il est clairement question de convaincre le jury. 
+# La description explique !
 
-* Exemples de codes
-* Slides mises à dispo
-* Vidéos ...
+Notes:
+Elle doit être suffisament courte pour ne pas endormir les gens mais en meme temps suffisament détaillée pour leur donner envie de venir.
+
+Il ne faut pas hésiter à dévoiler un peu son plan et le niveau de la conf pour que les gens sachent s'ils doivent venir ou non à votre conférence.
 
 ##==##
 
-<!-- .slide: data-background="assets/images/Rocky-II-wallpaper-HD.jpg" data-state="hidefooter" class="transition" -->
+## Notes pour les organisateurs
+
+* Champ libre visant à convaincre ! <!-- .element: class="fragment" -->
+* Exemples de codes <!-- .element: class="fragment" -->
+* Slides mises à dispo <!-- .element: class="fragment" -->
+* Vidéos ... <!-- .element: class="fragment" -->
+
+##==##
+
+<!-- .slide: data-background="assets/images/Rocky-II-wallpaper-HD.jpg" data-state="hidefooter" class="transition" data-copyrights="true" -->
 
 # Bien préparer ses slides
 
-<div class="copyright">Rocky 2</div>
+<div class="copyrights">Rocky 2</div>
 
 ##==##
 
@@ -195,22 +351,18 @@ Juste milieu entre texte & vide
 
 ##==##
 
-<!-- .slide: data-background="assets/images/second_gif.gif" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/second_gif.gif" data-state="hidefooter" class="transition no-filter" -->
 
 ##==##
 
-<!-- .slide: data-background="assets/images/third_gif.gif" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/third_gif.gif" data-state="hidefooter" class="transition no-filter" data-copyrights="true" -->
 
 
-<div class="copyright">bon y a un moment où faut arrêter</div>
-
-##==##
-
-## Bref ! 
-
-![](assets/images/stop_it.jpg) <!-- .element: class="w-600 center" -->
+<div class="copyrights white">bon y a un moment où faut arrêter</div>
 
 ##==##
+
+<!-- .slide: data-type-show="full" -->
 
 ## Posez-vous ces questions :
 
@@ -222,13 +374,47 @@ Juste milieu entre texte & vide
 Notes: 
 L'auditoire indique
 
+
+##==##
+
+<!-- .slide: class="transition-black" data-type-show="prez" -->
+
+# Posez-vous ces questions :
+
+##==##
+
+<!-- .slide: class="transition-white" data-type-show="prez" -->
+
+# Qui est mon auditoire ? 
+
+##==##
+
+<!-- .slide: class="transition-white" data-type-show="prez" -->
+
+# Qu'attendent-ils ?
+
+##==##
+
+<!-- .slide: class="transition-white" data-type-show="prez" -->
+
+# Est-ce que mes slides doivent être compréhensible sans le texte qui va avec ?
+
+##==##
+
+<!-- .slide: class="transition-white" data-type-show="prez" -->
+
+# Dois-je mettre des gifs ?
+
+Notes: 
+L'auditoire indique
+
 ##==##
 
 # Conseils
 
-<!-- .slide: data-background="assets/images/copcop-jesus.jpg" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/copcop-jesus.jpg" data-state="hidefooter" class="transition" data-copyrights="true" -->
 
-<div class="copyright">copcop</div>
+<div class="copyrights">copcop</div>
 
 ##==##
 
@@ -298,11 +484,11 @@ Parlez du livecoding
 
 ##==##
 
-<!-- .slide: data-background="assets/images/christina.jpg" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/christina.jpg" data-state="hidefooter" class="transition" data-copyrights="true" -->
 
 # Les bons conseils de christina !
 
-<div class="copyright">téléstar</div>
+<div class="copyrights">téléstar</div>
 
 ##==##
 
@@ -312,11 +498,11 @@ Parlez du livecoding
 
 ##==##
 
-<!-- .slide: data-background="assets/images/le-grand-saut.jpg" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/le-grand-saut.jpg" data-state="hidefooter" class="transition" data-copyrights="true" -->
 
 # Se lancer
 
-<div class="copyright">france tourisme</div>
+<div class="copyrights">france tourisme</div>
 
 Notes:
 Mémoriser sa présentation ou alors anecdote
@@ -335,7 +521,7 @@ Attention au sexisme, aux propos tenus etc...
 # Poser des questions
 
 
-<!-- .slide: data-background="assets/images/Foire-aux-questions_w1024h500.png" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/Foire-aux-questions_w1024h500.png" data-state="hidefooter" class="transition" data-copyrights="true" -->
 
 <div class="copyright black">covoiturage</div>
 
@@ -346,7 +532,7 @@ Voir si les gens connaissent, sonder son auditoire !
 
 # Faire des pauses
 
-<!-- .slide: data-background="assets/images/pause.jpg" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/pause.jpg" data-state="hidefooter" class="transition" data-copyrights="true" -->
 
 <div class="copyright black">etudiant astucieux</div>
 
@@ -357,7 +543,7 @@ Laisser le temps aux gens de digérer => Soit l'humour mais pas trop, soit des q
 
 # Osez dire : je ne sais pas   
 
-<!-- .slide: data-background="assets/images/i_dunno.png" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/i_dunno.png" data-state="hidefooter" class="transition" data-copyrights="true" -->
 
 <div class="copyright black">ironrex007 deviantart</div>
 
@@ -368,7 +554,7 @@ Vous n'^etes pas infaiible
 
 # Expliquez ce que vous faites
 
-<!-- .slide: data-background="assets/images/dev_boite_noire.jpg" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/dev_boite_noire.jpg" data-state="hidefooter" class="transition" data-copyrights="true" -->
 
 <div class="copyright black">next impact</div>
 
@@ -379,7 +565,7 @@ En cas de pépins, expliquez, ne laisser pas un blanc
 
 # Ayez un plan B
 
-<!-- .slide: data-background="assets/images/macgyver_img.jpg" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/macgyver_img.jpg" data-state="hidefooter" class="transition" data-copyrights="true" -->
 
 
 <div class="copyright black">esprit ciné</div>
