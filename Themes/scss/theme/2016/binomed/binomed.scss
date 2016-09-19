@@ -110,3 +110,35 @@ a:active, a:visited{
 	//quotes: none;
 }
 
+
+
+.reveal .slides section[data-copyrights]{
+	height: 100%;
+}
+
+
+.reveal .slides section div.copyrights.black{
+  color: $black;
+}
+
+.reveal .slides section div.copyrights{	
+	-webkit-transform: translateZ(0);
+	display: none;
+    font-size: 0.6em;
+    color: $medium-grey ;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+}
+
+.reveal .slides section.present div.copyrights{
+	display: block;
+}
+
+.reveal .slides section div.copyrights.white{
+  color: $light-grey;
+}
+
+.reveal .slides section div.copyrights:before{
+    content: '@'
+}

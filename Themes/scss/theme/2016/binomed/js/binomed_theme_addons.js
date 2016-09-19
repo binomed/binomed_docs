@@ -79,7 +79,7 @@ var BINOMED_THEME = BINOMED_THEME || function(){
 		}
 	}
 
-
+	
 	// API
     function init(){
             document.addEventListener('DOMContentLoaded', function(){

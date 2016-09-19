@@ -49,10 +49,32 @@ IoT Manager, Senior innovation developper & Community Manager
 
 # A Custom Transition Slide
 
+
+
 ##==##
 
-<!-- .slide: data-background="/assets/images/iron_droid.jpg" data-state="hidefooter" class="transition no-filter" -->
+<!-- .slide: data-background="/assets/images/iron_droid.jpg" data-state="hidefooter" data-copyrights="true" class="transition" -->
 
+# With CopyRights white
+
+<div class="copyrights white">copyrights</div>
+
+##==##
+
+<!-- .slide: data-background="/assets/images/iron_droid.jpg" data-state="hidefooter" data-copyrights="true" class="transition" -->
+
+# With CopyRights black
+
+<div class="copyrights black">copyrights</div>
+
+
+
+##==##
+
+<!-- .slide: data-background="/assets/images/iron_droid.jpg" data-state="hidefooter" data-copyrights="true " class="transition no-filter" -->
+
+
+<div class="copyrights">copyrights</div>
 
 ##==##
 
