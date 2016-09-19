@@ -31,6 +31,10 @@ body, html{
 	font-size: 2em;
 }
 
+.reveal .slides section[data-type-show=full] p{
+    font-size: 100%;
+}
+
 a:link, a:focus, a:hover{
  color: lighten($red,10%);;
 }
@@ -105,8 +109,4 @@ a:active, a:visited{
 .reveal q, .reveal blockquote {
 	//quotes: none;
 }
-
-
-
-
 

@@ -85,12 +85,14 @@
 
     .twitter{
         position:absolute;
+        font-size: 100%;
         top: 430px;
         left: 350px;
     }
 
     .gplus{
         position:absolute;
+        font-size: 100%;
         top: 500px;
         left: 350px;
     }
@@ -98,6 +100,7 @@
     .descjf{
         position: absolute;
         color: $black;
+        font-size: 100%;
         line-height: 1.5em;
         left: 350px;
         top: 320px;
@@ -107,7 +110,6 @@
  
 	
 }
-
 
 .reveal  .slides section.last-slide{
 	

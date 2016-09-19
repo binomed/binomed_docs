@@ -229,73 +229,26 @@ Some Content
 
 ##==##
 
-## Transitions Slides ! 
+<!-- .slide: data-state="hidefooter" class="transition" -->
+
+# Management of custom slides
+
 
 ##--##
 
-# Carte Rouge
+<!-- .slide: data-type-show="prez" -->
 
-<!-- .slide: class="transition-carte-rouge" -->
+## A slide for prez only
 
-##--##
-
-# Carte Grise
-
-<!-- .slide: class="transition-carte-grise" -->
+A few words !
 
 ##--##
 
-# Carte Marron
+<!-- .slide: data-type-show="full" -->
 
-<!-- .slide: class="transition-carte-marron" -->
+## A slide for publication only
 
-##--##
-
-# Ciel
-
-<!-- .slide: class="transition-ciel" -->
-
-##--##
-
-# Ciel Gris
-
-<!-- .slide: class="transition-ciel-gris" -->
-
-##--##
-
-# Graphic
-
-<!-- .slide: class="transition-graphic" -->
-
-##--##
-
-# Mains Rouge
-
-<!-- .slide: class="transition-mains-rouge" -->
-
-##--##
-
-# Mains Bleu
-
-<!-- .slide: class="transition-mains-bleu" -->
-
-##--##
-
-# Tete Bleu
-
-<!-- .slide: class="transition-tete-bleu" -->
-
-##--##
-
-# Trame 1
-
-<!-- .slide: class="transition-trame1" -->
-
-##--##
-
-# Trame 2
-
-<!-- .slide: class="transition-trame2" -->
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec risus leo. Vestibulum condimentum orci in urna auctor aliquet. Quisque mi erat, placerat non porttitor ut, gravida eu erat. Fusce semper ipsum vel nibh porttitor aliquam. Cras sed porttitor est, id scelerisque odio. Pellentesque sit amet imperdiet ex. Aliquam erat.
 
 ##==##
 
