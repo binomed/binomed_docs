@@ -8,17 +8,17 @@
 
 ##==##
 
-<!-- .slide: data-background="assets/images/o-PUBLIC-SPEAKING-facebook.jpg" data-state="hidefooter" class="transition" data-copyrights="true" -->
+<!-- .slide: data-background="assets/images/ted_x_speaker.jpg" data-state="hidefooter" class="transition" data-copyrights="true" -->
 
 # Cursus speakers - Session 2
 
-<div class="copyrights white">huffpost</div>
+<div class="copyrights white">alastair humphreys</div>
 
 ##==##
 
 ## De quoi on va parler ?
 
-### Aujourd'hui 
+
 
 * Quelle conf choisir ? <!-- .element: class="fragment"  -->
 * CFP ? <!-- .element: class="fragment"  -->
@@ -31,7 +31,7 @@
 
 # Où aller ?
 
-<div class="copyrights">Michael Schuerman</div>
+<div class="copyrights white">Michael Schuerman</div>
 
 ##==##
 
@@ -262,7 +262,7 @@ Notes:
 
 # CFP : mode d'emploi 
 
-<div class="copyrights">ethos3</div>
+<div class="copyrights white">ethos3</div>
 
 
 ##==##
@@ -338,7 +338,7 @@ Il ne faut pas hésiter à dévoiler un peu son plan et le niveau de la conf pou
 
 # Bien préparer ses slides
 
-<div class="copyrights">Rocky 2</div>
+<div class="copyrights white">Rocky 2</div>
 
 ##==##
 
@@ -397,7 +397,7 @@ L'auditoire indique
 
 <!-- .slide: class="transition-white" data-type-show="prez" -->
 
-# Est-ce que mes slides doivent être compréhensible sans le texte qui va avec ?
+# Slides autoporteurs ?
 
 ##==##
 
@@ -410,17 +410,15 @@ L'auditoire indique
 
 ##==##
 
-# Conseils
+<!-- .slide: data-background="assets/images/advice.jpg" data-state="hidefooter" class="transition no-filter" data-copyrights="true" -->
 
-<!-- .slide: data-background="assets/images/copcop-jesus.jpg" data-state="hidefooter" class="transition" data-copyrights="true" -->
-
-<div class="copyrights">copcop</div>
+<div class="copyrights black">shopify</div>
 
 ##==##
 
-<br><br><br>
+<!-- .slide: class="transition-white" data-type-show="prez" -->
 
-> Misez sur la simplicité ! <!-- .element class="big-text" -->
+#  Misez sur la simplicité !
 
 ##==##
 
@@ -428,11 +426,12 @@ L'auditoire indique
 
 ### Quand en plus y a un sous-titre ! 
 
-<br><br><br>
 
 <!-- .slide: class="surcharge" -->
 
 > Évitez les slides trop chargés  ! <!-- .element class="big-text" -->
+
+Qui en plus ont beaucoup de texte, c'est vraiment pas cool ! 
 
 ##==##
 
@@ -445,41 +444,55 @@ Mais pas sans style non plus  ! <!-- .element class="big-text arial" -->
 
 ##==##
 
-<br><br><br>
+<!-- .slide: class="transition-white" data-type-show="prez" -->
 
-> Bref ! trouvez le juste milieu entre contenus & espaces vides <!-- .element class="big-text" -->
+#  Bref ! Trouvez l'équilibre !
+
 
 Notes: 
 Les images & gif peuvent etre utiles 
 
 ##==##
 
-<br><br><br>
+<br><br>
 
 ![](assets/images/rdj_thanks.gif) <!-- .element: class="w-600 center" style="width:600px;" -->
 
 ##==## 
 
-## Conseils Bis
+<!-- .slide: class="transition-black" data-type-show="prez" -->
 
-* Faites des transitions / breaks
+#  Structurez vos slides !
 
-<br><br>
 
-* Montrez du code ou des démos 
+##==##
 
-<br><br>
+<!-- .slide: class="transition-white" data-type-show="prez" -->
 
-* Aérez vos slides
+# Faites des transitions / breaks
 
-<br><br>
+##==##
 
-* Créez une histoire !
+<!-- .slide: class="transition-white" data-type-show="prez" -->
+
+
+# Montrez du code ou des démos 
 
 Notes:
 Parlez du livecoding
 
+##==##
 
+<!-- .slide: class="transition-white" data-type-show="prez" -->
+
+# Aérez vos slides
+
+##==##
+
+<!-- .slide: class="transition-white" data-type-show="prez" -->
+
+
+# Créez une histoire !
 
 
 ##==##
@@ -488,13 +501,15 @@ Parlez du livecoding
 
 # Les bons conseils de christina !
 
-<div class="copyrights">téléstar</div>
+<div class="copyrights white">téléstar</div>
 
 ##==##
 
+<!-- .slide: data-background="assets/images/d_day.jpg" data-state="hidefooter" data-copyrights="true" class="transition" -->
+
 # Le Jour J 
 
-<!-- .slide: data-background="assets/images/o-PUBLIC-SPEAKING-facebook.jpg" data-state="hidefooter" class="transition" -->
+<div class="copyrights white">d day facts</div>
 
 ##==##
 
@@ -502,7 +517,7 @@ Parlez du livecoding
 
 # Se lancer
 
-<div class="copyrights">france tourisme</div>
+<div class="copyrights white">france tourisme</div>
 
 Notes:
 Mémoriser sa présentation ou alors anecdote
@@ -511,7 +526,9 @@ Mémoriser sa présentation ou alors anecdote
 
 # /!\ à votre image !
 
-<!-- .slide: data-background="assets/images/fashion-fail.jpg" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/gaga_steak.jpg" data-state="hidefooter" class="transition"  data-copyrights="true" -->
+
+<div class="copyrights white">yahoo</div>
 
 Notes:
 Attention au sexisme, aux propos tenus etc...
@@ -523,7 +540,7 @@ Attention au sexisme, aux propos tenus etc...
 
 <!-- .slide: data-background="assets/images/Foire-aux-questions_w1024h500.png" data-state="hidefooter" class="transition" data-copyrights="true" -->
 
-<div class="copyright black">covoiturage</div>
+<div class="copyrights white">covoiturage</div>
 
 Notes:
 Voir si les gens connaissent, sonder son auditoire ! 
@@ -534,7 +551,7 @@ Voir si les gens connaissent, sonder son auditoire !
 
 <!-- .slide: data-background="assets/images/pause.jpg" data-state="hidefooter" class="transition" data-copyrights="true" -->
 
-<div class="copyright black">etudiant astucieux</div>
+<div class="copyrights white">etudiant astucieux</div>
 
 Notes:
 Laisser le temps aux gens de digérer => Soit l'humour mais pas trop, soit des questions
@@ -545,7 +562,7 @@ Laisser le temps aux gens de digérer => Soit l'humour mais pas trop, soit des q
 
 <!-- .slide: data-background="assets/images/i_dunno.png" data-state="hidefooter" class="transition" data-copyrights="true" -->
 
-<div class="copyright black">ironrex007 deviantart</div>
+<div class="copyrights white">ironrex007 deviantart</div>
 
 Notes:
 Vous n'^etes pas infaiible
@@ -556,7 +573,7 @@ Vous n'^etes pas infaiible
 
 <!-- .slide: data-background="assets/images/dev_boite_noire.jpg" data-state="hidefooter" class="transition" data-copyrights="true" -->
 
-<div class="copyright black">next impact</div>
+<div class="copyrights white">next impact</div>
 
 Notes:
 En cas de pépins, expliquez, ne laisser pas un blanc
@@ -568,7 +585,7 @@ En cas de pépins, expliquez, ne laisser pas un blanc
 <!-- .slide: data-background="assets/images/macgyver_img.jpg" data-state="hidefooter" class="transition" data-copyrights="true" -->
 
 
-<div class="copyright black">esprit ciné</div>
+<div class="copyrights white">esprit ciné</div>
 
 Notes:
 Sachez passer à autre chose ou alors avoir un plan B

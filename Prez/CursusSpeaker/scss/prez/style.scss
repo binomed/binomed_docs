@@ -58,6 +58,7 @@ p.big-text{
 section.surcharge:before{
   content: '';
   background-image: url(../../assets/images/lucca_logo.png);
+  background-size: 189px;
   width: 189px;
   height: 100%;
   position: absolute;
@@ -69,12 +70,13 @@ section.surcharge:before{
 section.surcharge:after{
   content: '';
   background-image: url(../../assets/images/lucca_logo.png);
+  background-size: 189px;
   width: 189px;
   height: 100%;
   position: absolute;
   top: 0;
   z-index: 200;
-  right: 173px;
+  right: -173px;
 }
 
 section.white{
