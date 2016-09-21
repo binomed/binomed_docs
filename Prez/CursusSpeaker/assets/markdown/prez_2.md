@@ -14,20 +14,29 @@
 
 <div class="copyrights white">alastair humphreys</div>
 
+Notes:
+De quoi on va parler ?
+* Quelle conf choisir ?
+* CFP ?
+* Comment gérer ses slides ?
+* Techniques de speaker
+
 ##==##
+
+<!-- .slide: data-background="assets/images/ted_x_speaker.jpg" data-state="hidefooter" class="transition" data-copyrights="true" data-type-show="full" -->
 
 ## De quoi on va parler ?
 
 
 
-* Quelle conf choisir ? <!-- .element: class="fragment"  -->
+* Où aller ? <!-- .element: class="fragment"  -->
 * CFP ? <!-- .element: class="fragment"  -->
 * Comment gérer ses slides ? <!-- .element: class="fragment"  -->
 * Techniques de speaker <!-- .element: class="fragment"  -->
 
 ##==##
 
-<!-- .slide: data-background="assets/images/choix_conf.jpg" data-state="hidefooter" class="transition" data-copyrights="true" -->
+<!-- .slide: data-background="assets/images/choix_conf.jpg" data-state="hidefooter" class="transition" data-copyrights="true"  -->
 
 # Où aller ?
 
@@ -267,6 +276,8 @@ Notes:
 
 ##==##
 
+<!-- .slide: data-type-show="full" -->
+
 ## CFP 
 
 ### Conseils
@@ -316,7 +327,7 @@ Il ne faut pas hésiter à dévoiler un peu son plan et le niveau de la conf pou
 
 <!-- .slide: class="transition-white" data-type-show="prez" -->
 
-# La description explique !
+# La description décrit le contenu !
 
 Notes:
 Elle doit être suffisament courte pour ne pas endormir les gens mais en meme temps suffisament détaillée pour leur donner envie de venir.
@@ -324,6 +335,33 @@ Elle doit être suffisament courte pour ne pas endormir les gens mais en meme te
 Il ne faut pas hésiter à dévoiler un peu son plan et le niveau de la conf pour que les gens sachent s'ils doivent venir ou non à votre conférence.
 
 ##==##
+
+<!-- .slide: class="transition-white" data-type-show="prez" -->
+
+# Prennez la place du participant !
+
+##==##
+
+<!-- .slide: class="transition-white" data-type-show="prez" -->
+
+# Prennez la place de l'organisateur !
+
+##==##
+
+<!-- .slide: class="transition-white" data-type-show="prez" -->
+
+# Donner des références
+
+##==##
+
+<!-- .slide: class="transition-white" data-type-show="prez" -->
+
+# Notes pour les organisateurs
+
+
+##==##
+
+<!-- .slide: data-type-show="full" -->
 
 ## Notes pour les organisateurs
 
@@ -452,17 +490,13 @@ Mais pas sans style non plus  ! <!-- .element class="big-text arial" -->
 Notes: 
 Les images & gif peuvent etre utiles 
 
-##==##
-
-<br><br>
-
-![](assets/images/rdj_thanks.gif) <!-- .element: class="w-600 center" style="width:600px;" -->
 
 ##==## 
 
 <!-- .slide: class="transition-black" data-type-show="prez" -->
 
-#  Structurez vos slides !
+# Créez une histoire !
+
 
 
 ##==##
@@ -487,21 +521,7 @@ Parlez du livecoding
 
 # Aérez vos slides
 
-##==##
 
-<!-- .slide: class="transition-white" data-type-show="prez" -->
-
-
-# Créez une histoire !
-
-
-##==##
-
-<!-- .slide: data-background="assets/images/christina.jpg" data-state="hidefooter" class="transition" data-copyrights="true" -->
-
-# Les bons conseils de christina !
-
-<div class="copyrights white">téléstar</div>
 
 ##==##
 
