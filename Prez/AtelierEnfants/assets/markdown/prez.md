@@ -167,7 +167,7 @@ Car sinon c'est trop
 <!-- .slide: class="transition no-filter" -->
 
 ![full-width](/assets/images/scratch.png)
-
+  
 
 ##==##
 
