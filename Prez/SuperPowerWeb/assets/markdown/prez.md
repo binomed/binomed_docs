@@ -1,27 +1,38 @@
-<!-- .slide: data-background="./assets/images/super_hero_fotolia.png" data-state="hidefooter" class="transition first-slide" -->
+<!-- .slide: data-background="./assets/images/super_hero_fotolia.png" data-state="hidefooter" class="transition first-slide no-filter" data-type-show="prez"  -->
 
-# Les nouveaux supers pouvoirs du web
+# Les nouveaux supers<br> pouvoirs du web
 
-### 2016.06.17 Web2Day @ **Nantes**
+### 2016.10.20 Bdx.Io @ **Bordeaux**
 
-<div class="copyright white">fotolia</div>
+<div class="copyrights black">fotolia</div>
 
 ##==##
 
-<!-- .slide: class="who-am-i" data-state="quit-question"-->
+<!-- .slide: data-background="./assets/images/super_hero_fotolia.png" data-state="hidefooter" class="transition first-slide no-filter" data-type-show="full"  -->
 
-## Qui suis-je ?
+# Les nouveaux supers<br> pouvoirs du web
 
-### Jean-François GARREAU
+### 2016
+
+<div class="copyrights black">fotolia</div>
+
+##==##
+
+<!-- .slide: class="who-am-i" data-state="quit-question" -->
+
+## Qui sommes nous ?
+
+### Jean-François Garreau
+
 
 <!-- .element: class="descjf" -->
-IoT Manager, Senior innovation developer & Community Manager
+Senior innovation developper & Community Manager
 
-![avatar w-300 wp-200](./assets/images/jf.jpg)
+![avatar w-300 wp-200](assets/images/jf.jpg)
 
 
-![company_logo](./assets/images/sqli_logo.png)
-![gdg_logo](./assets/images/GDG-Logo-carre.png)
+![company_logo](assets/images/lucca_logo.png)
+![gdg_logo](assets/images/GDG-Logo-carre.png)
 
 <!-- .element: class="twitter" -->
 [@jefBinomed](http://twitter.com/jefBinomed)
@@ -31,26 +42,26 @@ IoT Manager, Senior innovation developer & Community Manager
 
 ##==##
 
-<!-- .slide: data-background="./assets/images/once-upon-a-time.jpg" data-state="hidefooter" class="transition"-->
+<!-- .slide: data-background="./assets/images/once-upon-a-time.jpg" data-state="hidefooter" class="transition no-filter"-->
 
 ##==##
 
-<!-- .slide: data-background="./assets/images/HTML5_yellow_detail.jpg" data-state="hidefooter" class="transition"-->
+<!-- .slide: data-background="./assets/images/HTML5_yellow_detail.jpg" data-state="hidefooter" class="transition" data-copyrights="true" -->
 
 # Un combat vieux comme le monde
 
-<div class="copyright black">from digital</div>
+<div class="copyrights white">from digital</div>
 
 
 ##==##
-<!--  .slide: data-background="./assets/images/civil_war_full.jpg" class="transition"-->
+<!--  .slide: data-background="./assets/images/civil_war_full.jpg" class="transition no-filter"-->
 
 
 ##==##
 
 # Un combat inégal au début
 
-<br><br>
+<br>
 
 ![center](./assets/images/native-app-illustration_1x.jpg)
 
@@ -65,7 +76,7 @@ IoT Manager, Senior innovation developer & Community Manager
 ![h-300](./assets/images/irondroid.jpg)
 ![h-300](./assets/images/ironman-osx_240.jpg)
 
-<div class="copyright black">_IronDroid_, Jamie BiversProduct</div>
+<div class="copyrights black">_IronDroid_, Jamie BiversProduct</div>
 
 ##==##
 
@@ -77,11 +88,31 @@ IoT Manager, Senior innovation developer & Community Manager
 
 ##==##
 
-<!-- .slide: data-background="./assets/images/inception_webapp_full.jpg" class="transition"-->
+<!-- .slide: data-background="./assets/images/inception_webapp_full.jpg" class="transition no-filter"-->
 
 
 ##==##
 
+<!-- .slide: data-type-show="prez" -->
+
+## De quoi parle-t-on ?
+
+
+<!-- .element: class="fragment" -->
+Sensors
+
+<br>
+
+<!-- .element: class="fragment" -->
+Nouvelles API 
+ 
+Notes:
+Sensors : Geoloc/Gyroscope/...
+Nouvelles Possibilités : Offline / DB / Raccourcis
+
+##==##
+
+<!-- .slide: data-type-show="full" -->
 
 ## De quoi parle-t-on ?
 
@@ -121,10 +152,30 @@ IoT Manager, Senior innovation developer & Community Manager
 
 ##==##
 
-<!-- .slide: data-background="./assets/images/inception_physical_web_full.jpg" class="transition"-->
+<!-- .slide: data-background="./assets/images/inception_physical_web_full.jpg" class="transition no-filter"-->
 
 
 ##==## 
+
+<!-- .slide: data-type-show="prez" -->
+
+## Physical Web
+
+
+<!-- .element: class="fragment" -->
+Date de 2015
+
+<!-- .element: class="fragment" -->
+Basé sur Eddystone & le BLE
+ 
+Notes:
+A besoin d'un application native (PlayServices)
+Sur EddyStone URL
+Aujourd'hui : UID / URL / EID / TLM
+
+##==## 
+
+<!-- .slide: data-type-show="full" -->
 
 ## Physical Web
 
@@ -138,14 +189,6 @@ IoT Manager, Senior innovation developer & Community Manager
 Notes:
 Aujourd'hui : UID / URL / EID / TLM
 
-##==## 
-
-## Physical Web
-
-### Restrictions 
-
- * Site accessible sur l'internet mondial
- * L'url est limité par la norme eddystone => Il vaut mieux utiliser des shorts urls
  
 ##==## 
 
@@ -153,15 +196,37 @@ Aujourd'hui : UID / URL / EID / TLM
 
 ### Pour quoi faire ?
 
- ![center](./assets/images/physical_web_use_case.png)
+ ![center h-500](./assets/images/physical_web_use_case.png)
 
 Notes:
 cas décentralisé, cas centralisé, ... 
 
+##==## 
+
+<!-- .slide: class="transition-white" data-type-show="prez" -->
+
+# Restrictions 
+
+![icon](./assets/images/partial_chrome_256x256.png)
+
+Notes:
+ * Site accessible sur l'internet mondial
+ * L'url est limité par la norme eddystone => Il vaut mieux utiliser des shorts urls
+
+##==## 
+
+<!-- .slide: data-type-show="full" -->
+
+## Physical Web
+
+### Restrictions 
+
+ * Site accessible sur l'internet mondial
+ * L'url est limité par la norme eddystone => Il vaut mieux utiliser des shorts urls
+
 ##==##
 
 
-## Compatibilité
 
 <div class="compat">
   <div class="chrome">
@@ -194,6 +259,7 @@ cas décentralisé, cas centralisé, ...
 
  ##==##
 
+<!-- .slide: data-type-show="prez" -->
 
 ## Et si on jouait ?
 
@@ -204,7 +270,7 @@ Bluetooth actif !
 
 ##==##
 
-<!-- .slide: data-state="quit-question" -->
+<!-- .slide: data-state="quit-question" data-type-show="prez" -->
 
 ## Et si on jouait ?
 
@@ -221,7 +287,7 @@ Bluetooth actif !
 
 ##==##
 
-<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="quit-question"-->
+<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="quit-question" data-type-show="prez"-->
 
 <div class="url_jeux binomed">https://goo.gl/7SQoYq</div>
 <div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
@@ -233,7 +299,7 @@ Bluetooth actif !
 
 ##==##
 
-<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="question-1"-->
+<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="question-1" data-type-show="prez"-->
 
 <div class="url_jeux binomed">https://goo.gl/7SQoYq</div>
 <div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
@@ -253,7 +319,7 @@ Bluetooth actif !
 
 ##==##
 
-<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="resp-question-1"-->
+<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="resp-question-1" data-type-prez="prez"-->
 
 <div class="url_jeux binomed">https://goo.gl/7SQoYq</div>
 <div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
@@ -285,7 +351,7 @@ Bluetooth actif !
 //                                                  
 -->     
 
-<!-- .slide: data-background="./assets/images/inception_bluetooth_full.jpg" class="transition" data-state="quit-question"-->
+<!-- .slide: data-background="./assets/images/inception_bluetooth_full.jpg" class="transition no-filter" data-state="quit-question"-->
 
 
 ##==##
@@ -298,6 +364,26 @@ Bluetooth actif !
 
 
 ##==##
+
+<!-- .slide: data-type-show="prez" -->
+
+## Web Bluetooth
+
+### Un peu de vocabulaire ! 
+
+![center](./assets/images/ble_hierarchy.jpg)
+
+Notes:
+* * **GATT** : Generic Attribute Profile 
+* **ATT** : Attribute Protocol
+* Un device bluetooth expose plusieurs services
+* Chaque service expose plusieurs caractéristiques
+* Chaque caractéristique peut être lue / écrite / passée en mode notification (en fonction de sa configuration)
+* Chaque devices / services / caractéristiques sont identités par des uuid
+
+##==##
+
+<!-- .slide: data-type-show="full" -->
 
 ## Web Bluetooth
 
@@ -317,6 +403,36 @@ Bluetooth actif !
 
 ##==##
 
+<!-- .slide: data-type-show="prez" -->
+
+## Utilisation
+
+![center](./assets/images/HTTPS_icon.png)
+
+##==##
+
+## Utilisation
+
+<!-- .slide: data-type-show="prez" -->
+
+![center h-500](./assets/images/Bluetooth.svg)
+
+##==##
+
+## Utilisation
+
+<!-- .slide: data-type-show="prez" -->
+
+![center](./assets/images/flag_ble.png)
+
+Notes:
+* Accès à l'objet ```navigator.bluetooth```
+* Basé sur les promises
+
+##==##
+
+<!-- .slide: data-type-show="full" -->
+
 ### Utilisation
 
 * **Https** Only <!-- .element: style="color:red" -->
@@ -330,7 +446,9 @@ Bluetooth actif !
 
 ##==##
 
-## Récupération par nom de service
+<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="code-connect-ble" -->
+
+## Connect
 
 ```javascript
 navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }] })
@@ -338,9 +456,17 @@ navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }]
 .catch(error => { console.log(error); });
 ```
 
+<div class="highlight-connect-ble"></div>  
+
+
+Notes:
+Par service
+
 ##==##
 
-## Récupération par nom de device
+<!-- .slide: class="with-code"  data-background="#3f3f3f" -->
+
+## Connect
 
 ```javascript
 navigator.bluetooth.requestDevice({ filters: [{ name: ['MyDevice'] }] })
@@ -348,7 +474,12 @@ navigator.bluetooth.requestDevice({ filters: [{ name: ['MyDevice'] }] })
 .catch(error => { console.log(error); });
 ```
 
+Notes:
+Par nom
+
 ##==##
+
+<!-- .slide: class="with-code" data-background="#3f3f3f" -->
 
 ## Connexion à un device
 
@@ -363,47 +494,41 @@ navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }]
 
 ##==##
 
+<!-- .slide: class="with-code"  data-background="#3f3f3f" -->
+
 ## Lecture d'une caractéristique
 
 ```javascript
-navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }] })
-.then(device => {
-  return device.gatt.connect();
-})
+device.gatt.getPrimaryService('battery_service')
 .then(service => {
   // Getting Battery Level Characteristic...
-  return service.getCharacteristic('battery_level');
-})
+  return service.getCharacteristic('battery_level');})
 .then(characteristic => {
   // Reading Battery Level...
-  return characteristic.readValue();
-})
+  return characteristic.readValue();})
 .then(value => {
   // In Chrome 50+, a DataView is returned instead of an ArrayBuffer.
   value = value.buffer ? value : new DataView(value);
-  console.log('Battery percentage is ' + value.getUint8(0));
-})
+  console.log('Battery percentage is ' + value.getUint8(0));})
 .catch(error => { console.log(error); });
 ```
 
 
 ##==##
 
+<!-- .slide: class="with-code"  data-background="#3f3f3f" -->
+
 ## Écrire dans une caractéristique
 
 ```javascript
-navigator.bluetooth.requestDevice({ filters: [{ services: ['heart_rate'] }] })
-.then(device => device.gat.connect())
-.then(server => server.getPrimaryService('heart_rate'))
+device.gatt.getPrimaryService('heart_rate'))
 .then(service => service.getCharacteristic('heart_rate_control_point'))
 .then(characteristic => {
   // Writing 1 is the signal to reset energy expended.
   var resetEnergyExpended = new Uint8Array([1]);
-  return characteristic.writeValue(resetEnergyExpended);
-})
+  return characteristic.writeValue(resetEnergyExpended);})
 .then(() => {
-  console.log('Energy expended has been reset.');
-})
+  console.log('Energy expended has been reset.');})
 .catch(error => { console.log(error); });
 ```
 
