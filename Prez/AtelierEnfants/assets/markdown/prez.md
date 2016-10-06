@@ -40,7 +40,7 @@ Senior innovation developper & Community Manager
 
 <!-- .slide: class="transition-white"-->
 
-# La Diversité
+# Diversité
 
 ##==##
 
@@ -67,41 +67,44 @@ Projet OpenSource lancé en 2012
 
 ##==##
 
-# Ateliers
-
 <div class="flex-col">
     <div class="flex-hori">
         <div class="space">
-            <img src="assets/images/robot_turtle.png" class="w-300 h-100">
+            <img src="assets/images/robot_turtle.png" class="w-300 h-150">
         </div>
         <div class="space">
-            <img src="assets/images/makey_makey_logo.png" class="w-300 h-100">
+            <img src="assets/images/makey_makey_logo.png" class="w-300 h-150">
         </div>
         <div class="space">
-            <img src="assets/images/scratch_logo.png" class="w-300 h-100">
-        </div>
-        <div class="space">
-            <img src="assets/images/wedo.png" class="w-300 h-100">
+            <img src="assets/images/scratch_logo.png" class="w-300 h-150">
         </div>
     </div>    
     <div class="flex-hori">
         <div class="space">
-            <img src="assets/images/mindstorm_logo.png" class="w-300 h-100">
+            <img src="assets/images/wedo.png" class="w-300 h-150">
         </div>
         <div class="space">
-            <img src="assets/images/arduino.png" class="w-300 h-100">
+            <img src="assets/images/mindstorm_logo.png" class="w-300 h-150">
+        </div>
+        <div class="space">
+            <img src="assets/images/arduino.png" class="w-300 h-150">
         </div>        
+    </div>
+    <div class="flex-hori">
         <div class="space">
-            <img src="assets/images/AliceLeft.png" class="w-300 h-100">
+            <img src="assets/images/AliceLeft.png" class="w-300 h-150">
         </div>
         <div class="space">
-            <img src="assets/images/greenfoot.png" class="w-300 h-100">
+            <img src="assets/images/greenfoot.png" class="w-300 h-150">
         </div>
         <div class="space">
-            <img src="assets/images/nao.png" class="w-300 h-100">
-        </div>
+            <img src="assets/images/nao.png" class="w-300 h-150">
+        </div>        
     </div>
 </div>
+
+Notes:
+Ateliers
 
 ##==##
 
@@ -125,7 +128,7 @@ Projet OpenSource lancé en 2012
 
 <!-- .slide: class="transition-white no-filter" -->
 
-# 8 -> 12 Ans
+# 8  >  12 Ans
 
 Notes:
 Ils savent Lire !
@@ -134,7 +137,8 @@ Ils savent Lire !
 
 <!-- .slide: class="transition" data-background="linear-gradient(135deg, #2d91e2 0%, #2d91e2 49%,#f98686 50%, #f98686 100%)" -->
 
-# 50% Garçon <br> 50% Filles 
+
+# 50% Garçons <br> <br> 50% Filles  <!-- .element: style="color:white" -->
 
 Notes:
 On restreint afin de laisser plus de temps aux filles pour s'inscrire
@@ -166,7 +170,7 @@ Car sinon c'est trop
 
 <!-- .slide: class="transition no-filter" -->
 
-![full-width](/assets/images/scratch.png)
+![](/assets/images/scratch.png) <!-- .element: style="margin-top:-100px" -->
   
 
 ##==##
