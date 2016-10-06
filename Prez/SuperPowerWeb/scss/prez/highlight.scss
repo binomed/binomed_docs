@@ -1,3 +1,27 @@
+
+.highlight-code{
+	background-color: rgba(255,235,59,0.3);
+	height:1.4em;
+	position:absolute;
+	transition-property: all;
+    transition-duration: 0.5s;
+    transition-timing-fonction: linear;
+}
+
 #highlight-connect-ble{
-	background-color: rgba(5,5,5,0.5);
+	width:90%;
+	top:90px;
+	left:60px;	
+}
+
+#highlight-connect-by-name{
+	width:400px;
+	top:90px;
+	left:650px;	
+}
+
+#highlight-connection{
+	width:400px;
+	top:180px;
+	left:100px;	
 }

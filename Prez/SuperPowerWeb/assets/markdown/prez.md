@@ -456,10 +456,9 @@ navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }]
 .catch(error => { console.log(error); });
 ```
 
-<div id="highlight-connect-ble"></div>  
+<div id="highlight-connect-ble" class="highlight-code"></div>  
 
 <div class="fragment" data-fragment-index="1" hidden></div>
-<div class="fragment" data-fragment-index="2" hidden></div>
 
 Notes:
 Par service
@@ -475,6 +474,9 @@ navigator.bluetooth.requestDevice({ filters: [{ name: ['MyDevice'] }] })
 .then(device => {...})
 .catch(error => { console.log(error); });
 ```
+
+<div id="highlight-connect-by-name" class="highlight-code"></div>  
+
 
 Notes:
 Par nom
@@ -493,6 +495,7 @@ navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }]
 .catch(error => { console.log(error); });
 ```
 
+<div id="highlight-connection" class="highlight-code"></div>  
 
 ##==##
 
