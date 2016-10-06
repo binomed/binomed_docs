@@ -56,6 +56,8 @@ Reveal.addEventListener( 'ready', function( event ) {
  			
  		//}, 1000);
 	}	
+
+	require('./highlights/highlightsCode').init();
  
 	
 } );

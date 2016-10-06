@@ -431,7 +431,7 @@ Notes:
 
 ##==##
 
-<!-- .slide: data-type-show="full" -->
+<!-- .slide: data-type-show="full" data-state="stop-code-connect-ble" -->
 
 ### Utilisation
 
@@ -446,7 +446,7 @@ Notes:
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="code-connect-ble" -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="code-connect-ble test-double-state" -->
 
 ## Connect
 
@@ -456,15 +456,17 @@ navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }]
 .catch(error => { console.log(error); });
 ```
 
-<div class="highlight-connect-ble"></div>  
+<div id="highlight-connect-ble"></div>  
 
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
 
 Notes:
 Par service
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="stop-code-connect-ble" -->
 
 ## Connect
 
