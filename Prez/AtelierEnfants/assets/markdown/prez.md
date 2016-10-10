@@ -38,6 +38,11 @@ Senior innovation developper & Community Manager
 
 ##==##
 
+<!-- .slide: class="transition no-filter" data-background="./assets/images/kids_make.jpg" -->
+
+
+##==##
+
 <!-- .slide: class="transition-white"-->
 
 # Diversité
