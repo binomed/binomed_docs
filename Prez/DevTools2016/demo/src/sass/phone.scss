@@ -39,9 +39,10 @@ canvas{
 #game{
     display: flex;
     flex: 1;
-    justify-content: center;
+    justify-content: flex-end;
     flex-direction: column;
     position: relative;
+    
 
     button{
         align-self: center;
@@ -99,7 +100,7 @@ $img-user : 80px;
     }
 
     .parent-img::after{
-        content:'Dessin rejeté';
+        content:'Dessin rejetÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â©';
         position: absolute;
         top: 10px;
         left: 0;
@@ -114,7 +115,7 @@ $img-user : 80px;
     }
 
     .parent-img.accepted::after{
-        content:'Dessin accepté';
+        content:'Dessin acceptÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â©';
     }
 
     img{

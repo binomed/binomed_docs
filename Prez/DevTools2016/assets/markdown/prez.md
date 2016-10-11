@@ -67,6 +67,148 @@ Senior innovation developper & Community Manager
 
 ##==##
 
+# Activation
+
+<video width="900" controls="controls" data-autoplay>
+  <source src="./assets/videos/flags.webm" type="video/webm" />
+</video>
+
+##==##
+
+# Raccourcis claviers : CTRL + SHIFT  + P
+
+<video width="900" controls="controls" data-autoplay>
+  <source src="./assets/videos/shortcut.webm" type="video/webm" />
+</video>
+
+##==##
+
+# Design Mode
+
+<video width="900" controls="controls" data-autoplay>
+  <source src="./assets/videos/designMode.webm" type="video/webm" />
+</video>
+
+
+##==##
+
+# Mode Responsive
+
+<video width="900" controls="controls" data-autoplay>
+  <source src="./assets/videos/responsive.webm" type="video/webm" />
+</video>
+
+##==##
+
+# Quick Source
+
+<video width="900" controls="controls" data-autoplay>
+  <source src="./assets/videos/sources_workspace.webm" type="video/webm" />
+</video>
+
+##==##
+
+# Workspaces
+
+<video width="900" controls="controls" data-autoplay>
+  <source src="./assets/videos/workspace.webm" type="video/webm" />
+</video>
+
+##==##
+
+# Gestion des classes
+
+<video width="900" controls="controls" data-autoplay>
+  <source src="./assets/videos/class.webm" type="video/webm" />
+</video>
+
+##==##
+
+# Color Picker & palette
+
+<video width="900" controls="controls" data-autoplay>
+  <source src="./assets/videos/colorpicker.webm" type="video/webm" />
+</video>
+
+##==##
+
+# Js Perfs
+
+<video width="900" controls="controls" data-autoplay>
+  <source src="./assets/videos/perfs.webm" type="video/webm" />
+</video>
+
+##==##
+
+# Js Perfs 2
+
+<video width="900" controls="controls" data-autoplay>
+  <source src="./assets/videos/perfs_2.webm" type="video/webm" />
+</video>
+
+##==##
+
+# Network
+
+<video width="900" controls="controls" data-autoplay>
+  <source src="./assets/videos/network.webm" type="video/webm" />
+</video>
+
+##==##
+
+# Service Workers
+
+<video width="900" controls="controls" data-autoplay>
+  <source src="./assets/videos/serviceworker.webm" type="video/webm" />
+</video>
+
+##==##
+
+# App Manifest
+
+<video width="900" controls="controls" data-autoplay>
+  <source src="./assets/videos/manifest.webm" type="video/webm" />
+</video>
+
+##==##
+
+# Snippets
+
+<video width="900" controls="controls" data-autoplay>
+  <source src="./assets/videos/snippets.webm" type="video/webm" />
+</video>
+
+##==##
+
+# Blackbox
+
+<video width="900" controls="controls" data-autoplay>
+  <source src="./assets/videos/blackbox.webm" type="video/webm" />
+</video>
+
+##==##
+
+# Animation
+
+<video width="900" controls="controls" data-autoplay>
+  <source src="./assets/videos/animation.webm" type="video/webm" />
+</video>
+
+##==##
+
+# ScreenShot Iphone
+
+<img height="600" src="./assets/images/iPhone_5.png"/>
+
+##==##
+
+# ScreenShot Nexus 6P
+
+<img height="600" src="./assets/images/nexus_6p.png"/>
+
+
+##==##
+
 <!-- .slide: class="last-slide" -->
 
 <!-- .element: class="thank-message" --> Merci  
