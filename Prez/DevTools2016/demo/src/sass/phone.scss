@@ -100,7 +100,7 @@ $img-user : 80px;
     }
 
     .parent-img::after{
-        content:'Dessin rejetÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â©';
+        content:'Dessin rejeté';
         position: absolute;
         top: 10px;
         left: 0;
@@ -115,7 +115,7 @@ $img-user : 80px;
     }
 
     .parent-img.accepted::after{
-        content:'Dessin acceptÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â©';
+        content:'Dessin accepté';
     }
 
     img{

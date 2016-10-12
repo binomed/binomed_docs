@@ -1,7 +1,7 @@
 'use strict';
 
 let cacheFileName = "legonnaryCache-v{timestamp}";
-let cacheCdnName = "legonnaryCdnCache-v0";
+let cacheCdnName = "legonnaryCdnCache-v1";
 
 let filesToCache = [
     './',
@@ -19,14 +19,7 @@ let filesToCache = [
 ];
 
 let cdnToCache = [
-  "https://fonts.googleapis.com/",
-  "https://cdnjs.cloudflare.com/",
-  "https://www.gstatic.com/",
-  "https://ajax.googleapis.com/",
-  "https://rawgit.com/",
-  "https://www.google-analytics.com/",
-  "https://code.getmdl.io/",
-  "https://fonts.gstatic.com/"  
+  "/libs_offline/"
 ];
 
 self.addEventListener('install', function(e) {
@@ -56,7 +49,7 @@ self.addEventListener('activate', function(e) {
 
 self.addEventListener('fetch', function(e) {
     console.log('[ServiceWorker] Fetch', e.request.url);
-    if (cdnToCache.find((element)=>{return e.request.url.indexOf(element) === 0;})) {        
+    if (cdnToCache.find((element)=>{return e.request.url.indexOf(element) != -1;})) {        
         e.respondWith(
             caches.match(e.request.url).then(function(response) {
                 if (response){
