@@ -421,7 +421,7 @@ Notes:
 
 ## Utilisation
 
-<!-- .slide: data-type-show="prez" -->
+<!-- .slide: data-type-show="prez" data-state="stop-code-connect-ble" -->
 
 ![center](./assets/images/flag_ble.png)
 
@@ -446,7 +446,7 @@ Notes:
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="code-connect-ble test-double-state" -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="code-connect-ble" -->
 
 ## Connect
 
@@ -483,7 +483,7 @@ Par nom
 
 ##==##
 
-<!-- .slide: class="with-code" data-background="#3f3f3f" -->
+<!-- .slide: class="with-code" data-background="#3f3f3f" data-state="stop-code-read-charact"-->
 
 ## Connexion à un device
 
@@ -499,7 +499,7 @@ navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }]
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="stop-code-write-charact code-read-charact" -->
 
 ## Lecture d'une caractéristique
 
@@ -518,10 +518,15 @@ device.gatt.getPrimaryService('battery_service')
 .catch(error => { console.log(error); });
 ```
 
+<div id="highlight-read-charact" class="highlight-code"></div>  
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="stop-code-read-charact code-write-charact" -->
 
 ## Écrire dans une caractéristique
 
@@ -537,11 +542,17 @@ device.gatt.getPrimaryService('heart_rate'))
 .catch(error => { console.log(error); });
 ```
 
+<div id="highlight-write-charact" class="highlight-code"></div>  
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+
 ##==##
 
-## Les webcomponents à la rescousse 
+<!-- .slide: data-state="stop-code-write-charact" class="with-code" data-copyrights="true" data-background="#3f3f3f"  -->
 
-[+Francois Beaufort](https://plus.google.com/u/0/+FrancoisBeaufort) a écrit webcomponent pour se simplifier la chose
+## Les webcomponents à la rescousse 
 
 
 ```html
@@ -552,6 +563,14 @@ device.gatt.getPrimaryService('heart_rate'))
   </platinum-bluetooth-service>
 </platinum-bluetooth-device>
 ```
+
+<div class="copyrights white">Francois Beaufort</div>
+
+##==##
+
+<!-- .slide: class="with-code" data-background="#3f3f3f"  -->
+
+## Les webcomponents à la rescousse 
 
 ```javascript
 var bluetoothDevice = document.querySelector('platinum-bluetooth-device');
@@ -569,6 +588,8 @@ button.addEventListener('click', function() {
 
 ##==##
 
+<!-- .slide: data-type-show="full" -->
+
 ## Open source quand tu nous tiens !
 
 [+Francois Beaufort](https://plus.google.com/u/0/+FrancoisBeaufort) a aussi écrit une application pour configurer les balises Physical Web : 
@@ -582,9 +603,6 @@ button.addEventListener('click', function() {
 ![center h-600](./assets/images/demo_time.jpg)
 
 ##==##
-
-
-## Compatibilité
 
 <div class="compat">
   <div class="chrome">
@@ -629,7 +647,7 @@ button.addEventListener('click', function() {
 //     
 -->
 
-<!-- .slide: data-background="./assets/images/inception_sensors_full.jpg" class="transition"-->
+<!-- .slide: data-background="./assets/images/inception_sensors_full.jpg" class="transition no-filter"-->
 
 
 ##==##
@@ -712,9 +730,11 @@ button.addEventListener('click', function() {
 
 # Vibration
 
-![icon](./assets/images/mobile-phone-vibration.jpg)
+![icon](./assets/images/mobile-phone-vibration.png)
 
 ##==##
+
+<!-- .slide: data-type-show="full" -->
 
 ## Vibration
 
@@ -724,6 +744,7 @@ button.addEventListener('click', function() {
  * n = temps à vibrer
  * n+1 = temps entre vibration n et n+2
 
+<br>
 
 ```javascript
 window.navigator.vibrate(arrayOfVibration);
@@ -732,9 +753,24 @@ window.navigator.vibrate(arrayOfVibration);
 [Documentation](https://developer.mozilla.org/fr/docs/Web/API/Vibration_API)
 
 ##==##
-<!-- .slide: data-state="stop-usermedia"-->
 
-## Compatibilité
+<!-- .slide: data-type-show="prez" class="with-code" data-background="#3f3f3f" -->
+
+## Vibration
+
+
+```javascript
+let arrayOfVibration = [
+  100, // n = temps à vibrer
+  200, // n+1 = temps entre 2 vibrations
+  ]
+window.navigator.vibrate(arrayOfVibration);
+```
+
+<div id="highlight-vibrate" class="highlight-code"></div>  
+
+##==##
+<!-- .slide: data-state="stop-usermedia"-->
 
 <div class="compat">
   <div class="chrome">
@@ -783,11 +819,11 @@ window.navigator.vibrate(arrayOfVibration);
 
 # Device Orientation
 
-![icon](./assets/images/device-orientation.jpg)
+![icon](./assets/images/device-gamma.png)
 
 ##==##
 
-
+<!-- .slide: data-type-show="full" data-state="stop-code-orientation" -->
 
 ## Device Orientation
 
@@ -798,11 +834,11 @@ Se fait à plat !
 <br>
 <div>
 
-![h-300](./assets/images/device-orientation-z.jpg)
+![h-300](./assets/images/device-orientation-z.png)
 
-![h-300](./assets/images/device-orientation-y.jpg)
+![h-300](./assets/images/device-orientation-y.png)
 
-![h-300](./assets/images/device-orientation-x.jpg)
+![h-300](./assets/images/device-orientation-x.png)
 
 </div>
 
@@ -811,12 +847,34 @@ Se fait à plat !
 Notes:
 Subtilité : ça marche mieux si le téléphone est a plat
 
-
 ##==##
+
+<!-- .slide: data-type-show="prez" data-state="stop-code-orientation" -->
+
 
 ## Device Orientation
 
-<br>
+<div>
+
+![h-300](./assets/images/device-orientation-z.png)
+
+![h-300](./assets/images/device-orientation-y.png)
+
+![h-300](./assets/images/device-orientation-x.png)
+
+</div>
+
+
+
+Notes:
+Subtilité : ça marche mieux si le téléphone est a plat
+
+
+##==##
+
+<!-- .slide: class="with-code" data-background="#3f3f3f"  data-state="code-orientation" -->
+
+## Device Orientation
 
 ```javascript
 if(window.DeviceOrientationEvent) {
@@ -833,20 +891,22 @@ function process(event) {
 }
 ```
 
+<div id="highlight-orientation" class="highlight-code"></div>  
 
+<div class="fragment" data-fragment-index="1" hidden></div>
 
 Notes:
 Subtilité : ça marche mieux si le téléphone est a plat
 
 
 ##==##
-<!-- .slide: data-state="stop-orientation" -->
+<!-- .slide: data-state="stop-orientation stop-code-orientation" -->
 
 ## Orientation
 
 ### Cas Pratique
 
-![center w-600](./assets/images/combination-lock-icon.jpg)
+![center w-600](./assets/images/combination-lock-icon.png)
 
 
 ##==##
@@ -876,8 +936,6 @@ Subtilité : ça marche mieux si le téléphone est a plat
 
 ##==##
 <!-- .slide: data-state="stop-orientation"-->
-
-## Compatibilité
 
 <div class="compat">
   <div class="chrome">
@@ -924,13 +982,15 @@ Subtilité : ça marche mieux si le téléphone est a plat
 
 # Device Motion API
 
-![icon](./assets/images/device_motion.jpg)
+![icon](./assets/images/device-axes.png)
 
 ##==##
 
+<!-- .slide: data-type-show="full" -->
+
 ## Device Motion API
 
-![center w-800](./assets/images/device_motion.jpg)
+![center w-800](./assets/images/device_motion.png)
 
 On peut tenir comptes de l'accélération classique ou avec prise en charge de la gravité !
 
@@ -938,14 +998,24 @@ On peut tenir comptes de l'accélération classique ou avec prise en charge de l
 
 Notes:
 
+##==##
+
+<!-- .slide: data-type-show="prez" data-state="stop-code-motion" -->
+
+## Device Motion API
+
+![center w-800](./assets/images/device_motion.png)
+
+
+Notes:
+On peut tenir comptes de l'accélération classique ou avec prise en charge de la gravité !
 
 
 ##==##
 
+<!-- .slide: class="with-code" data-background="#3f3f3f"  data-state="code-motion" -->
+
 ## Device Motion API
-
-
-On s'intéresse à l'accélération x
 
 
 ```javascript
@@ -963,17 +1033,20 @@ function register(){
 }
 ```
 
+<div id="highlight-motion" class="highlight-code"></div>  
+
+<div class="fragment" data-fragment-index="1" hidden></div>
 
 
 ##==##
 
-<!-- .slide: data-state="stop-devicemotion" -->
+<!-- .slide: data-state="stop-devicemotion stop-code-motion" -->
 
 ## Device Orientation
 
 ### Cas pratique
 
-![center w-800](./assets/images/chargebatterylonger.jpg)
+![center w-800](./assets/images/chargebatterylonger.png)
 
 
 
@@ -1005,8 +1078,6 @@ function register(){
 
 ##==##
 <!-- .slide: data-state="stop-devicemotion"-->
-
-## Compatibilité
 
 <div class="compat">
   <div class="chrome">
@@ -1059,6 +1130,9 @@ function register(){
 
 ##==##
 
+<!-- .slide: data-type-show="full" data-state="stop-code-battery" -->
+
+
 ## Battery Status
 
 
@@ -1066,7 +1140,14 @@ function register(){
 
 * Téléphone branché ou non
 
-<br>
+[Documentation](https://developer.mozilla.org/fr/docs/Web/API/Battery_status_API)
+
+##==##
+
+<!-- .slide: class="with-code" data-background="#3f3f3f"  data-state="code-battery"  -->
+
+## Battery Status
+
 
 ```javascript
 var battery = navigator.battery || navigator.mozBattery 
@@ -1074,23 +1155,22 @@ var battery = navigator.battery || navigator.mozBattery
 
 function updateBatteryStatus() {
   console.log("Batterie chargée à : " + battery.level * 100 + " %");
-
   if (battery.charging) {
     console.log("Chargement de la batterie"); 
   }
 }
-
 battery.addEventListener("chargingchange", updateBatteryStatus);
 battery.addEventListener("levelchange", updateBatteryStatus);
 updateBatteryStatus();
 ```
 
-[Documentation](https://developer.mozilla.org/fr/docs/Web/API/Battery_status_API)
+<div id="highlight-battery" class="highlight-code"></div>  
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
 
 ##==##
-<!-- .slide: data-state="stop-devicemotion"-->
-
-## Compatibilité
+<!-- .slide: data-state="stop-devicemotion stop-code-battery"-->
 
 <div class="compat">
   <div class="chrome">
@@ -1144,6 +1224,7 @@ updateBatteryStatus();
 
 ##==##
 
+<!-- .slide: data-type-show="full" -->
 
 ## Light
 
@@ -1156,6 +1237,13 @@ updateBatteryStatus();
  * Gestion par valeur (lux)
  * Gestion par états : Dim / Normal / Bright
 
+[Documentation](https://developer.mozilla.org/en-US/docs/Web/API/Ambient_Light_Events)
+
+##==##
+
+<!-- .slide: class="with-code" data-background="#3f3f3f" -->
+
+## Light
 
 ```javascript
 var deviceLightHandler = function(event) {
@@ -1165,7 +1253,13 @@ var deviceLightHandler = function(event) {
 window.addEventListener('devicelight', deviceLightHandler, false);
 ```
 
-[Documentation](https://developer.mozilla.org/en-US/docs/Web/API/Ambient_Light_Events)
+Notes:
+* Renvoie des valeurs entre 0 et > 1000 (0 étant sombre)
+* Est dépendant du téléphone et de l’implémentation
+* On a 2 façon de faire =>
+ * Gestion par valeur (lux)
+ * Gestion par états : Dim / Normal / Bright
+
 
 ##==##
 
@@ -1176,7 +1270,6 @@ window.addEventListener('devicelight', deviceLightHandler, false);
 ### Cas pratique
 
 ![center w-400](./assets/images/Hanging_Bulb.jpg)
-
 
 
 ##==##
@@ -1194,8 +1287,6 @@ window.addEventListener('devicelight', deviceLightHandler, false);
 
 ##==##
 <!-- .slide: data-state="stop-light"-->
-
-## Compatibilité
 
 <div class="compat">
   <div class="chrome">
@@ -1246,9 +1337,11 @@ window.addEventListener('devicelight', deviceLightHandler, false);
 
 # User Media
 
-![icon](./assets/images/camera_icon.jpg)
+![icon](./assets/images/camera_icon.png)
 
 ##==##
+
+<!-- .slide: data-type-show="full" -->
 
 ## User Media
 
@@ -1256,6 +1349,15 @@ window.addEventListener('devicelight', deviceLightHandler, false);
 
 * Possibilité de préciser ce qu'on récupère et on peut séparer les flux ! 
 * Sélection de la source / Récupération de l'audio
+* Devient intéressant s'il est mixé avec des effets ou des canvas.
+* **HTTPS** only ! 
+* 2 versions l'api
+
+##==##
+
+<!-- .slide: class="with-code" data-background="#3f3f3f" -->
+
+## User Media
 
 ```javascript
 var vgaConstraints = {
@@ -1268,11 +1370,17 @@ var vgaConstraints = {
 };
 ```
 
+Notes:
+* Encore dépendant des navigateurs !
+* Possibilité de préciser ce qu'on récupère et on peut séparer les flux ! 
+* Sélection de la source / Récupération de l'audio
 * Devient intéressant s'il est mixé avec des effets ou des canvas.
 * **HTTPS** only ! 
 * 2 versions l'api
 
 ##==##
+
+<!-- .slide: data-type-show="full" data-state="stop-code-user-media-v1"  -->
 
 ## User Media
 
@@ -1283,44 +1391,56 @@ var vgaConstraints = {
 
 Notes:
 
+##==##
+
+<!-- .slide:  class="transition-white"  data-type-show="prez" data-state="stop-code-user-media-v1" -->
+
+# 2 Versions !
+
+
+Notes:
+* V1 approche événementielle
+* V2 approche avec des promises et simplifie le fonctionnement de récupération des objets associés (plus récent => moins de compatibilité)
 
 
 ##==##
 
-## User Media
+<!-- .slide: class="with-code" data-background="#3f3f3f"  data-state="code-user-media-v1" -->
 
-### V1
+## User Media - V1
+
 
 ```javascript
 // We define the video constraints
 var constraints = {video: true};
-
 // We manage an error while getting the stream
 function handleUserMediaError(error){
   console.log('navigator.getUserMedia error: ', error);
 }
-
 // We manage the success of getting the stream
 function handleUserMedia(stream){
   localStream = stream;
   video.src = window.URL.createObjectURL(stream);
   video.play();
 }
-
 navigator.getUserMedia(constraints, handleUserMedia, handleUserMediaError);
-
 ```
 
+<div id="highlight-user-media-v1" class="highlight-code"></div>  
 
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+<div class="fragment" data-fragment-index="4" hidden></div>
 
 ##==##
 
-## User Media
+<!-- .slide: class="with-code" data-background="#3f3f3f"  data-state="stop-code-user-media-v1" -->
 
-### V2
+## User Media - V2
 
-<pre class="javascript"><code class='toHilight'>
-<mark class="dilluate">// We define the video constraints
+```javascript
+// We define the video constraints
 var constraints = {video: true};
 // We manage an error while getting the stream
 function handleUserMediaError(error){
@@ -1328,19 +1448,18 @@ function handleUserMediaError(error){
 }
 // We manage the success of getting the stream
 function handleUserMedia(stream){
-  localStream = stream;
-  video.src = window.URL.createObjectURL(stream);</mark>
-  video.onloadedmetadata = function(e){
-    video.play();
-  }<mark class="dilluate">
+  video.src = window.URL.createObjectURL(stream);
+  video.onloadedmetadata = (e)=>video.play();
 }
-</mark>navigator.mediaDevices.getUserMedia(constraints)
-  .then(handleUserMedia).catch(handleUserMediaError);</code></pre>
+navigator.mediaDevices.getUserMedia(constraints)
+  .then(handleUserMedia).catch(handleUserMediaError);
+```
 
-Toujours besoin de adapter.js pour faire marcher correctement ! 
-
+<div id="highlight-user-media-v2" class="highlight-code"></div>  
+<div id="highlight-user-media-v2-2" class="highlight-code"></div>  
 
 Notes:
+Toujours besoin de adapter.js pour faire marcher correctement ! 
 
 
 
@@ -1371,8 +1490,6 @@ Notes:
 
 ##==##
 <!-- .slide: data-state="stop-usermedia"-->
-
-## Compatibilité
 
 <div class="compat">
   <div class="chrome">
@@ -1420,13 +1537,15 @@ Notes:
 //                                          |___/ 
 -->
 
-<!-- .slide: class="transition-black" -->
+<!-- .slide: class="transition-black" data-state="stop-code-device-proximity" -->
 
 # Proximity
 
-![icon](./assets/images/proximity.jpg)
+![icon](./assets/images/proximity.png)
 
 ##==##
+
+<!-- .slide: data-type-show="full" data-state="stop-code-device-proximity" -->
 
 ## Proximity
 
@@ -1436,7 +1555,12 @@ Firefox uniquement !
 
 * Renvoie des valeurs entre 0 et 5 (0 étant proche)
 
-<br>
+
+##==##
+
+<!-- .slide: class="with-code" data-background="#3f3f3f" data-state="code-device-proximity stop-code-user-proximity" -->
+
+## Proximity - Device Proximity
 
 
 ```javascript
@@ -1453,7 +1577,17 @@ function unregister(){
 }
 ```
 
+<div id="highlight-device-proximity" class="highlight-code"></div>  
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+
+Notes:
+Firefox uniquement ! 
+* Renvoie des valeurs entre 0 et 5 (0 étant proche)
+
 ##==##
+
+<!-- .slide: data-type-show="full" data-state="stop-code-device-proximity stop-code-user-proximity" -->
 
 ## Proximity
 
@@ -1463,7 +1597,13 @@ Firefox uniquement !
 
 * Renvoie des valeurs entre true à l'attribut near
 
-<br>
+[Documentation complète](https://developer.mozilla.org/fr/docs/WebAPI/Proximity)
+
+##==##
+
+<!-- .slide: class="with-code" data-background="#3f3f3f" data-state="stop-code-device-proximity code-user-proximity"  -->
+
+## Proximity - User Proximity
 
 ```javascript
 var userProximityHandler = function(event) {
@@ -1481,11 +1621,17 @@ function unregister(){
 }
 ```
 
-[Documentation complète](https://developer.mozilla.org/fr/docs/WebAPI/Proximity)
+<div id="highlight-user-proximity" class="highlight-code"></div>  
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+
+Notes:
+Firefox uniquement ! 
+* Renvoie des valeurs entre true à l'attribut near
 
 ##==##
 
-## Compatibilité
+<!-- .slide: data-state="stop-code-user-proximity" -->
 
 <div class="compat">
   <div class="chrome">
@@ -1538,15 +1684,10 @@ function unregister(){
 
 ##==##
 
+<!-- .slide: data-type-show="full" -->
+
 ## Web Speech
 
-* Un tag existe pour gagner en code 
-
-<br>
-
-```html
-<input x-webkit-speech>
-```
 
 * Il reste plus intéressant d'utiliser la librairie Javascript
 
@@ -1558,9 +1699,9 @@ function unregister(){
 
 ##==## 
 
-## Web Speech
+<!-- .slide: class="with-code" data-background="#3f3f3f"  -->
 
-### Utilisation 
+## Web Speech - Utilisation 
 
 ```javascript
 var recognition = new webkitSpeechRecognition();
@@ -1578,14 +1719,12 @@ recognition.onresult = function(event) {
 
 ##==##
 
-## Web Speech
+<!-- .slide: class="with-code" data-background="#3f3f3f"  -->
 
-### Grammar
-
-Afin d'améliorer la reconnaissance des textes, il est possible de définir une grammaire
+## Web Speech - Grammar
 
 ```javascript
-var grammar = '#JSGF V1.0; grammar colors; public <color> = aqua | azure | beige | bisque | black | [LOTS MORE COLOURS] ;'
+var grammar = '#JSGF V1.0; grammar colors; public <color> = aqua | [MORE COLOURS] ;'
 var recognition = new SpeechRecognition();
 var speechRecognitionList = new SpeechGrammarList();
 speechRecognitionList.addFromString(grammar, 1);
@@ -1597,11 +1736,9 @@ recognition.maxAlternatives = 1;
 ```
 
 ##==##
-<!-- .slide: data-state="stop-webspeech" -->
+<!-- .slide: data-state="stop-webspeech" class="with-code" data-background="#3f3f3f" -->
 
 ## Web Speech Synthesis
-
-### Les possibilités d’accessibilités disponibles directement dans une page web
 
 ```javascript
 var synth = window.speechSynthesis;
@@ -1626,8 +1763,6 @@ synth.speak(utterThis);
 
 ##==##
 <!-- .slide: data-state="stop-webspeech"-->
-
-## Compatibilité
 
 <div class="compat">
   <div class="chrome">
@@ -1660,11 +1795,13 @@ synth.speak(utterThis);
 
 ##==##
 
-<!-- .slide: data-background="./assets/images/inception_not_sensor_full.jpg" class="transition" -->
+<!-- .slide: data-background="./assets/images/inception_not_sensor_full.jpg" class="transition no-filter" -->
 
 
 
 ##==##
+
+<!-- .slide: data-type-show="full" -->
 
 ## Notification
 
@@ -1682,9 +1819,21 @@ synth.speak(utterThis);
 
 ##==##
 
-## Notification
+<!-- .slide: data-type-show="prez" class="transition-white" -->
 
-### Utilisation
+# Notification
+
+Notes:
+* Possibilité d'envoyer des notification à l'utilisateur même si la page n'est pas au premier plan ! 
+* A besoin d'autorisations pour fonctionner
+* Maintenant basé sur les services workers pour des histoires de d'activités
+* A coupler avec la PushAPI ;)
+
+##==##
+
+<!-- .slide: class="with-code" data-background="#3f3f3f" -->
+
+## Notification - Utilisation
 
 ```javascript
 function showNotification() {
@@ -1704,8 +1853,6 @@ function showNotification() {
 ```
 
 ##==##
-
-## Compatibilité
 
 <div class="compat">
   <div class="chrome">
@@ -1738,7 +1885,7 @@ function showNotification() {
 
 ##==##
 
-<!-- .slide: data-background="./assets/images/inception_offline_full.jpg" class="transition" data-state="quit-question"-->
+<!-- .slide: data-background="./assets/images/inception_offline_full.jpg" class="transition no-filter" data-state="quit-question"-->
 
 
 
@@ -1796,8 +1943,6 @@ if (typeof document.addEventListener != "undefined" &&
 
 ##==##
 
-## Compatibilité
-
 <div class="compat">
   <div class="chrome">
     <div class="desktop">33+</div>
@@ -1830,7 +1975,7 @@ if (typeof document.addEventListener != "undefined" &&
 
 ##==##
 
-<!-- .slide: data-background="./assets/images/inception_appmanifest_full.jpg" class="transition"-->
+<!-- .slide: data-background="./assets/images/inception_appmanifest_full.jpg" class="transition no-filter"-->
 
 
 ##==##
@@ -1880,8 +2025,6 @@ if (typeof document.addEventListener != "undefined" &&
 
 
 <!-- .slide: data-state="quit-question"-->
-
-## Compatibilité
 
 <div class="compat">
   <div class="chrome">
@@ -2049,12 +2192,12 @@ if (typeof document.addEventListener != "undefined" &&
 
 ##==## 
 
-<!-- .slide: data-state="quit-question hidefooter" data-background="./assets/images/monthy_phython_graal.jpg" class="transition"-->
+<!-- .slide: data-state="quit-question hidefooter" data-background="./assets/images/monthy_phython_graal.jpg" class="transition" data-copyrights="true" -->
 
 # Conclusion
 
 
-<div class="copyright">Monthy Python</div>
+<div class="copyrights">Monthy Python</div>
 
 
 ##==##

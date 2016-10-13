@@ -25,3 +25,71 @@
 	top:180px;
 	left:100px;	
 }
+
+#highlight-read-charact{
+	width:700px;
+	top:90px;
+	left:60px;	
+}
+
+#highlight-write-charact{
+	width:650px;
+	top:90px;
+	left:60px;	
+}
+
+#highlight-vibrate{
+	width:350px;
+	top:calc(90px + 4.60em);
+	left:60px;	
+}
+
+#highlight-orientation{
+	width:850px;
+	top:calc(90px + 1.15em);
+	left:100px;	
+}
+
+#highlight-motion{
+	width:950px;
+	top:calc(90px + 11.50em);
+	left:100px;	
+}
+
+#highlight-battery{
+	width:950px;
+	top:90px;
+	left:60px;	
+	height:2.4em;
+}
+
+#highlight-user-media-v1{
+	width:500px;
+	top:calc(90px + 1.15em);
+	left:60px;	
+}
+
+#highlight-user-media-v2{
+	width: 600px;
+    top: calc(90px + 10.35em);
+    left: 100px;
+}
+
+#highlight-user-media-v2-2{
+	width: 750px;
+    top: calc(90px + 12.65em);
+    left: 60px;
+    height: 2.4em;
+}
+
+#highlight-device-proximity{
+	width: 1000px;
+    top: calc(90px + 5.75em);
+    left: 100px;
+}
+
+#highlight-user-proximity{
+	width: 1000px;
+    top: calc(90px + 8.05em);
+    left: 100px;
+}
