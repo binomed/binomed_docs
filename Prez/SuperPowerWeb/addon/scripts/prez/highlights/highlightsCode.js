@@ -48,10 +48,18 @@ function managementGeneric(idHighlightElt, startEvent, stopEvent, positionArray)
 	}
 
 	Reveal.addEventListener(startEvent, function(){
-		listenFragments();
+		try{
+			listenFragments();
+		}catch(e){
+			console.error(e);
+		}
 	});
 	Reveal.addEventListener(stopEvent, function(){
-		unregisterFragments();
+		try{
+			unregisterFragments();
+		}catch(e){
+			console.error(e);
+		}
 	});
 }
 
@@ -205,6 +213,107 @@ function init(){
 				'top' : 'calc(90px + 1.15em)',
 				'left' : '150px',
 				'width' : '150px'
+			}
+			]);
+
+	// Code Web Speech
+	managementGeneric('highlight-web-speech', 
+			'code-web-speech', 
+			'stop-code-web-speech',
+			[
+			{
+				'top' : 'calc(90px + 1.15em)',
+				'width' : '400px'
+			},
+			{
+				'top' : 'calc(90px + 2.30em)',
+				'width' : '500px'
+			},
+			{
+				'top' : 'calc(90px + 3.45em)',
+				'width' : '550px'			
+			},
+			{
+				'top' : 'calc(90px + 5.75em)',
+				'width' : '300px'			
+			},
+			{
+				'top' : 'calc(90px + 6.90em)',
+				'width' : '300px'
+			},
+			{
+				'top' : 'calc(90px + 8.05em)',				
+				'left' : '300px',
+				'width' : '450px'
+			}
+			]);
+
+	// Code Web Speech Grammar
+	managementGeneric('highlight-web-speech-grammar', 
+			'code-web-speech-grammar', 
+			'stop-code-web-speech-grammar',
+			[
+			{
+				'top' : 'calc(90px + 2.30em)',
+				'width' : '750px'
+			},
+			{
+				'top' : 'calc(90px + 3.45em)',
+				'width' : '700px'
+			},
+			{
+				'top' : 'calc(90px + 4.60em)',
+				'width' : '650px'
+			}
+			]);
+
+	// Code Web Speech Synthesis
+	managementGeneric('highlight-web-speech-synthesis', 
+			'code-web-speech-synthesis', 
+			'stop-code-web-speech-synthesis',
+			[
+			{
+				'top' : 'calc(90px + 2.30em)',
+				'width' : '850px'
+			},
+			{
+				'top' : 'calc(90px + 3.45em)',
+				'width' : '400px'
+			},
+			{
+				'top' : 'calc(90px + 4.60em)',
+				'width' : '450px'
+			},
+			{
+				'top' : 'calc(90px + 5.75em)',
+				'width' : '400px'
+			},
+			{
+				'top' : 'calc(90px + 6.90em)',
+				'width' : '350px'
+			}
+			]);
+
+	// Code Notifications
+	managementGeneric('highlight-notification', 
+			'code-notification', 
+			'stop-code-notification',
+			[
+			{
+				'top' : 'calc(90px + 2.30em)',
+				'width' : '350px',
+				'left' : '130px'
+			},
+			{
+				'top' : 'calc(90px + 3.45em)',
+				'width' : '800px',
+				'left' : '150px'
+			},
+			{
+				'top' : 'calc(90px + 4.60em)',
+				'width' : '800px',
+				'height': '5.5em',
+				'left' : '180px'
 			}
 			]);
 

@@ -143,15 +143,23 @@ function init(socket, socketLocal) {
     }
 
     Reveal.addEventListener('start-webspeech', function() {
-        voiceEnable = true;
+        try{
+            voiceEnable = true;
+        }catch(e){
+            console.error(e);
+        }
 
     });
 
     Reveal.addEventListener('stop-webspeech', function() {
-        voiceEnable = false;
-        if (recognition) {
-            recognition.stop();
-            eltMic.style.display = 'none';
+        try{            
+            voiceEnable = false;
+            if (recognition) {
+                recognition.stop();
+                eltMic.style.display = 'none';
+            }
+        }catch(e){
+            console.error(e);
         }
     });
 

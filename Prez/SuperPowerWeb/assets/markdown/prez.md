@@ -369,8 +369,6 @@ Bluetooth actif !
 
 ## Web Bluetooth
 
-### Un peu de vocabulaire ! 
-
 ![center](./assets/images/ble_hierarchy.jpg)
 
 Notes:
@@ -1676,7 +1674,7 @@ Firefox uniquement !
 //   
 -->
 
-<!-- .slide: class="transition-black" -->
+<!-- .slide: class="transition-black" data-state="stop-code-web-speech" -->
 
 # Web Speech API
 
@@ -1684,7 +1682,7 @@ Firefox uniquement !
 
 ##==##
 
-<!-- .slide: data-type-show="full" -->
+<!-- .slide: data-type-show="full" data-state="stop-code-web-speech" -->
 
 ## Web Speech
 
@@ -1699,12 +1697,12 @@ Firefox uniquement !
 
 ##==## 
 
-<!-- .slide: class="with-code" data-background="#3f3f3f"  -->
+<!-- .slide: class="with-code" data-background="#3f3f3f" data-state="code-web-speech stop-code-web-speech-gramar"  -->
 
 ## Web Speech - Utilisation 
 
 ```javascript
-var recognition = new webkitSpeechRecognition();
+var recognition = new SpeechRecognition();
 recognition.lang = voiceFR;
 recognition.continuous = true;
 recognition.interimResults = true;
@@ -1716,10 +1714,18 @@ recognition.onresult = function(event) {
 }
 ```
 
+<div id="highlight-web-speech" class="highlight-code"></div>  
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+<div class="fragment" data-fragment-index="4" hidden></div>
+<div class="fragment" data-fragment-index="5" hidden></div>
+<div class="fragment" data-fragment-index="6" hidden></div>
 
 ##==##
 
-<!-- .slide: class="with-code" data-background="#3f3f3f"  -->
+<!-- .slide: class="with-code" data-background="#3f3f3f" data-state="stop-code-web-speech code-web-speech-grammar stop-code-web-speech-synthesis" -->
 
 ## Web Speech - Grammar
 
@@ -1735,8 +1741,17 @@ recognition.interimResults = false;
 recognition.maxAlternatives = 1;
 ```
 
+
+<div id="highlight-web-speech-grammar" class="highlight-code"></div>  
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+
+
 ##==##
-<!-- .slide: data-state="stop-webspeech" class="with-code" data-background="#3f3f3f" -->
+
+<!-- .slide: data-state="stop-code-web-speech-grammar code-web-speech-synthesis stop-webspeech" class="with-code" data-background="#3f3f3f" -->
 
 ## Web Speech Synthesis
 
@@ -1750,9 +1765,18 @@ utterThis.rate = rate.value;
 synth.speak(utterThis);
 ```
 
+
+<div id="highlight-web-speech-synthesis" class="highlight-code"></div>  
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+<div class="fragment" data-fragment-index="4" hidden></div>
+<div class="fragment" data-fragment-index="5" hidden></div>
+
 ##==##
 
-<!-- .slide: data-background="#3d4349" class="transition" data-state="start-webspeech"-->
+<!-- .slide: data-background="#3d4349" class="transition" data-state="start-webspeech stop-code-web-speech-synhtesis"-->
 
 ![center h-600](./assets/images/demo_time.jpg)
 
@@ -1801,7 +1825,7 @@ synth.speak(utterThis);
 
 ##==##
 
-<!-- .slide: data-type-show="full" -->
+<!-- .slide: data-type-show="full" data-state="stop-code-notification"  -->
 
 ## Notification
 
@@ -1819,7 +1843,7 @@ synth.speak(utterThis);
 
 ##==##
 
-<!-- .slide: data-type-show="prez" class="transition-white" -->
+<!-- .slide: data-type-show="prez" class="transition-white" data-state="stop-code-notification" -->
 
 # Notification
 
@@ -1831,7 +1855,7 @@ Notes:
 
 ##==##
 
-<!-- .slide: class="with-code" data-background="#3f3f3f" -->
+<!-- .slide: class="with-code" data-background="#3f3f3f" data-state="code-notification" -->
 
 ## Notification - Utilisation
 
@@ -1848,11 +1872,24 @@ function showNotification() {
         });
       });
     }
-  });
-}
+  }); }
 ```
 
+<div id="highlight-notification" class="highlight-code"></div>  
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+
+Notes:
+Ici c'est un exemple de webPush Notification ! 
+On peut aussi avoir des actions associées ! genre yes / no ....
+On ajoute sur la notification 
+
+
 ##==##
+
+<!-- .slide: data-state="stop-code-notification"-->
 
 <div class="compat">
   <div class="chrome">
@@ -1891,6 +1928,8 @@ function showNotification() {
 
 ##==##
 
+<!-- .slide: data-type-show="full"-->
+
 ## Gestion du offline
 
 ### Pleins d'outils à notre disposition
@@ -1909,24 +1948,56 @@ function showNotification() {
 
 * Le remplaçant de l'appCache => [Service Workers](https://developer.mozilla.org/fr/docs/Web/API/Service_Worker_API) !! 
 
+##==##
+
+<!-- .slide: data-type-show="prez" class="transition-black" -->
+
+# Gestion du offline
+
+![icon](./assets/images/html5-local-storage.png)
+
+##==##
+
+<!-- .slide: data-type-show="prez" class="transition-white" -->
+
+# LocalStorage <br> SessionStorage
+
+##==##
+
+<!-- .slide: data-type-show="prez" class="transition-white" -->
+
+# IndexDB
+
+##==##
+
+<!-- .slide: data-type-show="prez" class="transition-white" -->
+
+# AppCache
+
+##==##
+
+<!-- .slide: data-type-show="prez" class="transition-white" -->
+
+# Service Workers
 
 ##==## 
+
+<!-- .slide: data-type-show="full"-->
 
 ## Activité dans l'application ?
 
 * La [Page Visibility API](https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API) vous permet de gérer la visibilité de vos pages.
 
-<br>
+##==## 
+
+<!-- .slide: class="with-code" data-background="#3f3f3f" data-state="code-notification" -->
+
+## Page Visivility API
+
 
 ```javascript
-var hidden, visibilityChange; 
-if (typeof document.hidden !== "undefined") { and later support 
-  hidden = "hidden";
-  visibilityChange = "visibilitychange";
-} 
-
 function handleVisibilityChange() {
-  if (document[hidden]) {
+  if (document["hidden"]) {
     // Do some stuff, unconnect things
   } else {
     // Do some stuff, reconnect things
@@ -1934,12 +2005,12 @@ function handleVisibilityChange() {
 }
 
 if (typeof document.addEventListener != "undefined" && 
-  typeof document[hidden] != "undefined") {
-  // Handle page visibility change   
-  document.addEventListener(visibilityChange, handleVisibilityChange, false);
-  
+  typeof document["hidden"] != "undefined") {
+  document.addEventListener("visibilitychange", handleVisibilityChange, false);
 }
 ```
+
+<div id="highlight-visibility" class="highlight-code"></div>  
 
 ##==##
 
@@ -1980,6 +2051,8 @@ if (typeof document.addEventListener != "undefined" &&
 
 ##==##
 
+<!-- .slide: data-type-show="full" -->
+
 ## Web Manifest
 
 * Permet de spécifier des meta data sur l'application
@@ -1991,15 +2064,43 @@ if (typeof document.addEventListener != "undefined" &&
  * Présence de la barre de navigation 
  * ...
 
+[Documentation](https://developers.google.com/web/updates/2014/11/Support-for-installable-web-apps-with-webapp-manifest-in-chrome-38-for-Android)
+
 ##==##
 
-## Web Manifest
 
-### Utilisation
+<!-- .slide: data-background="./assets/images/web_manifest.jpg" class="transition" data-type-show="prez" -->
 
+# Web Manifest
+
+Notes:
+* Permet de spécifier des meta data sur l'application
+* Possibilité d'ajouter l'application sur le homescreen
+* Possibilité de définir des paramètres de lancement : 
+ * Plein écran 
+ * Url Spécifique au démarrage 
+ * Orientation
+ * Présence de la barre de navigation 
+ * ...
+
+
+##==##
+
+## Web Manifest - Utilisation
+
+<!-- .slide: class="with-code" data-background="#3f3f3f" data-state="" -->
+
+<!-- .element: class="big-code" -->
 ```html
-<link rel="manifest" href="/manifest.json">
+<link rel="manifest" 
+ href="/manifest.json">
 ```
+
+##==##
+
+## Web Manifest - Utilisation
+
+<!-- .slide: class="with-code" data-background="#3f3f3f" data-state="" -->
 
 ```json
 {
@@ -2013,12 +2114,9 @@ if (typeof document.addEventListener != "undefined" &&
     }
   ],
   "start_url": "/index.html",
-  "display": "standalone",
-  "orientation": "landscape"
+  "display": "standalone"
 }
 ```
-
-[Documentation](https://developers.google.com/web/updates/2014/11/Support-for-installable-web-apps-with-webapp-manifest-in-chrome-38-for-Android)
 
 
 ##==##
