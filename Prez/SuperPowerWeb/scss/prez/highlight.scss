@@ -1,4 +1,9 @@
 
+
+$left-first : 60px;
+$left-tab : 100px;
+$line-height : 1.15em;
+
 .highlight-code{
 	background-color: rgba(255,235,59,0.3);
 	height:1.4em;
@@ -11,7 +16,7 @@
 #highlight-connect-ble{
 	width:90%;
 	top:90px;
-	left:60px;	
+	left:$left-first;	
 }
 
 #highlight-connect-by-name{
@@ -23,50 +28,50 @@
 #highlight-connection{
 	width:400px;
 	top:180px;
-	left:100px;	
+	left:$left-tab;	
 }
 
 #highlight-read-charact{
 	width:700px;
 	top:90px;
-	left:60px;	
+	left:$left-first;	
 }
 
 #highlight-write-charact{
 	width:650px;
 	top:90px;
-	left:60px;	
+	left:$left-first;	
 }
 
 #highlight-vibrate{
 	width:350px;
-	top:calc(90px + 4.60em);
-	left:60px;	
+	top:calc(90px + (4 * #{$line-height});
+	left:$left-first;	
 }
 
 #highlight-orientation{
 	width:850px;
-	top:calc(90px + 1.15em);
-	left:100px;	
+	top:calc(90px + #{$line-height});
+	left:$left-tab;	
 }
 
 #highlight-motion{
 	width:950px;
-	top:calc(90px + 11.50em);
-	left:100px;	
+	top:calc(90px + (10 * #{$line-height}));
+	left:$left-tab;	
 }
 
 #highlight-battery{
 	width:950px;
 	top:90px;
-	left:60px;	
+	left:$left-first;	
 	height:2.4em;
 }
 
 #highlight-user-media-v1{
 	width:500px;
-	top:calc(90px + 1.15em);
-	left:60px;	
+	top:calc(90px + #{$line-height});
+	left:$left-first;	
 }
 
 #highlight-user-media-v2{

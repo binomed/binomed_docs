@@ -1,26 +1,26 @@
-<!-- .slide: data-background="./assets/images/super_hero_fotolia.png" data-state="hidefooter" class="transition first-slide no-filter" data-type-show="prez"  -->
+<!-- .slide: data-background="./assets/images/html5_cool.jpeg" data-state="hidefooter" class="transition first-slide" data-type-show="prez"  -->
 
 # Les nouveaux supers<br> pouvoirs du web
 
 ### 2016.10.20 Bdx.Io @ **Bordeaux**
 
-<div class="copyrights black">fotolia</div>
+<div class="copyrights white">kohaku Yoshida</div>
 
 ##==##
 
-<!-- .slide: data-background="./assets/images/super_hero_fotolia.png" data-state="hidefooter" class="transition first-slide no-filter" data-type-show="full"  -->
+<!-- .slide: data-background="./assets/images/html5_cool.jpeg" data-state="hidefooter" class="transition first-slide" data-type-show="full"  -->
 
 # Les nouveaux supers<br> pouvoirs du web
 
 ### 2016
 
-<div class="copyrights black">fotolia</div>
+<div class="copyrights white">kohaku Yoshida</div>
 
 ##==##
 
 <!-- .slide: class="who-am-i" data-state="quit-question" -->
 
-## Qui sommes nous ?
+## Qui suis-je ?
 
 ### Jean-François Garreau
 
@@ -46,11 +46,9 @@ Senior innovation developper & Community Manager
 
 ##==##
 
-<!-- .slide: data-background="./assets/images/HTML5_yellow_detail.jpg" data-state="hidefooter" class="transition" data-copyrights="true" -->
+<!-- .slide: class="transition-black"-->
 
 # Un combat vieux comme le monde
-
-<div class="copyrights white">from digital</div>
 
 
 ##==##
@@ -319,7 +317,7 @@ Bluetooth actif !
 
 ##==##
 
-<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="resp-question-1" data-type-prez="prez"-->
+<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="resp-question-1" data-type-show="prez"-->
 
 <div class="url_jeux binomed">https://goo.gl/7SQoYq</div>
 <div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
@@ -596,7 +594,7 @@ button.addEventListener('click', function() {
 
 ##==##
 
-<!-- .slide: data-background="#3d4349" class="transition"-->
+<!-- .slide: data-background="#3d4349" class="transition" data-type-show="prez"-->
 
 ![center h-600](./assets/images/demo_time.jpg)
 
@@ -659,7 +657,7 @@ button.addEventListener('click', function() {
 
 ##==##
 
-<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="quit-question"-->
+<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="quit-question" data-type-show="prez" -->
 
 <div class="url_jeux binomed">https://goo.gl/7SQoYq</div>
 <div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
@@ -672,7 +670,7 @@ button.addEventListener('click', function() {
 
 ##==##
 
-<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="question-2"-->
+<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="question-2" data-type-show="prez"  -->
 
 <div class="url_jeux binomed">https://goo.gl/7SQoYq</div>
 <div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
@@ -692,7 +690,7 @@ button.addEventListener('click', function() {
 
 ##==##
 
-<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="resp-question-2"-->
+<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="resp-question-2" data-type-show="prez"  -->
 
 <div class="url_jeux binomed">https://goo.gl/7SQoYq</div>
 <div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
@@ -898,7 +896,7 @@ Subtilité : ça marche mieux si le téléphone est a plat
 
 
 ##==##
-<!-- .slide: data-state="stop-orientation stop-code-orientation" -->
+<!-- .slide: data-state="stop-orientation stop-code-orientation" data-type-show="prez"   -->
 
 ## Orientation
 
@@ -908,7 +906,7 @@ Subtilité : ça marche mieux si le téléphone est a plat
 
 
 ##==##
-<!-- .slide: data-state="start-orientation" -->
+<!-- .slide: data-state="start-orientation" data-type-show="prez"   -->
 
 ## Orientation
 
@@ -933,7 +931,7 @@ Subtilité : ça marche mieux si le téléphone est a plat
 
 
 ##==##
-<!-- .slide: data-state="stop-orientation"-->
+<!-- .slide: data-state="stop-orientation stop-code-orientation"-->
 
 <div class="compat">
   <div class="chrome">
@@ -1038,7 +1036,7 @@ function register(){
 
 ##==##
 
-<!-- .slide: data-state="stop-devicemotion stop-code-motion" -->
+<!-- .slide: data-state="stop-devicemotion stop-code-motion" data-type-show="prez"  -->
 
 ## Device Orientation
 
@@ -1050,7 +1048,7 @@ function register(){
 
 ##==##
 
-<!-- .slide: data-state="start-devicemotion" -->
+<!-- .slide: data-state="start-devicemotion" data-type-show="prez"   -->
 
 ## DeviceMotion
 
@@ -1075,7 +1073,7 @@ function register(){
 </div>
 
 ##==##
-<!-- .slide: data-state="stop-devicemotion"-->
+<!-- .slide: data-state="stop-devicemotion stop-code-motion"-->
 
 <div class="compat">
   <div class="chrome">
@@ -1261,7 +1259,7 @@ Notes:
 
 ##==##
 
-<!-- .slide: data-state="stop-light" -->
+<!-- .slide: data-state="stop-light" data-type-show="prez"  -->
 
 ## Light
 
@@ -1272,7 +1270,7 @@ Notes:
 
 ##==##
 
-<!-- .slide: data-state="start-light" -->
+<!-- .slide: data-state="start-light" data-type-show="prez"  -->
 
 ## Light
 
@@ -1463,6 +1461,8 @@ Toujours besoin de adapter.js pour faire marcher correctement !
 
 ##==##
 
+<!-- .slide: data-type-show="prez"  -->
+
 ## User Media
 
 ### Cas pratique
@@ -1472,7 +1472,7 @@ Toujours besoin de adapter.js pour faire marcher correctement !
 
 
 ##==##
-<!-- .slide: data-state="start-usermedia" -->
+<!-- .slide: data-state="start-usermedia" data-type-show="prez"  -->
 
 ## User Media
 
@@ -1776,7 +1776,7 @@ synth.speak(utterThis);
 
 ##==##
 
-<!-- .slide: data-background="#3d4349" class="transition" data-state="start-webspeech stop-code-web-speech-synhtesis"-->
+<!-- .slide: data-background="#3d4349" class="transition" data-state="start-webspeech stop-code-web-speech-synhtesis" data-type-show="prez"  -->
 
 ![center h-600](./assets/images/demo_time.jpg)
 
@@ -1786,7 +1786,7 @@ synth.speak(utterThis);
 </div>
 
 ##==##
-<!-- .slide: data-state="stop-webspeech"-->
+<!-- .slide: data-state="stop-webspeech stop-web-speech-synthesis"-->
 
 <div class="compat">
   <div class="chrome">
@@ -1922,7 +1922,7 @@ On ajoute sur la notification
 
 ##==##
 
-<!-- .slide: data-background="./assets/images/inception_offline_full.jpg" class="transition no-filter" data-state="quit-question"-->
+<!-- .slide: data-background="./assets/images/inception_offline_full.jpg" class="transition no-filter" data-state="quit-question" data-type-show="prez"  -->
 
 
 
@@ -2122,7 +2122,7 @@ Notes:
 ##==##
 
 
-<!-- .slide: data-state="quit-question"-->
+<!-- .slide: data-state="quit-question" -->
 
 <div class="compat">
   <div class="chrome">
@@ -2155,7 +2155,7 @@ Notes:
 
 ##==##
 
-<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="quit-question"-->
+<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="quit-question" data-type-show="prez"  -->
 
 <div class="url_jeux binomed">https://goo.gl/7SQoYq</div>
 <div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
@@ -2167,7 +2167,7 @@ Notes:
 
 ##==##
 
-<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="question-3"-->
+<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="question-3" data-type-show="prez"  -->
 
 <div class="url_jeux binomed">https://goo.gl/7SQoYq</div>
 <div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
@@ -2187,7 +2187,7 @@ Notes:
 
 ##==##
 
-<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="resp-question-3"-->
+<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="resp-question-3" data-type-show="prez"  -->
 
 <div class="url_jeux binomed">https://goo.gl/7SQoYq</div>
 <div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
@@ -2209,19 +2209,12 @@ Notes:
 
 ##==##
 
-<!-- .slide: data-background="./assets/images/inception_more_full.jpg" class="transition" data-state="quit-question"-->
+<!-- .slide: data-background="./assets/images/inception_more_full.jpg" class="transition no-filter" data-state="quit-question"-->
 
 
 ##==##
 
-<!-- .slide: class="transition-black" -->
-
-# Tout le reste !
-
-![center h-500](./assets/images/buzz.jpg)
-
-
-##==##
+<!-- .slide: data-type-show="full" -->
 
 ## Ce qui arrive
 
@@ -2235,19 +2228,40 @@ Notes:
 
 * [WebNFC](http://w3c.github.io/web-nfc/index.html) :  Mise à disposition d'un lecteur NFC à utiliser sur téléphone
 
-<br>
+##==##
 
-* Web Bluetooth : prise en compte des devices non BLE
+<!-- .slide: data-type-show="prez" class="transition-white" -->
+
+# Web USB
+
+![icon](./assets/images/web_usb.png)
 
 ##==##
 
-<!-- .slide: data-background="./assets/images/casino.jpg" data-state="hidefooter" class="transition qui-veut-gagner" data-state="quit-question"-->
+<!-- .slide: data-type-show="prez" class="transition-white" -->
+
+# Sensors Génériques
+
+![icon](./assets/images/HTML5_Device_Access.png)
+
+##==##
+
+<!-- .slide: data-type-show="prez" class="transition-white" -->
+
+
+# WebNFC
+
+![icon](./assets/images/nfc_demo.png)
+
+##==##
+
+<!-- .slide: data-background="./assets/images/casino.jpg" data-state="hidefooter" class="transition qui-veut-gagner" data-state="quit-question" data-type-show="prez"  -->
 
 # Jouons encore un peu 
 
 ##==##
 
-<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="question-4"-->
+<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="question-4" data-type-show="prez"  -->
 
 <div class="url_jeux binomed">https://goo.gl/7SQoYq</div>
 <div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
@@ -2267,7 +2281,7 @@ Notes:
 
 ##==##
 
-<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="resp-question-4"-->
+<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="resp-question-4" data-type-show="prez"  -->
 
 <div class="url_jeux binomed">https://goo.gl/7SQoYq</div>
 <div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
@@ -2295,7 +2309,7 @@ Notes:
 # Conclusion
 
 
-<div class="copyrights">Monthy Python</div>
+<div class="copyrights white">Monthy Python</div>
 
 
 ##==##
@@ -2308,7 +2322,7 @@ Notes:
 
 <!-- .element: class="presenter" --> **Jean-François Garreau  **
 
-<!-- .element: class="work-rule" --> GDG Nantes Leader & Ingénieur SQLI  
+<!-- .element: class="work-rule" --> GDG Nantes Leader & Ingénieur Lucca  
 
 <!-- .element: class="email" --> **jef**@gdgnantes.com  
 
