@@ -150,7 +150,7 @@ function init(socketToSet){
     if (location.host && location.host.indexOf('localhost') === -1){
     	protocol = 'https';
     	scheme = '://';
-    	basicHost = 'binomed.fr:8000';
+    	basicHost = 'binomed.fr:8443';
     }
 
 	let myRequest = new Request(`${protocol}${scheme}${basicHost}/currentState`,myInit);
