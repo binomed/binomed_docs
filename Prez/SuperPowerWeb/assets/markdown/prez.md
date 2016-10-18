@@ -68,7 +68,7 @@ Senior innovation developper & Community Manager
 
 <!-- .slide: class="flex-p" -->
 
-# Elles se croyaient au dessus de tout ! 
+# Elles se croyaient au-dessus de tout ! 
 
 
 ![h-300](./assets/images/irondroid.jpg)
@@ -182,7 +182,7 @@ Aujourd'hui : UID / URL / EID / TLM
  * Apparu en 2015 : [Projet Physical Web](https://google.github.io/physical-web/)
  * Basé sur Eddystone et plus précisément sur les [Eddystone-URL](https://github.com/google/eddystone/tree/master/eddystone-url)
  * S'utilise avec des devices BLE
- * A besoin d'une application détectant le physical Web (Chrome / Firefox)
+ * À besoin d'une application détectant le physical Web (Chrome / Firefox)
 
 Notes:
 Aujourd'hui : UID / URL / EID / TLM
@@ -220,7 +220,7 @@ Notes:
 ### Restrictions 
 
  * Site accessible sur l'internet mondial
- * L'url est limité par la norme eddystone => Il vaut mieux utiliser des shorts urls
+ * L'URL est limitée par la norme Eddystone => Il vaut mieux utiliser des shorts urls
 
 ##==##
 
@@ -255,17 +255,6 @@ Notes:
   </div>
 </div>
 
- ##==##
-
-<!-- .slide: data-type-show="prez" -->
-
-## Et si on jouait ?
-
-![h-400](./assets/images/Fil_rouge.jpg)
-
-Bluetooth actif !
-
-
 ##==##
 
 <!-- .slide: data-state="quit-question" data-type-show="prez" -->
@@ -291,7 +280,7 @@ Bluetooth actif !
 <div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
 
 <div class="qui-veut-gagner">
-    <div class="question"> Préparez vous</div>
+    <div class="question"> Préparez-vous</div>
 
 </div>
 
@@ -304,7 +293,7 @@ Bluetooth actif !
 
 
 <div class="qui-veut-gagner">
-    <div class="question two-line"> Grâce à quoi puis-je controler une balise bluetooth ? </div>
+    <div class="question two-line"> Grâce à quoi puis-je contrôler une balise bluetooth ? </div>
     <div class="row">
         <div class="resp repA"> IBeacon</div>
         <div class="resp repB"> Physical Web</div>
@@ -325,7 +314,7 @@ Bluetooth actif !
 
 <div class="qui-veut-gagner">
     <canvas id="chart_question_1" width="200" height="200" class="chart-resp"></canvas>
-   <div class="question two-line"> Grâce à quoi puis-je lancer une balise bluetooth ? </div>
+   <div class="question two-line"> Grâce à quoi puis-je contrôler une balise bluetooth ? </div>
     <div class="row">
         <div class="resp repA"> IBeacon</div>
         <div class="resp repB"> Physical Web</div>        
@@ -375,7 +364,7 @@ Notes:
 * Un device bluetooth expose plusieurs services
 * Chaque service expose plusieurs caractéristiques
 * Chaque caractéristique peut être lue / écrite / passée en mode notification (en fonction de sa configuration)
-* Chaque devices / services / caractéristiques sont identités par des uuid
+* Chaque devices / services / caractéristiques sont identifiés par des uuid
 
 ##==##
 
@@ -395,7 +384,7 @@ Notes:
 
 * Chaque caractéristique peut être lue / écrite / passée en mode notification (en fonction de sa configuration)
 
-* Chaque devices / services / caractéristiques sont identités par des uuid
+* Chaque devices / services / caractéristiques sont identifiés par des uuid
 
 ##==##
 
@@ -663,7 +652,7 @@ button.addEventListener('click', function() {
 <div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
 
 <div class="qui-veut-gagner">
-    <div class="question"> Préparez vous</div>
+    <div class="question"> Préparez-vous</div>
 
 </div>
 
@@ -988,7 +977,7 @@ Subtilité : ça marche mieux si le téléphone est a plat
 
 ![center w-800](./assets/images/device_motion.png)
 
-On peut tenir comptes de l'accélération classique ou avec prise en charge de la gravité !
+On peut tenir compte de l'accélération classique ou avec prise en charge de la gravité !
 
 [Documentation](https://developer.mozilla.org/fr/docs/Web/API/DeviceMotionEvent)
 
@@ -1004,7 +993,7 @@ Notes:
 
 
 Notes:
-On peut tenir comptes de l'accélération classique ou avec prise en charge de la gravité !
+On peut tenir compte de l'accélération classique ou avec prise en charge de la gravité !
 
 
 ##==##
@@ -1225,11 +1214,11 @@ updateBatteryStatus();
 ## Light
 
 
-* Renvoie des valeurs entre 0 et > 1000 (0 étant sombre)
+* Renvoi des valeurs entre 0 et > 1000 (0 étant sombre)
 
 * Est dépendant du téléphone et de l’implémentation
 
-* On a 2 façon de faire =>
+* On a 2 façons de faire =>
  * Gestion par valeur (lux)
  * Gestion par états : Dim / Normal / Bright
 
@@ -1250,9 +1239,9 @@ window.addEventListener('devicelight', deviceLightHandler, false);
 ```
 
 Notes:
-* Renvoie des valeurs entre 0 et > 1000 (0 étant sombre)
+* Renvoi des valeurs entre 0 et > 1000 (0 étant sombre)
 * Est dépendant du téléphone et de l’implémentation
-* On a 2 façon de faire =>
+* On a 2 façons de faire =>
  * Gestion par valeur (lux)
  * Gestion par états : Dim / Normal / Bright
 
@@ -1382,8 +1371,8 @@ Notes:
 
 ### Différence entre les 2 versions ?
 
-* V1 approche événementielle
-* V2 approche avec des promises et simplifie le fonctionnement de récupération des objets associés (plus récent => moins de compatibilité)
+* V1 : approche événementielle
+* V2 : approche avec des promises et simplifie le fonctionnement de récupération des objets associés (plus récent => moins de compatibilités)
 
 Notes:
 
@@ -1395,8 +1384,8 @@ Notes:
 
 
 Notes:
-* V1 approche événementielle
-* V2 approche avec des promises et simplifie le fonctionnement de récupération des objets associés (plus récent => moins de compatibilité)
+* V1 : approche événementielle
+* V2 : approche avec des promises et simplifie le fonctionnement de récupération des objets associés (plus récent => moins de compatibilités)
 
 
 ##==##
@@ -1690,7 +1679,7 @@ Firefox uniquement !
 * Il reste plus intéressant d'utiliser la librairie Javascript
 
 * Manque encore cependant de précision pour de la commande vocale => avoir des textes approximatifs de détection
-* Va de paire avec la synthèse vocale disponible aussi 
+* Va de pair avec la synthèse vocale disponible aussi 
 
 
 [Documentation complète](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API)
@@ -1829,13 +1818,13 @@ synth.speak(utterThis);
 
 ## Notification
 
-* Possibilité d'envoyer des notification à l'utilisateur même si la page n'est pas au premier plan ! 
+* Possibilité d'envoyer des notifications à l'utilisateur même si la page n'est pas au premier plan ! 
 
-* A besoin d'autorisations pour fonctionner
+* À besoin d'autorisations pour fonctionner
 
-* Maintenant basé sur les services workers pour des histoires de d'activités
+* Maintenant basé sur les services workers pour des histoires d'activités
 
-* A coupler avec la PushAPI ;)
+* À coupler avec la PushAPI ;)
 
 <br>
 
@@ -1848,10 +1837,10 @@ synth.speak(utterThis);
 # Notification
 
 Notes:
-* Possibilité d'envoyer des notification à l'utilisateur même si la page n'est pas au premier plan ! 
-* A besoin d'autorisations pour fonctionner
-* Maintenant basé sur les services workers pour des histoires de d'activités
-* A coupler avec la PushAPI ;)
+* Possibilité d'envoyer des notifications à l'utilisateur même si la page n'est pas au premier plan ! 
+* À besoin d'autorisations pour fonctionner
+* Maintenant basé sur les services workers pour des histoires d'activités
+* À coupler avec la PushAPI ;)
 
 ##==##
 
@@ -2055,11 +2044,11 @@ if (typeof document.addEventListener != "undefined" &&
 
 ## Web Manifest
 
-* Permet de spécifier des meta data sur l'application
+* Permets de spécifier des metas data sur l'application
 * Possibilité d'ajouter l'application sur le homescreen
 * Possibilité de définir des paramètres de lancement : 
  * Plein écran 
- * Url Spécifique au démarrage 
+ * URL Spécifique au démarrage 
  * Orientation
  * Présence de la barre de navigation 
  * ...
@@ -2074,11 +2063,11 @@ if (typeof document.addEventListener != "undefined" &&
 # Web Manifest
 
 Notes:
-* Permet de spécifier des meta data sur l'application
+* Permets de spécifier des metas data sur l'application
 * Possibilité d'ajouter l'application sur le homescreen
 * Possibilité de définir des paramètres de lancement : 
  * Plein écran 
- * Url Spécifique au démarrage 
+ * URL Spécifique au démarrage 
  * Orientation
  * Présence de la barre de navigation 
  * ...
@@ -2161,7 +2150,7 @@ Notes:
 <div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
 
 <div class="qui-veut-gagner">
-    <div class="question"> Préparez vous</div>
+    <div class="question"> Préparez-vous</div>
 
 </div>
 
@@ -2222,11 +2211,11 @@ Notes:
 
 <br>
 
-* [Sensors Génériques](https://w3c.github.io/sensors/) : Ouverture de tous les types de sensors disponibles et pas encore présent => Refonte des apis actuelles 
+* [Sensors Génériques](https://w3c.github.io/sensors/) : Ouverture de tous les types de sensors disponibles et pas encore présent => Refonte des Apis actuelles 
 
 <br>
 
-* [WebNFC](http://w3c.github.io/web-nfc/index.html) :  Mise à disposition d'un lecteur NFC à utiliser sur téléphone
+* [WebNFC](http://w3c.github.io/web-nfc/index.html) :  Mise à disposition d'un lecteur NFC à utiliser sur le téléphone
 
 ##==##
 
@@ -2257,7 +2246,7 @@ Notes:
 
 <!-- .slide: data-background="./assets/images/casino.jpg" data-state="hidefooter" class="transition qui-veut-gagner" data-state="quit-question" data-type-show="prez"  -->
 
-# Jouons encore un peu 
+# Jouons <br> encore un peu 
 
 ##==##
 
