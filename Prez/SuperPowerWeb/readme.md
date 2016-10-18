@@ -41,7 +41,8 @@ export CHROME_DEVEL_SANDBOX="$PWD/chrome_sandbox"
 ```
 
 Urls de jeux : 
-* binomed url => http://goo.gl/iQiTvZ
+* binomed url :8000 => http://goo.gl/iQiTvZ
+* binomed url :8443 => https://goo.gl/gsEF8b 
 * Raw git => https://goo.gl/Kp7Cyi
 
 

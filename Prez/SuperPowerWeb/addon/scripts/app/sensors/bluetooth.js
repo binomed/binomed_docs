@@ -91,7 +91,7 @@ function getCharacteristic(){
 	});
 }
 
-function processCharacteristic(type, data, callback){
+function processCharacteristic(type, data){
 	getCharacteristic()
 	.then(function(characteristic){
 		if (type === 'write'){			
@@ -100,22 +100,14 @@ function processCharacteristic(type, data, callback){
 		}
 	}).then(function(buffer){
 		if (type === 'write'){
-			if(callback){
-				callback({type: 'write', value : true});			
-			}
 			console.info("Write datas ! ");
 		}else{
 			let data = new DataView(buffer);
 		    let dataDecrypt = data.getUint8(0);
-		    callback({type: 'read' , value : dataDecrypt});
 		    console.log('ReceiveDatas %s', dataDecrypt);
 		}
 	}).catch(function(error){
-		console.error(error);
-		if (callback) {
-
-			callback({type : 'error', value : error});
-		}
+		console.error(error);		
 	});
 }
 
@@ -126,15 +118,9 @@ function processMotors(valueM1, valueM2){
 	}).then(()=>{
 		return characteristicGATT.writeValue(mbotApi.genericControl(mbotApi.TYPE_MOTOR, mbotApi.M_2, 0, valueM2));
 	}).then(()=>{
-		if(callback){
-			callback({type: 'write', value : true});			
-		}
 		console.info("Write datas ! ");
 	}).catch(error =>{
 		console.error(error);
-		if (callback) {
-			callback({type : 'error', value : error});
-		}
 	});
 }
 

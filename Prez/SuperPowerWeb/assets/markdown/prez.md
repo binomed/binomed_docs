@@ -278,7 +278,7 @@ Bluetooth actif !
 
 <br>
 
-<div class="url_jeux binomed grey">https://goo.gl/7SQoYq</div>
+<div class="url_jeux binomed grey">https://goo.gl/gsEF8b</div>
 <div class="url_jeux rawgit grey">https://goo.gl/Kp7Cyi</div>
 
 
@@ -287,7 +287,7 @@ Bluetooth actif !
 
 <!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="quit-question" data-type-show="prez"-->
 
-<div class="url_jeux binomed">https://goo.gl/7SQoYq</div>
+<div class="url_jeux binomed">https://goo.gl/gsEF8b</div>
 <div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
 
 <div class="qui-veut-gagner">
@@ -299,7 +299,7 @@ Bluetooth actif !
 
 <!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="question-1" data-type-show="prez"-->
 
-<div class="url_jeux binomed">https://goo.gl/7SQoYq</div>
+<div class="url_jeux binomed">https://goo.gl/gsEF8b</div>
 <div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
 
 
@@ -319,7 +319,7 @@ Bluetooth actif !
 
 <!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="resp-question-1" data-type-show="prez"-->
 
-<div class="url_jeux binomed">https://goo.gl/7SQoYq</div>
+<div class="url_jeux binomed">https://goo.gl/gsEF8b</div>
 <div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
 
 
@@ -659,7 +659,7 @@ button.addEventListener('click', function() {
 
 <!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="quit-question" data-type-show="prez" -->
 
-<div class="url_jeux binomed">https://goo.gl/7SQoYq</div>
+<div class="url_jeux binomed">https://goo.gl/gsEF8b</div>
 <div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
 
 <div class="qui-veut-gagner">
@@ -672,7 +672,7 @@ button.addEventListener('click', function() {
 
 <!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="question-2" data-type-show="prez"  -->
 
-<div class="url_jeux binomed">https://goo.gl/7SQoYq</div>
+<div class="url_jeux binomed">https://goo.gl/gsEF8b</div>
 <div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
 
 
@@ -692,7 +692,7 @@ button.addEventListener('click', function() {
 
 <!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="resp-question-2" data-type-show="prez"  -->
 
-<div class="url_jeux binomed">https://goo.gl/7SQoYq</div>
+<div class="url_jeux binomed">https://goo.gl/gsEF8b</div>
 <div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
 
 
@@ -2157,7 +2157,7 @@ Notes:
 
 <!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="quit-question" data-type-show="prez"  -->
 
-<div class="url_jeux binomed">https://goo.gl/7SQoYq</div>
+<div class="url_jeux binomed">https://goo.gl/gsEF8b</div>
 <div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
 
 <div class="qui-veut-gagner">
@@ -2169,7 +2169,7 @@ Notes:
 
 <!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="question-3" data-type-show="prez"  -->
 
-<div class="url_jeux binomed">https://goo.gl/7SQoYq</div>
+<div class="url_jeux binomed">https://goo.gl/gsEF8b</div>
 <div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
 
 
@@ -2189,7 +2189,7 @@ Notes:
 
 <!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="resp-question-3" data-type-show="prez"  -->
 
-<div class="url_jeux binomed">https://goo.gl/7SQoYq</div>
+<div class="url_jeux binomed">https://goo.gl/gsEF8b</div>
 <div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
 
 
@@ -2263,7 +2263,7 @@ Notes:
 
 <!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="question-4" data-type-show="prez"  -->
 
-<div class="url_jeux binomed">https://goo.gl/7SQoYq</div>
+<div class="url_jeux binomed">https://goo.gl/gsEF8b</div>
 <div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
 
 
@@ -2283,7 +2283,7 @@ Notes:
 
 <!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="resp-question-4" data-type-show="prez"  -->
 
-<div class="url_jeux binomed">https://goo.gl/7SQoYq</div>
+<div class="url_jeux binomed">https://goo.gl/gsEF8b</div>
 <div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
 
 
