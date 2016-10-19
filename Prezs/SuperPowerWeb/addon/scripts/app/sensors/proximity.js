@@ -37,7 +37,7 @@ function ProximityControler($mdDialog, ModelService, SocketService){
 			let address = model.getAddress();
 			let scheme = model.isSSL()  ? "https" : "http";
 			//window.location = `intent://10.33.44.181:3000/addon/index_app.html#Intent;scheme=${scheme};package=org.mozilla.firefox_beta;end`;
-			window.location = `intent://${address}/addon/index_app.html?proximity#Intent;scheme=${scheme};package=org.mozilla.firefox_beta;end`;
+			window.open(`intent://${address}/addon/index_app.html?proximity#Intent;scheme=${scheme};package=org.mozilla.firefox_beta;end`);
 		}
 	}
 

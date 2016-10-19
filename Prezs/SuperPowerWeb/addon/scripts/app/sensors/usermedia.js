@@ -9,11 +9,18 @@ var socket = null,
  
 
 function gotDevices(deviceInfos) {
+  var tempVideoSource = null;
   deviceInfos.forEach(function(device){
-    if (device.kind === 'videoinput' && device.label.indexOf('back') != 0){
-      videoSource = device.deviceId;
+    if (device.kind === 'videoinput'){
+      tempVideoSource = device.deviceId;
+      if( device.label.indexOf('back') != 0){
+        videoSource = device.deviceId;
+      }
     }
-  });  
+  });
+  if (videoSource === null){
+    videoSource = tempVideoSource;
+  }  
 }
 
 navigator.mediaDevices.enumerateDevices()

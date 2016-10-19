@@ -1,29 +1,35 @@
 'use strict'
 
 let usermediaEnable = false,
-	usermediaElt = null;
+    usermediaElt = null;
 
 
 
-function init(socket){
+function init(socket, socketLocal) {
 
-	socket.on('sensor', function(msg){
-		if (usermediaEnable && msg.type === 'usermedia'){
-			document.getElementById('photoStream').setAttribute('src', msg.value);
-		}
-	});
-	usermediaElt = document.querySelector('.usermedia-bg');
+    function callBackSensor(msg) {
+        if (usermediaEnable && msg.type === 'usermedia') {
+            document.getElementById('photoStream').setAttribute('src', msg.value);
+        }
+    }
 
-	Reveal.addEventListener( 'start-usermedia', function(){
-		usermediaEnable = true;
-	});
+    socket.on('sensor', callBackSensor);
 
-	Reveal.addEventListener( 'stop-usermedia', function(){
-		usermediaEnable = false;
-	});
+    if (socketLocal) {
+        socketLocal.on('sensor', callBackSensor);
+    }
+    usermediaElt = document.querySelector('.usermedia-bg');
+
+    Reveal.addEventListener('start-usermedia', function() {
+        usermediaEnable = true;
+    });
+
+    Reveal.addEventListener('stop-usermedia', function() {
+        usermediaEnable = false;
+    });
 
 }
 
 module.exports = {
-	init : init
+    init: init
 }

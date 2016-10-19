@@ -21,7 +21,7 @@ function calculateAddress(){
 	    if (location.host && location.host.indexOf('localhost') === -1){
 	    	protocol = 'https';
 	    	scheme = '://';
-	    	basicHost = 'binomed.fr:8000';
+	    	basicHost = 'binomed.fr:8443';
 	    }
 
 		let myRequest = new Request(`${protocol}${scheme}${basicHost}/ip`,myInit);
@@ -32,24 +32,28 @@ function calculateAddress(){
 		.then(function(json){
 			let network = json;
 
-			if (location.port && (location.port === "3000")){
+			if ((location.port && (location.port === "3000"))
+             || location.hostname === 'localhost'){
 				let wlan0 = network.find(function(element){
 					return element.name === 'wlan0';
 				});
-				if (wlan0){
+				if (location.port === "8443"){
+					address = "localhost:8443";
+					ioAddress = "localhost:8443";
+                }else if (wlan0 && location.hostname != 'localhost'){
 					address = `${wlan0.ip}:3000`;
-					ioAddress = `${wlan0.ip}:8000`;
+					ioAddress = `${wlan0.ip}:8443`;
 				}else{
 					address = "localhost:3000";
-					ioAddress = "localhost:8000";
+					ioAddress = "localhost:8443";
 				}
-			}else if (location.port && location.port === "8000"){
-				address = "binomed.fr:8000";
-				ioAddress = "binomed.fr:8000";
+			}else if (location.port && location.port === "8443"){
+				address = "binomed.fr:8443";
+				ioAddress = "binomed.fr:8443";
 				ssl = true;
 			}else if (location.port && (location.port === "80" || location.port === "")){
-				address = "binomed.fr:8000";
-				ioAddress = "binomed.fr:8000";
+				address = "binomed.fr:8443";
+				ioAddress = "binomed.fr:8443";
 			}else{
 				address = null;
 			} 

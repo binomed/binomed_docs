@@ -29,31 +29,35 @@ Reveal.addEventListener( 'ready', function( event ) {
 	let inIFrame = window.top != window.self;
 	
     
-	if (!inIFrame && io && config.address){
+	if (!inIFrame && typeof(window.io) != 'undefined' && config.address){
         console.log("Go to condition !");
 		let socketGame = io.connect(config.address);
 		require('./game/prez_game').init(socketGame);
 		let socketPrez = null;
+		let socketPrezLocal = null;
 		if (config.local){
 			socketPrez = socketGame;   
 		}else{
 			socketPrez = io.connect(config.address);
+			socketPrezLocal = io.connect(config.addressLocal);
 		}
  
  		//setTimeout(function() {
              console.log("Before light");
-			require('./sensors/light').init(socketPrez);
+			require('./sensors/light').init(socketPrez, socketPrezLocal);
              console.log("Before Orientation");
-			require('./sensors/orientation').init(socketPrez);
+			require('./sensors/orientation').init(socketPrez, socketPrezLocal);
              console.log("Before DeviceMotion");
-			require('./sensors/devicemotion').init(socketPrez);
+			require('./sensors/devicemotion').init(socketPrez, socketPrezLocal);
              console.log("Before Voice");
-			require('./sensors/voice').init(socketPrez);
+			require('./sensors/voice').init(socketPrez, socketPrezLocal);
              console.log("Before UserMedia");
-			require('./sensors/usermedia').init(socketPrez);
+			require('./sensors/usermedia').init(socketPrez, socketPrezLocal);
  			
  		//}, 1000);
 	}	
+
+	require('./highlights/highlightsCode').init();
  
 	
 } );

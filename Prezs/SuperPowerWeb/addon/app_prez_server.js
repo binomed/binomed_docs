@@ -5,7 +5,7 @@ var server = require('./modules/server'),
 	networks = require('./modules/ips'),
 	game = require('./modules/game');
 
-const port = 8000;
+const port = 8443;
 
 var ip = networks.find(function(networkConf){
 	return networkConf.name === 'wlan0';

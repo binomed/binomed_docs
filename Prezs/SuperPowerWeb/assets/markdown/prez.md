@@ -1,27 +1,38 @@
-<!-- .slide: data-background="./assets/images/super_hero_fotolia.png" data-state="hidefooter" class="transition first-slide" -->
+<!-- .slide: data-background="./assets/images/html5_cool.jpeg" data-state="hidefooter" class="transition first-slide" data-type-show="prez"  -->
 
-# Les nouveaux supers pouvoirs du web
+# Les nouveaux supers<br> pouvoirs du web
 
-### 2016 
+### 2016.10.20 Bdx.Io @ **Bordeaux**
 
-<div class="copyright white">fotolia</div>
+<div class="copyrights white">kohaku Yoshida</div>
 
 ##==##
 
-<!-- .slide: class="who-am-i" data-state="quit-question"-->
+<!-- .slide: data-background="./assets/images/html5_cool.jpeg" data-state="hidefooter" class="transition first-slide" data-type-show="full"  -->
+
+# Les nouveaux supers<br> pouvoirs du web
+
+### 2016
+
+<div class="copyrights white">kohaku Yoshida</div>
+
+##==##
+
+<!-- .slide: class="who-am-i" data-state="quit-question" -->
 
 ## Qui suis-je ?
 
-### Jean-François GARREAU
+### Jean-François Garreau
+
 
 <!-- .element: class="descjf" -->
-IoT Manager, Senior innovation developer & Community Manager
+Senior innovation developper & Community Manager
 
-![avatar w-300 wp-200](./assets/images/jf.jpg)
+![avatar w-300 wp-200](assets/images/jf.jpg)
 
 
-![company_logo](./assets/images/sqli_logo.png)
-![gdg_logo](./assets/images/GDG-Logo-carre.png)
+![company_logo](assets/images/lucca_logo.png)
+![gdg_logo](assets/images/GDG-Logo-carre.png)
 
 <!-- .element: class="twitter" -->
 [@jefBinomed](http://twitter.com/jefBinomed)
@@ -31,26 +42,24 @@ IoT Manager, Senior innovation developer & Community Manager
 
 ##==##
 
-<!-- .slide: data-background="./assets/images/once-upon-a-time.jpg" data-state="hidefooter" class="transition"-->
+<!-- .slide: data-background="./assets/images/once-upon-a-time.jpg" data-state="hidefooter" class="transition no-filter"-->
 
 ##==##
 
-<!-- .slide: data-background="./assets/images/HTML5_yellow_detail.jpg" data-state="hidefooter" class="transition"-->
+<!-- .slide: class="transition-black"-->
 
 # Un combat vieux comme le monde
 
-<div class="copyright black">from digital</div>
-
 
 ##==##
-<!--  .slide: data-background="./assets/images/civil_war_full.jpg" class="transition"-->
+<!--  .slide: data-background="./assets/images/civil_war_full.jpg" class="transition no-filter"-->
 
 
 ##==##
 
 # Un combat inégal au début
 
-<br><br>
+<br>
 
 ![center](./assets/images/native-app-illustration_1x.jpg)
 
@@ -59,13 +68,13 @@ IoT Manager, Senior innovation developer & Community Manager
 
 <!-- .slide: class="flex-p" -->
 
-# Elles se croyaient au dessus de tout ! 
+# Elles se croyaient au-dessus de tout ! 
 
 
 ![h-300](./assets/images/irondroid.jpg)
 ![h-300](./assets/images/ironman-osx_240.jpg)
 
-<div class="copyright black">_IronDroid_, Jamie BiversProduct</div>
+<div class="copyrights black">_IronDroid_, Jamie BiversProduct</div>
 
 ##==##
 
@@ -77,11 +86,31 @@ IoT Manager, Senior innovation developer & Community Manager
 
 ##==##
 
-<!-- .slide: data-background="./assets/images/inception_webapp_full.jpg" class="transition"-->
+<!-- .slide: data-background="./assets/images/inception_webapp_full.jpg" class="transition no-filter"-->
 
 
 ##==##
 
+<!-- .slide: data-type-show="prez" -->
+
+## De quoi parle-t-on ?
+
+
+<!-- .element: class="fragment" -->
+Sensors
+
+<br>
+
+<!-- .element: class="fragment" -->
+Nouvelles API 
+ 
+Notes:
+Sensors : Geoloc/Gyroscope/...
+Nouvelles Possibilités : Offline / DB / Raccourcis
+
+##==##
+
+<!-- .slide: data-type-show="full" -->
 
 ## De quoi parle-t-on ?
 
@@ -121,10 +150,30 @@ IoT Manager, Senior innovation developer & Community Manager
 
 ##==##
 
-<!-- .slide: data-background="./assets/images/inception_physical_web_full.jpg" class="transition"-->
+<!-- .slide: data-background="./assets/images/inception_physical_web_full.jpg" class="transition no-filter"-->
 
 
 ##==## 
+
+<!-- .slide: data-type-show="prez" -->
+
+## Physical Web
+
+
+<!-- .element: class="fragment" -->
+Date de 2015
+
+<!-- .element: class="fragment" -->
+Basé sur Eddystone & le BLE
+ 
+Notes:
+A besoin d'un application native (PlayServices)
+Sur EddyStone URL
+Aujourd'hui : UID / URL / EID / TLM
+
+##==## 
+
+<!-- .slide: data-type-show="full" -->
 
 ## Physical Web
 
@@ -133,23 +182,49 @@ IoT Manager, Senior innovation developer & Community Manager
  * Apparu en 2015 : [Projet Physical Web](https://google.github.io/physical-web/)
  * Basé sur Eddystone et plus précisément sur les [Eddystone-URL](https://github.com/google/eddystone/tree/master/eddystone-url)
  * S'utilise avec des devices BLE
- * A besoin d'une application détectant le physical Web (Chrome / Firefox)
+ * À besoin d'une application détectant le physical Web (Chrome / Firefox)
+
+Notes:
+Aujourd'hui : UID / URL / EID / TLM
+
+ 
+##==## 
+
+## Physical Web
+
+### Pour quoi faire ?
+
+ ![center h-500](./assets/images/physical_web_use_case.png)
+
+Notes:
+cas décentralisé, cas centralisé, ... 
 
 ##==## 
+
+<!-- .slide: class="transition-white" data-type-show="prez" -->
+
+# Restrictions 
+
+![icon](./assets/images/partial_chrome_256x256.png)
+
+Notes:
+ * Site accessible sur l'internet mondial
+ * L'url est limité par la norme eddystone => Il vaut mieux utiliser des shorts urls
+
+##==## 
+
+<!-- .slide: data-type-show="full" -->
 
 ## Physical Web
 
 ### Restrictions 
 
  * Site accessible sur l'internet mondial
- * L'url est limité par la norme eddystone => Il vaut mieux utiliser des shorts urls
- * Avant BLE 4.1, le device doit changer de mode pour échanger avec le téléphone une fois la détection effectuée
- * Doit être activé dans chrome (chrome://flags)
+ * L'URL est limitée par la norme Eddystone => Il vaut mieux utiliser des shorts urls
 
 ##==##
 
 
-## Compatibilité
 
 <div class="compat">
   <div class="chrome">
@@ -180,7 +255,76 @@ IoT Manager, Senior innovation developer & Community Manager
   </div>
 </div>
 
- 
+##==##
+
+<!-- .slide: data-state="quit-question" data-type-show="prez" -->
+
+## Et si on jouait ?
+
+![h-400 binomed](./assets/images/qr_code_jeux_https.png)
+
+![h-400 rawgit](./assets/images/qr_code_jeux_rawgit.png)
+
+<br>
+
+<div class="url_jeux binomed grey">https://goo.gl/gsEF8b</div>
+<div class="url_jeux rawgit grey">https://goo.gl/Kp7Cyi</div>
+
+
+
+##==##
+
+<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="quit-question" data-type-show="prez"-->
+
+<div class="url_jeux binomed">https://goo.gl/gsEF8b</div>
+<div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
+
+<div class="qui-veut-gagner">
+    <div class="question"> Préparez-vous</div>
+
+</div>
+
+##==##
+
+<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="question-1" data-type-show="prez"-->
+
+<div class="url_jeux binomed">https://goo.gl/gsEF8b</div>
+<div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
+
+
+<div class="qui-veut-gagner">
+    <div class="question two-line"> Grâce à quoi puis-je contrôler une balise bluetooth ? </div>
+    <div class="row">
+        <div class="resp repA"> IBeacon</div>
+        <div class="resp repB"> Physical Web</div>
+    </div>
+    <div class="row">
+        <div class="resp repC"> WebBluetooth</div>
+        <div class="resp repD"> La réponse D</div>
+    </div>
+</div>
+
+##==##
+
+<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="resp-question-1" data-type-show="prez"-->
+
+<div class="url_jeux binomed">https://goo.gl/gsEF8b</div>
+<div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
+
+
+<div class="qui-veut-gagner">
+    <canvas id="chart_question_1" width="200" height="200" class="chart-resp"></canvas>
+   <div class="question two-line"> Grâce à quoi puis-je contrôler une balise bluetooth ? </div>
+    <div class="row">
+        <div class="resp repA"> IBeacon</div>
+        <div class="resp repB"> Physical Web</div>        
+    </div>
+    <div class="row">
+        <div class="resp repC good"> WebBluetooth</div>
+        <div class="resp repD"> La réponse D</div>     
+    </div>
+</div>
+
 ##==##
 
 <!--
@@ -194,7 +338,7 @@ IoT Manager, Senior innovation developer & Community Manager
 //                                                  
 -->     
 
-<!-- .slide: data-background="./assets/images/inception_bluetooth_full.jpg" class="transition" data-state="quit-question"-->
+<!-- .slide: data-background="./assets/images/inception_bluetooth_full.jpg" class="transition no-filter" data-state="quit-question"-->
 
 
 ##==##
@@ -207,6 +351,24 @@ IoT Manager, Senior innovation developer & Community Manager
 
 
 ##==##
+
+<!-- .slide: data-type-show="prez" -->
+
+## Web Bluetooth
+
+![center](./assets/images/ble_hierarchy.png)
+
+Notes:
+* * **GATT** : Generic Attribute Profile 
+* **ATT** : Attribute Protocol
+* Un device bluetooth expose plusieurs services
+* Chaque service expose plusieurs caractéristiques
+* Chaque caractéristique peut être lue / écrite / passée en mode notification (en fonction de sa configuration)
+* Chaque devices / services / caractéristiques sont identifiés par des uuid
+
+##==##
+
+<!-- .slide: data-type-show="full" -->
 
 ## Web Bluetooth
 
@@ -222,9 +384,39 @@ IoT Manager, Senior innovation developer & Community Manager
 
 * Chaque caractéristique peut être lue / écrite / passée en mode notification (en fonction de sa configuration)
 
-* Chaque devices / services / caractéristiques sont identités par des uuid
+* Chaque devices / services / caractéristiques sont identifiés par des uuid
 
 ##==##
+
+<!-- .slide: data-type-show="prez" -->
+
+## Utilisation
+
+![center](./assets/images/HTTPS_icon.png)
+
+##==##
+
+## Utilisation
+
+<!-- .slide: data-type-show="prez" -->
+
+![center h-500](./assets/images/Bluetooth.svg)
+
+##==##
+
+## Utilisation
+
+<!-- .slide: data-type-show="prez" data-state="stop-code-connect-ble" -->
+
+![center](./assets/images/flag_ble.png)
+
+Notes:
+* Accès à l'objet ```navigator.bluetooth```
+* Basé sur les promises
+
+##==##
+
+<!-- .slide: data-type-show="full" data-state="stop-code-connect-ble" -->
 
 ### Utilisation
 
@@ -239,7 +431,9 @@ IoT Manager, Senior innovation developer & Community Manager
 
 ##==##
 
-## Récupération par nom de service
+<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="code-connect-ble" -->
+
+## Connect
 
 ```javascript
 navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }] })
@@ -247,9 +441,18 @@ navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }]
 .catch(error => { console.log(error); });
 ```
 
+<div id="highlight-connect-ble" class="highlight-code"></div>  
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+
+Notes:
+Par service
+
 ##==##
 
-## Récupération par nom de device
+<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="stop-code-connect-ble" -->
+
+## Connect
 
 ```javascript
 navigator.bluetooth.requestDevice({ filters: [{ name: ['MyDevice'] }] })
@@ -257,7 +460,15 @@ navigator.bluetooth.requestDevice({ filters: [{ name: ['MyDevice'] }] })
 .catch(error => { console.log(error); });
 ```
 
+<div id="highlight-connect-by-name" class="highlight-code"></div>  
+
+
+Notes:
+Par nom
+
 ##==##
+
+<!-- .slide: class="with-code" data-background="#3f3f3f" data-state="stop-code-read-charact"-->
 
 ## Connexion à un device
 
@@ -269,58 +480,64 @@ navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }]
 .catch(error => { console.log(error); });
 ```
 
+<div id="highlight-connection" class="highlight-code"></div>  
 
 ##==##
+
+<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="stop-code-write-charact code-read-charact" -->
 
 ## Lecture d'une caractéristique
 
 ```javascript
-navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }] })
-.then(device => {
-  return device.gatt.connect();
-})
+device.gatt.getPrimaryService('battery_service')
 .then(service => {
   // Getting Battery Level Characteristic...
-  return service.getCharacteristic('battery_level');
-})
+  return service.getCharacteristic('battery_level');})
 .then(characteristic => {
   // Reading Battery Level...
-  return characteristic.readValue();
-})
+  return characteristic.readValue();})
 .then(value => {
   // In Chrome 50+, a DataView is returned instead of an ArrayBuffer.
   value = value.buffer ? value : new DataView(value);
-  console.log('Battery percentage is ' + value.getUint8(0));
-})
+  console.log('Battery percentage is ' + value.getUint8(0));})
 .catch(error => { console.log(error); });
 ```
 
+<div id="highlight-read-charact" class="highlight-code"></div>  
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
 
 ##==##
+
+<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="stop-code-read-charact code-write-charact" -->
 
 ## Écrire dans une caractéristique
 
 ```javascript
-navigator.bluetooth.requestDevice({ filters: [{ services: ['heart_rate'] }] })
-.then(device => device.gatt.connect())
-.then(server => server.getPrimaryService('heart_rate'))
+device.gatt.getPrimaryService('heart_rate'))
 .then(service => service.getCharacteristic('heart_rate_control_point'))
 .then(characteristic => {
   // Writing 1 is the signal to reset energy expended.
   var resetEnergyExpended = new Uint8Array([1]);
-  return characteristic.writeValue(resetEnergyExpended);
-})
+  return characteristic.writeValue(resetEnergyExpended);})
 .then(() => {
-  console.log('Energy expended has been reset.');
-})
+  console.log('Energy expended has been reset.');})
 .catch(error => { console.log(error); });
 ```
 
+<div id="highlight-write-charact" class="highlight-code"></div>  
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+
 ##==##
 
-## Les webcomponents à la rescousse 
+<!-- .slide: data-state="stop-code-write-charact" class="with-code" data-copyrights="true" data-background="#3f3f3f"  -->
 
-[+Francois Beaufort](https://plus.google.com/u/0/+FrancoisBeaufort) a écrit webcomponent pour se simplifier la chose
+## Les webcomponents à la rescousse 
 
 
 ```html
@@ -331,6 +548,14 @@ navigator.bluetooth.requestDevice({ filters: [{ services: ['heart_rate'] }] })
   </platinum-bluetooth-service>
 </platinum-bluetooth-device>
 ```
+
+<div class="copyrights white">Francois Beaufort</div>
+
+##==##
+
+<!-- .slide: class="with-code" data-background="#3f3f3f"  -->
+
+## Les webcomponents à la rescousse 
 
 ```javascript
 var bluetoothDevice = document.querySelector('platinum-bluetooth-device');
@@ -348,6 +573,8 @@ button.addEventListener('click', function() {
 
 ##==##
 
+<!-- .slide: data-type-show="full" -->
+
 ## Open source quand tu nous tiens !
 
 [+Francois Beaufort](https://plus.google.com/u/0/+FrancoisBeaufort) a aussi écrit une application pour configurer les balises Physical Web : 
@@ -356,12 +583,15 @@ button.addEventListener('click', function() {
 
 ##==##
 
+<!-- .slide: data-background="#3d4349" class="transition" data-type-show="prez"-->
 
-## Compatibilité
+![center h-600](./assets/images/demo_time.jpg)
+
+##==##
 
 <div class="compat">
   <div class="chrome">
-    <div class="desktop unsupport">-</div>
+    <div class="desktop dev">45+</div>
     <div class="os">45+</div>
     <div class="chromium">48+</div>
     <div class="android-dev">48+</div>
@@ -402,7 +632,7 @@ button.addEventListener('click', function() {
 //     
 -->
 
-<!-- .slide: data-background="./assets/images/inception_sensors_full.jpg" class="transition"-->
+<!-- .slide: data-background="./assets/images/inception_sensors_full.jpg" class="transition no-filter"-->
 
 
 ##==##
@@ -413,6 +643,60 @@ button.addEventListener('click', function() {
 # Sensors 
 
 ![icon](./assets/images/html5-device-access-logo.png)
+
+##==##
+
+<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="quit-question" data-type-show="prez" -->
+
+<div class="url_jeux binomed">https://goo.gl/gsEF8b</div>
+<div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
+
+<div class="qui-veut-gagner">
+    <div class="question"> Préparez-vous</div>
+
+</div>
+
+
+##==##
+
+<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="question-2" data-type-show="prez"  -->
+
+<div class="url_jeux binomed">https://goo.gl/gsEF8b</div>
+<div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
+
+
+<div class="qui-veut-gagner">
+    <div class="question two-line"> Lequel de ces sensors n'est pas accessible depuis le web ?</div>
+    <div class="row">
+        <div class="resp repA"> Magnetometre</div>
+        <div class="resp repB"> Accelerometre</div>
+    </div>
+    <div class="row">
+        <div class="resp repC"> Bluetooth</div>
+        <div class="resp repD"> La réponse D</div>
+    </div>
+</div>
+
+##==##
+
+<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="resp-question-2" data-type-show="prez"  -->
+
+<div class="url_jeux binomed">https://goo.gl/gsEF8b</div>
+<div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
+
+
+<div class="qui-veut-gagner">
+    <canvas id="chart_question_2" width="200" height="200" class="chart-resp"></canvas>
+    <div class="question two-line"> Lequel de ces sensors n'est pas accessible depuis le web ?</div>
+    <div class="row">
+        <div class="resp repA good"> Magnetometre</div>
+        <div class="resp repB "> Accelerometre</div>        
+    </div>
+    <div class="row">
+        <div class="resp repC"> Bluetooth</div>
+        <div class="resp repD"> La réponse D</div>     
+    </div>
+</div>
 
 ##==##
 
@@ -431,9 +715,11 @@ button.addEventListener('click', function() {
 
 # Vibration
 
-![icon](./assets/images/mobile-phone-vibration.jpg)
+![icon](./assets/images/mobile-phone-vibration.png)
 
 ##==##
+
+<!-- .slide: data-type-show="full" -->
 
 ## Vibration
 
@@ -443,17 +729,33 @@ button.addEventListener('click', function() {
  * n = temps à vibrer
  * n+1 = temps entre vibration n et n+2
 
+<br>
 
 ```javascript
 window.navigator.vibrate(arrayOfVibration);
 ```
 
-[Docummentation](https://developer.mozilla.org/fr/docs/Web/API/Vibration_API)
+[Documentation](https://developer.mozilla.org/fr/docs/Web/API/Vibration_API)
+
+##==##
+
+<!-- .slide: data-type-show="prez" class="with-code" data-background="#3f3f3f" -->
+
+## Vibration
+
+
+```javascript
+let arrayOfVibration = [
+  100, // n = temps à vibrer
+  200, // n+1 = temps entre 2 vibrations
+  ]
+window.navigator.vibrate(arrayOfVibration);
+```
+
+<div id="highlight-vibrate" class="highlight-code"></div>  
 
 ##==##
 <!-- .slide: data-state="stop-usermedia"-->
-
-## Compatibilité
 
 <div class="compat">
   <div class="chrome">
@@ -502,11 +804,11 @@ window.navigator.vibrate(arrayOfVibration);
 
 # Device Orientation
 
-![icon](./assets/images/device-orientation.jpg)
+![icon](./assets/images/device-gamma.png)
 
 ##==##
 
-
+<!-- .slide: data-type-show="full" data-state="stop-code-orientation" -->
 
 ## Device Orientation
 
@@ -517,11 +819,11 @@ Se fait à plat !
 <br>
 <div>
 
-![h-300](./assets/images/device-orientation-z.jpg)
+![h-300](./assets/images/device-orientation-z.png)
 
-![h-300](./assets/images/device-orientation-y.jpg)
+![h-300](./assets/images/device-orientation-y.png)
 
-![h-300](./assets/images/device-orientation-x.jpg)
+![h-300](./assets/images/device-orientation-x.png)
 
 </div>
 
@@ -530,12 +832,34 @@ Se fait à plat !
 Notes:
 Subtilité : ça marche mieux si le téléphone est a plat
 
-
 ##==##
+
+<!-- .slide: data-type-show="prez" data-state="stop-code-orientation" -->
+
 
 ## Device Orientation
 
-<br>
+<div>
+
+![h-300](./assets/images/device-orientation-z.png)
+
+![h-300](./assets/images/device-orientation-y.png)
+
+![h-300](./assets/images/device-orientation-x.png)
+
+</div>
+
+
+
+Notes:
+Subtilité : ça marche mieux si le téléphone est a plat
+
+
+##==##
+
+<!-- .slide: class="with-code" data-background="#3f3f3f"  data-state="code-orientation" -->
+
+## Device Orientation
 
 ```javascript
 if(window.DeviceOrientationEvent) {
@@ -552,18 +876,51 @@ function process(event) {
 }
 ```
 
+<div id="highlight-orientation" class="highlight-code"></div>  
 
+<div class="fragment" data-fragment-index="1" hidden></div>
 
 Notes:
 Subtilité : ça marche mieux si le téléphone est a plat
 
 
+##==##
+<!-- .slide: data-state="stop-orientation stop-code-orientation" data-type-show="prez"   -->
+
+## Orientation
+
+### Cas Pratique
+
+![center w-600](./assets/images/combination-lock-icon.png)
 
 
 ##==##
-<!-- .slide: data-state="stop-orientation"-->
+<!-- .slide: data-state="start-orientation" data-type-show="prez"   -->
 
-## Compatibilité
+## Orientation
+
+<div class="sensorExample">
+  <div class="orientation">
+    <div class="safe_lock_funny_win visible-md visible-lg"></div>
+    <div class="safe_lock_door">
+      <div class="safe_lock_bg"></div>
+      <div class="safe_lock"></div>
+    </div>
+    <div class="resp">
+      <div class="value"></div>     
+      <div class="chevrons">
+        <i class="first fa fa-times-circle"></i> 
+        <i class="second fa fa-times-circle"></i> 
+        <i class="third fa fa-times-circle"></i> 
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+##==##
+<!-- .slide: data-state="stop-orientation stop-code-orientation"-->
 
 <div class="compat">
   <div class="chrome">
@@ -610,28 +967,40 @@ Subtilité : ça marche mieux si le téléphone est a plat
 
 # Device Motion API
 
-![icon](./assets/images/device_motion.jpg)
+![icon](./assets/images/device-axes.png)
 
 ##==##
 
+<!-- .slide: data-type-show="full" -->
+
 ## Device Motion API
 
-![center w-800](./assets/images/device_motion.jpg)
+![center w-800](./assets/images/device_motion.png)
 
-On peut tenir comptes de l'accélération classique ou avec prise en charge de la gravité !
+On peut tenir compte de l'accélération classique ou avec prise en charge de la gravité !
 
 [Documentation](https://developer.mozilla.org/fr/docs/Web/API/DeviceMotionEvent)
 
 Notes:
 
+##==##
+
+<!-- .slide: data-type-show="prez" data-state="stop-code-motion" -->
+
+## Device Motion API
+
+![center w-800](./assets/images/device_motion.png)
+
+
+Notes:
+On peut tenir compte de l'accélération classique ou avec prise en charge de la gravité !
 
 
 ##==##
 
+<!-- .slide: class="with-code" data-background="#3f3f3f"  data-state="code-motion" -->
+
 ## Device Motion API
-
-
-On s'intéresse à l'accélération x
 
 
 ```javascript
@@ -649,13 +1018,51 @@ function register(){
 }
 ```
 
+<div id="highlight-motion" class="highlight-code"></div>  
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+
+
+##==##
+
+<!-- .slide: data-state="stop-devicemotion stop-code-motion" data-type-show="prez"  -->
+
+## Device Orientation
+
+### Cas pratique
+
+![center w-800](./assets/images/chargebatterylonger.png)
 
 
 
 ##==##
-<!-- .slide: data-state="stop-devicemotion"-->
 
-## Compatibilité
+<!-- .slide: data-state="start-devicemotion" data-type-show="prez"   -->
+
+## DeviceMotion
+
+
+<div class="sensorExample">
+  <div class="devicemotion">
+    <div class="team">
+      <div class="battery-parent">
+        <div id="battery-1"></div>
+        <div class="team-name">Team Firefox</div>
+      </div>
+    </div>
+    <div class="team">
+      <div class="battery-parent">
+        <div id="battery-2"></div>
+        <div class="team-name">Team Chrome</div>
+      </div>
+    </div>
+    <div class="win firefox"></div>
+    <div class="win chrome"></div>
+  </div>
+</div>
+
+##==##
+<!-- .slide: data-state="stop-devicemotion stop-code-motion"-->
 
 <div class="compat">
   <div class="chrome">
@@ -708,6 +1115,9 @@ function register(){
 
 ##==##
 
+<!-- .slide: data-type-show="full" data-state="stop-code-battery" -->
+
+
 ## Battery Status
 
 
@@ -715,7 +1125,14 @@ function register(){
 
 * Téléphone branché ou non
 
-<br>
+[Documentation](https://developer.mozilla.org/fr/docs/Web/API/Battery_status_API)
+
+##==##
+
+<!-- .slide: class="with-code" data-background="#3f3f3f"  data-state="code-battery"  -->
+
+## Battery Status
+
 
 ```javascript
 var battery = navigator.battery || navigator.mozBattery 
@@ -723,23 +1140,22 @@ var battery = navigator.battery || navigator.mozBattery
 
 function updateBatteryStatus() {
   console.log("Batterie chargée à : " + battery.level * 100 + " %");
-
   if (battery.charging) {
     console.log("Chargement de la batterie"); 
   }
 }
-
 battery.addEventListener("chargingchange", updateBatteryStatus);
 battery.addEventListener("levelchange", updateBatteryStatus);
 updateBatteryStatus();
 ```
 
-[Documentation](https://developer.mozilla.org/fr/docs/Web/API/Battery_status_API)
+<div id="highlight-battery" class="highlight-code"></div>  
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
 
 ##==##
-<!-- .slide: data-state="stop-devicemotion"-->
-
-## Compatibilité
+<!-- .slide: data-state="stop-devicemotion stop-code-battery"-->
 
 <div class="compat">
   <div class="chrome">
@@ -793,18 +1209,26 @@ updateBatteryStatus();
 
 ##==##
 
+<!-- .slide: data-type-show="full" -->
 
 ## Light
 
 
-* Renvoie des valeurs entre 0 et > 1000 (0 étant sombre)
+* Renvoi des valeurs entre 0 et > 1000 (0 étant sombre)
 
 * Est dépendant du téléphone et de l’implémentation
 
-* On a 2 façon de faire =>
+* On a 2 façons de faire =>
  * Gestion par valeur (lux)
  * Gestion par états : Dim / Normal / Bright
 
+[Documentation](https://developer.mozilla.org/en-US/docs/Web/API/Ambient_Light_Events)
+
+##==##
+
+<!-- .slide: class="with-code" data-background="#3f3f3f" -->
+
+## Light
 
 ```javascript
 var deviceLightHandler = function(event) {
@@ -814,13 +1238,40 @@ var deviceLightHandler = function(event) {
 window.addEventListener('devicelight', deviceLightHandler, false);
 ```
 
-[Documentation](https://developer.mozilla.org/en-US/docs/Web/API/Ambient_Light_Events)
+Notes:
+* Renvoi des valeurs entre 0 et > 1000 (0 étant sombre)
+* Est dépendant du téléphone et de l’implémentation
+* On a 2 façons de faire =>
+ * Gestion par valeur (lux)
+ * Gestion par états : Dim / Normal / Bright
 
 
 ##==##
-<!-- .slide: data-state="stop-light"-->
 
-## Compatibilité
+<!-- .slide: data-state="stop-light" data-type-show="prez"  -->
+
+## Light
+
+### Cas pratique
+
+![center w-400](./assets/images/Hanging_Bulb.jpg)
+
+
+##==##
+
+<!-- .slide: data-state="start-light" data-type-show="prez"  -->
+
+## Light
+
+
+<div class="sensorExample">
+   <div id="light">
+    <div class="light-bg"></div>
+  </div>
+</div>
+
+##==##
+<!-- .slide: data-state="stop-light"-->
 
 <div class="compat">
   <div class="chrome">
@@ -871,9 +1322,11 @@ window.addEventListener('devicelight', deviceLightHandler, false);
 
 # User Media
 
-![icon](./assets/images/camera_icon.jpg)
+![icon](./assets/images/camera_icon.png)
 
 ##==##
+
+<!-- .slide: data-type-show="full" -->
 
 ## User Media
 
@@ -881,6 +1334,15 @@ window.addEventListener('devicelight', deviceLightHandler, false);
 
 * Possibilité de préciser ce qu'on récupère et on peut séparer les flux ! 
 * Sélection de la source / Récupération de l'audio
+* Devient intéressant s'il est mixé avec des effets ou des canvas.
+* **HTTPS** only ! 
+* 2 versions l'api
+
+##==##
+
+<!-- .slide: class="with-code" data-background="#3f3f3f" -->
+
+## User Media
 
 ```javascript
 var vgaConstraints = {
@@ -893,59 +1355,77 @@ var vgaConstraints = {
 };
 ```
 
+Notes:
+* Encore dépendant des navigateurs !
+* Possibilité de préciser ce qu'on récupère et on peut séparer les flux ! 
+* Sélection de la source / Récupération de l'audio
 * Devient intéressant s'il est mixé avec des effets ou des canvas.
 * **HTTPS** only ! 
 * 2 versions l'api
 
 ##==##
 
+<!-- .slide: data-type-show="full" data-state="stop-code-user-media-v1"  -->
+
 ## User Media
 
 ### Différence entre les 2 versions ?
 
-* V1 approche événementielle
-* V2 approche avec des promises et simplifie le fonctionnement de récupération des objets associés (plus récent => moins de compatibilité)
+* V1 : approche événementielle
+* V2 : approche avec des promises et simplifie le fonctionnement de récupération des objets associés (plus récent => moins de compatibilités)
 
 Notes:
 
+##==##
+
+<!-- .slide:  class="transition-white"  data-type-show="prez" data-state="stop-code-user-media-v1" -->
+
+# 2 Versions !
+
+
+Notes:
+* V1 : approche événementielle
+* V2 : approche avec des promises et simplifie le fonctionnement de récupération des objets associés (plus récent => moins de compatibilités)
 
 
 ##==##
 
-## User Media
+<!-- .slide: class="with-code" data-background="#3f3f3f"  data-state="code-user-media-v1" -->
 
-### V1
+## User Media - V1
+
 
 ```javascript
 // We define the video constraints
 var constraints = {video: true};
-
 // We manage an error while getting the stream
 function handleUserMediaError(error){
   console.log('navigator.getUserMedia error: ', error);
 }
-
 // We manage the success of getting the stream
 function handleUserMedia(stream){
   localStream = stream;
   video.src = window.URL.createObjectURL(stream);
   video.play();
 }
-
 navigator.getUserMedia(constraints, handleUserMedia, handleUserMediaError);
-
 ```
 
+<div id="highlight-user-media-v1" class="highlight-code"></div>  
 
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+<div class="fragment" data-fragment-index="4" hidden></div>
 
 ##==##
 
-## User Media
+<!-- .slide: class="with-code" data-background="#3f3f3f"  data-state="stop-code-user-media-v1" -->
 
-### V2
+## User Media - V2
 
-<pre class="javascript"><code class='toHilight'>
-<mark class="dilluate">// We define the video constraints
+```javascript
+// We define the video constraints
 var constraints = {video: true};
 // We manage an error while getting the stream
 function handleUserMediaError(error){
@@ -953,27 +1433,50 @@ function handleUserMediaError(error){
 }
 // We manage the success of getting the stream
 function handleUserMedia(stream){
-  localStream = stream;
-  video.src = window.URL.createObjectURL(stream);</mark>
-  video.onloadedmetadata = function(e){
-    video.play();
-  }<mark class="dilluate">
+  video.src = window.URL.createObjectURL(stream);
+  video.onloadedmetadata = (e)=>video.play();
 }
-</mark>navigator.mediaDevices.getUserMedia(constraints)
-  .then(handleUserMedia).catch(handleUserMediaError);</code></pre>
+navigator.mediaDevices.getUserMedia(constraints)
+  .then(handleUserMedia).catch(handleUserMediaError);
+```
 
-Toujours besoin de adapter.js pour faire marcher correctement ! 
-
+<div id="highlight-user-media-v2" class="highlight-code"></div>  
+<div id="highlight-user-media-v2-2" class="highlight-code"></div>  
 
 Notes:
-
+Toujours besoin de adapter.js pour faire marcher correctement ! 
 
 
 
 ##==##
-<!-- .slide: data-state="stop-usermedia"-->
 
-## Compatibilité
+<!-- .slide: data-type-show="prez"  -->
+
+## User Media
+
+### Cas pratique
+
+![center w-600](./assets/images/photographer.jpg)
+
+
+
+##==##
+<!-- .slide: data-state="start-usermedia" data-type-show="prez"  -->
+
+## User Media
+
+
+<div class="sensorExample">
+  <div id="usermedia">
+    <div class="videoParent">
+    <img id="photoStream" height="600px">
+      
+    </div>
+  </div>
+</div>
+
+##==##
+<!-- .slide: data-state="stop-usermedia"-->
 
 <div class="compat">
   <div class="chrome">
@@ -1000,7 +1503,7 @@ Notes:
     <div class="new unsupport">-</div>
   </div>
   <div class="safari">
-    <div class="ios unsupport">-</div>
+    <div class="ios partial">dev</div>
   </div>
 </div>
 
@@ -1021,13 +1524,15 @@ Notes:
 //                                          |___/ 
 -->
 
-<!-- .slide: class="transition-black" -->
+<!-- .slide: class="transition-black" data-state="stop-code-device-proximity" -->
 
 # Proximity
 
-![icon](./assets/images/proximity.jpg)
+![icon](./assets/images/proximity.png)
 
 ##==##
+
+<!-- .slide: data-type-show="full" data-state="stop-code-device-proximity" -->
 
 ## Proximity
 
@@ -1037,7 +1542,12 @@ Firefox uniquement !
 
 * Renvoie des valeurs entre 0 et 5 (0 étant proche)
 
-<br>
+
+##==##
+
+<!-- .slide: class="with-code" data-background="#3f3f3f" data-state="code-device-proximity stop-code-user-proximity" -->
+
+## Proximity - Device Proximity
 
 
 ```javascript
@@ -1054,7 +1564,17 @@ function unregister(){
 }
 ```
 
+<div id="highlight-device-proximity" class="highlight-code"></div>  
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+
+Notes:
+Firefox uniquement ! 
+* Renvoie des valeurs entre 0 et 5 (0 étant proche)
+
 ##==##
+
+<!-- .slide: data-type-show="full" data-state="stop-code-device-proximity stop-code-user-proximity" -->
 
 ## Proximity
 
@@ -1064,7 +1584,13 @@ Firefox uniquement !
 
 * Renvoie des valeurs entre true à l'attribut near
 
-<br>
+[Documentation complète](https://developer.mozilla.org/fr/docs/WebAPI/Proximity)
+
+##==##
+
+<!-- .slide: class="with-code" data-background="#3f3f3f" data-state="stop-code-device-proximity code-user-proximity"  -->
+
+## Proximity - User Proximity
 
 ```javascript
 var userProximityHandler = function(event) {
@@ -1082,11 +1608,17 @@ function unregister(){
 }
 ```
 
-[Documentation complète](https://developer.mozilla.org/fr/docs/WebAPI/Proximity)
+<div id="highlight-user-proximity" class="highlight-code"></div>  
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+
+Notes:
+Firefox uniquement ! 
+* Renvoie des valeurs entre true à l'attribut near
 
 ##==##
 
-## Compatibilité
+<!-- .slide: data-state="stop-code-user-proximity" -->
 
 <div class="compat">
   <div class="chrome">
@@ -1131,7 +1663,7 @@ function unregister(){
 //   
 -->
 
-<!-- .slide: class="transition-black" -->
+<!-- .slide: class="transition-black" data-state="stop-code-web-speech" -->
 
 # Web Speech API
 
@@ -1139,32 +1671,27 @@ function unregister(){
 
 ##==##
 
+<!-- .slide: data-type-show="full" data-state="stop-code-web-speech" -->
+
 ## Web Speech
 
-* Un tag existe pour gagner en code 
-
-<br>
-
-```html
-<input x-webkit-speech>
-```
 
 * Il reste plus intéressant d'utiliser la librairie Javascript
 
 * Manque encore cependant de précision pour de la commande vocale => avoir des textes approximatifs de détection
-* Va de paire avec la synthèse vocale disponible aussi 
+* Va de pair avec la synthèse vocale disponible aussi 
 
 
 [Documentation complète](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API)
 
 ##==## 
 
-## Web Speech
+<!-- .slide: class="with-code" data-background="#3f3f3f" data-state="code-web-speech stop-code-web-speech-gramar"  -->
 
-### Utilisation 
+## Web Speech - Utilisation 
 
 ```javascript
-var recognition = new webkitSpeechRecognition();
+var recognition = new SpeechRecognition();
 recognition.lang = voiceFR;
 recognition.continuous = true;
 recognition.interimResults = true;
@@ -1176,17 +1703,23 @@ recognition.onresult = function(event) {
 }
 ```
 
+<div id="highlight-web-speech" class="highlight-code"></div>  
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+<div class="fragment" data-fragment-index="4" hidden></div>
+<div class="fragment" data-fragment-index="5" hidden></div>
+<div class="fragment" data-fragment-index="6" hidden></div>
 
 ##==##
 
-## Web Speech
+<!-- .slide: class="with-code" data-background="#3f3f3f" data-state="stop-code-web-speech code-web-speech-grammar stop-code-web-speech-synthesis" -->
 
-### Grammar
-
-Afin d'améliorer la reconnaissance des textes, il est possible de définir une grammaire
+## Web Speech - Grammar
 
 ```javascript
-var grammar = '#JSGF V1.0; grammar colors; public <color> = aqua | azure | beige | bisque | black | [LOTS MORE COLOURS] ;'
+var grammar = '#JSGF V1.0; grammar colors; public <color> = aqua | [MORE COLOURS] ;'
 var recognition = new SpeechRecognition();
 var speechRecognitionList = new SpeechGrammarList();
 speechRecognitionList.addFromString(grammar, 1);
@@ -1197,12 +1730,19 @@ recognition.interimResults = false;
 recognition.maxAlternatives = 1;
 ```
 
+
+<div id="highlight-web-speech-grammar" class="highlight-code"></div>  
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+
+
 ##==##
-<!-- .slide: data-state="stop-webspeech" -->
+
+<!-- .slide: data-state="stop-code-web-speech-grammar code-web-speech-synthesis stop-webspeech" class="with-code" data-background="#3f3f3f" -->
 
 ## Web Speech Synthesis
-
-### Les possibilités d’accessibilités disponibles directement dans une page web
 
 ```javascript
 var synth = window.speechSynthesis;
@@ -1215,11 +1755,27 @@ synth.speak(utterThis);
 ```
 
 
+<div id="highlight-web-speech-synthesis" class="highlight-code"></div>  
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+<div class="fragment" data-fragment-index="4" hidden></div>
+<div class="fragment" data-fragment-index="5" hidden></div>
 
 ##==##
-<!-- .slide: data-state="stop-webspeech"-->
 
-## Compatibilité
+<!-- .slide: data-background="#3d4349" class="transition" data-state="start-webspeech stop-code-web-speech-synhtesis" data-type-show="prez"  -->
+
+![center h-600](./assets/images/demo_time.jpg)
+
+<div id="demoSpeech" style="display: none;">
+  <i class="fa fa-microphone fa-4x"></i>
+  <p id="speech_input"></p>
+</div>
+
+##==##
+<!-- .slide: data-state="stop-webspeech stop-web-speech-synthesis"-->
 
 <div class="compat">
   <div class="chrome">
@@ -1252,21 +1808,23 @@ synth.speak(utterThis);
 
 ##==##
 
-<!-- .slide: data-background="./assets/images/inception_not_sensor_full.jpg" class="transition" -->
+<!-- .slide: data-background="./assets/images/inception_not_sensor_full.jpg" class="transition no-filter" -->
 
 
 
 ##==##
 
+<!-- .slide: data-type-show="full" data-state="stop-code-notification"  -->
+
 ## Notification
 
-* Possibilité d'envoyer des notification à l'utilisateur même si la page n'est pas au premier plan ! 
+* Possibilité d'envoyer des notifications à l'utilisateur même si la page n'est pas au premier plan ! 
 
-* A besoin d'autorisations pour fonctionner
+* À besoin d'autorisations pour fonctionner
 
-* Maintenant basé sur les services workers pour des histoires de d'activités
+* Maintenant basé sur les services workers pour des histoires d'activités
 
-* A coupler avec la PushAPI ;)
+* À coupler avec la PushAPI ;)
 
 <br>
 
@@ -1274,9 +1832,21 @@ synth.speak(utterThis);
 
 ##==##
 
-## Notification
+<!-- .slide: data-type-show="prez" class="transition-white" data-state="stop-code-notification" -->
 
-### Utilisation
+# Notification
+
+Notes:
+* Possibilité d'envoyer des notifications à l'utilisateur même si la page n'est pas au premier plan ! 
+* À besoin d'autorisations pour fonctionner
+* Maintenant basé sur les services workers pour des histoires d'activités
+* À coupler avec la PushAPI ;)
+
+##==##
+
+<!-- .slide: class="with-code" data-background="#3f3f3f" data-state="code-notification" -->
+
+## Notification - Utilisation
 
 ```javascript
 function showNotification() {
@@ -1291,13 +1861,24 @@ function showNotification() {
         });
       });
     }
-  });
-}
+  }); }
 ```
+
+<div id="highlight-notification" class="highlight-code"></div>  
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+
+Notes:
+Ici c'est un exemple de webPush Notification ! 
+On peut aussi avoir des actions associées ! genre yes / no ....
+On ajoute sur la notification 
+
 
 ##==##
 
-## Compatibilité
+<!-- .slide: data-state="stop-code-notification"-->
 
 <div class="compat">
   <div class="chrome">
@@ -1324,17 +1905,19 @@ function showNotification() {
     <div class="new unsupport">-</div>
   </div>
   <div class="safari">
-    <div class="ios unsupport">-</div>
+    <div class="ios">6</div>
   </div>
 </div>
 
 ##==##
 
-<!-- .slide: data-background="./assets/images/inception_offline_full.jpg" class="transition" data-state="quit-question"-->
+<!-- .slide: data-background="./assets/images/inception_offline_full.jpg" class="transition no-filter" data-state="quit-question" data-type-show="prez"  -->
 
 
 
 ##==##
+
+<!-- .slide: data-type-show="full"-->
 
 ## Gestion du offline
 
@@ -1354,24 +1937,56 @@ function showNotification() {
 
 * Le remplaçant de l'appCache => [Service Workers](https://developer.mozilla.org/fr/docs/Web/API/Service_Worker_API) !! 
 
+##==##
+
+<!-- .slide: data-type-show="prez" class="transition-black" -->
+
+# Gestion du offline
+
+![icon](./assets/images/html5-local-storage.png)
+
+##==##
+
+<!-- .slide: data-type-show="prez" class="transition-white" -->
+
+# LocalStorage <br> SessionStorage
+
+##==##
+
+<!-- .slide: data-type-show="prez" class="transition-white" -->
+
+# IndexDB
+
+##==##
+
+<!-- .slide: data-type-show="prez" class="transition-white" -->
+
+# AppCache
+
+##==##
+
+<!-- .slide: data-type-show="prez" class="transition-white" -->
+
+# Service Workers
 
 ##==## 
+
+<!-- .slide: data-type-show="full"-->
 
 ## Activité dans l'application ?
 
 * La [Page Visibility API](https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API) vous permet de gérer la visibilité de vos pages.
 
-<br>
+##==## 
+
+<!-- .slide: class="with-code" data-background="#3f3f3f" data-state="code-notification" -->
+
+## Page Visivility API
+
 
 ```javascript
-var hidden, visibilityChange; 
-if (typeof document.hidden !== "undefined") { and later support 
-  hidden = "hidden";
-  visibilityChange = "visibilitychange";
-} 
-
 function handleVisibilityChange() {
-  if (document[hidden]) {
+  if (document["hidden"]) {
     // Do some stuff, unconnect things
   } else {
     // Do some stuff, reconnect things
@@ -1379,16 +1994,14 @@ function handleVisibilityChange() {
 }
 
 if (typeof document.addEventListener != "undefined" && 
-  typeof document[hidden] != "undefined") {
-  // Handle page visibility change   
-  document.addEventListener(visibilityChange, handleVisibilityChange, false);
-  
+  typeof document["hidden"] != "undefined") {
+  document.addEventListener("visibilitychange", handleVisibilityChange, false);
 }
 ```
 
-##==##
+<div id="highlight-visibility" class="highlight-code"></div>  
 
-## Compatibilité
+##==##
 
 <div class="compat">
   <div class="chrome">
@@ -1422,31 +2035,61 @@ if (typeof document.addEventListener != "undefined" &&
 
 ##==##
 
-<!-- .slide: data-background="./assets/images/inception_appmanifest_full.jpg" class="transition"-->
+<!-- .slide: data-background="./assets/images/inception_appmanifest_full.jpg" class="transition no-filter"-->
 
 
 ##==##
 
+<!-- .slide: data-type-show="full" -->
+
 ## Web Manifest
 
-* Permet de spécifier des meta data sur l'application
+* Permets de spécifier des metas data sur l'application
 * Possibilité d'ajouter l'application sur le homescreen
 * Possibilité de définir des paramètres de lancement : 
  * Plein écran 
- * Url Spécifique au démarrage 
+ * URL Spécifique au démarrage 
  * Orientation
  * Présence de la barre de navigation 
  * ...
 
+[Documentation](https://developers.google.com/web/updates/2014/11/Support-for-installable-web-apps-with-webapp-manifest-in-chrome-38-for-Android)
+
 ##==##
 
-## Web Manifest
 
-### Utilisation
+<!-- .slide: data-background="./assets/images/web_manifest.jpg" class="transition" data-type-show="prez" -->
 
+# Web Manifest
+
+Notes:
+* Permets de spécifier des metas data sur l'application
+* Possibilité d'ajouter l'application sur le homescreen
+* Possibilité de définir des paramètres de lancement : 
+ * Plein écran 
+ * URL Spécifique au démarrage 
+ * Orientation
+ * Présence de la barre de navigation 
+ * ...
+
+
+##==##
+
+## Web Manifest - Utilisation
+
+<!-- .slide: class="with-code" data-background="#3f3f3f" data-state="" -->
+
+<!-- .element: class="big-code" -->
 ```html
-<link rel="manifest" href="/manifest.json">
+<link rel="manifest" 
+ href="/manifest.json">
 ```
+
+##==##
+
+## Web Manifest - Utilisation
+
+<!-- .slide: class="with-code" data-background="#3f3f3f" data-state="" -->
 
 ```json
 {
@@ -1460,20 +2103,15 @@ if (typeof document.addEventListener != "undefined" &&
     }
   ],
   "start_url": "/index.html",
-  "display": "standalone",
-  "orientation": "landscape"
+  "display": "standalone"
 }
 ```
-
-[Documentation](https://developers.google.com/web/updates/2014/11/Support-for-installable-web-apps-with-webapp-manifest-in-chrome-38-for-Android)
 
 
 ##==##
 
 
-<!-- .slide: data-state="quit-question"-->
-
-## Compatibilité
+<!-- .slide: data-state="quit-question" -->
 
 <div class="compat">
   <div class="chrome">
@@ -1504,22 +2142,68 @@ if (typeof document.addEventListener != "undefined" &&
   </div>
 </div>
 
+##==##
+
+<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="quit-question" data-type-show="prez"  -->
+
+<div class="url_jeux binomed">https://goo.gl/gsEF8b</div>
+<div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
+
+<div class="qui-veut-gagner">
+    <div class="question"> Préparez-vous</div>
+
+</div>
 
 ##==##
 
-<!-- .slide: data-background="./assets/images/inception_more_full.jpg" class="transition" data-state="quit-question"-->
+<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="question-3" data-type-show="prez"  -->
+
+<div class="url_jeux binomed">https://goo.gl/gsEF8b</div>
+<div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
+
+
+<div class="qui-veut-gagner">
+    <div class="question two-line"> Laquelle de ces API ne fait pas encore partie d'une roadmap pour le web ? </div>
+    <div class="row">
+        <div class="resp repA"> WebNFC</div>
+        <div class="resp repB"> Sensors Génériques</div>
+    </div>
+    <div class="row">
+        <div class="resp repC"> FingerPrint</div>
+        <div class="resp repD"> La réponse D</div>
+    </div>
+</div>
+
+##==##
+
+<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="resp-question-3" data-type-show="prez"  -->
+
+<div class="url_jeux binomed">https://goo.gl/gsEF8b</div>
+<div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
+
+
+<div class="qui-veut-gagner">
+    <canvas id="chart_question_3" width="200" height="200" class="chart-resp"></canvas>
+   <div class="question two-line"> Laquelle de ces API ne fait pas encore partie d'une roadmap pour le web ?  </div>
+    <div class="row">
+        <div class="resp repA"> WebNFC</div>
+        <div class="resp repB"> Sensors Génériques</div>        
+    </div>
+    <div class="row">
+        <div class="resp repC good"> FingerPrint</div>
+        <div class="resp repD"> La réponse D</div>     
+    </div>
+</div>
 
 
 ##==##
 
-<!-- .slide: class="transition-black" -->
-
-# Tout le reste !
-
-![center h-500](./assets/images/buzz.jpg)
+<!-- .slide: data-background="./assets/images/inception_more_full.jpg" class="transition no-filter" data-state="quit-question"-->
 
 
 ##==##
+
+<!-- .slide: data-type-show="full" -->
 
 ## Ce qui arrive
 
@@ -1527,25 +2211,94 @@ if (typeof document.addEventListener != "undefined" &&
 
 <br>
 
-* [Sensors Génériques](https://w3c.github.io/sensors/) : Ouverture de tous les types de sensors disponibles et pas encore présent => Refonte des apis actuelles 
+* [Sensors Génériques](https://w3c.github.io/sensors/) : Ouverture de tous les types de sensors disponibles et pas encore présent => Refonte des Apis actuelles 
 
 <br>
 
-* [WebNFC](http://w3c.github.io/web-nfc/index.html) :  Mise à disposition d'un lecteur NFC à utiliser sur téléphone
+* [WebNFC](http://w3c.github.io/web-nfc/index.html) :  Mise à disposition d'un lecteur NFC à utiliser sur le téléphone
 
-<br>
+##==##
 
-* Web Bluetooth : prise en compte des devices non BLE
+<!-- .slide: data-type-show="prez" class="transition-white" -->
+
+# Web USB
+
+![icon](./assets/images/web_usb.png)
+
+##==##
+
+<!-- .slide: data-type-show="prez" class="transition-white" -->
+
+# Sensors Génériques
+
+![icon](./assets/images/HTML5_Device_Access.png)
+
+##==##
+
+<!-- .slide: data-type-show="prez" class="transition-white" -->
+
+
+# WebNFC
+
+![icon](./assets/images/nfc_demo.png)
+
+##==##
+
+<!-- .slide: data-background="./assets/images/casino.jpg" data-state="hidefooter" class="transition qui-veut-gagner" data-state="quit-question" data-type-show="prez"  -->
+
+# Jouons <br> encore un peu 
+
+##==##
+
+<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="question-4" data-type-show="prez"  -->
+
+<div class="url_jeux binomed">https://goo.gl/gsEF8b</div>
+<div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
+
+
+<div class="qui-veut-gagner">
+    <div class="question two-line"> Quelle est la techno derrière l'ouverture des pages web depuis un beacon ?</div>
+    <div class="row">
+        <div class="resp repA"> BeaconWeb</div>
+        <div class="resp repB"> PhysicalWeb</div>
+    </div>
+    <div class="row">
+        <div class="resp repC"> IBeacon</div>
+        <div class="resp repD"> La réponse D</div>
+    </div>
+</div>
+
+##==##
+
+<!-- .slide: data-background="./assets/images/qui_veut_gagner_argent_en_masse.png" data-state="hidefooter" class="transition qui-veut-gagner" data-state="resp-question-4" data-type-show="prez"  -->
+
+<div class="url_jeux binomed">https://goo.gl/gsEF8b</div>
+<div class="url_jeux rawgit">https://goo.gl/Kp7Cyi</div>
+
+
+<div class="qui-veut-gagner">
+    <canvas id="chart_question_4" width="200" height="200" class="chart-resp"></canvas>
+    <div class="question two-line"> Quelle est la techno derrière l'ouverture des pages web depuis un beacon ?</div>
+    <div class="row">
+        <div class="resp repA"> BeaconWeb</div>
+        <div class="resp repB good"> PhysicalWeb</div>        
+    </div>
+    <div class="row">
+        <div class="resp repC"> IBeacon</div>
+        <div class="resp repD"> La réponse D</div>     
+    </div>
+</div>
+
 
 
 ##==## 
 
-<!-- .slide: data-state="quit-question hidefooter" data-background="./assets/images/monthy_phython_graal.jpg" class="transition"-->
+<!-- .slide: data-state="quit-question hidefooter" data-background="./assets/images/monthy_phython_graal.jpg" class="transition" data-copyrights="true" -->
 
 # Conclusion
 
 
-<div class="copyright">Monthy Python</div>
+<div class="copyrights white">Monthy Python</div>
 
 
 ##==##
@@ -1558,7 +2311,7 @@ if (typeof document.addEventListener != "undefined" &&
 
 <!-- .element: class="presenter" --> **Jean-François Garreau  **
 
-<!-- .element: class="work-rule" --> GDG Nantes Leader & Ingénieur SQLI  
+<!-- .element: class="work-rule" --> GDG Nantes Leader & Ingénieur Lucca  
 
 <!-- .element: class="email" --> **jef**@gdgnantes.com  
 
