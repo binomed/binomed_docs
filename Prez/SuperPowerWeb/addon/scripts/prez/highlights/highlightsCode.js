@@ -148,7 +148,7 @@ function init(){
 			[
 			{
 				'top' : 'calc(90px + 4.6em)',
-				'left' : '600px',
+				'left' : '550px',
 				'width' : '200px',
 				'height' : '1.4em'
 			},
@@ -174,13 +174,13 @@ function init(){
 			},
 			{
 				'top' : 'calc(90px + 7.75em)',
-				'left' : '190px',
+				'left' : '180px',
 				'width' : '210px',
 				'height' : '1.4em'
 			},
 			{
 				'top' : 'calc(90px + 7.75em)',
-				'left' : '410px',
+				'left' : '380px',
 				'width' : '90px',
 				'height' : '1.4em'
 			},
@@ -243,7 +243,7 @@ function init(){
 			},
 			{
 				'top' : 'calc(90px + 8.05em)',				
-				'left' : '300px',
+				'left' : '280px',
 				'width' : '450px'
 			}
 			]);
@@ -302,18 +302,18 @@ function init(){
 			{
 				'top' : 'calc(90px + 2.30em)',
 				'width' : '350px',
-				'left' : '130px'
+				'left' : '120px'
 			},
 			{
 				'top' : 'calc(90px + 3.45em)',
 				'width' : '800px',
-				'left' : '150px'
+				'left' : '140px'
 			},
 			{
 				'top' : 'calc(90px + 4.60em)',
 				'width' : '800px',
 				'height': '5.5em',
-				'left' : '180px'
+				'left' : '170px'
 			}
 			]);
 

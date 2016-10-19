@@ -22,6 +22,7 @@ $mini-browser-size : 64px;
     display:flex;
     flex-direction: column;
     margin:30px;    
+    left:40px;
   }
 
 
@@ -66,7 +67,7 @@ $mini-browser-size : 64px;
     position:absolute;
     width: $browser-size;
     height: $browser-size;
-    top:-$browser-size;
+    top:-1.2 * $browser-size;
     left: 50%;
     margin-left: -$browser-size/2;
   }

@@ -29,7 +29,7 @@ Reveal.addEventListener( 'ready', function( event ) {
 	let inIFrame = window.top != window.self;
 	
     
-	if (!inIFrame && io && config.address){
+	if (!inIFrame && typeof(window.io) != 'undefined' && config.address){
         console.log("Go to condition !");
 		let socketGame = io.connect(config.address);
 		require('./game/prez_game').init(socketGame);

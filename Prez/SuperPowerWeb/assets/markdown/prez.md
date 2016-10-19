@@ -356,7 +356,7 @@ Notes:
 
 ## Web Bluetooth
 
-![center](./assets/images/ble_hierarchy.jpg)
+![center](./assets/images/ble_hierarchy.png)
 
 Notes:
 * * **GATT** : Generic Attribute Profile 
