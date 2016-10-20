@@ -46,6 +46,8 @@ Urls de jeux :
 * Raw git => https://goo.gl/Kp7Cyi
 
 
+* Binomed url : 8443 => https://goo.gl/9YcxD9
+
 Rpi Zero pins for demo : 
 
   usb     usb                 hdmi
