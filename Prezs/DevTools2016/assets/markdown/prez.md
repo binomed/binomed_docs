@@ -38,7 +38,7 @@ Senior innovation developper & Community Manager
 
 ##==##
 
-<!-- .slide: class="transition no-filter" data-background="./assets/images/legonnary.png" -->
+<!-- .slide: class="transition no-filter" data-background="assets/images/legonnary.png" -->
 
 
 ##==##
