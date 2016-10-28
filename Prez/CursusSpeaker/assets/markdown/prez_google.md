@@ -1,7 +1,7 @@
 
 <!-- .slide: class="first-slide" -->
 
-# **Cursus Speaker**
+# **Public Speaking for Engineers**
 
 
 ### 2016  @ **Google**
@@ -11,7 +11,7 @@
 
 <!-- .slide: class="who-am-i" -->
 
-## Qui suis-je ?
+## Who am I?
 
 ### Jean-François Garreau
 
@@ -35,7 +35,7 @@ Senior innovation developper & Community Manager
 
 <!-- .slide: data-background="/assets/images/o-PUBLIC-SPEAKING-facebook.jpg" data-state="hidefooter" class="transition" data-copyrights="true" -->
 
-# Soyons speakers
+# Let's become speakers
 
 <div class="copyrights white">huffpost</div>
 
@@ -44,26 +44,24 @@ Senior innovation developper & Community Manager
 
 <!-- .slide: data-type-show="full" -->
 
-## Plusieurs catégories ! 
-
-### Rappelez-vous Les différents niveaux du speaker
+## Several class
 
 <div class="flex-col">
     <div class="flex-hori">
         <div class="padding">
-            <img src="assets/images/Timide.jpg" class="h-200"><span>Le Débutant</span>
+            <img src="assets/images/Timide.jpg" class="h-200"><span>Beginner</span>
         </div>
         <div class="padding">
-            <img src="assets/images/francky_trichet.jpg" class="h-200"><span>Le Local</span>
+            <img src="assets/images/francky_trichet.jpg" class="h-200"><span>Local</span>
         </div>
     </div>
     <br>
     <div class="flex-hori">
         <div class="padding">
-            <img src="assets/images/ft-l-verou.jpg" class="h-200"><span>Le National</span>
+            <img src="assets/images/ft-l-verou.jpg" class="h-200"><span>National</span>
         </div>
         <div class="padding">
-            <img src="assets/images/musk.jpeg" class="h-200"><span>La Rockstar</span>
+            <img src="assets/images/musk.jpeg" class="h-200"><span>Rockstar</span>
         </div>
     </div>
 </div>
@@ -79,7 +77,7 @@ La rockstar = c'est souvent un evengeliste
 
 <!-- .slide: data-type-show="prez" -->
 
-## Plusieurs catégories ! 
+## Several class! 
 
 <div class="flex-col">
     <div class="flex-hori">
@@ -101,16 +99,16 @@ La rockstar = c'est souvent un evengeliste
 </div>
 
 Notes:
-Debutant = Dans sa boite
-Local = Users Groups locaux
-Nationnal = Il fait des confs de plus haut niveau
-La rockstar = c'est souvent un evengeliste
+Beginner = In your company
+Local = Local Users Groups
+Nationnal = Higher level conference with nationnal impact
+Rockstar = It's often an evengelist or someone who work on an very innovative project
 
 ##==##
 
 <!-- .slide: data-background="/assets/images/notebook-581128_1280.jpg" data-state="hidefooter" class="transition" data-copyrights="true" -->
 
-# Comment trouver son sujet ?
+# How to find a Subject?
 
 <div class="copyrights white">ltdsamedi</div>
 
@@ -119,89 +117,110 @@ La rockstar = c'est souvent un evengeliste
 
 <!-- .slide: data-type-show="full" --><
 
-## Plusieurs pistes
+## Several approches
 
-1. Regarder ce qu'on fait 
-2. Trouver son format <!-- .element: class="fragment" -->
-3. Trouver un copain (copine) ? <!-- .element: class="fragment" -->
+1. Look at what we do
+2. Find a format <!-- .element: class="fragment" -->
+3. Find a friend ? <!-- .element: class="fragment" -->
 
 ##==##
 
-## Je fais quoi ?
+## What do I do?
 
 ![](/assets/images/2000px-Gartner_Hype_Cycle.svg.png) <!-- .element: class="w-800 center" -->
+
+Notes:
+Looks at this curve, the Gartner hype cycle. It's an intresting start point to find a subject, 
+are you at the start of a technology, then you will need an evengelist, 
+are you at the peak of inflated expectations then every one want to have a conference for this talk
+are you a the Trough of desillusionment, then the time for feedback and good practices !
+or are you on the plateau of productivity ? Then it's time to talk about optimizations and very specials points.
+
+You can apply this curve on every thing !
+It's very important to look at what do I do because It very simple to evaluate himself in the work we are doing during our work time.
+It could be your current work day if you are allow to talk on it or simply your technological scanning !
+
 
 ##==##
 
 <!-- .slide: data-type-show="full" -->
 
-## Quel format ? 
+## Which format? 
 
-il en existe une multitude : 
+The are many of them : 
 
-* Lightning talk : 5min ou 15 min
-* Tools in action : 30 min
-* Conférence : 45min / 1h 
-* Université : 2h / 3h
-* Codelabs : 2h / 3h
+* Lightning talk : 5mn or 15 mn
+* Tools in action : 30 mn
+* Conference : 45mn / 1h 
+* University : 2h / 3h
+* Hand's On : 2h / 3h
 
 ##==##
 
 <!-- .slide: data-type-show="prez" class="transition-black" -->
 
-# Quel format ? 
+# Which format? 
 
 ##==##
 
 <!-- .slide: data-type-show="prez" class="transition-white" -->
 
-# Lightning talk : <br><br> 5min ou 15 min
+# Lightning talk: <br><br> 5mn ou 15 mn
+
+Notes:
 
 ##==##
 
 <!-- .slide: data-type-show="prez" class="transition-white" -->
 
-# Tools in action : <br><br> 30 min
+# Tools in action: <br><br> 30 mn
+
+Notes:
 
 ##==##
 
 <!-- .slide: data-type-show="prez" class="transition-white" -->
 
-# Conférence : <br><br> 45min / 1h 
+# Conference: <br><br> 45mn / 1h 
+
+Notes
 
 ##==##
 
 <!-- .slide: data-type-show="prez" class="transition-white" -->
 
-#  Université : <br><br> 2h / 3h
+#  University : <br><br> 2h / 3h
 
+Notes:
 ##==##
 
 <!-- .slide: data-type-show="prez" class="transition-white" -->
 
-# Codelabs : <br><br> 2h / 3h
+# Hand's On : <br><br> 2h / 3h
+
+Notes:
 
 ##==##
 
-## Trouver son copain / copine
+## Find a friend
 
 ![](/assets/images/real_chatons_amis.jpg) <!-- .element: class="w-800 center" -->
 
 Notes:
-Je voulais mettre une image de chat :p
+
 
 
 ##==##
 
 <!-- .slide: data-type-show="prez" -->
 
-## Pour résumer
+## To recap
 
-Regarder ce qu'on fait<!-- .element: class="fragment" -->
+What do I do<!-- .element: class="fragment" -->
 
-Trouver son format<!-- .element: class="fragment" -->
+Find a format<!-- .element: class="fragment" -->
 
-Trouver son binome<!-- .element: class="fragment" -->
+Find a binomial<!-- .element: class="fragment" -->
 
 
 Notes:
@@ -210,7 +229,7 @@ Notes:
 
 <!-- .slide: data-background="assets/images/choix_conf.jpg" data-state="hidefooter" class="transition" data-copyrights="true"  -->
 
-# Où aller ?
+# Where to go?
 
 <div class="copyrights white">Michael Schuerman</div>
 
@@ -222,68 +241,74 @@ Confs nationnales
 
 <!-- .slide: data-background="assets/images/call-for-presentations.jpg" data-state="hidefooter" class="transition" data-copyrights="true" -->
 
-# Talk : Mode d'emploi 
+# Talk : Instruction manual
 
 <div class="copyrights white">ethos3</div>
 
-##==##
-
-<!-- .slide: data-type-show="full" -->
-
-## Le titre
-
-Il doit être clair et expliquer ce que vous allez présenter ou alors, il doit être attirant ! 
-
-Notes:
-Parler de mon talk webRTC ! très mauvais choix de titre ! 
-
-##==##
-
-<!-- .slide: class="transition-white" data-type-show="prez" -->
-
-# Le titre doit donner envie
-
-Notes:
-Parler de mon talk webRTC ! très mauvais choix de titre ! 
+Notes: 
+Lors de la rédaction
 
 ##==##
 
 <!-- .slide: data-type-show="full" -->
 
-## La description
+## Title
 
-Elle doit être suffisament courte pour ne pas endormir les gens mais en meme temps suffisament détaillée pour leur donner envie de venir.
-
-Il ne faut pas hésiter à dévoiler un peu son plan et le niveau de la conf pour que les gens sachent s'ils doivent venir ou non à votre conférence.
-
-##==##
-
-<!-- .slide: class="transition-white" data-type-show="prez" -->
-
-# La description décrit le contenu !
+It must be clear enough to explain a litle be what you will show. It have to be attractive! 
 
 Notes:
-Elle doit être suffisament courte pour ne pas endormir les gens mais en meme temps suffisament détaillée pour leur donner envie de venir.
-
-Il ne faut pas hésiter à dévoiler un peu son plan et le niveau de la conf pour que les gens sachent s'ils doivent venir ou non à votre conférence.
+Talk about my talk WebRTC
 
 ##==##
 
 <!-- .slide: class="transition-white" data-type-show="prez" -->
 
-# Prennez la place du participant !
+# A Title is attractive 
+
+Notes:
+It must be clear enough to explain a litle be what you will show. It have to be attractive! 
+Parler de mon talk webRTC ! très mauvais choix de titre ! 
+
+##==##
+
+<!-- .slide: data-type-show="full" -->
+
+## Description
+
+It should be short enough to not fall asleep the attendees. But in the same time sufficiently detailed to make them want to come.
+
+Do not thesitate to reveal a little bit your plan and level to let people know if they have to come or not.
+
+##==##
+
+<!-- .slide: class="transition-white" data-type-show="prez" -->
+
+# Description : Explain your content!
+
+Notes:
+It should be short enough to not fall asleep the attendees. But in the same time sufficiently detailed to make them want to come.
+
+Do not thesitate to reveal a little bit your plan and level to let people know if they have to come or not.
+
+Sometimes, you could make some jokes
+
+##==##
+
+<!-- .slide: class="transition-white" data-type-show="prez" -->
+
+# Take the place of the attendee!
 
 ##==##
 
 <!-- .slide: data-background="assets/images/Rocky-II-wallpaper-HD.jpg" data-state="hidefooter" class="transition" data-copyrights="true" -->
 
-# Bien préparer ses slides
+# Prepare your slides
 
 <div class="copyrights white">Rocky 2</div>
 
 ##==##
 
-## Pas de gif
+## No gif
 
 ![](assets/images/first_gif.gif) <!-- .element: class="w-600 center" -->
 
@@ -295,17 +320,17 @@ Juste milieu entre texte & vide
 <!-- .slide: data-background="assets/images/third_gif.gif" data-state="hidefooter" class="transition no-filter" data-copyrights="true" -->
 
 
-<div class="copyrights white">bon y a un moment où faut arrêter</div>
+<div class="copyrights white">there is a moment where we have to stop</div>
 
 ##==##
 
 <!-- .slide: data-type-show="full" -->
 
-## Posez-vous ces questions :
+## Ask you questions:
 
-1. Qui est mon auditoire ? 
-2. Qu'attendent-ils ?
-3. Est-ce que mes slides doivent être compréhensible sans le texte qui va avec ?
+1. Who is my audience? 
+2. What are they expecting?
+3. Should my slides be comprehensive without the text there is in it ?
 
 Notes: 
 L'auditoire indique
@@ -315,44 +340,50 @@ L'auditoire indique
 
 <!-- .slide: class="transition-black" data-type-show="prez" -->
 
-# Posez-vous ces questions :
+# Ask you questions:
 
 ##==##
 
 <!-- .slide: class="transition-white" data-type-show="prez" -->
 
-# Qui est mon auditoire ? 
+# Who is my audience? 
+
+Notes:
 
 ##==##
 
 <!-- .slide: class="transition-white" data-type-show="prez" -->
 
-# Qu'attendent-ils ?
+# What are they expecting?
 
 ##==##
 
 <!-- .slide: class="transition-white" data-type-show="prez" -->
 
-# Slides autoporteurs ?
+# Independent Slides?
+
+
+Notes:
+Should my slides be comprehensive without the text there is in it ?
 
 ##==##
 
 <!-- .slide: class="transition-white" data-type-show="prez" -->
 
-#  Misez sur la simplicité !
+#  Keep it simple!
 
 ##==##
 
-## Car avec un titre ça fait trop
+## Because with a title, it could be to much
 
-### Quand en plus y a un sous-titre ! 
+### And even more with a subtitle! 
 
 
 <!-- .slide: class="surcharge" -->
 
 > Évitez les slides trop chargés  ! <!-- .element class="big-text" -->
 
-Qui en plus ont beaucoup de texte, c'est vraiment pas cool ! 
+And if you add lors of text, it's not very cool!
 
 ##==##
 
@@ -360,14 +391,14 @@ Qui en plus ont beaucoup de texte, c'est vraiment pas cool !
 
 <br><br><br>
 
-Mais pas sans style non plus  ! <!-- .element class="big-text arial" -->
+But not witouht style  ! <!-- .element class="big-text arial" -->
 
 
 ##==##
 
 <!-- .slide: class="transition-white" data-type-show="prez" -->
 
-#  Bref ! Trouvez l'équilibre !
+#  In short, find balance!
 
 
 Notes: 
@@ -378,15 +409,16 @@ Les images & gif peuvent etre utiles
 
 <!-- .slide: class="transition-black" data-type-show="prez" -->
 
-# Créez une histoire !
+# Create a story!
 
+Notes:
 
 ##==##
 
 <!-- .slide: class="transition-white" data-type-show="prez" -->
 
 
-# Montrez du code ou des démos 
+# Show some code or demos
 
 Notes:
 Parlez du livecoding
@@ -395,14 +427,15 @@ Parlez du livecoding
 
 <!-- .slide: data-background="assets/images/chiot.jpg" data-state="hidefooter" data-copyrights="true" class="transition" -->
 
-# Tuez les chiots 
+# Kill the puppies
 
+Notes:
 
 ##==##
 
 <!-- .slide: data-background="assets/images/d_day.jpg" data-state="hidefooter" data-copyrights="true" class="transition" -->
 
-# Le Jour J 
+# The D Day
 
 <div class="copyrights white">d day facts</div>
 
@@ -410,7 +443,7 @@ Parlez du livecoding
 
 <!-- .slide: data-background="assets/images/le-grand-saut.jpg" data-state="hidefooter" class="transition" data-copyrights="true" -->
 
-# Se lancer
+# Starting
 
 <div class="copyrights white">france tourisme</div>
 
@@ -419,7 +452,7 @@ Mémoriser sa présentation ou alors anecdote
 
 ##==##
 
-# /!\ à votre image !
+# /!\ to your image !
 
 <!-- .slide: data-background="assets/images/gaga_steak.jpg" data-state="hidefooter" class="transition"  data-copyrights="true" -->
 
@@ -427,10 +460,11 @@ Mémoriser sa présentation ou alors anecdote
 
 Notes:
 Attention au sexisme, aux propos tenus etc...
+inconsious bias
 
 ##==##
 
-# Poser des questions
+# Ask questions
 
 
 <!-- .slide: data-background="assets/images/Foire-aux-questions_w1024h500.png" data-state="hidefooter" class="transition" data-copyrights="true" -->
@@ -442,7 +476,7 @@ Voir si les gens connaissent, sonder son auditoire !
 
 ##==##
 
-# Faire des pauses
+# Do some breaks
 
 <!-- .slide: data-background="assets/images/pause.jpg" data-state="hidefooter" class="transition" data-copyrights="true" -->
 
@@ -453,7 +487,7 @@ Laisser le temps aux gens de digérer => Soit l'humour mais pas trop, soit des q
 
 ##==##
 
-# Osez dire : je ne sais pas   
+# Dare to say : "I don't know"
 
 <!-- .slide: data-background="assets/images/i_dunno.png" data-state="hidefooter" class="transition" data-copyrights="true" -->
 
@@ -464,7 +498,7 @@ Vous n'^etes pas infaiible
 
 ##==##
 
-# Expliquez ce que vous faites
+# Explain what you do
 
 <!-- .slide: data-background="assets/images/dev_boite_noire.jpg" data-state="hidefooter" class="transition" data-copyrights="true" -->
 
@@ -475,7 +509,7 @@ En cas de pépins, expliquez, ne laisser pas un blanc
 
 ##==##
 
-# Ayez un plan B
+# Prepare a backup plan
 
 <!-- .slide: data-background="assets/images/macgyver_img.jpg" data-state="hidefooter" class="transition" data-copyrights="true" -->
 
