@@ -30,6 +30,8 @@ Senior innovation developper & Community Manager
 <!-- .element: class="gplus" -->
 [+JeanFrancoisGarreau](http://plus.google.com/+JeanFrancoisGarreau)
 
+Notes:
+GDG Organizer of GDG Nantes, GDE on WebTechnologies
 
 ##==##
 
@@ -67,10 +69,10 @@ Senior innovation developper & Community Manager
 </div>
 
 Notes:
-Debutant = Dans sa boite
-Local = Users Groups locaux
-Nationnal = Il fait des confs de plus haut niveau
-La rockstar = c'est souvent un evengeliste
+Beginner = In your company
+Local = Local Users Groups
+Nationnal = Higher level conference with nationnal impact
+Rockstar = It's often an evengelist or someone who work on an very innovative project
 
 
 ##==##
@@ -168,6 +170,7 @@ The are many of them :
 # Lightning talk: <br><br> 5mn ou 15 mn
 
 Notes:
+The Lightning talk is not the easer format to choose because it is very short, you have to be very concise !  I don't realy recommand this format to start. In general, it is a format for pitchs
 
 ##==##
 
@@ -176,6 +179,8 @@ Notes:
 # Tools in action: <br><br> 30 mn
 
 Notes:
+An intresting format because you have enough time to deal with a subject an not enough to loose time :) 
+In fact, it's intresting because it will force you to be focus on a subject. 
 
 ##==##
 
