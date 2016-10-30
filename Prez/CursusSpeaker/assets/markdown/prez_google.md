@@ -188,7 +188,10 @@ In fact, it's intresting because it will force you to be focus on a subject.
 
 # Conference: <br><br> 45mn / 1h 
 
-Notes
+Notes:
+This format is intresting to develop more a subject. Be carefull with this format, it's very easy to be to short or too long ! When you give a conference, it's recommand to be prepare and to have done some repititions.
+
+If you know that you could be just (too long) say to attendees to ask you the questions after the session 
 
 ##==##
 
@@ -197,6 +200,9 @@ Notes
 #  University : <br><br> 2h / 3h
 
 Notes:
+It's a good opportunity to developp more deeper a subject. In general, you will present everything about a technology. It's a very complicated format due to the time to respect.
+In general an other difficulty is to prepare this kind of format. Because you have to do a lot slides.
+
 ##==##
 
 <!-- .slide: data-type-show="prez" class="transition-white" -->
@@ -204,6 +210,9 @@ Notes:
 # Hand's On : <br><br> 2h / 3h
 
 Notes:
+The hand's on is an easer format because you have more proximity with the attendees and you have less attendees and in general less expectations from attendees. Indeed, an Hand's on will help people to discover or enter in a technology. People who comes want's to learn and generaly don't already tried the technology before.
+
+The difficulty here is to prepare well the assets and to be prepare to run the hand's On, on every platform. So, you have to have lots of keys and to have a setup time very low.
 
 ##==##
 
@@ -212,7 +221,9 @@ Notes:
 ![](/assets/images/real_chatons_amis.jpg) <!-- .element: class="w-800 center" -->
 
 Notes:
+It's very important to think to do a presentation with an other speaker. This is generaly a guarenty of dynamism and quality for attendees. So conference organisers don't hesitate to much to chose a binomial against a single person.
 
+Indeed, when you are 2, you will share the dynamism. When one speaker don't talk, the other one will speak and so on and so on....
 
 
 ##==##
@@ -240,7 +251,9 @@ Notes:
 
 Notes:
 Users Groups
-Confs nationnales
+Nationnal conferences, there is lots of conferences ! Please look at the specialties of the confrences : 
+
+DroidCon / Dot conf / ...
 
 ##==##
 
