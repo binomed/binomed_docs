@@ -133,13 +133,19 @@ Rockstar = It's often an evengelist or someone who work on an very innovative pr
 
 Notes:
 Looks at this curve, the Gartner hype cycle. It's an intresting start point to find a subject, 
+
 are you at the start of a technology, then you will need an evengelist, 
+
 are you at the peak of inflated expectations then every one want to have a conference for this talk
+
 are you a the Trough of desillusionment, then the time for feedback and good practices !
+
 or are you on the plateau of productivity ? Then it's time to talk about optimizations and very specials points.
 
 You can apply this curve on every thing !
+
 It's very important to look at what do I do because It very simple to evaluate himself in the work we are doing during our work time.
+
 It could be your current work day if you are allow to talk on it or simply your technological scanning !
 
 
@@ -170,7 +176,9 @@ The are many of them :
 # Lightning talk: <br><br> 5mn ou 15 mn
 
 Notes:
-The Lightning talk is not the easer format to choose because it is very short, you have to be very concise !  I don't realy recommand this format to start. In general, it is a format for pitchs
+The Lightning talk is not the easer format to choose because it is very short, you have to be very concise !  I don't realy recommand this format to start. 
+
+In general, it is a format for pitchs
 
 ##==##
 
@@ -180,6 +188,7 @@ The Lightning talk is not the easer format to choose because it is very short, y
 
 Notes:
 An intresting format because you have enough time to deal with a subject an not enough to loose time :) 
+
 In fact, it's intresting because it will force you to be focus on a subject. 
 
 ##==##
@@ -201,6 +210,7 @@ If you know that you could be just (too long) say to attendees to ask you the qu
 
 Notes:
 It's a good opportunity to developp more deeper a subject. In general, you will present everything about a technology. It's a very complicated format due to the time to respect.
+
 In general an other difficulty is to prepare this kind of format. Because you have to do a lot slides.
 
 ##==##
@@ -264,7 +274,9 @@ DroidCon / Dot conf / ...
 <div class="copyrights white">ethos3</div>
 
 Notes: 
-Lors de la rédaction
+Even you have lot of chance to be selected to conference because you come from Google, you have to be warn about somes tips & tricks for preparing your slides and how to be on stage!
+
+How many of you will write their own talk and will not use the content bundle ?
 
 ##==##
 
@@ -284,8 +296,13 @@ Talk about my talk WebRTC
 # A Title is attractive 
 
 Notes:
+As I said, even if you are selected by the commitee selection, attendees will generaly not be indulgent as the Commitee ! Indeed, some people prepare their agenda but in general, lots of attendees wait for the last minutes to do their selection and the first thing they will see about your talk, is the title!
+
 It must be clear enough to explain a litle be what you will show. It have to be attractive! 
-Parler de mon talk webRTC ! très mauvais choix de titre ! 
+
+Talk webRTC ! Very bad choice of title ! 
+
+So, don't hesitate to ask colleagues, people around you if they love your title and if they think that they will go to your talk just base on the title ?
 
 ##==##
 
@@ -297,6 +314,7 @@ It should be short enough to not fall asleep the attendees. But in the same time
 
 Do not thesitate to reveal a little bit your plan and level to let people know if they have to come or not.
 
+
 ##==##
 
 <!-- .slide: class="transition-white" data-type-show="prez" -->
@@ -304,17 +322,22 @@ Do not thesitate to reveal a little bit your plan and level to let people know i
 # Description : Explain your content!
 
 Notes:
+When people chosse your talk, it's the first step! Know you have to explain them what will be your talk. 
+
 It should be short enough to not fall asleep the attendees. But in the same time sufficiently detailed to make them want to come.
 
 Do not thesitate to reveal a little bit your plan and level to let people know if they have to come or not.
 
-Sometimes, you could make some jokes
+Sometimes, you could make some jokes. Remember that a description that we can't understand will not be very attractive for attendees !
 
 ##==##
 
 <!-- .slide: class="transition-white" data-type-show="prez" -->
 
 # Take the place of the attendee!
+
+Notes:
+It's very important that every time you write your title or your description, you try to step back and try to be as much as possible objective about the fact that you will go or not to your own talk ! Ask friends and colleagues to help you in this step!
 
 ##==##
 
@@ -324,14 +347,15 @@ Sometimes, you could make some jokes
 
 <div class="copyrights white">Rocky 2</div>
 
-##==##
+Notes:
+Ok good, now we have writen the title, the description, we have to prepare the slide. I would like to direct the next slides to people who will write their own content!
 
-## No gif
+##==##
 
 ![](assets/images/first_gif.gif) <!-- .element: class="w-600 center" -->
 
 Notes: 
-Juste milieu entre texte & vide
+If I talk, I'm quite shure that at this moment, you are not really listen to me.
 
 ##==##
 
@@ -339,6 +363,18 @@ Juste milieu entre texte & vide
 
 
 <div class="copyrights white">there is a moment where we have to stop</div>
+
+Notes:
+And If I continue like this, you will only memorize a few part of what I'm saying
+
+##==##
+
+<!-- .slide: class="transition-black" -->
+
+# No gif
+
+Notes:
+I will not saying that you are not allowed to include some gif some times, but it's clear that gif represent a very disruptive factor for your attendees. So if you have something intresting to communicate to your attendees, don't use it at this moment! Use the gift to introduce some breaks!
 
 ##==##
 
@@ -351,7 +387,7 @@ Juste milieu entre texte & vide
 3. Should my slides be comprehensive without the text there is in it ?
 
 Notes: 
-L'auditoire indique
+
 
 
 ##==##
@@ -360,6 +396,9 @@ L'auditoire indique
 
 # Ask you questions:
 
+Notes:
+When you prepare your slide, it's very easy to know how you will write your slides because you have just to ask you somes questions !
+
 ##==##
 
 <!-- .slide: class="transition-white" data-type-show="prez" -->
@@ -367,12 +406,19 @@ L'auditoire indique
 # Who is my audience? 
 
 Notes:
+As you know, a developper don't expect the same content as marketing director! So think about this to know how deep you will enter or not in your subject.
+
+If it's a developper, you will generaly have to show him or her ;) some code, some demo... 
+
 
 ##==##
 
 <!-- .slide: class="transition-white" data-type-show="prez" -->
 
 # What are they expecting?
+
+Notes:
+To answer to this question, it's very simple. Look at the description of your talk ! When you write it, it's the same as signing a contract between you and your attendees!  So ask yourself about the fact that your talk is respecting that contract ! It that simple !
 
 ##==##
 
@@ -383,6 +429,37 @@ Notes:
 
 Notes:
 Should my slides be comprehensive without the text there is in it ?
+During a presentation i don't recommand you to have independant slides ! It's the same as using Gif. Attendees will read what is on the screen and will not listen to you. Even worth, it you read what's is on your slide, people start to think that you are unnecessary...
+
+So i recommand you one thing ! Prepare your slides in 2 formats! One for the stage, and one for the restitution. For example, thoses slides exposes some variation if I'm a one stage or if I'm sharing them!
+
+##==## 
+
+<!-- .slide: class="transition-black" data-type-show="prez" -->
+
+# Create a story!
+
+Notes:
+For me the story is very important because you have to take people to a point A to a Point B. At the end of your talk people have to learn something. And this something, it's your responsability to know how to leads them to this point.
+
+For example, At the begining of each talk I gave, i do a Mindmap. It helps me to drop all the idea and things i want attendees will remember.
+
+After this first step that could generaly last for 1 week or more, I start to group my ideas by theme and at this moment, I write my plan.
+
+##==##
+
+<!-- .slide: data-background="assets/images/chiot.jpg" data-state="hidefooter" data-copyrights="true" class="transition" -->
+
+# Kill the puppies
+
+Notes:
+It's a very intresting concept that I got from a talk during the last Web2Day in Nantes. 
+
+The main idea behind this funny title is that in general, you always have somes ideas or things that your want to present and you are attach to them because it could be something you write or something you find very intresting. 
+
+The problem is that you have lots of ideas like this and they are not really link to the story of your slides. It just because it's something cute.
+
+So you have to kill the puppies ! You have to take the courrage to not talk about that and be focus on your main topic. Maybe the next time you will propose a new subject where you could include thoses subjects. But not this time !
 
 ##==##
 
@@ -390,18 +467,23 @@ Should my slides be comprehensive without the text there is in it ?
 
 #  Keep it simple!
 
+Notes:
+Ok, now let's look at the slides! Please keep it simple !
+
 ##==##
+
+<!-- .slide: class="surcharge" -->
 
 ## Because with a title, it could be to much
 
 ### And even more with a subtitle! 
 
-
-<!-- .slide: class="surcharge" -->
-
-> Évitez les slides trop chargés  ! <!-- .element class="big-text" -->
+> Avoid slides to busy ! <!-- .element class="big-text" -->
 
 And if you add lors of text, it's not very cool!
+
+Notes:
+As you notice, with this slide, you don't really know where you have to look and where is the important information
 
 ##==##
 
@@ -411,25 +493,35 @@ And if you add lors of text, it's not very cool!
 
 But not witouht style  ! <!-- .element class="big-text arial" -->
 
+Notes:
+On the other hand, a slide with no slide is boring. It's as if come back to university ! 
+
+##==##
+
+## Try the no Bullet points slides !
+
+* because generaly
+* bullet point means
+* several slides !
+* and because they are not sexy ;)
+
+Notes:
+Please don't use the bullet point ! If you have to use it, it means that you have identify some important aspect to mention and you could split this slide into several with one slide per subject.
+
+You could keep the bullet points slides for the restitution but not for the stage.
+
+When you have bullet point, generaly people read them and don't listen to them
 
 ##==##
 
 <!-- .slide: class="transition-white" data-type-show="prez" -->
 
-#  In short, find balance!
+#  In short, <br> find balance!
 
 
 Notes: 
 Les images & gif peuvent etre utiles 
 
-
-##==## 
-
-<!-- .slide: class="transition-black" data-type-show="prez" -->
-
-# Create a story!
-
-Notes:
 
 ##==##
 
@@ -439,15 +531,15 @@ Notes:
 # Show some code or demos
 
 Notes:
-Parlez du livecoding
+Slides with code is very important developpers so it's important to guide them to what is important to look at ! Think about progressive hilight of code help people to follow you.
 
-##==##
+About the demo, it's risk taking but it's appreciate. It helps people to trust you !
 
-<!-- .slide: data-background="assets/images/chiot.jpg" data-state="hidefooter" data-copyrights="true" class="transition" -->
+If you are not shure about the network or about an unkown side effect during your presentation, you coudld register your screen with a screen recorder tool and only play the video. It will help you by structuring your talk and you not take risk !
 
-# Kill the puppies
+An other exercice that you could do is the live coding ! WARNING, this excercice is very difficult because you learn by heart what you will do. I generally recommand to do live code when you are already an experiment speaker. Or if you are two on stage ! On do the demo, the other explain it!
 
-Notes:
+
 
 ##==##
 
@@ -456,6 +548,9 @@ Notes:
 # The D Day
 
 <div class="copyrights white">d day facts</div>
+
+Notes:
+Ok, fine, we have prepare our slides, now come the D Day ! 
 
 ##==##
 
@@ -466,19 +561,43 @@ Notes:
 <div class="copyrights white">france tourisme</div>
 
 Notes:
-Mémoriser sa présentation ou alors anecdote
+One of the most difficult things with a talk is the beginning and the time you take to have a constant flow when you speak.
+At the begining of a talk you have generaly a trembling voice and it is something that can be seen!
+
+But be rassured, you could do something to avoid that : 
+
+You could ether memorize a sentence or say some personnal anecdote.
+
+The fact to start with something that you know very well will helps you to start. You will not have a trembling voice and will start your talk with the constant flow ! 
+
 
 ##==##
 
-# /!\ to your image !
+# /!\ to your image!
 
 <!-- .slide: data-background="assets/images/gaga_steak.jpg" data-state="hidefooter" class="transition"  data-copyrights="true" -->
 
 <div class="copyrights white">yahoo</div>
 
 Notes:
-Attention au sexisme, aux propos tenus etc...
-inconsious bias
+Pay attention to what you say because you will represent your company ! I know that you have a trainning about the inconsious bias so it is important that you think about it on stage ! 
+
+##==##
+
+<!-- .slide: data-background="assets/images/for_dummies_plain.png" data-state="hidefooter" class="transition" data-copyrights="true" -->
+
+# Not to say!
+
+<div class="copyrights white">The bean counter</div>
+
+Notes:
+In the same style, you have to always be humble and not look down at attendees. 
+
+For example, don't say "It's easy to do". You generaly use to explain some simple steps or to mention something that you find very easy. Think about your audience will maybe not at your level ! So you could try some thigs like "The way to get this done is..."
+
+"As everybody knows" the common knowledge is a myth ! If you don't know, ask your audience about that.  
+
+Look at the article of Christian Eilmann who explain how to avoid thoses sentences!
 
 ##==##
 
@@ -490,7 +609,9 @@ inconsious bias
 <div class="copyrights white">covoiturage</div>
 
 Notes:
-Voir si les gens connaissent, sonder son auditoire ! 
+As mention before, asking questions to your audience is important because it helps you to evaluate the level of atendees and sometimes it helps you to avoid to spend more times on a subject or on the other hand, indicates you that you have to explain a litle bit more some slides.
+
+An other intresting aspect of asking questions is that it helps you to keep your audience focus to you. Asking them a question is a step towards your audience and indicate them that you are trying to be syncrhonise with them
 
 ##==##
 
@@ -501,7 +622,8 @@ Voir si les gens connaissent, sonder son auditoire !
 <div class="copyrights white">etudiant astucieux</div>
 
 Notes:
-Laisser le temps aux gens de digérer => Soit l'humour mais pas trop, soit des questions
+Breaks are important because it helps attendees to digest what you where saying before.
+You can use humor, gif, or you can ask some questions to do some break
 
 ##==##
 
@@ -512,7 +634,7 @@ Laisser le temps aux gens de digérer => Soit l'humour mais pas trop, soit des q
 <div class="copyrights white">ironrex007 deviantart</div>
 
 Notes:
-Vous n'^etes pas infaiible
+Your are not infailliible. Nobody does ! So it's better to say "I don't know" that to try to answer something that you don't masterise. People could see it and it will discredit you
 
 ##==##
 
@@ -523,11 +645,16 @@ Vous n'^etes pas infaiible
 <div class="copyrights white">next impact</div>
 
 Notes:
-En cas de pépins, expliquez, ne laisser pas un blanc
+If you have a problem with your slide, or if you doing live coding! Explain to atendees what you are doing and why you do it!
+
+There is nothing more frustating and stressfull to see the speaker behind a screen and you don't know what is appening.... It create a very discomfort situtation for both...
+
+For example this year during a talk i gave, everything goes wrong ! Nothing was working so i try to debug it during the talk. But to debug, I don't lock myselft behing my computer. I share the screen and try to debug the problem on the main screen. I could explain them what i do and why it don't work.
+
 
 ##==##
 
-# Prepare a backup plan
+# Prepare a <br> backup plan
 
 <!-- .slide: data-background="assets/images/macgyver_img.jpg" data-state="hidefooter" class="transition" data-copyrights="true" -->
 
@@ -535,7 +662,9 @@ En cas de pépins, expliquez, ne laisser pas un blanc
 <div class="copyrights white">esprit ciné</div>
 
 Notes:
-Sachez passer à autre chose ou alors avoir un plan B
+Every body know the Murphy law that say that everything that could go wrong will go wrong one day !
+
+So you always have to have a backup plan. You could use the technic of screen recording or having steps prepares. In short, it is important to be prepare to this eventuality.
 
 ##==##
 
