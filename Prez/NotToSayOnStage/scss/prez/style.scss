@@ -1,0 +1,123 @@
+@import "../theme/2015/binomed/colors";
+
+$sommaire-img-height : 60px;
+
+
+
+strong{
+  font-weight:600 !important;
+}
+
+div.no-bullet~ul{
+  list-style-type: none;
+
+  img{
+    margin:0; 
+  }
+
+  li{
+    line-height: $sommaire-img-height;
+  }
+}
+
+div.padding~*{
+  padding-left: 50px;
+}
+
+
+p.surround{
+font-weight: bold;
+font-size: 1em;
+color: #DA0E1A;
+text-align: left;
+}
+
+table.table_version{
+  position: absolute;
+  top: 4em;
+}
+
+table.table_version td, table.table_version th {
+  font-size: 14px;
+}
+
+.img_version{
+  margin-top:7em;
+}
+
+
+.copyright.black{
+  color: grey;
+  bottom: 20px;
+}
+
+p.big-text{
+  font-size:2em;
+}
+
+section.surcharge:before{
+  content: '';
+  background-image: url(../../assets/images/lucca_logo.png);
+  background-size: 189px;
+  width: 189px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 200;
+  left: -173px;
+}
+
+section.surcharge:after{
+  content: '';
+  background-image: url(../../assets/images/lucca_logo.png);
+  background-size: 189px;
+  width: 189px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 200;
+  right: -173px;
+}
+
+section.white{
+  background: white;
+}
+
+p.big-text.arial{
+  font-family: serif;
+}
+
+div.flex-hori{
+  display: flex;
+  flex-direction: row;  
+  justify-content: space-between;
+  align-items: center;
+
+  .space{
+    margin: 20px 50px;
+  }
+}
+
+div.flex-col{
+  display: flex;
+  flex-direction: column;  
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*
+* 
+* MIXINS
+**/
+
+@mixin img-size-prefix($prefix, $attr,$size){
+    section img[alt*=#{$prefix}-#{$size}],section .#{$prefix}-#{$size},section  .#{$prefix}-#{$size}+*{
+        max-#{$attr}: #{$size}px;
+        #{$attr}: inherit;
+    }
+}
+
+@for $i from 1 through 20{
+    @include img-size-prefix(h, height, $i * 50);
+    @include img-size-prefix(w, width, $i * 50);
+}
