@@ -1,5 +1,5 @@
 
-<!-- .slide: class="first-slide transition"  data-background="/assets/images/audience.jpg"  data-type-show="prez"-->
+<!-- .slide: class="first-slide transition"  data-background="assets/images/audience.jpg"  data-type-show="prez"-->
 
 # **Cursus Speaker**
 ## **Session 1**
@@ -14,7 +14,7 @@ Notes:
 
 ##==##
 
-<!-- .slide: class="first-slide transition" data-background="/assets/images/audience.jpg"  data-type-show="full"-->
+<!-- .slide: class="first-slide transition" data-background="assets/images/audience.jpg"  data-type-show="full"-->
 
 # **Cursus Speaker**
 
@@ -45,29 +45,10 @@ Senior innovation developper & Community Manager
 [+JeanFrancoisGarreau](http://plus.google.com/+JeanFrancoisGarreau)
 
 
-##==##
-
-<!-- .slide: class="transition-white" data-type-show="full" -->
-
-## De quoi on va parler ?
-
-1. Aujourd'hui 
-    * Combattons nos peurs
-    * Ma carrière de speaker
-    * Comment trouver son sujet 
-    * TP : vous allez bosser ! 
-2. Plus tard
-    * Quelle conf ? 
-    * CFP ?
-    * Techniques de speaker
-3. Encore plus tard
-    * Encore des techniques de speaker
-    * TP : vous allez encore bosser
-
 
 ##==##
 
-<!-- .slide: data-background="/assets/images/Procrastination_-_do_it.jpg" class="transition" data-copyrights="true" data-type-show="prez"  -->
+<!-- .slide: data-background="assets/images/Procrastination_-_do_it.jpg" class="transition" data-copyrights="true" data-type-show="prez"  -->
 
 Notes:
 Commençons par un exercice : 
@@ -75,7 +56,7 @@ Chacun note un sujet s'il en a un en tête, on reviendra dessus à la fin
 
 ##==##
 
-<!-- .slide: data-background="/assets/images/ca_clown.jpg" class="transition" data-copyrights="true" -->
+<!-- .slide: data-background="assets/images/ca_clown.jpg" class="transition" data-copyrights="true" -->
 
 # Combattons nos peurs
 
@@ -86,7 +67,7 @@ Chacun note un sujet s'il en a un en tête, on reviendra dessus à la fin
 
 ## On a tous peur de ça !
 
-![](/assets/images/imposteur.gif) <!-- .element: class="center h-500" -->
+![](assets/images/imposteur.gif) <!-- .element: class="center h-500" -->
 
 
 Notes:
@@ -98,7 +79,7 @@ ceci dit il assure et fait croire à tout le monde qu'il traduit
 ## Mais en réalité on est ça  
 
 
-![](/assets/images/calimerisme.jpg) <!-- .element: class="center h-500" -->
+![](assets/images/calimerisme.jpg) <!-- .element: class="center h-500" -->
 
 Notes: 
 Des personnes qui n'osent pas 
@@ -122,7 +103,7 @@ Des personnes qui n'osent pas
 
 ##==##
 
-<!-- .slide: data-background="/assets/images/o-PUBLIC-SPEAKING-facebook.jpg" class="transition" data-copyrights="true" -->
+<!-- .slide: data-background="assets/images/o-PUBLIC-SPEAKING-facebook.jpg" class="transition" data-copyrights="true" -->
 
 # Soyons speakers
 
@@ -205,7 +186,7 @@ Quelle attente ?
 
 ##==##
 
-<!-- .slide: data-background="/assets/images/notebook-581128_1280.jpg" class="transition" data-copyrights="true" -->
+<!-- .slide: data-background="assets/images/notebook-581128_1280.jpg" class="transition" data-copyrights="true" -->
 
 # Comment trouver son sujet ?
 
@@ -226,7 +207,7 @@ Quelle attente ?
 
 ## Je fais quoi ?
 
-![](/assets/images/2000px-Gartner_Hype_Cycle.svg.png) <!-- .element: class="w-800 center" -->
+![](assets/images/2000px-Gartner_Hype_Cycle.svg.png) <!-- .element: class="w-800 center" -->
 
 ##==##
 
@@ -298,7 +279,7 @@ Demande bcp de travail en amont mais à l'avantage d'être un format de proximit
 
 ## Trouver son copain / copine
 
-![](/assets/images/real_chatons_amis.jpg) <!-- .element: class="w-800 center" -->
+![](assets/images/real_chatons_amis.jpg) <!-- .element: class="w-800 center" -->
 
 Notes:
 Je voulais mettre une image de chat :p et sinon c'est très important !
@@ -321,7 +302,7 @@ Notes:
 
 ##==##
 
-<!-- .slide: data-background="/assets/images/girl_power_poster_vintage_quote_strength_ultra_3840x2160_hd-wallpaper-1805624.jpg" class="transition" data-type-show="prez" -->
+<!-- .slide: data-background="assets/images/girl_power_poster_vintage_quote_strength_ultra_3840x2160_hd-wallpaper-1805624.jpg" class="transition" data-type-show="prez" -->
 
 # On va bosser !
 
