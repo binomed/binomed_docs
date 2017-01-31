@@ -23,7 +23,7 @@ Notes:
 
 ##==##
 
-<!-- .slide: class="who-am-i" data-type-show="prez" -->
+<!-- .slide: class="who-am-i" data-type-show="full" -->
 
 ## Qui suis-je ?
 
@@ -64,8 +64,11 @@ Chacun note un sujet s'il en a un en tête, on reviendra dessus à la fin
 
 ##==##
 
+<!-- .slide: data-background="#3d4349" class="transition-black binomed-light-grey dark" -->
 
 ## On a tous peur de ça !
+
+<br>
 
 ![](assets/images/imposteur.gif) <!-- .element: class="center h-500" -->
 
@@ -76,29 +79,21 @@ ceci dit il assure et fait croire à tout le monde qu'il traduit
 
 ##==##
 
-## Mais en réalité on est ça  
+<!-- .slide: data-background="#3d4349" class="transition-black binomed-light-grey dark" -->
+
+## Et on est ça  
 
 
-![](assets/images/calimerisme.jpg) <!-- .element: class="center h-500" -->
+![](assets/images/calimero.png) <!-- .element: class="center h-500" -->
 
 Notes: 
 Des personnes qui n'osent pas 
 
 ##==##
 
-## Pourtant on aime partager
+<!-- .slide: data-background="assets/images/partage-de-connaissances.jpg" class="transition" data-copyrights="true" -->
 
-<div class="flex-col">
-    <div class="flex-hori">
-        <div class="padding">
-            <img src="assets/images/partage-de-connaissances.jpg" class="h-400">
-        </div>
-        <div class="padding">
-            <img src="assets/images/au-secours-enfant-mord.jpg" style="height:400px;" class="h-400">
-        </div>
-    </div>
-</div>
-
+# Pourtant on aime partager
 
 
 ##==##
@@ -156,15 +151,13 @@ Rockstar = It's often an evengelist or someone who work on an very innovative pr
         <div class="space">
             <img src="assets/images/francky_trichet.jpg" class="h-200">
         </div>
-    </div>
-    <div class="flex-hori">
         <div class="space">
             <img src="assets/images/ft-l-verou.jpg" class="h-200">
         </div>
         <div class="space">
             <img src="assets/images/musk.jpeg" class="h-200">
         </div>
-    </div>
+    </div>    
 </div>
 
 Notes:
@@ -205,9 +198,13 @@ Quelle attente ?
 
 ##==##
 
-## Je fais quoi ?
+<!-- .slide: data-copyrights="true" -->
+
+## Où se positionner ?
 
 ![](assets/images/2000px-Gartner_Hype_Cycle.svg.png) <!-- .element: class="w-800 center" -->
+
+<div class="copyrights">gartner</div>
 
 ##==##
 
@@ -233,7 +230,7 @@ il en existe une multitude :
 
 <!-- .slide: data-type-show="prez" class="transition-white" -->
 
-# Lightning talk: <br><br> 5min ou 15 min
+# Lightning talk : <br><br> 5min ou 15 min
 
 Notes:
 5min c'est très dur par contre 15 c'est pas mal, => 5 = format pitch
@@ -242,7 +239,7 @@ Notes:
 
 <!-- .slide: data-type-show="prez" class="transition-white" -->
 
-# Tools in action: <br><br> 30 min
+# Tools in action : <br><br> 30 min
 
 Notes:
 Intéressant et pratique !
@@ -251,7 +248,7 @@ Intéressant et pratique !
 
 <!-- .slide: data-type-show="prez" class="transition-white" -->
 
-# Conference: <br><br> 45min / 1h 
+# Conference : <br><br> 45min / 1h 
 
 Notes:
 format le plus répendu
@@ -277,7 +274,7 @@ Demande bcp de travail en amont mais à l'avantage d'être un format de proximit
 
 ##==##
 
-## Trouver son copain / copine
+## Trouver son binome
 
 ![](assets/images/real_chatons_amis.jpg) <!-- .element: class="w-800 center" -->
 
@@ -317,5 +314,5 @@ Notes:
 
 <!-- .element: class="work-rule" --> GDG Nantes Leader & Ingénieur Lucca  
 
-<!-- .element: class="email" --> **jef**@gdgnantes.com  
+<!-- .element: class="email" --> **jef**@gdgnantes.com   [@jefBinomed](https://twitter.com/jefBinomed)
 
