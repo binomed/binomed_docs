@@ -45,15 +45,6 @@ Senior innovation developper & Community Manager
 [+JeanFrancoisGarreau](http://plus.google.com/+JeanFrancoisGarreau)
 
 
-
-##==##
-
-<!-- .slide: data-background="assets/images/Procrastination_-_do_it.jpg" class="transition" data-copyrights="true" data-type-show="prez"  -->
-
-Notes:
-Commençons par un exercice : 
-Chacun note un sujet s'il en a un en tête, on reviendra dessus à la fin
-
 ##==##
 
 <!-- .slide: data-background="assets/images/ca_clown.jpg" class="transition" data-copyrights="true" -->
@@ -166,16 +157,6 @@ Local = Local Users Groups
 Nationnal = Higher level conference with nationnal impact
 Rockstar = It's often an evengelist or someone who work on an very innovative project
 
-##==##
-
-<!-- .slide: class="transition-black" data-type-show="prez" -->
-
-# À vous !
-
-Notes:
-Sonder l'auditoire pour comprendre les envies de chacun
-Pourquoi êtes vous venu ? 
-Quelle attente ?
 
 ##==##
 
