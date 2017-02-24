@@ -1,38 +1,53 @@
-
-<!-- .slide: class="first-slide" -->
+<!-- .slide: class="first-slide transition" data-background="assets/images/ted_x_speaker.jpg"  data-type-show="full"  data-copyrights="true" -->
 
 # **Cursus Speaker**
-## **Session 2**
 
-### 2016  @ **Nantes**
+### **Session 2** 2017 
+
+<div class="copyrights white">alastair humphreys</div>
 
 ##==##
 
-<!-- .slide: data-background="assets/images/ted_x_speaker.jpg" data-state="hidefooter" class="transition" data-copyrights="true" -->
+<!-- .slide: class="first-slide transition"  data-background="assets/images/ted_x_speaker.jpg"  data-type-show="prez"  data-copyrights="true" -->
 
-# Cursus speakers - Session 2
+# **Cursus Speaker**
+### **Session 2**
+
+### 2017  @ **Paris**
 
 <div class="copyrights white">alastair humphreys</div>
 
 Notes:
-De quoi on va parler ?
-* Quelle conf choisir ?
-* CFP ?
-* Comment gérer ses slides ?
-* Techniques de speaker
+1. Quelle conf choisir ?
+2. CFP ?
+3. Comment gérer ses slides ?
+4. Techniques de speaker
 
 ##==##
 
-<!-- .slide: data-background="assets/images/ted_x_speaker.jpg" data-state="hidefooter" class="transition" data-copyrights="true" data-type-show="full" -->
 
-## De quoi on va parler ?
+<!-- .slide: class="who-am-i" data-type-show="full" -->
+
+## Qui suis-je ?
+
+### Jean-François Garreau
+
+<!-- .element: class="descjf" -->
+Senior innovation developper & Community Manager
+
+![avatar w-300 wp-200](assets/images/jf.jpg)
 
 
+![company_logo](assets/images/lucca_logo.png)
+![gdg_logo](assets/images/GDG-Logo-carre.png)
 
-* Où aller ? <!-- .element: class="fragment"  -->
-* CFP ? <!-- .element: class="fragment"  -->
-* Comment gérer ses slides ? <!-- .element: class="fragment"  -->
-* Techniques de speaker <!-- .element: class="fragment"  -->
+<!-- .element: class="twitter" -->
+[@jefBinomed](https://twitter.com/jefBinomed)
+
+<!-- .element: class="gplus" -->
+[+JeanFrancoisGarreau](http://plus.google.com/+JeanFrancoisGarreau)
+
+
 
 ##==##
 
@@ -81,7 +96,7 @@ La rockstar = c'est souvent un evengeliste
 
 <!-- .slide: data-type-show="prez" -->
 
-## Plusieurs catégories ! 
+## Souvenez vous - les types 
 
 <div class="flex-col">
     <div class="flex-hori">
@@ -91,15 +106,16 @@ La rockstar = c'est souvent un evengeliste
         <div class="space">
             <img src="assets/images/francky_trichet.jpg" class="h-200">
         </div>
-    </div>
-    <div class="flex-hori">
+        <div class="space">
+            <img src="assets/images/jf.jpg" class="h-200">
+        </div>
         <div class="space">
             <img src="assets/images/ft-l-verou.jpg" class="h-200">
         </div>
         <div class="space">
             <img src="assets/images/musk.jpeg" class="h-200">
         </div>
-    </div>
+    </div>    
 </div>
 
 Notes:

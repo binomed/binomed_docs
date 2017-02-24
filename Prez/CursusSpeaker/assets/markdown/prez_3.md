@@ -1,28 +1,32 @@
+<!-- .slide: class="first-slide transition" data-background="assets/images/audience.jpg"  data-type-show="full"-->
 
-<!-- .slide: class="first-slide" -->
+# **Cursus Speaker**
+
+### **Session 3** 2017 
+
+
+##==##
+
+<!-- .slide: class="first-slide transition"  data-background="assets/images/audience.jpg"  data-type-show="prez"-->
 
 # **Cursus Speaker**
 ## **Session 3**
 
-### 2016 @ **Nantes**
+### 2017  @ **Nantes**
 
-##==##
 
-## De quoi on va parler ?
-
-### Aujourd'hui 
-
+Notes:
 * Note speaker
 * Axes d'amélioration
 * Objectifs personnels
 
 ##==##
 
-<!-- .slide: data-background="assets/images/note_eval.jpg" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/note_eval.jpg" data-state="hidefooter" class="transition" data-copyrights="true" -->
 
 # Note speaker
 
-<div class="copyright">Ingeiusprep</div>
+<div class="copyrights white">Ingeiusprep</div>
 
 ##==##
 
@@ -156,7 +160,7 @@ Notes:
 ##==##
 
 <!-- .slide: data-background="assets/images/super_dupont.png" data-state="hidefooter" class="transition" -->
-
+        
 # A vous
 
 <div class="copyright">Super Dupont</div>
