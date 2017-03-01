@@ -70,7 +70,7 @@ $ sudo hciconfig hci0 up
 $ sudo hciconfig hci0 down
 ```
 
-LetEncrypt : Expire le 2017-01-16
+LetEncrypt : Expire le 2017-05-30
 
 ./letsencrypt-auto certonly --standalone -d binomed.fr --http-01-port 8000 --server https://acme-v01.api.letsencrypt.org/directory
 
