@@ -31,7 +31,8 @@ Senior innovation developper & Community Manager
 [+JeanFrancoisGarreau](http://plus.google.com/+JeanFrancoisGarreau)
 
 Notes:
-GDG Organizer of GDG Nantes, GDE on WebTechnologies
+GDG Organizer of GDG Nantes, GDE on WebTechnologies, As you wil see, I have a srtong french accent and even if I'm a GDE, it's the first time i give an english talk :p so please be tolerant with me 
+
 
 ##==##
 
@@ -41,6 +42,10 @@ GDG Organizer of GDG Nantes, GDE on WebTechnologies
 
 <div class="copyrights white">huffpost</div>
 
+Notes:
+Today I'm here to talk you about public speaking. I'm not a specialist of communication or a marketing specialist but as a GDG organiser and GDE, i went to lots of conference and as I organize the DevFest Nantes, I know exactly what are the process of selection and what people like or dislike during conference. So I will share you alot of tips and tricks that I notice during the last year.
+
+So The reason why i created this talk is that i met lot of excellent developers (always better than me in such domains) that don't speak at event. Each times, theys said to me : "I don't know what to talk about" or "I'm not good enough to talk about that". So I created this talk.
 
 ##==##
 
@@ -69,6 +74,7 @@ GDG Organizer of GDG Nantes, GDE on WebTechnologies
 </div>
 
 Notes:
+This talk comes from my previous company
 Beginner = In your company
 Local = Local Users Groups
 Nationnal = Higher level conference with nationnal impact
@@ -102,8 +108,11 @@ Rockstar = It's often an evengelist or someone who work on an very innovative pr
 
 Notes:
 Beginner = In your company
+
 Local = Local Users Groups
+
 Nationnal = Higher level conference with nationnal impact
+
 Rockstar = It's often an evengelist or someone who work on an very innovative project
 
 ##==##
@@ -246,7 +255,7 @@ What do I do<!-- .element: class="fragment" -->
 
 Find a format<!-- .element: class="fragment" -->
 
-Find a binomial<!-- .element: class="fragment" -->
+Find a binomial ?<!-- .element: class="fragment" -->
 
 
 Notes:
@@ -261,9 +270,11 @@ Notes:
 
 Notes:
 Users Groups
-Nationnal conferences, there is lots of conferences ! Please look at the specialties of the confrences : 
+
+Nationnal conferences, there is lots of conferences ! Please look at the specialties of the confrences : It will help you to be off topic
 
 DroidCon / Dot conf / ...
+
 
 ##==##
 
@@ -446,6 +457,8 @@ For example, At the begining of each talk I gave, i do a Mindmap. It helps me to
 
 After this first step that could generaly last for 1 week or more, I start to group my ideas by theme and at this moment, I write my plan.
 
+It helps me to structure the logical connection and transition that will lead's me to the point B
+
 ##==##
 
 <!-- .slide: data-background="assets/images/chiot.jpg" data-state="hidefooter" data-copyrights="true" class="transition" -->
@@ -510,7 +523,7 @@ Please don't use the bullet point ! If you have to use it, it means that you hav
 
 You could keep the bullet points slides for the restitution but not for the stage.
 
-When you have bullet point, generaly people read them and don't listen to them
+When you have bullet point, generaly people read them and don't listen to you
 
 ##==##
 
@@ -537,7 +550,7 @@ About the demo, it's risk taking but it's appreciate. It helps people to trust y
 
 If you are not shure about the network or about an unkown side effect during your presentation, you coudld register your screen with a screen recorder tool and only play the video. It will help you by structuring your talk and you not take risk !
 
-An other exercice that you could do is the live coding ! WARNING, this excercice is very difficult because you learn by heart what you will do. I generally recommand to do live code when you are already an experiment speaker. Or if you are two on stage ! On do the demo, the other explain it!
+An other exercice that you could do is the live coding ! WARNING, this excercice is very difficult because you learn by heart what you will do. I generally recommand to do live code when you are already an experiment speaker. Or if you are two on stage ! One do the demo, the other explain it!
 
 
 
@@ -662,7 +675,7 @@ For example this year during a talk i gave, everything goes wrong ! Nothing was 
 <div class="copyrights white">esprit ciné</div>
 
 Notes:
-Every body know the Murphy law that say that everything that could go wrong will go wrong one day !
+Every body know the Murphy law which say that everything that could go wrong will go wrong one day !
 
 So you always have to have a backup plan. You could use the technic of screen recording or having steps prepares. In short, it is important to be prepare to this eventuality.
 
