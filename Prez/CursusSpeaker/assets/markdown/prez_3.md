@@ -2,7 +2,7 @@
 
 # **Cursus Speaker**
 
-### **Session 3** 2017 
+### **Session 3** 2017
 
 
 ##==##
@@ -30,29 +30,62 @@ Notes:
 
 ##==##
 
-## Sachez gagner vos bons points 
+<!-- .slide: data-background="assets/images/rank.jpg" data-state="hidefooter" class="transition" data-copyrights="true" -->
 
-* Conf Locale : 
- * Dans son entreprise : 1 Pt
- * Dans sa ville : 2 Pts / max 10 Pts si reproduits régulièrement
- * Dans une autre ville : 5 Pts / max 20 Pts si reproduits régulièrement
-* National :
- * Dans sa ville : 10 Pts 
- * Dans une autre ville : 15 Pts /max 30  Pts si reproduits régulièrement
-* Conférence proposée en binôme : 5 Pts / Peut être plus en fonction du binôme
+# Sachez gagner vos bons points
 
-Notes:
+<div class="copyrights white">pinterest</div>
+
 
 ##==##
 
-## Sachez gagner vos bons points 
+<!-- .slide: data-type-show="prez" class="transition" -->
 
+<br>
+
+![](assets/images/NANTES-TECH-LOGO.png) <!-- .element: class="w-500 center" -->
+
+Notes:
+Conf Locale
+ * Dans son entreprise : 1 Pt
+ * Dans sa ville : 2 Pts / max 10 Pts si reproduits régulièrement
+ * Dans une autre ville : 5 Pts / max 20 Pts si reproduits régulièrement
+
+##==##
+
+<!-- .slide: data-type-show="prez" class="transition" -->
+
+<br>
+
+![](assets/images/french_tech.png) <!-- .element: class="w-500 center" -->
+
+Notes:
+Conf Nationale
+ * Dans sa ville : 10 Pts
+ * Dans une autre ville : 15 Pts /max 30  Pts si reproduits régulièrement
+* Conférence proposée en binôme : 5 Pts / Peut être plus en fonction du binôme
+
+
+##==##
+
+<!-- .slide: data-background="assets/images/RS_bulles.jpg" data-state="hidefooter" class="transition" data-copyrights="true" -->
+
+# Réseaux sociaux
+
+<div class="copyrights white">Content marketing</div>
+
+Notes:
 * Réseaux sociaux
  * Twitter / G+ :
   * Avec beaucoup de follower : 3 Pts / max 20 Pts si vraiment beaucoup de followers (des milliers)
   * Avec une activité intéressante : 5 Pts / max 10 Pts si le contenu est pertinent
- * Blog technique :  10 Pts / max 40 Pts si le contenu est pertinent 
+ * Blog technique :  10 Pts / max 40 Pts si le contenu est pertinent
  * Avoir une renommée numérique : 50 Pts
+
+##==##
+
+## Sachez gagner vos bons points
+
 * Travailler son réseau
  * Discuter / sympathiser avec les personnes influentes : 30 Pts
 
@@ -60,7 +93,7 @@ Notes:
 
 ##==##
 
-## Confs locales 
+## Confs locales
 ### les users groups
 
 |User Group|Points nécessaires|
@@ -160,7 +193,7 @@ Notes:
 ##==##
 
 <!-- .slide: data-background="assets/images/super_dupont.png" data-state="hidefooter" class="transition" -->
-        
+
 # A vous
 
 <div class="copyright">Super Dupont</div>
@@ -171,11 +204,11 @@ Notes:
 
 <!-- .slide: class="last-slide" -->
 
-<!-- .element: class="thank-message" --> Merci  
+<!-- .element: class="thank-message" --> Merci
 
 <!-- .element: class="presenter" --> **Jean-François Garreau  **
 
-<!-- .element: class="work-rule" --> GDG Nantes Leader & Ingénieur Lucca  
+<!-- .element: class="work-rule" --> GDG Nantes Leader & Ingénieur Lucca
 
-<!-- .element: class="email" --> **jef**@gdgnantes.com  
+<!-- .element: class="email" --> **jef**@gdgnantes.com
 
