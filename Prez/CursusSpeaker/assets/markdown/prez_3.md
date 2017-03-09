@@ -84,12 +84,24 @@ Notes:
 
 ##==##
 
-## Sachez gagner vos bons points
+<!-- .slide: data-background="assets/images/blog.jpg" data-state="hidefooter" class="transition" data-copyrights="true" -->
 
-* Travailler son réseau
- * Discuter / sympathiser avec les personnes influentes : 30 Pts
+# Blog
 
 Notes:
+ * Blog technique :  10 Pts / max 40 Pts si le contenu est pertinent
+ * Avoir une renommée numérique : 50 Pts
+
+
+##==##
+
+<!-- .slide: data-background="assets/images/devfest.jpg" data-state="hidefooter" class="transition" data-copyrights="true" -->
+
+# Travailler son réseau
+
+Notes:
+* Travailler son réseau
+ * Discuter / sympathiser avec les personnes influentes : 30 Pts
 
 ##==##
 
@@ -164,14 +176,16 @@ Notes:
 
 ##==##
 
-<!-- .slide: data-background="assets/images/Rocky-II-wallpaper-HD.jpg" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/Rocky-II-wallpaper-HD.jpg" data-state="hidefooter" class="transition" data-copyrights="true"  -->
 
 # Axes d'amélioration
 
-<div class="copyright">Rocky 2</div>
+<div class="copyrights white">Rocky 2</div>
 
 
 ##==##
+
+<!-- .slide:  data-type-show="full" -->
 
 ## Axes
 
@@ -190,13 +204,47 @@ Notes:
 
 Notes:
 
+
 ##==##
 
-<!-- .slide: data-background="assets/images/super_dupont.png" data-state="hidefooter" class="transition" -->
+<!-- .slide: class="transition-black" data-type-show="prez" -->
+
+# Faire des conférences
+
+Notes:
+Expérimenter différents formats !
+
+##==##
+
+<!-- .slide: class="transition-black" data-type-show="prez" -->
+
+# Travailler son image numérique
+
+Notes:
+Blog / Twitter / ...
+
+##==##
+
+<!-- .slide: class="transition-black" data-type-show="prez" -->
+
+# Travail sur soi
+
+Notes:
+ * Aisance à Parler
+ * Réaction face à des problèmes
+ * Contenu digeste
+ * Esthétique de la présentation
+ * Respect du temps
+ * Contenu intéressant
+ * Scénario de la conférence
+
+##==##
+
+<!-- .slide: data-background="assets/images/super_dupont.png" data-state="hidefooter" class="transition" data-copyrights="true" -->
 
 # A vous
 
-<div class="copyright">Super Dupont</div>
+<div class="copyrights white">Super Dupont</div>
 
 
 
