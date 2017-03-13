@@ -105,74 +105,89 @@ Notes:
 
 ##==##
 
+
+<!-- .slide: class="transition-white" data-type-show="prez" -->
+
+# Confs Locales - Users Groups
+
+##==##
+
+<!-- .slide: class="transition-black" data-type-show="prez" -->
+
+# Conférence (50 min) <br> 5pts
+
+
+##==##
+
+<!-- .slide: class="transition-black" data-type-show="prez" -->
+
+# Quickie (15-20 min) <br> 1pts
+
+
+##==##
+
+<!-- .slide: class="transition-black" data-type-show="prez" -->
+
+# User group extérieur <br> 15pts
+
+Notes:
+Car réseau + côté détaché !
+
+##==##
+
+<!-- .slide: class="transition-white" data-type-show="prez" -->
+
+# Confs Nationnales
+
+##==##
+
+<!-- .slide: class="transition-black" data-type-show="prez" -->
+
+# Conférence à portée locale <br> 10 à 20 pts
+
+
+##==##
+
+<!-- .slide: class="transition-black" data-type-show="prez" -->
+
+# Conférence à portée Nationnale <br> 30 à 40 pts
+
+
+##==##
+
+<!-- .slide: class="transition-black" data-type-show="prez" -->
+
+# Conférence spécifique ou rockstar <br> 50 à 100 pts
+
+
+##==##
+
+<!-- .slide: data-type-show="full" -->
+
 ## Confs locales
-### les users groups
 
 |User Group|Points nécessaires|
 |-----|------|
-|Nantes JUG|5 Pts pour la conf|
-|Nantes JUG|1pt pour le quickie|
-|GDG Nantes|5 Pts pour la conf|
-|Agile Nantes|5 Pts|
-|Nantes JS|10 Pts car voté par le public|
-|Human Talk|1pt|
+|Conférence (50min)|5 Pts pour la conf|
+|Quickie (15-20)|1pt pour le quickie|
 |User group externe|15 Pts|
 
 Notes:
 
 ##==##
 
-## Confs nationales
-### Accessibles
+<!-- .slide: data-type-show="full" -->
 
-||Conférence|Points nécessaires|
-|----|-----|------|
-|![](assets/images/agiletour2015.png) <!-- .element: class="w-100 h-50 float-left" -->|Agile Tour|10 Pts|
-|![](assets/images/breizhcamp.svg) <!-- .element: class="w-100 h-50 float-left" -->|Breizhcamp|15 Pts|
-|![](assets/images/logo-summercamp.png) <!-- .element: class="w-100 h-50 float-left" -->|JugSummerCamp|20 Pts|
-|![](assets/images/logo-codeurs-en-seine.png) <!-- .element: class="w-100 h-50 float-left" -->|Codeurs en Seine|20pt|
-|![](assets/images/devfest.png) <!-- .element: class="w-100 h-50 float-left" -->|DevFest (Hors Nantes)|20 Pts si sujet Google|
-|![](assets/images/rivieraDev.png) <!-- .element: class="w-100 h-50 float-left" -->|Riviera Dev|20 Pts|
+## Confs nationales
+
+|Type de conférence|Points nécessaires|
+|-----|------|
+|Portée locale|10-20 Pts|
+|Portée nationnale|30-40 Pts|
+|Spécifique ou rockstar|50-100 Pts|
 
 
 Notes:
-
-##==##
-
-## Confs nationales
-### Besoin d'expérience
-
-||Conférence|Point nécessaires|
-|----|-----|------|
-|![](assets/images/devfest.png) <!-- .element: class="w-100 h-50 float-left" -->|DevFest Nantes|30 Pts|
-|![](assets/images/bdxio.png) <!-- .element: class="w-100 h-50 float-left" -->|Bdx.IO|30 Pts|
-|![](assets/images/logo-parisweb.png) <!-- .element: class="w-100 h-50 float-left" -->|Paris Web|30 Pts|
-|![](assets/images/kiwiparty2-logo.png) <!-- .element: class="w-100 h-50 float-left" -->|Kiwi Party|30 Pts|
-|![](assets/images/blend_webmix.png) <!-- .element: class="w-100 h-50 float-left" -->|Blend Web Mix|40 Pts|
-|![](assets/images/seocamp.png) <!-- .element: class="w-100 h-50 float-left" -->|SEO Camp|30 Pts|
-
-
-Notes:
-
-
-##==##
-
-## Confs nationales
-### Expérimentés & Rockstars
-
-||Conférence|Point nécessaires|
-|----|-----|------|
-|![](assets/images/cropped-DC_logo.png) <!-- .element: class="w-100 h-50 float-left" -->|DroidCon|50 Pts|
-|![](assets/images/Devoxx-UK-NORMAL.png) <!-- .element: class="w-100 h-50 float-left" -->|Devoxx|70 Pts|
-|![](assets/images/logo-mixit.png) <!-- .element: class="w-100 h-50 float-left" -->|Mix IT|80 Pts|
-|![](assets/images/scalaio_medium.png) <!-- .element: class="w-100 h-50 float-left" -->|Scala.IO|90 Pts|
-|![](assets/images/eclipsecon.png) <!-- .element: class="w-100 h-50 float-left" -->|EclipseCon|40 Pts|
-|![](assets/images/tedx.jpg) <!-- .element: class="w-100 h-50 float-left" -->|TedX|200 Pts|
-|![](assets/images/dotcss-logo.png) <!-- .element: class="w-100 h-50 float-left" -->|Dot conf|150 Pts|
-
-
-Notes:
-
 
 ##==##
 
@@ -204,6 +219,12 @@ Notes:
 
 Notes:
 
+
+##==##
+
+<!-- .slide: class="transition-white" data-type-show="prez" -->
+
+# Axes d'amélioration
 
 ##==##
 
@@ -240,11 +261,9 @@ Notes:
 
 ##==##
 
-<!-- .slide: data-background="assets/images/super_dupont.png" data-state="hidefooter" class="transition" data-copyrights="true" -->
+<!-- .slide: data-background="assets/images/super_dupont.png" class="transition no-filter" data-copyrights="true" -->
 
-# A vous
-
-<div class="copyrights white">Super Dupont</div>
+<div class="copyrights black">Super Dupont</div>
 
 
 
