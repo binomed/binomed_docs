@@ -1,15 +1,29 @@
-
-<!-- .slide: class="first-slide" -->
+<!-- .slide: class="first-slide transition" data-background="assets/images/audience.jpg"  data-type-show="full"-->
 
 # **Cursus Speaker**
-## **Session 1**
 
-### 2016  @ **Nantes**
+### **Session 1** 2017 
 
 
 ##==##
 
-<!-- .slide: class="who-am-i" -->
+<!-- .slide: class="first-slide transition"  data-background="assets/images/audience.jpg"  data-type-show="prez"-->
+
+# **Cursus Speaker**
+## **Session 1**
+
+### 2017  @ **Nantes**
+
+
+Notes:
+1. Choix du sujet Avec TP
+2. Où ? / Comment ? / Que faire ?
+3. Carrière de speaker
+
+##==##
+
+
+<!-- .slide: class="who-am-i" data-type-show="full" -->
 
 ## Qui suis-je ?
 
@@ -31,45 +45,32 @@ Senior innovation developper & Community Manager
 [+JeanFrancoisGarreau](http://plus.google.com/+JeanFrancoisGarreau)
 
 
-##==##
-
-<!-- .slide: class="transition-white" -->
-
-# Cursus Speaker ! 
 
 ##==##
 
-## De quoi on va parler ?
+<!-- .slide: data-background="assets/images/Procrastination_-_do_it.jpg" class="transition" data-copyrights="true" data-type-show="prez"  -->
 
-1. Aujourd'hui 
-    * Combattons nos peurs
-    * Ma carrière de speaker
-    * Comment trouver son sujet 
-    * TP : vous allez bosser ! 
-2. Plus tard
-    * Quelle conf ? 
-    * CFP ?
-    * Techniques de speaker
-3. Encore plus tard
-    * Encore des techniques de speaker
-    * TP : vous allez encore bosser
-4. Une fois que vous êtes choisi comme speaker
-    * On fera des répets ;)
+Notes:
+Commençons par un exercice : 
+Chacun note un sujet s'il en a un en tête, on reviendra dessus à la fin
 
 ##==##
 
-<!-- .slide: data-background="/assets/images/ca_clown.jpg" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/ca_clown.jpg" class="transition" data-copyrights="true" -->
 
 # Combattons nos peurs
 
-<div class="copyright">ABC</div>
+<div class="copyrights white">ABC</div>
 
 ##==##
 
+<!-- .slide: data-background="#3d4349" class="transition-black binomed-light-grey dark" -->
 
 ## On a tous peur de ça !
 
-![](/assets/images/imposteur.gif) <!-- .element: class="center h-500" -->
+<br>
+
+![](assets/images/imposteur.gif) <!-- .element: class="center h-500" -->
 
 
 Notes:
@@ -78,49 +79,102 @@ ceci dit il assure et fait croire à tout le monde qu'il traduit
 
 ##==##
 
-## Mais en réalité on est ça  
+<!-- .slide: data-background="#3d4349" class="transition-black binomed-light-grey dark" -->
+
+## Et on est ça  
 
 
-![](/assets/images/calimerisme.jpg) <!-- .element: class="center h-500" -->
+![](assets/images/calimero.png) <!-- .element: class="center h-500" -->
 
 Notes: 
 Des personnes qui n'osent pas 
 
 ##==##
 
-## Pourtant on aime partager
+<!-- .slide: data-background="assets/images/partage-de-connaissances.jpg" class="transition" data-copyrights="true" -->
 
-![](/assets/images/partage-de-connaissances.jpg) <!-- .element: class="float-let w-500" -->
+# Pourtant on aime partager
 
-![](/assets/images/au-secours-enfant-mord.jpg) <!-- .element: class="float-let w-500" -->
 
 ##==##
 
-<!-- .slide: data-background="/assets/images/o-PUBLIC-SPEAKING-facebook.jpg" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/o-PUBLIC-SPEAKING-facebook.jpg" class="transition" data-copyrights="true" -->
 
 # Soyons speakers
 
-<div class="copyright">huffpost</div>
+<div class="copyrights white">huffpost</div>
 
 ##==##
 
-## Les différents niveaux du speaker
+<!-- .slide: data-type-show="full" -->
 
-1. ![](/assets/images/Timide.jpg) <!-- .element: class="h-100" --> Le Débutant
-2. ![](/assets/images/francky_trichet.jpg) <!-- .element: class="h-100" --> Le Local
-3. ![](/assets/images/ft-l-verou.jpg) <!-- .element: class="h-100" --> Le National
-4. ![](/assets/images/musk.jpeg) <!-- .element: class="h-100" --> La Rockstar
+## Différents types
+
+<div class="flex-col">
+    <div class="flex-hori">
+        <div class="padding">
+            <img src="assets/images/Timide.jpg" class="h-200"><span>Débutant</span>
+        </div>
+        <div class="padding">
+            <img src="assets/images/francky_trichet.jpg" class="h-200"><span>Local</span>
+        </div>
+        <div class="padding">
+            <img src="assets/images/jf.jpg" class="h-200"><span>Nationnal</span>
+        </div>
+    </div>
+    <br>
+    <div class="flex-hori">
+        <div class="padding">
+            <img src="assets/images/ft-l-verou.jpg" class="h-200"><span>International</span>
+        </div>
+        <div class="padding">
+            <img src="assets/images/musk.jpeg" class="h-200"><span>Rockstar</span>
+        </div>
+    </div>
+</div>
 
 Notes:
-Debutant = Dans sa boite
-Local = Users Groups locaux
-Nationnal = Il fait des confs de plus haut niveau
-La rockstar = c'est souvent un evengeliste
+Beginner = In your company
+Local = Local Users Groups
+Nationnal = Higher level conference with nationnal impact
+Rockstar = It's often an evengelist or someone who work on an very innovative project
 
 
 ##==##
 
-<!-- .slide: class="transition-black" -->
+<!-- .slide: data-type-show="prez" -->
+
+## Différents types 
+
+<div class="flex-col">
+    <div class="flex-hori">
+        <div class="space">
+            <img src="assets/images/Timide.jpg" class="h-200">
+        </div>
+        <div class="space">
+            <img src="assets/images/francky_trichet.jpg" class="h-200">
+        </div>
+        <div class="space">
+            <img src="assets/images/jf.jpg" class="h-200">
+        </div>
+        <div class="space">
+            <img src="assets/images/ft-l-verou.jpg" class="h-200">
+        </div>
+        <div class="space">
+            <img src="assets/images/musk.jpeg" class="h-200">
+        </div>
+    </div>    
+</div>
+
+Notes:
+Beginner = In your company
+Local = Local Users Groups
+Nationnal = Higher level conference with nationnal impact
+Rockstar = It's often an evengelist or someone who work on an very innovative project
+
+##==##
+
+<!-- .slide: class="transition-black" data-type-show="prez" -->
 
 # À vous !
 
@@ -131,14 +185,16 @@ Quelle attente ?
 
 ##==##
 
-<!-- .slide: data-background="/assets/images/notebook-581128_1280.jpg" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/notebook-581128_1280.jpg" class="transition" data-copyrights="true" -->
 
 # Comment trouver son sujet ?
 
-<div class="copyright">ltdsamedi</div>
+<div class="copyrights white">ltdsamedi</div>
 
 
 ##==##
+
+<!-- .slide: data-type-show="full" -->
 
 ## Plusieurs pistes
 
@@ -148,11 +204,17 @@ Quelle attente ?
 
 ##==##
 
-## Je fais quoi ?
+<!-- .slide: data-copyrights="true" -->
 
-![](/assets/images/2000px-Gartner_Hype_Cycle.svg.png) <!-- .element: class="w-800 center" -->
+## Où se positionner ?
+
+![](assets/images/2000px-Gartner_Hype_Cycle.svg.png) <!-- .element: class="w-800 center" -->
+
+<div class="copyrights">gartner</div>
 
 ##==##
+
+<!-- .slide: data-type-show="full" -->
 
 ## Quel format ? 
 
@@ -166,16 +228,89 @@ il en existe une multitude :
 
 ##==##
 
-## Trouver son copain / copine
+<!-- .slide: data-type-show="prez" class="transition-black" -->
 
-![](/assets/images/real_chatons_amis.jpg) <!-- .element: class="w-800 center" -->
-
-Notes:
-Je voulais mettre une image de chat :p
+# Quel format ?
 
 ##==##
 
-<!-- .slide: data-background="/assets/images/girl_power_poster_vintage_quote_strength_ultra_3840x2160_hd-wallpaper-1805624.jpg" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-type-show="prez" class="transition-white" -->
+
+# Lightning talk : <br><br> 5min ou 15 min
+
+Notes:
+5min c'est très dur par contre 15 c'est pas mal, => 5 = format pitch
+
+##==##
+
+<!-- .slide: data-type-show="prez" class="transition-white" -->
+
+# Tools in action : <br><br> 30 min
+
+Notes:
+Intéressant et pratique !
+
+##==##
+
+<!-- .slide: data-type-show="prez" class="transition-white" -->
+
+# Conference : <br><br> 45min / 1h 
+
+Notes:
+format le plus répendu
+
+##==##
+
+<!-- .slide: data-type-show="prez" class="transition-white" -->
+
+#  Université : <br><br> 2h / 3h
+
+Notes:
+permet de bien développer un sujet mais attention à ne pas s'égarer 
+
+##==##
+
+<!-- .slide: data-type-show="prez" class="transition-white" -->
+
+# Hand's On : <br><br> 2h / 3h
+
+Notes:
+Demande bcp de travail en amont mais à l'avantage d'être un format de proximité
+
+
+##==##
+
+<!-- .slide: data-background="#08070c" class="transition-black binomed-light-grey dark" data-copyrights="true"-->
+
+## Trouver son binome
+
+![](assets/images/chatons.jpg) <!-- .element: class="w-700 center" -->
+
+<div class="copyrights white">univers felins</div>
+
+Notes:
+Je voulais mettre une image de chat :p et sinon c'est très important !
+
+
+##==##
+
+
+<!-- .slide: data-type-show="prez" -->
+
+## Pour résumer
+
+Qu'est ce que je fais ?<!-- .element: class="fragment align-left" -->
+
+Trouver un format<!-- .element: class="fragment align-left" -->
+
+Trouver un binome<!-- .element: class="fragment align-left" -->
+
+
+Notes:
+
+##==##
+
+<!-- .slide: data-background="assets/images/girl_power_poster_vintage_quote_strength_ultra_3840x2160_hd-wallpaper-1805624.jpg" class="transition" data-type-show="prez" -->
 
 # On va bosser !
 
@@ -190,5 +325,5 @@ Je voulais mettre une image de chat :p
 
 <!-- .element: class="work-rule" --> GDG Nantes Leader & Ingénieur Lucca  
 
-<!-- .element: class="email" --> **jef**@gdgnantes.com  
+<!-- .element: class="email" --> **jef**@gdgnantes.com   [@jefBinomed](https://twitter.com/jefBinomed)
 

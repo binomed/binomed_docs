@@ -1,38 +1,53 @@
-
-<!-- .slide: class="first-slide" -->
+<!-- .slide: class="first-slide transition" data-background="assets/images/ted_x_speaker.jpg"  data-type-show="full"  data-copyrights="true" -->
 
 # **Cursus Speaker**
-## **Session 2**
 
-### 2016  @ **Nantes**
+### **Session 2** 2017
+
+<div class="copyrights white">alastair humphreys</div>
 
 ##==##
 
-<!-- .slide: data-background="assets/images/ted_x_speaker.jpg" data-state="hidefooter" class="transition" data-copyrights="true" -->
+<!-- .slide: class="first-slide transition"  data-background="assets/images/ted_x_speaker.jpg"  data-type-show="prez"  data-copyrights="true" -->
 
-# Cursus speakers - Session 2
+# **Cursus Speaker**
+### **Session 2**
+
+### 2017  @ **Nantes**
 
 <div class="copyrights white">alastair humphreys</div>
 
 Notes:
-De quoi on va parler ?
-* Quelle conf choisir ?
-* CFP ?
-* Comment gérer ses slides ?
-* Techniques de speaker
+1. Quelle conf choisir ?
+2. CFP ?
+3. Comment gérer ses slides ?
+4. Techniques de speaker
 
 ##==##
 
-<!-- .slide: data-background="assets/images/ted_x_speaker.jpg" data-state="hidefooter" class="transition" data-copyrights="true" data-type-show="full" -->
 
-## De quoi on va parler ?
+<!-- .slide: class="who-am-i" data-type-show="full" -->
+
+## Qui suis-je ?
+
+### Jean-François Garreau
+
+<!-- .element: class="descjf" -->
+Senior innovation developper & Community Manager
+
+![avatar w-300 wp-200](assets/images/jf.jpg)
 
 
+![company_logo](assets/images/lucca_logo.png)
+![gdg_logo](assets/images/GDG-Logo-carre.png)
 
-* Où aller ? <!-- .element: class="fragment"  -->
-* CFP ? <!-- .element: class="fragment"  -->
-* Comment gérer ses slides ? <!-- .element: class="fragment"  -->
-* Techniques de speaker <!-- .element: class="fragment"  -->
+<!-- .element: class="twitter" -->
+[@jefBinomed](https://twitter.com/jefBinomed)
+
+<!-- .element: class="gplus" -->
+[+JeanFrancoisGarreau](http://plus.google.com/+JeanFrancoisGarreau)
+
+
 
 ##==##
 
@@ -46,7 +61,7 @@ De quoi on va parler ?
 
 <!-- .slide: data-type-show="full" -->
 
-## Plusieurs catégories ! 
+## Plusieurs catégories !
 
 ### Rappelez-vous Les différents niveaux du speaker
 
@@ -81,7 +96,7 @@ La rockstar = c'est souvent un evengeliste
 
 <!-- .slide: data-type-show="prez" -->
 
-## Plusieurs catégories ! 
+## Souvenez vous - les types
 
 <div class="flex-col">
     <div class="flex-hori">
@@ -91,8 +106,9 @@ La rockstar = c'est souvent un evengeliste
         <div class="space">
             <img src="assets/images/francky_trichet.jpg" class="h-200">
         </div>
-    </div>
-    <div class="flex-hori">
+        <div class="space">
+            <img src="assets/images/jf.jpg" class="h-200">
+        </div>
         <div class="space">
             <img src="assets/images/ft-l-verou.jpg" class="h-200">
         </div>
@@ -127,7 +143,7 @@ Human Talk : 3 Quickies tous les 2ème mardis de chaque mois
 
 <!-- .slide: data-type-show="full" -->
 
-## Confs locales 
+## Confs locales
 ### les users groups
 
 * **Nantes JUG** : Quickie + Conf, 1 fois / mois en général fin du mois
@@ -143,7 +159,7 @@ et Surement d'autres que je connais pas
 
 <!-- .slide: data-type-show="full" -->
 
-## Confs locales 
+## Confs locales
 ### les users groups
 
 * MachineLearning Nantes : Conférences, 1er lundi  / mois
@@ -269,7 +285,7 @@ Notes:
 
 <!-- .slide: data-background="assets/images/call-for-presentations.jpg" data-state="hidefooter" class="transition" data-copyrights="true" -->
 
-# CFP : mode d'emploi 
+# CFP : mode d'emploi
 
 <div class="copyrights white">ethos3</div>
 
@@ -278,7 +294,7 @@ Notes:
 
 <!-- .slide: data-type-show="full" -->
 
-## CFP 
+## CFP
 
 ### Conseils
 
@@ -289,7 +305,7 @@ Notes:
 5. Donner les slides, liens vers vidéos  <!-- .element: class="fragment" -->
 
 Notes:
-N'allez pas poster là où ça sert à rien => Retour sur les confs vue précedement ! 
+N'allez pas poster là où ça sert à rien => Retour sur les confs vue précedement !
 IL y a toujours un champ dans lequel on peut expliquer
 
 
@@ -299,10 +315,10 @@ IL y a toujours un champ dans lequel on peut expliquer
 
 ## Le titre
 
-Il doit être clair et expliquer ce que vous allez présenter ou alors, il doit être attirant ! 
+Il doit être clair et expliquer ce que vous allez présenter ou alors, il doit être attirant !
 
 Notes:
-Parler de mon talk webRTC ! très mauvais choix de titre ! 
+Parler de mon talk webRTC ! très mauvais choix de titre !
 
 ##==##
 
@@ -311,7 +327,7 @@ Parler de mon talk webRTC ! très mauvais choix de titre !
 # Le titre doit donner envie
 
 Notes:
-Parler de mon talk webRTC ! très mauvais choix de titre ! 
+Parler de mon talk webRTC ! très mauvais choix de titre !
 
 ##==##
 
@@ -344,13 +360,13 @@ Il ne faut pas hésiter à dévoiler un peu son plan et le niveau de la conf pou
 
 <!-- .slide: class="transition-white" data-type-show="prez" -->
 
-# Prennez la place de l'organisateur !
+# Prenez la place de l'organisateur !
 
 ##==##
 
 <!-- .slide: class="transition-white" data-type-show="prez" -->
 
-# Donner des références
+# Donnez des références
 
 ##==##
 
@@ -384,7 +400,7 @@ Il ne faut pas hésiter à dévoiler un peu son plan et le niveau de la conf pou
 
 ![](assets/images/first_gif.gif) <!-- .element: class="w-600 center" -->
 
-Notes: 
+Notes:
 Juste milieu entre texte & vide
 
 ##==##
@@ -404,12 +420,12 @@ Juste milieu entre texte & vide
 
 ## Posez-vous ces questions :
 
-1. Qui est mon auditoire ? 
+1. Qui est mon auditoire ?
 2. Qu'attendent-ils ?
 3. Est-ce que mes slides doivent être compréhensible sans le texte qui va avec ?
 4. Dois-je mettre des gifs ?
 
-Notes: 
+Notes:
 L'auditoire indique
 
 
@@ -423,7 +439,7 @@ L'auditoire indique
 
 <!-- .slide: class="transition-white" data-type-show="prez" -->
 
-# Qui est mon auditoire ? 
+# Qui est mon auditoire ?
 
 ##==##
 
@@ -443,7 +459,7 @@ L'auditoire indique
 
 # Dois-je mettre des gifs ?
 
-Notes: 
+Notes:
 L'auditoire indique
 
 ##==##
@@ -462,14 +478,14 @@ L'auditoire indique
 
 ## Car avec un titre ça fait trop
 
-### Quand en plus y a un sous-titre ! 
+### Quand en plus y a un sous-titre !
 
 
 <!-- .slide: class="surcharge" -->
 
 > Évitez les slides trop chargés  ! <!-- .element class="big-text" -->
 
-Qui en plus ont beaucoup de texte, c'est vraiment pas cool ! 
+Qui en plus ont beaucoup de texte, c'est vraiment pas cool !
 
 ##==##
 
@@ -487,11 +503,11 @@ Mais pas sans style non plus  ! <!-- .element class="big-text arial" -->
 #  Bref ! Trouvez l'équilibre !
 
 
-Notes: 
-Les images & gif peuvent etre utiles 
+Notes:
+Les images & gif peuvent etre utiles
 
 
-##==## 
+##==##
 
 <!-- .slide: class="transition-black" data-type-show="prez" -->
 
@@ -510,7 +526,7 @@ Les images & gif peuvent etre utiles
 <!-- .slide: class="transition-white" data-type-show="prez" -->
 
 
-# Montrez du code ou des démos 
+# Montrez du code ou des démos
 
 Notes:
 Parlez du livecoding
@@ -527,7 +543,7 @@ Parlez du livecoding
 
 <!-- .slide: data-background="assets/images/d_day.jpg" data-state="hidefooter" data-copyrights="true" class="transition" -->
 
-# Le Jour J 
+# Le Jour J
 
 <div class="copyrights white">d day facts</div>
 
@@ -555,7 +571,7 @@ Attention au sexisme, aux propos tenus etc...
 
 ##==##
 
-# Poser des questions
+# Posez des questions
 
 
 <!-- .slide: data-background="assets/images/Foire-aux-questions_w1024h500.png" data-state="hidefooter" class="transition" data-copyrights="true" -->
@@ -563,11 +579,11 @@ Attention au sexisme, aux propos tenus etc...
 <div class="copyrights white">covoiturage</div>
 
 Notes:
-Voir si les gens connaissent, sonder son auditoire ! 
+Voir si les gens connaissent, sonder son auditoire !
 
 ##==##
 
-# Faire des pauses
+# Faites des pauses
 
 <!-- .slide: data-background="assets/images/pause.jpg" data-state="hidefooter" class="transition" data-copyrights="true" -->
 
@@ -578,7 +594,7 @@ Laisser le temps aux gens de digérer => Soit l'humour mais pas trop, soit des q
 
 ##==##
 
-# Osez dire : je ne sais pas   
+# Osez dire : je ne sais pas
 
 <!-- .slide: data-background="assets/images/i_dunno.png" data-state="hidefooter" class="transition" data-copyrights="true" -->
 
@@ -614,11 +630,11 @@ Sachez passer à autre chose ou alors avoir un plan B
 
 <!-- .slide: class="last-slide" -->
 
-<!-- .element: class="thank-message" --> Merci  
+<!-- .element: class="thank-message" --> Merci
 
 <!-- .element: class="presenter" --> **Jean-François Garreau  **
 
-<!-- .element: class="work-rule" --> GDG Nantes Leader & Ingénieur Lucca  
+<!-- .element: class="work-rule" --> GDG Nantes Leader & Ingénieur Lucca
 
-<!-- .element: class="email" --> **jef**@gdgnantes.com  
+<!-- .element: class="email" --> **jef**@gdgnantes.com
 

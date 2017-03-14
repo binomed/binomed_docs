@@ -1,4 +1,4 @@
-@import "../theme/2015/binomed/colors";
+@import "../theme/2016/binomed/colors";
 
 $sommaire-img-height : 60px;
 
@@ -24,6 +24,9 @@ div.padding~*{
   padding-left: 50px;
 }
 
+p.align-left{
+  text-align: left;
+}
 
 p.surround{
 font-weight: bold;
@@ -82,6 +85,18 @@ section.surcharge:after{
 section.white{
   background: white;
 }
+
+
+section.dark {
+  background: $dark-grey;
+  text-transform: uppercase;
+
+  h2{
+    font-weight: 800;
+    margin:40px;
+  }
+}
+
 
 p.big-text.arial{
   font-family: serif;

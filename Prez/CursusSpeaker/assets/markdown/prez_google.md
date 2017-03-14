@@ -126,7 +126,7 @@ Rockstar = It's often an evengelist or someone who work on an very innovative pr
 
 ##==##
 
-<!-- .slide: data-type-show="full" --><
+<!-- .slide: data-type-show="full" -->
 
 ## Several approches
 

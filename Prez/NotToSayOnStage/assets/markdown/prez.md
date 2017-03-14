@@ -10,7 +10,7 @@
 ##==##
 
 
-<!-- .slide: data-background="/assets/images/depression.jpg" data-state="hidefooter" class="transition no-filter" data-copyrights="true"  -->
+<!-- .slide: data-background="./assets/images/depression.jpg" data-state="hidefooter" class="transition no-filter" data-copyrights="true"  -->
 
 <div class="copyrights white">facebook</div>
 
@@ -59,7 +59,7 @@ En utilisant ces outils, qui sont bien documentés, vous pouvez...
 <br><br>
 <blockquote> 
 <cite>
-La manière de faire ça est...
+La manière de faire cela est ...
 </cite>
 </blockquote>
 
@@ -83,7 +83,7 @@ Donc ceux qui n'y sont pas ce sentent déprécier. Si l'idée est faire une intr
 <br><br>
 <blockquote> 
 <cite>
-Juste pour la mémoire, $X parle de....
+Juste pour la mémoire, $X parle de ...
 </cite>
 </blockquote>
 
@@ -94,7 +94,7 @@ Juste pour la mémoire, $X parle de....
 <br><br>
 <blockquote> 
 <cite>
-Comme vous vous souvenez, $X parle de...
+Comme vous vous souvenez, $X parle de ...
 </cite>
 </blockquote>
 
@@ -105,7 +105,7 @@ Comme vous vous souvenez, $X parle de...
 <br><br>
 <blockquote> 
 <cite>
-Nous allons construire ça en utilisant $X qui est...
+Nous allons construire ça en utilisant $X qui est ...
 </cite>
 </blockquote>
 
@@ -131,7 +131,7 @@ Si on peut pas l'utiliser => On est pas tout le monde ?
 <br><br>
 <blockquote> 
 <cite>
-Si vous connaissez une façon de faire $x, $y et $z, vous pourrez trouver simple de faire...
+Si vous connaissez une façon de faire $x, $y et $z, vous pourrez trouver simple de faire ...
 </cite>
 </blockquote>
 
@@ -142,7 +142,7 @@ Si vous connaissez une façon de faire $x, $y et $z, vous pourrez trouver simple
 <br><br>
 <blockquote> 
 <cite>
-Une fois que vous avez fait ça, vous verrez que ça rend le reste de votre travail plus simple...
+Une fois que vous avez fait ça, vous verrez que ça rend le reste de votre travail plus simple ...
 </cite>
 </blockquote>
 
@@ -154,7 +154,7 @@ Une fois que vous avez fait ça, vous verrez que ça rend le reste de votre trav
 <br><br>
 <blockquote> 
 <cite>
-C'est une façon très efficiente de faire, Si ça marche pour vous, parler en autour de vous
+C'est une façon très efficiente de faire. Si ça marche pour vous, parler en autour de vous
 </cite>
 </blockquote>
 
@@ -237,7 +237,7 @@ C'est présent depuis un moment et a été expliqué à $X (lien vers une ressou
 <br><br>
 <blockquote> 
 <cite>
-Les tests ont prouvés que $X est une solution pour ... (lien vers les études)
+Les tests ont prouvé que $X est une solution pour ... (lien vers les études)
 </cite>
 </blockquote>
 
@@ -273,7 +273,7 @@ Peut être descructeur quand c'est en lien à des cours d'info qu'on aurait eu
 <br><br>
 <blockquote> 
 <cite>
-Cela a été au programme pendant de nombreuses années, et pour de bonnes raison : $X
+Cela a été au programme pendant de nombreuses années, et pour de bonnes raisons : $X
 </cite>
 </blockquote>
 
@@ -295,7 +295,7 @@ Cela peut vous sembler familier si vous venez d'une formation similaire à la mi
 <br><br>
 <blockquote> 
 <cite>
-Vous vous souvenez peut être de ça de votre école. Maintenant vous voyez comme cela peut être appliqué en vrai !
+Vous vous souvenez peut-être de çà de votre école. Maintenant vous voyez comme cela peut être appliqué en vrai !
 </cite>
 </blockquote>
 
@@ -330,7 +330,7 @@ Voici comment faire avec $X, nous avons pris un chemin différent
 <br><br>
 <blockquote> 
 <cite>
-Il y a plusieurs solutions pour ça. Nous trouvions que certaines manquait de features, et donc nous avons créé $Y
+Il y a plusieurs solutions pour ça. Nous trouvions que certaines manquaient de features, et donc nous avons créé $Y
 </cite>
 </blockquote>
 
@@ -354,7 +354,7 @@ Les gens seront plus ouverts!
 
 <!-- .slide: class="transition-black" -->
 
-# Cela peut être fait avec quelques lignes de code...
+# Cela peut être fait avec quelques lignes de code ...
 
 Notes:
 Souvent qques lignes de codes ne réprésentent pas la réalité et la complexité cachée derrière la simplification théorique !
@@ -412,7 +412,7 @@ $X, $Y et $Z utilisent ça pour délivrer leurs produits. Voici quelques cas d'�
 <br><br>
 <blockquote> 
 <cite>
-Les bénéfices de $x sont $y, ce qui en fait un outils professionnel à utiliser
+Les bénéfices de $x sont $y, ce qui en fait un outil professionnel à utiliser
 </cite>
 </blockquote>
 
@@ -422,6 +422,6 @@ Cependant, ça donne un point de départ !
 
 ##==##
 
-<!-- .slide: class="transition-black" -->
+<!-- .slide: class="transition-white" -->
 
 # Des Questions ? <br> :)
