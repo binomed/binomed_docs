@@ -12,7 +12,7 @@
 # **Cursus Speaker**
 ## **Session 1**
 
-### 2017  @ **Paris**
+### 2017  @ **Nantes**
 
 
 Notes:
@@ -118,11 +118,14 @@ Des personnes qui n'osent pas
         <div class="padding">
             <img src="assets/images/francky_trichet.jpg" class="h-200"><span>Local</span>
         </div>
+        <div class="padding">
+            <img src="assets/images/jf.jpg" class="h-200"><span>Nationnal</span>
+        </div>
     </div>
     <br>
     <div class="flex-hori">
         <div class="padding">
-            <img src="assets/images/ft-l-verou.jpg" class="h-200"><span>National</span>
+            <img src="assets/images/ft-l-verou.jpg" class="h-200"><span>International</span>
         </div>
         <div class="padding">
             <img src="assets/images/musk.jpeg" class="h-200"><span>Rockstar</span>
@@ -150,6 +153,9 @@ Rockstar = It's often an evengelist or someone who work on an very innovative pr
         </div>
         <div class="space">
             <img src="assets/images/francky_trichet.jpg" class="h-200">
+        </div>
+        <div class="space">
+            <img src="assets/images/jf.jpg" class="h-200">
         </div>
         <div class="space">
             <img src="assets/images/ft-l-verou.jpg" class="h-200">

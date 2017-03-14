@@ -1,140 +1,206 @@
+<!-- .slide: class="first-slide transition" data-background="assets/images/audience.jpg"  data-type-show="full"-->
 
-<!-- .slide: class="first-slide" -->
+# **Cursus Speaker**
+
+### **Session 3** 2017
+
+
+##==##
+
+<!-- .slide: class="first-slide transition"  data-background="assets/images/audience.jpg"  data-type-show="prez"-->
 
 # **Cursus Speaker**
 ## **Session 3**
 
-### 2016 @ **Nantes**
+### 2017  @ **Nantes**
 
-##==##
 
-## De quoi on va parler ?
-
-### Aujourd'hui 
-
+Notes:
 * Note speaker
 * Axes d'amélioration
 * Objectifs personnels
 
 ##==##
 
-<!-- .slide: data-background="assets/images/note_eval.jpg" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/note_eval.jpg" data-state="hidefooter" class="transition" data-copyrights="true" -->
 
 # Note speaker
 
-<div class="copyright">Ingeiusprep</div>
+<div class="copyrights white">Ingeiusprep</div>
 
 ##==##
 
-## Sachez gagner vos bons points 
+<!-- .slide: data-background="assets/images/rank.jpg" data-state="hidefooter" class="transition" data-copyrights="true" -->
 
-* Conf Locale : 
- * Dans son entreprise : 1pt
- * Dans sa ville : 2pts / max 10pts si reproduit régulièrement
- * Dans une autre ville : 5pts / max 20pts si reproduit régulièrement
-* Nationnal :
- * Dans sa ville : 10pts 
- * Dans une autre ville : 15pts /max 30 pts si reproduit régulièrement
-* Conférence proposée en binome : 5pts / Peut être plus en fonction du binome
+# Sachez gagner vos bons points
+
+<div class="copyrights white">pinterest</div>
+
+
+##==##
+
+<!-- .slide: data-type-show="prez" class="transition" -->
+
+<br>
+
+![](assets/images/NANTES-TECH-LOGO.png) <!-- .element: class="w-500 center" -->
 
 Notes:
+Conf Locale
+ * Dans son entreprise : 1 Pt
+ * Dans sa ville : 2 Pts / max 10 Pts si reproduits régulièrement
+ * Dans une autre ville : 5 Pts / max 20 Pts si reproduits régulièrement
 
 ##==##
 
-## Sachez gagner vos bons points 
+<!-- .slide: data-type-show="prez" class="transition" -->
 
+<br>
+
+![](assets/images/french_tech.png) <!-- .element: class="w-500 center" -->
+
+Notes:
+Conf Nationale
+ * Dans sa ville : 10 Pts
+ * Dans une autre ville : 15 Pts /max 30  Pts si reproduits régulièrement
+* Conférence proposée en binôme : 5 Pts / Peut être plus en fonction du binôme
+
+
+##==##
+
+<!-- .slide: data-background="assets/images/RS_bulles.jpg" data-state="hidefooter" class="transition" data-copyrights="true" -->
+
+# Réseaux sociaux
+
+<div class="copyrights white">Content marketing</div>
+
+Notes:
 * Réseaux sociaux
  * Twitter / G+ :
-  * Avec beaucoup de follower : 3pts / max 20pts si vraiment beaucoup de followers (des milliers)
-  * Avec une activité intéressante : 5pts / max 10pts si le contenu est pertinant
- * Blog technique :  10pts / max 40pts si le contenu est pertinant 
- * Avoir une renommée numérique : 50pts
+  * Avec beaucoup de follower : 3 Pts / max 20 Pts si vraiment beaucoup de followers (des milliers)
+  * Avec une activité intéressante : 5 Pts / max 10 Pts si le contenu est pertinent
+ * Blog technique :  10 Pts / max 40 Pts si le contenu est pertinent
+ * Avoir une renommée numérique : 50 Pts
+
+##==##
+
+<!-- .slide: data-background="assets/images/blog.jpg" data-state="hidefooter" class="transition" data-copyrights="true" -->
+
+# Blog
+
+Notes:
+ * Blog technique :  10 Pts / max 40 Pts si le contenu est pertinent
+ * Avoir une renommée numérique : 50 Pts
+
+
+##==##
+
+<!-- .slide: data-background="assets/images/devfest.jpg" data-state="hidefooter" class="transition" data-copyrights="true" -->
+
+# Travailler son réseau
+
+Notes:
 * Travailler son réseau
- * Discuter / sympatiser avec les personnes influentes : 30pts
-
-Notes:
+ * Discuter / sympathiser avec les personnes influentes : 30 Pts
 
 ##==##
 
-## Confs locales 
-### les users groups
 
-|User Group|Point nécessaires|
+<!-- .slide: class="transition-white" data-type-show="prez" -->
+
+# Confs Locales - Users Groups
+
+##==##
+
+<!-- .slide: class="transition-black" data-type-show="prez" -->
+
+# Conférence (50 min) <br> 5pts
+
+
+##==##
+
+<!-- .slide: class="transition-black" data-type-show="prez" -->
+
+# Quickie (15-20 min) <br> 1pts
+
+
+##==##
+
+<!-- .slide: class="transition-black" data-type-show="prez" -->
+
+# User group extérieur <br> 15pts
+
+Notes:
+Car réseau + côté détaché !
+
+##==##
+
+<!-- .slide: class="transition-white" data-type-show="prez" -->
+
+# Confs Nationnales
+
+##==##
+
+<!-- .slide: class="transition-black" data-type-show="prez" -->
+
+# Conférence à portée locale <br> 10 à 20 pts
+
+
+##==##
+
+<!-- .slide: class="transition-black" data-type-show="prez" -->
+
+# Conférence à portée Nationnale <br> 30 à 40 pts
+
+
+##==##
+
+<!-- .slide: class="transition-black" data-type-show="prez" -->
+
+# Conférence spécifique ou rockstar <br> 50 à 100 pts
+
+
+##==##
+
+<!-- .slide: data-type-show="full" -->
+
+## Confs locales
+
+|User Group|Points nécessaires|
 |-----|------|
-|Nantes JUG|5pts pour la conf|
-|Nantes JUG|1pt pour le quickie|
-|GDG Nantes|5pts pour la conf|
-|Agile Nantes|5pts|
-|Nantes JS|10pts car voté par le public|
-|Human Talk|1pt|
-|User group externe|15pts|
+|Conférence (50min)|5 Pts pour la conf|
+|Quickie (15-20)|1pt pour le quickie|
+|User group externe|15 Pts|
 
 Notes:
 
 ##==##
 
-## Confs nationnales
-### Accessibles
+<!-- .slide: data-type-show="full" -->
 
-||Conférence|Point nécessaires|
-|----|-----|------|
-|![](assets/images/agiletour2015.png) <!-- .element: class="w-100 h-50 float-left" -->|Agile Tour|10pts|
-|![](assets/images/breizhcamp.svg) <!-- .element: class="w-100 h-50 float-left" -->|Breizhcamp|15pts|
-|![](assets/images/logo-summercamp.png) <!-- .element: class="w-100 h-50 float-left" -->|JugSummerCamp|20pts|
-|![](assets/images/logo-codeurs-en-seine.png) <!-- .element: class="w-100 h-50 float-left" -->|Codeurs en Seine|20pt|
-|![](assets/images/devfest.png) <!-- .element: class="w-100 h-50 float-left" -->|DevFest (Hors Nantes)|20pts si sujet Google|
-|![](assets/images/rivieraDev.png) <!-- .element: class="w-100 h-50 float-left" -->|Riviera Dev|20pts|
+## Confs nationales
+
+|Type de conférence|Points nécessaires|
+|-----|------|
+|Portée locale|10-20 Pts|
+|Portée nationnale|30-40 Pts|
+|Spécifique ou rockstar|50-100 Pts|
 
 
 Notes:
 
 ##==##
 
-## Confs nationnales
-### Besoin d'expérience
-
-||Conférence|Point nécessaires|
-|----|-----|------|
-|![](assets/images/devfest.png) <!-- .element: class="w-100 h-50 float-left" -->|DevFest Nantes|30pts|
-|![](assets/images/bdxio.png) <!-- .element: class="w-100 h-50 float-left" -->|Bdx.IO|30pts|
-|![](assets/images/logo-parisweb.png) <!-- .element: class="w-100 h-50 float-left" -->|Paris Web|30pts|
-|![](assets/images/kiwiparty2-logo.png) <!-- .element: class="w-100 h-50 float-left" -->|Kiwi Party|30pts|
-|![](assets/images/blend_webmix.png) <!-- .element: class="w-100 h-50 float-left" -->|Blend Web Mix|40pts|
-|![](assets/images/seocamp.png) <!-- .element: class="w-100 h-50 float-left" -->|SEO Camp|30pts|
-
-
-Notes:
-
-
-##==##
-
-## Confs nationnales
-### Expérimentés & Rockstars
-
-||Conférence|Point nécessaires|
-|----|-----|------|
-|![](assets/images/cropped-DC_logo.png) <!-- .element: class="w-100 h-50 float-left" -->|DroidCon|50pts|
-|![](assets/images/Devoxx-UK-NORMAL.png) <!-- .element: class="w-100 h-50 float-left" -->|Devoxx|70pts|
-|![](assets/images/logo-mixit.png) <!-- .element: class="w-100 h-50 float-left" -->|Mix IT|80pts|
-|![](assets/images/scalaio_medium.png) <!-- .element: class="w-100 h-50 float-left" -->|Scala.IO|90pts|
-|![](assets/images/eclipsecon.png) <!-- .element: class="w-100 h-50 float-left" -->|EclipseCon|40pts|
-|![](assets/images/tedx.jpg) <!-- .element: class="w-100 h-50 float-left" -->|TedX|200pts|
-|![](assets/images/dotcss-logo.png) <!-- .element: class="w-100 h-50 float-left" -->|Dot conf|150pts|
-
-
-Notes:
-
-
-##==##
-
-<!-- .slide: data-background="assets/images/Rocky-II-wallpaper-HD.jpg" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/Rocky-II-wallpaper-HD.jpg" data-state="hidefooter" class="transition" data-copyrights="true"  -->
 
 # Axes d'amélioration
 
-<div class="copyright">Rocky 2</div>
+<div class="copyrights white">Rocky 2</div>
 
 
 ##==##
+
+<!-- .slide:  data-type-show="full" -->
 
 ## Axes
 
@@ -143,23 +209,58 @@ Notes:
 * Travailler son image numérique
  * blog / twitter / ...
 * Travailler sur soi
- * Aissance à Parler
- * Réaction face à des pbs
+ * Aisance à Parler / Réaction face à des problèmes
+ * Respect du temps
  * Contenu digeste
- * Estétique de la présentation
+ * Esthétique de la présentation / Contenu intéressant
+
+Notes:
+
+
+##==##
+
+<!-- .slide: class="transition-white" data-type-show="prez" -->
+
+# Axes d'amélioration
+
+##==##
+
+<!-- .slide: class="transition-black" data-type-show="prez" -->
+
+# Faire des conférences
+
+Notes:
+Expérimenter différents formats !
+
+##==##
+
+<!-- .slide: class="transition-black" data-type-show="prez" -->
+
+# Travailler son image numérique
+
+Notes:
+Blog / Twitter / ...
+
+##==##
+
+<!-- .slide: class="transition-black" data-type-show="prez" -->
+
+# Travail sur soi
+
+Notes:
+ * Aisance à Parler
+ * Réaction face à des problèmes
+ * Contenu digeste
+ * Esthétique de la présentation
  * Respect du temps
  * Contenu intéressant
  * Scénario de la conférence
 
-Notes:
-
 ##==##
 
-<!-- .slide: data-background="assets/images/super_dupont.png" data-state="hidefooter" class="transition" -->
+<!-- .slide: data-background="assets/images/super_dupont.png" class="transition no-filter" data-copyrights="true" -->
 
-# A vous
-
-<div class="copyright">Super Dupont</div>
+<div class="copyrights black">Super Dupont</div>
 
 
 
@@ -167,14 +268,11 @@ Notes:
 
 <!-- .slide: class="last-slide" -->
 
-
-
-# <!-- .element: class="topic-title" --> Topic Title 
+<!-- .element: class="thank-message" --> Merci
 
 <!-- .element: class="presenter" --> **Jean-François Garreau  **
 
-<!-- .element: class="work-rule" --> GDG Nantes Leader & Ingénieur Lucca  
+<!-- .element: class="work-rule" --> GDG Nantes Leader & Ingénieur Lucca
 
-<!-- .element: class="email" --> **jef**@gdgnantes.com  
+<!-- .element: class="email" --> **jef**@gdgnantes.com
 
-<!-- .element: class="thank-message" --> Merci  

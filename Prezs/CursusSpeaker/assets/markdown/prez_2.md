@@ -13,7 +13,7 @@
 # **Cursus Speaker**
 ### **Session 2**
 
-### 2017  @ **Paris**
+### 2017  @ **Nantes**
 
 <div class="copyrights white">alastair humphreys</div>
 
