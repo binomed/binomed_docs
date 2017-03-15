@@ -63,7 +63,7 @@ Senior innovation developper & Community Manager
 
 <!-- .slide: class="transition-black"-->
 
-# Let's DEBUG ! 
+# Let's DEBUG !
 
 ##==##
 
@@ -186,6 +186,36 @@ Senior innovation developper & Community Manager
   <source src="./assets/videos/blackbox.webm" type="video/webm" />
 </video>
 
+
+##==##
+
+# Node Debug
+
+<video width="900" controls="controls" data-autoplay>
+  <source src="./assets/videos/debug_node.webm" type="video/webm" />
+</video>
+
+
+
+##==##
+
+# Debug Arrow Function
+
+<video width="900" controls="controls" data-autoplay>
+  <source src="./assets/videos/debug_arrow_function.webm" type="video/webm" />
+</video>
+
+
+
+##==##
+
+# Location Marker
+
+<video width="900" controls="controls" data-autoplay>
+  <source src="./assets/videos/location_marker.webm" type="video/webm" />
+</video>
+
+
 ##==##
 
 # Animation
@@ -211,11 +241,11 @@ Senior innovation developper & Community Manager
 
 <!-- .slide: class="last-slide" -->
 
-<!-- .element: class="thank-message" --> Merci  
+<!-- .element: class="thank-message" --> Merci
 
 <!-- .element: class="presenter" --> **Jean-François Garreau  **
 
-<!-- .element: class="work-rule" --> GDG Nantes Leader & Ingénieur Lucca  
+<!-- .element: class="work-rule" --> GDG Nantes Leader & Ingénieur Lucca
 
-<!-- .element: class="email" --> **jef**@gdgnantes.com  
+<!-- .element: class="email" --> **jef**@gdgnantes.com
 

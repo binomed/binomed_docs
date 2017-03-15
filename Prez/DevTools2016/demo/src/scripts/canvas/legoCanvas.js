@@ -202,7 +202,7 @@ export class LegoGridCanvas {
      */
     _drawWhitePeg(size){
         // We stop rendering on each add, in order to save performances
-        //this.canvas.renderOnAddRemove = false;
+        this.canvas.renderOnAddRemove = false;
         let max = Math.round(size / this.cellSize);
         let maxSize = max * this.cellSize;
         for (var row =0; row < max; row++){
@@ -241,7 +241,7 @@ export class LegoGridCanvas {
                 this.canvas.add(groupTmp);
             }
         }
-        /*this.canvas.renderAll();
+        this.canvas.renderAll();
         this.canvas.renderOnAddRemove = true;
         // We transform the canvas to a base64 image in order to save performances.
         let url = this.canvas.toDataURL();
@@ -251,7 +251,7 @@ export class LegoGridCanvas {
             originY: 'top',
             width: this.canvas.width,
           height: this.canvas.height,
-        });   */
+        });   
     }
 
     /**
