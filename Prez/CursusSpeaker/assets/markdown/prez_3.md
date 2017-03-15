@@ -209,13 +209,10 @@ Notes:
 * Travailler son image numérique
  * blog / twitter / ...
 * Travailler sur soi
- * Aisance à Parler
- * Réaction face à des problèmes
- * Contenu digeste
- * Esthétique de la présentation
+ * Aisance à Parler / Réaction face à des problèmes
  * Respect du temps
- * Contenu intéressant
- * Scénario de la conférence
+ * Contenu digeste
+ * Esthétique de la présentation / Contenu intéressant
 
 Notes:
 
