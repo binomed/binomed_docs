@@ -8,11 +8,11 @@ import {LegoGridCanvas} from './canvas/legoCanvas.js';
 
     let gameInit = false,// true if we init the legoGrid
         legoCanvas = null, // The legoGrid
-        keys = null, // The keys of firenase submit draw 
+        keys = null, // The keys of firenase submit draw
         snapshotFb = null, // The snapshot of submit draw
-        index = 0; 
+        index = 0;
 
-    
+
     function initGame() {
 
         legoCanvas = new LegoGridCanvas('canvasDraw', true);
@@ -30,7 +30,7 @@ import {LegoGridCanvas} from './canvas/legoCanvas.js';
 
     function pageLoad() {
 
-      
+
         /**
          * Management of Cinematic Buttons
          */
@@ -81,9 +81,9 @@ import {LegoGridCanvas} from './canvas/legoCanvas.js';
             };
             const drawDatas = legoCanvas.export(user.name, user.id);
             drawDatas.dataUrl = legoCanvas.snapshot();
-            console.info('will send : ', drawDatas);            
+            console.info('will send : ', drawDatas);
             const URL = `http://localhost:9000/draw/${user.id}`;
-            fetch(URL, { 
+            fetch(URL, {
                             method: 'post',
                             headers: new Headers({
                                 'Content-Type': 'application/json; charset=utf-8'
@@ -102,7 +102,7 @@ import {LegoGridCanvas} from './canvas/legoCanvas.js';
 
         const menuGame = document.getElementById('menu-game');
         const menuCreations = document.getElementById('menu-creations');
-        
+
 
         const streamGame = Rx.Observable
             .fromEvent(menuGame, 'click')
@@ -154,7 +154,7 @@ import {LegoGridCanvas} from './canvas/legoCanvas.js';
                 }
             });
 
-        
+
         /**
          * Management of Buttons for changing of draw
          */
@@ -190,12 +190,12 @@ import {LegoGridCanvas} from './canvas/legoCanvas.js';
 
     window.addEventListener('load', pageLoad);
 
-    /* SERVICE_WORKER_REPLACE */
-    if ('serviceWorker' in navigator) {        
+    /* SERVICE_WORKER_REPLACE
+    if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('./service-worker-phone.js', {scope : location.pathname}).then(function(reg) {
             console.log('Service Worker Register for scope : %s',reg.scope);
         });
     }
-    /* SERVICE_WORKER_REPLACE */
+     SERVICE_WORKER_REPLACE */
 
 })();

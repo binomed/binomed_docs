@@ -5,9 +5,9 @@ import {NB_CELLS, HEADER_HEIGHT, BASE_LEGO_COLOR, BACKGROUND_LEGO_COLOR} from '.
 import {legoBaseColor} from '../common/legoColors.js';
 
 /**
- * 
+ *
  * Class for Canvas Grid
- * 
+ *
  */
 export class LegoGridCanvas {
     constructor(id, showRow) {
@@ -49,7 +49,7 @@ export class LegoGridCanvas {
 
 
                 let newLeft = Math.round(options.target.left / this.cellSize) * this.cellSize;
-                let newTop = Math.round((options.target.top - this.headerHeight) / this.cellSize) * this.cellSize + this.headerHeight;                  
+                let newTop = Math.round((options.target.top - this.headerHeight) / this.cellSize) * this.cellSize + this.headerHeight;
                 // We have to calculate the top
                 let topCompute = newTop + (peg.size.row === 2 || peg.angle > 0 ? this.cellSize * 2 : this.cellSize);
                 let leftCompute = newLeft + (peg.size.col === 2 ? this.cellSize * 2 : this.cellSize);
@@ -99,10 +99,10 @@ export class LegoGridCanvas {
     }
 
     /**
-     * Method for changing the color of the first row 
+     * Method for changing the color of the first row
      */
     changeColor(color) {
-        this.lastColor = color;       
+        this.lastColor = color;
         this.rowSelect.square.changeColor(color);
         this.rowSelect.bigSquare.changeColor(color);
         this.rowSelect.rect.changeColor(color);
@@ -147,13 +147,13 @@ export class LegoGridCanvas {
         this.canvas.renderOnAddRemove = false;
         instructionObject.instructions.forEach((instruction)=>{
             this.canvas.add(
-                this._createBrick({ size : instruction.size, 
+                this._createBrick({ size : instruction.size,
                     left : (instruction.left / instruction.cellSize) * this.cellSize,
                     top : (instruction.top / instruction.cellSize) * this.cellSize,
                     angle : instruction.angle,
                     color : instruction.color
                 }).canvasElt
-                );            
+                );
         });
 
         this.canvas.renderAll();
@@ -169,7 +169,7 @@ export class LegoGridCanvas {
         this._drawCanvas();
     }
 
-    /** 
+    /**
      * Generate a Base64 image from the canvas
      */
     snapshot(){
@@ -177,16 +177,16 @@ export class LegoGridCanvas {
     }
 
     /**
-     * 
+     *
      * Privates Methods
-     * 
+     *
      */
 
 
     /**
-     * Draw the basic grid 
+     * Draw the basic grid
     */
-    _drawGrid(size) {       
+    _drawGrid(size) {
         if (this.showRow){
             this.canvas.add(
                 this._createSquare(1).canvasElt
@@ -202,7 +202,7 @@ export class LegoGridCanvas {
      */
     _drawWhitePeg(size){
         // We stop rendering on each add, in order to save performances
-        this.canvas.renderOnAddRemove = false;
+        //this.canvas.renderOnAddRemove = false;
         let max = Math.round(size / this.cellSize);
         let maxSize = max * this.cellSize;
         for (var row =0; row < max; row++){
@@ -214,7 +214,7 @@ export class LegoGridCanvas {
                     originX: 'center',
                     originY: 'center',
                     centeredRotation: true,
-                    hasControls: false                        
+                    hasControls: false
                 });
                 let circle = new Circle(this.cellSize, BACKGROUND_LEGO_COLOR);
                 circle.canvasElt.set({
@@ -241,17 +241,17 @@ export class LegoGridCanvas {
                 this.canvas.add(groupTmp);
             }
         }
-        this.canvas.renderAll();
+        /*this.canvas.renderAll();
         this.canvas.renderOnAddRemove = true;
         // We transform the canvas to a base64 image in order to save performances.
         let url = this.canvas.toDataURL();
-        this.canvas.clear();     
+        this.canvas.clear();
         this.canvas.setBackgroundImage(url,this.canvas.renderAll.bind(this.canvas), {
             originX: 'left',
             originY: 'top',
             width: this.canvas.width,
           height: this.canvas.height,
-        });   
+        });   */
     }
 
     /**
@@ -259,7 +259,7 @@ export class LegoGridCanvas {
      */
     _createRect(sizeRect, angle) {
         return this._createBrick({
-                size : {col : 2 * sizeRect, row :1 * sizeRect}, 
+                size : {col : 2 * sizeRect, row :1 * sizeRect},
                 left : angle ? ((this.canvasRect.width / 4) - this.cellSize) : ((this.canvasRect.width * 3 / 4) - (this.cellSize * 1.5)),
                 top : angle ? 1 : 0,
                 angle : angle
@@ -271,7 +271,7 @@ export class LegoGridCanvas {
      */
     _createSquare(sizeSquare) {
         return this._createBrick({
-                size : {col : 1 * sizeSquare, row :1 * sizeSquare}, 
+                size : {col : 1 * sizeSquare, row :1 * sizeSquare},
                 left: sizeSquare === 2 ? ((this.canvasRect.width / 2) - (2 * this.cellSize)) : (this.canvasRect.width - (this.cellSize * 1.5)),
                 top : sizeSquare === 2 ? 1 : 0,
             });
@@ -306,6 +306,6 @@ export class LegoGridCanvas {
         this._drawWhitePeg(this.canvasRect.width);
         this._drawGrid(this.canvasRect.width, Math.round(this.canvasRect.width / NB_CELLS));
     }
-    
+
 
 }
