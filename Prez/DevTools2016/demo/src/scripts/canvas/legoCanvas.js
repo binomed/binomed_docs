@@ -1,8 +1,19 @@
 'use strict'
-import {Peg} from '../lego_shape/peg.js';
-import {Circle} from '../lego_shape/circle.js';
-import {NB_CELLS, HEADER_HEIGHT, BASE_LEGO_COLOR, BACKGROUND_LEGO_COLOR} from '../common/const.js';
-import {legoBaseColor} from '../common/legoColors.js';
+import {
+    Peg
+} from '../lego_shape/peg.js';
+import {
+    Circle
+} from '../lego_shape/circle.js';
+import {
+    NB_CELLS,
+    HEADER_HEIGHT,
+    BASE_LEGO_COLOR,
+    BACKGROUND_LEGO_COLOR
+} from '../common/const.js';
+import {
+    legoBaseColor
+} from '../common/legoColors.js';
 
 /**
  *
@@ -25,13 +36,15 @@ export class LegoGridCanvas {
         this.cellSize = Math.round(this.canvasRect.width / NB_CELLS);
 
         // We initialize the Fabric JS library with our canvas
-        this.canvas = new fabric.Canvas(id, { selection: false });
+        this.canvas = new fabric.Canvas(id, {
+            selection: false
+        });
         // Object that represent the pegs on the first row
         this.rowSelect = {};
         // The current draw model (instructions, ...)
         this.brickModel = {},
-        // Flag to determine if we have to create a new brick
-        this.createNewBrick = false;
+            // Flag to determine if we have to create a new brick
+            this.createNewBrick = false;
         this.currentBrick = null;
         this.lastColor = BASE_LEGO_COLOR;
 
@@ -59,22 +72,22 @@ export class LegoGridCanvas {
                 );
 
                 // We specify that we could remove a peg if one of it's edge touch the outside of the canvas
-                if (newTop < HEADER_HEIGHT
-                    || newLeft < 0
-                    || topCompute >= this.canvasElt.height
-                    || leftCompute >= this.canvasElt.width) {
+                if (newTop < HEADER_HEIGHT ||
+                    newLeft < 0 ||
+                    topCompute >= this.canvasElt.height ||
+                    leftCompute >= this.canvasElt.width) {
                     peg.toRemove = true;
                 } else {
                     // Else we check we create a new peg (when a peg enter in the draw area)
                     peg.toRemove = false;
                     if (!peg.replace) {
                         if (peg.size.col === 2) {
-                            if (peg.size.row === 2){
+                            if (peg.size.row === 2) {
                                 this.canvas.add(this._createSquare(2).canvasElt);
-                            }else if (peg.angle === 0){
+                            } else if (peg.angle === 0) {
                                 this.canvas.add(this._createRect(1).canvasElt);
-                            }else{
-                                this.canvas.add(this._createRect(1,90).canvasElt);
+                            } else {
+                                this.canvas.add(this._createRect(1, 90).canvasElt);
                             }
                         } else {
                             this.canvas.add(this._createSquare(1).canvasElt);
@@ -86,9 +99,9 @@ export class LegoGridCanvas {
             });
 
             this.canvas.on('mouse:up', () => {
-                if (this.currentBrick
-                    && this.currentBrick.parentPeg.toRemove
-                    && this.currentBrick.parentPeg.replace) {
+                if (this.currentBrick &&
+                    this.currentBrick.parentPeg.toRemove &&
+                    this.currentBrick.parentPeg.replace) {
                     delete this.brickModel[this.currentBrick.parentPeg.id];
                     this.canvas.remove(this.currentBrick);
                     this.currentBrick = null;
@@ -113,14 +126,14 @@ export class LegoGridCanvas {
     /**
      * Serialize the canvas to a minimal object that could be treat after
      */
-    export(userName, userId) {
+    export (userName, userId) {
         let resultArray = [];
         // We filter the row pegs
         let keys = Object.keys(this.brickModel)
-            .filter((key)=>key != this.rowSelect.square.id
-                && key != this.rowSelect.bigSquare.id
-                && key != this.rowSelect.rect.id
-                && key != this.rowSelect.vertRect.id);
+            .filter((key) => key != this.rowSelect.square.id &&
+                key != this.rowSelect.bigSquare.id &&
+                key != this.rowSelect.rect.id &&
+                key != this.rowSelect.vertRect.id);
         keys.forEach((key) => {
             let pegTmp = this.brickModel[key];
             resultArray.push({
@@ -129,12 +142,12 @@ export class LegoGridCanvas {
                 angle: pegTmp.angle,
                 top: pegTmp.top - this.headerHeight,
                 left: pegTmp.left,
-                cellSize : this.cellSize
+                cellSize: this.cellSize
             });
         });
         return {
             user: userName,
-            userId : userId,
+            userId: userId,
             instructions: resultArray
         };
     }
@@ -142,18 +155,19 @@ export class LegoGridCanvas {
     /**
      * Draw from intructions a draw
      */
-    drawInstructions(instructionObject){
+    drawInstructions(instructionObject) {
         this.resetBoard();
         this.canvas.renderOnAddRemove = false;
-        instructionObject.instructions.forEach((instruction)=>{
+        instructionObject.instructions.forEach((instruction) => {
             this.canvas.add(
-                this._createBrick({ size : instruction.size,
-                    left : (instruction.left / instruction.cellSize) * this.cellSize,
-                    top : (instruction.top / instruction.cellSize) * this.cellSize,
-                    angle : instruction.angle,
-                    color : instruction.color
+                this._createBrick({
+                    size: instruction.size,
+                    left: (instruction.left / instruction.cellSize) * this.cellSize,
+                    top: (instruction.top / instruction.cellSize) * this.cellSize,
+                    angle: instruction.angle,
+                    color: instruction.color
                 }).canvasElt
-                );
+            );
         });
 
         this.canvas.renderAll();
@@ -163,7 +177,7 @@ export class LegoGridCanvas {
     /**
      * Clean the board and the state of the canvas
      */
-    resetBoard(){
+    resetBoard() {
         this.brickModel = {};
         this.canvas.clear();
         this._drawCanvas();
@@ -172,7 +186,7 @@ export class LegoGridCanvas {
     /**
      * Generate a Base64 image from the canvas
      */
-    snapshot(){
+    snapshot() {
         return this.canvas.toDataURL();
     }
 
@@ -185,14 +199,11 @@ export class LegoGridCanvas {
 
     /**
      * Draw the basic grid
-    */
+     */
     _drawGrid(size) {
-        if (this.showRow){
+        if (this.showRow) {
             this.canvas.add(
-                this._createSquare(1).canvasElt
-                , this._createSquare(2).canvasElt
-                , this._createRect(1).canvasElt
-                , this._createRect(1,90).canvasElt
+                this._createSquare(1).canvasElt, this._createSquare(2).canvasElt, this._createRect(1).canvasElt, this._createRect(1, 90).canvasElt
             );
         }
     }
@@ -200,14 +211,14 @@ export class LegoGridCanvas {
     /**
      * Draw all the white peg of the grid
      */
-    _drawWhitePeg(size){
+    _drawWhitePeg(size) {
         // We stop rendering on each add, in order to save performances
-        this.canvas.renderOnAddRemove = false;
+        //this.canvas.renderOnAddRemove = false;
         let max = Math.round(size / this.cellSize);
         let maxSize = max * this.cellSize;
-        for (var row =0; row < max; row++){
-            for (var col = 0; col < max; col++ ){
-                 let squareTmp = new fabric.Rect({
+        for (var row = 0; row < max; row++) {
+            for (var col = 0; col < max; col++) {
+                let squareTmp = new fabric.Rect({
                     width: this.cellSize,
                     height: this.cellSize,
                     fill: BACKGROUND_LEGO_COLOR,
@@ -218,30 +229,30 @@ export class LegoGridCanvas {
                 });
                 let circle = new Circle(this.cellSize, BACKGROUND_LEGO_COLOR);
                 circle.canvasElt.set({
-                    lockRotation : true,
-                    lockScalingX : true,
-                    lockScalingY : true,
-                    lockMovementX : true,
-                    lockMovementY : true,
-                    hasControls : false,
-                    hasBorders : false
+                    lockRotation: true,
+                    lockScalingX: true,
+                    lockScalingY: true,
+                    lockMovementX: true,
+                    lockMovementY: true,
+                    hasControls: false,
+                    hasBorders: false
                 });
                 let groupTmp = new fabric.Group([squareTmp, circle.canvasElt], {
                     left: this.cellSize * col,
                     top: this.cellSize * row + this.headerHeight,
                     angle: 0,
-                    lockRotation : true,
-                    lockScalingX : true,
-                    lockScalingY : true,
-                    lockMovementX : true,
-                    lockMovementY : true,
-                    hasControls : false,
-                    hasBorders : false
+                    lockRotation: true,
+                    lockScalingX: true,
+                    lockScalingY: true,
+                    lockMovementX: true,
+                    lockMovementY: true,
+                    hasControls: false,
+                    hasBorders: false
                 });
                 this.canvas.add(groupTmp);
             }
         }
-        this.canvas.renderAll();
+        /*this.canvas.renderAll();
         this.canvas.renderOnAddRemove = true;
         // We transform the canvas to a base64 image in order to save performances.
         let url = this.canvas.toDataURL();
@@ -251,7 +262,7 @@ export class LegoGridCanvas {
             originY: 'top',
             width: this.canvas.width,
           height: this.canvas.height,
-        });   
+        });   */
     }
 
     /**
@@ -259,11 +270,14 @@ export class LegoGridCanvas {
      */
     _createRect(sizeRect, angle) {
         return this._createBrick({
-                size : {col : 2 * sizeRect, row :1 * sizeRect},
-                left : angle ? ((this.canvasRect.width / 4) - this.cellSize) : ((this.canvasRect.width * 3 / 4) - (this.cellSize * 1.5)),
-                top : angle ? 1 : 0,
-                angle : angle
-            });
+            size: {
+                col: 2 * sizeRect,
+                row: 1 * sizeRect
+            },
+            left: angle ? ((this.canvasRect.width / 4) - this.cellSize) : ((this.canvasRect.width * 3 / 4) - (this.cellSize * 1.5)),
+            top: angle ? 1 : 0,
+            angle: angle
+        });
     }
 
     /**
@@ -271,10 +285,13 @@ export class LegoGridCanvas {
      */
     _createSquare(sizeSquare) {
         return this._createBrick({
-                size : {col : 1 * sizeSquare, row :1 * sizeSquare},
-                left: sizeSquare === 2 ? ((this.canvasRect.width / 2) - (2 * this.cellSize)) : (this.canvasRect.width - (this.cellSize * 1.5)),
-                top : sizeSquare === 2 ? 1 : 0,
-            });
+            size: {
+                col: 1 * sizeSquare,
+                row: 1 * sizeSquare
+            },
+            left: sizeSquare === 2 ? ((this.canvasRect.width / 2) - (2 * this.cellSize)) : (this.canvasRect.width - (this.cellSize * 1.5)),
+            top: sizeSquare === 2 ? 1 : 0,
+        });
     }
 
     /**
