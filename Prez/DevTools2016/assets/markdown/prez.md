@@ -1,9 +1,9 @@
 
 <!-- .slide: class="first-slide" -->
 
-# **Les Devtools en 2016**
+# **Les Devtools en 2017**
 
-### 2016  @ **Bordeaux**
+### 2017  @ **Nantes**
 
 
 ##==##
