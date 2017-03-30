@@ -1,12 +1,18 @@
 'use strict'
-import {LEGO_COLORS} from './common/legoColors.js';
-import {BASE_LEGO_COLOR} from './common/const.js';
-import {LegoGridCanvas} from './canvas/legoCanvas.js';
+import {
+    LEGO_COLORS
+} from './common/legoColors.js';
+import {
+    BASE_LEGO_COLOR
+} from './common/const.js';
+import {
+    LegoGridCanvas
+} from './canvas/legoCanvas.js';
 
 
 (function () {
 
-    let gameInit = false,// true if we init the legoGrid
+    let gameInit = false, // true if we init the legoGrid
         legoCanvas = null, // The legoGrid
         keys = null, // The keys of firenase submit draw
         snapshotFb = null, // The snapshot of submit draw
@@ -56,8 +62,8 @@ import {LegoGridCanvas} from './canvas/legoCanvas.js';
                         document.getElementById('loading').removeAttribute('hidden');
                         // Timeout needed to start the rendering of loading animation (else will not be show)
                         setTimeout(function () {
-                                gameInit = true;
-                                initGame();
+                            gameInit = true;
+                            initGame();
                             document.getElementById('loading').setAttribute('hidden', '')
                         }, 50);
                     }
@@ -76,23 +82,23 @@ import {LegoGridCanvas} from './canvas/legoCanvas.js';
 
         document.getElementById('btnSubmission').addEventListener('click', () => {
             const user = {
-                name : 'User Name',
-                id : 'userId'
+                name: 'User Name',
+                id: 'userId'
             };
             const drawDatas = legoCanvas.export(user.name, user.id);
             drawDatas.dataUrl = legoCanvas.snapshot();
             console.info('will send : ', drawDatas);
             const URL = `http://localhost:9000/draw/${user.id}`;
             fetch(URL, {
-                            method: 'post',
-                            headers: new Headers({
-                                'Content-Type': 'application/json; charset=utf-8'
-                            }),
-                            body: JSON.stringify(drawDatas)
-                       })
-            .then(function(response) {
-                console.info(response);
-            });
+                    method: 'post',
+                    headers: new Headers({
+                        'Content-Type': 'application/json; charset=utf-8'
+                    }),
+                    body: JSON.stringify(drawDatas)
+                })
+                .then(function (response) {
+                    console.info(response);
+                });
             legoCanvas.resetBoard();
         });
 
@@ -114,7 +120,7 @@ import {LegoGridCanvas} from './canvas/legoCanvas.js';
 
         streamGame.merge(streamCreations)
             .subscribe((state) => {
-                if (state === 'game'){
+                if (state === 'game') {
                     document.querySelector('.page-content').removeAttribute('hidden');
                     document.getElementById('submitted').setAttribute('hidden', '');
                     document.getElementById('menu-game').setAttribute('hidden', '');
@@ -122,7 +128,7 @@ import {LegoGridCanvas} from './canvas/legoCanvas.js';
                     document.querySelector('.mdl-layout__drawer').classList.remove('is-visible');
                     document.querySelector('.mdl-layout__obfuscator').classList.remove('is-visible');
 
-                }else if (state === 'creations'){
+                } else if (state === 'creations') {
                     document.querySelector('.page-content').setAttribute('hidden', '');
                     document.getElementById('submitted').removeAttribute('hidden');
                     document.getElementById('menu-game').removeAttribute('hidden');
@@ -131,26 +137,28 @@ import {LegoGridCanvas} from './canvas/legoCanvas.js';
                     document.querySelector('.mdl-layout__obfuscator').classList.remove('is-visible');
 
                     const user = {
-                        name : 'User Name',
-                        id : 'userId'
+                        name: 'User Name',
+                        id: 'userId'
                     };
-                    const myInit = { method: 'GET'};
+                    const myInit = {
+                        method: 'GET'
+                    };
                     const URL = `http://localhost:9000/draw/${user.id}`;
                     fetch(URL, myInit)
-                    .then(function(snapshot) {
-                        return snapshot.json();
-                    })
-                    .then(function(snapshot){
-                        if (snapshot) {
-                            console.log(snapshot);
-                            snapshotFb = snapshot;
-                            keys = Object.keys(snapshotFb);
-                            index = 0;
-                            draw();
-                        } else {
-                            console.log('no draw !');
-                        }
-                    });
+                        .then(function (snapshot) {
+                            return snapshot.json();
+                        })
+                        .then(function (snapshot) {
+                            if (snapshot) {
+                                console.log(snapshot);
+                                snapshotFb = snapshot;
+                                keys = Object.keys(snapshotFb);
+                                index = 0;
+                                draw();
+                            } else {
+                                console.log('no draw !');
+                            }
+                        });
                 }
             });
 
@@ -163,11 +171,11 @@ import {LegoGridCanvas} from './canvas/legoCanvas.js';
         const btnRight = document.getElementById('btnRight');
 
         const streamBtnLeft = Rx.Observable
-            .fromEvent(btnLeft,'click',()=>index = Math.max(index - 1, 0));
-        const streamBtnRight =  Rx.Observable
-            .fromEvent(btnRight, 'click',()=>index = Math.min(index + 1, keys.length - 1));
+            .fromEvent(btnLeft, 'click', () => index = Math.max(index - 1, 0));
+        const streamBtnRight = Rx.Observable
+            .fromEvent(btnRight, 'click', () => index = Math.min(index + 1, keys.length - 1));
 
-       streamBtnLeft.merge(streamBtnRight).subscribe(draw);
+        streamBtnLeft.merge(streamBtnRight).subscribe(draw);
 
 
     }
@@ -196,6 +204,6 @@ import {LegoGridCanvas} from './canvas/legoCanvas.js';
             console.log('Service Worker Register for scope : %s',reg.scope);
         });
     }
-    SERVICE_WORKER_REPLACE */
+     SERVICE_WORKER_REPLACE */
 
 })();
