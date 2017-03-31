@@ -18,6 +18,8 @@ Notes:
 
 ##==##
 
+<!-- .slide: class="transition" data-background="white" -->
+
 <br>
 
 ![center](/assets/images/Jackie-Chan-WTF.jpg)
@@ -45,6 +47,16 @@ Suite de nombres représentant les temps d'une figure de jongle.
 </cite>
 </blockquote>
 Notes:
+
+
+##==##
+
+<!-- .slide: class="transition" data-background="white" -->
+
+<br>
+
+![center](/assets/images/Siteswap.png)
+
 
 ##==##
 
