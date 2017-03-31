@@ -216,7 +216,7 @@ body, html{
         top:0;
         height:1.7em;
         font-size:2em;
-    
+    }
     
     img[alt*=avatar], img.avatar{
         position:absolute;
@@ -324,14 +324,6 @@ body, html{
     height: 100vw;
 }
 
-
-
-/*.reveal .slides section.transition-white h1,
-.reveal .slides section.transition-black h1{
-	//border-left : 5px solid $dark-grey;
-    @include bandeau();
-    
-}*/
 
 .reveal .slides section.transition-white img[alt*=icon],
 .reveal .slides section.transition-black img[alt*=icon],
