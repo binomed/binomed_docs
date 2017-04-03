@@ -17,26 +17,26 @@ canvas{
 }
 
 .mdl-layout__header-row{
-    img{ 
-        max-height: 80%;
+    img{
+        max-height: 90%;
         margin-right: 20px;
         left: 0px;
         position:relative;
         box-shadow: 1px 5px 17px 0px red;
     }
-} 
+}
 
 .mdl-layout .mdl-layout__content{
     display: flex;
-    
+
     .page-content{
         display: flex;
-        flex:1; 
+        flex:1;
         justify-content: center;
         flex-direction: column;
         position:relative;
-                
-                
+
+
     }
 }
 

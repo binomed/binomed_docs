@@ -2,7 +2,7 @@
 
 # Les nouveaux supers<br> pouvoirs du web
 
-### 2017.03.02 BBL @ **Nantes**
+### 2017.03.23 BBL @ **Nantes**
 
 <div class="copyrights white">kohaku Yoshida</div>
 
