@@ -61,6 +61,12 @@ Senior innovation developper & Community Manager
 
 ##==##
 
+<!-- .slide: class="transition-white"-->
+
+# La stack : <br> ES6 / Sass / Gulp
+
+##==##
+
 <!-- .slide: class="transition-black"-->
 
 # Let's DEBUG !
