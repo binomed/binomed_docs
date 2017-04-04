@@ -3,7 +3,7 @@
 
 # **Les Devtools en 2017**
 
-### 2017  @ **Nantes**
+### 2017  @ **DevoxxFr**
 
 
 ##==##
