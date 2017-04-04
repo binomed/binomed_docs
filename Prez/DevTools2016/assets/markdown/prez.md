@@ -1,5 +1,7 @@
 
-<!-- .slide: class="first-slide" -->
+
+<!-- .slide: class="first-slide transition" data-background="./assets/images/devoxx_fr_2017_1080_avec_textes.png" -->
+
 
 # **Les Devtools en 2017**
 
