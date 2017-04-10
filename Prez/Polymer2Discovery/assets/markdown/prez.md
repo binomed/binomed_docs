@@ -9,6 +9,14 @@
 
 ##==##
 
+Pourquoi ?
+
+##==##
+
+WebRemoteControl
+
+##==##
+
 
 <!-- .slide: data-background="./assets/images/lego_blocks.jpg" data-state="hidefooter" class="transition" data-copyrights="true"  -->
 
@@ -21,12 +29,15 @@ Notes:
 
 ##==##
 
-
 <!-- .slide: class="transition text-white"  -->
 
-# Specs 1.0 Figées !
+<h1>
+    <svg class="h-150 color-red">
+        <use xlink:href="#webcomponents_logo" />
+    </svg><br> Specs 1.0 Figées !
+</h1>
 
-![center w-400](./assets/images/POLYMER_1.0.png)
+
 
 Notes:
 
@@ -38,7 +49,7 @@ Notes:
 
 
 <div class="flex-col">
-    <div class="flex-hori padding">
+    <div class="flex-hori">
         <svg class="h-150 color-white">
             <use xlink:href="#template" />
         </svg>
@@ -47,7 +58,7 @@ Notes:
             <use xlink:href="#check" />
         </svg>
     </div>
-    <div class="flex-hori fragment padding">
+    <div class="flex-hori fragment">
         <svg class="h-150 color-white">
             <use xlink:href="#custom-elements" />
         </svg>
@@ -346,6 +357,32 @@ Comme on peut l'imaginer, ça veut dire beaucoup de bolerplate !
 
 ##==##
 
+
+<div class="flex-col left-align">
+    <div class="flex-hori">
+        <svg class="h-150 color-white">
+            <use xlink:href="#sad" />
+        </svg>
+        <span class="webspecs">Synchro complexe</span>
+    </div>
+    <div class="flex-hori fragment">
+        <svg class="h-150 color-white">
+            <use xlink:href="#sad" />
+        </svg>
+        <span class="webspecs">Passage d'objets complexes</span>
+    </div>
+    <div class="flex-hori fragment">
+        <svg class="h-150 color-white">
+            <use xlink:href="#sad" />
+        </svg>
+        <span class="webspecs">Beaucoup de boilerplate...</span>
+    </div>
+</div>
+
+
+
+##==##
+
 <!-- .slide: class="transition text-white"  -->
 
 <h1>
@@ -359,18 +396,323 @@ C'est du sucre syntaxique sur les webcompenents
 
 ##==##
 
-What's new ?
+<!-- .slide: class="transition text-white"  -->
+
+<h1>
+    <svg class="h-350 color-green">
+        <use xlink:href="#browser" />
+    </svg><br> #usetheplatform
+</h1>
+
+
+
+##==##
+
+<!-- .slide: class="with-code"  data-background="#3f3f3f" -->
+
+## Vanilla Component
+
+```javascript
+class GdgElement extends HTMLElement {
+
+}
+```
+
+Notes:
+
+##==##
+
+<!-- .slide: class="with-code"  data-background="#3f3f3f" -->
+
+## Polymer Component
+
+```javascript
+class GdgElement extends Polymer.Element {
+
+}
+```
+
+Notes:
+
+Classes ES6 !!
+
+##==##
+
+<!-- .slide: class="with-code"  data-background="#3f3f3f" -->
+
+## Polymer Component - Mixin Powa !
+
+```javascript
+class GdgElement extends Polymer.TemplateStamp(HTMLElement) {
+
+}
+```
+
+Notes:
+Il s'agit en fait de mixins, on peut donc choisir !
+
+
+##==##
+
+<!-- .slide: class="transition text-white"  -->
+
+<h1>
+    <svg class="h-350 color-white">
+        <use xlink:href="#cart" />
+    </svg><br> Soyez sélectifs <br> <span class="fragment">ou pas ;)</span>
+</h1>
+
+
+
+##==##
+
+<!-- .slide: class="with-code"  data-background="#3f3f3f" -->
+
+## Polymer Component - Heritage
+
+```javascript
+class GdgElement extends MyElement {
+
+}
+```
+
+Notes:
+De retour
+
 
 ##==##
 
 
-Compatibilité ?
+<!-- .slide: class="transition text-white"  -->
 
-88% des composants déjà migrés
+<h1>
+    <svg class="h-350 color-red">
+        <use xlink:href="#configuration" />
+    </svg><br>Configuration
+</h1>
+
+
+Notes:
 
 ##==##
 
-Comment migrer ?
+<!-- .slide: class="with-code"  data-background="#3f3f3f" -->
+
+
+```javascript
+class GdgElement extends Polymer.Element {
+    static get is() { return 'gdg-element'; }
+
+    constructor(){}
+    connectedCallback(){}
+}
+
+customElements.define(GdgElement.is, GdgElement);
+```
+
+Notes:
+Méthodes statiques car configuration par annoation non prévue
+
+
+
+##==##
+
+<!-- .slide: class="with-code"  data-background="#3f3f3f" -->
+
+
+```javascript
+class GdgElement extends Polymer.Element {
+    static get properties() {
+        return {gdg: {type: String}};
+    }
+    static get observers() {
+        return ['gdgChanged(gdg)'];
+    }
+}
+```
+
+##==##
+
+<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="code-custom-attributes" -->
+
+## Rappelez vous : Binding
+
+```javascript
+class GdGElement extends HTMLElement {
+    static get is() {return ['gdg-element']; }
+    static get observedAttributes() {return ['gdg']; }
+    connectedCallback(){ this.innerHTML = '...'}
+    attributeChangedCallback(attr, oldValue, newValue) { this[attr] = newValue;}
+    set gdg(val){
+        if (this._val === val) return;
+        this._val = val;
+        this.setAttribute('gdg', val);
+    }
+    get gdg(){ return this._gdg; }
+}
+```
+
+Notes:
+Tout un ensemble de boillerplate pour une simple synchro !
+
+##==##
+
+<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="code-custom-attributes" -->
+
+## Deviens
+
+```javascript
+class GdGElement extends Polymer.Element {
+    static get is() {return ['gdg-element']; }
+    connectedCallback(){ this.innerHTML = '...'}
+    static get properties() {
+        return {gdg: {type: String}};
+    }
+}
+```
+
+Notes:
+En gros dessous, y a un peu de magie de faite pour poser les getters & setters
+
+##==##
+
+<!-- .slide: class="with-code"  data-background="#3f3f3f" -->
+
+## Templating
+
+```html
+<dom-module id="gdg-element">
+    <template>
+        <div>
+            <span>Hello GDG</span>
+        </div>
+    </template>
+    < script>
+        class GdGElement extends Polymer.Element {
+            static get is() {return ['gdg-element']; }
+        }
+    </ script>
+</dom-module>
+```
+
+Notes:
+Il détecte automatiquement le premier template et l'ajoute au shadow dom
+
+
+##==##
+
+<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="code-custom-attributes" -->
+
+## Data Binding
+
+```html
+<dom-module id="gdg-element">
+    <template>
+        <div>
+            <span>[[gdg]]</span>
+        </div>
+    </template>
+</dom-module>
+```
+
+Notes:
+Fonctionne aussi pour les attributs !
+Synchronise le dom / Fire les events
+Met à jour les observers
+
+
+##==##
+
+
+<div class="flex-col left-align">
+    <div class="flex-hori">
+        <svg class="h-150 color-white">
+            <use xlink:href="#happy" />
+        </svg>
+        <span class="webspecs">Synchro complexe</span>
+    </div>
+    <div class="flex-hori fragment">
+        <svg class="h-150 color-white">
+            <use xlink:href="#happy" />
+        </svg>
+        <span class="webspecs">Passage d'objets complexes</span>
+    </div>
+    <div class="flex-hori fragment">
+        <svg class="h-150 color-white">
+            <use xlink:href="#happy" />
+        </svg>
+        <span class="webspecs">Beaucoup de boilerplate...</span>
+    </div>
+</div>
+
+##==##
+
+<!-- .slide: class="transition" -->
+
+
+<h1>
+    <img class="w-800" src="./assets/images/main-desktop-browser-logos.png">
+    <br> 2 dernières versions
+</h1>
+
+
+Notes:
+Le contrat est : Les 2 dernières versions de chaque majeur !
+IE11+ / Safari 7+/ Chrome Android
+
+
+
+##==##
+
+<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="code-custom-attributes" -->
+
+## Polyfills
+
+```html
+<!-- Load import polyfills; -->
+< script src="bower_components/webcomponentsjs/webcomponents-hi.js"></ script>
+<!-- Load import - customs elements polyfills; -->
+< script src="bower_components/webcomponentsjs/webcomponents-hi-ce.js"></ script>
+
+<!-- Load all polyfills; -->
+< script src="bower_components/webcomponentsjs/webcomponents-lite.js"></ script>
+<!-- Load polyfills; note that "loader" will load these async -->
+< script src="bower_components/webcomponentsjs/webcomponents-loader.js"></ script>
+```
+
+Notes:
+Le premier charge tout
+Le second sert à détecter ce qui manque et le charge
+
+
+##==##
+
+<!-- .slide: class="transition text-white"  -->
+
+# Pourquoi RC ?
+
+Notes:
+Tous les componsants Polymer 1.0 n'ont pas encore étés migrés
+
+
+##==##
+
+<!-- .slide: class="transition text-white"  -->
+
+# Comment migrer ?
+
+![center w-400](./assets/images/POLYMER_1.0.png)
+
+Notes:
+
+
+##==##
+
+## Crédits - The Noun Project
+
+
+Icon Fair / Ralf Schmitzer / Nathan Thomson / Shmidt Sergey / Por Suppasit / Veronika Krpciarova / Logan / Gregor Cresnar
+
 
 ##==##
 
@@ -412,4 +754,12 @@ Comment migrer ?
     <svg id="happy" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 24 30" style="enable-background:new 0 0 24 24;" xml:space="preserve"><g><g><path d="M12,0C5.383,0,0,5.383,0,12c0,6.617,5.383,12,12,12c6.617,0,12-5.383,12-12C24,5.383,18.617,0,12,0z M12,22    C6.486,22,2,17.514,2,12C2,6.486,6.486,2,12,2c5.514,0,10,4.486,10,10C22,17.514,17.514,22,12,22z"/><path d="M18.142,7.01c-0.543-0.078-1.053,0.301-1.133,0.847C16.937,8.36,16.503,8.739,16,8.739c-0.504,0-0.938-0.379-1.01-0.882    c-0.079-0.546-0.585-0.93-1.133-0.847c-0.547,0.079-0.926,0.586-0.848,1.132c0.214,1.48,1.499,2.597,2.99,2.597    c1.49,0,2.775-1.116,2.989-2.597C19.067,7.596,18.688,7.089,18.142,7.01z"/><path d="M10.989,8.143c0.079-0.546-0.3-1.054-0.847-1.132c-0.541-0.076-1.053,0.3-1.132,0.847C8.936,8.368,8.511,8.739,8,8.739    c-0.503,0-0.937-0.379-1.01-0.882C6.911,7.311,6.404,6.936,5.857,7.01C5.311,7.089,4.932,7.596,5.01,8.143    C5.224,9.623,6.509,10.739,8,10.739S10.775,9.623,10.989,8.143z"/><path d="M14.552,14H9.449c-0.46,0-0.897,0.229-1.17,0.615c-0.285,0.403-0.356,0.923-0.191,1.39C8.761,17.908,10.196,19,12.024,19    c1.861,0,3.283-1.107,3.903-3.039c0.148-0.463,0.066-0.973-0.219-1.364C15.436,14.223,15.003,14,14.552,14z"/></g></g></svg>
     <!-- candy -->
     <svg id="candy" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 64 80" enable-background="new 0 0 64 64" xml:space="preserve"><g><g><path d="M57.456,15.029L48.97,6.544c-0.47-0.47-1.14-0.677-1.792-0.55c-0.652,0.125-1.199,0.566-1.46,1.176l-3.079,7.184    l-2.153-2.153c-1.133-1.134-2.641-1.758-4.243-1.758s-3.11,0.624-4.243,1.758L12.2,32c-2.338,2.34-2.338,6.146,0,8.485    l2.153,2.153l-7.184,3.08c-0.61,0.261-1.05,0.808-1.176,1.46c-0.125,0.651,0.081,1.323,0.55,1.792l8.485,8.485    c0.378,0.379,0.889,0.586,1.414,0.586c0.125,0,0.252-0.012,0.378-0.036c0.651-0.125,1.198-0.566,1.46-1.176l3.079-7.185    l2.153,2.153c1.133,1.133,2.64,1.757,4.243,1.757s3.109-0.624,4.242-1.757L51.798,32c1.134-1.133,1.758-2.64,1.758-4.243    s-0.624-3.11-1.758-4.242l-2.153-2.153l7.186-3.08c0.609-0.262,1.051-0.809,1.176-1.46C58.132,16.17,57.926,15.499,57.456,15.029z     M38.241,36.242c0,1.104-0.896,2-2,2h-8c-3.308,0-6-2.691-6-5.999c0-2.702,1.795-4.993,4.255-5.742    c0.282-0.935,0.792-1.792,1.502-2.501c1.134-1.133,2.641-1.757,4.244-1.757c3.308,0,5.998,2.691,5.998,6V36.242z"/><path d="M32.243,26.242c-0.535,0-1.038,0.208-1.416,0.586c-0.377,0.377-0.585,0.879-0.585,1.414c0,0.531-0.21,1.04-0.585,1.415    c-0.375,0.375-0.884,0.586-1.415,0.586c-1.103,0-2,0.897-2,2.001c0,1.103,0.897,1.999,2,1.999h6v-6    C34.241,27.139,33.345,26.242,32.243,26.242z"/></g></g></svg>
+    <!-- browser -->
+    <svg id="browser" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 512 640" enable-background="new 0 0 512 512" xml:space="preserve"><g><path d="M2,2v65.5v16.4v262.2h82.4C88.7,437.2,163.9,510,256,510s167.3-72.8,171.6-163.9H510V83.9V67.5V2H2z M256,493.6   c-21.7,0-44.6-29.5-56.7-78.2c17.7,2.9,36.7,4.5,56.7,4.5s39-1.6,56.7-4.5C300.6,464.1,277.7,493.6,256,493.6z M256,403.5   c-22,0-42.2-1.9-60.3-5.2c-3.3-18.1-5.2-38.3-5.2-60.3s1.9-42.2,5.2-60.3c18.1-3.3,38.3-5.2,60.3-5.2s42.2,1.9,60.3,5.2   c3.3,18.1,5.2,38.3,5.2,60.3s-1.9,42.2-5.2,60.3C298.2,401.5,278,403.5,256,403.5z M178.5,394.6c-48.7-12.1-78.2-34.9-78.2-56.7   c0-21.7,29.5-44.6,78.2-56.7c-2.9,17.7-4.5,36.7-4.5,56.7C174.1,357.9,175.7,376.9,178.5,394.6z M333.5,281.2   c48.7,12.1,78.2,34.9,78.2,56.7c0,21.7-29.5,44.6-78.2,56.7c2.9-17.7,4.5-36.7,4.5-56.7C337.9,318,336.3,298.9,333.5,281.2z    M330.1,263.8c-7.2-32.3-18.9-58.8-33.6-76c53.3,14.4,95.2,56.3,109.6,109.6C388.9,282.7,362.4,271,330.1,263.8z M312.7,260.5   C295,257.6,276,256,256,256s-39,1.6-56.7,4.5c12.1-48.7,34.9-78.2,56.7-78.2S300.6,211.8,312.7,260.5z M181.9,263.8   c-32.3,7.2-58.8,18.9-76,33.6c14.4-53.3,56.3-95.2,109.6-109.6C200.8,205,189.1,231.5,181.9,263.8z M105.9,378.4   c17.2,14.7,43.8,26.4,76,33.6c7.2,32.3,18.9,58.8,33.6,76C162.2,473.7,120.3,431.7,105.9,378.4z M296.5,488.1   c14.7-17.2,26.4-43.8,33.6-76c32.3-7.2,58.8-18.9,76-33.6C391.7,431.7,349.8,473.7,296.5,488.1z M493.6,329.7h-66   c-4.3-91.1-79.5-163.9-171.6-163.9S88.7,238.7,84.4,329.7h-66V83.9h475.2V329.7z M18.4,67.5V18.4h475.2v49.2H18.4z"/><rect x="34.8" y="34.8" width="16.4" height="16.4"/><rect x="67.5" y="34.8" width="16.4" height="16.4"/><rect x="100.3" y="34.8" width="16.4" height="16.4"/><rect x="288.8" y="34.8" width="188.5" height="16.4"/></g></svg>
+    <!-- cart -->
+    <svg id="cart" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.1" x="0px" y="0px" viewBox="0 0 792.75391 943.1003625" enable-background="new 0 0 2000 2000" xml:space="preserve"><path style="" d="m 724.95572,0.00927786 c -3.071,0.07 -6.178,0.61 -9.231,1.64700004 -161.871,54.7980001 -272.728,201.4960021 -281.209,369.0440021 l -39.426,-39.408 c -12.222,-12.222 -31.975,-12.222 -44.197,0 -12.222,12.221 -12.222,31.977 0,44.198 l 94.803,94.771 c 5.844,5.876 13.845,9.157 22.098,9.157 8.283,0 16.222,-3.281 22.097,-9.157 l 94.74,-94.771 c 12.222,-12.221 12.222,-31.977 0,-44.198 -12.221,-12.222 -31.976,-12.222 -44.197,0 l -43.502,43.523 c 6.821,-142.431 101.057,-267.281 238.826,-313.927002 16.348,-5.533 25.165,-23.318 19.6,-39.634 -4.47,-13.2830001 -17.091,-21.57100014 -30.402,-21.24500014 z M 32.633678,98.115278 c -18.129,-0.343 -31.88199991,12.628002 -32.60099991,29.851002 -0.782,17.254 12.56599991,31.85 29.85099991,32.6 l 97.053002,4.252 23.315,85.129 c 0.172,1.817 0.505,3.633 1.003,5.423 l 67.979,246.44001 11.975,43.718 c 2.389,8.607 8.165,15.381 15.485,19.283 0.738,0.394 1.49,0.76 2.258,1.094 0.749,0.326 1.512,0.622 2.286,0.889 0.02,0.01 0.04,0.02 0.07,0.02 0,0 0,0 0,0 0.742,0.253 1.495,0.475 2.255,0.672 0.06,0.02 0.119,0.04 0.181,0.05 0.604,0.154 1.22,0.269 1.835,0.386 0.23,0.04 0.455,0.106 0.687,0.145 0.743,0.124 1.494,0.212 2.246,0.282 0.09,0.01 0.188,0.03 0.282,0.03 0,0 0,0 0,0 0.854,0.07 1.711,0.109 2.577,0.109 0,0 0.02,0 0.03,0 l 420.06404,0 c 14.097,0 26.413,-9.409 30.133,-22.943 l 80.048,-290.18901 c 2.563,-9.409 0.626,-19.474 -5.249,-27.226 -5.941,-7.783 -15.132,-12.348 -24.914,-12.348 l -163.598,0 c -17.285,0 -31.257,13.972 -31.257,31.257 0,17.285 13.972,31.257 31.257,31.257 l 122.587,0 -62.826,227.67801 -372.40304,0 -62.368,-227.67801 177.08804,0 c 17.285,0 31.257,-13.972 31.257,-31.257 0,-17.285 -13.972,-31.257 -31.257,-31.257 l -194.21204,0 -24.522,-89.518 c -3.595,-13.097 -15.192,-22.349 -28.757,-22.943 L 32.633678,98.101278 Z M 335.98272,582.56629 c -47.38504,0 -85.95804,38.54 -85.95804,85.957 0,47.416 38.573,85.957 85.95804,85.957 47.449,0 85.958,-38.541 85.958,-85.957 0,-47.417 -38.509,-85.957 -85.958,-85.957 z m 260.497,0 c -47.388,0 -85.958,38.54 -85.958,85.957 0,47.416 38.57,85.957 85.958,85.957 47.447,0 85.955,-38.541 85.955,-85.957 0,-47.417 -38.508,-85.957 -85.955,-85.957 z m -260.497,62.516 c 12.94,0 23.444,10.531 23.444,23.441 0,12.909 -10.504,23.443 -23.444,23.443 -12.87704,0 -23.44304,-10.534 -23.44304,-23.443 0,-12.91 10.566,-23.441 23.44304,-23.441 z m 260.497,0 c 12.939,0 23.44,10.531 23.44,23.441 0,12.909 -10.501,23.443 -23.44,23.443 -12.879,0 -23.443,-10.534 -23.443,-23.443 0,-12.91 10.564,-23.441 23.443,-23.441 z" /></svg>
+    <!-- configuration -->
+    <svg id="configuration" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 125" x="0px" y="0px">
+        <path d="M2.24,32.43V28.82A3.27,3.27,0,0,1,4.95,25.6l4.25-.75a22.08,22.08,0,0,1,2.2-5.3L8.91,16a3.27,3.27,0,0,1,.37-4.19l2.55-2.55A3.27,3.27,0,0,1,16,8.91l3.54,2.48a22,22,0,0,1,5.3-2.2l.75-4.25a3.27,3.27,0,0,1,3.22-2.71h3.61a3.27,3.27,0,0,1,3.22,2.71L36.4,9.2a22,22,0,0,1,5.3,2.2l3.54-2.48a3.27,3.27,0,0,1,4.19.37L52,11.83A3.27,3.27,0,0,1,52.34,16l-2.48,3.54a22.08,22.08,0,0,1,1.77,4,10,10,0,0,0-2.05,4.51l-.34,2-1.06.44-1.63-1.14a10,10,0,0,0-5.75-1.82c-.32,0-.63.06-.95.09A9.71,9.71,0,1,0,27.6,39.84a10,10,0,0,0,1.77,6.71l1.14,1.63c-.15.35-.3.7-.44,1.05l-2,.34a10,10,0,0,0-4.51,2.05,22.11,22.11,0,0,1-4-1.77L16,52.34A3.27,3.27,0,0,1,11.83,52L9.28,49.43a3.27,3.27,0,0,1-.37-4.19L11.4,41.7a22,22,0,0,1-2.2-5.3l-4.25-.75A3.27,3.27,0,0,1,2.24,32.43Zm45.43,4.88a27.94,27.94,0,0,1,6.72-2.79l.95-5.4a4.15,4.15,0,0,1,4.09-3.43H64a4.15,4.15,0,0,1,4.09,3.43l.95,5.4a28,28,0,0,1,6.73,2.79l4.49-3.15a4.15,4.15,0,0,1,5.32.46l3.24,3.24a4.15,4.15,0,0,1,.46,5.32l-3.15,4.49a28,28,0,0,1,2.79,6.73l5.4.95a4.15,4.15,0,0,1,3.43,4.09V64a4.15,4.15,0,0,1-3.43,4.09l-5.4.95a28,28,0,0,1-2.79,6.72l3.15,4.49a4.15,4.15,0,0,1-.46,5.32l-3.24,3.24a4.15,4.15,0,0,1-5.32.46l-4.49-3.15a28,28,0,0,1-6.73,2.79l-.95,5.4A4.15,4.15,0,0,1,64,97.76H59.44a4.15,4.15,0,0,1-4.09-3.43l-.95-5.4a28,28,0,0,1-6.72-2.79l-4.49,3.15a4.15,4.15,0,0,1-5.32-.46l-3.24-3.24a4.15,4.15,0,0,1-.46-5.32l3.15-4.49a28,28,0,0,1-2.79-6.72l-5.4-.95A4.15,4.15,0,0,1,25.69,64V59.43a4.15,4.15,0,0,1,3.43-4.09l5.4-.95a28,28,0,0,1,2.79-6.72l-3.15-4.49a4.15,4.15,0,0,1,.46-5.32l3.24-3.24a4.15,4.15,0,0,1,5.32-.46ZM52,64.8l2.11,2.12,2.28,2.29a3.22,3.22,0,0,0,4.56,0l2.29-2.27,8.19-8.15a3.23,3.23,0,0,0,0-4.56h0a3.22,3.22,0,0,0-4.56,0l-8.19,8.15-2.11-2.12a3.23,3.23,0,0,0-4.56,0h0A3.23,3.23,0,0,0,52,64.8Z"/>
+    </svg>
 </div>

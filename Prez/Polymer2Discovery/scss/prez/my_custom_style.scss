@@ -5,8 +5,9 @@ $medium-grey: #817c7c;
 $black: #333;
 $dark-grey: #3d4349;
 $dark-grey-alpha: rgba(61, 67, 73, 0.7);
-$red: #e74c3c;
 // Material colors :
+$red: #e57373;
+$green: #aed581;
 $deep-purple: #673AB7;
 $light-color-white: #ede7f6;
 // Background Colors
@@ -171,42 +172,17 @@ html {
     color: $light-color-white;
 }
 
-.reveal .backgrounds div.slide-background.transition-black {
-    background-color: $black;
+.reveal .slides section.transition.text-green h1 {
+    color: $green;
 }
 
-.reveal .backgrounds div.slide-background.transition[data-background-hash].no-filter::before {
-    background-color: rgba(0, 0, 0, 0);
+.reveal .slides section.transition.text-red h1 {
+    color: $red;
 }
 
-.reveal .backgrounds div.slide-background.transition[data-background-hash*=png]::before,
-.reveal .backgrounds div.slide-background.transition[data-background-hash*=PNG]::before,
-.reveal .backgrounds div.slide-background.transition[data-background-hash*=Png]::before,
-.reveal .backgrounds div.slide-background.transition[data-background-hash*=jpg]::before,
-.reveal .backgrounds div.slide-background.transition[data-background-hash*=JPG]::before,
-.reveal .backgrounds div.slide-background.transition[data-background-hash*=Jpg]::before,
-.reveal .backgrounds div.slide-background.transition[data-background-hash*=jpeg]::before,
-.reveal .backgrounds div.slide-background.transition[data-background-hash*=JPEG]::before,
-.reveal .backgrounds div.slide-background.transition[data-background-hash*=Jpeg]::before,
-.reveal .backgrounds div.slide-background.transition[data-background-hash*=gif]::before,
-.reveal .backgrounds div.slide-background.transition[data-background-hash*=GIF]::before,
-.reveal .backgrounds div.slide-background.transition[data-background-hash*=Gif]::before,
-.reveal .backgrounds div.slide-background.transition[data-background-hash*=svg]::before,
-.reveal .backgrounds div.slide-background.transition[data-background-hash*=SVG]::before,
-.reveal .backgrounds div.slide-background.transition[data-background-hash*=Svg]::before,
-.reveal .backgrounds div.slide-background.transition[data-background-hash*=bmp]::before,
-.reveal .backgrounds div.slide-background.transition[data-background-hash*=BMP]::before,
-.reveal .backgrounds div.slide-background.transition[data-background-hash*=Bmp]::before,
-.reveal .backgrounds div.slide-background.transition[data-background-hash*=webp]::before,
-.reveal .backgrounds div.slide-background.transition[data-background-hash*=WEBP]::before,
-.reveal .backgrounds div.slide-background.transition[data-background-hash*=Webp]::before {
-    background-color: $dark-grey-alpha;
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vw;
+.reveal .slides section.transition h1.h1-light {
+    font-size: 50px;
+    text-transform: initial;
 }
 
 div.flex-hori {
@@ -226,16 +202,12 @@ div.flex-col {
     align-items: center;
 }
 
+div.flex-col.left-align {
+    align-items: flex-start;
+}
+
 div.padding~* {
     padding-left: 50px;
-}
-
-object.color-white path {
-    fill: $light-color-white;
-}
-
-object.color-green path {
-    fill: #aed581;
 }
 
 svg.color-white {
@@ -244,13 +216,17 @@ svg.color-white {
 }
 
 svg.color-green {
-    fill: #aed581;
-    stroke: #aed581;
+    fill: $green;
+    stroke: $green;
 }
 
 svg.color-red {
-    fill: #e57373;
-    stroke: #e57373;
+    fill: $red;
+    stroke: $red;
+}
+
+svg#happy {
+    stroke-width: 0px;
 }
 
 span.webspecs {
