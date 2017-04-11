@@ -1,11 +1,18 @@
 
-<!-- .slide: class="first-slide" data-background="./assets/images/polymer.svg" -->
 
-# **Polymer 2 <br> What's new ?**
+<!-- .slide: class="transition text-white"  -->
+
+<h1>
+    Polymer 2
+    <br><img src="./assets/images/polymer.svg" class="h-200">
+    <br> What's new ?
+</h1>
 
 
-### GDG  @ **Nantes**
+##==##
 
+
+<!-- .slide: data-background="./assets/images/Once-upon-a-time.jpg" data-state="hidefooter" class="transition no-filter" data-copyrights="true"  -->
 
 ##==##
 
