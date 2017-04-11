@@ -16,18 +16,60 @@
 
 ##==##
 
-Pourquoi ?
+<!-- .slide: data-background="#575757" class="transition"  -->
+
+![center w-400](./assets/images/remote.png)
+
+Notes:
+2013 !
+Projet fédérateur
 
 ##==##
 
-WebRemoteControl
+<!-- .slide: data-background="#e53935"   -->
+
+# La stack
+
+<p class="fragment">Angular 1.x</p>
+<p class="fragment">Des directives, beaucoups de directives...</p>
+<svg class="h-150 color-white fragment">
+    <use xlink:href="#sad" />
+</svg>
+
+Notes:
+Je veux bien séparer mes concepts => Directives !
+2013 = Angular
+
+##==##
+
+<!-- .slide: data-background="#1E88E5"   -->
+
+# Mais ça, <br><br> c'était avant !
+
+
+##==##
+
+
+<!-- .slide: class="transition text-white"  -->
+
+<h1>
+    <svg class="h-150 color-red">
+        <use xlink:href="#worker" />
+    </svg><br>Vient l'heure de la refonte !
+</h1>
+
+Notes:
+Qu'est ce que je choisi ? Angular 2 ? React ?
+Pourquoi faire ? les web components sont mon choix logique !
+
+
 
 ##==##
 
 
 <!-- .slide: data-background="./assets/images/lego_blocks.jpg" data-state="hidefooter" class="transition" data-copyrights="true"  -->
 
-# Où en est-on ?
+# WebComponents <br><br>Où en est-on ?
 
 <div class="copyrights white">fast company</div>
 
@@ -103,7 +145,7 @@ html imports atte la spec des imports de modules javascripts !
 <!-- .slide: class="transition text-white"  -->
 
 <h1>
-    <svg class="h-150 color-white">
+    <svg class="h-150 color-green">
         <use xlink:href="#webcomponents_logo" />
     </svg><br> Conctrètement ?
 </h1>
@@ -269,7 +311,7 @@ c'est pareil en polymer 2
 
 <!-- .slide: class="transition" data-copyrights="true"  -->
 
-# Attr. VS Propertries !
+# Attributes <br><br> VS Propertries !
 
 Notes:
 Attention properties => objets mais marche pas top
@@ -299,7 +341,7 @@ Notes:
 <!-- .slide: class="transition text-white"  -->
 
 <h1>
-    <svg class="h-150 color-white">
+    <svg class="h-150 color-green">
         <use xlink:href="#webcomponents_logo" />
     </svg><br> Exemple
 </h1>
@@ -356,7 +398,7 @@ Comme on peut l'imaginer, ça veut dire beaucoup de bolerplate !
 <!-- .slide: class="transition text-white"  -->
 
 <h1>
-    <svg class="h-150 color-white">
+    <svg class="h-150 color-red">
         <use xlink:href="#sad" />
     </svg><br> Pas si simple
 </h1>
@@ -464,9 +506,9 @@ Il s'agit en fait de mixins, on peut donc choisir !
 <!-- .slide: class="transition text-white"  -->
 
 <h1>
-    <svg class="h-350 color-white">
+    <svg class="h-350 color-red">
         <use xlink:href="#cart" />
-    </svg><br> Soyez sélectifs <br> <span class="fragment">ou pas ;)</span>
+    </svg><br> Soyez sélectifs <br><br> <span class="fragment">ou pas ;)</span>
 </h1>
 
 
@@ -633,19 +675,19 @@ Met à jour les observers
 
 <div class="flex-col left-align">
     <div class="flex-hori">
-        <svg class="h-150 color-white">
+        <svg class="h-150 color-green">
             <use xlink:href="#happy" />
         </svg>
         <span class="webspecs">Synchro complexe</span>
     </div>
     <div class="flex-hori fragment">
-        <svg class="h-150 color-white">
+        <svg class="h-150 color-green">
             <use xlink:href="#happy" />
         </svg>
         <span class="webspecs">Passage d'objets complexes</span>
     </div>
     <div class="flex-hori fragment">
-        <svg class="h-150 color-white">
+        <svg class="h-150 color-green ">
             <use xlink:href="#happy" />
         </svg>
         <span class="webspecs">Beaucoup de boilerplate...</span>
@@ -712,20 +754,247 @@ Tous les componsants Polymer 1.0 n'ont pas encore étés migrés
 
 Notes:
 
+##==##
+
+<!-- .slide: class="transition text-white"  -->
+
+<h1>
+    <svg class="h-350 color-red no-stroke">
+        <use xlink:href="#breaking-changes" />
+    </svg><br>Breaking Changes
+    <br><br> ou pas !
+</h1>
+
+
+Notes:
+
 
 ##==##
 
-## Crédits - The Noun Project
+# Changements mineurs
+
+<p>content -> slot</p>
+<p>Behaviors -> Mixins</p>
+<p>Cycle de vie</p>
+<p>Pas de style & template séparés</p>
+<p>Lancement d'événements</p>
+
+Notes:
+Les mixins restent utilisables !
+
+##==##
+
+<!-- .slide: class="transition" data-background="linear-gradient(135deg, #e57373 0%, #e57373 49%,#673AB7 50%, #673AB7 100%)" -->
+
+# Hybrid Mode
 
 
-Icon Fair / Ralf Schmitzer / Nathan Thomson / Shmidt Sergey / Por Suppasit / Veronika Krpciarova / Logan / Gregor Cresnar
+<p class="fragment">Retro compatibilité 1.0</p>
+<p class="fragment">Très peu de deprecated featues sur 1.0 ! </p>
+<p class="fragment">Fonctionne direct avec les features de 2.0 ! </p>
+
+
+Notes:
+Grace au compatibility Shims !
+Anciennes features emulées
+Nouvelles idem
 
 
 ##==##
 
-<!-- .slide: class="transition-white" -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="code-custom-attributes" -->
 
-# Des Questions ? <br> :)
+<h2 class="polymer_1-0">Polymer 1.0</h2>
+
+```javascript
+Polymer({
+    is: 'gdg-element',
+    attached: function(){
+        console.log('I log things!');
+    }
+});
+```
+
+Notes:
+
+
+##==##
+
+<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="code-custom-attributes" -->
+
+<h2 class="polymer_2-0">Polymer 2.0</h2>
+
+```javascript
+class GdgElement extends Polymer.Element {
+    static get is() { return 'gdg-element'; }
+    connectedCallback() {
+        console.log('I log things!');
+    }
+}
+customElements.define(GdgElement.is(), GdgElement);
+```
+
+Notes:
+
+
+##==##
+
+<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="code-custom-attributes" -->
+
+<h2><span class="polymer_1-0">Hyb</span><span class="polymer_2-0">rid</span></h2>
+
+```javascript
+Polymer({
+    is: 'gdg-element',
+    attached: function(){
+        console.log('I log things!');
+    }
+});
+```
+
+Notes:
+Il existe un guide de migration complet !
+
+
+##==##
+
+<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="code-custom-attributes" -->
+
+<h2 class="polymer_1-0">Polymer 1.0</h2>
+
+```html
+<dom-module>
+    <template>
+        <content></content>
+    </template>
+</dom-module>
+```
+
+Notes:
+Pour mettre dans le shadow dom depuis notre élément il fallait utiliser content !
+
+
+##==##
+
+<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="code-custom-attributes" -->
+
+<h2 class="polymer_2-0">Polymer 2.0</h2>
+
+```html
+<dom-module>
+    <template>
+        <slot></slot>
+    </template>
+</dom-module>
+```
+
+Notes:
+La on est proche de la spé
+
+
+##==##
+
+<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="code-custom-attributes" -->
+
+<h2><span class="polymer_1-0">Hyb</span><span class="polymer_2-0">rid</span></h2>
+
+```html
+<dom-module>
+    <template>
+        <slot></slot>
+    </template>
+</dom-module>
+```
+
+Notes:
+C'est plus optimiser ! donc à utiliser !
+
+##==##
+
+<!-- .slide: class="transition text-white"  -->
+
+<h1>
+    <svg class="h-350 color-green">
+        <use xlink:href="#check-list" />
+    </svg><br>Linter
+</h1>
+
+
+Notes:
+Un linter existe
+
+
+##==##
+
+<!-- .slide: class="transition" -->
+
+
+<h1>
+    https://goo.gl/kEfzjj
+    <br><br> Guide de migration
+</h1>
+
+Notes:
+L'idée est donc de migrer composant par composant et de permettre de passer par le mode hybrid
+Un updater est en prévision
+
+
+##==##
+
+<!-- .slide: class="transition text-white"  -->
+
+<h1>
+    <svg class="h-350">
+        <use xlink:href="#terminal" />
+    </svg><br>Polymer Cli
+</h1>
+
+
+Notes:
+
+
+
+##==##
+
+<!-- .slide: class="transition text-white"  -->
+
+# Polymer Cli
+
+<p>Création</p>
+<p>Lint</p>
+<p>Tests</p>
+<p>Build</p>
+
+Notes:
+
+
+##==##
+
+<!-- .slide: data-background="#575757" class="transition"  -->
+
+![center w-400](./assets/images/remote_polymer_2.png)
+
+Notes:
+Passé peux de temps !
+Code réutilisable et séparé !
+Utilisation de patterns ! Uniflow
+
+
+
+##==##
+
+<!-- .slide: class="transition" -->
+
+# Des Questions ?
+
+<p>@jefBinomed</p>
+
+
+<div class="credits">
+    <h4 >Crédits : <a href="https://thenounproject.com/" target="_blank">The noun project</a></h4>
+    <p >Icon Fair / Ralf Schmitzer / Nathan Thomson / Shmidt Sergey / Por Suppasit / Veronika Krpciarova / Logan / Gregor Cresnar / Gleb Khourunzhiy / Unlimiticon / Souvik Maity</p>
+</div>
+
 
 <div style="display:none">
     <svg id="template" viewBox="0 0 47.333 40.667">
@@ -769,4 +1038,12 @@ Icon Fair / Ralf Schmitzer / Nathan Thomson / Shmidt Sergey / Por Suppasit / Ver
     <svg id="configuration" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 125" x="0px" y="0px">
         <path d="M2.24,32.43V28.82A3.27,3.27,0,0,1,4.95,25.6l4.25-.75a22.08,22.08,0,0,1,2.2-5.3L8.91,16a3.27,3.27,0,0,1,.37-4.19l2.55-2.55A3.27,3.27,0,0,1,16,8.91l3.54,2.48a22,22,0,0,1,5.3-2.2l.75-4.25a3.27,3.27,0,0,1,3.22-2.71h3.61a3.27,3.27,0,0,1,3.22,2.71L36.4,9.2a22,22,0,0,1,5.3,2.2l3.54-2.48a3.27,3.27,0,0,1,4.19.37L52,11.83A3.27,3.27,0,0,1,52.34,16l-2.48,3.54a22.08,22.08,0,0,1,1.77,4,10,10,0,0,0-2.05,4.51l-.34,2-1.06.44-1.63-1.14a10,10,0,0,0-5.75-1.82c-.32,0-.63.06-.95.09A9.71,9.71,0,1,0,27.6,39.84a10,10,0,0,0,1.77,6.71l1.14,1.63c-.15.35-.3.7-.44,1.05l-2,.34a10,10,0,0,0-4.51,2.05,22.11,22.11,0,0,1-4-1.77L16,52.34A3.27,3.27,0,0,1,11.83,52L9.28,49.43a3.27,3.27,0,0,1-.37-4.19L11.4,41.7a22,22,0,0,1-2.2-5.3l-4.25-.75A3.27,3.27,0,0,1,2.24,32.43Zm45.43,4.88a27.94,27.94,0,0,1,6.72-2.79l.95-5.4a4.15,4.15,0,0,1,4.09-3.43H64a4.15,4.15,0,0,1,4.09,3.43l.95,5.4a28,28,0,0,1,6.73,2.79l4.49-3.15a4.15,4.15,0,0,1,5.32.46l3.24,3.24a4.15,4.15,0,0,1,.46,5.32l-3.15,4.49a28,28,0,0,1,2.79,6.73l5.4.95a4.15,4.15,0,0,1,3.43,4.09V64a4.15,4.15,0,0,1-3.43,4.09l-5.4.95a28,28,0,0,1-2.79,6.72l3.15,4.49a4.15,4.15,0,0,1-.46,5.32l-3.24,3.24a4.15,4.15,0,0,1-5.32.46l-4.49-3.15a28,28,0,0,1-6.73,2.79l-.95,5.4A4.15,4.15,0,0,1,64,97.76H59.44a4.15,4.15,0,0,1-4.09-3.43l-.95-5.4a28,28,0,0,1-6.72-2.79l-4.49,3.15a4.15,4.15,0,0,1-5.32-.46l-3.24-3.24a4.15,4.15,0,0,1-.46-5.32l3.15-4.49a28,28,0,0,1-2.79-6.72l-5.4-.95A4.15,4.15,0,0,1,25.69,64V59.43a4.15,4.15,0,0,1,3.43-4.09l5.4-.95a28,28,0,0,1,2.79-6.72l-3.15-4.49a4.15,4.15,0,0,1,.46-5.32l3.24-3.24a4.15,4.15,0,0,1,5.32-.46ZM52,64.8l2.11,2.12,2.28,2.29a3.22,3.22,0,0,0,4.56,0l2.29-2.27,8.19-8.15a3.23,3.23,0,0,0,0-4.56h0a3.22,3.22,0,0,0-4.56,0l-8.19,8.15-2.11-2.12a3.23,3.23,0,0,0-4.56,0h0A3.23,3.23,0,0,0,52,64.8Z"/>
     </svg>
+    <!-- Worker -->
+    <svg id="worker" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" enable-background="new 0 0 100 100" xml:space="preserve"><path d="M37.215,51.323c1.156,0.746,2.312,1.493,3.469,2.239c1.119-1.94,2.237-3.879,3.356-5.819  c-1.474-0.579-2.947-1.158-4.421-1.737c-0.149-0.059-0.173-0.12-0.234,0.028c-0.117,0.285-0.234,0.57-0.351,0.855  c-0.39,0.951-0.78,1.903-1.171,2.854C37.647,50.27,37.431,50.796,37.215,51.323z"/><path d="M48.217,58.425c1.599,1.032,3.198,2.064,4.796,3.096c-0.677-2.631-1.353-5.262-2.03-7.893  C50.061,55.227,49.139,56.826,48.217,58.425z"/><path d="M93.985,76.234c-0.478-0.829-0.956-1.657-1.434-2.486c-1.268-2.2-2.537-4.399-3.805-6.599  c-1.811-3.141-3.622-6.281-5.433-9.422c-2.106-3.652-4.212-7.304-6.318-10.956c-2.153-3.734-4.306-7.467-6.459-11.201  c-1.952-3.386-3.905-6.771-5.857-10.157c-1.504-2.608-3.008-5.216-4.511-7.823c-0.807-1.4-1.615-2.8-2.422-4.201  c-0.484-0.839-0.996-1.659-1.612-2.411c-1.682-2.05-4.136-3.63-6.884-3.296c-3.354,0.409-5.542,3.206-7.118,5.939  c-0.892,1.547-1.784,3.094-2.677,4.642c-1.563,2.71-3.125,5.419-4.688,8.129c-1.985,3.442-3.97,6.885-5.955,10.327  c-2.16,3.745-4.319,7.491-6.479,11.236c-2.087,3.619-4.173,7.237-6.26,10.856c-1.766,3.062-3.531,6.124-5.297,9.186  c-1.197,2.076-2.394,4.152-3.591,6.227c-0.71,1.231-1.488,2.46-2.038,3.773c-0.947,2.261-1.313,4.927-0.169,7.189  c1.114,2.203,3.397,3.003,5.743,3.467c1.616,0.319,3.268-0.164,4.906-0.164c2.329,0,4.658,0,6.987,0c3.493,0,6.986,0,10.479,0  c4.16,0,8.319,0,12.479,0c4.329,0,8.657,0,12.986,0c4,0,8.001,0,12.001,0c3.175,0,6.349,0,9.524,0c1.852,0,3.703,0,5.555,0  c2.81,0,5.778,0.114,7.957-1.855c1.31-1.184,2.049-2.624,2.144-4.38C95.858,80.058,95.068,78.11,93.985,76.234z M48.619,38.129  c0.182-3.081,3.2-5.308,6.199-4.579c2.986,0.726,4.641,4.087,3.401,6.898c-0.97,2.2-3.447,3.418-5.782,2.85  C50.111,42.733,48.478,40.516,48.619,38.129C48.782,35.363,48.456,40.895,48.619,38.129z M73.178,76.84  c-1.112,0.54-2.415,0.769-3.637,0.846c-3.12,0.197-6.163-0.85-8.711-2.615c0.847-1.222,1.693-2.444,2.54-3.665  c-1.357-0.876-2.715-1.752-4.072-2.629c-0.3-0.194-0.601-0.388-0.901-0.582c-0.067-0.043-0.133-0.086-0.2-0.129  c-0.006-0.004-0.019-0.016-0.027-0.017c-0.235,0.131-0.488,0.229-0.751,0.285c-1.472,0.313-2.822-0.65-3.186-2.065  c-0.057-0.222-0.114-0.445-0.171-0.667c-0.015-0.057-0.023-0.22-0.077-0.255c-0.147-0.095-0.294-0.189-0.44-0.284  c-0.72-0.465-1.44-0.93-2.16-1.394c-1.464-0.945-2.928-1.89-4.392-2.835c-0.04-0.026-0.08-0.052-0.12-0.077  c-0.377,0.654-0.755,1.309-1.132,1.963c-0.03,0.053,0.154,0.246,0.185,0.29c0.201,0.279,0.402,0.557,0.603,0.836  c1.104,1.53,2.208,3.059,3.312,4.589c0.493,0.683,0.849,1.399,0.731,2.277c-0.079,0.586-0.383,1.082-0.655,1.593  c-0.916,1.723-1.831,3.445-2.747,5.168c-0.353,0.665-0.707,1.329-1.06,1.994c-0.446,0.84-1.084,1.504-2.067,1.676  c-1.613,0.281-3.131-0.994-3.146-2.625c-0.007-0.749,0.35-1.35,0.687-1.983c0.905-1.703,1.811-3.407,2.716-5.11  c0.13-0.244,0.259-0.488,0.389-0.732c0.058-0.108,0.078-0.105,0.008-0.201c-0.431-0.597-0.862-1.194-1.292-1.791  c-0.605-0.838-1.21-1.677-1.816-2.515c-0.203-0.281-0.406-0.562-0.609-0.843c-0.047-0.064-0.093-0.129-0.14-0.193  c-0.044-0.061-0.509-0.164-0.511-0.16c-0.475,0.824-0.95,1.648-1.426,2.472c-1.983,3.438-3.965,6.876-5.948,10.314  c-0.301,0.521-0.601,1.042-0.902,1.563c-0.233,0.404-0.449,0.804-0.806,1.121c-1.28,1.132-3.357,0.756-4.155-0.757  c-0.454-0.86-0.383-1.851,0.095-2.681c1.491-2.586,2.982-5.171,4.473-7.757c1.82-3.156,3.641-6.313,5.461-9.469  c0.47-0.816,0.914-1.643,1.385-2.459c0.237-0.411,0.474-0.821,0.71-1.232c0.121-0.21,0.153-0.187-0.045-0.315  c-0.778-0.502-1.557-1.005-2.335-1.507c-0.341-0.22-0.682-0.44-1.023-0.661c-0.062-0.04-0.124-0.08-0.187-0.12  c-0.028-0.018-0.377,0.155-0.43,0.172c-0.258,0.081-0.529,0.123-0.799,0.123c-1.624,0-2.903-1.496-2.654-3.097  c0.081-0.519,0.341-1.025,0.539-1.508c0.349-0.851,0.698-1.702,1.047-2.554c0.675-1.646,1.35-3.292,2.025-4.938  c0.356-0.869,0.947-1.569,1.889-1.824c0.68-0.185,1.321-0.052,1.955,0.197c3.323,1.306,6.646,2.612,9.969,3.918  c1.311,0.515,2.622,1.03,3.932,1.545c0.725,0.285,1.342,0.735,1.677,1.466c0.145,0.316,0.217,0.662,0.303,0.998  c0.898,3.49,1.795,6.981,2.693,10.471c0.441,1.714,0.881,3.427,1.322,5.141c0.109,0.425,0.218,0.849,0.328,1.274  c0.033,0.129,0.068,0.258,0.089,0.39c0.022,0.136-0.044,0.418,0.079,0.497c0.084,0.054,0.167,0.108,0.251,0.162  c1.255,0.81,2.511,1.621,3.766,2.431c0.415,0.268,0.831,0.536,1.246,0.805c0.105,0.068,0.136-0.1,0.193-0.182  c0.241-0.348,0.483-0.697,0.724-1.045c0.471-0.679,0.942-1.359,1.412-2.038c2.446,1.695,4.478,4.027,5.439,6.874  c0.426,1.261,0.693,2.669,0.56,4.007C73.182,76.801,73.18,76.82,73.178,76.84z"/></svg>
+    <!-- check list-->
+    <svg id="check-list" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 46 67.5" style="enable-background:new 0 0 46 54;" xml:space="preserve"><g><path style="" d="M3,14h8c1.654,0,3-1.346,3-3V3c0-1.654-1.346-3-3-3H3C1.346,0,0,1.346,0,3v8C0,12.654,1.346,14,3,14   z M2,3c0-0.551,0.449-1,1-1h8c0.551,0,1,0.449,1,1v8c0,0.551-0.449,1-1,1H3c-0.551,0-1-0.449-1-1V3z" /><path style="" d="M13,26c-0.552,0-1,0.448-1,1v4c0,0.551-0.449,1-1,1H3c-0.551,0-1-0.449-1-1v-8c0-0.551,0.449-1,1-1   h5.5c0.552,0,1-0.448,1-1s-0.448-1-1-1H3c-1.654,0-3,1.346-3,3v8c0,1.654,1.346,3,3,3h8c1.654,0,3-1.346,3-3v-4   C14,26.448,13.552,26,13,26z" /><path style="" d="M11,40H3c-1.654,0-3,1.346-3,3v8c0,1.654,1.346,3,3,3h8c1.654,0,3-1.346,3-3v-8   C14,41.346,12.654,40,11,40z M12,51c0,0.551-0.449,1-1,1H3c-0.551,0-1-0.449-1-1v-8c0-0.551,0.449-1,1-1h8c0.551,0,1,0.449,1,1V51z   " /><path style="" d="M19.5,3H33c0.553,0,1-0.448,1-1s-0.447-1-1-1H19.5c-0.552,0-1,0.448-1,1S18.948,3,19.5,3z" /><path style="" d="M19.5,8H45c0.553,0,1-0.448,1-1s-0.447-1-1-1H19.5c-0.552,0-1,0.448-1,1S18.948,8,19.5,8z" /><path style="" d="M19.5,13H41c0.553,0,1-0.448,1-1s-0.447-1-1-1H19.5c-0.552,0-1,0.448-1,1S18.948,13,19.5,13z" /><path style="" d="M19.5,23H33c0.553,0,1-0.448,1-1s-0.447-1-1-1H19.5c-0.552,0-1,0.448-1,1S18.948,23,19.5,23z" /><path style="" d="M45,26H19.5c-0.552,0-1,0.448-1,1s0.448,1,1,1H45c0.553,0,1-0.448,1-1S45.553,26,45,26z" /><path style="" d="M19.5,33H41c0.553,0,1-0.448,1-1s-0.447-1-1-1H19.5c-0.552,0-1,0.448-1,1S18.948,33,19.5,33z" /><path style="" d="M19.5,43H33c0.553,0,1-0.448,1-1s-0.447-1-1-1H19.5c-0.552,0-1,0.448-1,1S18.948,43,19.5,43z" /><path style="" d="M45,46H19.5c-0.552,0-1,0.448-1,1s0.448,1,1,1H45c0.553,0,1-0.448,1-1S45.553,46,45,46z" /><path style="" d="M41,51H19.5c-0.552,0-1,0.448-1,1s0.448,1,1,1H41c0.553,0,1-0.448,1-1S41.553,51,41,51z" /><path style="" d="M16.293,17.293L6.5,27.086l-1.793-1.793c-0.391-0.391-1.023-0.391-1.414,0   c-0.391,0.391-0.391,1.023,0,1.414l2.5,2.5C5.988,29.402,6.244,29.5,6.5,29.5c0.256,0,0.512-0.098,0.707-0.293l10.5-10.5   c0.391-0.391,0.391-1.023,0-1.414C17.316,16.902,16.684,16.902,16.293,17.293z" /></g></svg>
+    <!-- breaking changes -->
+    <svg id="breaking-changes" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 24 30" style="enable-background:new 0 0 24 24;" xml:space="preserve"><g><g><path d="M17,1.07c-1.604,0-3.132,0.55-4.361,1.533l2.268,3.162c0.142,0.198,0.121,0.469-0.05,0.642l-3.764,3.828l1.867,4.34    c0.062,0.145,0.053,0.31-0.026,0.447l-1.824,3.179l1.769,2.057c0.094,0.109,0.137,0.254,0.116,0.397l-0.272,1.897    c1.507-1.519,7.255-7.332,9.246-9.552C23.299,11.518,24,9.813,24,8.07C24,4.21,20.86,1.07,17,1.07z M10.067,18.01l1.875-3.27    l-1.901-4.418c-0.08-0.187-0.04-0.403,0.103-0.548l3.705-3.768l-2.255-3.144c-0.025-0.034-0.035-0.073-0.05-0.111    C10.286,1.674,8.683,1.072,7,1.072c-3.86,0-7,3.14-7,7c0,1.743,0.703,3.447,2.032,4.93c2.287,2.55,9.541,9.849,9.614,9.922    c0.004,0.002,0.009,0.003,0.013,0.007l0.315-2.193l-1.852-2.152C9.984,18.424,9.961,18.195,10.067,18.01z M7,4.07    c-2.206,0-4,1.794-4,4c0,0.276-0.224,0.5-0.5,0.5S2,8.346,2,8.07c0-2.757,2.243-5,5-5c0.276,0,0.5,0.224,0.5,0.5    S7.276,4.07,7,4.07z"/></g></g></svg>
+    <!-- terminal -->
+    <svg id="terminal" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" enable-background="new 0 0 100 100" xml:space="preserve"><g><path d="M90.125,19.5H9.875c-1.856,0-3.375,1.519-3.375,3.375v54.25c0,1.856,1.519,3.375,3.375,3.375h80.25   c1.856,0,3.375-1.519,3.375-3.375v-54.25C93.5,21.019,91.981,19.5,90.125,19.5z M28.78,33.517l-12.883,6.726v-2.859   c0-0.216,0.054-0.417,0.162-0.601c0.108-0.184,0.287-0.335,0.536-0.455l5.897-3.038c0.509-0.249,1.066-0.444,1.673-0.585   c-0.607-0.141-1.165-0.335-1.673-0.585l-5.897-3.021c-0.249-0.13-0.428-0.285-0.536-0.463s-0.162-0.376-0.162-0.593v-2.859   l12.883,6.709V33.517z"/></g></svg>
 </div>
