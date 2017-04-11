@@ -1,7 +1,7 @@
 
 <!-- .slide: class="first-slide" data-background="./assets/images/polymer.svg" -->
 
-# **Polymer 2 - What's new ?**
+# **Polymer 2 <br> What's new ?**
 
 
 ### GDG  @ **Nantes**
