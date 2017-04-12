@@ -12,7 +12,7 @@
 ##==##
 
 
-<!-- .slide: data-background="./assets/images/Once-upon-a-time.jpg" data-state="hidefooter" class="transition no-filter" data-copyrights="true"  -->
+<!-- .slide: data-background="./assets/images/Once-upon-a-time.jpg"  -->
 
 ##==##
 
@@ -39,6 +39,145 @@ Projet fédérateur
 Notes:
 Je veux bien séparer mes concepts => Directives !
 2013 = Angular
+
+
+
+##==##
+
+
+<!-- .slide: data-background="./assets/images/back_to_the_future.jpg" class="no-filter"  -->
+
+
+##==##
+
+<!-- .slide: class="transition text-white"  data-background="#1E88E5"-->
+
+# Polymer 1.0
+
+![center w-400](./assets/images/POLYMER_1.0.png)
+
+Notes:
+
+
+
+##==##
+
+<!-- .slide: class="transition text-white" data-background="#1E88E5"  -->
+
+# Polymer 1.0
+
+<p class="fragment">Ecriture de composants</p>
+<p class="fragment">Polyfills</p>
+<p class="fragment">Bibliothèques de composants</p>
+
+##==##
+
+<!-- .slide: data-background="./assets/images/material_design.jpg" class="no-filter"  -->
+
+##==##
+
+<!-- .slide: class="transition text-white" data-background="#1E88E5"  -->
+
+# "Il y a un élément pour ça !"
+
+##==##
+
+<!-- .slide: class="transition text-white" data-background="#1E88E5"  -->
+
+<div class="flex-col">
+    <div class="flex-hori spacing">
+        <img src="./assets/images/iron_elements.png" >
+        <img src="./assets/images/paper_elements.png" class="fragment">
+        <img src="./assets/images/google_elements.png" class="fragment">
+    </div>
+    <div class="flex-hori spacing">
+        <img src="./assets/images/platinium_elements.png" class="fragment">
+        <img src="./assets/images/gold_elements.png" class="fragment">
+    </div>
+</div>
+
+
+##==##
+
+<!-- .slide: data-background="./assets/images/paper_demo.png" class="no-filter"  -->
+
+##==##
+
+<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
+
+## App Drawer
+
+```html
+<app-drawer-layout>
+  <app-drawer>
+    drawer content
+  </app-drawer>
+  <div>
+    main content
+  </div>
+</app-drawer-layout>
+```
+
+<img src="./assets/images/app_drawer.gif" class="absolute_img_code">
+
+##==##
+
+<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
+
+## Polymer 1 déclaration
+
+```javascript
+MyElement = Polymer({
+    is: 'my-element',
+    // See below for lifecycle callbacks
+    created: function() {
+    this.textContent = 'My element!';
+    }
+});
+// create an instance with createElement:
+var el1 = document.createElement('my-element');
+// ... or with the constructor:
+var el2 = new MyElement();
+```
+
+##==##
+
+<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
+
+## Polymer 1 Life cycle
+
+```javascript
+MyElement = Polymer({
+    is: 'my-element',
+    created: function() {}, // Element created
+    ready: function() {}, // Element has local DOM initialized
+    attached: function() {}, // Element was attached
+    detached: function() {}, // Element was detached
+    attributeChanged: function(name, type) {}, // Watch attribute changes
+});
+```
+
+##==##
+
+<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
+
+## Polymer 1 Complete
+
+```html
+<dom-module id="name-tag">
+  <template>
+    This is <b>{{owner}}</b>'s name-tag element.
+  </template>
+  < script>
+  Polymer({
+    is: "name-tag",
+    ready: function() {
+      this.owner = "Daniel";
+    }
+  });
+  </ script>
+</dom-module>
+```
 
 ##==##
 
@@ -67,7 +206,7 @@ Pourquoi faire ? les web components sont mon choix logique !
 ##==##
 
 
-<!-- .slide: data-background="./assets/images/lego_blocks.jpg" data-state="hidefooter" class="transition" data-copyrights="true"  -->
+<!-- .slide: data-background="./assets/images/lego_blocks.jpg"  -->
 
 # WebComponents <br><br>Où en est-on ?
 
@@ -138,6 +277,7 @@ Notes:
 
 
 Notes:
+CONCEPTS !!!!
 html imports atte la spec des imports de modules javascripts !
 
 ##==##
@@ -153,12 +293,13 @@ html imports atte la spec des imports de modules javascripts !
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="code-template" -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
 
 ## Templates
 
 ```html
-<template>
+<template id="gdg-template">
+    <style>
 		:host {
 			display: block;
 		}
@@ -169,7 +310,22 @@ html imports atte la spec des imports de modules javascripts !
 </template>
 ```
 
-<div class="clip_path"></div>
+Notes:
+
+##==##
+
+<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
+
+## Templates - Utilisation
+
+```javascript
+var template = document.querySelector('#gdg-template');
+var clone = document.importNode(template.content, true);
+var host = document.querySelector('#host');
+host.appendChild(clone);
+
+<div id="host"></div>
+```
 
 Notes:
 
@@ -177,7 +333,7 @@ Notes:
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="code-custom-element" -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
 
 ## Custom Elements
 
@@ -185,7 +341,7 @@ Notes:
 class GdGElement extends HTMLElement {
     constructor() {
         super();
-        this.addEventListener('clic', awesomeListener );
+        this.addEventListener('click', awesomeListener );
         this.someProperty = 'Hello';
          // Create a shadow root and add element
         const shadowRoot = this.attachShadow({mode: 'open'});
@@ -200,9 +356,10 @@ customElements.define('gdg-element', GdGElement);
 Notes:
 Toujours appeler super !
 
+
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="code-custom-inspect" -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
 
 ## Custom Elements - LifeCycle
 
@@ -230,7 +387,7 @@ Called when the element is adopted into a new document
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="code-custom-attributes" -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
 
 ## Custom Elements - Attributes !
 
@@ -256,7 +413,7 @@ On doit préciser !! sinon c'est le navigateur ne propage pas !
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="code-custom-attributes" -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
 
 ## Custom Elements - Binding Attributes !
 
@@ -282,7 +439,7 @@ On doit préciser !! sinon c'est le navigateur ne propage pas !
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="code-custom-attributes" -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
 
 ## Custom Elements - Dispatch !
 
@@ -308,10 +465,27 @@ c'est pareil en polymer 2
 
 ##==##
 
+<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
+
+## Custom Elements - Utilisation
+
+<!-- .element: class="big-code" -->
+```html
+<gdg-element
+    on-gdg-star="callbackStar"
+    gdg="Nantes" >
+</gdg-element>
+```
+
+Notes:
+
+
+##==##
+
 
 <!-- .slide: class="transition" data-copyrights="true"  -->
 
-# Attributes <br><br> VS Propertries !
+# Attributes <br><br> VS Properties !
 
 Notes:
 Attention properties => objets mais marche pas top
@@ -320,7 +494,7 @@ attr => seulement des strings values!
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="code-connect-ble" -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
 
 ## Shadow Dom
 
@@ -349,7 +523,7 @@ Notes:
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="code-connect-ble" -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
 
 ## Vanilla Component
 
@@ -370,7 +544,7 @@ Notes:
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="code-connect-ble" -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
 
 ## Vanilla Component bis
 
@@ -582,7 +756,7 @@ class GdgElement extends Polymer.Element {
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="code-custom-attributes" -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
 
 ## Rappelez vous : Binding
 
@@ -606,9 +780,9 @@ Tout un ensemble de boillerplate pour une simple synchro !
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="code-custom-attributes" -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
 
-## Deviens
+## Devient
 
 ```javascript
 class GdGElement extends Polymer.Element {
@@ -650,7 +824,7 @@ Il détecte automatiquement le premier template et l'ajoute au shadow dom
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="code-custom-attributes" -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
 
 ## Data Binding
 
@@ -690,7 +864,7 @@ Met à jour les observers
         <svg class="h-150 color-green ">
             <use xlink:href="#happy" />
         </svg>
-        <span class="webspecs">Beaucoup de boilerplate...</span>
+        <span class="webspecs">Beaucoup moins de boilerplate...</span>
     </div>
 </div>
 
@@ -713,7 +887,7 @@ IE11+ / Safari 7+/ Chrome Android
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="code-custom-attributes" -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
 
 ## Polyfills
 
@@ -802,7 +976,7 @@ Nouvelles idem
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="code-custom-attributes" -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
 
 <h2 class="polymer_1-0">Polymer 1.0</h2>
 
@@ -820,7 +994,7 @@ Notes:
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="code-custom-attributes" -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
 
 <h2 class="polymer_2-0">Polymer 2.0</h2>
 
@@ -839,7 +1013,7 @@ Notes:
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="code-custom-attributes" -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
 
 <h2><span class="polymer_1-0">Hyb</span><span class="polymer_2-0">rid</span></h2>
 
@@ -858,7 +1032,7 @@ Il existe un guide de migration complet !
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="code-custom-attributes" -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
 
 <h2 class="polymer_1-0">Polymer 1.0</h2>
 
@@ -876,7 +1050,7 @@ Pour mettre dans le shadow dom depuis notre élément il fallait utiliser conten
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="code-custom-attributes" -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
 
 <h2 class="polymer_2-0">Polymer 2.0</h2>
 
@@ -894,7 +1068,7 @@ La on est proche de la spé
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="code-custom-attributes" -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
 
 <h2><span class="polymer_1-0">Hyb</span><span class="polymer_2-0">rid</span></h2>
 

@@ -216,6 +216,19 @@ div.flex-col.left-align {
     align-items: flex-start;
 }
 
+div.flex-hori.spacing {
+    margin-top: 50px;
+
+    img{
+        margin-left: 50px;
+    }
+}
+
+.reveal .slides section img.absolute_img_code{
+    position: absolute;
+    top:0;
+}
+
 div.padding~* {
     padding-left: 50px;
 }
