@@ -209,6 +209,15 @@ MyElement = Polymer({
 
 # Mais ça, <br><br> c'était avant !
 
+##==##
+
+<!-- .slide: data-background="#575757" class="transition"  -->
+
+![center w-400](./assets/images/remote.png)
+
+Notes:
+Revenons à nos moutons
+
 
 ##==##
 
