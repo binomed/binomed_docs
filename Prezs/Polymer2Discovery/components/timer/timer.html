@@ -1,0 +1,202 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/app-layout/app-toolbar/app-toolbar.html">
+<link rel="import" href="../mixins/dispatcher-mixin.html">
+<link rel="import" href="../mixins/timer-mixin.html">
+<link rel="import" href="../mixins/mixin-builder.html">
+<link rel="import" href="../remote-styles.html">
+
+
+<dom-module id="gdg-timer">
+	<template>
+
+	<!-- Styles MUST be inside template -->
+	<style include="remote-styles">
+
+		:host {
+			display: block;
+			position: relative;
+			overflow: hidden;
+		}
+
+
+		app-toolbar {
+			background-color: var(--bg-color-abs);
+			color: #fff;
+		}
+
+
+		.elapsed {
+			position:relative;
+			text-align: center;
+			color: var(--font-color-timer);
+			vertical-align:middle;
+
+		}
+
+
+
+		.elapsed_time, .elapsed_bg{
+			background: linear-gradient(var(--color-normal-stop-1), var(--color-normal-stop-2)) no-repeat;
+			position: absolute;
+			border-top: thin solid var(--color-actions);
+			height:var(--margin-timer);
+			width:100%;
+			left:0;
+			bottom: 0;
+		}
+
+		.elapsed_time{
+			--width_progress: 0%;
+			width: var(--width_progress);
+		}
+
+		.elapsed_bg{
+			background-image: none;
+			background-color: white;
+		}
+
+		.elapsed_time.alert{
+			background: linear-gradient(var(--color-alert-stop-1), var(--color-alert-stop-2)) no-repeat;
+		}
+		.elapsed_time.advanced{
+			background: linear-gradient(var(--color-advanced-stop-1), var(--color-advanced-stop-2)) no-repeat;
+		}
+
+		.timeEllapesd{
+			font-weight: 400;
+			font-size: var(--font-size-timer);
+			color:var(--font-color-timer);
+		}
+
+		.totalTime{
+			font-weight: 400;
+			font-size: var(--font-size-slide-number);
+			color:var(--font-color-mute);
+
+		}
+
+		.elapsed .mute {
+			color: var(--font-color-mute);
+		}
+
+		.actions_times{
+			position: absolute;
+			background-color:var(--bg-color-abs);
+			top:0;
+			right:var(--abs-height);
+			height:var(--abs-height);
+			width:var(--abs-height);
+		}
+
+		#action_time_play, #action_time_pause{
+			position:absolute;
+			border-left : thin solid var(--color-actions);
+			border-right : thin solid var(--color-actions);
+			top: 0;
+			width:var(--abs-height);
+			height:var(--abs-height);
+			text-align:center;
+			color:var(--color-actions);
+
+		}
+
+
+	</style>
+
+	<app-toolbar>
+		<div main-title id="ellapsedTime">
+			<div class="elapsed" ng-show="showTime">
+				<div class="timeEllapesd">
+					<span  id="hours" ng-class="classHours" hide$="[[!showHours]]">[[hours]] : </span><span id="minutes" class="classMinutes">[[minutes]]</span><span
+						id="seconds"> : [[seconds]]</span><span class="totalTime">&nbsp;/&nbsp;[[modelTimer.defaultInterval]]:00</span>
+				</div>
+			</div>
+		</div>
+	</app-toolbar>
+</template>
+
+	<script>
+		// Extend Polymer.Element base class
+		class GdgTimer extends mix(Polymer.Element).with(DispatcherMixin, TimerModelMixin) {
+
+			static get is() { return 'gdg-timer' }
+
+			static get properties() {
+				// properties, observers meta data
+				return {
+						toggle: {
+							type: Boolean,
+							observer: '_updateToggle'
+						}
+					};
+			}
+
+
+			constructor() {
+				super();
+				this.hours = '00';
+				this.minutes = '00';
+				this.seconds = '00';
+				this.showHours = false;
+				this.muteMinutes = true;
+				this.classMinutes = 'mute';
+			}
+
+			connectedCallback() {
+				super.connectedCallback();
+
+
+				setInterval(_ => {
+					if (this.modelTimer &&
+						(this.modelTimer.runningTimer ||
+						(this.modelTimer.totalTime === 0 &&
+							(this.seconds != 0 ||
+								this.minutes != 0 ||
+								this.hours != 0
+							)))) {
+						let diff = (Date.now() - this.modelTimer.now) + this.modelTimer.totalTime;
+						this._manageTimerState(diff);
+					}
+				}, 500);
+			}
+
+			_updateToggle(newToggle, oldToggle){
+				console.log(oldToggle, newToggle);
+				if (newToggle){
+					super.toggleTimer();
+				}
+			}
+
+			_manageTimerState(diff) {
+				const hoursDiff = Math.floor(diff / (60 * 60 * 1000));
+				const minutesDiff = Math.floor(diff / (60 * 1000));
+				const secondsDiff = Math.floor(diff % (60 * 1000) / 1000);
+
+				this.hours = new Intl.NumberFormat('fr', { minimumIntegerDigits: 2, useGrouping: false })
+					.format(hoursDiff);
+				this.minutes = new Intl.NumberFormat('fr', { minimumIntegerDigits: 2, useGrouping: false })
+					.format(minutesDiff);
+				this.seconds = new Intl.NumberFormat('fr', { minimumIntegerDigits: 2, useGrouping: false })
+					.format(secondsDiff);
+
+				if (hoursDiff > 0 && !this.showHours) {
+					this.showHours = true;
+				} else if (hoursDiff === 0 && this.showHours) {
+					this.showHours = false;
+				}
+
+				if (minutesDiff > 0 && this.muteMinutes) {
+					this.muteMinutes = false;
+					this.classMinutes = '';
+				} else if (minutesDiff === 0 && !this.muteMinutes) {
+					this.muteMinutes = false;
+					this.classMinutes = 'mute';
+				}
+			}
+		}
+
+		// Register custom element definition using standard platform API
+		customElements.define(GdgTimer.is, GdgTimer);
+
+	</script>
+</dom-module>

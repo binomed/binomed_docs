@@ -1,0 +1,84 @@
+<link rel="import" href="./event-bus-mixin.html">
+
+<script>
+	class ModelTimer {
+		constructor() {
+			this.runningTimer = false; // True if the timer is running
+			this.defaultInterval = 60; // Time in minute of the conference
+			this.totalTime = 0; // Total time ellapsed during the presentation
+			this.now = null; // The current time
+
+		}
+	}
+
+	const TimerModelMixin = subclass => class extends EventBusMixin(subclass) {
+
+		static get properties() {
+			// properties, observers meta data
+			return {
+					modelTimer: {
+						type: Object,
+						value: () => {
+							return new ModelTimer();
+						}
+					}
+
+				};
+		}
+
+		connectedCallback() {
+			super.connectedCallback();
+			this.set('modelTimer.now', Date.now());
+
+		}
+
+		toggleTimer() {
+			this.set('modelTimer.runningTimer', !this.modelTimer.runningTimer);
+			this.broadcastAction('update-model', {
+				key: 'modelTimer.runningTimer',
+				value: this.modelTimer.runningTimer,
+				readOnly: true
+			});
+			if (!this.modelTimer.runningTimer) {
+				this.set('modelTimer.totalTime', this.modelTimer.totalTime + (Date.now() - this.modelTimer.now));
+				this.broadcastAction('update-model', {
+					key: 'modelTimer.totalTime',
+					value: this.modelTimer.totalTime,
+					readOnly: true
+				});
+			} else {
+				this.set('modelTimer.now', Date.now());
+				this.broadcastAction('update-model', {
+					key: 'modelTimer.now',
+					value: this.modelTimer.now,
+					readOnly: true
+				});
+			}
+		}
+
+		resetTimer() {
+			this.set('modelTimer.runningTimer', false);
+			this.set('modelTimer.totalTime', 0);
+			this.set('modelTimer.now', Date.now());
+			this.broadcastAction('update-model', [
+				{
+					key: 'modelTimer.runningTimer',
+					value: this.modelTimer.runningTimer,
+					readOnly: true
+					},
+				{
+					key: 'modelTimer.totalTime',
+					value: this.modelTimer.totalTime,
+					readOnly: true
+					},
+				{
+					key: 'modelTimer.now',
+					value: this.modelTimer.now,
+					readOnly: true
+					}
+					]);
+		}
+
+	};
+
+</script>

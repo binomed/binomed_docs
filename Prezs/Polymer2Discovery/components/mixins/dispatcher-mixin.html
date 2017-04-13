@@ -1,0 +1,16 @@
+<script>
+	const DispatcherMixin = subclass => class extends subclass {
+
+
+		dispatchAction(type, data) {
+			this.dispatchEvent(new CustomEvent('dispatch-action', {
+				detail: {
+					type: type,
+					data: data
+				}
+			}));
+		}
+
+	};
+
+</script>

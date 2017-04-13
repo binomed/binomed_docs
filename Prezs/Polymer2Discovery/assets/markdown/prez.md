@@ -41,6 +41,30 @@ Je veux bien séparer mes concepts => Directives !
 2013 = Angular
 
 
+##==##
+
+<!-- .slide: class="who-am-i" -->
+
+## Qui suis-je ?
+
+### Jean-François Garreau
+
+<!-- .element: class="descjf" -->
+Senior innovation developper & Community Manager
+
+![avatar w-300 wp-200](assets/images/jf.jpg)
+
+
+![company_logo](assets/images/lucca_logo.png)
+![gdg_logo](assets/images/GDG-Logo-carre.png)
+
+<!-- .element: class="twitter" -->
+[@jefBinomed](https://twitter.com/jefBinomed)
+
+<!-- .element: class="gplus" -->
+[+JeanFrancoisGarreau](http://plus.google.com/+JeanFrancoisGarreau)
+
+
 
 ##==##
 
@@ -1144,6 +1168,170 @@ Notes:
 
 ##==##
 
+<!-- .slide: class="transition text-white"  -->
+
+<h1>
+    <svg class="h-350 text-green">
+        <use xlink:href="#code" />
+    </svg><br>Let's code
+</h1>
+
+
+Notes:
+
+##==##
+
+<div class="flex-col timer">
+    <gdg-timer></gdg-timer>
+</div>
+
+Notes:
+J'ai mesuré mon temps
+
+
+##==##
+
+<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
+
+## Bower
+
+```json
+{
+	"name": "Polymer2-Remote",
+	"dependencies": {
+		"polymer": "Polymer/polymer#2.0.0-rc.2",
+		"app-layout": "PolymerElements/app-layout#2.0-preview"
+	}
+}
+```
+
+##==##
+
+<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
+
+## Imports - Header
+
+```html
+< script
+src="./bower_components/webcomponentsjs/webcomponents-lite.js" />
+
+<link rel="import" href="./components/timer/timer.html">
+```
+
+##==##
+
+<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
+
+## Timer - Header
+
+```html
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/app-layout/app-toolbar/app-toolbar.html">
+<link rel="import" href="../mixins/dispatcher-mixin.html">
+<link rel="import" href="../mixins/timer-mixin.html">
+<link rel="import" href="../mixins/mixin-builder.html">
+<link rel="import" href="../remote-styles.html">
+<dom-module id="gdg-timer">
+	<template>
+        <style>...</style>
+        ...
+    </template>
+    < script></ script>
+</dom-module>
+```
+
+
+##==##
+
+<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
+
+## Timer - Template
+
+```html
+<template>
+<app-toolbar>
+    <div main-title id="ellapsedTime">
+        <div class="elapsed" ng-show="showTime">
+            <div class="timeEllapesd">
+                <span  id="hours" class="classHours" hide$="[[!showHours]]">[[hours]] :
+                </span>
+                <span id="minutes" class="classMinutes">[[minutes]]</span>
+                <span id="seconds"> : [[seconds]]</span>
+                <span class="totalTime">&nbsp;/&nbsp;[[modelTimer.defaultInterval]]:00
+                </span>
+</div></div></div></app-toolbar>
+</template>
+```
+
+
+##==##
+
+<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
+
+## Timer - Script
+
+```javascript
+class GdgTimer extends mix(Polymer.Element).with(DispatcherMixin, TimerModelMixin) {
+    static get is() { return 'gdg-timer' }
+    static get properties() {
+        return { toggle: { type: Boolean, observer: '_updateToggle'}};
+    }
+    constructor() {
+        super();
+        this.hours = '00';
+        ...
+    }
+}
+customElements.define(GdgTimer.is, GdgTimer);
+```
+
+
+
+##==##
+
+<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
+
+## Timer - Script
+
+```javascript
+class GdgTimer extends mix(Polymer.Element).with(DispatcherMixin, TimerModelMixin) {
+    connectedCallback() {
+        super.connectedCallback();
+        setInterval(_ => this._manageTimerState.bind(this)), 500);
+    }
+    _updateToggle(newToggle, oldToggle){
+        super.toggleTimer();
+    }
+    _manageTimerState(diff) { ...}
+}
+```
+
+
+##==##
+
+<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
+
+## Timer - Utilisation
+
+<!-- .element: class="big-code" -->
+```html
+<gdg-timer></gdg-timer>
+```
+
+
+##==##
+
+<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
+
+## Timer - Interaction
+
+```javascript
+document.querySelector('gdg-timer').toggle = true;
+```
+
+
+##==##
+
 <!-- .slide: data-background="#575757" class="transition"  -->
 
 ![center w-400](./assets/images/remote_polymer_2.png)
@@ -1166,7 +1354,7 @@ Utilisation de patterns ! Uniflow
 
 <div class="credits">
     <h4 >Crédits : <a href="https://thenounproject.com/" target="_blank">The noun project</a></h4>
-    <p >Icon Fair / Ralf Schmitzer / Nathan Thomson / Shmidt Sergey / Por Suppasit / Veronika Krpciarova / Logan / Gregor Cresnar / Gleb Khourunzhiy / Unlimiticon / Souvik Maity</p>
+    <p >Icon Fair / Ralf Schmitzer / Nathan Thomson / Shmidt Sergey / Por Suppasit / Veronika Krpciarova / Logan / Gregor Cresnar / Gleb Khourunzhiy / Unlimiticon / Souvik Maity / Ananth</p>
 </div>
 
 
@@ -1220,4 +1408,10 @@ Utilisation de patterns ! Uniflow
     <svg id="breaking-changes" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 24 30" style="enable-background:new 0 0 24 24;" xml:space="preserve"><g><g><path d="M17,1.07c-1.604,0-3.132,0.55-4.361,1.533l2.268,3.162c0.142,0.198,0.121,0.469-0.05,0.642l-3.764,3.828l1.867,4.34    c0.062,0.145,0.053,0.31-0.026,0.447l-1.824,3.179l1.769,2.057c0.094,0.109,0.137,0.254,0.116,0.397l-0.272,1.897    c1.507-1.519,7.255-7.332,9.246-9.552C23.299,11.518,24,9.813,24,8.07C24,4.21,20.86,1.07,17,1.07z M10.067,18.01l1.875-3.27    l-1.901-4.418c-0.08-0.187-0.04-0.403,0.103-0.548l3.705-3.768l-2.255-3.144c-0.025-0.034-0.035-0.073-0.05-0.111    C10.286,1.674,8.683,1.072,7,1.072c-3.86,0-7,3.14-7,7c0,1.743,0.703,3.447,2.032,4.93c2.287,2.55,9.541,9.849,9.614,9.922    c0.004,0.002,0.009,0.003,0.013,0.007l0.315-2.193l-1.852-2.152C9.984,18.424,9.961,18.195,10.067,18.01z M7,4.07    c-2.206,0-4,1.794-4,4c0,0.276-0.224,0.5-0.5,0.5S2,8.346,2,8.07c0-2.757,2.243-5,5-5c0.276,0,0.5,0.224,0.5,0.5    S7.276,4.07,7,4.07z"/></g></g></svg>
     <!-- terminal -->
     <svg id="terminal" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" enable-background="new 0 0 100 100" xml:space="preserve"><g><path d="M90.125,19.5H9.875c-1.856,0-3.375,1.519-3.375,3.375v54.25c0,1.856,1.519,3.375,3.375,3.375h80.25   c1.856,0,3.375-1.519,3.375-3.375v-54.25C93.5,21.019,91.981,19.5,90.125,19.5z M28.78,33.517l-12.883,6.726v-2.859   c0-0.216,0.054-0.417,0.162-0.601c0.108-0.184,0.287-0.335,0.536-0.455l5.897-3.038c0.509-0.249,1.066-0.444,1.673-0.585   c-0.607-0.141-1.165-0.335-1.673-0.585l-5.897-3.021c-0.249-0.13-0.428-0.285-0.536-0.463s-0.162-0.376-0.162-0.593v-2.859   l12.883,6.709V33.517z"/></g></svg>
+    <!-- code -->
+    <svg id="code" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 66 82.5" style="enable-background:new 0 0 66 66;" xml:space="preserve"><g>
+        <path d="M10.1,33l12.1-13.9c0.9-1,0.8-2.5-0.2-3.4c-1-0.9-2.5-0.8-3.4,0.2L5.1,31.4c-0.8,0.9-0.8,2.3,0,3.2l13.5,15.5   c0.5,0.5,1.1,0.8,1.8,0.8c0.6,0,1.2-0.2,1.6-0.6c0.5-0.4,0.8-1,0.8-1.7c0-0.6-0.2-1.3-0.6-1.8L10.1,33z"/>
+        <path d="M47.4,15.9c-0.4-0.5-1-0.8-1.7-0.8c-0.6,0-1.3,0.2-1.8,0.6c-1,0.9-1.1,2.4-0.2,3.4L55.9,33L43.8,46.9   c-0.4,0.5-0.6,1.1-0.6,1.8c0,0.6,0.3,1.2,0.8,1.7c0.4,0.4,1,0.6,1.6,0.6c0.7,0,1.4-0.3,1.8-0.8l13.5-15.5c0.8-0.9,0.8-2.3,0-3.2   L47.4,15.9z"/>
+        <path d="M37.3,11.3c-1.3-0.3-2.6,0.6-2.9,1.9l-7.7,38.6c-0.3,1.3,0.6,2.6,1.9,2.9c0.2,0,0.3,0,0.5,0c1.2,0,2.2-0.8,2.4-2l7.7-38.6   C39.5,12.8,38.7,11.6,37.3,11.3z"/>
+    </g></svg>
 </div>
