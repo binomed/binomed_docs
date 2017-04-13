@@ -11,3 +11,4 @@ css/theme
 scss/theme
 npm-debug.log
 yarn.lock
+bower_components

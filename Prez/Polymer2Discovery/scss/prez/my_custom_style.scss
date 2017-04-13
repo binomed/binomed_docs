@@ -68,6 +68,54 @@ html {
     }
 }
 
+
+.reveal  .slides section.who-am-i{
+
+	color : $light-color-white;
+	text-align: left;
+
+	h2{
+        color: $light-color-white;
+        font-weight: 800;
+        line-height: 2em;
+        height: 2em;
+        font-size: 2em;
+        margin-top: -20px;
+		margin-bottom: 20px;
+	}
+
+	h3{
+        position: absolute;
+        left: 350px;
+        top: 250px;
+		font-size: 1.2em;
+        color : $light-color-white;
+		margin-bottom: 20px;
+	}
+
+    .descjf{
+        position: absolute;
+        color: $light-color-white;
+        font-size: 100%;
+        line-height: 1.5em;
+        left: 350px;
+        top: 320px;
+        width: calc(100% - 350px);
+        width: -webkit-calc(100% - 350px);
+    }
+
+    img[alt*=avatar]{
+        position: absolute;
+        left: 100px;
+        top: 200px;
+        width: 200px;
+        margin-top: 20px;
+        box-shadow:none;
+    }
+
+
+}
+
 .reveal blockquote::before {
     content: '\“';
     position: absolute;
@@ -222,6 +270,11 @@ div.flex-hori.spacing {
     img{
         margin-left: 50px;
     }
+}
+
+div.flex-col.timer{
+    height: 100%;
+    justify-content: center;
 }
 
 .reveal .slides section img.absolute_img_code{
