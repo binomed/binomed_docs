@@ -56,8 +56,7 @@ html {
     h2,
     h3 {
         margin-bottom: 50px;
-        text-align: left;
-        //font-size: 2.5em;
+        text-align: left; //font-size: 2.5em;
     }
     h1~h2,
     h2~h3,
@@ -68,32 +67,27 @@ html {
     }
 }
 
-
-.reveal  .slides section.who-am-i{
-
-	color : $light-color-white;
-	text-align: left;
-
-	h2{
+.reveal .slides section.who-am-i {
+    color: $light-color-white;
+    text-align: left;
+    h2 {
         color: $light-color-white;
         font-weight: 800;
         line-height: 2em;
         height: 2em;
         font-size: 2em;
         margin-top: -20px;
-		margin-bottom: 20px;
-	}
-
-	h3{
+        margin-bottom: 20px;
+    }
+    h3 {
         position: absolute;
         left: 350px;
         top: 250px;
-		font-size: 1.2em;
-        color : $light-color-white;
-		margin-bottom: 20px;
-	}
-
-    .descjf{
+        font-size: 1.2em;
+        color: $light-color-white;
+        margin-bottom: 20px;
+    }
+    .descjf {
         position: absolute;
         color: $light-color-white;
         font-size: 100%;
@@ -103,17 +97,14 @@ html {
         width: calc(100% - 350px);
         width: -webkit-calc(100% - 350px);
     }
-
-    img[alt*=avatar]{
+    img[alt*=avatar] {
         position: absolute;
         left: 100px;
         top: 200px;
         width: 200px;
         margin-top: 20px;
-        box-shadow:none;
+        box-shadow: none;
     }
-
-
 }
 
 .reveal blockquote::before {
@@ -217,12 +208,6 @@ html {
         margin-bottom: 40px;
         text-transform: uppercase;
     }
-    /*h1{
-        @include bandeau();
-        text-align: left;
-        padding-left : 10px;
-        font-size: 1.2em;
-    }*/
 }
 
 .reveal .slides section.transition-black h1,
@@ -266,20 +251,19 @@ div.flex-col.left-align {
 
 div.flex-hori.spacing {
     margin-top: 50px;
-
-    img{
+    img {
         margin-left: 50px;
     }
 }
 
-div.flex-col.timer{
+div.flex-col.timer {
     height: 100%;
     justify-content: center;
 }
 
-.reveal .slides section img.absolute_img_code{
+.reveal .slides section img.absolute_img_code {
     position: absolute;
-    top:0;
+    top: 0;
 }
 
 div.padding~* {
@@ -321,8 +305,7 @@ span.webspecs {
     width: 100%;
     height: 100%;
     top: 0;
-    left: 0;
-    //clip-path: inset(19% 17% 34% 10%);
+    left: 0; //clip-path: inset(19% 17% 34% 10%);
     //background: red;
     //-webkit-mask: url(#code-mask);
     //mask: url(#code-mask);
@@ -360,4 +343,70 @@ span.webspecs {
         margin-top: 20px;
         font-size: 20px;
     }
+}
+
+
+/**
+* Gestion du highlighting de code
+*/
+
+.reveal .slides section.with-code h2 {
+    position: relative;
+    z-index: 100;
+}
+
+svg.code {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    rect.mask_area {
+        stroke: none; //stroke: url(#RadialGradient2);
+        //stroke-width: 100px;
+        fill: rgba(63, 63, 63, 0.7); //fill: url(#RadialGradient2);
+        mask: url(#mask);
+        width: 100%;
+        height: 100%;
+    }
+}
+
+svg.code.not-mask rect.mask_area {
+    mask: none;
+}
+
+svg.mask-code {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    mask#mask {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        rect.parent {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            stroke: none;
+            fill: #ffffff;
+        }
+        rect.hole {
+            stroke: none;
+            fill: #000000;
+            transition-property: all;
+            transition-duration: 0.5s;
+            width: 500px;
+            height: 100px;
+        }
+    }
+}
+
+.reveal .backgrounds div.slide-background.with-code {
+    background: linear-gradient(rgba(63, 63, 63, 0.7), rgba(63, 63, 63, 0.7)), linear-gradient(rgba(63, 63, 63, 1), rgba(63, 63, 63, 1));
 }

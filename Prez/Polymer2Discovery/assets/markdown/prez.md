@@ -146,7 +146,7 @@ Notes:
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
+<!-- .slide: class="with-code"    -->
 
 ## Polymer 1 déclaration
 
@@ -164,6 +164,94 @@ var el1 = document.createElement('my-element');
 var el2 = new MyElement();
 ```
 
+
+ <svg class="code">
+    <use xlink:href="#mask_area" />
+</svg>
+
+
+<svg class="mask-code">
+    <defs>
+        <mask id="mask" x="0" y="0">
+            <rect x="0" y="0" class="parent" />
+            <rect x="0" y="50" class="hole" />
+        </mask>
+        <radialGradient id="RadialGradient2" r="150%">
+            <stop offset="0%" stop-color="rgba(63,63,63,0.8)" />
+            <stop offset="30%" stop-color="rgba(63,63,63,0.82)" />
+            <stop offset="35%" stop-color="rgba(63,63,63,0.85)" />
+            <stop offset="40%" stop-color="rgba(63,63,63,0.87)" />
+            <stop offset="45%" stop-color="rgba(63,63,63,0.90)" />
+            <stop offset="50%" stop-color="rgba(63,63,63,0.92)" />
+            <stop offset="55%" stop-color="rgba(63,63,63,0.95)" />
+            <stop offset="60%" stop-color="rgba(63,63,63,0.97)" />
+            <stop offset="100%" stop-color="rgba(63,63,63,1)" />
+        </radialGradient>
+        <linearGradient id="linearGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="rgb(63,63,63)" />
+            <stop offset="100%" stop-color="rbga(63,63,63,0.8)" />
+        </linearGradient>
+    </defs>
+</svg>
+
+<div style="display:none">
+    <svg class="code">
+        <rect id="mask_area" x="0" y="0" class="mask_area" />
+    </svg>
+    <svg class="code not-mask">
+        <rect id="area_opacity" x="0" y="0" class="mask_area" />
+    </svg>
+</div>
+
+<!--
+ <svg class="code">
+    <use xlink:href="#mask_area" />
+</svg>
+
+<svg class="mask-code">
+    <defs>
+        <mask id="mask" x="0" y="0">
+            <rect x="0" y="0" class="parent"/>
+            <rect x="0" y="50" class="hole"/>
+        </mask>
+        <radialGradient id="RadialGradient2" r="150%">
+            <stop offset="0%" stop-color="rgba(63,63,63,0.8)"/>
+            <stop offset="30%" stop-color="rgba(63,63,63,0.82)"/>
+            <stop offset="35%" stop-color="rgba(63,63,63,0.85)"/>
+            <stop offset="40%" stop-color="rgba(63,63,63,0.87)"/>
+            <stop offset="45%" stop-color="rgba(63,63,63,0.90)"/>
+            <stop offset="50%" stop-color="rgba(63,63,63,0.92)"/>
+            <stop offset="55%" stop-color="rgba(63,63,63,0.95)"/>
+            <stop offset="60%" stop-color="rgba(63,63,63,0.97)"/>
+            <stop offset="100%" stop-color="rgba(63,63,63,1)"/>
+        </radialGradient>
+        <linearGradient id="linearGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%"   stop-color="rgb(63,63,63)"/>
+            <stop offset="100%" stop-color="rbga(63,63,63,0.8)"/>
+        </linearGradient>
+    </defs>
+</svg>
+
+<div style="display:none">
+    <svg class="code">
+        <rect id="mask_area" x="0" y="0" class="mask_area"/>
+    </svg>
+</div>-->
+
+<!--<svg width="100%" height="100%" style="position: absolute; top: 0; left: 0;">
+    <defs>
+    <mask id="mask" x="0" y="0" width="100%" height="100%" >
+        <rect x="0" y="0"  width="100%" height="100%"
+            style="stroke:none; fill: #ffffff"/>
+        <rect id="mask_area" x="0" y="50" width="100" height="50"
+            style="stroke:none;fill: rgb(0, 0, 0);x: 100;y: 250;width: 500px;height: 100px;transition-property: all;transition-duration: 0.5s;"/>
+    </mask>
+    </defs>
+
+<rect x="0" y="0" width="100%" height="100%"
+    style="stroke: none;fill: rgba(63, 63, 63, 0.81);mask: url(#mask);height: 100%;"/>
+</svg>-->
+
 ##==##
 
 <!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
@@ -180,6 +268,11 @@ MyElement = Polymer({
     attributeChanged: function(name, type) {}, // Watch attribute changes
 });
 ```
+
+
+ <svg class="code">
+    <use xlink:href="#mask_area" />
+</svg>
 
 ##==##
 
