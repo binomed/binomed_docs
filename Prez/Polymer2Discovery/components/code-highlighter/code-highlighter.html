@@ -1,0 +1,64 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+
+<dom-module id="code-highlighter">
+	<template>
+
+	<!-- Styles MUST be inside template -->
+	<style>
+
+		:host {
+			display: block;
+			position: relative;
+			overflow: hidden;
+		}
+
+
+		
+
+	</style>
+
+	
+</template>
+
+	<script>
+		// Extend Polymer.Element base class
+		class CodeHighlighter extends Polymer.Element {
+
+			static get is() { return 'code-highlighter' }
+
+			static get properties() {
+				// properties, observers meta data
+				return {
+						toggle: {
+							type: Boolean,
+							observer: '_updateToggle'
+						}
+					};
+			}
+
+
+			constructor() {
+				super();
+				this.hours = '00';
+				this.minutes = '00';
+				this.seconds = '00';
+				this.showHours = false;
+				this.muteMinutes = true;
+				this.classMinutes = 'mute';
+			}
+
+			connectedCallback() {
+				super.connectedCallback();
+
+
+				
+			}
+
+			
+		}
+
+		// Register custom element definition using standard platform API
+		customElements.define(CodeHighlighter.is, CodeHighlighter);
+
+	</script>
+</dom-module>
