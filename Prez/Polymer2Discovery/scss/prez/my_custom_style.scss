@@ -355,56 +355,12 @@ span.webspecs {
     z-index: 100;
 }
 
-svg.code {
+code-highlighter {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    rect.mask_area {
-        stroke: none; //stroke: url(#RadialGradient2);
-        //stroke-width: 100px;
-        fill: rgba(63, 63, 63, 0.7); //fill: url(#RadialGradient2);
-        mask: url(#mask);
-        width: 100%;
-        height: 100%;
-    }
-}
-
-svg.code.not-mask rect.mask_area {
-    mask: none;
-}
-
-svg.mask-code {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    mask#mask {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        rect.parent {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            stroke: none;
-            fill: #ffffff;
-        }
-        rect.hole {
-            stroke: none;
-            fill: #000000;
-            transition-property: all;
-            transition-duration: 0.5s;
-            width: 500px;
-            height: 100px;
-        }
-    }
 }
 
 .reveal .backgrounds div.slide-background.with-code {

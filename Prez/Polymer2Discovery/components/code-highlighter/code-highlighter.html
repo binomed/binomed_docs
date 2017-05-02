@@ -10,12 +10,92 @@
 			display: block;
 			position: relative;
 			overflow: hidden;
+			height: 100%;
+			width: 100%;
 		}
 
+		svg.code {
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    width: 100%;
+		    height: 100%;
+		    
+		}
 
-		
+		svg.code rect.mask_area {
+	        stroke: none; 
+	        fill: rgba(63, 63, 63, 0.7);
+	        mask: url(#mask);
+	        width: 100%;
+	        height: 100%;
+	    }
+
+		svg.code.not-mask rect.mask_area {
+		    mask: none;
+		}
+
+		svg.mask-code {
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    width: 100%;
+		    height: 100%;
+		}
+		svg.mask-code mask#mask {
+	        position: absolute;
+	        top: 0;
+	        left: 0;
+	        width: 100%;
+	        height: 100%;
+		}
+		svg.mask-code mask#mask rect.parent {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            stroke: none;
+            fill: #ffffff;
+        }
+		svg.mask-code mask#mask rect.hole {
+            stroke: none;
+            fill: #000000;
+            position: absolute;
+            transition-property: all;
+            transition-duration: 0.5s;
+            width: 500px;
+            height: 100px;
+        }		
 
 	</style>
+
+
+	 <svg class="code">
+	    <use xlink:href="#mask_area" />
+	</svg>
+	
+	<svg class="mask-code">
+	    <defs>
+	        <mask id="mask" x="0" y="0">
+	            <rect x="0" y="0" class="parent" />
+	            <rect id="maskHole" class="hole" />
+	        </mask>
+	        <linearGradient id="linearGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+	            <stop offset="0%" stop-color="rgb(63,63,63)" />
+	            <stop offset="100%" stop-color="rbga(63,63,63,0.8)" />
+	        </linearGradient>
+	    </defs>
+	</svg>
+
+	<div style="display:none">
+	    <svg class="code">
+	        <rect id="mask_area" x="0" y="0" class="mask_area" />
+	    </svg>
+	    <svg class="code not-mask">
+	        <rect id="area_opacity" x="0" y="0" class="mask_area" />
+	    </svg>
+	</div>
 
 	
 </template>
@@ -29,9 +109,9 @@
 			static get properties() {
 				// properties, observers meta data
 				return {
-						toggle: {
-							type: Boolean,
-							observer: '_updateToggle'
+						area: {
+							type: Object,
+							observer: '_updateArea'
 						}
 					};
 			}
@@ -39,21 +119,36 @@
 
 			constructor() {
 				super();
-				this.hours = '00';
-				this.minutes = '00';
-				this.seconds = '00';
-				this.showHours = false;
-				this.muteMinutes = true;
-				this.classMinutes = 'mute';
+				
 			}
 
 			connectedCallback() {
 				super.connectedCallback();
-
-
-				
 			}
 
+			_updateArea(areaNew, areaOld){
+				console.log('Area New / Old', areaNew, areaOld);
+				if (!areaNew){
+					this._changeProperties({
+						width : 0,
+						height : 0,
+						top : 0,
+						left : 0
+					});
+					return;
+				}
+
+				this._changeProperties(areaNew);
+
+
+			}
+
+			_changeProperties({width, height, top, left}){
+				this.$.maskHole.style.width = `${width}px`;
+				this.$.maskHole.style.height = `${height}px`;
+				this.$.maskHole.setAttribute('y', `${top}px`);
+				this.$.maskHole.setAttribute('x', `${left}px`);
+			}
 			
 		}
 
