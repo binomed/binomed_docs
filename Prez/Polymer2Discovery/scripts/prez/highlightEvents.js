@@ -10,16 +10,22 @@ const COL_WIDTH = 35;
 
 export class HighlightEvents {
     constructor() {
-        //  Bluetooth: Scan + Connect
+        //  Test
         new HighlightCodeHelper({
-            keyElt: 'connect-ble',
+            keyElt: 'test',
             // We start with the first fragment (the initial position is fixed by css)
             positionArray: [{
                 row: 1,
                 width: '90%'
             }, {
-                row: 6,
+                row: 2,
                 width: '90%'
+            }, {
+                row: 3,
+                width: '50%'
+            }, {
+                row: 6,
+                width: '60%'
             }]
         });
 

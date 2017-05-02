@@ -127,7 +127,7 @@ Notes:
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="stop-code-test"  -->
 
 ## App Drawer
 
@@ -146,7 +146,7 @@ Notes:
 
 ##==##
 
-<!-- .slide: class="with-code"    -->
+<!-- .slide: class="with-code" data-state="code-test" -->
 
 ## Polymer 1 déclaration
 
@@ -165,14 +165,18 @@ var el2 = new MyElement();
 ```
 
 
-<code-highlighter id="firstTest"></code-highlighter>
+<code-highlighter
+    id="highlight-test"
+    line-height="1.5em"></code-highlighter>
 
-
-
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+<div class="fragment" data-fragment-index="4" hidden></div>
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
+<!-- .slide: class="with-code"  data-state="stop-code-test"   -->
 
 ## Polymer 1 Life cycle
 

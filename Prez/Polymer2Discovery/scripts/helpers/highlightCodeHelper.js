@@ -1,5 +1,6 @@
 'use strict'
 
+const MIN_TOP = 90;
 const LINE_HEIGHT = 1.15;
 const ADDITIONNAL_HEIGHT = 0.4;
 const COL_WIDTH = 35;
@@ -18,56 +19,66 @@ export class HighlightCodeHelper {
 
     _progressFragment(event) {
         try {
+            let index = 0;
+            let properties = null
             if (event.type === 'fragmentshown') {
-                const index = +event.fragment.getAttribute('data-fragment-index');
-                const properties = this.positionArray[index];
-                const keys = Object.keys(properties);
-                for (let i = 0; i < keys.length; i++) {
-                    const key = keys[i];
-                    if (key === 'row') {
-                        this.eltHiglight.style['top'] = `calc(90px + (${properties[key]} * ${LINE_HEIGHT}em))`;
-                    } else if (key === 'col') {
-                        this.eltHiglight.style['left'] = `calc(60px + (${properties[key]} * ${COL_WIDTH}px))`;
-                    } else if (key === 'calcHeight') {
-                        this.eltHiglight.style['height'] = `calc(${properties[key]}em + ${ADDITIONNAL_HEIGHT}em)`;
-                    } else {
-                        this.eltHiglight.style[key] = properties[key];
-                    }
-                }
+                index = +event.fragment.getAttribute('data-fragment-index');
+                properties = this.positionArray[index];
+
             } else {
-                const index = +event.fragment.getAttribute('data-fragment-index');
+                index = +event.fragment.getAttribute('data-fragment-index');
                 // On reset les properties
-                let properties = this.positionArray[index];
-                let keys = Object.keys(properties);
-                for (let i = 0; i < keys.length; i++) {
-                    const key = keys[i];
-                    if (key === 'row') {
-                        this.eltHiglight.style['top'] = '';
-                    } else if (key === 'calcHeight') {
-                        this.eltHiglight.style['height'] = '';
-                    } else if (key === 'col') {
-                        this.eltHiglight.style['left'] = '';
-                    } else {
-                        this.eltHiglight.style[key] = '';
-                    }
-                }
                 if (index > 0) {
                     properties = this.positionArray[index - 1];
-                    keys = Object.keys(properties);
-                    for (let i = 0; i < keys.length; i++) {
-                        const key = keys[i];
-                        if (key === 'row') {
-                            this.eltHiglight.style['top'] = `calc(90px + (${properties[key]} * ${LINE_HEIGHT}em))`;
-                        } else if (key === 'col') {
-                            this.eltHiglight.style['left'] = `calc(60px + (${properties[key]} * ${COL_WIDTH}px))`;
-                        } else if (key === 'calcHeight') {
-                            this.eltHiglight.style['height'] = `calc(${properties[key]}em + ${ADDITIONNAL_HEIGHT}em)`;
-                        } else {
-                            this.eltHiglight.style[key] = properties[key];
-                        }
-                    }
                 }
             }
+            const keys = Object.keys(properties);
+            const area = {};
+            const position = {};
+            for (let i = 0; i < keys.length; i++) {
+                const key = keys[i];
+                switch (true) {
+                    case key === 'line':
+                    case key === 'nbLine':
+                    case key === 'col':
+                    case key === 'nbCol':
+                        position[key] = properties[key];
+                        break;
+                    case key === 'height':
+                    case key === 'width':
+                    case key === 'top':
+                    case key === 'left':
+                        area[key] = properties[key];
+                        break;
+                }
+                /*if (key === 'row') {
+                    position.line = properties[key];
+                    //this.eltHiglight.style['top'] = `calc(90px + (${properties[key]} * ${LINE_HEIGHT}em))`;
+                } else if (key === 'col') {
+                    position.col = properties[key];
+                    //this.eltHiglight.style['left'] = `calc(60px + (${properties[key]} * ${COL_WIDTH}px))`;
+                } else if (key === 'calcHeight') {
+                    area.height = properties[key];
+                    //this.eltHiglight.style['height'] = `calc(${properties[key]}em + ${ADDITIONNAL_HEIGHT}em)`;
+                } else {
+                    //this.eltHiglight.style[key] = properties[key];
+                }*/
+            }
+            if (position.nbLines === undefined && area.height === undefined) {
+                area.height = LINE_HEIGHT;
+            }
+            if (position.line === undefined && area.top === undefined) {
+                area.top = 0;
+            }
+            if (position.nbCols === undefined && area.width === undefined) {
+                area.width = 0;
+            }
+            if (position.col === undefined && area.left === undefined) {
+                area.left = 0;
+            }
+            this.eltHiglight.area = area;
+            this.eltHiglight.position = position;
+
         } catch (e) {}
     }
 
