@@ -29,10 +29,6 @@
 				height: 100%;
 			}
 
-			svg.code.not-mask rect.mask_area {
-				mask: none;
-			}
-
 			svg.mask-code {
 				position: absolute;
 				top: 0;
@@ -75,24 +71,17 @@
 			<use xlink:href="#mask_area" />
 		</svg>
 
-		<svg class="mask-code"  >
-			<defs>
-				<mask id="mask" x="0" y="0" width="100%" height="100%">
-					<rect x="0" y="0" width="100%" height="100%" class="parent" />
-					<rect id="maskHole" class="hole" />
-				</mask>
-				<linearGradient id="linearGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-					<stop offset="0%" stop-color="rgb(63,63,63)" />
-					<stop offset="100%" stop-color="rbga(63,63,63,0.8)" />
-				</linearGradient>
-			</defs>
-		</svg>
-
 		<div style="display:none">
 			<svg class="code">
 				<rect id="mask_area" x="0" y="0" class="mask_area" />
 			</svg>
 		</div>
+		<svg class="mask-code">
+			<mask id="mask" x="0" y="0" width="100%" height="100%">
+				<rect x="0" y="0" width="100%" height="100%" class="parent" />
+				<rect id="maskHole" class="hole" />
+			</mask>
+		</svg>
 
 
 	</template>

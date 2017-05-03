@@ -1,7 +1,7 @@
 'use strict'
 
-const MIN_TOP = '90px';
-const LINE_HEIGHT = '1.15em';
+const MIN_TOP = '95px';
+const LINE_HEIGHT = '0.55em';
 const ADDITIONNAL_HEIGHT = '0.4em';
 const COL_WIDTH = 35;
 
