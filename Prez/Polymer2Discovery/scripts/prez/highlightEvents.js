@@ -15,17 +15,19 @@ export class HighlightEvents {
             keyElt: 'test',
             // We start with the first fragment (the initial position is fixed by css)
             positionArray: [{
-                row: 1,
-                width: '90%'
+                line: 1,
+                width: '40%'
             }, {
-                row: 2,
-                width: '90%'
+                line: 2,
+                nbLines: 4,
+                left: '100px',
+                width: '40%'
             }, {
-                row: 3,
-                width: '50%'
-            }, {
-                row: 6,
+                line: 9,
                 width: '60%'
+            }, {
+                line: 11,
+                width: '40%'
             }]
         });
 

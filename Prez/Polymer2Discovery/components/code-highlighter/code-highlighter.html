@@ -75,10 +75,10 @@
 			<use xlink:href="#mask_area" />
 		</svg>
 
-		<svg class="mask-code">
+		<svg class="mask-code"  >
 			<defs>
-				<mask id="mask" x="0" y="0">
-					<rect x="0" y="0" class="parent" />
+				<mask id="mask" x="0" y="0" width="100%" height="100%">
+					<rect x="0" y="0" width="100%" height="100%" class="parent" />
 					<rect id="maskHole" class="hole" />
 				</mask>
 				<linearGradient id="linearGradient" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -91,9 +91,6 @@
 		<div style="display:none">
 			<svg class="code">
 				<rect id="mask_area" x="0" y="0" class="mask_area" />
-			</svg>
-			<svg class="code not-mask">
-				<rect id="area_opacity" x="0" y="0" class="mask_area" />
 			</svg>
 		</div>
 
@@ -120,12 +117,12 @@
 						observer: '_updatePosition'
 					},
 					lineHeight: {
-						type: Number,
-						value: -1
+						type: String,
+						value: null
 					},
 					colWidth: {
-						type: Number,
-						value: -1
+						type: String,
+						value: null
 					}
 				};
 			}

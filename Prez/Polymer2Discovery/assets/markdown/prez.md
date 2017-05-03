@@ -167,7 +167,7 @@ var el2 = new MyElement();
 
 <code-highlighter
     id="highlight-test"
-    line-height="1.5em"></code-highlighter>
+    line-height="1.15em"></code-highlighter>
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 <div class="fragment" data-fragment-index="2" hidden></div>

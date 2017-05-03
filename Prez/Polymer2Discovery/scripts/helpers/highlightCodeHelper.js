@@ -1,8 +1,8 @@
 'use strict'
 
-const MIN_TOP = 90;
-const LINE_HEIGHT = 1.15;
-const ADDITIONNAL_HEIGHT = 0.4;
+const MIN_TOP = '90px';
+const LINE_HEIGHT = '1.15em';
+const ADDITIONNAL_HEIGHT = '0.4em';
 const COL_WIDTH = 35;
 
 export class HighlightCodeHelper {
@@ -19,14 +19,13 @@ export class HighlightCodeHelper {
 
     _progressFragment(event) {
         try {
-            let index = 0;
             let properties = null
             if (event.type === 'fragmentshown') {
-                index = +event.fragment.getAttribute('data-fragment-index');
+                const index = +event.fragment.getAttribute('data-fragment-index');
                 properties = this.positionArray[index];
 
             } else {
-                index = +event.fragment.getAttribute('data-fragment-index');
+                const index = +event.fragment.getAttribute('data-fragment-index');
                 // On reset les properties
                 if (index > 0) {
                     properties = this.positionArray[index - 1];
@@ -39,9 +38,11 @@ export class HighlightCodeHelper {
                 const key = keys[i];
                 switch (true) {
                     case key === 'line':
-                    case key === 'nbLine':
+                    case key === 'nbLines':
                     case key === 'col':
-                    case key === 'nbCol':
+                    case key === 'nbCols':
+                    case key === 'topMargin':
+                    case key === 'leftMargin':
                         position[key] = properties[key];
                         break;
                     case key === 'height':
@@ -50,19 +51,13 @@ export class HighlightCodeHelper {
                     case key === 'left':
                         area[key] = properties[key];
                         break;
+                    default:
                 }
-                /*if (key === 'row') {
-                    position.line = properties[key];
-                    //this.eltHiglight.style['top'] = `calc(90px + (${properties[key]} * ${LINE_HEIGHT}em))`;
-                } else if (key === 'col') {
-                    position.col = properties[key];
-                    //this.eltHiglight.style['left'] = `calc(60px + (${properties[key]} * ${COL_WIDTH}px))`;
-                } else if (key === 'calcHeight') {
-                    area.height = properties[key];
-                    //this.eltHiglight.style['height'] = `calc(${properties[key]}em + ${ADDITIONNAL_HEIGHT}em)`;
-                } else {
-                    //this.eltHiglight.style[key] = properties[key];
-                }*/
+
+            }
+
+            if (position.topMargin === undefined) {
+                position.topMargin = MIN_TOP;
             }
             if (position.nbLines === undefined && area.height === undefined) {
                 area.height = LINE_HEIGHT;
