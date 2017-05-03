@@ -1,7 +1,7 @@
 @import "../theme/2016/binomed/colors";
 
 /*img[alt*=logo]{
-    width:50px;   
+    width:50px;
 }
 
 .reveal .slides section.who-am-i img[alt*=company_logo] {
@@ -12,131 +12,117 @@
     width:inherit;
 }*/
 
-
-body .reveal .slides.binomed{
-  .url_jeux.rawgit, img[alt*=rawgit]{
-    display:none;
-  }  
-}
-
-body .reveal .slides.rawgit{
-  .url_jeux.binomed, img[alt*=binomed]{
-    display:none;
+body .reveal .slides.binomed {
+  .url_jeux.rawgit,
+  img[alt*=rawgit] {
+    display: none;
   }
 }
 
-.reveal .slides section.first-slide{
-  height: 100%;
+body .reveal .slides.rawgit {
+  .url_jeux.binomed,
+  img[alt*=binomed] {
+    display: none;
+  }
+}
 
-  h1{
+.reveal .slides section.first-slide {
+  height: 100%;
+  h1 {
     height: 3em;
     line-height: 1.5em;
     font-size: 1.5em;
-        
   }
-
-  h3{
+  h3 {
     color: #9e9e9e;
   }
 }
 
-$sommaire-img-height : 60px;
-
-
-strong{
-  font-weight:600 !important;
+$sommaire-img-height: 60px;
+strong {
+  font-weight: 600 !important;
 }
 
-div.no-bullet~ul{
+div.no-bullet~ul {
   list-style-type: none;
-
-  img{
-    margin:0; 
+  img {
+    margin: 0;
   }
-
-  li{
+  li {
     line-height: $sommaire-img-height;
   }
 }
 
-div.padding~*{
+div.padding~* {
   padding-left: 50px;
 }
 
-
-
-.copyright.black{
+.copyright.black {
   color: grey;
   bottom: 20px;
 }
 
-div.copyright{
-    font-size: 0.6em;
-    color: $medium-grey ;
-    position: absolute;
-    bottom: 20px;
-    right: 0;
+div.copyright {
+  font-size: 0.6em;
+  color: $medium-grey;
+  position: absolute;
+  bottom: 20px;
+  right: 0;
 }
 
-div.copyright.white{
+div.copyright.white {
   color: $white;
 }
 
-div.copyright:before{
-    content: '@'
+div.copyright:before {
+  content: '@'
 }
 
 @import "qui_veut_gagner";
-$height_question : 8rem;
-$width_triangle_question : 50px;
-$height_resp : 4rem;
-$width_triangle_resp : 20px;
-.reveal .slides section[data-background].transition.qui-veut-gagner{
+$height_question: 8rem;
+$width_triangle_question: 50px;
+$height_resp: 4rem;
+$width_triangle_resp: 20px;
+.reveal .slides section[data-background].transition.qui-veut-gagner {
   height: 100%;
 }
-@include qui-veut-gagner(".reveal .slides section[data-background].transition ", 
-  $height_question,
-  $width_triangle_question,
-  $height_resp,
-  $width_triangle_resp);
 
-.url_jeux.grey a{
-  color:#3d4349;
+@include qui-veut-gagner(".reveal .slides section[data-background].transition ", $height_question, $width_triangle_question, $height_resp, $width_triangle_resp);
+.url_jeux.grey a {
+  color: #3d4349;
 }
 
-.url_jeux a{
-  color:white;
+.url_jeux a {
+  color: white;
 }
 
-.reveal .slides section[data-background].transition .qui-veut-gagner{
- 
-  .resp.good.show{
+.reveal .slides section[data-background].transition .qui-veut-gagner {
+  .resp.good.show {
     transition: background 1s;
     background: green;
   }
-  .resp.good.show:before{
+  .resp.good.show:before {
     transition: border-right-color 1s;
     border-right-color: green;
   }
-  .resp.good.show:after{
+  .resp.good.show:after {
     transition: border-left-color 1s;
     border-left-color: green;
   }
 }
 
-.reveal .slides section.flex-p p{
-  display:flex;
+.reveal .slides section.flex-p p {
+  display: flex;
   justify-content: space-around;
-
 }
 
-.reveal .slides section pre code.toHilight mark.dilluate{
+.reveal .slides section pre code.toHilight mark.dilluate {
   background-color: inherit;
   color: inherit;
   opacity: 0.5;
 }
 
-.reveal .slides section #demoSpeech{
+.reveal .slides section #demoSpeech {
   position: absolute;
   width: 500px;
   height: 400px;
@@ -144,15 +130,35 @@ $width_triangle_resp : 20px;
   left: 50%;
   margin-left: -270px;
   margin-top: -220px;
-  background: rgba(0,0,0,.75);
+  background: rgba(0, 0, 0, .75);
   color: white;
   padding: 20px;
-
-  i{
-    color : grey;
+  i {
+    color: grey;
   }
 }
 
 @import "compat";
 @import "sensors";
 @import "highlight";
+
+/**
+* Gestion du highlighting de code
+*/
+
+.reveal .slides section.with-code h2 {
+  position: relative;
+  z-index: 100;
+}
+
+code-highlighter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.reveal .backgrounds div.slide-background.with-code:not(.no-mask) {
+  background: linear-gradient(rgba(63, 63, 63, 0.7), rgba(63, 63, 63, 0.7)), linear-gradient(rgba(63, 63, 63, 1), rgba(63, 63, 63, 1));
+}

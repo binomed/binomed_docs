@@ -10,4 +10,5 @@ addon/.sass-cache
 css/theme
 scss/theme
 npm-debug.log
+bower_components
 yarn.lock

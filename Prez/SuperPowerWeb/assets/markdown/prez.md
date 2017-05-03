@@ -2,7 +2,7 @@
 
 # Les nouveaux supers<br> pouvoirs du web
 
-### 2017.03.23 BBL @ **Nantes**
+### 2017.05.11  @ **Riviera Dev**
 
 <div class="copyrights white">kohaku Yoshida</div>
 
@@ -68,7 +68,7 @@ Senior innovation developper & Community Manager
 
 <!-- .slide: class="flex-p" -->
 
-# Elles se croyaient au-dessus de tout ! 
+# Elles se croyaient au-dessus de tout !
 
 
 ![h-300](./assets/images/irondroid.jpg)
@@ -102,8 +102,8 @@ Sensors
 <br>
 
 <!-- .element: class="fragment" -->
-Nouvelles API 
- 
+Nouvelles API
+
 Notes:
 Sensors : Geoloc/Gyroscope/...
 Nouvelles Possibilités : Offline / DB / Raccourcis
@@ -115,7 +115,7 @@ Nouvelles Possibilités : Offline / DB / Raccourcis
 ## De quoi parle-t-on ?
 
 
-* Sensors : 
+* Sensors :
  * Geolocation
  * Gyroscope / Accelometer / Compass
  * Proximity
@@ -123,7 +123,7 @@ Nouvelles Possibilités : Offline / DB / Raccourcis
 
 <br>
 
-* Nouvelles possibilités : 
+* Nouvelles possibilités :
  * Offline
  * Base de données
  * Raccourcis applicatifs
@@ -132,14 +132,14 @@ Nouvelles Possibilités : Offline / DB / Raccourcis
 ##==##
 
 <!--
-//    _____  _               _           ___          __  _      
-//   |  __ \| |             (_)         | \ \        / / | |     
-//   | |__) | |__  _   _ ___ _  ___ __ _| |\ \  /\  / /__| |__   
-//   |  ___/| '_ \| | | / __| |/ __/ _` | | \ \/  \/ / _ \ '_ \  
-//   | |    | | | | |_| \__ \ | (_| (_| | |  \  /\  /  __/ |_) | 
-//   |_|    |_| |_|\__, |___/_|\___\__,_|_|   \/  \/ \___|_.__/  
-//                  __/ |                                        
-//              |___/                                        
+//    _____  _               _           ___          __  _
+//   |  __ \| |             (_)         | \ \        / / | |
+//   | |__) | |__  _   _ ___ _  ___ __ _| |\ \  /\  / /__| |__
+//   |  ___/| '_ \| | | / __| |/ __/ _` | | \ \/  \/ / _ \ '_ \
+//   | |    | | | | |_| \__ \ | (_| (_| | |  \  /\  /  __/ |_) |
+//   |_|    |_| |_|\__, |___/_|\___\__,_|_|   \/  \/ \___|_.__/
+//                  __/ |
+//              |___/
  -->
 
 <!-- .slide: class="transition-black"  -->
@@ -153,7 +153,7 @@ Nouvelles Possibilités : Offline / DB / Raccourcis
 <!-- .slide: data-background="./assets/images/inception_physical_web_full.jpg" class="transition no-filter"-->
 
 
-##==## 
+##==##
 
 <!-- .slide: data-type-show="prez" -->
 
@@ -165,13 +165,13 @@ Date de 2015
 
 <!-- .element: class="fragment" -->
 Basé sur Eddystone & le BLE
- 
+
 Notes:
 A besoin d'un application native (PlayServices)
 Sur EddyStone URL
 Aujourd'hui : UID / URL / EID / TLM
 
-##==## 
+##==##
 
 <!-- .slide: data-type-show="full" -->
 
@@ -187,8 +187,8 @@ Aujourd'hui : UID / URL / EID / TLM
 Notes:
 Aujourd'hui : UID / URL / EID / TLM
 
- 
-##==## 
+
+##==##
 
 ## Physical Web
 
@@ -197,13 +197,13 @@ Aujourd'hui : UID / URL / EID / TLM
  ![center h-500](./assets/images/physical_web_use_case.png)
 
 Notes:
-cas décentralisé, cas centralisé, ... 
+cas décentralisé, cas centralisé, ...
 
-##==## 
+##==##
 
 <!-- .slide: class="transition-white" data-type-show="prez" -->
 
-# Restrictions 
+# Restrictions
 
 ![icon](./assets/images/partial_chrome_256x256.png)
 
@@ -211,13 +211,13 @@ Notes:
  * Site accessible sur l'internet mondial
  * L'url est limité par la norme eddystone => Il vaut mieux utiliser des shorts urls
 
-##==## 
+##==##
 
 <!-- .slide: data-type-show="full" -->
 
 ## Physical Web
 
-### Restrictions 
+### Restrictions
 
  * Site accessible sur l'internet mondial
  * L'URL est limitée par la norme Eddystone => Il vaut mieux utiliser des shorts urls
@@ -235,7 +235,7 @@ Notes:
   </div>
   <div class="firefox">
     <div class="desktop unsupport">-</div>
-    <div class="os partial">draft</div>
+    <div class="os partial">magnet</div>
     <div class="android unsupport">-</div>
     <div class="ios unsupport">-</div>
   </div>
@@ -317,26 +317,26 @@ Notes:
    <div class="question two-line"> Grâce à quoi puis-je contrôler une balise bluetooth ? </div>
     <div class="row">
         <div class="resp repA"> IBeacon</div>
-        <div class="resp repB"> Physical Web</div>        
+        <div class="resp repB"> Physical Web</div>
     </div>
     <div class="row">
         <div class="resp repC good"> WebBluetooth</div>
-        <div class="resp repD"> La réponse D</div>     
+        <div class="resp repD"> La réponse D</div>
     </div>
 </div>
 
 ##==##
 
 <!--
-//    ____  _            _              _   _     
-//   |  _ \| |          | |            | | | |    
-//   | |_) | |_   _  ___| |_ ___   ___ | |_| |__  
-//   |  _ <| | | | |/ _ \ __/ _ \ / _ \| __| '_ \ 
+//    ____  _            _              _   _
+//   |  _ \| |          | |            | | | |
+//   | |_) | |_   _  ___| |_ ___   ___ | |_| |__
+//   |  _ <| | | | |/ _ \ __/ _ \ / _ \| __| '_ \
 //   | |_) | | |_| |  __/ || (_) | (_) | |_| | | |
 //   |____/|_|\__,_|\___|\__\___/ \___/ \__|_| |_|
-//                                                
-//                                                  
--->     
+//
+//
+-->
 
 <!-- .slide: data-background="./assets/images/inception_bluetooth_full.jpg" class="transition no-filter" data-state="quit-question"-->
 
@@ -359,7 +359,7 @@ Notes:
 ![center](./assets/images/ble_hierarchy.png)
 
 Notes:
-* * **GATT** : Generic Attribute Profile 
+* * **GATT** : Generic Attribute Profile
 * **ATT** : Attribute Protocol
 * Un device bluetooth expose plusieurs services
 * Chaque service expose plusieurs caractéristiques
@@ -374,7 +374,7 @@ Notes:
 
 ### Un peu de vocabulaire !
 
-* **GATT** : Generic Attribute Profile 
+* **GATT** : Generic Attribute Profile
 
 * **ATT** : Attribute Protocol
 
@@ -398,21 +398,9 @@ Notes:
 
 ## Utilisation
 
-<!-- .slide: data-type-show="prez" -->
-
-![center h-500](./assets/images/Bluetooth.svg)
-
-##==##
-
-## Utilisation
-
 <!-- .slide: data-type-show="prez" data-state="stop-code-connect-ble" -->
 
-![center](./assets/images/flag_ble.png)
-
-Notes:
-* Accès à l'objet ```navigator.bluetooth```
-* Basé sur les promises
+![center h-500](./assets/images/Bluetooth.svg)
 
 ##==##
 
@@ -421,7 +409,7 @@ Notes:
 ### Utilisation
 
 * **Https** Only <!-- .element: style="color:red" -->
-* **BLE** Only ! 
+* **BLE** Only !
 * Activation dans chrome via les flags : ```chrome://flags/#enable-web-bluetooth```
 * Accès à l'objet ```navigator.bluetooth```
 * Basé sur les promises
@@ -431,7 +419,7 @@ Notes:
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="code-connect-ble" -->
+<!-- .slide: class="with-code"  data-state="code-connect-ble stop-code-connect-by-name" -->
 
 ## Connect
 
@@ -441,7 +429,12 @@ navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }]
 .catch(error => { console.log(error); });
 ```
 
-<div id="highlight-connect-ble" class="highlight-code"></div>  
+
+
+<code-highlighter
+    id="highlight-connect-ble"
+    line-height="0.55em"></code-highlighter>
+<!--<div id="highlight-connect-ble" class="highlight-code"></div>-->
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 
@@ -450,7 +443,7 @@ Par service
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="stop-code-connect-ble" -->
+<!-- .slide: class="with-code"  data-state="stop-code-connect-ble code-connect-by-name stop-code-connection" -->
 
 ## Connect
 
@@ -460,7 +453,11 @@ navigator.bluetooth.requestDevice({ filters: [{ name: ['MyDevice'] }] })
 .catch(error => { console.log(error); });
 ```
 
-<div id="highlight-connect-by-name" class="highlight-code"></div>  
+<code-highlighter
+    id="highlight-connect-by-name"
+    line-height="0.55em"></code-highlighter>
+<!--<div id="highlight-connect-by-name" class="highlight-code"></div>-->
+
 
 
 Notes:
@@ -468,7 +465,7 @@ Par nom
 
 ##==##
 
-<!-- .slide: class="with-code" data-background="#3f3f3f" data-state="stop-code-read-charact"-->
+<!-- .slide: class="with-code" data-state="stop-code-read-charact stop-connect-by-name code-connection"-->
 
 ## Connexion à un device
 
@@ -480,11 +477,17 @@ navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }]
 .catch(error => { console.log(error); });
 ```
 
-<div id="highlight-connection" class="highlight-code"></div>  
+
+<code-highlighter
+    id="highlight-connection"
+    line-height="0.55em"></code-highlighter>
+
+<!--<div id="highlight-connection" class="highlight-code"></div>-->
+
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="stop-code-write-charact code-read-charact" -->
+<!-- .slide: class="with-code"  data-state="stop-code-write-charact code-read-charact stop-code-connection" -->
 
 ## Lecture d'une caractéristique
 
@@ -503,7 +506,10 @@ device.gatt.getPrimaryService('battery_service')
 .catch(error => { console.log(error); });
 ```
 
-<div id="highlight-read-charact" class="highlight-code"></div>  
+<code-highlighter
+    id="highlight-read-charact"
+    line-height="0.55em"></code-highlighter>
+<!--<div id="highlight-read-charact" class="highlight-code"></div>-->
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 <div class="fragment" data-fragment-index="2" hidden></div>
@@ -511,7 +517,7 @@ device.gatt.getPrimaryService('battery_service')
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="stop-code-read-charact code-write-charact" -->
+<!-- .slide: class="with-code"  data-state="stop-code-read-charact code-write-charact" -->
 
 ## Écrire dans une caractéristique
 
@@ -527,7 +533,10 @@ device.gatt.getPrimaryService('heart_rate'))
 .catch(error => { console.log(error); });
 ```
 
-<div id="highlight-write-charact" class="highlight-code"></div>  
+<code-highlighter
+    id="highlight-write-charact"
+    line-height="0.55em"></code-highlighter>
+<!--<div id="highlight-write-charact" class="highlight-code"></div>-->
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 <div class="fragment" data-fragment-index="2" hidden></div>
@@ -537,7 +546,7 @@ device.gatt.getPrimaryService('heart_rate'))
 
 <!-- .slide: data-state="stop-code-write-charact" class="with-code" data-copyrights="true" data-background="#3f3f3f"  -->
 
-## Les webcomponents à la rescousse 
+## Les webcomponents à la rescousse
 
 
 ```html
@@ -555,7 +564,7 @@ device.gatt.getPrimaryService('heart_rate'))
 
 <!-- .slide: class="with-code" data-background="#3f3f3f"  -->
 
-## Les webcomponents à la rescousse 
+## Les webcomponents à la rescousse
 
 ```javascript
 var bluetoothDevice = document.querySelector('platinum-bluetooth-device');
@@ -577,7 +586,7 @@ button.addEventListener('click', function() {
 
 ## Open source quand tu nous tiens !
 
-[+Francois Beaufort](https://plus.google.com/u/0/+FrancoisBeaufort) a aussi écrit une application pour configurer les balises Physical Web : 
+[+Francois Beaufort](https://plus.google.com/u/0/+FrancoisBeaufort) a aussi écrit une application pour configurer les balises Physical Web :
 
 [Eddystone-Url Beacon Config](https://beaufortfrancois.github.io/sandbox/web-bluetooth/eddystone-url-config/index.html)
 
@@ -591,10 +600,10 @@ button.addEventListener('click', function() {
 
 <div class="compat">
   <div class="chrome">
-    <div class="desktop dev">45+</div>
-    <div class="os">45+</div>
-    <div class="chromium">48+</div>
-    <div class="android-dev">48+</div>
+    <div class="desktop dev">53</div>
+    <div class="os">53</div>
+    <div class="chromium">53</div>
+    <div class="android">53</div>
   </div>
   <div class="firefox">
     <div class="desktop unsupport">-</div>
@@ -622,14 +631,14 @@ button.addEventListener('click', function() {
 ##==##
 
 <!--
-//                                      
-//                                      
-//    ___  ___ _ __  ___  ___  _ __ ___ 
+//
+//
+//    ___  ___ _ __  ___  ___  _ __ ___
 //   / __|/ _ \ '_ \/ __|/ _ \| '__/ __|
 //   \__ \  __/ | | \__ \ (_) | |  \__ \
 //   |___/\___|_| |_|___/\___/|_|  |___/
-//                                      
-//     
+//
+//
 -->
 
 <!-- .slide: data-background="./assets/images/inception_sensors_full.jpg" class="transition no-filter"-->
@@ -640,7 +649,7 @@ button.addEventListener('click', function() {
 <!-- .slide: class="transition-black" data-state="quit-question"-->
 
 
-# Sensors 
+# Sensors
 
 ![icon](./assets/images/html5-device-access-logo.png)
 
@@ -690,28 +699,28 @@ button.addEventListener('click', function() {
     <div class="question two-line"> Lequel de ces sensors n'est pas accessible depuis le web ?</div>
     <div class="row">
         <div class="resp repA good"> Magnetometre</div>
-        <div class="resp repB "> Accelerometre</div>        
+        <div class="resp repB "> Accelerometre</div>
     </div>
     <div class="row">
         <div class="resp repC"> Bluetooth</div>
-        <div class="resp repD"> La réponse D</div>     
+        <div class="resp repD"> La réponse D</div>
     </div>
 </div>
 
 ##==##
 
 <!--
-//   __      ___ _               _   _             
-//   \ \    / (_) |             | | (_)            
-//    \ \  / / _| |__  _ __ __ _| |_ _  ___  _ __  
-//     \ \/ / | | '_ \| '__/ _` | __| |/ _ \| '_ \ 
+//   __      ___ _               _   _
+//   \ \    / (_) |             | | (_)
+//    \ \  / / _| |__  _ __ __ _| |_ _  ___  _ __
+//     \ \/ / | | '_ \| '__/ _` | __| |/ _ \| '_ \
 //      \  /  | | |_) | | | (_| | |_| | (_) | | | |
 //       \/   |_|_.__/|_|  \__,_|\__|_|\___/|_| |_|
-//                                                 
-//   
+//
+//
 -->
 
-<!-- .slide: class="transition-black" -->
+<!-- .slide: class="transition-black" data-state="stop-code-vibrate" -->
 
 # Vibration
 
@@ -723,7 +732,7 @@ button.addEventListener('click', function() {
 
 ## Vibration
 
-* Vibre selon un temps donné ! 
+* Vibre selon un temps donné !
 
 * Peut faire vibrer tout un ensemble de temps
  * n = temps à vibrer
@@ -739,7 +748,7 @@ window.navigator.vibrate(arrayOfVibration);
 
 ##==##
 
-<!-- .slide: data-type-show="prez" class="with-code" data-background="#3f3f3f" -->
+<!-- .slide: data-type-show="prez" class="with-code" data-background="#3f3f3f" data-state="code-vibrate"-->
 
 ## Vibration
 
@@ -752,10 +761,14 @@ let arrayOfVibration = [
 window.navigator.vibrate(arrayOfVibration);
 ```
 
-<div id="highlight-vibrate" class="highlight-code"></div>  
+<code-highlighter
+    id="highlight-vibrate"
+    line-height="0.55em"></code-highlighter>
+
+<!--<div id="highlight-vibrate" class="highlight-code"></div>-->
 
 ##==##
-<!-- .slide: data-state="stop-usermedia"-->
+<!-- .slide: data-state="stop-usermedia stop-code-vibrate"-->
 
 <div class="compat">
   <div class="chrome">
@@ -789,14 +802,14 @@ window.navigator.vibrate(arrayOfVibration);
 ##==##
 
 <!--
-//     ____       _            _        _   _             
-//    / __ \     (_)          | |      | | (_)            
-//   | |  | |_ __ _  ___ _ __ | |_ __ _| |_ _  ___  _ __  
-//   | |  | | '__| |/ _ \ '_ \| __/ _` | __| |/ _ \| '_ \ 
+//     ____       _            _        _   _
+//    / __ \     (_)          | |      | | (_)
+//   | |  | |_ __ _  ___ _ __ | |_ __ _| |_ _  ___  _ __
+//   | |  | | '__| |/ _ \ '_ \| __/ _` | __| |/ _ \| '_ \
 //   | |__| | |  | |  __/ | | | || (_| | |_| | (_) | | | |
 //    \____/|_|  |_|\___|_| |_|\__\__,_|\__|_|\___/|_| |_|
-//                                                        
-//  
+//
+//
 -->
 
 <!-- .slide: class="transition-black" data-state="quit-question"-->
@@ -814,7 +827,7 @@ window.navigator.vibrate(arrayOfVibration);
 
 3 Axes : **Alpha, Gamma, Beta**
 
-Se fait à plat ! 
+Se fait à plat !
 
 <br>
 <div>
@@ -872,11 +885,16 @@ function process(event) {
   var alpha = event.alpha;
   var beta = event.beta;
   var gamma = event.gamma;
-   
+
 }
 ```
 
-<div id="highlight-orientation" class="highlight-code"></div>  
+
+<code-highlighter
+    id="highlight-orientation"
+    line-height="0.55em"></code-highlighter>
+
+<!--<div id="highlight-orientation" class="highlight-code"></div>-->
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 
@@ -907,11 +925,11 @@ Subtilité : ça marche mieux si le téléphone est a plat
       <div class="safe_lock"></div>
     </div>
     <div class="resp">
-      <div class="value"></div>     
+      <div class="value"></div>
       <div class="chevrons">
-        <i class="first fa fa-times-circle"></i> 
-        <i class="second fa fa-times-circle"></i> 
-        <i class="third fa fa-times-circle"></i> 
+        <i class="first fa fa-times-circle"></i>
+        <i class="second fa fa-times-circle"></i>
+        <i class="third fa fa-times-circle"></i>
       </div>
     </div>
   </div>
@@ -954,13 +972,13 @@ Subtilité : ça marche mieux si le téléphone est a plat
 ##==##
 
 <!--
-//    _____             _          __  __       _   _             
-//   |  __ \           (_)        |  \/  |     | | (_)            
-//   | |  | | _____   ___  ___ ___| \  / | ___ | |_ _  ___  _ __  
-//   | |  | |/ _ \ \ / / |/ __/ _ \ |\/| |/ _ \| __| |/ _ \| '_ \ 
+//    _____             _          __  __       _   _
+//   |  __ \           (_)        |  \/  |     | | (_)
+//   | |  | | _____   ___  ___ ___| \  / | ___ | |_ _  ___  _ __
+//   | |  | |/ _ \ \ / / |/ __/ _ \ |\/| |/ _ \| __| |/ _ \| '_ \
 //   | |__| |  __/\ V /| | (_|  __/ |  | | (_) | |_| | (_) | | | |
 //   |_____/ \___| \_/ |_|\___\___|_|  |_|\___/ \__|_|\___/|_| |_|
-//                                                                
+//
 //
 -->
 <!-- .slide: class="transition-black" -->
@@ -1005,10 +1023,10 @@ On peut tenir compte de l'accélération classique ou avec prise en charge de la
 
 ```javascript
 // Listener of devieMotion
-var deviceMotionListener = function(event){        
+var deviceMotionListener = function(event){
   var x = event.acceleration.x;
   var y = event.acceleration.y;
-  var z = event.acceleration.z;  
+  var z = event.acceleration.z;
   var yGravity = event.accelerationIncludingGrativity.y;
 }
 
@@ -1018,7 +1036,11 @@ function register(){
 }
 ```
 
-<div id="highlight-motion" class="highlight-code"></div>  
+<code-highlighter
+    id="highlight-motion"
+    line-height="0.55em"></code-highlighter>
+
+<!--<div id="highlight-motion" class="highlight-code"></div>-->
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 
@@ -1097,19 +1119,19 @@ function register(){
 ##==##
 
 <!--
-//    ____        _   _                  
-//   |  _ \      | | | |                 
-//   | |_) | __ _| |_| |_ ___ _ __ _   _ 
+//    ____        _   _
+//   |  _ \      | | | |
+//   | |_) | __ _| |_| |_ ___ _ __ _   _
 //   |  _ < / _` | __| __/ _ \ '__| | | |
 //   | |_) | (_| | |_| ||  __/ |  | |_| |
 //   |____/ \__,_|\__|\__\___|_|   \__, |
 //                                  __/ |
-//                                 |___/ 
+//                                 |___/
 -->
 
 <!-- .slide: class="transition-black"-->
 
-# Battery Status 
+# Battery Status
 
 ![icon](./assets/images/empty-battery.png)
 
@@ -1135,13 +1157,13 @@ function register(){
 
 
 ```javascript
-var battery = navigator.battery || navigator.mozBattery 
+var battery = navigator.battery || navigator.mozBattery
 || navigator.webkitBattery;
 
 function updateBatteryStatus() {
   console.log("Batterie chargée à : " + battery.level * 100 + " %");
   if (battery.charging) {
-    console.log("Chargement de la batterie"); 
+    console.log("Chargement de la batterie");
   }
 }
 battery.addEventListener("chargingchange", updateBatteryStatus);
@@ -1149,7 +1171,11 @@ battery.addEventListener("levelchange", updateBatteryStatus);
 updateBatteryStatus();
 ```
 
-<div id="highlight-battery" class="highlight-code"></div>  
+<code-highlighter
+    id="highlight-battery"
+    line-height="0.55em"></code-highlighter>
+
+<!--<div id="highlight-battery" class="highlight-code"></div>-->
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 <div class="fragment" data-fragment-index="2" hidden></div>
@@ -1190,20 +1216,20 @@ updateBatteryStatus();
 ##==##
 
 <!--
-//    _      _       _     _   
-//   | |    (_)     | |   | |  
-//   | |     _  __ _| |__ | |_ 
+//    _      _       _     _
+//   | |    (_)     | |   | |
+//   | |     _  __ _| |__ | |_
 //   | |    | |/ _` | '_ \| __|
-//   | |____| | (_| | | | | |_ 
+//   | |____| | (_| | | | | |_
 //   |______|_|\__, |_| |_|\__|
-//              __/ |          
-//             |___/           
+//              __/ |
+//             |___/
 -->
 
 
 <!-- .slide: class="transition-black"-->
 
-# Light 
+# Light
 
 ![icon](./assets/images/light_detector.jpg)
 
@@ -1232,7 +1258,7 @@ updateBatteryStatus();
 
 ```javascript
 var deviceLightHandler = function(event) {
- var value = Math.min(45, event.value); 
+ var value = Math.min(45, event.value);
 }
 
 window.addEventListener('devicelight', deviceLightHandler, false);
@@ -1308,14 +1334,14 @@ Notes:
 ##==##
 
 <!--
-//    _    _  _____ ______ _____    __  __ ______ _____ _____          
-//   | |  | |/ ____|  ____|  __ \  |  \/  |  ____|  __ \_   _|   /\    
-//   | |  | | (___ | |__  | |__) | | \  / | |__  | |  | || |    /  \   
-//   | |  | |\___ \|  __| |  _  /  | |\/| |  __| | |  | || |   / /\ \  
-//   | |__| |____) | |____| | \ \  | |  | | |____| |__| || |_ / ____ \ 
+//    _    _  _____ ______ _____    __  __ ______ _____ _____
+//   | |  | |/ ____|  ____|  __ \  |  \/  |  ____|  __ \_   _|   /\
+//   | |  | | (___ | |__  | |__) | | \  / | |__  | |  | || |    /  \
+//   | |  | |\___ \|  __| |  _  /  | |\/| |  __| | |  | || |   / /\ \
+//   | |__| |____) | |____| | \ \  | |  | | |____| |__| || |_ / ____ \
 //    \____/|_____/|______|_|  \_\ |_|  |_|______|_____/_____/_/    \_\
-//                                                                     
-//    
+//
+//
 -->
 
 <!-- .slide: class="transition-black" -->
@@ -1332,10 +1358,10 @@ Notes:
 
 * Encore dépendant des navigateurs !
 
-* Possibilité de préciser ce qu'on récupère et on peut séparer les flux ! 
+* Possibilité de préciser ce qu'on récupère et on peut séparer les flux !
 * Sélection de la source / Récupération de l'audio
 * Devient intéressant s'il est mixé avec des effets ou des canvas.
-* **HTTPS** only ! 
+* **HTTPS** only !
 * 2 versions l'api
 
 ##==##
@@ -1357,10 +1383,10 @@ var vgaConstraints = {
 
 Notes:
 * Encore dépendant des navigateurs !
-* Possibilité de préciser ce qu'on récupère et on peut séparer les flux ! 
+* Possibilité de préciser ce qu'on récupère et on peut séparer les flux !
 * Sélection de la source / Récupération de l'audio
 * Devient intéressant s'il est mixé avec des effets ou des canvas.
-* **HTTPS** only ! 
+* **HTTPS** only !
 * 2 versions l'api
 
 ##==##
@@ -1411,7 +1437,7 @@ function handleUserMedia(stream){
 navigator.getUserMedia(constraints, handleUserMedia, handleUserMediaError);
 ```
 
-<div id="highlight-user-media-v1" class="highlight-code"></div>  
+<div id="highlight-user-media-v1" class="highlight-code"></div>
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 <div class="fragment" data-fragment-index="2" hidden></div>
@@ -1440,11 +1466,11 @@ navigator.mediaDevices.getUserMedia(constraints)
   .then(handleUserMedia).catch(handleUserMediaError);
 ```
 
-<div id="highlight-user-media-v2" class="highlight-code"></div>  
-<div id="highlight-user-media-v2-2" class="highlight-code"></div>  
+<div id="highlight-user-media-v2" class="highlight-code"></div>
+<div id="highlight-user-media-v2-2" class="highlight-code"></div>
 
 Notes:
-Toujours besoin de adapter.js pour faire marcher correctement ! 
+Toujours besoin de adapter.js pour faire marcher correctement !
 
 
 
@@ -1470,7 +1496,7 @@ Toujours besoin de adapter.js pour faire marcher correctement !
   <div id="usermedia">
     <div class="videoParent">
     <img id="photoStream" height="600px">
-      
+
     </div>
   </div>
 </div>
@@ -1514,14 +1540,14 @@ Toujours besoin de adapter.js pour faire marcher correctement !
 ##==##
 
 <!--
-//    _____               _           _ _         
-//   |  __ \             (_)         (_) |        
-//   | |__) | __ _____  ___ _ __ ___  _| |_ _   _ 
+//    _____               _           _ _
+//   |  __ \             (_)         (_) |
+//   | |__) | __ _____  ___ _ __ ___  _| |_ _   _
 //   |  ___/ '__/ _ \ \/ / | '_ ` _ \| | __| | | |
 //   | |   | | | (_) >  <| | | | | | | | |_| |_| |
 //   |_|   |_|  \___/_/\_\_|_| |_| |_|_|\__|\__, |
 //                                           __/ |
-//                                          |___/ 
+//                                          |___/
 -->
 
 <!-- .slide: class="transition-black" data-state="stop-code-device-proximity" -->
@@ -1538,7 +1564,7 @@ Toujours besoin de adapter.js pour faire marcher correctement !
 
 ### Device Proximity
 
-Firefox uniquement ! 
+Firefox uniquement !
 
 * Renvoie des valeurs entre 0 et 5 (0 étant proche)
 
@@ -1552,7 +1578,7 @@ Firefox uniquement !
 
 ```javascript
 var deviceProximityHandler = function(event) {
-  console.log(event.value);            
+  console.log(event.value);
 }
 
 function register(){
@@ -1564,12 +1590,12 @@ function unregister(){
 }
 ```
 
-<div id="highlight-device-proximity" class="highlight-code"></div>  
+<div id="highlight-device-proximity" class="highlight-code"></div>
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 
 Notes:
-Firefox uniquement ! 
+Firefox uniquement !
 * Renvoie des valeurs entre 0 et 5 (0 étant proche)
 
 ##==##
@@ -1580,7 +1606,7 @@ Firefox uniquement !
 
 ### User Proximity
 
-Firefox uniquement ! 
+Firefox uniquement !
 
 * Renvoie des valeurs entre true à l'attribut near
 
@@ -1608,12 +1634,12 @@ function unregister(){
 }
 ```
 
-<div id="highlight-user-proximity" class="highlight-code"></div>  
+<div id="highlight-user-proximity" class="highlight-code"></div>
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 
 Notes:
-Firefox uniquement ! 
+Firefox uniquement !
 * Renvoie des valeurs entre true à l'attribut near
 
 ##==##
@@ -1653,14 +1679,14 @@ Firefox uniquement !
 ##==##
 
 <!--
-//   __          __  _        _____                      _     
-//   \ \        / / | |      / ____|                    | |    
-//    \ \  /\  / /__| |__   | (___  _ __   ___  ___  ___| |__  
-//     \ \/  \/ / _ \ '_ \   \___ \| '_ \ / _ \/ _ \/ __| '_ \ 
+//   __          __  _        _____                      _
+//   \ \        / / | |      / ____|                    | |
+//    \ \  /\  / /__| |__   | (___  _ __   ___  ___  ___| |__
+//     \ \/  \/ / _ \ '_ \   \___ \| '_ \ / _ \/ _ \/ __| '_ \
 //      \  /\  /  __/ |_) |  ____) | |_) |  __/  __/ (__| | | |
 //       \/  \/ \___|_.__/  |_____/| .__/ \___|\___|\___|_| |_|
-//                                 | |                         
-//   
+//                                 | |
+//
 -->
 
 <!-- .slide: class="transition-black" data-state="stop-code-web-speech" -->
@@ -1679,16 +1705,16 @@ Firefox uniquement !
 * Il reste plus intéressant d'utiliser la librairie Javascript
 
 * Manque encore cependant de précision pour de la commande vocale => avoir des textes approximatifs de détection
-* Va de pair avec la synthèse vocale disponible aussi 
+* Va de pair avec la synthèse vocale disponible aussi
 
 
 [Documentation complète](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API)
 
-##==## 
+##==##
 
 <!-- .slide: class="with-code" data-background="#3f3f3f" data-state="code-web-speech stop-code-web-speech-gramar"  -->
 
-## Web Speech - Utilisation 
+## Web Speech - Utilisation
 
 ```javascript
 var recognition = new SpeechRecognition();
@@ -1699,11 +1725,11 @@ recognition.interimResults = true;
 recognition.start();
 recognition.onresult = function(event) {
   var finalStr = event.results[0][0].transcript;
-  console.log('Confidence: ' + finalStr); 
+  console.log('Confidence: ' + finalStr);
 }
 ```
 
-<div id="highlight-web-speech" class="highlight-code"></div>  
+<div id="highlight-web-speech" class="highlight-code"></div>
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 <div class="fragment" data-fragment-index="2" hidden></div>
@@ -1731,7 +1757,7 @@ recognition.maxAlternatives = 1;
 ```
 
 
-<div id="highlight-web-speech-grammar" class="highlight-code"></div>  
+<div id="highlight-web-speech-grammar" class="highlight-code"></div>
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 <div class="fragment" data-fragment-index="2" hidden></div>
@@ -1755,7 +1781,7 @@ synth.speak(utterThis);
 ```
 
 
-<div id="highlight-web-speech-synthesis" class="highlight-code"></div>  
+<div id="highlight-web-speech-synthesis" class="highlight-code"></div>
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 <div class="fragment" data-fragment-index="2" hidden></div>
@@ -1818,7 +1844,7 @@ synth.speak(utterThis);
 
 ## Notification
 
-* Possibilité d'envoyer des notifications à l'utilisateur même si la page n'est pas au premier plan ! 
+* Possibilité d'envoyer des notifications à l'utilisateur même si la page n'est pas au premier plan !
 
 * À besoin d'autorisations pour fonctionner
 
@@ -1837,7 +1863,7 @@ synth.speak(utterThis);
 # Notification
 
 Notes:
-* Possibilité d'envoyer des notifications à l'utilisateur même si la page n'est pas au premier plan ! 
+* Possibilité d'envoyer des notifications à l'utilisateur même si la page n'est pas au premier plan !
 * À besoin d'autorisations pour fonctionner
 * Maintenant basé sur les services workers pour des histoires d'activités
 * À coupler avec la PushAPI ;)
@@ -1864,16 +1890,16 @@ function showNotification() {
   }); }
 ```
 
-<div id="highlight-notification" class="highlight-code"></div>  
+<div id="highlight-notification" class="highlight-code"></div>
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 <div class="fragment" data-fragment-index="2" hidden></div>
 <div class="fragment" data-fragment-index="3" hidden></div>
 
 Notes:
-Ici c'est un exemple de webPush Notification ! 
+Ici c'est un exemple de webPush Notification !
 On peut aussi avoir des actions associées ! genre yes / no ....
-On ajoute sur la notification 
+On ajoute sur la notification
 
 
 ##==##
@@ -1935,7 +1961,7 @@ On ajoute sur la notification
 
 <br>
 
-* Le remplaçant de l'appCache => [Service Workers](https://developer.mozilla.org/fr/docs/Web/API/Service_Worker_API) !! 
+* Le remplaçant de l'appCache => [Service Workers](https://developer.mozilla.org/fr/docs/Web/API/Service_Worker_API) !!
 
 ##==##
 
@@ -1969,7 +1995,7 @@ On ajoute sur la notification
 
 # Service Workers
 
-##==## 
+##==##
 
 <!-- .slide: data-type-show="full"-->
 
@@ -1977,7 +2003,7 @@ On ajoute sur la notification
 
 * La [Page Visibility API](https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API) vous permet de gérer la visibilité de vos pages.
 
-##==## 
+##==##
 
 <!-- .slide: class="with-code" data-background="#3f3f3f" data-state="code-notification" -->
 
@@ -1993,13 +2019,13 @@ function handleVisibilityChange() {
   }
 }
 
-if (typeof document.addEventListener != "undefined" && 
+if (typeof document.addEventListener != "undefined" &&
   typeof document["hidden"] != "undefined") {
   document.addEventListener("visibilitychange", handleVisibilityChange, false);
 }
 ```
 
-<div id="highlight-visibility" class="highlight-code"></div>  
+<div id="highlight-visibility" class="highlight-code"></div>
 
 ##==##
 
@@ -2046,11 +2072,11 @@ if (typeof document.addEventListener != "undefined" &&
 
 * Permets de spécifier des metas data sur l'application
 * Possibilité d'ajouter l'application sur le homescreen
-* Possibilité de définir des paramètres de lancement : 
- * Plein écran 
- * URL Spécifique au démarrage 
+* Possibilité de définir des paramètres de lancement :
+ * Plein écran
+ * URL Spécifique au démarrage
  * Orientation
- * Présence de la barre de navigation 
+ * Présence de la barre de navigation
  * ...
 
 [Documentation](https://developers.google.com/web/updates/2014/11/Support-for-installable-web-apps-with-webapp-manifest-in-chrome-38-for-Android)
@@ -2065,11 +2091,11 @@ if (typeof document.addEventListener != "undefined" &&
 Notes:
 * Permets de spécifier des metas data sur l'application
 * Possibilité d'ajouter l'application sur le homescreen
-* Possibilité de définir des paramètres de lancement : 
- * Plein écran 
- * URL Spécifique au démarrage 
+* Possibilité de définir des paramètres de lancement :
+ * Plein écran
+ * URL Spécifique au démarrage
  * Orientation
- * Présence de la barre de navigation 
+ * Présence de la barre de navigation
  * ...
 
 
@@ -2081,7 +2107,7 @@ Notes:
 
 <!-- .element: class="big-code" -->
 ```html
-<link rel="manifest" 
+<link rel="manifest"
  href="/manifest.json">
 ```
 
@@ -2187,11 +2213,11 @@ Notes:
    <div class="question two-line"> Laquelle de ces API ne fait pas encore partie d'une roadmap pour le web ?  </div>
     <div class="row">
         <div class="resp repA"> WebNFC</div>
-        <div class="resp repB"> Sensors Génériques</div>        
+        <div class="resp repB"> Sensors Génériques</div>
     </div>
     <div class="row">
         <div class="resp repC good"> FingerPrint</div>
-        <div class="resp repD"> La réponse D</div>     
+        <div class="resp repD"> La réponse D</div>
     </div>
 </div>
 
@@ -2211,7 +2237,7 @@ Notes:
 
 <br>
 
-* [Sensors Génériques](https://w3c.github.io/sensors/) : Ouverture de tous les types de sensors disponibles et pas encore présent => Refonte des Apis actuelles 
+* [Sensors Génériques](https://w3c.github.io/sensors/) : Ouverture de tous les types de sensors disponibles et pas encore présent => Refonte des Apis actuelles
 
 <br>
 
@@ -2246,7 +2272,7 @@ Notes:
 
 <!-- .slide: data-background="./assets/images/casino.jpg" data-state="hidefooter" class="transition qui-veut-gagner" data-state="quit-question" data-type-show="prez"  -->
 
-# Jouons <br> encore un peu 
+# Jouons <br> encore un peu
 
 ##==##
 
@@ -2281,17 +2307,17 @@ Notes:
     <div class="question two-line"> Quelle est la techno derrière l'ouverture des pages web depuis un beacon ?</div>
     <div class="row">
         <div class="resp repA"> BeaconWeb</div>
-        <div class="resp repB good"> PhysicalWeb</div>        
+        <div class="resp repB good"> PhysicalWeb</div>
     </div>
     <div class="row">
         <div class="resp repC"> IBeacon</div>
-        <div class="resp repD"> La réponse D</div>     
+        <div class="resp repD"> La réponse D</div>
     </div>
 </div>
 
 
 
-##==## 
+##==##
 
 <!-- .slide: data-state="quit-question hidefooter" data-background="./assets/images/monthy_phython_graal.jpg" class="transition" data-copyrights="true" -->
 
@@ -2311,8 +2337,8 @@ Notes:
 
 <!-- .element: class="presenter" --> **Jean-François Garreau  **
 
-<!-- .element: class="work-rule" --> GDG Nantes Leader & Ingénieur Lucca  
+<!-- .element: class="work-rule" --> GDG Nantes Leader & Ingénieur Lucca
 
-<!-- .element: class="email" --> **jef**@gdgnantes.com  
+<!-- .element: class="email" --> **jef**@gdgnantes.com
 
-<!-- .element: class="thank-message" --> http://goo.gl/8njYM1  
+<!-- .element: class="thank-message" --> http://goo.gl/8njYM1
