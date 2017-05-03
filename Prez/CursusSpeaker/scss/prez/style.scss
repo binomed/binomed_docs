@@ -12,7 +12,7 @@ div.no-bullet~ul{
   list-style-type: none;
 
   img{
-    margin:0; 
+    margin:0;
   }
 
   li{
@@ -104,7 +104,7 @@ p.big-text.arial{
 
 div.flex-hori{
   display: flex;
-  flex-direction: row;  
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
 
@@ -115,13 +115,13 @@ div.flex-hori{
 
 div.flex-col{
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
 
 /*
-* 
+*
 * MIXINS
 **/
 
@@ -135,4 +135,27 @@ div.flex-col{
 @for $i from 1 through 20{
     @include img-size-prefix(h, height, $i * 50);
     @include img-size-prefix(w, width, $i * 50);
+}
+
+
+
+/**
+* Gestion du highlighting de code
+*/
+
+.reveal .slides section.with-code h2 {
+    position: relative;
+    z-index: 100;
+}
+
+code-highlighter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.reveal .backgrounds div.slide-background.with-code {
+    background: linear-gradient(rgba(63, 63, 63, 0.7), rgba(63, 63, 63, 0.7)), linear-gradient(rgba(63, 63, 63, 1), rgba(63, 63, 63, 1));
 }
