@@ -268,133 +268,178 @@ function init() {
 	]);
 
 
-	/*
 	// Code User Media 1
 	managementGeneric('user-media-v1', [{
-			'top': 'calc(90px + 13.8em)',
-			'left': '60px',
-			'width': '1000px',
-			'height': '1.4em'
+			width: '500px',
+			line: 2,
+			left: LEFT_FIRST
+		}, {
+			line: 13,
+			left: LEFT_FIRST,
+			width: '1000px'
 		},
 		{
-			'top': 'calc(90px + 7.75em)',
-			'left': '180px',
-			'width': '210px',
-			'height': '1.4em'
+			line: 8,
+			left: '190px',
+			width: '210px'
 		},
 		{
-			'top': 'calc(90px + 7.75em)',
-			'left': '380px',
-			'width': '90px',
-			'height': '1.4em'
+			line: 8,
+			left: '400px',
+			width: '90px'
 		},
 		{
-			'top': 'calc(90px + 10.35em)',
-			'left': '100px',
-			'width': '800px',
-			'height': '2.4em'
+			line: 10,
+			nbLines: 2,
+			left: LEFT_TAB,
+			width: '800px'
 		}
 	]);
 
+	// Code User Media 1
+	managementGeneric('user-media-v2', [{
+		width: '800px',
+		line: 12,
+		nbLines: 2,
+		left: LEFT_FIRST
+	}, {
+		line: 10,
+		left: LEFT_TAB,
+		width: '600px'
+	}]);
+
 	// Code Device Proximity
 	managementGeneric('device-proximity', [{
-		'top': 'calc(90px + 1.15em)',
-		'left': '250px',
-		'width': '170px'
+		width: '1000px',
+		line: 6,
+		left: LEFT_TAB
+	}, {
+		line: 2,
+		left: '250px',
+		width: '170px'
 	}]);
 
 	// Code User Proximity
 	managementGeneric('user-proximity', [{
-		'top': 'calc(90px + 1.15em)',
-		'left': '150px',
-		'width': '150px'
+		width: '1000px',
+		line: 8,
+		left: LEFT_TAB
+	}, {
+		line: 2,
+		left: '150px',
+		width: '150px'
 	}]);
 
 	// Code Web Speech
 	managementGeneric('web-speech', [{
-			'top': 'calc(90px + 1.15em)',
-			'width': '400px'
+			width: '650px',
+			line: 1
+		}, {
+			line: 2,
+			width: '450px'
 		},
 		{
-			'top': 'calc(90px + 2.30em)',
-			'width': '500px'
+			line: 3,
+			width: '500px'
 		},
 		{
-			'top': 'calc(90px + 3.45em)',
-			'width': '550px'
+			line: 4,
+			width: '550px'
 		},
 		{
-			'top': 'calc(90px + 5.75em)',
-			'width': '300px'
+			line: 6,
+			width: '350px'
 		},
 		{
-			'top': 'calc(90px + 6.90em)',
-			'width': '300px'
+			line: 7,
+			width: '350px'
 		},
 		{
-			'top': 'calc(90px + 8.05em)',
-			'left': '280px',
-			'width': '450px'
+			line: 8,
+			left: '290px',
+			width: '450px'
 		}
 	]);
 
 	// Code Web Speech Grammar
 	managementGeneric('web-speech-grammar', [{
-			'top': 'calc(90px + 2.30em)',
-			'width': '750px'
+			width: '1200px',
+			line: 1
+		}, {
+			line: 3,
+			width: '800px'
 		},
 		{
-			'top': 'calc(90px + 3.45em)',
-			'width': '700px'
+			line: 4,
+			width: '750px'
 		},
 		{
-			'top': 'calc(90px + 4.60em)',
-			'width': '650px'
+			line: 5,
+			width: '700px'
 		}
 	]);
 
 	// Code Web Speech Synthesis
 	managementGeneric('web-speech-synthesis', [{
-			'top': 'calc(90px + 2.30em)',
-			'width': '850px'
+			width: '550px',
+			line: 1
+		}, {
+			line: 3,
+			width: '900px'
 		},
 		{
-			'top': 'calc(90px + 3.45em)',
-			'width': '400px'
+			line: 4,
+			width: '450px'
 		},
 		{
-			'top': 'calc(90px + 4.60em)',
-			'width': '450px'
+			line: 5,
+			width: '500px'
 		},
 		{
-			'top': 'calc(90px + 5.75em)',
-			'width': '400px'
+			line: 6,
+			width: '450px'
 		},
 		{
-			'top': 'calc(90px + 6.90em)',
-			'width': '350px'
+			line: 7,
+			width: '400px'
 		}
 	]);
 
 	// Code Notifications
 	managementGeneric('notification', [{
-			'top': 'calc(90px + 2.30em)',
-			'width': '350px',
-			'left': '120px'
+			width: '800px',
+			line: 2,
+			left: LEFT_TAB
+		}, {
+			line: 3,
+			width: '350px',
+			left: '120px'
 		},
 		{
-			'top': 'calc(90px + 3.45em)',
-			'width': '800px',
-			'left': '140px'
+			line: 4,
+			width: '800px',
+			left: '140px'
 		},
 		{
-			'top': 'calc(90px + 4.60em)',
-			'width': '800px',
-			'height': '5.5em',
-			'left': '170px'
+			line: 5,
+			width: '800px',
+			nbLines: 5,
+			left: '170px'
 		}
 	]);
-	*/
+
+	// Code Visibility
+	managementGeneric('visibility', [{
+		line: 11,
+		width: '1000px',
+		left: LEFT_TAB
+	}, {
+		line: 2,
+		width: '550px',
+		left: LEFT_TAB
+	}]);
+	/*
+	 */
 
 
 }

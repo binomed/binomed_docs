@@ -544,7 +544,7 @@ device.gatt.getPrimaryService('heart_rate'))
 
 ##==##
 
-<!-- .slide: data-state="stop-code-write-charact" class="with-code" data-copyrights="true" data-background="#3f3f3f"  -->
+<!-- .slide: data-state="stop-code-write-charact" class="with-code" data-copyrights="true"   -->
 
 ## Les webcomponents à la rescousse
 
@@ -562,7 +562,7 @@ device.gatt.getPrimaryService('heart_rate'))
 
 ##==##
 
-<!-- .slide: class="with-code" data-background="#3f3f3f"  -->
+<!-- .slide: class="with-code"   -->
 
 ## Les webcomponents à la rescousse
 
@@ -748,7 +748,7 @@ window.navigator.vibrate(arrayOfVibration);
 
 ##==##
 
-<!-- .slide: data-type-show="prez" class="with-code" data-background="#3f3f3f" data-state="code-vibrate"-->
+<!-- .slide: data-type-show="prez" class="with-code"  data-state="code-vibrate"-->
 
 ## Vibration
 
@@ -870,7 +870,7 @@ Subtilité : ça marche mieux si le téléphone est a plat
 
 ##==##
 
-<!-- .slide: class="with-code" data-background="#3f3f3f"  data-state="code-orientation" -->
+<!-- .slide: class="with-code"   data-state="code-orientation" -->
 
 ## Device Orientation
 
@@ -1016,7 +1016,7 @@ On peut tenir compte de l'accélération classique ou avec prise en charge de la
 
 ##==##
 
-<!-- .slide: class="with-code" data-background="#3f3f3f"  data-state="code-motion" -->
+<!-- .slide: class="with-code"   data-state="code-motion" -->
 
 ## Device Motion API
 
@@ -1151,7 +1151,7 @@ function register(){
 
 ##==##
 
-<!-- .slide: class="with-code" data-background="#3f3f3f"  data-state="code-battery"  -->
+<!-- .slide: class="with-code"   data-state="code-battery"  -->
 
 ## Battery Status
 
@@ -1252,7 +1252,7 @@ updateBatteryStatus();
 
 ##==##
 
-<!-- .slide: class="with-code" data-background="#3f3f3f" -->
+<!-- .slide: class="with-code"  -->
 
 ## Light
 
@@ -1366,7 +1366,7 @@ Notes:
 
 ##==##
 
-<!-- .slide: class="with-code" data-background="#3f3f3f" -->
+<!-- .slide: class="with-code"  -->
 
 ## User Media
 
@@ -1416,7 +1416,7 @@ Notes:
 
 ##==##
 
-<!-- .slide: class="with-code" data-background="#3f3f3f"  data-state="code-user-media-v1" -->
+<!-- .slide: class="with-code"  data-state="code-user-media-v1 stop-code-user-media-v2" -->
 
 ## User Media - V1
 
@@ -1437,7 +1437,11 @@ function handleUserMedia(stream){
 navigator.getUserMedia(constraints, handleUserMedia, handleUserMediaError);
 ```
 
-<div id="highlight-user-media-v1" class="highlight-code"></div>
+<code-highlighter
+    id="highlight-user-media-v1"
+    line-height="0.55em"></code-highlighter>
+
+<!--<div id="highlight-user-media-v1" class="highlight-code"></div>-->
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 <div class="fragment" data-fragment-index="2" hidden></div>
@@ -1446,7 +1450,7 @@ navigator.getUserMedia(constraints, handleUserMedia, handleUserMediaError);
 
 ##==##
 
-<!-- .slide: class="with-code" data-background="#3f3f3f"  data-state="stop-code-user-media-v1" -->
+<!-- .slide: class="with-code"  data-state="stop-code-user-media-v1 code-user-media-v2" -->
 
 ## User Media - V2
 
@@ -1466,17 +1470,19 @@ navigator.mediaDevices.getUserMedia(constraints)
   .then(handleUserMedia).catch(handleUserMediaError);
 ```
 
-<div id="highlight-user-media-v2" class="highlight-code"></div>
-<div id="highlight-user-media-v2-2" class="highlight-code"></div>
+
+<code-highlighter
+    id="highlight-user-media-v2"
+    line-height="0.55em"></code-highlighter>
+
+<div class="fragment" data-fragment-index="1" hidden></div>
 
 Notes:
 Toujours besoin de adapter.js pour faire marcher correctement !
 
-
-
 ##==##
 
-<!-- .slide: data-type-show="prez"  -->
+<!-- .slide: data-type-show="prez" data-state="stop-code-user-media-v2"  -->
 
 ## User Media
 
@@ -1502,7 +1508,7 @@ Toujours besoin de adapter.js pour faire marcher correctement !
 </div>
 
 ##==##
-<!-- .slide: data-state="stop-usermedia"-->
+<!-- .slide: data-state="stop-usermedia stop-code-user-media-v2"-->
 
 <div class="compat">
   <div class="chrome">
@@ -1571,7 +1577,7 @@ Firefox uniquement !
 
 ##==##
 
-<!-- .slide: class="with-code" data-background="#3f3f3f" data-state="code-device-proximity stop-code-user-proximity" -->
+<!-- .slide: class="with-code"  data-state="code-device-proximity stop-code-user-proximity" -->
 
 ## Proximity - Device Proximity
 
@@ -1590,7 +1596,11 @@ function unregister(){
 }
 ```
 
-<div id="highlight-device-proximity" class="highlight-code"></div>
+
+<code-highlighter
+    id="highlight-device-proximity"
+    line-height="0.55em"></code-highlighter>
+<!--<div id="highlight-device-proximity" class="highlight-code"></div>-->
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 
@@ -1614,7 +1624,7 @@ Firefox uniquement !
 
 ##==##
 
-<!-- .slide: class="with-code" data-background="#3f3f3f" data-state="stop-code-device-proximity code-user-proximity"  -->
+<!-- .slide: class="with-code"  data-state="stop-code-device-proximity code-user-proximity"  -->
 
 ## Proximity - User Proximity
 
@@ -1634,7 +1644,11 @@ function unregister(){
 }
 ```
 
-<div id="highlight-user-proximity" class="highlight-code"></div>
+<code-highlighter
+    id="highlight-user-proximity"
+    line-height="0.55em"></code-highlighter>
+
+<!--<div id="highlight-user-proximity" class="highlight-code"></div>-->
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 
@@ -1712,7 +1726,7 @@ Firefox uniquement !
 
 ##==##
 
-<!-- .slide: class="with-code" data-background="#3f3f3f" data-state="code-web-speech stop-code-web-speech-gramar"  -->
+<!-- .slide: class="with-code"  data-state="code-web-speech stop-code-web-speech-gramar"  -->
 
 ## Web Speech - Utilisation
 
@@ -1729,7 +1743,10 @@ recognition.onresult = function(event) {
 }
 ```
 
-<div id="highlight-web-speech" class="highlight-code"></div>
+<code-highlighter
+    id="highlight-web-speech"
+    line-height="0.55em"></code-highlighter>
+<!--<div id="highlight-web-speech" class="highlight-code"></div>-->
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 <div class="fragment" data-fragment-index="2" hidden></div>
@@ -1740,7 +1757,7 @@ recognition.onresult = function(event) {
 
 ##==##
 
-<!-- .slide: class="with-code" data-background="#3f3f3f" data-state="stop-code-web-speech code-web-speech-grammar stop-code-web-speech-synthesis" -->
+<!-- .slide: class="with-code"  data-state="stop-code-web-speech code-web-speech-grammar stop-code-web-speech-synthesis" -->
 
 ## Web Speech - Grammar
 
@@ -1757,7 +1774,10 @@ recognition.maxAlternatives = 1;
 ```
 
 
-<div id="highlight-web-speech-grammar" class="highlight-code"></div>
+<code-highlighter
+    id="highlight-web-speech-grammar"
+    line-height="0.55em"></code-highlighter>
+<!--<div id="highlight-web-speech-grammar" class="highlight-code"></div>-->
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 <div class="fragment" data-fragment-index="2" hidden></div>
@@ -1766,7 +1786,7 @@ recognition.maxAlternatives = 1;
 
 ##==##
 
-<!-- .slide: data-state="stop-code-web-speech-grammar code-web-speech-synthesis stop-webspeech" class="with-code" data-background="#3f3f3f" -->
+<!-- .slide: data-state="stop-code-web-speech-grammar code-web-speech-synthesis stop-webspeech" class="with-code"  -->
 
 ## Web Speech Synthesis
 
@@ -1780,8 +1800,10 @@ utterThis.rate = rate.value;
 synth.speak(utterThis);
 ```
 
-
-<div id="highlight-web-speech-synthesis" class="highlight-code"></div>
+<code-highlighter
+    id="highlight-web-speech-synthesis"
+    line-height="0.55em"></code-highlighter>
+<!--<div id="highlight-web-speech-synthesis" class="highlight-code"></div>-->
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 <div class="fragment" data-fragment-index="2" hidden></div>
@@ -1791,7 +1813,7 @@ synth.speak(utterThis);
 
 ##==##
 
-<!-- .slide: data-background="#3d4349" class="transition" data-state="start-webspeech stop-code-web-speech-synhtesis" data-type-show="prez"  -->
+<!-- .slide: data-background="#3d4349" class="transition" data-state="start-webspeech stop-code-web-speech-synthesis" data-type-show="prez"  -->
 
 ![center h-600](./assets/images/demo_time.jpg)
 
@@ -1801,7 +1823,7 @@ synth.speak(utterThis);
 </div>
 
 ##==##
-<!-- .slide: data-state="stop-webspeech stop-web-speech-synthesis"-->
+<!-- .slide: data-state="stop-webspeech stop-code-web-speech-synthesis"-->
 
 <div class="compat">
   <div class="chrome">
@@ -1870,7 +1892,7 @@ Notes:
 
 ##==##
 
-<!-- .slide: class="with-code" data-background="#3f3f3f" data-state="code-notification" -->
+<!-- .slide: class="with-code"  data-state="code-notification" -->
 
 ## Notification - Utilisation
 
@@ -1890,7 +1912,10 @@ function showNotification() {
   }); }
 ```
 
-<div id="highlight-notification" class="highlight-code"></div>
+<code-highlighter
+    id="highlight-notification"
+    line-height="0.55em"></code-highlighter>
+<!--<div id="highlight-notification" class="highlight-code"></div>-->
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 <div class="fragment" data-fragment-index="2" hidden></div>
@@ -1991,13 +2016,13 @@ On ajoute sur la notification
 
 ##==##
 
-<!-- .slide: data-type-show="prez" class="transition-white" -->
+<!-- .slide: data-type-show="prez" class="transition-white" data-state="stop-code-visibility" -->
 
 # Service Workers
 
 ##==##
 
-<!-- .slide: data-type-show="full"-->
+<!-- .slide: data-type-show="full" data-state="stop-code-visibility"-->
 
 ## Activité dans l'application ?
 
@@ -2005,7 +2030,7 @@ On ajoute sur la notification
 
 ##==##
 
-<!-- .slide: class="with-code" data-background="#3f3f3f" data-state="code-notification" -->
+<!-- .slide: class="with-code"  data-state="code-visibility" -->
 
 ## Page Visivility API
 
@@ -2025,9 +2050,16 @@ if (typeof document.addEventListener != "undefined" &&
 }
 ```
 
-<div id="highlight-visibility" class="highlight-code"></div>
+<code-highlighter
+    id="highlight-visibility"
+    line-height="0.55em"></code-highlighter>
+
+<!--<div id="highlight-visibility" class="highlight-code"></div>-->
+<div class="fragment" data-fragment-index="1" hidden></div>
 
 ##==##
+
+<!-- .slide:  data-state="stop-code-visibility" -->
 
 <div class="compat">
   <div class="chrome">
@@ -2103,7 +2135,7 @@ Notes:
 
 ## Web Manifest - Utilisation
 
-<!-- .slide: class="with-code" data-background="#3f3f3f" data-state="" -->
+<!-- .slide: class="with-code"  data-state="" -->
 
 <!-- .element: class="big-code" -->
 ```html
@@ -2115,7 +2147,7 @@ Notes:
 
 ## Web Manifest - Utilisation
 
-<!-- .slide: class="with-code" data-background="#3f3f3f" data-state="" -->
+<!-- .slide: class="with-code"  data-state="" -->
 
 ```json
 {
