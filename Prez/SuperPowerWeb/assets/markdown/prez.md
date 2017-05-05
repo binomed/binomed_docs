@@ -542,47 +542,10 @@ device.gatt.getPrimaryService('heart_rate'))
 <div class="fragment" data-fragment-index="2" hidden></div>
 <div class="fragment" data-fragment-index="3" hidden></div>
 
-##==##
-
-<!-- .slide: data-state="stop-code-write-charact" class="with-code" data-copyrights="true"   -->
-
-## Les webcomponents à la rescousse
-
-
-```html
-<platinum-bluetooth-device services-filter='["battery_service"]'>
-  <platinum-bluetooth-service service='battery_service'>
-    <platinum-bluetooth-characteristic characteristic='battery_level'>
-    </platinum-bluetooth-characteristic>
-  </platinum-bluetooth-service>
-</platinum-bluetooth-device>
-```
-
-<div class="copyrights white">Francois Beaufort</div>
 
 ##==##
 
-<!-- .slide: class="with-code"   -->
-
-## Les webcomponents à la rescousse
-
-```javascript
-var bluetoothDevice = document.querySelector('platinum-bluetooth-device');
-var batteryLevel = document.querySelector('platinum-bluetooth-characteristic');
-
-button.addEventListener('click', function() {
-  bluetoothDevice.request().then(function() {
-    return batteryLevel.read().then(function(value) {
-      console.log('Battery Level is ' + value.getUint8(0) + '%');
-    });
-  })
-  .catch(function(error) { });
-});
-```
-
-##==##
-
-<!-- .slide: data-type-show="full" -->
+<!-- .slide: data-type-show="full" data-state="stop-code-write-charact" -->
 
 ## Open source quand tu nous tiens !
 
@@ -592,7 +555,7 @@ button.addEventListener('click', function() {
 
 ##==##
 
-<!-- .slide: data-background="#3d4349" class="transition" data-type-show="prez"-->
+<!-- .slide: data-background="#3d4349" class="transition" data-type-show="prez" data-state="stop-code-write-charact"-->
 
 ![center h-600](./assets/images/demo_time.jpg)
 
@@ -1329,7 +1292,8 @@ Notes:
 </div>
 
 
-
+Notes:
+Va arriver dans les generic sensors !
 
 ##==##
 
@@ -1839,11 +1803,11 @@ synth.speak(utterThis);
     <div class="ios unsupport">-</div>
   </div>
   <div class="opera">
-    <div class="desktop partial">draft</div>
-    <div class="android partial">draft</div>
+    <div class="desktop partial">support</div>
+    <div class="android partial">support</div>
   </div>
   <div class="edge">
-    <div class="desktop partial">draft</div>
+    <div class="desktop partial">dev</div>
   </div>
   <div class="ie">
     <div class="old unsupport">-</div>
@@ -1949,7 +1913,7 @@ On ajoute sur la notification
     <div class="android">33+</div>
   </div>
   <div class="edge">
-    <div class="desktop partial">draft</div>
+    <div class="desktop">14+</div>
   </div>
   <div class="ie">
     <div class="old unsupport">-</div>
@@ -2189,14 +2153,14 @@ Notes:
     <div class="android">26+</div>
   </div>
   <div class="edge">
-    <div class="desktop unsupport">consider</div>
+    <div class="desktop partial">dev</div>
   </div>
   <div class="ie">
     <div class="old unsupport">-</div>
     <div class="new unsupport">-</div>
   </div>
   <div class="safari">
-    <div class="ios unsupport">-</div>
+    <div class="ios partial">consider</div>
   </div>
 </div>
 
