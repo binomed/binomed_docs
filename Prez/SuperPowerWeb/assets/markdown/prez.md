@@ -433,7 +433,7 @@ navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }]
 
 <code-highlighter
     id="highlight-connect-ble"
-    line-height="0.55em"></code-highlighter>
+    line-height="0.57em"></code-highlighter>
 <!--<div id="highlight-connect-ble" class="highlight-code"></div>-->
 
 <div class="fragment" data-fragment-index="1" hidden></div>
@@ -455,7 +455,7 @@ navigator.bluetooth.requestDevice({ filters: [{ name: ['MyDevice'] }] })
 
 <code-highlighter
     id="highlight-connect-by-name"
-    line-height="0.55em"></code-highlighter>
+    line-height="0.57em"></code-highlighter>
 <!--<div id="highlight-connect-by-name" class="highlight-code"></div>-->
 
 
@@ -480,7 +480,7 @@ navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }]
 
 <code-highlighter
     id="highlight-connection"
-    line-height="0.55em"></code-highlighter>
+    line-height="0.57em"></code-highlighter>
 
 <!--<div id="highlight-connection" class="highlight-code"></div>-->
 
@@ -508,7 +508,7 @@ device.gatt.getPrimaryService('battery_service')
 
 <code-highlighter
     id="highlight-read-charact"
-    line-height="0.55em"></code-highlighter>
+    line-height="0.57em"></code-highlighter>
 <!--<div id="highlight-read-charact" class="highlight-code"></div>-->
 
 <div class="fragment" data-fragment-index="1" hidden></div>
@@ -535,7 +535,7 @@ device.gatt.getPrimaryService('heart_rate'))
 
 <code-highlighter
     id="highlight-write-charact"
-    line-height="0.55em"></code-highlighter>
+    line-height="0.57em"></code-highlighter>
 <!--<div id="highlight-write-charact" class="highlight-code"></div>-->
 
 <div class="fragment" data-fragment-index="1" hidden></div>
@@ -726,7 +726,7 @@ window.navigator.vibrate(arrayOfVibration);
 
 <code-highlighter
     id="highlight-vibrate"
-    line-height="0.55em"></code-highlighter>
+    line-height="0.57em"></code-highlighter>
 
 <!--<div id="highlight-vibrate" class="highlight-code"></div>-->
 
@@ -855,7 +855,7 @@ function process(event) {
 
 <code-highlighter
     id="highlight-orientation"
-    line-height="0.55em"></code-highlighter>
+    line-height="0.57em"></code-highlighter>
 
 <!--<div id="highlight-orientation" class="highlight-code"></div>-->
 
@@ -1001,7 +1001,7 @@ function register(){
 
 <code-highlighter
     id="highlight-motion"
-    line-height="0.55em"></code-highlighter>
+    line-height="0.57em"></code-highlighter>
 
 <!--<div id="highlight-motion" class="highlight-code"></div>-->
 
@@ -1136,7 +1136,7 @@ updateBatteryStatus();
 
 <code-highlighter
     id="highlight-battery"
-    line-height="0.55em"></code-highlighter>
+    line-height="0.57em"></code-highlighter>
 
 <!--<div id="highlight-battery" class="highlight-code"></div>-->
 
@@ -1403,7 +1403,7 @@ navigator.getUserMedia(constraints, handleUserMedia, handleUserMediaError);
 
 <code-highlighter
     id="highlight-user-media-v1"
-    line-height="0.55em"></code-highlighter>
+    line-height="0.57em"></code-highlighter>
 
 <!--<div id="highlight-user-media-v1" class="highlight-code"></div>-->
 
@@ -1437,7 +1437,7 @@ navigator.mediaDevices.getUserMedia(constraints)
 
 <code-highlighter
     id="highlight-user-media-v2"
-    line-height="0.55em"></code-highlighter>
+    line-height="0.57em"></code-highlighter>
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 
@@ -1563,7 +1563,7 @@ function unregister(){
 
 <code-highlighter
     id="highlight-device-proximity"
-    line-height="0.55em"></code-highlighter>
+    line-height="0.57em"></code-highlighter>
 <!--<div id="highlight-device-proximity" class="highlight-code"></div>-->
 
 <div class="fragment" data-fragment-index="1" hidden></div>
@@ -1610,7 +1610,7 @@ function unregister(){
 
 <code-highlighter
     id="highlight-user-proximity"
-    line-height="0.55em"></code-highlighter>
+    line-height="0.57em"></code-highlighter>
 
 <!--<div id="highlight-user-proximity" class="highlight-code"></div>-->
 
@@ -1709,7 +1709,7 @@ recognition.onresult = function(event) {
 
 <code-highlighter
     id="highlight-web-speech"
-    line-height="0.55em"></code-highlighter>
+    line-height="0.57em"></code-highlighter>
 <!--<div id="highlight-web-speech" class="highlight-code"></div>-->
 
 <div class="fragment" data-fragment-index="1" hidden></div>
@@ -1740,7 +1740,7 @@ recognition.maxAlternatives = 1;
 
 <code-highlighter
     id="highlight-web-speech-grammar"
-    line-height="0.55em"></code-highlighter>
+    line-height="0.57em"></code-highlighter>
 <!--<div id="highlight-web-speech-grammar" class="highlight-code"></div>-->
 
 <div class="fragment" data-fragment-index="1" hidden></div>
@@ -1766,7 +1766,7 @@ synth.speak(utterThis);
 
 <code-highlighter
     id="highlight-web-speech-synthesis"
-    line-height="0.55em"></code-highlighter>
+    line-height="0.57em"></code-highlighter>
 <!--<div id="highlight-web-speech-synthesis" class="highlight-code"></div>-->
 
 <div class="fragment" data-fragment-index="1" hidden></div>
@@ -1878,7 +1878,7 @@ function showNotification() {
 
 <code-highlighter
     id="highlight-notification"
-    line-height="0.55em"></code-highlighter>
+    line-height="0.57em"></code-highlighter>
 <!--<div id="highlight-notification" class="highlight-code"></div>-->
 
 <div class="fragment" data-fragment-index="1" hidden></div>
@@ -2016,7 +2016,7 @@ if (typeof document.addEventListener != "undefined" &&
 
 <code-highlighter
     id="highlight-visibility"
-    line-height="0.55em"></code-highlighter>
+    line-height="0.57em"></code-highlighter>
 
 <!--<div id="highlight-visibility" class="highlight-code"></div>-->
 <div class="fragment" data-fragment-index="1" hidden></div>

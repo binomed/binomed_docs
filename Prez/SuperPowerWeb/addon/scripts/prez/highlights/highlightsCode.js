@@ -1,7 +1,7 @@
 'use strict'
 
 const MIN_TOP = '95px';
-const LINE_HEIGHT = '0.55em';
+const LINE_HEIGHT = '0.57em';
 const ADDITIONNAL_HEIGHT = '0.4em';
 const COL_WIDTH = 35;
 const LEFT_FIRST = '60px';
@@ -256,7 +256,7 @@ function init() {
 			nbLines: 2
 		}, {
 			line: 5,
-			left: '600px',
+			left: '550px',
 			width: '200px'
 
 		},
@@ -280,12 +280,12 @@ function init() {
 		},
 		{
 			line: 8,
-			left: '190px',
+			left: '170px',
 			width: '210px'
 		},
 		{
 			line: 8,
-			left: '400px',
+			left: '380px',
 			width: '90px'
 		},
 		{
@@ -356,7 +356,7 @@ function init() {
 		},
 		{
 			line: 8,
-			left: '290px',
+			left: '280px',
 			width: '450px'
 		}
 	]);
