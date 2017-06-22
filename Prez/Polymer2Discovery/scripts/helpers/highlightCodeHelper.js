@@ -31,7 +31,7 @@ export class HighlightCodeHelper {
                     properties = this.positionArray[index - 1];
                 }
             }
-            const keys = Object.keys(properties);
+            const keys = properties ? Object.keys(properties) : [];
             const area = {};
             const position = {};
             for (let i = 0; i < keys.length; i++) {
