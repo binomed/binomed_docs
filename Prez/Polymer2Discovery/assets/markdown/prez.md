@@ -127,7 +127,7 @@ Notes:
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="stop-code-test"  -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="stop-code-polymer1-declaration"  -->
 
 ## App Drawer
 
@@ -146,7 +146,7 @@ Notes:
 
 ##==##
 
-<!-- .slide: class="with-code" data-state="code-test" -->
+<!-- .slide: class="with-code" data-state="code-polymer1-declaration stop-code-polymer1-life-cycle" -->
 
 ## Polymer 1 déclaration
 
@@ -166,7 +166,7 @@ var el2 = new MyElement();
 
 
 <code-highlighter
-    id="highlight-test"
+    id="highlight-polymer1-declaration"
     line-height="1.15em"></code-highlighter>
 
 <div class="fragment" data-fragment-index="1" hidden></div>
@@ -176,7 +176,7 @@ var el2 = new MyElement();
 
 ##==##
 
-<!-- .slide: class="with-code"  data-state="stop-code-test"   -->
+<!-- .slide: class="with-code"  data-state="stop-code-polymer1-declaration code-polymer1-life-cycle stop-code-polymer1-complete"   -->
 
 ## Polymer 1 Life cycle
 
@@ -191,11 +191,21 @@ MyElement = Polymer({
 });
 ```
 
+<code-highlighter
+    id="highlight-polymer1-life-cycle"
+    line-height="1.15em"></code-highlighter>
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+<div class="fragment" data-fragment-index="4" hidden></div>
+<div class="fragment" data-fragment-index="5" hidden></div>
+
 
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state=" stop-code-polymer1-life-cycle code-polymer1-complete" -->
 
 ## Polymer 1 Complete
 
@@ -215,9 +225,19 @@ MyElement = Polymer({
 </dom-module>
 ```
 
+
+<code-highlighter
+    id="highlight-polymer1-complete"
+    line-height="1.15em"></code-highlighter>
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+
+
 ##==##
 
-<!-- .slide: data-background="#1E88E5"   -->
+<!-- .slide: data-background="#1E88E5" data-state=" stop-code-polymer1-complete"  -->
 
 # Mais ça, <br><br> c'était avant !
 
