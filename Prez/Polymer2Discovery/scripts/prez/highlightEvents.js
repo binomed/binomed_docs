@@ -372,11 +372,11 @@ export class HighlightEvents {
                 width: '50%'
             }, {
                 line: 6,
-                left: '760px',
+                left: '720px',
                 width: '330px'
             }, {
                 line: 8,
-                left: '800px',
+                left: '760px',
                 width: '180px'
             }]
         });
@@ -390,19 +390,19 @@ export class HighlightEvents {
                 width: '100%'
             }, {
                 line: 1,
-                left: '500px',
-                width: '200px'
+                left: '350px',
+                width: '250px'
             }, {
                 line: 1,
-                left: '600px',
-                width: '300px'
+                left: '650px',
+                width: '500px'
             }, {
                 line: 2,
                 nbLines: 4,
                 width: '90%'
             }, {
                 line: 8,
-                left: '200px',
+                left: '150px',
                 width: '40%'
             }, {
                 line: 12,

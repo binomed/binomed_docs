@@ -74,7 +74,9 @@ export class HighlightCodeHelper {
             this.eltHiglight.area = area;
             this.eltHiglight.position = position;
 
-        } catch (e) {}
+        } catch (e) {
+            console.error(e);
+        }
     }
 
     _listenFragments() {

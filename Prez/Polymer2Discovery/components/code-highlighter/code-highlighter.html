@@ -78,7 +78,7 @@
 		</div>
 		<svg class="mask-code">
 			<mask id="mask" x="0" y="0" width="100%" height="100%">
-				<rect x="0" y="0" width="100%" height="100%" class="parent" />
+				<rect id="maskParent" x="0" y="0" width="100%" height="100%" class="parent" />
 				<rect id="maskHole" class="hole" />
 			</mask>
 		</svg>
@@ -211,6 +211,8 @@
 				top,
 				left
 			}) {
+				this.$.maskParent.setAttribute('width', '100%');
+				this.$.maskParent.setAttribute('height', '100%');
 
 				const widthToUse = isFinite(String(width)) ? `${width}px` : width;
 				const heightToUse = isFinite(String(height)) ? `${height}px` : height;

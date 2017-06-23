@@ -205,7 +205,7 @@ MyElement = Polymer({
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state=" stop-code-polymer1-life-cycle code-polymer1-complete" -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="stop-code-polymer1-life-cycle code-polymer1-complete" -->
 
 ## Polymer 1 Complete
 
@@ -237,7 +237,7 @@ MyElement = Polymer({
 
 ##==##
 
-<!-- .slide: data-background="#1E88E5" data-state=" stop-code-polymer1-complete"  -->
+<!-- .slide: data-background="#1E88E5" data-state="stop-code-polymer1-complete"  -->
 
 # Mais ça, <br><br> c'était avant !
 
@@ -347,7 +347,7 @@ html imports atte la spec des imports de modules javascripts !
 
 ##==##
 
-<!-- .slide: class="transition text-white" data-state=" stop-code-component-template"  -->
+<!-- .slide: class="transition text-white" data-state="stop-code-component-template"  -->
 
 <h1>
     <svg class="h-150 color-green">
@@ -358,7 +358,7 @@ html imports atte la spec des imports de modules javascripts !
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f"  data-state=" code-component-template stop-code-component-template-use"  -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f"  data-state="code-component-template stop-code-component-template-use"  -->
 
 ## Templates
 
@@ -389,7 +389,7 @@ Notes:
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f"  data-state=" stop-code-component-template code-component-template-use stop-code-component-html-element" -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f"  data-state="stop-code-component-template code-component-template-use stop-code-component-html-element" -->
 
 ## Templates - Utilisation
 
@@ -417,7 +417,7 @@ Notes:
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state=" stop-code-component-template-use code-component-html-element stop-code-component-life-cycle"  -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="stop-code-component-template-use code-component-html-element stop-code-component-life-cycle"  -->
 
 ## Custom Elements
 
@@ -453,7 +453,7 @@ Toujours appeler super !
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state=" stop-code-component-html-element code-component-life-cycle stop-code-component-attributes"  -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="stop-code-component-html-element code-component-life-cycle stop-code-component-attributes"  -->
 
 ## Custom Elements - LifeCycle
 
