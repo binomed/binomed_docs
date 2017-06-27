@@ -1115,20 +1115,9 @@ Notes:
 Le premier charge tout
 Le second sert à détecter ce qui manque et le charge
 
-
 ##==##
 
 <!-- .slide: class="transition text-white" data-state="stop-code-polymer2-polyfill" -->
-
-# Pourquoi RC ?
-
-Notes:
-Tous les componsants Polymer 1.0 n'ont pas encore étés migrés
-
-
-##==##
-
-<!-- .slide: class="transition text-white"  -->
 
 # Comment migrer ?
 
@@ -1400,8 +1389,8 @@ J'ai mesuré mon temps
 {
 	"name": "Polymer2-Remote",
 	"dependencies": {
-		"polymer": "Polymer/polymer#2.0.0-rc.2",
-		"app-layout": "PolymerElements/app-layout#2.0-preview"
+		"polymer": "Polymer/polymer#2.0.0",
+		"app-layout": "PolymerElements/app-layout#2.0"
 	}
 }
 ```
