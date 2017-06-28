@@ -523,7 +523,7 @@ Les images & gif peuvent etre utiles
 
 ##==##
 
-<!-- .slide: class="transition-white" data-type-show="prez" -->
+<!-- .slide: class="transition-white" data-type-show="prez" data-state="stop-code-demo" -->
 
 
 # Montrez du code ou des démos
@@ -533,7 +533,38 @@ Parlez du livecoding
 
 ##==##
 
-<!-- .slide: class="transition-white" data-type-show="prez" -->
+<!-- .slide: class="with-code" data-state="code-demo" -->
+
+## Polymer 1 déclaration
+
+```javascript
+MyElement = Polymer({
+    is: 'my-element',
+    // See below for lifecycle callbacks
+    created: function() {
+    this.textContent = 'My element!';
+    }
+});
+// create an instance with createElement:
+var el1 = document.createElement('my-element');
+// ... or with the constructor:
+var el2 = new MyElement();
+```
+
+
+<code-highlighter
+    id="highlight-demo"
+    line-height="0.55em"></code-highlighter>
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+<div class="fragment" data-fragment-index="4" hidden></div>
+
+
+##==##
+
+<!-- .slide: class="transition-white" data-type-show="prez"  data-state="stop-code-demo" -->
 
 # Aérez vos slides
 
