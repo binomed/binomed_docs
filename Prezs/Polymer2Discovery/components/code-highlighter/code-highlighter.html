@@ -1,0 +1,233 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+
+<dom-module id="code-highlighter">
+	<template>
+
+		<!-- Styles MUST be inside template -->
+		<style>
+			:host {
+				display: block;
+				position: relative;
+				overflow: hidden;
+				height: 100%;
+				width: 100%;
+			}
+
+			svg.code {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+
+			svg.code rect.mask_area {
+				stroke: none;
+				fill: rgba(63, 63, 63, 0.7);
+				mask: url(#mask);
+				width: 100%;
+				height: 100%;
+			}
+
+			svg.mask-code {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+
+			svg.mask-code mask#mask {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+
+			svg.mask-code mask#mask rect.parent {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				stroke: none;
+				fill: #ffffff;
+			}
+
+			svg.mask-code mask#mask rect.hole {
+				stroke: none;
+				fill: #000000;
+				position: absolute;
+				transition-property: all;
+				transition-duration: 0.5s;
+				width: 500px;
+				height: 100px;
+			}
+		</style>
+
+
+		<svg class="code">
+			<use xlink:href="#mask_area" />
+		</svg>
+
+		<div style="display:none">
+			<svg class="code">
+				<rect id="mask_area" x="0" y="0" class="mask_area" />
+			</svg>
+		</div>
+		<svg class="mask-code">
+			<mask id="mask" x="0" y="0" width="100%" height="100%">
+				<rect id="maskParent" x="0" y="0" width="100%" height="100%" class="parent" />
+				<rect id="maskHole" class="hole" />
+			</mask>
+		</svg>
+
+
+	</template>
+
+	<script>
+		// Extend Polymer.Element base class
+		class CodeHighlighter extends Polymer.Element {
+
+			static get is() {
+				return 'code-highlighter'
+			}
+
+			static get properties() {
+				// properties, observers meta data
+				return {
+					area: {
+						type: Object,
+						observer: '_updateArea'
+					},
+					position: {
+						type: Object,
+						observer: '_updatePosition'
+					},
+					lineHeight: {
+						type: String,
+						value: null
+					},
+					colWidth: {
+						type: String,
+						value: null
+					}
+				};
+			}
+
+
+			constructor() {
+				super();
+
+			}
+
+			connectedCallback() {
+				super.connectedCallback();
+			}
+
+			_updateArea(areaNew, areaOld) {
+				this._updateFromPositionAndArea(this.position, areaNew);
+			}
+
+			_updatePosition(newPosition, oldPosition) {
+				this._updateFromPositionAndArea(newPosition, this.area);
+
+			}
+
+			_updateFromPositionAndArea(position, area) {
+				const positionObject = {
+					width: 0,
+					height: 0,
+					top: 0,
+					left: 0
+				};
+
+				if (this._validateTopFromPosition(position)) {
+					const margin = position.topMargin ? position.topMargin : 0;
+					positionObject.top = `calc(${margin} + (${this.lineHeight} * ${Math.max(0, position.line - 1)}))`;
+				} else if (this._validateTopFromArea(area)) {
+					positionObject.top = area.top;
+				}
+
+				if (this._validateHeightFromPosition(position)) {
+					positionObject.height = `calc(${this.lineHeight} * ${position.nbLines})`;
+				} else if (this._validateHeightFromArea(area)) {
+					positionObject.height = area.height;
+				}
+
+				if (this._validateLeftFromPosition(position)) {
+					const margin = position.leftMargin ? position.leftMargin : 0;
+					positionObject.left = `calc(${margin} + (${this.colWidth} * ${Math.max(0, position.col - 1)}))`;
+				} else if (this._validateLeftFromArea(area)) {
+					positionObject.left = area.left;
+				}
+
+				if (this._validateWidthFromPosition(position)) {
+					positionObject.width = `calc(${this.colWidth} * ${position.nbCols})`;
+				} else if (this._validateWidthFromArea(area)) {
+					positionObject.width = area.width;
+				}
+
+				this._changeProperties(positionObject);
+			}
+
+
+			_validateTopFromPosition(position) {
+				return this.lineHeight && position && position.line != undefined;
+			}
+
+			_validateHeightFromPosition(position) {
+				return this.lineHeight && position && position.nbLines != undefined;
+			}
+
+			_validateLeftFromPosition(position) {
+				return this.colWidth && position && position.col != undefined;
+			}
+
+			_validateWidthFromPosition(position) {
+				return this.colWidth && position && position.nbCols != undefined;
+			}
+
+			_validateTopFromArea(area) {
+				return area && area.top != undefined;
+			}
+
+			_validateHeightFromArea(area) {
+				return area && area.height != undefined;
+			}
+
+			_validateLeftFromArea(area) {
+				return area && area.left != undefined;
+			}
+
+			_validateWidthFromArea(area) {
+				return area && area.width != undefined;
+			}
+
+			_changeProperties({
+				width,
+				height,
+				top,
+				left
+			}) {
+				this.$.maskParent.setAttribute('width', '100%');
+				this.$.maskParent.setAttribute('height', '100%');
+
+				const widthToUse = isFinite(String(width)) ? `${width}px` : width;
+				const heightToUse = isFinite(String(height)) ? `${height}px` : height;
+				const topToUse = isFinite(String(top)) ? `${top}px` : top;
+				const leftToUse = isFinite(String(left)) ? `${left}px` : left;
+
+				this.$.maskHole.style.width = `${widthToUse}`;
+				this.$.maskHole.style.height = `${heightToUse}`;
+				this.$.maskHole.setAttribute('y', `${topToUse}`);
+				this.$.maskHole.setAttribute('x', `${leftToUse}`);
+			}
+
+		}
+
+		// Register custom element definition using standard platform API
+		customElements.define(CodeHighlighter.is, CodeHighlighter);
+	</script>
+</dom-module>

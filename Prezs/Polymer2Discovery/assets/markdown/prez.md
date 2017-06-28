@@ -127,7 +127,7 @@ Notes:
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="stop-code-polymer1-declaration"  -->
 
 ## App Drawer
 
@@ -146,7 +146,7 @@ Notes:
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
+<!-- .slide: class="with-code" data-state="code-polymer1-declaration stop-code-polymer1-life-cycle" -->
 
 ## Polymer 1 déclaration
 
@@ -164,9 +164,19 @@ var el1 = document.createElement('my-element');
 var el2 = new MyElement();
 ```
 
+
+<code-highlighter
+    id="highlight-polymer1-declaration"
+    line-height="1.15em"></code-highlighter>
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+<div class="fragment" data-fragment-index="4" hidden></div>
+
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
+<!-- .slide: class="with-code"  data-state="stop-code-polymer1-declaration code-polymer1-life-cycle stop-code-polymer1-complete"   -->
 
 ## Polymer 1 Life cycle
 
@@ -181,9 +191,21 @@ MyElement = Polymer({
 });
 ```
 
+<code-highlighter
+    id="highlight-polymer1-life-cycle"
+    line-height="1.15em"></code-highlighter>
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+<div class="fragment" data-fragment-index="4" hidden></div>
+<div class="fragment" data-fragment-index="5" hidden></div>
+
+
+
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="stop-code-polymer1-life-cycle code-polymer1-complete" -->
 
 ## Polymer 1 Complete
 
@@ -203,9 +225,19 @@ MyElement = Polymer({
 </dom-module>
 ```
 
+
+<code-highlighter
+    id="highlight-polymer1-complete"
+    line-height="1.15em"></code-highlighter>
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+
+
 ##==##
 
-<!-- .slide: data-background="#1E88E5"   -->
+<!-- .slide: data-background="#1E88E5" data-state="stop-code-polymer1-complete"  -->
 
 # Mais ça, <br><br> c'était avant !
 
@@ -315,7 +347,7 @@ html imports atte la spec des imports de modules javascripts !
 
 ##==##
 
-<!-- .slide: class="transition text-white"  -->
+<!-- .slide: class="transition text-white" data-state="stop-code-component-template"  -->
 
 <h1>
     <svg class="h-150 color-green">
@@ -326,7 +358,7 @@ html imports atte la spec des imports de modules javascripts !
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f"  data-state="code-component-template stop-code-component-template-use"  -->
 
 ## Templates
 
@@ -343,11 +375,21 @@ html imports atte la spec des imports de modules javascripts !
 </template>
 ```
 
+
+<code-highlighter
+    id="highlight-component-template"
+    line-height="1.15em"></code-highlighter>
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+
+
 Notes:
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f"  data-state="stop-code-component-template code-component-template-use stop-code-component-html-element" -->
 
 ## Templates - Utilisation
 
@@ -360,13 +402,22 @@ host.appendChild(clone);
 <div id="host"></div>
 ```
 
+
+<code-highlighter
+    id="highlight-component-template-use"
+    line-height="1.15em"></code-highlighter>
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+
 Notes:
 
 
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="stop-code-component-template-use code-component-html-element stop-code-component-life-cycle"  -->
 
 ## Custom Elements
 
@@ -386,13 +437,23 @@ class GdGElement extends HTMLElement {
 customElements.define('gdg-element', GdGElement);
 ```
 
+
+<code-highlighter
+    id="highlight-component-html-element"
+    line-height="1.15em"></code-highlighter>
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+<div class="fragment" data-fragment-index="4" hidden></div>
+
 Notes:
 Toujours appeler super !
 
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="stop-code-component-html-element code-component-life-cycle stop-code-component-attributes"  -->
 
 ## Custom Elements - LifeCycle
 
@@ -409,8 +470,15 @@ class GdGElement extends HTMLElement {
         // Called when the element is removed from a document
      }
 }
-
 ```
+
+
+<code-highlighter
+    id="highlight-component-life-cycle"
+    line-height="1.15em"></code-highlighter>
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
 
 Notes:
 reste aussi : adoptedCallback(oldDocument, newDocument)
@@ -420,7 +488,7 @@ Called when the element is adopted into a new document
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="stop-code-component-life-cycle code-component-attributes stop-code-component-binding"  -->
 
 ## Custom Elements - Attributes !
 
@@ -437,8 +505,14 @@ class GdGElement extends HTMLElement {
       }
     }
 }
-
 ```
+
+<code-highlighter
+    id="highlight-component-attributes"
+    line-height="1.15em"></code-highlighter>
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
 
 Notes:
 On doit préciser !! sinon c'est le navigateur ne propage pas !
@@ -446,7 +520,7 @@ On doit préciser !! sinon c'est le navigateur ne propage pas !
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="stop-code-component-attributes code-component-binding stop-code-component-dispatch" -->
 
 ## Custom Elements - Binding Attributes !
 
@@ -465,6 +539,15 @@ class GdGElement extends HTMLElement {
 }
 ```
 
+<code-highlighter
+    id="highlight-component-binding"
+    line-height="1.15em"></code-highlighter>
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+
+
+
 Notes:
 On doit préciser !! sinon c'est le navigateur ne propage pas !
 
@@ -472,7 +555,7 @@ On doit préciser !! sinon c'est le navigateur ne propage pas !
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="stop-code-component-binding code-component-dispatch"  -->
 
 ## Custom Elements - Dispatch !
 
@@ -492,13 +575,20 @@ class GdGElement extends HTMLElement {
 }
 ```
 
+<code-highlighter
+    id="highlight-component-dispatch"
+    line-height="1.15em"></code-highlighter>
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+
 Notes:
 c'est pareil en polymer 2
 
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="stop-code-component-dispatch"  -->
 
 ## Custom Elements - Utilisation
 
@@ -516,7 +606,7 @@ Notes:
 ##==##
 
 
-<!-- .slide: class="transition" data-copyrights="true"  -->
+<!-- .slide: class="transition" data-copyrights="true" data-state="stop-code-component-shadow"   -->
 
 # Attributes <br><br> VS Properties !
 
@@ -527,7 +617,7 @@ attr => seulement des strings values!
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="code-component-shadow"  -->
 
 ## Shadow Dom
 
@@ -541,11 +631,18 @@ attr => seulement des strings values!
   shadow.innerHTML += '<style>span { color: red; }</style>';
 ```
 
+<code-highlighter
+    id="highlight-component-shadow"
+    line-height="1.15em"></code-highlighter>
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+
 Notes:
 
 ##==##
 
-<!-- .slide: class="transition text-white"  -->
+<!-- .slide: class="transition text-white" data-state="stop-code-component-shadow"  -->
 
 <h1>
     <svg class="h-150 color-green">
@@ -706,6 +803,39 @@ class GdgElement extends Polymer.TemplateStamp(HTMLElement) {
 
 Notes:
 Il s'agit en fait de mixins, on peut donc choisir !
+Gestion facilité du template
+
+
+##==##
+
+<!-- .slide: class="with-code"  data-background="#3f3f3f" -->
+
+## Polymer Component - Mixin Powa !
+
+```javascript
+class GdgElement extends Polymer.PropertyAccessors(HTMLElement) {
+
+}
+```
+
+Notes:
+Getters / Setters / Synchro attributes & properties
+
+
+##==##
+
+<!-- .slide: class="with-code"  data-background="#3f3f3f" -->
+
+## Polymer Component - Mixin Powa !
+
+```javascript
+class GdgElement extends Polymer.PropertyEffects(HTMLElement) {
+
+}
+```
+
+Notes:
+Data Binding ! Dépend déjà de TemplateStamp & PropertyAccessors
 
 
 ##==##
@@ -739,7 +869,7 @@ De retour
 ##==##
 
 
-<!-- .slide: class="transition text-white"  -->
+<!-- .slide: class="transition text-white" data-state="stop-code-polymer2-base" -->
 
 <h1>
     <svg class="h-350 color-red">
@@ -752,7 +882,7 @@ Notes:
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="code-polymer2-base stop-code-polymer2-properties" -->
 
 
 ```javascript
@@ -766,6 +896,16 @@ class GdgElement extends Polymer.Element {
 customElements.define(GdgElement.is, GdgElement);
 ```
 
+
+<code-highlighter
+    id="highlight-polymer2-base"
+    line-height="1.15em"></code-highlighter>
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+<div class="fragment" data-fragment-index="4" hidden></div>
+
 Notes:
 Méthodes statiques car configuration par annoation non prévue
 
@@ -773,7 +913,7 @@ Méthodes statiques car configuration par annoation non prévue
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="stop-code-polymer2-base code-polymer2-properties" -->
 
 
 ```javascript
@@ -787,9 +927,17 @@ class GdgElement extends Polymer.Element {
 }
 ```
 
+
+<code-highlighter
+    id="highlight-polymer2-properties"
+    line-height="1.15em"></code-highlighter>
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="stop-code-polymer2-properties" -->
 
 ## Rappelez vous : Binding
 
@@ -813,7 +961,7 @@ Tout un ensemble de boillerplate pour une simple synchro !
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="stop-code-polymer2-templating" -->
 
 ## Devient
 
@@ -832,7 +980,7 @@ En gros dessous, y a un peu de magie de faite pour poser les getters & setters
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="code-polymer2-templating stop-code-polymer2-binding" -->
 
 ## Templating
 
@@ -851,13 +999,21 @@ En gros dessous, y a un peu de magie de faite pour poser les getters & setters
 </dom-module>
 ```
 
+<code-highlighter
+    id="highlight-polymer2-templating"
+    line-height="1.15em"></code-highlighter>
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+
+
 Notes:
 Il détecte automatiquement le premier template et l'ajoute au shadow dom
 
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="stop-code-polymer2-templating code-polymer2-binding" -->
 
 ## Data Binding
 
@@ -871,6 +1027,13 @@ Il détecte automatiquement le premier template et l'ajoute au shadow dom
 </dom-module>
 ```
 
+<code-highlighter
+    id="highlight-polymer2-binding"
+    line-height="1.15em"></code-highlighter>
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+
+
 Notes:
 Fonctionne aussi pour les attributs !
 Synchronise le dom / Fire les events
@@ -879,6 +1042,7 @@ Met à jour les observers
 
 ##==##
 
+<!-- .slide: data-state="stop-code-polymer2-binding" -->
 
 <div class="flex-col left-align">
     <div class="flex-hori">
@@ -903,7 +1067,7 @@ Met à jour les observers
 
 ##==##
 
-<!-- .slide: class="transition" -->
+<!-- .slide: class="transition" data-state="stop-code-polymer2-polyfill" -->
 
 
 <h1>
@@ -920,7 +1084,7 @@ IE11+ / Safari 7+/ Chrome Android
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="code-polymer2-polyfill" -->
 
 ## Polyfills
 
@@ -936,24 +1100,24 @@ IE11+ / Safari 7+/ Chrome Android
 < script src="bower_components/webcomponentsjs/webcomponents-loader.js"></ script>
 ```
 
+
+<code-highlighter
+    id="highlight-polymer2-polyfill"
+    line-height="1.15em"></code-highlighter>
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+<div class="fragment" data-fragment-index="4" hidden></div>
+
+
 Notes:
 Le premier charge tout
 Le second sert à détecter ce qui manque et le charge
 
-
 ##==##
 
-<!-- .slide: class="transition text-white"  -->
-
-# Pourquoi RC ?
-
-Notes:
-Tous les componsants Polymer 1.0 n'ont pas encore étés migrés
-
-
-##==##
-
-<!-- .slide: class="transition text-white"  -->
+<!-- .slide: class="transition text-white" data-state="stop-code-polymer2-polyfill" -->
 
 # Comment migrer ?
 
@@ -1046,7 +1210,7 @@ Notes:
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="stop-code-migration-content-polymer1" -->
 
 <h2><span class="polymer_1-0">Hyb</span><span class="polymer_2-0">rid</span></h2>
 
@@ -1065,7 +1229,7 @@ Il existe un guide de migration complet !
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="code-migration-content-polymer1 stop-code-migration-content-polymer2" -->
 
 <h2 class="polymer_1-0">Polymer 1.0</h2>
 
@@ -1077,13 +1241,20 @@ Il existe un guide de migration complet !
 </dom-module>
 ```
 
+<code-highlighter
+    id="highlight-migration-content-polymer1"
+    line-height="1.15em"></code-highlighter>
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+
 Notes:
 Pour mettre dans le shadow dom depuis notre élément il fallait utiliser content !
 
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="stop-code-migration-content-polymer1 code-migration-content-polymer2" -->
 
 <h2 class="polymer_2-0">Polymer 2.0</h2>
 
@@ -1095,13 +1266,21 @@ Pour mettre dans le shadow dom depuis notre élément il fallait utiliser conten
 </dom-module>
 ```
 
+
+<code-highlighter
+    id="highlight-migration-content-polymer2"
+    line-height="1.15em"></code-highlighter>
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+
 Notes:
 La on est proche de la spé
 
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="stop-code-migration-content-polymer2" -->
 
 <h2><span class="polymer_1-0">Hyb</span><span class="polymer_2-0">rid</span></h2>
 
@@ -1190,6 +1369,8 @@ Notes:
 
 ##==##
 
+<!-- .slide: data-state="stop-code-bower" -->
+
 <div class="flex-col timer">
     <gdg-timer></gdg-timer>
 </div>
@@ -1200,7 +1381,7 @@ J'ai mesuré mon temps
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="code-bower" -->
 
 ## Bower
 
@@ -1208,15 +1389,22 @@ J'ai mesuré mon temps
 {
 	"name": "Polymer2-Remote",
 	"dependencies": {
-		"polymer": "Polymer/polymer#2.0.0-rc.2",
-		"app-layout": "PolymerElements/app-layout#2.0-preview"
+		"polymer": "Polymer/polymer#2.0.0",
+		"app-layout": "PolymerElements/app-layout#2.0"
 	}
 }
 ```
 
+<code-highlighter
+    id="highlight-bower"
+    line-height="1.15em"></code-highlighter>
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="stop-code-bower stop-code-timer-header" -->
 
 ## Imports - Header
 
@@ -1229,7 +1417,7 @@ src="./bower_components/webcomponentsjs/webcomponents-lite.js" />
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="code-timer-header stop-code-timer-template" -->
 
 ## Timer - Header
 
@@ -1250,9 +1438,16 @@ src="./bower_components/webcomponentsjs/webcomponents-lite.js" />
 ```
 
 
+<code-highlighter
+    id="highlight-timer-header"
+    line-height="1.15em"></code-highlighter>
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="stop-code-timer-header code-timer-template stop-code-timer-script" -->
 
 ## Timer - Template
 
@@ -1272,10 +1467,17 @@ src="./bower_components/webcomponentsjs/webcomponents-lite.js" />
 </template>
 ```
 
+<code-highlighter
+    id="highlight-timer-template"
+    line-height="1.15em"></code-highlighter>
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="stop-code-timer-template code-timer-script" -->
 
 ## Timer - Script
 
@@ -1294,11 +1496,21 @@ class GdgTimer extends mix(Polymer.Element).with(DispatcherMixin, TimerModelMixi
 customElements.define(GdgTimer.is, GdgTimer);
 ```
 
+<code-highlighter
+    id="highlight-timer-script"
+    line-height="1.15em"></code-highlighter>
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+<div class="fragment" data-fragment-index="4" hidden></div>
+<div class="fragment" data-fragment-index="5" hidden></div>
+<div class="fragment" data-fragment-index="6" hidden></div>
 
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
+<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="stop-code-timer-script" -->
 
 ## Timer - Script
 
