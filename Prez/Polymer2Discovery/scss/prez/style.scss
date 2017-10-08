@@ -1,62 +1,55 @@
 @import "../theme/2016/binomed/colors";
 @import "./my_custom_style";
-
-$sommaire-img-height : 60px;
-
-
-
-strong{
-  font-weight:600 !important;
+$sommaire-img-height: 60px;
+strong {
+  font-weight: 600 !important;
 }
 
-div.no-bullet~ul{
+div.no-bullet~ul {
   list-style-type: none;
-
-  img{
-    margin:0; 
+  img {
+    margin: 0;
   }
-
-  li{
+  li {
     line-height: $sommaire-img-height;
   }
 }
 
-div.padding~*{
+div.padding~* {
   padding-left: 50px;
 }
 
-
-p.surround{
-font-weight: bold;
-font-size: 1em;
-color: #DA0E1A;
-text-align: left;
+p.surround {
+  font-weight: bold;
+  font-size: 1em;
+  color: #DA0E1A;
+  text-align: left;
 }
 
-table.table_version{
+table.table_version {
   position: absolute;
   top: 4em;
 }
 
-table.table_version td, table.table_version th {
+table.table_version td,
+table.table_version th {
   font-size: 14px;
 }
 
-.img_version{
-  margin-top:7em;
+.img_version {
+  margin-top: 7em;
 }
 
-
-.copyright.black{
+.copyright.black {
   color: grey;
   bottom: 20px;
 }
 
-p.big-text{
-  font-size:2em;
+p.big-text {
+  font-size: 2em;
 }
 
-section.surcharge:before{
+section.surcharge:before {
   content: '';
   background-image: url(../../assets/images/lucca_logo.png);
   background-size: 189px;
@@ -68,7 +61,7 @@ section.surcharge:before{
   left: -173px;
 }
 
-section.surcharge:after{
+section.surcharge:after {
   content: '';
   background-image: url(../../assets/images/lucca_logo.png);
   background-size: 189px;
@@ -80,45 +73,95 @@ section.surcharge:after{
   right: -173px;
 }
 
-section.white{
+section.white {
   background: white;
 }
 
-p.big-text.arial{
+p.big-text.arial {
   font-family: serif;
 }
 
-div.flex-hori{
+div.flex-hori {
   display: flex;
-  flex-direction: row;  
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-
-  .space{
+  .space {
     margin: 20px 50px;
   }
 }
 
-div.flex-col{
+div.flex-col {
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
 
+.reveal div.flex-col .no-hide {
+  position: relative;
+  height: 150px;
+  width: 300px;
+  svg,
+  span {
+    position: absolute;
+    left: 0;
+  }
+}
+
+div.flex-col.fragment.highlight-red,
+div.flex-col .fragment.highlight-blue {
+  .animate-fragment {
+    transition: all ease 1s;
+  }
+}
+
+div.flex-col.fragment.highlight-red {
+  .show-fragment {
+    opacity: 0;
+  }
+}
+
+div.flex-col .fragment.highlight-blue {
+  .show-fragment-two {
+    opacity: 0;
+  }
+}
+
+div.flex-col.fragment.highlight-red.visible {
+  .hide-fragment {
+    opacity: 0;
+  }
+  .show-fragment {
+    opacity: 1;
+  }
+}
+
+div.flex-col .fragment.highlight-blue.visible {
+  .hide-fragment-two {
+    opacity: 0;
+  }
+  .show-fragment-two {
+    opacity: 1;
+  }
+}
+
+
 /*
-* 
+*
 * MIXINS
 **/
 
-@mixin img-size-prefix($prefix, $attr,$size){
-    section img[alt*=#{$prefix}-#{$size}],section .#{$prefix}-#{$size},section  .#{$prefix}-#{$size}+*{
-        max-#{$attr}: #{$size}px;
-        #{$attr}: inherit;
-    }
+@mixin img-size-prefix($prefix, $attr, $size) {
+  section img[alt*=#{$prefix}-#{$size}],
+  section .#{$prefix}-#{$size},
+  section .#{$prefix}-#{$size}+* {
+    max-#{$attr}: #{$size}px;
+    #{$attr}: inherit;
+  }
 }
 
-@for $i from 1 through 20{
-    @include img-size-prefix(h, height, $i * 50);
-    @include img-size-prefix(w, width, $i * 50);
+@for $i from 1 through 20 {
+  @include img-size-prefix(h, height, $i * 50);
+  @include img-size-prefix(w, width, $i * 50);
 }
