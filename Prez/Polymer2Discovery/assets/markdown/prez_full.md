@@ -280,6 +280,43 @@ Pourquoi faire ? les web components sont mon choix logique !
 Notes:
 
 
+
+
+##==##
+
+<!-- .slide: class="transition text-white"  -->
+
+<h1>
+    <svg class="h-150 color-red">
+        <use xlink:href="#why" />
+    </svg><br> Pourquoi s'y intéresser ?
+</h1>
+
+
+
+Notes:
+
+
+##==##
+
+<!-- .slide: class="transition text-white"  -->
+
+# Frameworks compatibles
+
+<div class="flex-col">
+    <div class="flex-hori">
+        <img src="./assets/images/vue_logo.png" class="w-150">
+        <img src="./assets/images/angular.png" class="w-150">
+        <img src="./assets/images/react.svg" class="w-150">
+        <img src="./assets/images/preact.png" class="w-150">
+        <img src="./assets/images/javascript.png" class="w-150">
+    </div>
+</div>
+
+
+
+Notes:
+
 ##==##
 
 <!-- .slide: class="transition text-white"  -->
@@ -291,8 +328,6 @@ Notes:
 </h1>
 
 
-
-Notes:
 
 
 ##==##
@@ -1650,6 +1685,84 @@ Notes:
 Notes:
 
 
+##==##
+
+<!-- .slide: data-background="#e53935"   -->
+
+# Ce qui change ?
+
+<p class="fragment center-element">
+    <img src="./assets/images/bower-logo.png" class="h-150">
+    <span style="margin:0 100px;">=></span><img src="./assets/images/yarn.png" class="h-150">
+</p>
+<p class="fragment center-element">
+    <svg class="h-150 color-white">
+        <use xlink:href="#html-imports" />
+    </svg> <span style="margin-right:150px;">=></span>
+    <img src="./assets/images/javascript.png" class="w-100">
+    <span style="margin-left:20px;">ES Modules</span> </p>
+
+
+Notes:
+Yarn
+
+
+
+##==##
+
+<!-- .slide: class="transition text-white"  -->
+
+<h1>
+    <svg class="h-150 color-red">
+        <use xlink:href="#world" />
+    </svg><br> Quelles alternatives ?
+</h1>
+
+
+##==##
+
+<!-- .slide: class="transition text-white"  data-background="#575757"-->
+
+# SlimJS
+
+![center w-400](./assets/images/slim.js.png)
+
+Notes:
+Approche Objet avec templating dans le code
+
+##==##
+
+<!-- .slide: class="transition text-white"  data-background="#575757"-->
+
+# SkateJS
+
+![center w-300](./assets/images/skatejs.png)
+
+Notes:
+Approche React
+
+##==##
+
+<!-- .slide: class="transition text-white"  data-background="#575757"-->
+
+# Bram
+
+![center w-300](./assets/images/bram.svg)
+
+Notes:
+Objets pour Custom, Shadow & Templating
+
+##==##
+
+<!-- .slide: class="transition text-white"  data-background="#575757"-->
+
+# Stencil
+
+![center w-400](./assets/images/stencil.png)
+
+Notes:
+Approche de compilation
+
 
 ##==##
 
@@ -1662,7 +1775,7 @@ Notes:
 
 <div class="credits">
     <h4 >Crédits : <a href="https://thenounproject.com/" target="_blank">The noun project</a></h4>
-    <p >Icon Fair / Ralf Schmitzer / Nathan Thomson / Shmidt Sergey / Por Suppasit / Veronika Krpciarova / Logan / Gregor Cresnar / Gleb Khourunzhiy / Unlimiticon / Souvik Maity / Ananth / Landan Lloyd</p>
+    <p >Icon Fair / Ralf Schmitzer / Nathan Thomson / Shmidt Sergey / Por Suppasit / Veronika Krpciarova / Logan / Gregor Cresnar / Gleb Khourunzhiy / Unlimiticon / Souvik Maity / Ananth / Landan Lloyd / Aleksandr Vector / Stefan Wetterstrand</p>
 </div>
 
 
@@ -1725,4 +1838,10 @@ Notes:
     <!-- love -->
     <svg id="love" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.1" x="0px" y="0px" viewBox="0 0 100 125"><g transform="translate(0,-952.36218)">
         <path style="enable-background:accumulate;" d="M 31.45238,966.36218 C 18.07518,966.36218 9,977.06488 9,990.6865 c 0,23.3514 17.57143,33.0811 41,47.6757 23.42857,-14.5946 41,-24.3243 41,-47.6757 0,-13.62162 -9.07518,-24.32432 -22.45238,-24.32432 -8.61017,0 -15.68716,4.86485 -18.54762,7.78377 -2.86046,-2.91892 -9.93745,-7.78377 -18.54762,-7.78377 z" stroke="none" marker="none" visibility="visible" display="inline" overflow="visible"/></g></svg>
+    <!-- world -->
+    <svg id="world" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 164 205" enable-background="new 0 0 164 164" xml:space="preserve"><path fill-rule="evenodd" clip-rule="evenodd" d="M87.728,126.872c-1.426-3.206-5.541-5.691-8.181-2.931  c0.537-12.874,3.168-4.349,4.468-14.09c0.917-0.458,1.834-0.917,2.749-1.375c3.542-5.666,16.496-3.153,16.496-0.343  c0.185,0,0.365-0.002,0.544-0.006c1.989-3.243,3.824-6.704,5.485-10.366c-4.625-3.185-9.104-6.308-13.702-9.414l38.663-14.259  c-0.306-5.179-1.25-10.187-2.755-14.946l-1.433,4.827c-1.396-3.651-1.05-6.486-4.123-4.81c-1.429-4.544-0.43-6.552-4.297-6.873  c-0.573-3.093-1.145-6.187-1.718-9.279c-6.082-1.352-4.595-0.834-6.014-7.218c-7.306-1.717-5.677-1.132-9.967-7.388  c-4.497,1.322-4.881-0.922-8.592-4.295c-6.356-1.025-5.077-0.037-7.031-6.078c-5.028-1.321-10.306-2.025-15.749-2.025  c-9.958,0-19.366,2.355-27.696,6.54c-2.438,3.534-0.413,6.281-7.389,10.928c0.574-5.312-0.673-5.771-2.138-5.003  C19.873,40.158,10.784,58.331,10.784,77.789c0,30.214,21.683,55.355,50.338,60.725C70.739,137.408,79.769,133.354,87.728,126.872  L87.728,126.872z M4.244,102.462C-4.895,76.765,0.716,46.83,21.164,26.381c28.237-28.235,74.58-28.235,102.817,0  c12.201,12.203,19.127,27.788,20.782,43.83l-8.794,3.243c-0.998-14.85-7.126-29.407-18.39-40.671  c-24.719-24.718-65.295-24.718-90.014,0c-24.717,24.718-24.718,65.295,0,90.013c7.802,7.801,17.184,13.137,27.149,16.014  C29.736,137.202,12.654,126.108,4.244,102.462L4.244,102.462z M79.891,37.168c1.086-1.86,1.618-4.125,3.609-4.125  c1.365-4.091,6.229-0.653,8.248,0.86c3.955,0.208,3.236-0.407,3.438,3.609c4.232,0.21,3.384-0.382,3.779,3.95  c-3.666,1.31-2.356,2.582-2.233,6.875c-0.86,0.458-2.04-0.748-2.579,1.374c-1.365-1.757-0.904-1.493-3.092-1.89  c0-2.793,0.327-2.211-2.577-2.404c-0.381-3.619,0.378-3.221-3.094-3.437C85.137,37.913,84.015,38.764,79.891,37.168L79.891,37.168z   M75.875,110.735c-3.297-0.752-3.503-1.129-4.231-5.864c-3.709,0-5.843,1.242-5.843-2.063c-4.354,0-6.479,1.381-7.56-2.405  c-3.979-0.499-2.916-1.179-3.781-5.499c-6.843-3.623-5.666-1.973-6.874-9.622c-1.26-1.718-2.52-3.436-3.78-5.155  c-4.394-2.563-7.646-11.147-1.373-12.716c-0.231-4.582,2.762-3.902,0.17-10.203c1.982-3.717,3.261-4.854-2.233-5.949  c-2.138-6.944-0.247-5.344-8.249-6.187c4.813-8.341,13.466-14.127,15.121-1.718c7.499,2.779,5.463,5.793,8.936-2.406  c1.151,3.066,0.444,2.809,3.738,2.686c2.396-0.09,2.771-0.067,3.079,1.892c0.778,4.972,6.899,4.664,7.413,0.039  c0.233-2.092,0.758-3.544,1.58-6.335c-0.688,0-0.57-2.363-2.062,0c-1.155-6.35,6.122-5.408,7.216-1.031  c-1.03-1.173-1.901-1.704-3.093,0.344c0,1.145,0,2.291,0,3.437c2.267,3.021,2.735,2.364-0.343,4.123  c1.219,4.878,1.879,4.055-3.093,4.469c-2.131,5.687-2.927,2.123-3.78,10.653c5.519,0.23,7.684-1.344,9.278,3.437  c-0.477,1.041,0.536,2.571,3.5,1.89c-0.888-6.453-4.306-19.529,0.28-21.823c0,3.722,0.561,3.373,4.769,3.373  c0.115,1.375,2.055,0.87,3.029,3.051c-2.133-0.255-4.36,1.357-4.36,4.574c4.149,0,5.498-1.259,5.498,2.406  c3.793,0.164,6.186,0.186,6.186,5.499c-2.095-3.404-3.437-0.688-5.154-1.031c0,3.804,1.083,4.958-2.062,6.529  c0,5.98,1.547,6.388-3.781,6.874c-0.318,4.463,0.693,4.291-3.092,6.185c-2.977,4.676-3.547,7.635-0.945,10.546  c-3.292,0-2.896-1.765-4.21-5.047c-4.297,0-8.585-1.904-10.89-0.648c-6.296,3.433-1.629,13.326,2.641,13.021  c0.975-2.917,1.105-2.062,4.468-2.062c-1.031,2.062-1.031,1.82-1.031,4.123C77.799,102.121,73.008,105.08,75.875,110.735  L75.875,110.735z M163.289,68.896l0.392,57.567c-7.326-4.963-9.596-6.727-15.313-10.537  c-31.738,55.646-102.813,55.495-133.011,11.168c36.796,31.485,85.216,13.018,101.574-31.036c-4.625-3.185-4.646-3.548-9.245-6.655  L163.289,68.896z"/></svg>
+    <!-- Why -->
+    <svg id="why" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" enable-background="new 0 0 100 100" xml:space="preserve">
+        <path d="M50,5C25.147,5,5,25.147,5,50c0,24.854,20.147,45,45,45c24.854,0,45-20.146,45-45C95,25.147,74.854,5,50,5z M33,50  c-3.313,0-6-2.686-6-6s2.687-6,6-6s6,2.686,6,6S36.313,50,33,50z M39,72c0-6.075,4.925-11,11-11s11,4.925,11,11H39z M73,44  c0,3.314-2.687,6-6,6s-6-2.686-6-6v-6h12V44z"/>
+    </svg>
 </div>
