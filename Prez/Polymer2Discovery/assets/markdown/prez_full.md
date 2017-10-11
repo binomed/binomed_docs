@@ -127,7 +127,7 @@ Notes:
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="stop-code-polymer1-declaration"  -->
+<!-- .slide: class="with-code"  data-state="stop-code-polymer1-declaration"  -->
 
 ## App Drawer
 
@@ -205,7 +205,7 @@ MyElement = Polymer({
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="stop-code-polymer1-life-cycle code-polymer1-complete" -->
+<!-- .slide: class="with-code"  data-state="stop-code-polymer1-life-cycle code-polymer1-complete" -->
 
 ## Polymer 1 Complete
 
@@ -393,7 +393,7 @@ html imports atte la spec des imports de modules javascripts !
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f"  data-state="code-component-template stop-code-component-template-use"  -->
+<!-- .slide: class="with-code"  data-state="code-component-template stop-code-component-template-use"  -->
 
 ## Templates
 
@@ -424,7 +424,7 @@ Notes:
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f"  data-state="stop-code-component-template code-component-template-use stop-code-component-html-element" -->
+<!-- .slide: class="with-code"  data-state="stop-code-component-template code-component-template-use stop-code-component-html-element" -->
 
 ## Templates - Utilisation
 
@@ -452,7 +452,7 @@ Notes:
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="stop-code-component-template-use code-component-html-element stop-code-component-life-cycle"  -->
+<!-- .slide: class="with-code"  data-state="stop-code-component-template-use code-component-html-element stop-code-component-life-cycle"  -->
 
 ## Custom Elements
 
@@ -488,7 +488,7 @@ Toujours appeler super !
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="stop-code-component-html-element code-component-life-cycle stop-code-component-attributes"  -->
+<!-- .slide: class="with-code" data-state="stop-code-component-html-element code-component-life-cycle stop-code-component-attributes"  -->
 
 ## Custom Elements - LifeCycle
 
@@ -523,7 +523,7 @@ Called when the element is adopted into a new document
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="stop-code-component-life-cycle code-component-attributes stop-code-component-binding"  -->
+<!-- .slide: class="with-code" data-state="stop-code-component-life-cycle code-component-attributes stop-code-component-binding"  -->
 
 ## Custom Elements - Attributes !
 
@@ -555,7 +555,7 @@ On doit préciser !! sinon c'est le navigateur ne propage pas !
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="stop-code-component-attributes code-component-binding stop-code-component-dispatch" -->
+<!-- .slide: class="with-code" data-state="stop-code-component-attributes code-component-binding stop-code-component-dispatch" -->
 
 ## Custom Elements - Binding Attributes !
 
@@ -590,7 +590,7 @@ On doit préciser !! sinon c'est le navigateur ne propage pas !
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="stop-code-component-binding code-component-dispatch"  -->
+<!-- .slide: class="with-code" data-state="stop-code-component-binding code-component-dispatch"  -->
 
 ## Custom Elements - Dispatch !
 
@@ -623,7 +623,7 @@ c'est pareil en polymer 2
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="stop-code-component-dispatch"  -->
+<!-- .slide: class="with-code" data-state="stop-code-component-dispatch"  -->
 
 ## Custom Elements - Utilisation
 
@@ -652,7 +652,7 @@ attr => seulement des strings values!
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="code-component-shadow"  -->
+<!-- .slide: class="with-code" data-state="code-component-shadow"  -->
 
 ## Shadow Dom
 
@@ -688,7 +688,7 @@ Notes:
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
+<!-- .slide: class="with-code"  -->
 
 ## Vanilla Component
 
@@ -709,7 +709,7 @@ Notes:
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
+<!-- .slide: class="with-code"  -->
 
 ## Vanilla Component bis
 
@@ -796,7 +796,7 @@ C'est du sucre syntaxique sur les webcompenents
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" -->
+<!-- .slide: class="with-code" -->
 
 ## Vanilla Component
 
@@ -810,7 +810,7 @@ Notes:
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" -->
+<!-- .slide: class="with-code" -->
 
 ## Polymer Component
 
@@ -826,7 +826,7 @@ Classes ES6 !!
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" -->
+<!-- .slide: class="with-code" -->
 
 ## Polymer Component - Mixin Powa !
 
@@ -843,7 +843,7 @@ Gestion facilité du template
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" -->
+<!-- .slide: class="with-code" -->
 
 ## Polymer Component - Mixin Powa !
 
@@ -859,7 +859,7 @@ Getters / Setters / Synchro attributes & properties
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" -->
+<!-- .slide: class="with-code"  -->
 
 ## Polymer Component - Mixin Powa !
 
@@ -887,7 +887,7 @@ Data Binding ! Dépend déjà de TemplateStamp & PropertyAccessors
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" -->
+<!-- .slide: class="with-code"  -->
 
 ## Polymer Component - Heritage
 
@@ -917,7 +917,7 @@ Notes:
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="code-polymer2-base stop-code-polymer2-properties" -->
+<!-- .slide: class="with-code"  data-state="code-polymer2-base stop-code-polymer2-properties" -->
 
 
 ```javascript
@@ -948,7 +948,7 @@ Méthodes statiques car configuration par annoation non prévue
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="stop-code-polymer2-base code-polymer2-properties" -->
+<!-- .slide: class="with-code"  data-state="stop-code-polymer2-base code-polymer2-properties" -->
 
 
 ```javascript
@@ -972,7 +972,7 @@ class GdgElement extends Polymer.Element {
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="stop-code-polymer2-properties" -->
+<!-- .slide: class="with-code"  data-state="stop-code-polymer2-properties" -->
 
 ## Rappelez vous : Binding
 
@@ -996,7 +996,7 @@ Tout un ensemble de boillerplate pour une simple synchro !
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="stop-code-polymer2-templating" -->
+<!-- .slide: class="with-code"  data-state="stop-code-polymer2-templating" -->
 
 ## Devient
 
@@ -1015,7 +1015,7 @@ En gros dessous, y a un peu de magie de faite pour poser les getters & setters
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="code-polymer2-templating stop-code-polymer2-binding" -->
+<!-- .slide: class="with-code"  data-state="code-polymer2-templating stop-code-polymer2-binding" -->
 
 ## Templating
 
@@ -1048,7 +1048,7 @@ Il détecte automatiquement le premier template et l'ajoute au shadow dom
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="stop-code-polymer2-templating code-polymer2-binding" -->
+<!-- .slide: class="with-code"  data-state="stop-code-polymer2-templating code-polymer2-binding" -->
 
 ## Data Binding
 
@@ -1119,7 +1119,7 @@ IE11+ / Safari 7+/ Chrome Android
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="code-polymer2-polyfill" -->
+<!-- .slide: class="with-code"  data-state="code-polymer2-polyfill" -->
 
 ## Polyfills
 
@@ -1208,7 +1208,7 @@ Nouvelles idem
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
+<!-- .slide: class="with-code"   -->
 
 <h2 class="polymer_1-0">Polymer 1.0</h2>
 
@@ -1226,7 +1226,7 @@ Notes:
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
+<!-- .slide: class="with-code"   -->
 
 <h2 class="polymer_2-0">Polymer 2.0</h2>
 
@@ -1245,7 +1245,7 @@ Notes:
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="stop-code-migration-content-polymer1" -->
+<!-- .slide: class="with-code"  data-state="stop-code-migration-content-polymer1" -->
 
 <h2><span class="polymer_1-0">Hyb</span><span class="polymer_2-0">rid</span></h2>
 
@@ -1264,7 +1264,7 @@ Il existe un guide de migration complet !
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="code-migration-content-polymer1 stop-code-migration-content-polymer2" -->
+<!-- .slide: class="with-code"  data-state="code-migration-content-polymer1 stop-code-migration-content-polymer2" -->
 
 <h2 class="polymer_1-0">Polymer 1.0</h2>
 
@@ -1289,7 +1289,7 @@ Pour mettre dans le shadow dom depuis notre élément il fallait utiliser conten
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="stop-code-migration-content-polymer1 code-migration-content-polymer2" -->
+<!-- .slide: class="with-code"  data-state="stop-code-migration-content-polymer1 code-migration-content-polymer2" -->
 
 <h2 class="polymer_2-0">Polymer 2.0</h2>
 
@@ -1315,7 +1315,7 @@ La on est proche de la spé
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="stop-code-migration-content-polymer2" -->
+<!-- .slide: class="with-code"  data-state="stop-code-migration-content-polymer2" -->
 
 <h2><span class="polymer_1-0">Hyb</span><span class="polymer_2-0">rid</span></h2>
 
@@ -1416,7 +1416,7 @@ J'ai mesuré mon temps
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="code-bower" -->
+<!-- .slide: class="with-code"  data-state="code-bower" -->
 
 ## Bower
 
@@ -1439,7 +1439,7 @@ J'ai mesuré mon temps
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="stop-code-bower stop-code-timer-header" -->
+<!-- .slide: class="with-code"  data-state="stop-code-bower stop-code-timer-header" -->
 
 ## Imports - Header
 
@@ -1452,7 +1452,7 @@ src="./bower_components/webcomponentsjs/webcomponents-lite.js" />
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="code-timer-header stop-code-timer-template" -->
+<!-- .slide: class="with-code"  data-state="code-timer-header stop-code-timer-template" -->
 
 ## Timer - Header
 
@@ -1482,7 +1482,7 @@ src="./bower_components/webcomponentsjs/webcomponents-lite.js" />
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="stop-code-timer-header code-timer-template stop-code-timer-script" -->
+<!-- .slide: class="with-code"  data-state="stop-code-timer-header code-timer-template stop-code-timer-script" -->
 
 ## Timer - Template
 
@@ -1512,7 +1512,7 @@ src="./bower_components/webcomponentsjs/webcomponents-lite.js" />
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="stop-code-timer-template code-timer-script" -->
+<!-- .slide: class="with-code"  data-state="stop-code-timer-template code-timer-script" -->
 
 ## Timer - Script
 
@@ -1545,7 +1545,7 @@ customElements.define(GdgTimer.is, GdgTimer);
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f" data-state="stop-code-timer-script" -->
+<!-- .slide: class="with-code"  data-state="stop-code-timer-script" -->
 
 ## Timer - Script
 
@@ -1565,7 +1565,7 @@ class GdgTimer extends mix(Polymer.Element).with(DispatcherMixin, TimerModelMixi
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
+<!-- .slide: class="with-code"   -->
 
 ## Timer - Utilisation
 
@@ -1577,7 +1577,7 @@ class GdgTimer extends mix(Polymer.Element).with(DispatcherMixin, TimerModelMixi
 
 ##==##
 
-<!-- .slide: class="with-code"  data-background="#3f3f3f"  -->
+<!-- .slide: class="with-code"   -->
 
 ## Timer - Interaction
 
