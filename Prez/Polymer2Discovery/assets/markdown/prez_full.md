@@ -164,10 +164,7 @@ var el1 = document.createElement('my-element');
 var el2 = new MyElement();
 ```
 
-
-<code-highlighter
-    id="highlight-polymer1-declaration"
-    line-height="1.15em"></code-highlighter>
+<mask-highlighter id="highlight-polymer1-declaration"></mask-highlighter>
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 <div class="fragment" data-fragment-index="2" hidden></div>
@@ -191,9 +188,7 @@ MyElement = Polymer({
 });
 ```
 
-<code-highlighter
-    id="highlight-polymer1-life-cycle"
-    line-height="1.15em"></code-highlighter>
+<mask-highlighter id="highlight-polymer1-life-cycle"></mask-highlighter>
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 <div class="fragment" data-fragment-index="2" hidden></div>
@@ -225,10 +220,7 @@ MyElement = Polymer({
 </dom-module>
 ```
 
-
-<code-highlighter
-    id="highlight-polymer1-complete"
-    line-height="1.15em"></code-highlighter>
+<mask-highlighter id="highlight-polymer1-complete"></mask-highlighter>
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 <div class="fragment" data-fragment-index="2" hidden></div>
@@ -411,9 +403,8 @@ html imports atte la spec des imports de modules javascripts !
 ```
 
 
-<code-highlighter
-    id="highlight-component-template"
-    line-height="1.15em"></code-highlighter>
+<mask-highlighter
+    id="highlight-component-template"></mask-highlighter>
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 <div class="fragment" data-fragment-index="2" hidden></div>
@@ -438,9 +429,8 @@ host.appendChild(clone);
 ```
 
 
-<code-highlighter
-    id="highlight-component-template-use"
-    line-height="1.15em"></code-highlighter>
+<mask-highlighter
+    id="highlight-component-template-use"></mask-highlighter>
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 <div class="fragment" data-fragment-index="2" hidden></div>
@@ -473,9 +463,8 @@ customElements.define('gdg-element', GdGElement);
 ```
 
 
-<code-highlighter
-    id="highlight-component-html-element"
-    line-height="1.15em"></code-highlighter>
+<mask-highlighter
+    id="highlight-component-html-element"></mask-highlighter>
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 <div class="fragment" data-fragment-index="2" hidden></div>
@@ -508,9 +497,8 @@ class GdGElement extends HTMLElement {
 ```
 
 
-<code-highlighter
-    id="highlight-component-life-cycle"
-    line-height="1.15em"></code-highlighter>
+<mask-highlighter
+    id="highlight-component-life-cycle"></mask-highlighter>
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 <div class="fragment" data-fragment-index="2" hidden></div>
@@ -542,9 +530,8 @@ class GdGElement extends HTMLElement {
 }
 ```
 
-<code-highlighter
-    id="highlight-component-attributes"
-    line-height="1.15em"></code-highlighter>
+<mask-highlighter
+    id="highlight-component-attributes"></mask-highlighter>
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 <div class="fragment" data-fragment-index="2" hidden></div>
@@ -574,9 +561,9 @@ class GdGElement extends HTMLElement {
 }
 ```
 
-<code-highlighter
+<mask-highlighter
     id="highlight-component-binding"
-    line-height="1.15em"></code-highlighter>
+    line-height="1.15em"></mask-highlighter>
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 <div class="fragment" data-fragment-index="2" hidden></div>
@@ -610,9 +597,9 @@ class GdGElement extends HTMLElement {
 }
 ```
 
-<code-highlighter
+<mask-highlighter
     id="highlight-component-dispatch"
-    line-height="1.15em"></code-highlighter>
+    line-height="1.15em"></mask-highlighter>
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 <div class="fragment" data-fragment-index="2" hidden></div>
@@ -666,9 +653,9 @@ attr => seulement des strings values!
   shadow.innerHTML += '<style>span { color: red; }</style>';
 ```
 
-<code-highlighter
+<mask-highlighter
     id="highlight-component-shadow"
-    line-height="1.15em"></code-highlighter>
+    line-height="1.15em"></mask-highlighter>
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 <div class="fragment" data-fragment-index="2" hidden></div>
@@ -932,9 +919,9 @@ customElements.define(GdgElement.is, GdgElement);
 ```
 
 
-<code-highlighter
+<mask-highlighter
     id="highlight-polymer2-base"
-    line-height="1.15em"></code-highlighter>
+    line-height="1.15em"></mask-highlighter>
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 <div class="fragment" data-fragment-index="2" hidden></div>
@@ -963,9 +950,9 @@ class GdgElement extends Polymer.Element {
 ```
 
 
-<code-highlighter
+<mask-highlighter
     id="highlight-polymer2-properties"
-    line-height="1.15em"></code-highlighter>
+    line-height="1.15em"></mask-highlighter>
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 <div class="fragment" data-fragment-index="2" hidden></div>
@@ -1034,9 +1021,9 @@ En gros dessous, y a un peu de magie de faite pour poser les getters & setters
 </dom-module>
 ```
 
-<code-highlighter
+<mask-highlighter
     id="highlight-polymer2-templating"
-    line-height="1.15em"></code-highlighter>
+    line-height="1.15em"></mask-highlighter>
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 <div class="fragment" data-fragment-index="2" hidden></div>
@@ -1062,9 +1049,9 @@ Il détecte automatiquement le premier template et l'ajoute au shadow dom
 </dom-module>
 ```
 
-<code-highlighter
+<mask-highlighter
     id="highlight-polymer2-binding"
-    line-height="1.15em"></code-highlighter>
+    line-height="1.15em"></mask-highlighter>
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 
@@ -1136,9 +1123,9 @@ IE11+ / Safari 7+/ Chrome Android
 ```
 
 
-<code-highlighter
+<mask-highlighter
     id="highlight-polymer2-polyfill"
-    line-height="1.15em"></code-highlighter>
+    line-height="1.15em"></mask-highlighter>
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 <div class="fragment" data-fragment-index="2" hidden></div>
@@ -1276,9 +1263,9 @@ Il existe un guide de migration complet !
 </dom-module>
 ```
 
-<code-highlighter
+<mask-highlighter
     id="highlight-migration-content-polymer1"
-    line-height="1.15em"></code-highlighter>
+    line-height="1.15em"></mask-highlighter>
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 <div class="fragment" data-fragment-index="2" hidden></div>
@@ -1302,9 +1289,9 @@ Pour mettre dans le shadow dom depuis notre élément il fallait utiliser conten
 ```
 
 
-<code-highlighter
+<mask-highlighter
     id="highlight-migration-content-polymer2"
-    line-height="1.15em"></code-highlighter>
+    line-height="1.15em"></mask-highlighter>
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 <div class="fragment" data-fragment-index="2" hidden></div>
@@ -1430,9 +1417,9 @@ J'ai mesuré mon temps
 }
 ```
 
-<code-highlighter
+<mask-highlighter
     id="highlight-bower"
-    line-height="1.15em"></code-highlighter>
+    line-height="1.15em"></mask-highlighter>
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 <div class="fragment" data-fragment-index="2" hidden></div>
@@ -1473,9 +1460,9 @@ src="./bower_components/webcomponentsjs/webcomponents-lite.js" />
 ```
 
 
-<code-highlighter
+<mask-highlighter
     id="highlight-timer-header"
-    line-height="1.15em"></code-highlighter>
+    line-height="1.15em"></mask-highlighter>
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 <div class="fragment" data-fragment-index="2" hidden></div>
@@ -1502,9 +1489,9 @@ src="./bower_components/webcomponentsjs/webcomponents-lite.js" />
 </template>
 ```
 
-<code-highlighter
+<mask-highlighter
     id="highlight-timer-template"
-    line-height="1.15em"></code-highlighter>
+    line-height="1.15em"></mask-highlighter>
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 <div class="fragment" data-fragment-index="2" hidden></div>
@@ -1531,9 +1518,9 @@ class GdgTimer extends mix(Polymer.Element).with(DispatcherMixin, TimerModelMixi
 customElements.define(GdgTimer.is, GdgTimer);
 ```
 
-<code-highlighter
+<mask-highlighter
     id="highlight-timer-script"
-    line-height="1.15em"></code-highlighter>
+    line-height="1.15em"></mask-highlighter>
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 <div class="fragment" data-fragment-index="2" hidden></div>
