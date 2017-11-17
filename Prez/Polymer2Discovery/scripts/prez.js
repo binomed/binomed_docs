@@ -3,12 +3,15 @@ import {
     RevealEngineEvents
 } from './prez/revealEngineEvents.js';
 
+import {MyoHelper} from './helpers/myoHelper.js';
+
 
 (function () {
 
 
     function pageLoad() {
         new RevealEngineEvents();
+        new MyoHelper();
 
         _manageTimer();
 

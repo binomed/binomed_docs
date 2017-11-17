@@ -3,7 +3,8 @@
   "name": "Themes",
   "version": "1.0.0",
   "dependencies": {
-    "mask-highlighter": "^1.0.1"
+    "mask-highlighter": "^1.0.1",
+    "myo": "^3.0.0"
   },
   "devDependencies": {
     "babel-preset-es2015": "^6.13.2",
