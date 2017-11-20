@@ -3,6 +3,8 @@ export class MyoHelper{
 
 		this.timerLock = null;
 		this.innerLock = true;
+		this.timeFist = 0;
+		this.intervalWaveIn = null;
 
 		if(Myo){
 			Myo.connect('jef.polymer.prez');
@@ -16,71 +18,65 @@ export class MyoHelper{
 			//Whenever we get a pose event, we'll update the image sources with the active version of the image
 			Myo.on('pose', (pose) => {
 				console.log('Pose', pose);
-				const timeoutFunction = () => {
-					this.innerLock = true;
-					console.log('lock');
-					Myo.myos[0].lock();
-					Myo.myos[0].vibrate();
-				}
 				switch(pose){
 					case 'double_tap':
-						if (this.innerLock){
-							this.innerLock = false;
-							console.log('unlock');
-							Myo.myos[0].vibrate();
-							Myo.myos[0].unlock();
-							this.timerLock = setTimeout(timeoutFunction,5000);
-						}else{
+						if (!this.innerLock){
 							this._emulateKey('next');
 							clearTimeout(this.timerLock);
-							this.timerLock = setTimeout(timeoutFunction,5000);
-
+							this.timerLock = setTimeout(this._timeoutFunction.bind(this),5000);
 						}
 						break;
-					/*case 'wave_in':
+					case 'wave_int':
 						if (!this.innerLock){
-							this._emulateKey('left');
-							clearTimeout(this.timerLock);
-							this.timerLock = setTimeout(timeoutFunction,5000);
+							this.intervalWaveIn = setInterval(this._intervalBackWard.bind(this, 1000));
 						}
 						break;
-					case 'wave_out':
-						if (!this.innerLock){
-							this._emulateKey('right');
-							clearTimeout(this.timerLock);
-							this.timerLock = setTimeout(timeoutFunction,5000);
-						}
-						break;*/
-					/*case 'fingers_spread':
-						if (!this.innerLock){
-							this._emulateKey('prev');
-							clearTimeout(this.timerLock);
-							this.timerLock = setTimeout(timeoutFunction,5000);
-						}
-						break;*/
 					case 'fist':
-						clearTimeout(this.timerLock);
-						this.innerLock = true;
-						console.log('lock');
-						Myo.myos[0].lock();
-						Myo.myos[0].vibrate();
+						this.timeFist = Date.now();
 				}
-				//$('img.' + pose).attr('src', 'img/' + pose + '_active.png');
-				//$('.mainPose img').attr('src', 'img/' + pose + '_active.png');
+			});
+
+			Myo.on('pose_off', (pose) =>{
+				console.log('pose_off', pose);
+				console.log('timeFist', this.timeFist, Date.now() - this.timeFist);
+				console.log(this.innerLock);
+				if (pose === 'fist'
+					&& Date.now() - this.timeFist > 1000
+					&& this.innerLock){
+						this.innerLock = false;
+						console.log('unlock');
+						Myo.myos[0].vibrate();
+						Myo.myos[0].unlock();
+						this.timerLock = setTimeout(this._timeoutFunction.bind(this),5000);
+				}else if (pose === 'wave_in'){
+					clearInterval(this.intervalWaveIn);
+				}
+
 			})
 
 			//Whenever a myo locks we'll switch the main image to a lock image
 			Myo.on('locked', () => {
 				console.log('locked')
-				//$('.mainPose img').attr('src', 'img/locked.png');
 			});
 
 			//Whenever a myo unlocks we'll switch the main image to a unlock image
 			Myo.on('unlocked', () =>{
 				console.log('unlocked');
-				//$('.mainPose img').attr('src', 'img/unlocked.png');
 			});
 		}
+	}
+
+	_timeoutFunction(){
+		this.innerLock = true;
+		console.log('lock');
+		Myo.myos[0].lock();
+		Myo.myos[0].vibrate();
+	}
+
+	_intervalBackWard(){
+		this._emulateKey('left');
+		clearTimeout(this.timerLock);
+		this.timerLock = setTimeout(this._timeoutFunction.bind(this),5000);
 	}
 
 	_emulateKey(key){
