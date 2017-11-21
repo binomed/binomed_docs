@@ -12,6 +12,7 @@ export class HighlightCodeHelper {
     }) {
         this.eltHiglight = document.getElementById(`highlight-${keyElt}`);
         this.positionArray = positionArray;
+        this.lastIndex = 0;
 
         Reveal.addEventListener(`code-${keyElt}`, this._listenFragments.bind(this));
         Reveal.addEventListener(`stop-code-${keyElt}`, this._unregisterFragments.bind(this));
@@ -20,12 +21,19 @@ export class HighlightCodeHelper {
     _progressFragment(event) {
         try {
             let properties = null
+            if (event.type === 'init') {
+                if (this.lastIndex != 0){
+                    properties = this.positionArray[this.lastIndex];
+                }
+            }else
             if (event.type === 'fragmentshown') {
                 const index = +event.fragment.getAttribute('data-fragment-index');
+                this.lastIndex = index;
                 properties = this.positionArray[index];
 
             } else {
                 const index = +event.fragment.getAttribute('data-fragment-index');
+                this.lastIndex = index;
                 // On reset les properties
                 if (index > 0) {
                     properties = this.positionArray[index - 1];
@@ -80,6 +88,7 @@ export class HighlightCodeHelper {
     }
 
     _listenFragments() {
+        this._progressFragment({type:"init", fragment: document.querySelector('div.fragment.visible')});
         Reveal.addEventListener('fragmentshown', this._progressFragment.bind(this));
         Reveal.addEventListener('fragmenthidden', this._progressFragment.bind(this));
     }
