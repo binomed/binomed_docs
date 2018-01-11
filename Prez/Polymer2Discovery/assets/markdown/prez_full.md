@@ -553,8 +553,8 @@ class GdGElement extends HTMLElement {
         this[attr] = newValue;
     }
     set gdg(val){
-        if (this._val === val) return;
-        this._val = val;
+        if (this._gdg === val) return;
+        this._gdg = val;
         this.setAttribute('gdg', val);
     }
     get gdg(){ return this._gdg; }
@@ -970,8 +970,8 @@ class GdGElement extends HTMLElement {
     connectedCallback(){ this.innerHTML = '...'}
     attributeChangedCallback(attr, oldValue, newValue) { this[attr] = newValue;}
     set gdg(val){
-        if (this._val === val) return;
-        this._val = val;
+        if (this._gdg === val) return;
+        this._gdg = val;
         this.setAttribute('gdg', val);
     }
     get gdg(){ return this._gdg; }

@@ -5,6 +5,7 @@ export class MyoHelper{
 		this.innerLock = true;
 		this.timeFist = 0;
 		this.intervalWaveIn = null;
+		this.lockingPolicyApply = false;
 
 		if(Myo){
 			Myo.connect('jef.polymer.prez');
@@ -12,7 +13,10 @@ export class MyoHelper{
 
 			Myo.on('status', (data) => {
 				console.log('MyoStatus', data);
-				Myo.setLockingPolicy("none");
+				if (data.type === 'connected' && !this.lockingPolicyApply){
+					this.lockingPolicyApply = true;
+					Myo.setLockingPolicy("none");
+				}
 			});
 
 			//Whenever we get a pose event, we'll update the image sources with the active version of the image
@@ -26,7 +30,7 @@ export class MyoHelper{
 							this.timerLock = setTimeout(this._timeoutFunction.bind(this),5000);
 						}
 						break;
-					case 'wave_int':
+					case 'wave_in':
 						if (!this.innerLock){
 							this.intervalWaveIn = setInterval(this._intervalBackWard.bind(this, 1000));
 						}
