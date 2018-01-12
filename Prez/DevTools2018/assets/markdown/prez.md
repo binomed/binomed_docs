@@ -30,17 +30,63 @@ Frontend developper & Community Manager
 [@jefBinomed](https://twitter.com/jefBinomed)
 
 
+##==##
+
+<!-- .slide: class="transition-black"-->
+
+# Helpers
+
+##==##
+
+Unified menu
+
+screenshots
+
+third party badges
+
+simplification menu devices
+
+link visual studio
 
 ##==##
 
 <!-- .slide: class="transition-black"-->
 
-# Objectifs ?
+# CSS
+
+##==##
+
+CSS Grid
+
+##==##
+
+<!-- .slide: class="transition-black"-->
+
+# Performances & css coverage
+
+##==##
+
+Audit panel
+
+coverage tab
+
+##==##
+
+<!-- .slide: class="transition-black"-->
+
+# Logs
 
 
 ##==##
 
 <!-- .slide: class="transition-black"-->
+
+# Debug Javascript
+
+##==##
+
+Breakpoint inline
+
 
 
 ##==##
