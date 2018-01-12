@@ -7,6 +7,6 @@ node_modules
 .sass-cache
 scss
 css/theme
-demo/node_modules
-demo/src/css/
-demo/public
+pwa/node_modules
+pwa/src/css/
+pwa/public
