@@ -8,24 +8,27 @@ var browserSync = require("browser-sync").create();
 var sass = require('gulp-sass');
 var reload = browserSync.reload;
 
-gulp.task('serve',['sass'], function(){
+gulp.task('serve', ['sass'], function () {
   browserSync.init({
-    server:'./'
+    server: './'
   });
   gulp.watch("./scss/prez/**/*.scss", ['sass']);
   gulp.watch("./*.html").on('change', reload);
   gulp.watch("./assets/**/*.md").on('change', reload);
+  gulp.watch("./scripts/**/*.js").on('change', reload);
 });
 
-gulp.task('sass',function(){
-    return gulp.src('./scss/**/*.scss')
+gulp.task('sass', function () {
+  return gulp.src('./scss/**/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass()).on('error', function logError(error) {
-        console.error(error);
+      console.error(error);
     })
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('./css'))
-    .pipe(reload({stream:true}));  
+    .pipe(reload({
+      stream: true
+    }));
 });
 
 

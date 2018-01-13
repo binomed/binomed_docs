@@ -30,6 +30,22 @@ Frontend developper & Community Manager
 [@jefBinomed](https://twitter.com/jefBinomed)
 
 
+
+##==##
+
+<!-- .slide: class="transition-black"-->
+
+# Config / Activation
+
+
+##==##
+
+# Activation des experiments
+
+![center w-700](./assets/images/activation.png)
+
+chrome://flags/#enable-devtools-experiments
+
 ##==##
 
 <!-- .slide: class="transition-black"-->
