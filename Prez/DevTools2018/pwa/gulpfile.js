@@ -42,7 +42,7 @@ gulp.task('sass', function () {
     }));
 });
 
-gulp.task('browserify', ['browserify_phone', 'browserify_moderator', 'browserify_screen', 'browserify_summary']);
+gulp.task('browserify', ['browserify_phone']);
 
 gulp.task('browserify_phone', function () {
   return browserify({
@@ -58,46 +58,6 @@ gulp.task('browserify_phone', function () {
     .pipe(gulp.dest('./src'));
 });
 
-gulp.task('browserify_moderator', function () {
-  return browserify({
-      entries: './src/scripts/app_moderator.js',
-      debug: true,
-      extensions: extensions
-    })
-    .transform(babelify)
-    .on('error', gutil.log)
-    .bundle()
-    .on('error', gutil.log)
-    .pipe(source('bundle_moderator.js'))
-    .pipe(gulp.dest('./src'));
-});
-
-gulp.task('browserify_screen', function () {
-  return browserify(['./src/scripts/app_screen.js'], {
-      debug: true
-    })
-    .transform(babelify)
-    .on('error', gutil.log)
-    .bundle()
-    .on('error', gutil.log)
-    .pipe(source('bundle_screen.js'))
-    .pipe(gulp.dest('./src'));
-});
-
-
-gulp.task('browserify_summary', function () {
-  return browserify(['./src/scripts/app_summary.js'], {
-      debug: true
-    })
-    .transform(babelify)
-    .on('error', gutil.log)
-    .bundle()
-    .on('error', gutil.log)
-    .pipe(source('bundle_summary.js'))
-    .pipe(gulp.dest('./src'));
-});
-
-
 gulp.task("copy", function () {
   return gulp.src([
       "src/*.html",
@@ -112,14 +72,14 @@ gulp.task("copy", function () {
 });
 
 gulp.task("replace", function () {
-  gulp.src(['./public/bundle_phone.js', './public/bundle_moderator.js'])
+  gulp.src(['./public/bundle_phone.js'])
     .pipe(replace('/* SERVICE_WORKER_REPLACE', ''))
     .pipe(replace('SERVICE_WORKER_REPLACE */', ''))
     .pipe(gulp.dest('./public/'));
 });
 
 gulp.task("replace_timestamp", function () {
-  gulp.src(['./public/service-worker-phone.js', './public/service-worker-moderator.js'])
+  gulp.src(['./public/service-worker-phone.js'])
     .pipe(replace('{timestamp}', Date.now()))
     .pipe(gulp.dest('./public/'));
 })

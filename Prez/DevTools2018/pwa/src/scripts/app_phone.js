@@ -6,12 +6,6 @@ import {
     BASE_COLOR
 } from './common/const.js';
 import {
-    FireBaseApp
-} from './firebase/firebase.js';
-import {
-    FireBaseAuth
-} from './firebase/firebaseAuth.js';
-import {
     DrawCanvas
 } from './canvas/drawCanvas.js';
 
@@ -43,15 +37,6 @@ import {
 
     function pageLoad() {
 
-        fireBaseApp = new FireBaseApp().app;
-        // We init the authentication object
-        let fireBaseAuth = new FireBaseAuth({
-            idDivLogin: 'login-msg',
-            idNextDiv: 'hello-msg',
-            idLogout: 'signout',
-            idImg: "img-user",
-            idDisplayName: "name-user"
-        });
 
         /**
          * Management of Cinematic Buttons
@@ -64,21 +49,21 @@ import {
 
 
         streamStart.subscribe((state) => {
-                if (state === 'start') {
-                    document.getElementById('hello-msg').setAttribute("hidden", "");
-                    document.getElementById('game').removeAttribute('hidden');
-                    document.getElementById('color-picker2').removeAttribute('hidden');
-                    if (!gameInit) {
-                        document.getElementById('loading').removeAttribute('hidden');
-                        // Timeout needed to start the rendering of loading animation (else will not be show)
-                        setTimeout(function () {
-                            gameInit = true;
-                            initGame();
-                            document.getElementById('loading').setAttribute('hidden', '')
-                        }, 50);
-                    }
+            if (state === 'start') {
+                document.getElementById('hello-msg').setAttribute("hidden", "");
+                document.getElementById('game').removeAttribute('hidden');
+                document.getElementById('color-picker2').removeAttribute('hidden');
+                if (!gameInit) {
+                    document.getElementById('loading').removeAttribute('hidden');
+                    // Timeout needed to start the rendering of loading animation (else will not be show)
+                    setTimeout(function () {
+                        gameInit = true;
+                        initGame();
+                        document.getElementById('loading').setAttribute('hidden', '')
+                    }, 50);
                 }
-            })
+            }
+        })
 
 
         /**
@@ -89,68 +74,30 @@ import {
             document.getElementById('uploading').style.display = '';
             // We first upload the image :
             const currentDraw = {
-                user: fireBaseAuth.displayName(),
-                userId: fireBaseAuth.userId()
+                user: 'User Name',
+                userId: 'userId'
             };
             const drawId = `${currentDraw.userId}-${Date.now()}`;
             // We prepare the storage in database
-            const refDataStore = fireBaseApp.storage().ref().child(`/drawSaved/${currentDraw.userId}/${drawId}.jpg`);
-            currentDraw.urlDataStore = refDataStore.fullPath;
             const base64DataUrl = drawCanvas.snapshot();
+            currentDraw.dataUrl = base64DataUrl;
 
             // Upload Image
-            const uploadTask = refDataStore.putString(base64DataUrl, 'data_url');
-            uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
-                (snapshot) => {
-                    // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
-                    var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-                    console.log('Upload is ' + progress + '% done');
-                    switch (snapshot.state) {
-                        case firebase.storage.TaskState.PAUSED: // or 'paused'
-                            console.log('Upload is paused');
-                            break;
-                        case firebase.storage.TaskState.RUNNING: // or 'running'
-                            console.log('Upload is running');
-                            break;
-                    }
-                },
-                (error) => {
-
-                    // A full list of error codes is available at
-                    // https://firebase.google.com/docs/storage/web/handle-errors
-                    console.error(error.code);
-                    /*switch (error.code) {
-                      case 'storage/unauthorized':
-                        // User doesn't have permission to access the object
-                        break;
-
-                      case 'storage/canceled':
-                        // User canceled the upload
-                        break;
-
-
-                      case 'storage/unknown':
-                        // Unknown error occurred, inspect error.serverResponse
-                        break;
-                    }*/
+            const URL = `http://localhost:9000/draw/${currentDraw.userId}`;
+            fetch(URL, {
+                    method: 'post',
+                    headers: new Headers({
+                        'Content-Type': 'application/json; charset=utf-8'
+                    }),
+                    body: JSON.stringify(currentDraw)
+                })
+                .then(function (response) {
+                    console.info(response);
                     drawCanvas.resetBoard();
-                    document.getElementById('uploading').style.display = 'none';
-                    document.querySelector('#snackbar-container').MaterialSnackbar.showSnackbar({
-                        message: 'Drawing not submited, there was a problem.'
-                    });
-                },
-                () => {
-                    // Upload completed successfully, now we can get the download URL
-                    console.log('upload complete')
-                    // When we submit a draw, we save it on firebase tree
-                    fireBaseApp.database().ref(`/drawUpload/${drawId}`).set(currentDraw);
-                    drawCanvas.resetBoard();
-                    document.getElementById('uploading').style.display = 'none';
                     document.querySelector('#snackbar-container').MaterialSnackbar.showSnackbar({
                         message: 'Drawing submited! Thanks!'
                     });
                 });
-
         });
 
         /**
@@ -190,35 +137,40 @@ import {
                 } else if (state === 'creations') {
                     manageStateDivs(state);
 
-                    fireBaseApp.database().ref(`drawSaved/${fireBaseAuth.userId()}`).once('value', (snapshot) => {
-                        if (snapshot && snapshot.val()) {
-                            console.log(snapshot.val());
-                            snapshotFb = snapshot.val();
-                            keys = Object.keys(snapshotFb);
-                            index = 0;
-                            draw();
-                        } else {
-                            console.log('no draw !');
-                            document.querySelector('#snackbar-container').MaterialSnackbar.showSnackbar({
-                                message: 'You haven\'t yet submit drawings.'
-                            });
-                            document.getElementById('btnLeft').disabled = true;
-                            document.getElementById('btnRight').disabled = true;
-                        }
 
-                    }, (err) => {
-                        document.querySelector('#snackbar-container').MaterialSnackbar.showSnackbar({
-                            message: 'An error happen while getting drawings'
+                    const user = {
+                        name: 'User Name',
+                        id: 'userId'
+                    };
+                    const myInit = {
+                        method: 'GET'
+                    };
+                    const URL = `http://localhost:9000/draw/${user.id}`;
+                    fetch(URL, myInit)
+                        .then(function (snapshot) {
+                            return snapshot.json();
+                        })
+                        .then(function (snapshot) {
+                            if (snapshot) {
+                                console.log(snapshot);
+                                snapshotFb = snapshot;
+                                keys = Object.keys(snapshotFb);
+                                index = 0;
+                                draw();
+                            } else {
+                                console.log('no draw !');
+                                document.querySelector('#snackbar-container').MaterialSnackbar.showSnackbar({
+                                    message: 'You haven\'t yet submit drawings.'
+                                });
+                                document.getElementById('btnLeft').disabled = true;
+                                document.getElementById('btnRight').disabled = true;
+                            }
                         });
-                        manageStateDivs('game');
-                        console.error(err);
-                        // error callback triggered with PERMISSION_DENIED
-                    });
 
                 } else if (state === 'brush') {
-                    if (drawCanvas.getEraserMode()){
+                    if (drawCanvas.getEraserMode()) {
                         document.querySelector('#menuBrush i').innerHTML = 'brush';
-                    }else{
+                    } else {
                         document.querySelector('#menuBrush i').innerHTML = 'healing';
 
                     }
@@ -296,23 +248,14 @@ import {
             btnRight.removeAttribute('disabled');
         }
 
-        const drawRef = fireBaseApp.storage().ref(draw.urlDataStore);
-        drawRef.getDownloadURL().then(url => {
-                imgSubmission.src = url;
-                if (draw.accepted && !parentImg.classList.contains('accepted')) {
-                    parentImg.classList.remove('rejected');
-                    parentImg.classList.add('accepted');
-                } else if (!draw.accepted) {
-                    parentImg.classList.remove('accepted');
-                    parentImg.classList.add('rejected');
-                }
-            })
-            .catch(err => {
-                console.error(err);
-
-            });
-
-
+        imgSubmission.src = draw.dataUrl;
+        if (draw.accepted && !parentImg.classList.contains('accepted')) {
+            parentImg.classList.remove('rejected');
+            parentImg.classList.add('accepted');
+        } else if (!draw.accepted) {
+            parentImg.classList.remove('accepted');
+            parentImg.classList.add('rejected');
+        }
 
     }
 
