@@ -97,6 +97,7 @@ import {
                     document.querySelector('#snackbar-container').MaterialSnackbar.showSnackbar({
                         message: 'Drawing submited! Thanks!'
                     });
+                    document.getElementById('uploading').style.display = 'none';
                 });
         });
 

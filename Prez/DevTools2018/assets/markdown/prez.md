@@ -42,9 +42,11 @@ Frontend developper & Community Manager
 
 # Activation des experiments
 
+<br>
+
 ![center w-700](./assets/images/activation.png)
 
-chrome://flags/#enable-devtools-experiments
+[chrome://flags/#enable-devtools-experiments](chrome://flags/#enable-devtools-experiments)
 
 ##==##
 
@@ -54,31 +56,44 @@ chrome://flags/#enable-devtools-experiments
 
 ##==##
 
-Unified menu
+<!-- .slide: class="transition text-white"  -->
 
-screenshots
+# Unified menu
 
-third party badges
 
-simplification menu devices
+<h1>CTRL(CMD) + SHIFT + P<h1>
 
-link visual studio
+
+##==##
+
+# screenshots
+
+![center h-500](./assets/images/screenshot_nexus_5x.png)
 
 ##==##
 
 <!-- .slide: class="transition-black"-->
 
-# CSS
+![center h-500](./assets/images/css_awesome.png)
 
 ##==##
 
-CSS Grid
+# Grid Layout CSS
+
+<div class="demo-grid">
+    <header>header</header>
+    <nav>nav</nav>
+    <article>article</article>
+    <footer>footer</footer>
+</div>
 
 ##==##
 
 <!-- .slide: class="transition-black"-->
 
 # Performances & css coverage
+
+![center h-300](./assets/images/Icon_Stats_hover.svg.png)
 
 ##==##
 

@@ -1,3 +1,84 @@
 .workspace-demo {
     color: red;
 }
+
+
+/* Demos */
+
+
+/**
+ Grid Layout
+*/
+
+div.demo-grid {
+    display: grid;
+    grid-template-columns: 10em 1fr;
+    grid-template-rows: min-content 1fr min-content;
+    height: 300px;
+}
+
+div.demo-grid>header {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+}
+
+div.demo-grid>nav {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+div.demo-grid>article {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+div.demo-grid>footer {
+    grid-column: 1 / span 2;
+    grid-row: 3;
+}
+
+div.demo-grid>nav,
+div.demo-grid>section,
+div.demo-grid>article,
+div.demo-grid>aside,
+div.demo-grid>header,
+div.demo-grid>footer {
+    padding: 10px;
+    color: #fff;
+}
+
+div.demo-grid>nav {
+    /* background: #8BC34A; */
+    background: #4CAF50;
+}
+
+div.demo-grid>section {
+    background: hotpink;
+}
+
+div.demo-grid>article {
+    background: orange;
+}
+
+div.demo-grid>aside {
+    background: olivedrab;
+}
+
+div.demo-grid>header {
+    background: gray;
+}
+
+div.demo-grid>footer {
+    background: crimson;
+}
+
+div.demo-grid:focus {
+    /* box-shadow: 0px 0px 1px grey */
+    box-shadow: 4px 2px 12px 6px #616161;
+}
+
+div.demo-grid.action1 {
+    /* transition-duration: 500ms; */
+    transition-duration: 500ms;
+    transform: translateY(150px);
+}
