@@ -5,6 +5,11 @@
 
 /* Demos */
 
+html {
+    --light-color-white: #ede7f6;
+    --black: #333;
+}
+
 
 /**
  Grid Layout
@@ -35,6 +40,13 @@ div.demo-grid>article {
 div.demo-grid>footer {
     grid-column: 1 / span 2;
     grid-row: 3;
+}
+
+div.demo-grid>div.white-text {
+    grid-column: 1 / span 2;
+    grid-row: 4;
+    /* color: var(--light-color-white);*/
+    color: var(--light-color-white);
 }
 
 div.demo-grid>nav,

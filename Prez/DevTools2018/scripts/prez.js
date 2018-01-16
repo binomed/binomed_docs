@@ -1,13 +1,18 @@
 'use strict';
 
+import {
+    ConsoleHelper
+} from './console.js';
+
 (function () {
 
 
     function pageLoad() {
-        console.log('ready');
+        console.info('domReady');
+
+        new ConsoleHelper();
 
     }
-
 
     window.addEventListener('load', pageLoad);
 })();
