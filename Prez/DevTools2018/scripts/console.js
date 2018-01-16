@@ -8,7 +8,7 @@ export class ConsoleHelper {
         Reveal.addEventListener('profile', this.profile.bind(this));
         Reveal.addEventListener('table', this.table.bind(this));
         Reveal.addEventListener('group', this.group.bind(this));
-        Reveal.addEventListener('context', this.context.bind(this));
+        //Reveal.addEventListener('context', this.context.bind(this));
     }
 
     longTimeMethod() {
