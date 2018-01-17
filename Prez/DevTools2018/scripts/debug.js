@@ -2,9 +2,17 @@
 
 export class DebugHelper {
     constructor() {
+        this.indiceH = -1;
+        this.subscribe = false;
+        this.ghostParent = document.getElementById('demo-ghost-parent');
         console.log('Hello DebugHelper');
         Reveal.addEventListener('inline', this.inline.bind(this));
         Reveal.addEventListener('ghost', this.ghost.bind(this));
+        Reveal.addEventListener('slidechanged', (event) => {
+            if (this.subscribe && this.indiceH != event.indexh) {
+                document.removeEventListener('mousemove', this.processMouse);
+            }
+        });
 
         document.getElementById('demo-click').addEventListener('click', this.clickMe.bind(this));
     }
@@ -49,11 +57,19 @@ export class DebugHelper {
         clickElt.innerHTML = 'Whhooot';
     }
 
-    ghost() {
-        let processEvent = true;
+    ghost(event) {
+        this.subscribe = true;
+        this.indiceH = Reveal.getIndices().h;
+        this.width = document.body.getBoundingClientRect().width
+        document.addEventListener('mousemove', this.processMouse.bind(this));
         /*Reveal.addEventListener('slidechanged', () =>{
 
         })*/
+    }
+
+    processMouse(event) {
+        console.log(event);
+        this.ghostParent.style.setProperty('--left-pos', `-${this.width - event.clientX}px`)
     }
 
 }
