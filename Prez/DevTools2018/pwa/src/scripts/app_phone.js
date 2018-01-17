@@ -201,7 +201,6 @@ import {
 
         streamBtnLeft.merge(streamBtnRight).subscribe(draw);
 
-
     }
 
     function manageStateDivs(state) {
@@ -263,12 +262,40 @@ import {
 
     window.addEventListener('load', pageLoad);
 
-    /* SERVICE_WORKER_REPLACE
+    /* SERVICE_WORKER_REPLACE */
     if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('./service-worker-phone.js', {scope : location.pathname}).then(function(reg) {
-            console.log('Service Worker Register for scope : %s',reg.scope);
-        });
+        navigator.serviceWorker
+            .register('./service-worker-phone.js', {
+                scope: location.pathname
+            })
+            .then((serviceWorkerRegistration) => {
+                console.log('Service Worker Register for scope : %s', serviceWorkerRegistration.scope);
+                if (!('showNotification' in ServiceWorkerRegistration.prototype)) {
+                    return;
+                }
+                if (Notification.permission == 'denied') {
+                    return;
+                }
+                if (!('PushManager' in window)) {
+                    return;
+                }
+                return serviceWorkerRegistration.pushManager.getSubscription()
+                    .then((subscription) => {
+                        if (subscription) {
+                            console.log('Registration to notification already done !');
+                            return subscription;
+                        } else {
+                            return serviceWorkerRegistration.pushManager.subscribe({
+                                    userVisibleOnly: true
+                                })
+                                .then((realSubscription) => {
+                                    console.log('Registration done !');
+                                    return;
+                                });
+                        }
+                    })
+            });
     }
-    SERVICE_WORKER_REPLACE */
+    /* SERVICE_WORKER_REPLACE */
 
 })();

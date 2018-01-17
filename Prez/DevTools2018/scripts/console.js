@@ -3,7 +3,7 @@
 export class ConsoleHelper {
 
     constructor() {
-        console.log('hello');
+        console.log('Hello ConsoleHelper');
         Reveal.addEventListener('console', this.timer.bind(this));
         Reveal.addEventListener('profile', this.profile.bind(this));
         Reveal.addEventListener('table', this.table.bind(this));

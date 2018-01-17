@@ -3,6 +3,9 @@
 import {
     ConsoleHelper
 } from './console.js';
+import {
+    DebugHelper
+} from './debug.js';
 
 (function () {
 
@@ -11,6 +14,7 @@ import {
         console.info('domReady');
 
         new ConsoleHelper();
+        new DebugHelper();
 
     }
 

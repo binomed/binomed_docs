@@ -1,0 +1,347 @@
+// Colors
+$light-grey: #ddd;
+$white: white;
+$medium-grey: #817c7c;
+$black: #333;
+$dark-grey: #3d4349;
+$dark-grey-alpha: rgba(61, 67, 73, 0.7);
+// Material colors :
+$red: #e57373;
+$blue: #1E88E5;
+$green: #aed581;
+$deep-purple: #673AB7;
+$light-blue: #2196F3;
+$light-color-white: #ede7f6;
+// Background Colors
+$code-bg: #3f3f3f;
+$page-bg-color:$light-blue;
+$slide-bg-color: $white;
+$header-color: $dark-grey;
+// Text Colors
+$main-title-color: $light-color-white;
+$title-color: $medium-grey;
+$text-color: $black;
+// Commons slides
+body,
+html {
+    background: $page-bg-color;
+}
+
+a:link,
+a:focus,
+a:hover {
+    color: lighten($black, 10%);
+    ;
+}
+
+a:active,
+a:visited {
+    color: darken($black, 20%);
+}
+
+.reveal .slides section.slide-bg-color {
+    color: $black; //$text-color;
+}
+
+.reveal .slides {
+    color: $black; //$light-color-white;
+}
+
+.reveal .slides section p+p {
+    margin-top: 40px;
+}
+
+.reveal .slides section p {
+    font-size: 40px;
+}
+
+.reveal .slides section:not(.first-slide):not(.last-slide):not(.who-am-i):not([data-background]):not([class*="transition"]):not(.transition):not(.transition-white):not(.transition-black):not(.with-code) {
+    width: 100%;
+    height: calc(100% - 40px);
+    height: -webkit-calc(100% - 40px);
+    h1,
+    h2 {
+        color: $black; //$light-color-white;
+        font-size: 1.5em;
+        font-weight: 300;
+        text-align: left;
+        padding-left: 25px;
+        margin-left: 5px;
+    }
+    h1,
+    h2,
+    h3 {
+        margin-bottom: 50px;
+        text-align: left;
+    }
+    h1~h2,
+    h2~h3,
+    h1~h3 {
+        margin-top: -30px;
+        padding-left: 30px;
+        color: $light-color-white;
+    }
+}
+
+.reveal .slides section.who-am-i {
+    color: $black; // $light-color-white;
+    text-align: left;
+    h2 {
+        color: $black; // $light-color-white;
+        font-weight: 300;
+        line-height: 2em;
+        height: 2em;
+        font-size: 2em;
+        margin-top: -20px;
+        margin-bottom: 20px;
+    }
+    h3 {
+        position: absolute;
+        left: 350px;
+        top: 250px;
+        font-size: 1.2em;
+        color: $black; //$light-color-white;
+        margin-bottom: 20px;
+    }
+    .descjf {
+        position: absolute;
+        color: $black; //$light-color-white;
+        font-size: 100%;
+        line-height: 1.5em;
+        left: 350px;
+        top: 320px;
+        width: calc(100% - 350px);
+        width: -webkit-calc(100% - 350px);
+        font-weight: 300;
+    }
+    img[alt*=avatar] {
+        position: absolute;
+        left: 100px;
+        top: 200px;
+        width: 200px;
+        margin-top: 20px;
+        box-shadow: 2px 2px #424242;
+        border-radius: 20px;
+    }
+}
+
+.reveal blockquote::before {
+    content: '\0022';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+}
+
+.reveal blockquote::after {
+    content: '\0022';
+    position: absolute;
+    bottom: -0.5em;
+    right: -0.5em;
+    width: 50px;
+    height: 50px;
+}
+
+.reveal blockquote {
+    display: block;
+    position: relative;
+    width: 70%;
+    margin: 20px auto;
+    padding: 1em;
+    text-align: left;
+    font-style: italic;
+    background: $white;
+    color: $medium-grey;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+}
+
+// Specifics slides !!
+.reveal .slides section.first-slide {
+    color: $black; //$light-color-white;
+    background: $light-blue;
+    h1 {
+        color: $black; //$light-color-white;
+        margin-top: 190px;
+        font-size: 2.5em;
+        font-weight: 300;
+        margin-bottom: 40px;
+        width: 600px;
+        margin-left: 350px;
+    }
+    h2 {
+        margin-bottom: 20px;
+    }
+    h3 {
+        color: $black; //$light-color-white;
+    }
+    img[alt*=logo] {
+        position: absolute;
+        left: 100px;
+        top: 200px;
+        width: 200px;
+        margin-top: 20px;
+        box-shadow: 2px 2px #424242;
+        border-radius: 20px;
+    }
+}
+
+.reveal .slides section.last-slide {
+    text-align: center;
+    color: $black; // $light-color-white;
+    .thank-message {
+        color: $black; // $light-color-white;
+        font-weight: 300;
+    }
+    .presenter {
+        color: $black; //$light-color-white;
+        top: 1.5em;
+        height: 2em;
+        line-height: 2em;
+        font-size: 1.2em;
+        font-weight: 300;
+    }
+    .topic-title {
+        color: $black; //$light-color-white;
+        top: 0;
+        height: 1.7em;
+        font-size: 2em;
+    }
+    img[alt*=avatar],
+    img.avatar {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        top: 50%;
+        left: 50%;
+        margin-left: -150px;
+        margin-top: -150px;
+    }
+}
+
+.reveal .slides section[data-background],
+.reveal .slides section[class*="transition"],
+.reveal .slides section.transition,
+.reveal .slides section.transition-white,
+.reveal .slides section.transition-black,
+{
+    background: rgba(0, 0, 0, 0);
+}
+
+.reveal .slides section[data-background],
+.reveal .slides section[class*="transition"],
+.reveal .slides section.transition,
+.reveal .slides section.transition-white,
+.reveal .slides section.transition-black {
+    h1 {
+        color: $black; //$light-color-white;
+        margin-top: 150px;
+        font-size: 2.5em;
+        font-weight: 300;
+        margin-bottom: 40px;
+        text-transform: initial;
+    }
+}
+
+.reveal .slides section.transition-black h1,
+.reveal .slides section.transition.text-white h1 {
+    color: $light-color-white;
+}
+
+.reveal .slides section.transition.text-green h1 {
+    color: $green;
+}
+
+.reveal .slides section.transition.text-red h1 {
+    color: $red;
+}
+
+.reveal .slides section.transition h1.h1-light {
+    font-size: 50px;
+    text-transform: initial;
+}
+
+div.flex-hori {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    .space {
+        margin: 20px 50px;
+    }
+}
+
+div.flex-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+div.flex-col.left-align {
+    align-items: flex-start;
+}
+
+div.flex-hori.spacing {
+    margin-top: 50px;
+    img {
+        margin-left: 50px;
+    }
+}
+
+div.flex-col.timer {
+    height: 100%;
+    justify-content: center;
+}
+
+.reveal .slides section img.absolute_img_code {
+    position: absolute;
+    top: 0;
+}
+
+div.padding~* {
+    padding-left: 50px;
+}
+
+svg.color-white {
+    fill: $light-color-white;
+    stroke: $light-color-white;
+}
+
+svg.color-green {
+    fill: $green;
+    stroke: $green;
+}
+
+svg.color-red {
+    fill: $red;
+    stroke: $red;
+}
+
+svg.color-blue {
+    fill: $blue;
+    stroke: $blue;
+}
+
+svg.color-red.no-stroke {
+    fill: $red;
+    stroke: initial;
+}
+
+svg#happy {
+    stroke-width: 0px;
+}
+
+.reveal .slides section h1 a {
+    text-transform: initial;
+}
+
+.reveal .slides section div.credits {
+    margin-top: 150px;
+    text-align: center;
+    font-size: 20px;
+    p {
+        margin-top: 20px;
+        font-size: 20px;
+    }
+}

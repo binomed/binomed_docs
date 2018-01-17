@@ -8,6 +8,11 @@
 html {
     --light-color-white: #ede7f6;
     --black: #333;
+    --red: #e57373;
+    --blue: #1E88E5;
+    --green: #aed581;
+    --deep-purple: #673AB7;
+    --light-blue: #2196F3;
 }
 
 
@@ -94,3 +99,171 @@ div.demo-grid.action1 {
     transition-duration: 500ms;
     transform: translateY(150px);
 }
+
+
+/**
+* Click Rainbow
+*/
+
+#demo-click {
+    background: var(--light-blue);
+    color: var(--black);
+    border-radius: 30px;
+    width: 500px;
+    margin: auto;
+    box-shadow: 2px 1px 3px 2px #cfcfcf;
+}
+
+#demo-click.rainbow {
+    animation: rainbow 2s linear infinite alternate;
+}
+
+@-webkit-keyframes rainbow {
+    0% {
+        color: red;
+    }
+    10% {
+        color: orange;
+    }
+    20% {
+        color: gold;
+    }
+    30% {
+        color: yellow;
+    }
+    40% {
+        color: yellowgreen;
+    }
+    50% {
+        color: green;
+    }
+    60% {
+        color: cyan;
+    }
+    70% {
+        color: blue;
+    }
+    80% {
+        color: violet;
+    }
+    90% {
+        color: magenta;
+    }
+    100% {
+        color: indigo;
+    }
+}
+
+
+/**
+* Demo Debug Ghost
+*/
+
+#demo-ghost-parent {
+    margin: auto;
+    --left-pos: 0;
+}
+
+#demo-ghost-parent .demo-ghost {
+    height: 150px;
+    width: 150px;
+    background-color: white;
+    border-radius: 75px 75px 0 0;
+    animation: float 3s ease infinite;
+    margin: 0 auto;
+    margin-top: 20vh;
+    position: relative;
+    left: var(--left-pos);
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+#demo-ghost-parent .demo-ghost::before {
+    content: '';
+    height: 25px;
+    width: 25px;
+    border-radius: 100%;
+    position: absolute;
+    background-color: black;
+    top: 60px;
+    left: 40px;
+    box-shadow: 50px 0 0 black;
+    animation: blink 5s linear infinite;
+}
+
+@keyframes blink {
+    75% {
+        height: 25px;
+        width: 25px;
+        top: 60px;
+    }
+    78% {
+        height: 0px;
+        width: 25px;
+        top: 65px;
+    }
+    80% {
+        height: 25px;
+        width: 25px;
+        top: 60px;
+    }
+    82% {
+        height: 25px;
+        width: 25px;
+        top: 60px;
+    }
+    83% {
+        height: 0px;
+        width: 25px;
+        top: 65px;
+    }
+    86% {
+        height: 25px;
+        width: 25px;
+        top: 60px;
+    }
+}
+
+#demo-ghost-parent .demo-ghost::after {
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    background-color: white;
+    position: absolute;
+    content: '';
+    left: 0px;
+    top: 135px;
+    box-shadow: 30px -15px 0 7px rgba(256, 256, 256, .4), 90px -15px 0 7px rgba(256, 256, 256, .4), 30px 0 0 #46C5FF, 60px 0 0 white, 90px 0 0 #46C5FF, 120px 0 0 white;
+}
+
+#demo-ghost-parent .demo-shadow {
+    margin: auto;
+    height: 20px;
+    width: 100px;
+    background-color: black;
+    border-radius: 100%;
+    margin-top: 50px;
+    opacity: .3;
+    animation: shadow 3s ease infinite;
+    position: relative;
+    left: var(--left-pos);
+}
+
+@keyframes shadow {
+    0% {
+        opacity: .3
+    }
+    50% {
+        opacity: .5;
+        transform: scale(1.2)
+    }
+}
+
+;
