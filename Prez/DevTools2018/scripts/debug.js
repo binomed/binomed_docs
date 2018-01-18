@@ -68,8 +68,10 @@ export class DebugHelper {
     }
 
     processMouse(event) {
-        console.log(event);
-        this.ghostParent.style.setProperty('--left-pos', `-${this.width - event.clientX}px`)
+        const deltaX = this.width - event.clientX;
+        const median = this.width / 2;
+        const left = event.clientX > median ? (event.clientX - median) : -1 * (median - event.clientX);
+        this.ghostParent.style.setProperty('--left-pos', `${left}px`)
     }
 
 }
