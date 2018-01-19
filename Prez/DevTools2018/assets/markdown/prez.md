@@ -18,7 +18,7 @@
 ### Jean-François Garreau
 
 <!-- .element: class="descjf" -->
-Frontend developper & Community Manager
+Front-end developer & Community Manager
 
 ![avatar w-300 wp-200](assets/images/jf.jpg)
 
