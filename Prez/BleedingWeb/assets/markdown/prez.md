@@ -10,6 +10,95 @@
 
 
 
+##==##
+
+
+
+CSS
+
+
+
+##==##
+
+Css Variables
+
+##==##
+
+Css Mixins => oui mais en fait non
+
+##==##
+
+::Part & ::Theme
+
+##==##
+
+HoudiniCss
+
+##==##
+
+
+WebPlatform
+
+
+
+##==##
+
+Tableau de l'intégration du natif => cf Paul Kinlan
+
+##==##
+
+Generic Sensors
+
+https://developers.google.com/web/updates/2017/09/sensors-for-the-web
+
+Polyfil : https://github.com/kenchris/sensor-polyfills
+
+
+##==##
+
+Picture In Picture
+
+##==##
+
+WebAssembly
+
+##==##
+
+WebUsb
+
+##==##
+
+WebNfc
+
+##==##
+
+WebShare
+
+##==##
+
+
+
+##==##
+
+
+
+WebComponents
+
+
+
+##==##
+
+Html Template :
+https://github.com/w3c/webcomponents/blob/gh-pages/proposals/Template-Instantiation.md
+
+##==##
+
+HTML Module
+https://github.com/w3c/webcomponents/issues/645
+
+##==##
+
+
 
 ##==##
 
