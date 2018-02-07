@@ -13,7 +13,7 @@ $green: #aed581;
 $deep-purple: #673AB7;
 $light-color-white: #ede7f6;
 // Background Colors
-$code-bg: #3f3f3f;
+$code-bg: #002b36;
 $page-bg-color:$deep-purple; //$light-grey;
 $slide-bg-color: $white;
 $header-color: $dark-grey;
@@ -364,5 +364,5 @@ code-highlighter, mask-highlighter {
 }
 
 .reveal .backgrounds div.slide-background.with-code {
-    background: linear-gradient(rgba(63, 63, 63, 0.7), rgba(63, 63, 63, 0.7)), linear-gradient(rgba(63, 63, 63, 1), rgba(63, 63, 63, 1));
+    background: linear-gradient(rgba(0, 43, 54, 0.7), rgba(0, 43, 54, 0.7)), linear-gradient(rgba(0, 43, 54, 1), rgba(0, 43, 54, 1));
 }
