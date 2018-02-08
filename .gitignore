@@ -1,5 +1,6 @@
 node_modules
 .sass-cache
 *.fuse_hidden*
+.vscode
 
 yarn.lock
