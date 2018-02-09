@@ -1,6 +1,7 @@
 @import "../theme/2016/binomed/colors";
 @import "./my_custom_style";
 @import "./background";
+@import "./demo";
 $sommaire-img-height: 60px;
 strong {
   font-weight: 600 !important;
@@ -155,7 +156,7 @@ div.flex-col .fragment.highlight-blue.visible {
 }
 
 .reveal .slides section div.citation-author {
-  display:block;
+  display: block;
   position: relative;
   width: 70%;
   font-size: 0.6em;
@@ -164,7 +165,6 @@ div.flex-col .fragment.highlight-blue.visible {
   top: 40px;
   margin: 20px auto;
 }
-
 
 /*
 *
@@ -179,6 +179,7 @@ div.flex-col .fragment.highlight-blue.visible {
     #{$attr}: inherit;
   }
 }
+
 @mixin force-img-size-prefix($prefix, $attr, $size) {
   section img[alt*=#{$prefix}-#{$size}],
   section .#{$prefix}-#{$size},

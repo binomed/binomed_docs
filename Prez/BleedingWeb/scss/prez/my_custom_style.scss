@@ -1,29 +1,5 @@
 @import "./font";
-// Colors
-$light-grey: #ddd;
-$white: white;
-$medium-grey: #817c7c;
-$black: #333;
-$dark-grey: #3d4349;
-$dark-grey-alpha: rgba(61, 67, 73, 0.7);
-// Material colors :
-$red: #e57373;
-$blue: #1E88E5;
-$green: #aed581;
-$deep-purple: #673AB7;
-$light-blue: #2196F3;
-$orange: #ffab00;
-$yellow: #ffd600;
-$light-color-white: #ede7f6;
-// Background Colors
-$code-bg: #002b36;
-$page-bg-color:$deep-purple; //$light-grey;
-$slide-bg-color: $white;
-$header-color: $dark-grey;
-// Text Colors
-$main-title-color: $light-color-white; //$red;
-$title-color: $medium-grey;
-$text-color: $black;
+@import "./colors";
 // Commons slides
 body,
 html {
@@ -206,7 +182,7 @@ a:visited {
 .reveal .slides section.transition,
 .reveal .slides section.transition-white,
 .reveal .slides section.transition-black,
-{
+    {
     background: rgba(0, 0, 0, 0);
 }
 
@@ -320,7 +296,6 @@ svg.color-red.no-stroke {
     stroke: initial;
 }
 
-
 svg#happy {
     stroke-width: 0px;
 }
@@ -366,7 +341,6 @@ span.webspecs {
     }
 }
 
-
 /**
 * Gestion du highlighting de code
 */
@@ -376,7 +350,24 @@ span.webspecs {
     z-index: 100;
 }
 
-code-highlighter, mask-highlighter {
+.reveal .slides section.with-code.big-code pre code {
+    font-size: 2em;
+    line-height: 2.1em;
+}
+
+.reveal .CodeMirror {}
+
+.reveal .CodeMirror-scroll {
+    overflow: hidden !important;
+}
+
+.reveal .CodeMirror-lines {
+    text-align: left !important;
+    font-size: 0.7em;
+}
+
+code-highlighter,
+mask-highlighter {
     position: absolute;
     top: 0;
     left: 0;
@@ -384,4 +375,3 @@ code-highlighter, mask-highlighter {
     height: 100%;
     --mask-highlighter-bg-color: rgba(0, 43, 54, 0.7);
 }
-

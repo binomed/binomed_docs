@@ -58,7 +58,21 @@ Front-end developer & Community Manager
 
 ##==##
 
-Css Variables
+<!-- .slide: class="transition text-white with-code big-code transparent" data-type-show="prez"  -->
+
+# Css Variables
+
+```
+--a-super-var: #000000;
+```
+
+##==##
+
+<div id="demo-var" class="flex-hori">
+    <div id="codemirror-css"></div>
+    <div id="render-element">
+    </div>
+</div>
 
 ##==##
 
