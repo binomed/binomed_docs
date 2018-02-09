@@ -154,6 +154,17 @@ div.flex-col .fragment.highlight-blue.visible {
   }
 }
 
+.reveal .slides section div.citation-author {
+  display:block;
+  position: relative;
+  width: 70%;
+  font-size: 0.6em;
+  color: $light-blue;
+  text-align: right;
+  top: 40px;
+  margin: 20px auto;
+}
+
 
 /*
 *

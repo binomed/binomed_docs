@@ -6,7 +6,20 @@
 </h1>
 
 
+##==##
 
+
+## Instant Citation
+
+<br>
+
+<blockquote>
+<cite>
+  J'ai appris pleins de choses mais je vais rien pouvoir utiliser en prod.
+</cite>
+</blockquote>
+
+<div class="citation-author">vous à la sortie de cette prez</div>
 
 ##==##
 
@@ -28,6 +41,42 @@ Front-end developer & Community Manager
 <!-- .element: class="twitter" -->
 [@jefBinomed](https://twitter.com/jefBinomed)
 
+
+
+
+##==##
+
+<!-- .slide: class="transition text-white transparent" data-type-show="prez"  -->
+
+
+<h1>
+    <svg class="h-150 color-orange">
+        <use xlink:href="#css" />
+    </svg><br>CSS
+</h1>
+
+
+##==##
+
+Css Variables
+
+##==##
+
+Css Mixins => oui mais en fait non
+
+##==##
+
+::Part & ::Theme
+
+##==##
+
+<!-- .slide: class="transition text-white transparent" data-type-show="prez"  -->
+
+<h1>
+    <svg class="fh-250 color-blue">
+        <use xlink:href="#magic" />
+    </svg><br>Houdini CSS
+</h1>
 
 
 ##==##
@@ -58,42 +107,6 @@ var el2 = new MyElement();
 <div class="fragment" data-fragment-index="4" hidden></div>-->
 
 
-
-##==##
-
-<!-- .slide: class="transition text-white transparent" data-type-show="prez"  -->
-
-
-<h1>
-    <svg class="h-150 color-white">
-        <use xlink:href="#css" />
-    </svg><br>CSS
-</h1>
-
-
-
-
-##==##
-
-Css Variables
-
-##==##
-
-Css Mixins => oui mais en fait non
-
-##==##
-
-::Part & ::Theme
-
-##==##
-
-<!-- .slide: class="transition text-white transparent" data-type-show="prez"  -->
-
-<h1>
-    <svg class="fh-250 color-blue">
-        <use xlink:href="#magic" />
-    </svg><br>Houdini CSS
-</h1>
 
 
 ##==##
@@ -140,10 +153,6 @@ WebShare
 
 
 
-##==##
-
-
-
 WebComponents
 
 
@@ -157,8 +166,6 @@ https://github.com/w3c/webcomponents/blob/gh-pages/proposals/Template-Instantiat
 
 HTML Module
 https://github.com/w3c/webcomponents/issues/645
-
-##==##
 
 
 
