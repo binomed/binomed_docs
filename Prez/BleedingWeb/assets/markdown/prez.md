@@ -58,7 +58,7 @@ Front-end developer & Community Manager
 
 ##==##
 
-<!-- .slide: class="transition text-white with-code big-code transparent" data-type-show="prez"  -->
+<!-- .slide: class="transition text-white with-code big-code transparent" data-state="start-code-css-variable"  -->
 
 # Css Variables
 
@@ -66,21 +66,127 @@ Front-end developer & Community Manager
 --a-super-var: #000000;
 ```
 
+
 ##==##
+
+<!-- .slide: class="with-code" data-state="stop-code-css-variable" data-type-show="full" -->
+
+## CSS Variables
+
+```css
+// Declaration
+html {
+    --a-name: #333;
+}
+// Usage
+div {
+    color: var(--a-name);
+}
+// Default value
+h1 {
+    color: var(--a-name, red);
+}
+```
+
+
+##==##
+
+<!-- .slide: class="with-code" data-state="code-css-variable" data-type-show="prez" -->
+
+## CSS Variables
+
+```CSS
+// Declaration
+html {
+    --a-name: #333;
+}
+// Usage
+div {
+    color: var(--a-name);
+}
+// Default value
+h1 {
+    color: var(--a-name, red);
+}
+```
+<mask-highlighter id="highlight-css-variable"></mask-highlighter>
+
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+
+##==##
+
+<!-- data-type-show="prez" data-state="stop-code-css-variable" -->
 
 <div id="demo-var" class="flex-hori">
     <div id="codemirror-css"></div>
     <div id="render-element">
+        <h2 class="text-1">Du texte</h2>
+        <h2 class="text-2">Du texte encore</h2>
     </div>
 </div>
 
+
 ##==##
 
-Css Mixins => oui mais en fait non
+<!-- .slide: class="transition text-white with-code big-code transparent"  -->
+
+# Css Mixins
+
+```
+--a-mixin {color: #000000;}
+```
+
+
+##==##
+
+
+## Instant Citation
+
+<br>
+
+<blockquote>
+<cite>
+ Je ne fais jamais de mixins css, mais quand je le fais c'est avec la nouvelle spec
+</cite>
+</blockquote>
+
+<div class="citation-author">The most interesting man in the world</div>
+
+
+##==##
+
+<!-- .slide: class="with-code" -->
+
+## @Depecrated :Css Mixins & @Apply
+
+
+```css
+// Declaration
+html {
+    --a-mixin:{
+        color: #333;
+    }
+}
+// Usage
+div {
+    @apply(--a-mixin);
+}
+```
+[Why I Abandoned @apply](https://www.xanthir.com/b4o00)
+
+
+##==##
+
+TROUVER IMAGE
 
 ##==##
 
 ::Part & ::Theme
+
+https://meowni.ca/posts/part-theme-explainer/
 
 ##==##
 
