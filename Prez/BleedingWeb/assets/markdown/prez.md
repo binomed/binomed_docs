@@ -121,7 +121,8 @@ h1 {
 <!-- data-type-show="prez" data-state="stop-code-css-variable" -->
 
 <div id="demo-var" class="flex-hori">
-    <div id="codemirror-css"></div>
+    <div id="codemirror-css">
+    </div>
     <div id="render-element">
         <h2 class="text-1">Du texte</h2>
         <h2 class="text-2">Du texte encore</h2>
@@ -180,13 +181,164 @@ div {
 
 ##==##
 
-TROUVER IMAGE
+<!-- .slide: data-background="./assets/images/morpheus.jpg" class="transition text-white no-filter"  data-copyrights="true "  -->
+
+## Et donc on choisit quoi ?
+
+<div class="copyrights">matrix</div>
 
 ##==##
 
-::Part & ::Theme
+<!-- .slide: class="transition text-white with-code big-code transparent"  -->
+
+# ::Part & ::Theme
+
+```css
+x-tag::part(name) { ... }
+```
+
+
+##==##
+
+<!-- .slide: class="with-code" data-type-show="full" -->
+
+## ::Part ::Theme - Declaration
+
+```HTML
+<my-component>
+  #shadow-root
+  <!--Overridable part -->
+  <div part="tag-name">
+    <span>...</span>
+  </div>
+  <!-- Non Overridable part -->
+  <section>
+  ...
+  </section>
+</my-component>
+```
+
+##==##
+
+<!-- .slide: class="with-code" data-type-show="full" -->
+
+## ::Part ::Theme - Usage
+
+```CSS
+my-component::part(tag-name){
+    ...
+}
+my-component::part(tag-name):hover{
+    ...
+}
+```
+
+Notes:
+ne marche pas de façon plus complète par contre
+my-component::part(tag-name) span
+
+
+
+##==##
+
+<!-- .slide: class="with-code" data-type-show="full" -->
+
+## ::Part ::Theme - Forward
+
+```HTML
+<root-component>
+  #shadow-root
+  <my-component part="tag-name => tag-name">
+  </my-component>
+</root-component>
+```
+
+
+
+##==##
+
+<!-- .slide: class="with-code" data-type-show="prez" -->
+
+## ::Part ::Theme - Declaration
+
+```HTML
+<my-component>
+  #shadow-root
+  <!--Overridable part -->
+  <div part="tag-name">
+    <span>...</span>
+  </div>
+  <!-- Non Overridable part -->
+  <section>
+  ...
+  </section>
+</my-component>
+```
+
+##==##
+
+<!-- .slide: class="with-code" data-type-show="prez" -->
+
+## ::Part ::Theme - Usage
+
+```CSS
+my-component::part(tag-name){
+    ...
+}
+my-component::part(tag-name):hover{
+    ...
+}
+```
+
+Notes:
+ne marche pas de façon plus complète par contre
+my-component::part(tag-name) span
+
+
+
+##==##
+
+<!-- .slide: class="with-code" data-type-show="prez" -->
+
+## ::Part ::Theme - Forward
+
+```HTML
+<root-component>
+  #shadow-root
+  <my-component part="tag-name => tag-name">
+  </my-component>
+</root-component>
+```
+
 
 https://meowni.ca/posts/part-theme-explainer/
+
+
+##==##
+
+<!-- .slide: data-background="./assets/images/shut-up-and-take-my-money.jpg" class="transition text-white no-filter"  data-copyrights="true "  -->
+
+
+<div class="copyrights black">futurama</div>
+
+
+##==##
+
+
+WebComponents
+
+
+##==##
+
+Html Template :
+https://github.com/w3c/webcomponents/blob/gh-pages/proposals/Template-Instantiation.md
+
+##==##
+
+HTML Module
+https://github.com/w3c/webcomponents/issues/645
+
+
 
 ##==##
 
@@ -197,36 +349,6 @@ https://meowni.ca/posts/part-theme-explainer/
         <use xlink:href="#magic" />
     </svg><br>Houdini CSS
 </h1>
-
-
-##==##
-
-<!-- .slide: class="with-code" data-state="code-polymer1-declaration stop-code-polymer1-life-cycle" -->
-
-## Polymer 1 déclaration
-
-```javascript
-MyElement = Polymer({
-    is: 'my-element',
-    // See below for lifecycle callbacks
-    created: function() {
-    this.textContent = 'My element!';
-    }
-});
-// create an instance with createElement:
-var el1 = document.createElement('my-element');
-// ... or with the constructor:
-var el2 = new MyElement();
-```
-<mask-highlighter id="highlight-polymer1-declaration"></mask-highlighter>
-
-<!--
-<div class="fragment" data-fragment-index="1" hidden></div>
-<div class="fragment" data-fragment-index="2" hidden></div>
-<div class="fragment" data-fragment-index="3" hidden></div>
-<div class="fragment" data-fragment-index="4" hidden></div>-->
-
-
 
 
 ##==##
@@ -268,24 +390,6 @@ WebNfc
 ##==##
 
 WebShare
-
-##==##
-
-
-
-WebComponents
-
-
-
-##==##
-
-Html Template :
-https://github.com/w3c/webcomponents/blob/gh-pages/proposals/Template-Instantiation.md
-
-##==##
-
-HTML Module
-https://github.com/w3c/webcomponents/issues/645
 
 
 
