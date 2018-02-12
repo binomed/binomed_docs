@@ -69,7 +69,7 @@ Front-end developer & Community Manager
 
 ##==##
 
-<!-- .slide: class="with-code" data-state="stop-code-css-variable" data-type-show="full" -->
+<!-- .slide: class="with-code" data-type-show="full" -->
 
 ## CSS Variables
 
@@ -118,7 +118,7 @@ h1 {
 
 ##==##
 
-<!-- data-type-show="prez" data-state="stop-code-css-variable" -->
+<!-- data-type-show="prez" data-state="stop-code-css-variable stop-code-css-variable-in-js" -->
 
 <div id="demo-var" class="flex-hori">
     <div id="codemirror-css">
@@ -130,9 +130,58 @@ h1 {
 </div>
 
 
+
 ##==##
 
-<!-- .slide: class="transition text-white with-code big-code transparent"  -->
+<!-- .slide: class="with-code" data-type-show="full" -->
+
+## Javascript manipulation
+
+<p> style.css</p>
+```css
+#idElt{
+    color: --a-super-var;
+}
+```
+main.js
+```javascript
+const elt = document.getElementById('idElt');
+elt.style.setProperty('--a-super-var', '#333');
+elt.style.getProperty('--a-super-var');
+```
+```
+
+
+##==##
+
+<!-- .slide: class="with-code" data-state="code-css-variable-in-js" data-type-show="prez" -->
+
+## Javascript manipulation
+
+<p> style.css</p>
+```css
+#idElt{
+    color: --a-super-var;
+}
+```
+main.js
+```javascript
+const elt = document.getElementById('idElt');
+elt.style.setProperty('--a-super-var', '#333');
+elt.style.getProperty('--a-super-var');
+```
+
+<mask-highlighter id="highlight-css-variable-in-js"></mask-highlighter>
+
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+
+
+##==##
+
+<!-- .slide: class="transition text-white with-code big-code transparent" data-state="stop-code-css-variable-in-js"   -->
 
 # Css Mixins
 

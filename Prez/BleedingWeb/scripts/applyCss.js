@@ -18,30 +18,39 @@ export class ApplyCss {
             scrollbarStyle: 'null',
             theme: 'solarized dark'
         });
+
+        const head = document.head || document.getElementsByTagName('head')[0];
+        this.style = document.createElement('style');
+        this.nbElts = 0;
+
+        this.style.type = 'text/css';
+        if (this.style.styleSheet){
+            this.style.styleSheet.cssText = '';
+        } else {
+            this.style.appendChild(document.createTextNode(''));
+        }
+        head.appendChild(this.style);
+
         codeMirrorCss.setSize('100%', '100%');
         codeMirrorCss.on('change', (...obj) => {
-            codeMirrorCss.getValue()
-                .split('}')
-                .map(str => str.trim())
-                .forEach(selectorCss => {
-                    const [selector, properties] = selectorCss.split('{').map(str => str.trim());
-                    if (selector &&
-                        selector.length > 0 &&
-                        document.querySelector(selector)) {
-                        properties.split(';')
-                            .map(str => str.trim())
-                            .forEach(cssInstruction => {
-                                try {
-                                    const [key, value] = cssInstruction.split(':').map(keyValue => keyValue.trim());
-                                    if (key.startsWith('--')) {
-                                        document.querySelector(selector).style.setProperty(key, value);
-                                    } else {
-                                        document.querySelector(selector).style[key] = value;
-                                    }
-                                } catch (e) {}
-                            });
-                    }
-                });
+            this.applyCss(codeMirrorCss.getValue());
         });
+        this.applyCss(initialContent);
+    }
+
+    applyCss(value){
+        for (let i = 0; i < this.nbElts; i++){
+            this.style.sheet.deleteRule(0);
+        }
+        this.nbElts = 0;
+        value.split('}')
+            .map(str => str.trim())
+            .forEach(selectorCss => {
+                try{
+                    this.style.sheet.insertRule(selectorCss+'}');
+                    this.nbElts++;
+                }catch(e){console.error(e);}
+            });
+
     }
 }

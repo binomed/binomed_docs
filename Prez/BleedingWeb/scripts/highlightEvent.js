@@ -10,7 +10,7 @@ const COL_WIDTH = 35;
 
 export class HighlightEvents {
     constructor() {
-        //  Polymer Declaration
+        //  Css Variable Declaration
         new HighlightCodeHelper({
             keyElt: 'css-variable',
             // We start with the first fragment (the initial position is fixed by css)
@@ -26,6 +26,25 @@ export class HighlightEvents {
                 line: 9,
                 nbLines: 4,
                 width: '40%'
+            }]
+        });
+
+        //  Css Variable Declaration
+        new HighlightCodeHelper({
+            keyElt: 'css-variable-in-js',
+            // We start with the first fragment (the initial position is fixed by css)
+            positionArray: [{
+                top: '100px',
+                height: '260px',
+                width: '60%'
+            }, {
+                top: '350px',
+                height: '300px',
+                width: '60%'
+            }, {
+                top: 0,
+                height: '100%',
+                width: '100%'
             }]
         });
 
