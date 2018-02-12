@@ -29,7 +29,7 @@ export class HighlightEvents {
             }]
         });
 
-        //  Css Variable Declaration
+        //  Css Variable Declaration in JS
         new HighlightCodeHelper({
             keyElt: 'css-variable-in-js',
             // We start with the first fragment (the initial position is fixed by css)
@@ -48,6 +48,20 @@ export class HighlightEvents {
             }]
         });
 
+        // ::Part
+        new HighlightCodeHelper({
+            keyElt: 'part',
+            // We start with the first fragment (the initial position is fixed by css)
+            positionArray: [{
+                top: 0,
+                height: '100%',
+                width: '60%'
+            }, {
+                line: 3,
+                nbLines: 4,
+                width: '60%'
+            }]
+        });
 
     }
 }

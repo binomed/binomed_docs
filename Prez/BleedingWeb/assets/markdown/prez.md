@@ -181,6 +181,24 @@ elt.style.getProperty('--a-super-var');
 
 ##==##
 
+<!-- .slide: data-type-show="prez" data-state="ghost-state stop-code-css-variable stop-code-css-variable-in-js" -->
+
+<div id="demo-var-in-js" >
+    <div id="codemirror-css-in-js-css">
+    </div>
+    <div id="codemirror-css-in-js-js">
+    </div>
+    <div id="render-element-in-js">
+        <div id="demo-ghost-parent">
+            <div class="demo-ghost"></div>
+            <div class="demo-shadow"></div>
+        </div>
+    </div>
+</div>
+
+
+##==##
+
 <!-- .slide: class="transition text-white with-code big-code transparent" data-state="stop-code-css-variable-in-js"   -->
 
 # Css Mixins
@@ -238,7 +256,7 @@ div {
 
 ##==##
 
-<!-- .slide: class="transition text-white with-code big-code transparent"  -->
+<!-- .slide: class="transition text-white with-code big-code transparent" data-state="stop-code-part" -->
 
 # ::Part & ::Theme
 
@@ -306,7 +324,7 @@ my-component::part(tag-name) span
 
 ##==##
 
-<!-- .slide: class="with-code" data-type-show="prez" -->
+<!-- .slide: class="with-code" data-type-show="prez" data-state="code-part" -->
 
 ## ::Part ::Theme - Declaration
 
@@ -324,9 +342,17 @@ my-component::part(tag-name) span
 </my-component>
 ```
 
+
+<mask-highlighter id="highlight-part"></mask-highlighter>
+
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+
+
 ##==##
 
-<!-- .slide: class="with-code" data-type-show="prez" -->
+<!-- .slide: class="with-code" data-type-show="prez" data-state="stop-code-part"-->
 
 ## ::Part ::Theme - Usage
 

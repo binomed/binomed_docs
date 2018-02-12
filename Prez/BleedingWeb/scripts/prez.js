@@ -3,10 +3,16 @@
 // import { MaskHighlighter } from '../node_modules/mask-highlighter/mask-highlighter.js';
 import {
     ApplyCss
-} from './applyCss.js';
+} from './helper/applyCss.js';
+import {
+    ApplyJS
+} from './helper/applyJs.js';
 import {
     HighlightEvents
 } from './highlightEvent.js';
+import {
+    Demos
+} from './demos.js';
 
 
 (async function () {
@@ -17,35 +23,13 @@ import {
         const inIframe = window.top != window.self;
 
         if (!inIframe) {
-            _codeMirorsDetects();
+            new Demos();
             new HighlightEvents();
         }
 
     }
 
-    function _codeMirorsDetects() {
-        try {
 
-            new ApplyCss(
-                document.getElementById('codemirror-css'),
-                `
-                #render-element{
-                    --a-super-var: #FFF;
-                }
-                #render-element .text-1{
-
-                }
-                #render-element .text-2{
-
-                }
-                `
-            );
-
-        } catch (error) {
-            console.error(error);
-        }
-
-    }
 
 
 
