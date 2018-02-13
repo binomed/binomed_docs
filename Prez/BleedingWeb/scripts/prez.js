@@ -2,17 +2,12 @@
 
 // import { MaskHighlighter } from '../node_modules/mask-highlighter/mask-highlighter.js';
 import {
-    ApplyCss
-} from './helper/applyCss.js';
-import {
-    ApplyJS
-} from './helper/applyJs.js';
-import {
     HighlightEvents
 } from './highlightEvent.js';
 import {
     Demos
 } from './demos.js';
+import { XAdvanced, XHost, XRating, XThumbs2, XWeirdInput, XThumbs } from './partTheme/components-sample.js';
 
 
 (async function () {

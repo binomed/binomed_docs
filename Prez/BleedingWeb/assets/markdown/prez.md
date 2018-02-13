@@ -391,6 +391,23 @@ https://meowni.ca/posts/part-theme-explainer/
 
 ##==##
 
+<!--<h3>x-thumbs</h3>
+  <h4>exposes part `thumb-up` and `thumb-down` but does not style them</h4>
+  <x-thumbs></x-thumbs>
+  <hr>
+  <h3>x-rating</h3>
+  <h4>styles: `thumb-up` and `thumb-down`</h4>
+  <h4>exposes: `subject` and `rating-thumb-up` and `rating-thumb-down`</h4>
+  <x-rating>Chocolate</x-rating>
+  <hr>-->
+  <h3>x-host</h3>
+  <h4>styles: `subject` and `rating-thumb-up` and `rating-thumb-down` for each of 2 x-rating elements</h4>
+  <x-host></x-host>
+  <!--<h4>x-advanced</h4>
+  <x-advanced></x-advanced>-->
+
+##==##
+
 <!-- .slide: data-background="./assets/images/shut-up-and-take-my-money.jpg" class="transition text-white no-filter"  data-copyrights="true "  -->
 
 

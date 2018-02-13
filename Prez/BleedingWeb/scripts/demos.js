@@ -1,4 +1,10 @@
 'use strict';
+import {
+    ApplyCss
+} from './helper/applyCss.js';
+import {
+    ApplyJS
+} from './helper/applyJs.js';
 
 export class Demos {
 
