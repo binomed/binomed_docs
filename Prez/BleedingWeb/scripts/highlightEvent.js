@@ -63,5 +63,43 @@ export class HighlightEvents {
             }]
         });
 
+        // Template Instantiation
+        new HighlightCodeHelper({
+            keyElt: 'template-instantiation',
+            // We start with the first fragment (the initial position is fixed by css)
+            positionArray: [{
+                line: 1,
+                nbLines: 3,
+                width: '100%'
+            }, {
+                line: 5,
+                nbLines: 6,
+                width: '100%'
+            }, {
+                top: 0,
+                height: '100%',
+                width: '100%'
+            }]
+        });
+
+        // HTML Module
+        new HighlightCodeHelper({
+            keyElt: 'html-module',
+            // We start with the first fragment (the initial position is fixed by css)
+            positionArray: [{
+                line: 1,
+                nbLines: 8,
+                width: '100%'
+            }, {
+                line: 10,
+                nbLines: 4,
+                width: '100%'
+            }, {
+                top: 0,
+                height: '100%',
+                width: '100%'
+            }]
+        });
+
     }
 }
