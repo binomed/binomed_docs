@@ -7,7 +7,15 @@ import {
 import {
     Demos
 } from './demos.js';
-import { XHost, XRating , XThumbs } from './partTheme/components-sample.js';
+import {
+    XHost,
+    XRating,
+    XThumbs
+} from './partTheme/components-sample.js';
+import {
+    ControlPrez
+} from './controlPrez.js';
+
 
 
 (async function () {
@@ -20,12 +28,10 @@ import { XHost, XRating , XThumbs } from './partTheme/components-sample.js';
         if (!inIframe) {
             new Demos();
             new HighlightEvents();
+            new ControlPrez();
         }
 
     }
-
-
-
 
 
 

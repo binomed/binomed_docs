@@ -646,9 +646,13 @@ WebShare
 # Pour aller plus loin et jouer un peu
 
 [Part / Theme Polyfill](https://github.com/PolymerLabs/part-theme)
+
 [Template-Instantiation](https://github.com/w3c/webcomponents/blob/gh-pages/proposals/Template-Instantiation.md)
+
 [Template Instation -polyfill proposal](https://github.com/componentkitchen/template-instantiation)
+
 [HTML Module](https://github.com/w3c/webcomponents/issues/645)
+
 [HTML Module Polyfill](https://github.com/TakayoshiKochi/script-type-module)
 
 
