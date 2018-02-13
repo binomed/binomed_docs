@@ -3,7 +3,7 @@ import {
     ApplyCss
 } from './helper/applyCss.js';
 import {
-    ApplyJS
+    ApplyCodeMiror
 } from './helper/applyJs.js';
 
 export class Demos {
@@ -14,6 +14,8 @@ export class Demos {
             this._demoCssVar();
 
             this._demoCssVarInJS();
+
+            this._demoPartTheme();
 
         } catch (error) {
             console.error(error);
@@ -81,7 +83,8 @@ left: var(--left-pos);
 }`
         );
 
-        new ApplyJS(document.getElementById('codemirror-css-in-js-js'),
+        new ApplyCodeMiror(document.getElementById('codemirror-css-in-js-js'),
+            'javascript',
             `document.addEventListener('mousemove', (event) =>{
     const deltaX = this.width - event.clientX;
     const median = this.width / 2;
@@ -91,6 +94,54 @@ left: var(--left-pos);
     ghostParent.style.setProperty('--left-pos', \`\${left}px\`);
 });
             `);
+    }
 
+    _demoPartTheme(){
+        new ApplyCodeMiror(document.getElementById('codemirror-part-css'),
+            'css',
+            `x-rating::part(subject) {
+    padding: 4px;
+    min-width: 20px;
+    display: inline-block;
+}
+.uno:hover::part(subject) {
+    background: lightgreen;
+}
+.duo::part(subject) {
+    background: goldenrod;
+}
+.uno::part(rating-thumb-up) {
+    background: green;
+}
+.uno::part(rating-thumb-down) {
+    background: tomato;
+}
+.duo::part(rating-thumb-up) {
+    background: yellow;
+}
+.duo::part(rating-thumb-down) {
+    background: black;
+}
+x-rating::theme(thumb-up) {
+    border-radius: 8px;
+}
+`);
+
+        new ApplyCodeMiror(document.getElementById('codemirror-part-html'),
+            'text/html',
+            `<x-thumbs>
+    #shadow-root
+    <div part="thumb-up">👍</div>
+    <div part="thumb-down">👎</div>
+</x-thumbs>
+<x-rating>
+    #shadow-root
+    <div part="subject"><slot></slot></div>
+    <x-thumbs part="* => rating-*"></x-thumbs>
+</x-rating>
+
+<x-rating class="uno">❤️</x-rating>
+<x-rating class="duo">🤷</x-rating>
+`);
     }
 }

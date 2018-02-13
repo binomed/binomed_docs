@@ -1,16 +1,17 @@
 'use stict'
 
-export class ApplyJS {
+export class ApplyCodeMiror {
 
     /**
      *
      * @param {HtmlElement} elt
+     * @param {string} mode
      * @param {string} initialContent
      */
-    constructor(elt, initialContent) {
+    constructor(elt, mode, initialContent) {
         const codeMirrorJS = CodeMirror(elt, {
             value: initialContent,
-            mode: 'javascript',
+            mode: mode,
             lineNumber: 'true',
             fixedGutter: false,
             readOnly: true,

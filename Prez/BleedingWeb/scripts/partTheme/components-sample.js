@@ -35,35 +35,6 @@ export class XThumbs extends PartThemeElement {
 
   customElements.define('x-thumbs', XThumbs);
 
-export class XWeirdInput extends PartThemeElement {
-    static get template() {
-      return `
-        <input part="input" placeholder="weird">
-      `;
-    }
-    connectedCallback() {
-      const initializing = !this.shadowRoot;
-      super.connectedCallback();
-      if (initializing) {
-        const input = this.shadowRoot.querySelector('input');
-        input.addEventListener('change', () => {
-          input.setAttribute('part', input.value);
-          this._applyPartTheme();
-        });
-      }
-    }
-  }
-  customElements.define('x-weird-input', XWeirdInput);
-
-export class XThumbs2 extends PartThemeElement {
-    static get template() {
-      return `
-        <x-thumbs part="thumb-up => thumb-up"></x-thumbs>
-      `;
-    }
-  }
-  customElements.define('x-thumbs2', XThumbs2);
-
 export class XRating extends PartThemeElement {
     static get template() {
       return `
@@ -132,9 +103,7 @@ export class XHost extends PartThemeElement {
           x-rating::theme(thumb-up) {
             border-radius: 8px;
           }
-          x-rating::part(rating-input) {
-            background: #ccc;
-          }
+
         </style>
         <x-rating class="uno">❤️</x-rating>
         <br>
@@ -143,36 +112,3 @@ export class XHost extends PartThemeElement {
     }
   }
   customElements.define('x-host', XHost);
-
-export class XAdvanced extends PartThemeElement {
-    static get template() {
-      return `
-        <style>
-          :host {
-            display: block;
-            border: 2px solid yellow;
-          }
-          ::theme(input)::placeholder {
-            color: orange;
-          }
-          ::theme(input-fancy) {
-            border: 20px dashed yellow;
-          }
-          ::theme(input-spazzy) {
-            margin: 100px;
-          }
-          x-thumbs2::part(thumb-up) {
-            border: 10px solid orange;
-          }
-          x-thumbs2::part(thumb-down) {
-            border: 10px solid orange;
-          }
-        </style>
-        <p>part + placeholder and dynamism<p>
-        <x-weird-input></x-weird-input>
-        <p>forwarding: only thumbs up should have a border<p>
-        <x-thumbs2></x-thumbs2>
-      `;
-    }
-  }
-  customElements.define('x-advanced', XAdvanced);

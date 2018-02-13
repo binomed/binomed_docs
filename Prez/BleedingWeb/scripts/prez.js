@@ -7,7 +7,7 @@ import {
 import {
     Demos
 } from './demos.js';
-import { XAdvanced, XHost, XRating, XThumbs2, XWeirdInput, XThumbs } from './partTheme/components-sample.js';
+import { XHost, XRating , XThumbs } from './partTheme/components-sample.js';
 
 
 (async function () {

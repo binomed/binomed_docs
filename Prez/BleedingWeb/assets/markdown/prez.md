@@ -402,9 +402,25 @@ https://meowni.ca/posts/part-theme-explainer/
   <hr>-->
   <h3>x-host</h3>
   <h4>styles: `subject` and `rating-thumb-up` and `rating-thumb-down` for each of 2 x-rating elements</h4>
-  <x-host></x-host>
+
   <!--<h4>x-advanced</h4>
   <x-advanced></x-advanced>-->
+
+##==##
+
+<!-- .slide: data-type-show="prez" -->
+
+<div id="demo-part" >
+    <div id="codemirror-part-css">
+    </div>
+    <div id="codemirror-part-html">
+    </div>
+    <div id="render-element-part">
+        <x-host></x-host>
+    </div>
+</div>
+
+
 
 ##==##
 
