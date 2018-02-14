@@ -20,6 +20,7 @@
 </blockquote>
 
 <div class="citation-author">vous à la sortie de cette prez</div>
+<img src="./assets/images/NOTSUREIF.png" class="citation-img"></img>
 
 ##==##
 
@@ -58,9 +59,9 @@ Front-end developer & Community Manager
 
 ##==##
 
-<!-- .slide: class="transition text-white with-code big-code transparent" data-state="start-code-css-variable"  -->
+<!-- .slide: class="transition text-white with-code big-code transparent" data-state="css-var-type start-code-css-variable"  -->
 
-# Css Variables
+<h1 class="typings-text" id="title-css-var"></h1>
 
 ```
 --a-super-var: #000000;
@@ -71,7 +72,7 @@ Front-end developer & Community Manager
 
 <!-- .slide: class="with-code no-highlight" data-type-show="full" -->
 
-## CSS Variables
+## CSS Custom Properties
 
 ```css
 // Declaration
@@ -93,7 +94,7 @@ h1 {
 
 <!-- .slide: class="with-code" data-state="code-css-variable" data-type-show="prez" -->
 
-## CSS Variables
+## CSS Custom Properties
 
 ```CSS
 // Declaration
@@ -222,6 +223,7 @@ elt.style.getProperty('--a-super-var');
 </blockquote>
 
 <div class="citation-author">The most interesting man in the world</div>
+<img src="./assets/images/most_intersting_man.png" class="citation-img"></img>
 
 
 ##==##
@@ -433,8 +435,8 @@ my-component::part(tag-name) span
 </cite>
 </blockquote>
 
-<div class="citation-author">Une personne de mauvaise fois</div>
-
+<div class="citation-author">Monsieur mauvaise fois</div>
+<img src="./assets/images/mr_grincheux.png" class="citation-img"></img>
 
 ##==##
 
@@ -598,6 +600,31 @@ const template = barDoc.querySelector('template');
         <use xlink:href="#magic" />
     </svg><br>Houdini CSS
 </h1>
+
+
+##==##
+
+Worklet
+
+##==##
+
+CSS Paint Api
+
+##==##
+
+Animation Worklet
+
+##==##
+
+Layout Worklet
+
+##==##
+
+Typed CSSOM
+
+##==##
+
+Properties and values
 
 
 ##==##

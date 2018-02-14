@@ -15,6 +15,9 @@ import {
 import {
     ControlPrez
 } from './controlPrez.js';
+import {
+    TypeText
+} from './typedText.js'
 
 
 
@@ -25,6 +28,8 @@ import {
 
         const inIframe = window.top != window.self;
 
+
+        new TypeText();
         if (!inIframe) {
             new Demos();
             new HighlightEvents();
