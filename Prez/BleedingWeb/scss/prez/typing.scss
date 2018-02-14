@@ -1,12 +1,10 @@
 .typings-text .line,
 .typings-text span {
-    height: 20px;
-    line-height: 20px;
+    line-height: 1em;
     vertical-align: middle;
 }
 
 .typings-text span {
-    display: inline-block;
     position: relative;
 }
 
@@ -34,13 +32,14 @@
     right: -6px;
 }
 
-.typings-text span.past {
-    color: gray;
-}
-
 @keyframes blink-caret {
-    0% { border-color: #000 }
-    50% { border-color: transparent }
-    100% { border-color: #000 }
+    0% {
+        border-color: #000
+    }
+    50% {
+        border-color: transparent
+    }
+    100% {
+        border-color: #000
+    }
 }
-

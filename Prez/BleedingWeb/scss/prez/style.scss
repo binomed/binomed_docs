@@ -2,7 +2,7 @@
 @import "./my_custom_style";
 @import "./background";
 @import "./demo";
-@import "./typings";
+@import "./typing";
 $sommaire-img-height: 60px;
 strong {
   font-weight: 600 !important;
@@ -204,4 +204,3 @@ div.flex-col .fragment.highlight-blue.visible {
   @include force-img-size-prefix(fh, height, $i * 50);
   @include force-img-size-prefix(fw, width, $i * 50);
 }
-

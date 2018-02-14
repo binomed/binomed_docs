@@ -209,22 +209,6 @@ elt.style.getProperty('--a-super-var');
 ```
 
 
-##==##
-
-
-## Instant Citation
-
-<br>
-
-<blockquote>
-<cite>
- Je ne fais jamais de mixins css, mais quand je le fais c'est avec la nouvelle spec
-</cite>
-</blockquote>
-
-<div class="citation-author">The most interesting man in the world</div>
-<img src="./assets/images/most_intersting_man.png" class="citation-img"></img>
-
 
 ##==##
 
@@ -246,6 +230,23 @@ div {
 }
 ```
 [Why I Abandoned @apply](https://www.xanthir.com/b4o00)
+
+
+##==##
+
+
+## Instant Citation
+
+<br>
+
+<blockquote>
+<cite>
+ Je ne fais jamais de mixins css, mais quand je le fais c'est avec la nouvelle spec
+</cite>
+</blockquote>
+
+<div class="citation-author">The most interesting man in the world</div>
+<img src="./assets/images/most_intersting_man.png" class="citation-img"></img>
 
 
 ##==##
@@ -562,7 +563,7 @@ const template = barDoc.querySelector('template');
 
 ##==##
 
-<!-- .slide: class="with-code no-highlight" data-type-show="prez" data-state="code-html-module"-->
+<!-- .slide: class="with-code" data-type-show="prez" data-state="code-html-module"-->
 
 ## HTML Module
 
@@ -604,39 +605,174 @@ const template = barDoc.querySelector('template');
 
 ##==##
 
-Worklet
+<!-- .slide: data-type-show="prez" -->
+
+## Qu'est ce que Houdini CSS ?
+
+<p class="fragment">Worklet</p>
+<p class="fragment">CSS Paint API</p>
+<p class="fragment">Layout Paint API</p>
+<p class="fragment">Parser API</p>
+<p class="fragment">Typed OM</p>
+<p class="fragment">Properties & Values API</p>
 
 ##==##
 
-CSS Paint Api
+<!-- .slide: data-type-show="full" -->
 
-##==##
+## Qu'est ce que Houdini CSS ?
 
-Animation Worklet
-
-##==##
-
-Layout Worklet
-
-##==##
-
-Typed CSSOM
-
-##==##
-
-Properties and values
-
-
-##==##
-
-
-WebPlatform
-
+<p class="fragment">Worklet : Threads, Animation</p>
+<p class="fragment">CSS Paint API : Custom Rendering, Custom backgrounds</p>
+<p class="fragment">Layout Paint API : Custom Layout</p>
+<p class="fragment">Parser API : Nouvelle interprétation des éléments</p>
+<p class="fragment">Typed OM : Objets javascripts visant à représenter le CSS</p>
+<p class="fragment">Properties & Values API : Api de manipulation des properties au sens large</p>
 
 
 ##==##
 
-Tableau de l'intégration du natif => cf Paul Kinlan
+
+## Instant Citation
+
+<br>
+
+<blockquote>
+<cite>
+ Un Polyfill CSS ? Facile.
+ Euh en fait non !
+</cite>
+</blockquote>
+
+<div class="citation-author">Un développeur Javascript</div>
+<img src="./assets/images/css_awesome.png" class="citation-img"></img>
+
+##==##
+
+## Pourquoi Houdini ?
+
+<div class="center-element">
+    <video data-autoplay src="./assets/images/magic.mp4" class="fh-500"></video>
+</div>
+
+
+
+##==##
+
+<!-- .slide: data-state="animate-houdini-workflow" -->
+
+## Pourquoi Houdini ?
+
+<div class="center-element">
+    <img id="houdini_workflow-1" src="./assets/images/browser_workflow.svg" class="w-800"></img>
+    <img id="houdini_workflow-2" src="./assets/images/browser_workflow_with_houdini.svg" class="w-800" style="display:none"></img>
+</div>
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+
+
+##==##
+
+<!-- .slide: class="transition text-white transparent" data-state="stop-code-paint-api" -->
+
+<h1>
+    <svg class="fh-250 color-yellow">
+        <use xlink:href="#paint" />
+    </svg><br>CSS Paint Api
+</h1>
+
+
+
+##==##
+
+<!-- .slide: class="with-code no-highlight" data-type-show="full"-->
+
+```javascript
+//index.js
+CSS.paintWorklet.addModule('painter.js');
+
+// painter.js
+class MyPainter {
+  paint(ctx, geometry, properties) {
+    // ...
+  }
+}
+
+registerPaint('myPainter', MyPainter);
+```
+
+```css
+textarea {
+    background-image: paint(myPainter);
+}
+```
+
+
+##==##
+
+<!-- .slide: class="with-code" data-type-show="prez" data-state="code-paint-api"-->
+
+```javascript
+//index.js
+CSS.paintWorklet.addModule('painter.js');
+
+// painter.js
+class MyPainter {
+  paint(ctx, geometry, properties) {
+    // ...
+  }
+}
+
+registerPaint('myPainter', MyPainter);
+```
+
+```css
+textarea {
+    background-image: paint(myPainter);
+}
+```
+
+
+<mask-highlighter id="highlight-paint-api"></mask-highlighter>
+
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+
+
+##==##
+
+<!-- .slide: data-type-show="prez" data-state="stop-code-paint-api" -->
+
+<div id="demo-paint-api" >
+    <div id="codemirror-paint-api-css">
+    </div>
+    <div id="codemirror-paint-api">
+    </div>
+    <div id="render-element-paint-api">
+    </div>
+</div>
+
+
+##==##
+
+<!-- .slide: class="transition text-white transparent" -->
+
+<h1>
+    <svg class="fh-250 color-orange">
+        <use xlink:href="#process" />
+    </svg><br>Web Platform
+</h1>
+
+
+##==##
+
+
+<div class="center-element">
+    <img src="./assets/images/web-platform-2016.png" class="fh-600"></img>
+</div>
+
 
 ##==##
 
@@ -697,7 +833,7 @@ WebShare
 
 <div class="credits">
     <h4 >Crédits : <a href="https://thenounproject.com/" target="_blank">The noun project</a></h4>
-    <p>Alexander Zharikov / Ben Iconator / Icon Fair / Dimitry Sunseifer / Shaurya</p>
+    <p>Alexander Zharikov / Ben Iconator / Icon Fair / Dimitry Sunseifer / Shaurya / Creative Stall / Eucalyp</p>
 </div>
 
 
@@ -729,4 +865,8 @@ WebShare
     <metadata id="metadata4956"><rdf:RDF><cc:Work rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"  /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs id="defs4954" /><g transform="translate(-135.07109,1.1848341)" id="g4800"><g id="g4760"><path id="path4758" d="m 211.229,4.937 c 10.265,0 18.616,8.351 18.616,18.616 v 52.894 c 0,10.265 -8.351,18.616 -18.616,18.616 h -52.894 c -10.265,0 -18.616,-8.351 -18.616,-18.616 V 23.553 c 0,-10.265 8.351,-18.616 18.616,-18.616 h 52.894 m 0,-3 h -52.894 c -11.938,0 -21.616,9.678 -21.616,21.616 v 52.894 c 0,11.938 9.678,21.616 21.616,21.616 h 52.894 c 11.938,0 21.616,-9.678 21.616,-21.616 V 23.553 c 0,-11.938 -9.678,-21.616 -21.616,-21.616 z" /></g><line style="fill:none;stroke-width:0.25;stroke-miterlimit:10" id="line4762" y2="1.25" x2="233.532" y1="98.75" x1="136.032" stroke-miterlimit="10" /><line style="fill:none;stroke-width:0.25;stroke-miterlimit:10" id="line4764" y2="98.75" x2="233.532" y1="1.25" x1="136.032" stroke-miterlimit="10" /><g id="g4772"><line style="fill:none;stroke-width:0.25;stroke-miterlimit:10" id="line4766" y2="67.75" x2="231.923" y1="67.75" x1="137.64101" stroke-miterlimit="10" /><line style="fill:none;stroke-width:0.25;stroke-miterlimit:10" id="line4768" y2="50" x2="231.923" y1="50" x1="137.64101" stroke-miterlimit="10" /><line style="fill:none;stroke-width:0.25;stroke-miterlimit:10" id="line4770" y2="32.25" x2="231.923" y1="32.25" x1="137.64101" stroke-miterlimit="10" /></g><g id="g4780"><line style="fill:none;stroke-width:0.25;stroke-miterlimit:10" id="line4774" y2="2.859" x2="202.532" y1="97.140999" x1="202.532" stroke-miterlimit="10" /><line style="fill:none;stroke-width:0.25;stroke-miterlimit:10" id="line4776" y2="2.859" x2="184.782" y1="97.140999" x1="184.782" stroke-miterlimit="10" /><line style="fill:none;stroke-width:0.25;stroke-miterlimit:10" id="line4778" y2="2.859" x2="167.032" y1="97.140999" x1="167.032" stroke-miterlimit="10" /></g><g id="g4786"><line style="fill:none;stroke-width:0.25;stroke-miterlimit:10" id="line4782" y2="1.937" x2="226.532" y1="98.063004" x1="226.532" stroke-miterlimit="10" /><line style="fill:none;stroke-width:0.25;stroke-miterlimit:10" id="line4784" y2="1.937" x2="143.032" y1="98.063004" x1="143.032" stroke-miterlimit="10" /></g><g id="g4792"><line style="fill:none;stroke-width:0.25;stroke-miterlimit:10" id="line4788" y2="8.25" x2="136.71899" y1="8.25" x1="232.845" stroke-miterlimit="10" /><line style="fill:none;stroke-width:0.25;stroke-miterlimit:10" id="line4790" y2="91.75" x2="136.71899" y1="91.75" x1="232.845" stroke-miterlimit="10" /></g><circle style="fill:none;stroke-width:0.25;stroke-miterlimit:10" id="circle4794" r="41.700001" cy="50" cx="184.782" stroke-miterlimit="10" /><circle style="fill:none;stroke-width:0.25;stroke-miterlimit:10" id="circle4796" r="25.162001" cy="50" cx="184.782" stroke-miterlimit="10" /><circle style="fill:none;stroke-width:0.25;stroke-miterlimit:10" id="circle4798" r="17.75" cy="50" cx="184.782" stroke-miterlimit="10" /></g></svg>
     <!-- Import -->
     <svg id="import" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 100 125" x="0px" y="0px"><title>67 all</title><path d="M93,74V53a3,3,0,1,0-6,0V74a9,9,0,0,1-9,9H22a9,9,0,0,1-9-9V53a3,3,0,0,0-6,0V74A15,15,0,0,0,22,89H78A15,15,0,0,0,93,74Z"/><path d="M50,7a3,3,0,0,0-3,3V29H37.17l13,13,13-13H53V10A3,3,0,0,0,50,7Z"/><path d="M94.35,40a3,3,0,0,0-3-3H74.65A8.66,8.66,0,0,0,66,45.65V58H56L69,71,82,58H72V45.65A2.65,2.65,0,0,1,74.65,43h16.7A3,3,0,0,0,94.35,40Z"/><path d="M6,40a3,3,0,0,0,3,3H26.7a2.65,2.65,0,0,1,2.65,2.65V58h-10l13,13,13-13h-10V45.65A8.66,8.66,0,0,0,26.7,37H9A3,3,0,0,0,6,40Z"/></svg>
+    <!-- Process -->
+    <svg id="process" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 65 81.25" enable-background="new 0 0 65 65" xml:space="preserve"><g><path d="M61.7,50.6V16.4c0-2.1-1.7-3.7-3.8-3.7H44.9c-3.2-3.1-7.4-5-12.1-5.1c-4.9-0.1-9.6,1.8-13,5.1H7c-2.1,0-3.8,1.7-3.8,3.7   v34.3h-3.5v3l2.8,3.9h60l2.8-3.9v-3H61.7z M4.8,16.4c0-1.2,1-2.2,2.3-2.2h11.4c-1.4,1.7-2.6,3.7-3.3,5.9l1.4,0.5   c2.2-7,8.9-11.7,16.2-11.5c7.4,0.2,13.8,5.4,15.6,12.5l-4.6,0l5.5,7.2l5.5-7.2l-4.9,0c-0.6-2.8-1.9-5.3-3.7-7.4H58   c1.2,0,2.3,1,2.3,2.2v34.3H4.8V16.4z M51.8,23l-2.5,3.3L46.8,23L51.8,23z M63.7,53.1l-2,2.8H3.3l-2-2.8v-1h62.5V53.1z"/><path d="M23,28.2c0.2,0.8,0.5,1.5,0.9,2.2l-1.3,2l2.9,2.9l2-1.4c0.7,0.4,1.4,0.7,2.2,0.9l0.4,2.3l4.1,0l0.4-2.3   c0.8-0.2,1.5-0.5,2.2-0.9l2,1.3l2.9-2.9l-1.4-2c0.4-0.7,0.7-1.4,0.9-2.2l2.3-0.4l0-4.1l-2.3-0.4c-0.2-0.8-0.5-1.5-0.9-2.2l1.3-2   l-2.9-2.9l-2,1.4c-0.7-0.4-1.4-0.7-2.2-0.9l-0.4-2.3l-4.1,0l-0.4,2.3c-0.8,0.2-1.5,0.5-2.2,0.9l-2-1.3L22.5,19l1.4,2   c-0.4,0.7-0.7,1.4-0.9,2.2l-2.3,0.4l0,4.1L23,28.2z M24.3,24.5l0.1-0.5c0.2-0.9,0.6-1.8,1.1-2.6l0.3-0.4l-1.2-1.7l1.1-1.1l1.8,1.2   l0.4-0.3c0.8-0.5,1.7-0.9,2.6-1.1l0.5-0.1l0.4-2.1l1.6,0l0.4,2.1l0.5,0.1c0.9,0.2,1.8,0.6,2.6,1.1l0.4,0.3l1.7-1.2l1.1,1.1   l-1.2,1.8l0.3,0.4c0.5,0.8,0.9,1.7,1.1,2.6l0.1,0.5l2.1,0.4l0,1.6L40,26.8l-0.1,0.5c-0.2,1-0.6,1.8-1.1,2.6l-0.3,0.4l1.2,1.7   l-1.1,1.1L36.9,32l-0.4,0.3c-0.8,0.5-1.7,0.9-2.6,1.1l-0.5,0.1L33,35.6l-1.6,0L31,33.5l-0.5-0.1c-0.9-0.2-1.8-0.6-2.6-1.1L27.4,32   l-1.7,1.2l-1.1-1.1l1.2-1.8L25.5,30c-0.5-0.8-0.9-1.7-1.1-2.6l-0.1-0.5l-2.1-0.4l0-1.6L24.3,24.5z"/><path d="M32.1,30.8L32.1,30.8c2.9,0,5.2-2.4,5.2-5.2c0-2.8-2.3-5.2-5.2-5.2c-2.9,0-5.2,2.4-5.2,5.2C27,28.5,29.3,30.8,32.1,30.8z    M32.1,22c2,0,3.7,1.6,3.7,3.7c0,2-1.6,3.7-3.7,3.7l0,0.8v-0.8c-2,0-3.7-1.6-3.7-3.7C28.4,23.6,30.1,22,32.1,22z"/><path d="M32.2,42.2c-7.4-0.2-13.8-5.4-15.6-12.5l4.6,0l-5.5-7.2l-5.5,7.2l4.9,0c1.8,7.9,8.9,13.8,17.1,14c0.2,0,0.3,0,0.5,0   c7.8,0,14.8-5.1,17.2-12.5l-1.4-0.5C46.2,37.6,39.6,42.4,32.2,42.2z M15.7,24.9l2.5,3.2l-5,0L15.7,24.9z"/></g></svg>
+    <!-- paint -->
+    <svg id="paint" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 64 80" style="enable-background:new 0 0 64 64;" xml:space="preserve"><g><path d="M37,10H5v8h32V10z M35,16H7v-4h28V16z"/><path d="M29,38c2.757,0,5-2.243,5-5s-2.243-5-5-5s-5,2.243-5,5S26.243,38,29,38z M29,30c1.654,0,3,1.346,3,3s-1.346,3-3,3   s-3-1.346-3-3S27.346,30,29,30z"/><path d="M34,45c0-2.757-2.243-5-5-5s-5,2.243-5,5s2.243,5,5,5S34,47.757,34,45z M29,48c-1.654,0-3-1.346-3-3s1.346-3,3-3   s3,1.346,3,3S30.654,48,29,48z"/><path d="M37,49c-2.757,0-5,2.243-5,5s2.243,5,5,5s5-2.243,5-5S39.757,49,37,49z M37,57c-1.654,0-3-1.346-3-3s1.346-3,3-3   s3,1.346,3,3S38.654,57,37,57z"/><path d="M55.512,37.422l1.467-15.158C56.992,22.119,57,21.976,57,21.831V19.5c0-1.431-0.684-2.693-1.728-3.518   C56.291,15.201,57,13.927,57,12c0-1.156-0.257-2.192-0.765-3.08C55.416,7.485,55,6.05,55,4.652V1.382l-1.447,0.724   C53.285,2.239,47,5.446,47,11c0,2.394,1.085,4.193,2.499,5.171C48.586,16.995,48,18.175,48,19.5v2.388   c0,0.096,0.003,0.192,0.009,0.289l0.855,13.255c-1.122-0.735-1.908-1.955-2.074-3.354c-0.011-0.099-0.023-0.181-0.037-0.26   c-0.703-3.756-2.83-6.94-5.753-9.056V6c0-2.757-2.243-5-5-5H6C3.243,1,1,3.243,1,6v44c0,2.757,2.243,5,5,5h14.604   c3.009,4.795,8.329,8,14.396,8h14.5C56.944,63,63,56.944,63,49.5C63,44.385,60.035,39.683,55.512,37.422z M49,11   c0-2.869,2.387-5.054,4.001-6.202c0.027,1.702,0.531,3.422,1.498,5.114C54.831,10.494,55,11.196,55,12c0,2.479-1.632,3-3,3   C50.558,15,49,13.471,49,11z M52.093,51.991C52.062,51.992,52.032,52,52,52c-0.021,0-0.041-0.006-0.063-0.006L50.066,23H53v-2h-3   v-1.5c0-1.379,1.121-2.5,2.5-2.5s2.5,1.121,2.5,2.5v2.331c0,0.08-0.004,0.161-0.012,0.24L52.093,51.991z M54.543,47.438   C54.832,47.9,55,48.432,55,49c0,0.785-0.31,1.495-0.805,2.03L54.543,47.438z M49.625,47.221l0.251,3.895   C49.335,50.573,49,49.825,49,49C49,48.338,49.237,47.729,49.625,47.221z M6,3h30c1.654,0,3,1.346,3,3H3C3,4.346,4.346,3,6,3z M6,53   c-1.654,0-3-1.346-3-3v-3h15.051c0.04,0.678,0.114,1.346,0.231,2H15v2h3.753c0.212,0.688,0.479,1.352,0.773,2H6z M18,36H7v-4   h11.231C18.089,32.814,18,33.646,18,34.5V36z M18.724,30H5v8h13v7H3V8h36v13.55c-0.642-0.323-1.31-0.597-2-0.822V20H5v8h14.557   C19.233,28.642,18.951,29.308,18.724,30z M25.188,22c-1.732,1.018-3.232,2.381-4.409,4H7v-4H25.188z M49.5,61H35   c-8.271,0-15-6.729-15-15V34.5C20,27.607,25.607,22,32.5,22c6.015,0,11.183,4.283,12.284,10.172l0.02,0.138   c0.294,2.477,1.95,4.562,4.209,5.423l0.45,6.981C47.944,45.615,47,47.253,47,49c0,2.757,2.243,5,5,5s5-2.243,5-5   c0-1.646-0.843-3.188-2.21-4.116l0.513-5.305C58.77,41.62,61,45.405,61,49.5C61,55.841,55.841,61,49.5,61z"/></g></svg>
 </div>

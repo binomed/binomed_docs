@@ -101,5 +101,24 @@ export class HighlightEvents {
             }]
         });
 
+        // Paint API
+        new HighlightCodeHelper({
+            keyElt: 'paint-api',
+            // We start with the first fragment (the initial position is fixed by css)
+            positionArray: [{
+                line: 0,
+                nbLines: 2,
+                width: '100%'
+            }, {
+                line: 3,
+                nbLines: 8,
+                width: '100%'
+            }, {
+                line: 12,
+                nbLines: 3,
+                width: '100%'
+            }]
+        });
+
     }
 }

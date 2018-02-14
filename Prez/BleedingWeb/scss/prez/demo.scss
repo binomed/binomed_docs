@@ -193,7 +193,7 @@
 }
 
 #codemirror-part-css .CodeMirror-lines,
-#codemirror-part-html .CodeMirror-lines  {
+#codemirror-part-html .CodeMirror-lines {
     font-size: 0.6em;
 }
 
@@ -206,5 +206,41 @@
 #codemirror-part-html {
     margin: 15px;
     grid-column: 2;
+    grid-row: 2;
+}
+
+/**
+* PAINT API
+*/
+
+#demo-paint-api {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 50%;
+    grid-template-rows: 50%;
+}
+
+#render-element-paint-api {
+    position: relative;
+    margin: 15px;
+    grid-column: 2;
+    grid-row: 1;
+}
+
+#codemirror-paint-api-css .CodeMirror-lines,
+#codemirror-paint-api .CodeMirror-lines {
+    font-size: 0.6em;
+}
+
+#codemirror-paint-api-css {
+    margin: 15px;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+#codemirror-paint-api {
+    margin: 15px;
+    grid-column: 1 / span 2;
     grid-row: 2;
 }

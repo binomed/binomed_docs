@@ -20,12 +20,23 @@ export class ControlPrez {
             });
             await thingy.connect();
             this.thingyConnected = true;
-            await thingy.buttonEnable((state) => {
+            const battery = await thingy.getBatteryLevel();
+            const permission = await Notification.requestPermission();
+            if (permission === "denied") {
+                console.log(`Thingy Connect and level battery : ${battery}`);
+            } else {
+                console.log(`Thingy Connect and level battery : ${battery}`, battery);
+                new Notification("Thingy Connect ! ", {
+                    body: ` Thingy Connect and level battery : ${battery}`
+                });
+            }
+            const state = await thingy.buttonEnable((state) => {
                 console.log('tap', state);
                 if (state) {
                     Reveal.next();
                 }
             }, true);
+            console.log(state);
 
 
         } catch (error) {

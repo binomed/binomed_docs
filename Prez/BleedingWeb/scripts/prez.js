@@ -33,8 +33,21 @@ import {
         if (!inIframe) {
             new Demos();
             new HighlightEvents();
-            new ControlPrez();
+            // new ControlPrez();
         }
+
+        Reveal.addEventListener('animate-houdini-workflow', () => {
+
+            document.getElementById('houdini_workflow-1').style.display = '';
+            document.getElementById('houdini_workflow-2').style.display = 'none';
+            Reveal.addEventListener('fragmentshown', callBackFragment);
+
+            function callBackFragment() {
+                document.getElementById('houdini_workflow-1').style.display = 'none';
+                document.getElementById('houdini_workflow-2').style.display = '';
+                Reveal.removeEventListener('fragmentshown', callBackFragment);
+            }
+        });
 
     }
 

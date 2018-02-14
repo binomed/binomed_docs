@@ -17,6 +17,8 @@ export class Demos {
 
             this._demoPartTheme();
 
+            this._demoPaintApi();
+
         } catch (error) {
             console.error(error);
         }
@@ -96,7 +98,7 @@ left: var(--left-pos);
             `);
     }
 
-    _demoPartTheme(){
+    _demoPartTheme() {
         new ApplyCodeMiror(document.getElementById('codemirror-part-css'),
             'css',
             `x-rating::part(subject) {
@@ -144,4 +146,37 @@ x-rating::theme(thumb-up) {
 <x-rating class="duo">🤷</x-rating>
 `);
     }
+
+    _demoPaintApi() {
+        (CSS.paintWorklet || paintWorklet).addModule('./scripts/houdini/circle-worklet.js');
+
+        new ApplyCss(
+            document.getElementById('codemirror-paint-api-css'),
+            `
+#render-element-paint-api{
+    --circle-color: #FFF;
+    --width-circle:100px;
+    width: var(--width-circle);
+    background-image: paint(circle);
+}
+
+            `
+        );
+
+        new ApplyCodeMiror(document.getElementById('codemirror-paint-api'),
+            'javascript',
+            `paint(ctx, geom, properties) {
+    // Change the fill color.
+    const color = properties.get('--circle-color').toString();
+    ctx.fillStyle = color;
+    // Determine the center point and radius.
+    const radius = Math.min(geom.width / 2, geom.height / 2);
+    // Draw the circle \\o/
+    ctx.beginPath();
+    ctx.arc(geom.width / 2, geom.height / 2, radius, 0, 2 * Math.PI);
+    ctx.fill();
+}
+            `);
+    }
+
 }
