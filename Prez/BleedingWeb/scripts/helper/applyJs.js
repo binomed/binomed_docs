@@ -12,7 +12,8 @@ export class ApplyCodeMiror {
         const codeMirrorJS = CodeMirror(elt, {
             value: initialContent,
             mode: mode,
-            lineNumber: 'true',
+            lineNumbers: true,
+            autoRefresh: true,
             fixedGutter: false,
             readOnly: true,
             showCursorWhenSelecting: true,

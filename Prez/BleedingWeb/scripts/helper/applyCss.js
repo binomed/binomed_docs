@@ -11,7 +11,8 @@ export class ApplyCss {
         const codeMirrorCss = CodeMirror(elt, {
             value: initialContent,
             mode: 'css',
-            lineNumber: 'true',
+            lineNumbers: true,
+            autoRefresh: true,
             fixedGutter: false,
             showCursorWhenSelecting: true,
             lineWrapping: true,
