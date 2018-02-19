@@ -5,6 +5,20 @@
     <br> is coming
 </h1>
 
+<h2>2018 @TouraineTech : <img src="./assets/images/touraine_tech.svg" class="h-100"></img></h2>
+
+
+
+
+##==##
+
+<!-- .slide: data-background="./assets/images/galaxy_2.jpg" class="transition text-white" data-type-show="full"  -->
+
+<h1>
+    The Cutting Edge Web
+    <br> is coming
+</h1>
+
 
 ##==##
 
@@ -130,7 +144,8 @@ h1 {
     </div>
 </div>
 
-
+Notes:
+Mettre Color => Couleur différente + :hover
 
 ##==##
 
@@ -234,6 +249,15 @@ div {
 
 ##==##
 
+<!-- .slide: data-background="./assets/images/morpheus.jpg" class="transition text-white no-filter"  data-copyrights="true "  -->
+
+## Et donc on choisit quoi ?
+
+<div class="copyrights">matrix</div>
+
+
+##==##
+
 
 ## Instant Citation
 
@@ -249,13 +273,6 @@ div {
 <img src="./assets/images/most_intersting_man.png" class="citation-img"></img>
 
 
-##==##
-
-<!-- .slide: data-background="./assets/images/morpheus.jpg" class="transition text-white no-filter"  data-copyrights="true "  -->
-
-## Et donc on choisit quoi ?
-
-<div class="copyrights">matrix</div>
 
 ##==##
 
@@ -462,7 +479,7 @@ my-component::part(tag-name) span
     <article>
         <h1>{{article.title}}</h1>
         <input value="article.comment">
-    </article
+    </article>
 </template>
 ```
 
@@ -526,6 +543,9 @@ document.defineTemplateType('my-template-type', {
 <div class="fragment" data-fragment-index="2" hidden></div>
 <div class="fragment" data-fragment-index="3" hidden></div>
 
+Notes:
+Objectif de création de contenu custo !
+
 
 ##==##
 
@@ -572,8 +592,8 @@ const template = barDoc.querySelector('template');
   export let baz = 5;
 </ script>
 <template export="myTemplate">
-    <style>
-        :host {display: block}
+  <style>
+    :host {display: block}
   </style>
 </template>
 ```
@@ -592,6 +612,24 @@ const template = barDoc.querySelector('template');
 <div class="fragment" data-fragment-index="3" hidden></div>
 
 
+
+##==##
+
+
+## Instant Citation
+
+<br>
+
+<blockquote>
+<cite>
+ Un Polyfill CSS ? Facile.
+ Euh en fait non !
+</cite>
+</blockquote>
+
+<div class="citation-author">Un développeur Javascript</div>
+<img src="./assets/images/css_awesome.png" class="citation-img"></img>
+
 ##==##
 
 <!-- .slide: class="transition text-white transparent" data-state="stop-code-html-module" -->
@@ -601,6 +639,15 @@ const template = barDoc.querySelector('template');
         <use xlink:href="#magic" />
     </svg><br>Houdini CSS
 </h1>
+
+
+##==##
+
+## Pourquoi Houdini ?
+
+<div class="center-element">
+    <video data-autoplay src="./assets/images/magic.mp4" class="fh-500"></video>
+</div>
 
 
 ##==##
@@ -628,32 +675,6 @@ const template = barDoc.querySelector('template');
 <p class="fragment">Parser API : Nouvelle interprétation des éléments</p>
 <p class="fragment">Typed OM : Objets javascripts visant à représenter le CSS</p>
 <p class="fragment">Properties & Values API : Api de manipulation des properties au sens large (typés)</p>
-
-
-##==##
-
-
-## Instant Citation
-
-<br>
-
-<blockquote>
-<cite>
- Un Polyfill CSS ? Facile.
- Euh en fait non !
-</cite>
-</blockquote>
-
-<div class="citation-author">Un développeur Javascript</div>
-<img src="./assets/images/css_awesome.png" class="citation-img"></img>
-
-##==##
-
-## Pourquoi Houdini ?
-
-<div class="center-element">
-    <video data-autoplay src="./assets/images/magic.mp4" class="fh-500"></video>
-</div>
 
 
 
@@ -829,7 +850,7 @@ CSSMathSum(
 
 ##==##
 
-<!-- .slide: class="transition text-white transparent" -->
+<!-- .slide: class="transition text-white transparent"  data-state="stop-code-generic-sensor" -->
 
 <h1>
     <svg class="fh-250 color-blue">
@@ -839,7 +860,7 @@ CSSMathSum(
 
 ##==##
 
-<!-- .slide: class="with-code no-highlight" -->
+<!-- .slide: class="with-code no-highlight" data-type-show="full" -->
 
 ## Interface Generic Sensor
 
@@ -856,10 +877,9 @@ interface Sensor : EventTarget {
 };
 ```
 
-
 ##==##
 
-<!-- .slide: class="with-code no-highlight" -->
+<!-- .slide: class="with-code no-highlight"  data-type-show="full" -->
 
 ## Exemple Acceléromètre
 
@@ -878,7 +898,71 @@ navigator.permissions.query({ name: 'accelerometer' }).then(result => {
 });
 ```
 
+
 ##==##
+
+<!-- .slide: class="with-code no-highlight" data-state="code-generic-sensor stop-code-accelerometer-sensor" data-type-show="prez" -->
+
+## Interface Generic Sensor
+
+```javascript
+interface Sensor : EventTarget {
+  readonly attribute boolean activated;
+  readonly attribute boolean hasReading;
+  readonly attribute DOMHighResTimeStamp? timestamp;
+  void start();
+  void stop();
+  attribute EventHandler onreading;
+  attribute EventHandler onactivate;
+  attribute EventHandler onerror;
+};
+```
+
+
+
+<mask-highlighter id="highlight-generic-sensor"></mask-highlighter>
+
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+<div class="fragment" data-fragment-index="4" hidden></div>
+
+
+
+##==##
+
+<!-- .slide: class="with-code no-highlight"  data-state="stop-code-generic-sensor code-accelerometer-sensor" data-type-show="prez" -->
+
+## Exemple Acceléromètre
+
+```javascript
+navigator.permissions.query({ name: 'accelerometer' }).then(result => {
+    if (result.state === 'denied') {
+        return;
+    }
+    let acl = new Accelerometer({frequency: 30});
+    acl.addEventListener('activate', () => console.log('Ready to measure.'));
+    acl.addEventListener('error', error => console.log(`Error: ${error.name}`));
+    acl.addEventListener('reading', () => {
+        let magnitude = Math.hypot(acl.x, acl.y, acl.z);
+    });
+    acl.start();
+});
+```
+
+
+<mask-highlighter id="highlight-accelerometer-sensor"></mask-highlighter>
+
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+<div class="fragment" data-fragment-index="4" hidden></div>
+
+##==##
+
+<!-- .slide: data-state="stop-code-accelerometer-sensor" -->
 
 <div class="center-element">
     <video data-autoplay src="./assets/images/generic-sensor-api.mp4" class="fh-600"></video>
@@ -890,20 +974,24 @@ navigator.permissions.query({ name: 'accelerometer' }).then(result => {
 
 ## Ce qui est supporté aujourd'hui
 
-<h4 class="color-blue"> Motion sensors:</h4>
+<div class="flex-hori flex-start">
 
-Accelerometer<br>
-Gyroscope<br>
-LinearAccelerationSensor<br>
-AbsoluteOrientationSensor<br>
-RelativeOrientationSensor<br>
+<div>
+<h4 class="color-blue"> Motion sensors</h4>
 <br>
-
-<h4 class="color-blue"> Environmental sensors:</h4>
-
-AmbientLightSensor<br>
+Accelerometer<br><br>
+Gyroscope<br><br>
+LinearAccelerationSensor<br><br>
+AbsoluteOrientationSensor<br><br>
+RelativeOrientationSensor<br><br>
+</div>
+<div>
+<h4 class="color-blue"> Environmental sensors</h4>
+<br>
+AmbientLightSensor<br><br>
 Magnetometer
-
+</div>
+</div>
 
 ##==##
 
@@ -914,7 +1002,7 @@ Magnetometer
 
 <blockquote>
 <cite>
- J'ai les yeux qui piquent maintenant et pourtant y a pas d'ognons...
+ J'ai les yeux qui piquent maintenant et pourtant y a pas d'oignons...
 </cite>
 </blockquote>
 

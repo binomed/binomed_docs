@@ -120,5 +120,55 @@ export class HighlightEvents {
             }]
         });
 
+
+        // generic sensor
+        new HighlightCodeHelper({
+            keyElt: 'generic-sensor',
+            // We start with the first fragment (the initial position is fixed by css)
+            positionArray: [{
+                line: 0,
+                nbLines: 1,
+                width: '60%'
+            }, {
+                line: 2,
+                nbLines: 3,
+                width: '80%'
+            }, {
+                line: 6,
+                nbLines: 2,
+                width: '80%'
+            }, {
+                line: 9,
+                nbLines: 3,
+                width: '80%'
+            }]
+        });
+
+        // Accelerometer sensor
+        new HighlightCodeHelper({
+            keyElt: 'accelerometer-sensor',
+            // We start with the first fragment (the initial position is fixed by css)
+            positionArray: [{
+                line: 0,
+                nbLines: 4,
+                width: '100%'
+            }, {
+                line: 6,
+                nbLines: 1,
+                left: '50px',
+                width: '80%'
+            }, {
+                line: 7,
+                left: '50px',
+                nbLines: 5,
+                width: '80%'
+            }, {
+                line: 13,
+                nbLines: 1,
+                left: '50px',
+                width: '80%'
+            }]
+        });
+
     }
 }

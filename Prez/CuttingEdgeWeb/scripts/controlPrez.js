@@ -23,11 +23,11 @@ export class ControlPrez {
             const battery = await thingy.getBatteryLevel();
             const permission = await Notification.requestPermission();
             if (permission === "denied") {
-                console.log(`Thingy Connect and level battery : ${battery}`);
+                console.log(`Thingy Connect and level battery : ${battery.value}`);
             } else {
-                console.log(`Thingy Connect and level battery : ${battery}`, battery);
+                console.log(`Thingy Connect and level battery : ${battery.value}`, battery);
                 new Notification("Thingy Connect ! ", {
-                    body: ` Thingy Connect and level battery : ${battery}`
+                    body: ` Thingy Connect and level battery : ${battery.value}%`
                 });
             }
             const state = await thingy.buttonEnable((state) => {

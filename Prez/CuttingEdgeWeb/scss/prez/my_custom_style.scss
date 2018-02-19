@@ -8,14 +8,11 @@ html {
 
 a:link,
 a:focus,
-a:hover {
-    color: lighten($blue, 10%);
-    ;
-}
-
+a:hover,
 a:active,
 a:visited {
-    color: darken($blue, 20%);
+    color: lighten($blue, 10%);
+    ;
 }
 
 .reveal .slides {
@@ -227,6 +224,11 @@ div.flex-hori {
     .space {
         margin: 20px 50px;
     }
+}
+
+div.flex-hori.flex-start,
+div.flex-start {
+    align-items: flex-start;
 }
 
 div.flex-col {

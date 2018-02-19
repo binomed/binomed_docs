@@ -29,17 +29,15 @@ export class Demos {
         /** */
         new ApplyCss(
             document.getElementById('codemirror-css'),
-            `
-#render-element{
---a-super-var: #FFF;
+            `#render-element h2{
+    --a-super-var: #FFF;
 }
 #render-element .text-1{
 
 }
 #render-element .text-2{
 
-}
-            `
+}`
         );
     }
 
@@ -77,25 +75,24 @@ export class Demos {
         new ApplyCss(
             document.getElementById('codemirror-css-in-js-css'),
             `#demo-ghost-parent {
---left-pos:0;
+    --left-pos: 0;
 }
 #demo-ghost-parent .demo-shadow,
-#demo-ghost-parent .demo-ghost{
-left: var(--left-pos);
+#demo-ghost-parent .demo-ghost {
+    left: var(--left-pos);
 }`
         );
 
         new ApplyCodeMiror(document.getElementById('codemirror-css-in-js-js'),
             'javascript',
-            `document.addEventListener('mousemove', (event) =>{
+            `document.addEventListener('mousemove', (event) => {
     const deltaX = this.width - event.clientX;
     const median = this.width / 2;
     const ghostParent = document.getElementById('demo-ghost-parent');
     const left = event.clientX > median ? (event.clientX - median) : -1 * (median - event.clientX);
 
     ghostParent.style.setProperty('--left-pos', \`\${left}px\`);
-});
-            `);
+});`);
     }
 
     _demoPartTheme() {
@@ -153,9 +150,9 @@ x-rating::theme(thumb-up) {
         new ApplyCss(
             document.getElementById('codemirror-paint-api-css'),
             `
-#render-element-paint-api{
+#render-element-paint-api {
     --circle-color: #FFF;
-    --width-circle:100px;
+    --width-circle: 100px;
     width: var(--width-circle);
     background-image: paint(circle);
 }
