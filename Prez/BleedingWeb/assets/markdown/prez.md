@@ -1,7 +1,7 @@
 <!-- .slide: data-background="./assets/images/galaxy_2.jpg" class="transition text-white" data-type-show="prez"  -->
 
 <h1>
-    The Bleeding Web
+    The Cutting Edge Web
     <br> is coming
 </h1>
 
@@ -15,11 +15,11 @@
 
 <blockquote>
 <cite>
-  J'ai appris pleins de choses mais je vais rien pouvoir utiliser en prod.
+  J'ai appris plein de choses mais je vais rien pouvoir utiliser en prod.
 </cite>
 </blockquote>
 
-<div class="citation-author">vous à la sortie de cette prez</div>
+<div class="citation-author">Vous à la sortie de cette prez</div>
 <img src="./assets/images/NOTSUREIF.png" class="citation-img"></img>
 
 ##==##
@@ -241,7 +241,7 @@ div {
 
 <blockquote>
 <cite>
- Je ne fais jamais de mixins css, mais quand je le fais c'est avec la nouvelle spec
+ Je ne fais jamais de mixins css, mais quand je le fais, c'est avec la nouvelle spec.
 </cite>
 </blockquote>
 
@@ -432,11 +432,11 @@ my-component::part(tag-name) span
 
 <blockquote>
 <cite>
- Les Webcomponents c'est comme le monstre du Loch Ness, on en entend beaucoup parlé mais on en voit toujours pas en prod.
+ Les Webcomponents c'est comme le monstre du Loch Ness, on en entend beaucoup parler mais on en voit toujours pas en prod.
 </cite>
 </blockquote>
 
-<div class="citation-author">Monsieur mauvaise fois</div>
+<div class="citation-author">Monsieur mauvaise foi</div>
 <img src="./assets/images/mr_grincheux.png" class="citation-img"></img>
 
 ##==##
@@ -1034,7 +1034,7 @@ Support Windows en cours !!
 
 [Template-Instantiation](https://github.com/w3c/webcomponents/blob/gh-pages/proposals/Template-Instantiation.md)
 
-[Template Instation -polyfill proposal](https://github.com/componentkitchen/template-instantiation)
+[Template Instantion -polyfill proposal](https://github.com/componentkitchen/template-instantiation)
 
 [HTML Module](https://github.com/w3c/webcomponents/issues/645)
 
@@ -1057,7 +1057,7 @@ Support Windows en cours !!
 
 <p>GDG Nantes Leader & Ingénieur Lucca</p>
 
-
+URL Slides
 
 <div class="credits">
     <h4 >Crédits : <a href="https://thenounproject.com/" target="_blank">The noun project</a></h4>
