@@ -1145,7 +1145,7 @@ Support Windows en cours !!
 
 <p>GDG Nantes Leader & Ingénieur Lucca</p>
 
-URL Slides
+https://goo.gl/D5EW29
 
 <div class="credits">
     <h4 >Crédits : <a href="https://thenounproject.com/" target="_blank">The noun project</a></h4>
