@@ -1,3 +1,13 @@
+<!-- .slide: data-background="./assets/images/galaxy_2.jpg" class="transition text-white" data-type-show="full"  -->
+
+<h1>
+    The Cutting Edge Web
+    <br> is coming
+</h1>
+
+
+
+##==##
 <!-- .slide: data-background="./assets/images/galaxy_2.jpg" class="transition text-white" data-type-show="prez"  -->
 
 <h1>
@@ -8,16 +18,6 @@
 <h2>2018 @TouraineTech : <img src="./assets/images/touraine_tech.svg" class="h-100"></img></h2>
 
 
-
-
-##==##
-
-<!-- .slide: data-background="./assets/images/galaxy_2.jpg" class="transition text-white" data-type-show="full"  -->
-
-<h1>
-    The Cutting Edge Web
-    <br> is coming
-</h1>
 
 
 ##==##
