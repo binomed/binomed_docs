@@ -1122,7 +1122,7 @@ Support Windows en cours !!
 
 [Template-Instantiation](https://github.com/w3c/webcomponents/blob/gh-pages/proposals/Template-Instantiation.md)
 
-[Template Instantion -polyfill proposal](https://github.com/componentkitchen/template-instantiation)
+[Template Instantiation -polyfill proposal](https://github.com/componentkitchen/template-instantiation)
 
 [HTML Module](https://github.com/w3c/webcomponents/issues/645)
 

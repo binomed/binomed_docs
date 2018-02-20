@@ -126,7 +126,7 @@ export class HighlightEvents {
             keyElt: 'generic-sensor',
             // We start with the first fragment (the initial position is fixed by css)
             positionArray: [{
-                line: 0,
+                line: 1,
                 nbLines: 1,
                 width: '60%'
             }, {
@@ -134,11 +134,11 @@ export class HighlightEvents {
                 nbLines: 3,
                 width: '80%'
             }, {
-                line: 6,
+                line: 5,
                 nbLines: 2,
                 width: '80%'
             }, {
-                line: 9,
+                line: 7,
                 nbLines: 3,
                 width: '80%'
             }]
@@ -149,21 +149,21 @@ export class HighlightEvents {
             keyElt: 'accelerometer-sensor',
             // We start with the first fragment (the initial position is fixed by css)
             positionArray: [{
-                line: 0,
+                line: 1,
                 nbLines: 4,
                 width: '100%'
             }, {
-                line: 6,
+                line: 5,
                 nbLines: 1,
                 left: '50px',
                 width: '80%'
             }, {
-                line: 7,
+                line: 6,
                 left: '50px',
                 nbLines: 5,
                 width: '80%'
             }, {
-                line: 13,
+                line: 11,
                 nbLines: 1,
                 left: '50px',
                 width: '80%'
