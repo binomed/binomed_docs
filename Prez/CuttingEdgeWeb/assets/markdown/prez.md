@@ -131,6 +131,12 @@ h1 {
 <div class="fragment" data-fragment-index="2" hidden></div>
 <div class="fragment" data-fragment-index="3" hidden></div>
 
+
+Notes:
+Préciser Types de valeurs !
+Var de Var
+Gestion des states
+
 ##==##
 
 <!-- data-type-show="prez" data-state="stop-code-css-variable stop-code-css-variable-in-js" -->
@@ -246,6 +252,10 @@ div {
 ```
 [Why I Abandoned @apply](https://www.xanthir.com/b4o00)
 
+
+Notes:
+Pb des states, pas assez précis
+Pouvant être limitant
 
 ##==##
 
@@ -404,6 +414,10 @@ my-component::part(tag-name) span
   </my-component>
 </root-component>
 ```
+
+
+Notes:
+Remplacement partiel du nom
 
 ##==##
 
