@@ -34,6 +34,8 @@ import {
             new Demos();
             new HighlightEvents();
             // new ControlPrez();
+        }else{
+            document.getElementById('magicVideo').style.display = 'none';
         }
 
         Reveal.addEventListener('animate-houdini-workflow', () => {
@@ -47,6 +49,14 @@ import {
                 document.getElementById('houdini_workflow-2').style.display = '';
                 Reveal.removeEventListener('fragmentshown', callBackFragment);
             }
+        });
+
+        Reveal.addEventListener('start-video-magic', () => {
+            document.getElementById('magicVideo').src = './assets/images/magic.gif';
+        });
+
+        Reveal.addEventListener('start-video-sensor', () => {
+            document.getElementById('sensorVideo').src = './assets/images/generic-sensor-api.gif';
         });
 
     }

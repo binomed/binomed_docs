@@ -45,7 +45,7 @@
 ### Jean-François Garreau
 
 <!-- .element: class="descjf" -->
-Front-end developer & Community Manager
+GDE Web Technologies,  Front-end developer & Community Manager
 
 ![avatar w-300 wp-200](assets/images/jf_astronaut.png)
 
@@ -133,6 +133,7 @@ h1 {
 
 
 Notes:
+3 FRAGMENTS !
 Préciser Types de valeurs !
 Var de Var
 Gestion des states
@@ -199,6 +200,9 @@ elt.style.getProperty('--a-super-var');
 <div class="fragment" data-fragment-index="1" hidden></div>
 <div class="fragment" data-fragment-index="2" hidden></div>
 <div class="fragment" data-fragment-index="3" hidden></div>
+
+Notes:
+3 FRAGMENTS !
 
 
 ##==##
@@ -379,6 +383,9 @@ my-component::part(tag-name) span
 <div class="fragment" data-fragment-index="1" hidden></div>
 <div class="fragment" data-fragment-index="2" hidden></div>
 
+Notes:
+2 FRAGMENTS !
+
 
 ##==##
 
@@ -417,7 +424,7 @@ my-component::part(tag-name) span
 
 
 Notes:
-Remplacement partiel du nom
+Remplacement partiel du nom ou complet avec des *
 
 ##==##
 
@@ -433,7 +440,8 @@ Remplacement partiel du nom
     </div>
 </div>
 
-
+Notes:
+Revenir sur chaque point et sur le forward ! partir des composants
 
 ##==##
 
@@ -441,6 +449,9 @@ Remplacement partiel du nom
 
 
 <div class="copyrights black">futurama</div>
+
+Notes:
+Bon faut s'exiter non plus. c'est pas prod safe
 
 ##==##
 
@@ -497,6 +508,13 @@ Remplacement partiel du nom
 </template>
 ```
 
+Notes:
+Lié à des templates !!!
+Notion de repeat pas sèche, ne sait pas si ça doit en faire parti
+Binding auto
+ngIf implicit
+Proposal de standard !
+
 ##==##
 
 <!-- .slide: class="with-code no-highlight" data-state="stop-code-template-instantiation" -->
@@ -509,6 +527,7 @@ shadowRoot.appendChild(content);
 // Do some stuff
 content.update({article: {title:"HTMLRocks", comment: "a comment"});
 ```
+
 
 ##==##
 
@@ -558,6 +577,7 @@ document.defineTemplateType('my-template-type', {
 <div class="fragment" data-fragment-index="3" hidden></div>
 
 Notes:
+3 FRAGMENTS !
 Objectif de création de contenu custo !
 
 
@@ -591,7 +611,7 @@ Objectif de création de contenu custo !
 ```javascript
 import fooDoc from './foo.html';
 import {baz as a_baz} from './foo.html#scriptA';
-const template = barDoc.querySelector('template');
+const template = fooDoc.querySelector('template');
 ```
 
 
@@ -615,7 +635,7 @@ const template = barDoc.querySelector('template');
 ```javascript
 import fooDoc from './foo.html';
 import {baz as a_baz} from './foo.html#scriptA';
-const template = barDoc.querySelector('template');
+const template = fooDoc.querySelector('template');
 ```
 
 <mask-highlighter id="highlight-html-module"></mask-highlighter>
@@ -625,7 +645,9 @@ const template = barDoc.querySelector('template');
 <div class="fragment" data-fragment-index="2" hidden></div>
 <div class="fragment" data-fragment-index="3" hidden></div>
 
-
+Notes:
+3 FRAGMENTS !
+Revenir sur l'export !
 
 ##==##
 
@@ -657,12 +679,19 @@ const template = barDoc.querySelector('template');
 
 ##==##
 
+<!-- .slide: data-state="start-video-magic"-->
 ## Pourquoi Houdini ?
 
 <div class="center-element">
-    <video data-autoplay src="./assets/images/magic.mp4" class="fh-500"></video>
+    <img id="magicVideo" src="./assets/images/magic.gif" class="fh-500">
+    <!--<video id="magicVideo" data-autoplay  preload="auto"  class="fh-500">
+        <source src="./assets/images/magic.webm">
+        <source src="./assets/images/magic.mp4">
+    </video>-->
 </div>
 
+Notes:
+Houdini vous révèles les dessous de la magie des navigateurs !
 
 ##==##
 
@@ -676,6 +705,14 @@ const template = barDoc.querySelector('template');
 <p class="fragment">Parser API</p>
 <p class="fragment">Typed OM</p>
 <p class="fragment">Properties & Values API</p>
+
+Notes:
+Thread de perfs graphiques
+Paint genre canvas => dessin de backgrounds ! (cf après)
+Layout : Mansori
+Parser
+Gestion des objets CSS (cf après)
+Properties & values => définition de types !
 
 ##==##
 
@@ -775,6 +812,8 @@ textarea {
 <div class="fragment" data-fragment-index="2" hidden></div>
 <div class="fragment" data-fragment-index="3" hidden></div>
 
+Notes:
+3 FRAGMENTS !
 
 ##==##
 
@@ -789,6 +828,9 @@ textarea {
     </div>
 </div>
 
+
+Notes:
+Modifier Couleur ou Taille !
 
 ##==##
 
@@ -810,6 +852,9 @@ textarea {
 $('#someDiv').style.height
     = getRandomInt() + 'px';
 ```
+
+Notes:
+Eviter le parsing inutile
 
 ##==##
 
@@ -861,6 +906,8 @@ CSSMathSum(
     <img src="./assets/images/web-platform-2016.png" class="fh-600"></img>
 </div>
 
+Notes:
+Nouvelles APIs fraichement dispos
 
 ##==##
 
@@ -942,7 +989,8 @@ interface Sensor : EventTarget {
 <div class="fragment" data-fragment-index="3" hidden></div>
 <div class="fragment" data-fragment-index="4" hidden></div>
 
-
+Notes:
+4 FRAGMENTS !
 
 ##==##
 
@@ -974,12 +1022,19 @@ navigator.permissions.query({ name: 'accelerometer' }).then(result => {
 <div class="fragment" data-fragment-index="3" hidden></div>
 <div class="fragment" data-fragment-index="4" hidden></div>
 
+Notes:
+4 FRAGMENTS !
+
 ##==##
 
-<!-- .slide: data-state="stop-code-accelerometer-sensor" -->
+<!-- .slide: data-state="stop-code-accelerometer-sensor start-video-sensor" -->
 
 <div class="center-element">
-    <video data-autoplay src="./assets/images/generic-sensor-api.mp4" class="fh-600"></video>
+    <img id="sensorVideo" src="./assets/images/generic-sensor-api.gif" class="fh-600">
+    <!--<video data-autoplay class="fh-600">
+        <source src="./assets/images/generic-sensor-api.webm">
+        <source src="./assets/images/generic-sensor-api.mp4">
+    </video>-->
 </div>
 
 [Sensor Demo](https://sensor-compass.appspot.com/)
@@ -1049,7 +1104,7 @@ Magnetometer
 
 
 Notes:
-Support Windows en cours !!
+Support Windows en cours !! Samsung Browser tout fraichement dispo
 
 ##==##
 
@@ -1087,6 +1142,9 @@ Support Windows en cours !!
 </h1>
 
 
+Notes:
+Standby à cause des generic sensors
+
 ##==##
 
 
@@ -1098,6 +1156,8 @@ Support Windows en cours !!
     </svg><br>Web Share
 </h1>
 
+Notes:
+Comme en natif :)
 
 ##==##
 
@@ -1110,6 +1170,8 @@ Support Windows en cours !!
     </svg><br>Web Payment
 </h1>
 
+Notes:
+Simplification des process et négociation des infos
 
 ##==##
 
@@ -1148,6 +1210,9 @@ Support Windows en cours !!
 
 [Generic Sensors Polyfill](https://github.com/kenchris/sensor-polyfills)
 
+
+Notes:
+Beaucoup de polyfills & bcp de proposals !
 
 ##==##
 
