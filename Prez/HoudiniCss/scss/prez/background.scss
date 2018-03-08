@@ -1,0 +1,75 @@
+@function alphaRandom() {
+	@return random(500)*.001;
+}
+
+@function stars($s, $max-area, $min-area: 0, $star-size: 0) {
+	$stars: #{$min-area + random($max-area)}px #{$min-area + random($max-area)}px 0 #{$star-size}px rgba(255, 255, 255, alphaRandom());
+	@for $i from 1 to $s {
+		$stars: '#{$stars} , #{$min-area + random($max-area)}px #{$min-area + random($max-area)}px 0 #{$star-size}px rgba(255,255,255, #{alphaRandom()})'
+	}
+	@return unquote($stars);
+}
+
+$shadows-small : stars(1800, 1800);
+$shadows-medium: stars(800, 1800);
+body {
+	background: radial-gradient(ellipse at bottom, #1C2837 0%, #050608 100%);
+	background-attachment: fixed;
+	overflow: hidden;
+}
+
+.space-background {
+	width: 2px;
+	height: 2px;
+	background: transparent;
+	box-shadow: $shadows-medium;
+	animation: animStar 100s linear infinite;
+	&:after {
+		content: " ";
+		position: absolute;
+		top: 2000px;
+		width: 2px;
+		height: 2px;
+		background: transparent;
+		box-shadow: $shadows-medium;
+	}
+}
+
+.space-background-2 {
+	width: 1px;
+	height: 1px;
+	background: transparent;
+	box-shadow: $shadows-small;
+	animation: animStar 50s linear infinite;
+	&:after {
+		content: " ";
+		position: absolute;
+		top: 2000px;
+		width: 1px;
+		height: 1px;
+		background: transparent;
+		box-shadow: $shadows-small;
+	}
+}
+
+@keyframes animStar {
+	from {
+		transform: translateY(0px);
+	}
+	to {
+		transform: translateY(-2000px);
+	}
+}
+
+.reveal section.present.with-code.transparent code,
+.reveal .backgrounds div.slide-background.with-code.transparent {
+	background: transparent;
+}
+
+.reveal .backgrounds div.slide-background.with-code {
+	background: linear-gradient(rgba(0, 43, 54, 0.7), rgba(0, 43, 54, 0.7)), linear-gradient(rgba(0, 43, 54, 1), rgba(0, 43, 54, 1));
+}
+
+.reveal .backgrounds div.slide-background.with-code.no-highlight {
+	background: rgba(0, 43, 54, 1);
+}

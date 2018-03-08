@@ -1,0 +1,11 @@
+{
+  "name": "houdinicss",
+  "version": "1.0.0",
+  "description": "Houdini Css presentation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jefBinomed",
+  "license": "MIT"
+}

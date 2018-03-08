@@ -1,0 +1,45 @@
+.typings-text .line,
+.typings-text span {
+    line-height: 1em;
+    vertical-align: middle;
+}
+
+.typings-text span {
+    position: relative;
+}
+
+.typings-text span.head {
+    margin-left: 4px;
+}
+
+.typings-text span.space {
+    margin-right: 4px;
+}
+
+.typings-text span.current::after {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    height: 0.9rem;
+    top: 50%;
+    right: -3px;
+    transform: translateY(-50%);
+    border-left: 2px solid #000;
+    animation: blink-caret 0.9s step-end infinite;
+}
+
+.typings-text span.current.space::after {
+    right: -6px;
+}
+
+@keyframes blink-caret {
+    0% {
+        border-color: #000
+    }
+    50% {
+        border-color: transparent
+    }
+    100% {
+        border-color: #000
+    }
+}
