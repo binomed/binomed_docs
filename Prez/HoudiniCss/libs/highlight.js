@@ -1,1 +1,0 @@
-/media/Donnees/projets/binomed_docs/Tools/highlight.js
