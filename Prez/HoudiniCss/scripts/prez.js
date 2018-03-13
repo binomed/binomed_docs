@@ -29,16 +29,16 @@ import {
         const inIframe = window.top != window.self;
 
 
-        new TypeText();
+        // new TypeText();
         if (!inIframe) {
             new Demos();
-            new HighlightEvents();
+            // new HighlightEvents();
             // new ControlPrez();
         }else{
-            document.getElementById('magicVideo').style.display = 'none';
+            // document.getElementById('magicVideo').style.display = 'none';
         }
 
-        Reveal.addEventListener('animate-houdini-workflow', () => {
+        /*Reveal.addEventListener('animate-houdini-workflow', () => {
 
             document.getElementById('houdini_workflow-1').style.display = '';
             document.getElementById('houdini_workflow-2').style.display = 'none';
@@ -57,7 +57,7 @@ import {
 
         Reveal.addEventListener('start-video-sensor', () => {
             document.getElementById('sensorVideo').src = './assets/images/generic-sensor-api.gif';
-        });
+        });*/
 
     }
 
