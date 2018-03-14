@@ -25,7 +25,7 @@ export class Demos {
         //(CSS.paintWorklet || paintWorklet).addModule('./scripts/houdini/circle-worklet.js');
         //(CSS.paintWorklet || paintWorklet).addModule('./scripts/houdini/noise-worklet.js');
 
-        new Noise();
+
         //requestAnimationFrame(this._frameIncrement.bind(this));
     }
 

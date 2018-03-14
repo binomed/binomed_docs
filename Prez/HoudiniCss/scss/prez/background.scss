@@ -91,4 +91,17 @@
 
   .reveal .backgrounds div.slide-background.with-code.no-highlight {
 	  background: rgba(0, 43, 54, 1);
-  }
+	}
+
+	.reveal section.cadre::before {
+		content:'';
+		background-image: url('../../assets/images/corner1.png');
+	}
+	.reveal section.cadre {
+		// --cadre-corner-1: url('../../assets/images/corner1.png');
+		// --cadre-corner-2: url('../../assets/images/corner2.png');
+		// --cadre-corner-3: url('../../assets/images/corner3.png');
+		// --cadre-corner-4: url('../../assets/images/corner4.png');
+		--cadre-color:red;
+	  background-image: paint(cadre);
+	}

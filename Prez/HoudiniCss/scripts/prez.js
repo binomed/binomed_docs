@@ -18,6 +18,7 @@ import {
 import {
     TypeText
 } from './typedText.js'
+import {Noise} from './houdini/noise.js';
 
 
 
@@ -29,6 +30,33 @@ import {
         const inIframe = window.top != window.self;
 
 
+        CSS.registerProperty({
+            name: '--cadre-corner-1',
+            syntax: '<image> | none',
+            initialValue: 'none',
+        });
+        CSS.registerProperty({
+            name: '--cadre-corner-2',
+            syntax: '<image> | none',
+            initialValue: 'none',
+        });
+        CSS.registerProperty({
+            name: '--cadre-corner-3',
+            syntax: '<image> | none',
+            initialValue: 'none',
+        });
+        CSS.registerProperty({
+            name: '--cadre-corner-4',
+            syntax: '<image> | none',
+            initialValue: 'none',
+        });
+        CSS.registerProperty({
+            name: '--cadre-color',
+            syntax: '<color> | none',
+            initialValue: 'white',
+        });
+        (CSS.paintWorklet || paintWorklet).addModule('./scripts/houdini/cadre-worklet.js');
+        new Noise();
         // new TypeText();
         if (!inIframe) {
             new Demos();
