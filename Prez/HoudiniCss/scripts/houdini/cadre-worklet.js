@@ -34,19 +34,29 @@ registerPaint('cadre', class {
 		ctx.lineTo(padding, padding);
 		ctx.stroke();
 
-		// Corner Left
 		const paddingCurve = 30;
 		const lengthLine = 120;
 		const lengtShorthLine = 3;
 		const distCurve = 17;
+
+		this.conerLeft(ctx, padding, paddingCurve, lengthLine, lengtShorthLine, distCurve);
+
+		// Objectif : https://www.peanutgalleryfilms.com/
+		// Helper Bezier : http://blogs.sitepointstatic.com/examples/tech/canvas-curves/bezier-curve.html
+
+	}
+
+	conerLeft(ctx, padding, paddingCurve, lengthLine, lengtShorthLine, distCurve){
+
+		// Corner Left
 		const points = [
 			{x: padding, y: paddingCurve}, // Point de départ
 			{x: padding, y: 10}, // Point Première boucle
 			{x: padding - 30, y: (paddingCurve - 10)}, // Point second Boucle
-			{x: padding - 32, y: 10}, // Point pointe Boucle
-			{x: padding - 25, y: 15}, // Point pointe Boucle
-			{x: 10, y: padding}, // Point pointe Boucle
-			{x: paddingCurve, y: padding}, // Point pointe Boucle
+			{x: padding - 32, y: 10}, // Point pointe
+			{x: padding - 25, y: 15}, // Point pointe deuxième
+			{x: 10, y: padding}, // Point troisième Boucle
+			{x: paddingCurve, y: padding}, // Point arrivée
 		]
 		ctx.beginPath();
 		ctx.moveTo(points[0].x + lengthLine + lengtShorthLine, points[0].y);
@@ -63,7 +73,6 @@ registerPaint('cadre', class {
 			points[1].y, // y du décalage du point d'arrivé
 			points[1].x, // x du point d'arrivée
 			points[1].y) // y du point d'arrivée
-		ctx.moveTo(points[1].x, points[1].y);
 		ctx.bezierCurveTo(
 			points[1].x + distCurve - 7, // x du décalage  point de départ
 			points[1].y + distCurve - 7, // y du déclage de départ
@@ -71,11 +80,8 @@ registerPaint('cadre', class {
 			points[2].y + distCurve - 7, // y du décalage du point d'arrivé
 			points[2].x, // x du point d'arrivée
 			points[2].y) // y du point d'arrivée
-		ctx.moveTo(points[2].x, points[2].y);
 		ctx.lineTo(points[3].x, points[3].y);
-		ctx.moveTo(points[3].x, points[3].y);
 		ctx.lineTo(points[4].x, points[4].y);
-		ctx.moveTo(points[4].x, points[4].y);
 		ctx.bezierCurveTo(
 			points[4].x + distCurve - 7, // x du décalage  point de départ
 			points[4].y + distCurve - 7, // y du déclage de départ
@@ -83,7 +89,6 @@ registerPaint('cadre', class {
 			points[5].y + distCurve - 7, // y du décalage du point d'arrivé
 			points[5].x, // x du point d'arrivée
 			points[5].y) // y du point d'arrivée
-		ctx.moveTo(points[5].x, points[5].y);
 		ctx.bezierCurveTo(
 			points[5].x, // x du décalage  point de départ
 			points[5].y - distCurve, // y du déclage de départ
@@ -91,7 +96,6 @@ registerPaint('cadre', class {
 			points[6].y - distCurve, // y du décalage du point d'arrivé
 			points[6].x, // x du point d'arrivée
 			points[6].y) // y du point d'arrivée
-		ctx.moveTo(points[6].x, points[6].y);
 		ctx.lineTo(points[6].x, points[6].y + lengthLine);
 		ctx.moveTo(points[6].x, points[6].y + lengthLine + lengtShorthLine);
 		ctx.lineTo(points[6].x, points[6].y + lengthLine  + lengtShorthLine * 2);
@@ -99,11 +103,39 @@ registerPaint('cadre', class {
 		ctx.lineTo(points[6].x, points[6].y + lengthLine  + lengtShorthLine * 3 + 1);
 		ctx.stroke();
 
-		// Objectif : https://www.peanutgalleryfilms.com/
+		// vaguelettes
+		const pointsVaguelettes = [
+			// Ligne
+			{x: points[0].x + 30, y: points[0].y},
+			{x: points[0].x + 10, y: points[1].y + 5},
+			{x: points[0].x + 35, y: points[0].y},
+			{x: points[0].x + 20, y: points[1].y + 10},
+			// Colonne
+			{x: points[0].x + 30, y: points[0].y},
+			{x: points[0].x + 10, y: points[1].y + 5},
+			{x: points[0].x + 35, y: points[0].y},
+			{x: points[0].x + 20, y: points[1].y + 10},
+		]
+		ctx.beginPath();
+		ctx.moveTo(pointsVaguelettes[0].x, pointsVaguelettes[0].y);
+		ctx.bezierCurveTo(
+			pointsVaguelettes[0].x - 12, // x du décalage  point de départ
+			pointsVaguelettes[0].y, // y du déclage de départ
+			pointsVaguelettes[1].x, // x du décalage d'arrivée
+			pointsVaguelettes[1].y + 12, // y du décalage du point d'arrivé
+			pointsVaguelettes[1].x, // x du point d'arrivée
+			pointsVaguelettes[1].y) // y du point d'arrivée
+		ctx.moveTo(pointsVaguelettes[2].x, pointsVaguelettes[2].y);
+		ctx.bezierCurveTo(
+			pointsVaguelettes[2].x - 8, // x du décalage  point de départ
+			pointsVaguelettes[2].y, // y du déclage de départ
+			pointsVaguelettes[3].x, // x du décalage d'arrivée
+			pointsVaguelettes[3].y + 8, // y du décalage du point d'arrivé
+			pointsVaguelettes[3].x, // x du point d'arrivée
+			pointsVaguelettes[3].y) // y du point d'arrivée
+		ctx.stroke();
 
-		// ctx.lineTo(0, geom.height);
-		// ctx.lineTo(0, 0);
-    }
+	}
 });
 
 registerPaint('cadre-img', class {
