@@ -38,15 +38,16 @@ registerPaint('cadre', class {
 		const lengthLine = 120;
 		const lengtShorthLine = 3;
 		const distCurve = 17;
+		const paddingTop = 10;
 
-		this.conerLeft(ctx, padding, paddingCurve, lengthLine, lengtShorthLine, distCurve);
+		this.conerLeft(ctx, padding, paddingCurve, lengthLine, lengtShorthLine, distCurve, paddingTop);
 
 		// Objectif : https://www.peanutgalleryfilms.com/
 		// Helper Bezier : http://blogs.sitepointstatic.com/examples/tech/canvas-curves/bezier-curve.html
 
 	}
 
-	conerLeft(ctx, padding, paddingCurve, lengthLine, lengtShorthLine, distCurve){
+	conerLeft(ctx, padding, paddingCurve, lengthLine, lengtShorthLine, distCurve, paddingTop){
 
 		// Corner Left
 		const points = [
