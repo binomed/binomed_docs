@@ -111,10 +111,10 @@ registerPaint('cadre', class {
 			{x: points[0].x + 35, y: points[0].y},
 			{x: points[0].x + 20, y: points[1].y + 10},
 			// Colonne
-			{x: points[0].x + 30, y: points[0].y},
-			{x: points[0].x + 10, y: points[1].y + 5},
-			{x: points[0].x + 35, y: points[0].y},
-			{x: points[0].x + 20, y: points[1].y + 10},
+			{x: points[6].x, y: points[6].y + 30},
+			{x: points[5].x + 5, y: points[6].y + 10},
+			{x: points[6].x, y: points[6].y + 35},
+			{x: points[5].x + 10, y: points[6].y + 20},
 		]
 		ctx.beginPath();
 		ctx.moveTo(pointsVaguelettes[0].x, pointsVaguelettes[0].y);
@@ -133,6 +133,22 @@ registerPaint('cadre', class {
 			pointsVaguelettes[3].y + 8, // y du décalage du point d'arrivé
 			pointsVaguelettes[3].x, // x du point d'arrivée
 			pointsVaguelettes[3].y) // y du point d'arrivée
+		ctx.moveTo(pointsVaguelettes[4].x, pointsVaguelettes[4].y);
+		ctx.bezierCurveTo(
+			pointsVaguelettes[4].x, // x du décalage  point de départ
+			pointsVaguelettes[4].y - 12 , // y du déclage de départ
+			pointsVaguelettes[5].x + 12, // x du décalage d'arrivée
+			pointsVaguelettes[5].y, // y du décalage du point d'arrivé
+			pointsVaguelettes[5].x, // x du point d'arrivée
+			pointsVaguelettes[5].y) // y du point d'arrivée
+		ctx.moveTo(pointsVaguelettes[6].x, pointsVaguelettes[6].y);
+		ctx.bezierCurveTo(
+			pointsVaguelettes[6].x, // x du décalage  point de départ
+			pointsVaguelettes[6].y -8 , // y du déclage de départ
+			pointsVaguelettes[7].x + 8, // x du décalage d'arrivée
+			pointsVaguelettes[7].y, // y du décalage du point d'arrivé
+			pointsVaguelettes[7].x, // x du point d'arrivée
+			pointsVaguelettes[7].y) // y du point d'arrivée
 		ctx.stroke();
 
 	}
