@@ -92,15 +92,60 @@ registerPaint('cadre', class {
 			deltaWidthArcSmallArrived,
 			deltaArcSmallCurve,
 		} = params;
+
+		const rightToLeft = corner === this.TOP_LEFT || corner === this.BOTTOM_LEFT;
+		const bottomToUp = corner === this.TOP_LEFT || corner === this.TOP_RIGHT
 		// Corner Left
 		const points = [
-			{x: padding, y: paddingCurve}, // Point de départ
-			{x: padding, y: paddingTop}, // Point Première boucle
-			{x: padding - deltaArrivedSecondCurveX, y: (paddingCurve - paddingTop)}, // Point second Boucle
-			{x: padding - deltaFirstPointeX, y: paddingTop}, // Point pointe
-			{x: padding - deltaSecondPointeX, y: deltaSecondPointeY}, // Point pointe deuxième
-			{x: paddingTop, y: padding}, // Point troisième Boucle
-			{x: paddingCurve, y: padding}, // Point arrivée
+			// Point de départ
+			{
+				x: rightToLeft ?
+					padding : geom.width - padding,
+				y: bottomToUp ?
+					paddingCurve : geom.height - paddingCurve
+			},
+			// Point Première boucle
+			{
+				x: rightToLeft ?
+					padding : geom.width - padding,
+				y: bottomToUp ?
+					paddingTop : geom.height - paddingTop
+			},
+			// Point second Boucle
+			{
+				x: rightToLeft ?
+					(padding - deltaArrivedSecondCurveX) : geom.width - (padding - deltaArrivedSecondCurveX),
+				y: bottomToUp ?
+					(paddingCurve - paddingTop) : geom.height - (paddingCurve - paddingTop)
+			},
+			// Point pointe
+			{
+				x: rightToLeft ?
+					(padding - deltaFirstPointeX) : geom.width - (padding - deltaFirstPointeX),
+				y: bottomToUp ?
+					paddingTop : geom.height - paddingTop
+			},
+			// Point pointe deuxième
+			{
+				x: rightToLeft ?
+					(padding - deltaSecondPointeX) : geom.width - (padding - deltaSecondPointeX),
+				y: bottomToUp ?
+					deltaSecondPointeY : geom.height - deltaSecondPointeY
+			},
+			// Point troisième Boucle
+			{
+				x: rightToLeft ?
+					paddingTop : geom.width - paddingTop,
+				y: bottomToUp ?
+					padding : geom.height - padding
+			},
+			// Point arrivée
+			{
+				x: rightToLeft ?
+					paddingCurve : geom.width - paddingCurve,
+				y: bottomToUp ?
+					padding : geom.height - padding
+			},
 		]
 		ctx.beginPath();
 		// Ligne droite horizontale (petit trait)
@@ -116,18 +161,18 @@ registerPaint('cadre', class {
 		// Courbe 1 (horizontale)
 		ctx.moveTo(points[0].x, points[0].y);
 		ctx.bezierCurveTo(
-			points[0].x - distCurve, // x du décalage  point de départ
+			points[0].x - (rightToLeft ? 1 : -1) * distCurve, // x du décalage  point de départ
 			points[0].y, // y du déclage de départ
-			points[1].x - distCurve, // x du décalage d'arrivée
+			points[1].x - (rightToLeft ? 1 : -1) * distCurve, // x du décalage d'arrivée
 			points[1].y, // y du décalage du point d'arrivé
 			points[1].x, // x du point d'arrivée
 			points[1].y) // y du point d'arrivée
 		// Courbe 2 (horizontale)
 		ctx.bezierCurveTo(
-			points[1].x + distCurve - deltaCourbe2, // x du décalage  point de départ
-			points[1].y + distCurve - deltaCourbe2, // y du déclage de départ
-			points[2].x + distCurve - deltaCourbe2, // x du décalage d'arrivée
-			points[2].y + distCurve - deltaCourbe2, // y du décalage du point d'arrivé
+			points[1].x + (rightToLeft ? 1 : -1) * (distCurve - deltaCourbe2), // x du décalage  point de départ
+			points[1].y + (bottomToUp ? 1 : -1) * (distCurve - deltaCourbe2), // y du déclage de départ
+			points[2].x + (rightToLeft ? 1 : -1) * (distCurve - deltaCourbe2), // x du décalage d'arrivée
+			points[2].y + (bottomToUp ? 1 : -1) * (distCurve - deltaCourbe2), // y du décalage du point d'arrivé
 			points[2].x, // x du point d'arrivée
 			points[2].y) // y du point d'arrivée
 		// Pointe 1
@@ -136,18 +181,18 @@ registerPaint('cadre', class {
 		ctx.lineTo(points[4].x, points[4].y);
 		// Courbe 2 (verticale)
 		ctx.bezierCurveTo(
-			points[4].x + distCurve - deltaCourbe2, // x du décalage  point de départ
-			points[4].y + distCurve - deltaCourbe2, // y du déclage de départ
-			points[5].x + distCurve - deltaCourbe2, // x du décalage d'arrivée
-			points[5].y + distCurve - deltaCourbe2, // y du décalage du point d'arrivé
+			points[4].x + (rightToLeft ? 1 : -1) * (distCurve - deltaCourbe2), // x du décalage  point de départ
+			points[4].y + (bottomToUp ? 1 : -1) * (distCurve - deltaCourbe2), // y du déclage de départ
+			points[5].x + (rightToLeft ? 1 : -1) * (distCurve - deltaCourbe2), // x du décalage d'arrivée
+			points[5].y + (bottomToUp ? 1 : -1) * (distCurve - deltaCourbe2), // y du décalage du point d'arrivé
 			points[5].x, // x du point d'arrivée
 			points[5].y) // y du point d'arrivée
 		// Courbe 1 (verticale)
 		ctx.bezierCurveTo(
 			points[5].x, // x du décalage  point de départ
-			points[5].y - distCurve, // y du déclage de départ
+			points[5].y - (rightToLeft ? 1 : -1) * distCurve, // y du déclage de départ
 			points[6].x, // x du décalage d'arrivée
-			points[6].y - distCurve, // y du décalage du point d'arrivé
+			points[6].y - (bottomToUp ? 1 : -1) * distCurve, // y du décalage du point d'arrivé
 			points[6].x, // x du point d'arrivée
 			points[6].y) // y du point d'arrivée
 		// ligne droite verticale
@@ -162,42 +207,90 @@ registerPaint('cadre', class {
 
 		// vaguelettes
 		const pointsVaguelettes = [
-			// Ligne
-			{x: points[0].x + deltaWidthArcTallStart, y: points[0].y},
-			{x: points[0].x + paddingTop, y: points[1].y + deltaHeightArcGrandArrived},
-			{x: points[0].x + deltaWidthArcSmallStart, y: points[0].y},
-			{x: points[0].x + deltaWidthArcSmallArrived, y: points[1].y + paddingTop},
-			// Colonne
-			{x: points[6].x, y: points[6].y + deltaWidthArcTallStart},
-			{x: points[5].x + deltaHeightArcGrandArrived, y: points[6].y + paddingTop},
-			{x: points[6].x, y: points[6].y + deltaWidthArcSmallStart},
-			{x: points[5].x + paddingTop, y: points[6].y + deltaWidthArcSmallArrived},
+			// ----  Ligne -----
+			// Start Arc grand
+			{
+				x: rightToLeft ?
+					(points[0].x + deltaWidthArcTallStart) : geom.width - (points[0].x + deltaWidthArcTallStart),
+				y: bottomToUp ?
+					points[0].y : geom.height - points[0].y
+			},
+			// Arrivée Arc grand
+			{
+				x: rightToLeft ?
+					(points[0].x + paddingTop) : geom.width - (points[0].x + paddingTop),
+				y: bottomToUp ?
+					(points[1].y + deltaHeightArcGrandArrived) : geom.height - (points[1].y + deltaHeightArcGrandArrived)
+			},
+			// Start Arc petit
+			{
+				x: rightToLeft ?
+					(points[0].x + deltaWidthArcSmallStart) : geom.width - (points[0].x + deltaWidthArcSmallStart),
+				y: bottomToUp ?
+					points[0].y : geom.height - points[0].y
+			},
+			// Arrivée Arc petit
+			{
+				x: rightToLeft ?
+					(points[0].x + deltaWidthArcSmallArrived) : geom.width - (points[0].x + deltaWidthArcSmallArrived),
+				y: bottomToUp ?
+					(points[1].y + paddingTop) : geom.height - (points[1].y + paddingTop)
+			},
+			// ---- Colonne -----
+			// Start Arc grand
+			{
+				x: rightToLeft ?
+					points[6].x : geom.width - points[6].x,
+				y: bottomToUp ?
+					(points[6].y + deltaWidthArcTallStart) : geom.height - (points[6].y + deltaWidthArcTallStart)
+			},
+			// Arrivée Arc grand
+			{
+				x: rightToLeft ?
+					(points[5].x + deltaHeightArcGrandArrived) : geom.width - (points[5].x + deltaHeightArcGrandArrived),
+				y: bottomToUp ?
+					(points[6].y + paddingTop) : geom.height - (points[6].y + paddingTop)
+			},
+			// Start Arc petit
+			{
+				x: rightToLeft ?
+					points[6].x : geom.width - points[6].x,
+				y: bottomToUp ?
+					(points[6].y + deltaWidthArcSmallStart) : geom.height - (points[6].y + deltaWidthArcSmallStart)
+			},
+			// Arrivée Arc petit
+			{
+				x: rightToLeft ?
+					(points[5].x + paddingTop) : geom.width - (points[5].x + paddingTop),
+				y: bottomToUp ?
+					(points[6].y + deltaWidthArcSmallArrived) : geom.height - (points[6].y + deltaWidthArcSmallArrived)
+			},
 		]
 		ctx.beginPath();
 		// Arc horizontal Grand
 		ctx.moveTo(pointsVaguelettes[0].x, pointsVaguelettes[0].y);
 		ctx.bezierCurveTo(
-			pointsVaguelettes[0].x - deltaArcTallCurve, // x du décalage  point de départ
+			pointsVaguelettes[0].x - (rightToLeft ? 1 : -1) * deltaArcTallCurve, // x du décalage  point de départ
 			pointsVaguelettes[0].y, // y du déclage de départ
 			pointsVaguelettes[1].x, // x du décalage d'arrivée
-			pointsVaguelettes[1].y + deltaArcTallCurve, // y du décalage du point d'arrivé
+			pointsVaguelettes[1].y + (bottomToUp ? 1 : -1) * deltaArcTallCurve, // y du décalage du point d'arrivé
 			pointsVaguelettes[1].x, // x du point d'arrivée
 			pointsVaguelettes[1].y) // y du point d'arrivée
 		// Arc horizontal Petit
 		ctx.moveTo(pointsVaguelettes[2].x, pointsVaguelettes[2].y);
 		ctx.bezierCurveTo(
-			pointsVaguelettes[2].x - deltaArcSmallCurve, // x du décalage  point de départ
+			pointsVaguelettes[2].x -(rightToLeft ? 1 : -1) *  deltaArcSmallCurve, // x du décalage  point de départ
 			pointsVaguelettes[2].y, // y du déclage de départ
 			pointsVaguelettes[3].x, // x du décalage d'arrivée
-			pointsVaguelettes[3].y + deltaArcSmallCurve, // y du décalage du point d'arrivé
+			pointsVaguelettes[3].y + (bottomToUp ? 1 : -1) * deltaArcSmallCurve, // y du décalage du point d'arrivé
 			pointsVaguelettes[3].x, // x du point d'arrivée
 			pointsVaguelettes[3].y) // y du point d'arrivée
 		// Arc vertical grand
 		ctx.moveTo(pointsVaguelettes[4].x, pointsVaguelettes[4].y);
 		ctx.bezierCurveTo(
 			pointsVaguelettes[4].x, // x du décalage  point de départ
-			pointsVaguelettes[4].y - deltaArcTallCurve , // y du déclage de départ
-			pointsVaguelettes[5].x + deltaArcTallCurve, // x du décalage d'arrivée
+			pointsVaguelettes[4].y - (bottomToUp ? 1 : -1) * deltaArcTallCurve , // y du déclage de départ
+			pointsVaguelettes[5].x + (rightToLeft ? 1 : -1) * deltaArcTallCurve, // x du décalage d'arrivée
 			pointsVaguelettes[5].y, // y du décalage du point d'arrivé
 			pointsVaguelettes[5].x, // x du point d'arrivée
 			pointsVaguelettes[5].y) // y du point d'arrivée
@@ -205,8 +298,8 @@ registerPaint('cadre', class {
 		ctx.moveTo(pointsVaguelettes[6].x, pointsVaguelettes[6].y);
 		ctx.bezierCurveTo(
 			pointsVaguelettes[6].x, // x du décalage  point de départ
-			pointsVaguelettes[6].y -deltaArcSmallCurve , // y du déclage de départ
-			pointsVaguelettes[7].x + deltaArcSmallCurve, // x du décalage d'arrivée
+			pointsVaguelettes[6].y - (bottomToUp ? 1 : -1) * deltaArcSmallCurve , // y du déclage de départ
+			pointsVaguelettes[7].x + (rightToLeft ? 1 : -1) * deltaArcSmallCurve, // x du décalage d'arrivée
 			pointsVaguelettes[7].y, // y du décalage du point d'arrivé
 			pointsVaguelettes[7].x, // x du point d'arrivée
 			pointsVaguelettes[7].y) // y du point d'arrivée
