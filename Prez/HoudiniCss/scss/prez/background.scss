@@ -104,5 +104,6 @@
 		// --cadre-corner-4: url('../../assets/images/corner4.png');
 		--cadre-color:white;
 		padding:60px;
-	  background-image: paint(cadre);
+		background-image: paint(cadre);
+		height:500px !important;
 	}
