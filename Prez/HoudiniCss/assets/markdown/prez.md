@@ -10,7 +10,6 @@
 
 <!-- .slide: class="cadre" -->
 
-<br><br>
 ## Instant Citation
 
 <br>
