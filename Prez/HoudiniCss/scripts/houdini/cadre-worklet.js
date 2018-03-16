@@ -63,9 +63,9 @@ registerPaint('cadre', class {
 		}
 
 		this.drawCorner(ctx, params, geom, this.TOP_LEFT);
-		// this.drawCorner(ctx, params, this.TOP_RIGHT);
-		// this.drawCorner(ctx, params, this.BOTTOM_LEFT);
-		// this.drawCorner(ctx, params, this.BOTTOM_RIGHT);
+		this.drawCorner(ctx, params, geom, this.TOP_RIGHT);
+		this.drawCorner(ctx, params, geom, this.BOTTOM_LEFT);
+		this.drawCorner(ctx, params, geom, this.BOTTOM_RIGHT);
 
 		// Objectif : https://www.peanutgalleryfilms.com/
 		// Helper Bezier : http://blogs.sitepointstatic.com/examples/tech/canvas-curves/bezier-curve.html
@@ -94,7 +94,9 @@ registerPaint('cadre', class {
 		} = params;
 
 		const rightToLeft = corner === this.TOP_LEFT || corner === this.BOTTOM_LEFT;
+		const leftToRight = corner === this.TOP_RIGHT || corner === this.BOTTOM_RIGHT;
 		const bottomToUp = corner === this.TOP_LEFT || corner === this.TOP_RIGHT
+		const upToBottom = corner === this.BOTTOM_LEFT || corner === this.BOTTOM_RIGHT
 		// Corner Left
 		const points = [
 			// Point de départ
@@ -149,14 +151,14 @@ registerPaint('cadre', class {
 		]
 		ctx.beginPath();
 		// Ligne droite horizontale (petit trait)
-		ctx.moveTo(points[0].x + lengthLine + lengtShorthLine, points[0].y);
-		ctx.lineTo(points[0].x + lengthLine + lengtShorthLine * 2 , points[0].y);
+		ctx.moveTo(points[0].x + (rightToLeft ? 1 : -1) * (lengthLine + lengtShorthLine), points[0].y);
+		ctx.lineTo(points[0].x + (rightToLeft ? 1 : -1) * (lengthLine + lengtShorthLine * 2) , points[0].y);
 		// Ligne droite horizontale (petit point)
-		ctx.moveTo(points[0].x + lengthLine + lengtShorthLine * 3, points[0].y);
-		ctx.lineTo(points[0].x + lengthLine + lengtShorthLine * 3 + 1, points[0].y);
+		ctx.moveTo(points[0].x + (rightToLeft ? 1 : -1) * (lengthLine + lengtShorthLine * 3), points[0].y);
+		ctx.lineTo(points[0].x + (rightToLeft ? 1 : -1) * (lengthLine + lengtShorthLine * 3 + 1), points[0].y);
 		// Ligne droite horizontale
 		ctx.moveTo(points[0].x, points[0].y);
-		ctx.lineTo(points[0].x + lengthLine, points[0].y);
+		ctx.lineTo(points[0].x + (rightToLeft ? 1 : -1) * lengthLine, points[0].y);
 		// Placement pour les courbes
 		// Courbe 1 (horizontale)
 		ctx.moveTo(points[0].x, points[0].y);
@@ -190,19 +192,19 @@ registerPaint('cadre', class {
 		// Courbe 1 (verticale)
 		ctx.bezierCurveTo(
 			points[5].x, // x du décalage  point de départ
-			points[5].y - (rightToLeft ? 1 : -1) * distCurve, // y du déclage de départ
+			points[5].y - (corner === this.TOP_LEFT || corner === this.TOP_RIGHT ? 1 : -1) * distCurve, // y du déclage de départ
 			points[6].x, // x du décalage d'arrivée
-			points[6].y - (bottomToUp ? 1 : -1) * distCurve, // y du décalage du point d'arrivé
+			points[6].y - (corner === this.TOP_LEFT || corner === this.TOP_RIGHT ? 1 : -1) * distCurve, // y du décalage du point d'arrivé
 			points[6].x, // x du point d'arrivée
 			points[6].y) // y du point d'arrivée
 		// ligne droite verticale
-		ctx.lineTo(points[6].x, points[6].y + lengthLine);
+		ctx.lineTo(points[6].x, points[6].y + (bottomToUp ? 1 : -1) * lengthLine);
 		// ligne droite verticale (petit trait)
-		ctx.moveTo(points[6].x, points[6].y + lengthLine + lengtShorthLine);
-		ctx.lineTo(points[6].x, points[6].y + lengthLine  + lengtShorthLine * 2);
+		ctx.moveTo(points[6].x, points[6].y + (bottomToUp ? 1 : -1) * (lengthLine + lengtShorthLine));
+		ctx.lineTo(points[6].x, points[6].y + (bottomToUp ? 1 : -1) * (lengthLine  + lengtShorthLine * 2));
 		// ligne droite verticale (petit point)
-		ctx.moveTo(points[6].x, points[6].y + lengthLine + lengtShorthLine * 3);
-		ctx.lineTo(points[6].x, points[6].y + lengthLine  + lengtShorthLine * 3 + 1);
+		ctx.moveTo(points[6].x, points[6].y + (bottomToUp ? 1 : -1) * (lengthLine + lengtShorthLine * 3));
+		ctx.lineTo(points[6].x, points[6].y + (bottomToUp ? 1 : -1) * (lengthLine  + lengtShorthLine * 3 + 1));
 		ctx.stroke();
 
 		// vaguelettes
@@ -210,60 +212,44 @@ registerPaint('cadre', class {
 			// ----  Ligne -----
 			// Start Arc grand
 			{
-				x: rightToLeft ?
-					(points[0].x + deltaWidthArcTallStart) : geom.width - (points[0].x + deltaWidthArcTallStart),
-				y: bottomToUp ?
-					points[0].y : geom.height - points[0].y
+				x: points[0].x + (rightToLeft ? 1 : -1) * deltaWidthArcTallStart,
+				y: points[0].y
 			},
 			// Arrivée Arc grand
 			{
-				x: rightToLeft ?
-					(points[0].x + paddingTop) : geom.width - (points[0].x + paddingTop),
-				y: bottomToUp ?
-					(points[1].y + deltaHeightArcGrandArrived) : geom.height - (points[1].y + deltaHeightArcGrandArrived)
+				x: points[0].x + (rightToLeft ? 1 : -1) * paddingTop,
+				y: points[1].y + (bottomToUp ? 1 : -1) * deltaHeightArcGrandArrived
 			},
 			// Start Arc petit
 			{
-				x: rightToLeft ?
-					(points[0].x + deltaWidthArcSmallStart) : geom.width - (points[0].x + deltaWidthArcSmallStart),
-				y: bottomToUp ?
-					points[0].y : geom.height - points[0].y
+				x: points[0].x + (rightToLeft ? 1 : -1) * deltaWidthArcSmallStart,
+				y: points[0].y
 			},
 			// Arrivée Arc petit
 			{
-				x: rightToLeft ?
-					(points[0].x + deltaWidthArcSmallArrived) : geom.width - (points[0].x + deltaWidthArcSmallArrived),
-				y: bottomToUp ?
-					(points[1].y + paddingTop) : geom.height - (points[1].y + paddingTop)
+				x: points[0].x + (rightToLeft ? 1 : -1) * deltaWidthArcSmallArrived,
+				y: points[1].y + (bottomToUp ? 1 : -1) * paddingTop
 			},
 			// ---- Colonne -----
 			// Start Arc grand
 			{
-				x: rightToLeft ?
-					points[6].x : geom.width - points[6].x,
-				y: bottomToUp ?
-					(points[6].y + deltaWidthArcTallStart) : geom.height - (points[6].y + deltaWidthArcTallStart)
+				x: points[6].x,
+				y: points[6].y + (bottomToUp ? 1 : -1) * deltaWidthArcTallStart
 			},
 			// Arrivée Arc grand
 			{
-				x: rightToLeft ?
-					(points[5].x + deltaHeightArcGrandArrived) : geom.width - (points[5].x + deltaHeightArcGrandArrived),
-				y: bottomToUp ?
-					(points[6].y + paddingTop) : geom.height - (points[6].y + paddingTop)
+				x: points[5].x + (rightToLeft ? 1 : -1) * deltaHeightArcGrandArrived,
+				y: points[6].y + (bottomToUp ? 1 : -1) * paddingTop
 			},
 			// Start Arc petit
 			{
-				x: rightToLeft ?
-					points[6].x : geom.width - points[6].x,
-				y: bottomToUp ?
-					(points[6].y + deltaWidthArcSmallStart) : geom.height - (points[6].y + deltaWidthArcSmallStart)
+				x: points[6].x,
+				y: points[6].y + (bottomToUp ? 1 : -1) * deltaWidthArcSmallStart
 			},
 			// Arrivée Arc petit
 			{
-				x: rightToLeft ?
-					(points[5].x + paddingTop) : geom.width - (points[5].x + paddingTop),
-				y: bottomToUp ?
-					(points[6].y + deltaWidthArcSmallArrived) : geom.height - (points[6].y + deltaWidthArcSmallArrived)
+				x: points[5].x + (rightToLeft ? 1 : -1) * paddingTop,
+				y: points[6].y + (bottomToUp ? 1 : -1) * deltaWidthArcSmallArrived
 			},
 		]
 		ctx.beginPath();
