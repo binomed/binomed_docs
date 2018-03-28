@@ -55,6 +55,10 @@ a:visited {
     }
 }
 
+.reveal .slides section [alt*=onZTop]{
+    z-index: 200;
+}
+
 .reveal .slides section.who-am-i {
     color: $light-color-white;
     text-align: left;
@@ -92,6 +96,13 @@ a:visited {
         width: 200px;
         margin-top: 20px;
         box-shadow: none;
+    }
+    img[alt*=company_logo]{
+        top: 550px;
+    }
+
+    img[alt*=gdg_logo]{
+        top: 540px;
     }
 }
 
