@@ -2,7 +2,7 @@
 
 # **Cursus Speaker**
 
-### **Session 1** 2017 
+### **Session 1** 2018
 
 
 ##==##
@@ -12,7 +12,7 @@
 # **Cursus Speaker**
 ## **Session 1**
 
-### 2017  @ **Nantes**
+### 2018  @ **Lucca**
 
 
 Notes:
@@ -51,7 +51,7 @@ Senior innovation developper & Community Manager
 <!-- .slide: data-background="assets/images/Procrastination_-_do_it.jpg" class="transition" data-copyrights="true" data-type-show="prez"  -->
 
 Notes:
-Commençons par un exercice : 
+Commençons par un exercice :
 Chacun note un sujet s'il en a un en tête, on reviendra dessus à la fin
 
 ##==##
@@ -81,13 +81,13 @@ ceci dit il assure et fait croire à tout le monde qu'il traduit
 
 <!-- .slide: data-background="#3d4349" class="transition-black binomed-light-grey dark" -->
 
-## Et on est ça  
+## Et on est ça
 
 
 ![](assets/images/calimero.png) <!-- .element: class="center h-500" -->
 
-Notes: 
-Des personnes qui n'osent pas 
+Notes:
+Des personnes qui n'osent pas
 
 ##==##
 
@@ -144,7 +144,7 @@ Rockstar = It's often an evengelist or someone who work on an very innovative pr
 
 <!-- .slide: data-type-show="prez" -->
 
-## Différents types 
+## Différents types
 
 <div class="flex-col">
     <div class="flex-hori">
@@ -163,7 +163,7 @@ Rockstar = It's often an evengelist or someone who work on an very innovative pr
         <div class="space">
             <img src="assets/images/musk.jpeg" class="h-200">
         </div>
-    </div>    
+    </div>
 </div>
 
 Notes:
@@ -180,7 +180,7 @@ Rockstar = It's often an evengelist or someone who work on an very innovative pr
 
 Notes:
 Sonder l'auditoire pour comprendre les envies de chacun
-Pourquoi êtes vous venu ? 
+Pourquoi êtes vous venu ?
 Quelle attente ?
 
 ##==##
@@ -198,7 +198,7 @@ Quelle attente ?
 
 ## Plusieurs pistes
 
-1. Regarder ce qu'on fait 
+1. Regarder ce qu'on fait
 2. Trouver son format <!-- .element: class="fragment" -->
 3. Trouver un copain (copine) ? <!-- .element: class="fragment" -->
 
@@ -216,13 +216,13 @@ Quelle attente ?
 
 <!-- .slide: data-type-show="full" -->
 
-## Quel format ? 
+## Quel format ?
 
-il en existe une multitude : 
+il en existe une multitude :
 
 * Lightning talk : 5min ou 15 min
 * Tools in action : 30 min
-* Conférence : 45min / 1h 
+* Conférence : 45min / 1h
 * Université : 2h / 3h
 * Codelabs : 2h / 3h
 
@@ -254,7 +254,7 @@ Intéressant et pratique !
 
 <!-- .slide: data-type-show="prez" class="transition-white" -->
 
-# Conference : <br><br> 45min / 1h 
+# Conférence : <br><br> 45min / 1h
 
 Notes:
 format le plus répendu
@@ -266,7 +266,7 @@ format le plus répendu
 #  Université : <br><br> 2h / 3h
 
 Notes:
-permet de bien développer un sujet mais attention à ne pas s'égarer 
+permet de bien développer un sujet mais attention à ne pas s'égarer
 
 ##==##
 
@@ -282,7 +282,7 @@ Demande bcp de travail en amont mais à l'avantage d'être un format de proximit
 
 <!-- .slide: data-background="#08070c" class="transition-black binomed-light-grey dark" data-copyrights="true"-->
 
-## Trouver son binome
+## Trouver son binôme
 
 ![](assets/images/chatons.jpg) <!-- .element: class="w-700 center" -->
 
@@ -319,11 +319,11 @@ Notes:
 
 <!-- .slide: class="last-slide" -->
 
-<!-- .element: class="thank-message" --> Merci  
+<!-- .element: class="thank-message" --> Merci
 
 <!-- .element: class="presenter" --> **Jean-François Garreau  **
 
-<!-- .element: class="work-rule" --> GDG Nantes Leader & Ingénieur Lucca  
+<!-- .element: class="work-rule" --> GDG Nantes Leader & Ingénieur Lucca
 
 <!-- .element: class="email" --> **jef**@gdgnantes.com   [@jefBinomed](https://twitter.com/jefBinomed)
 

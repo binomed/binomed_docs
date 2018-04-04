@@ -2,7 +2,7 @@
 
 # **Cursus Speaker**
 
-### **Session 2** 2017
+### **Session 2** 2018
 
 <div class="copyrights white">alastair humphreys</div>
 
@@ -13,7 +13,7 @@
 # **Cursus Speaker**
 ### **Session 2**
 
-### 2017  @ **Nantes**
+### 2018  @ **Lucca**
 
 <div class="copyrights white">alastair humphreys</div>
 
