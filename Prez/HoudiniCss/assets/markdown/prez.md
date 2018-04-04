@@ -34,11 +34,11 @@
 <!-- .element: class="descjf" -->
 GDE Web Technologies,  Front-end developer & Community Manager
 
-![avatar w-300 wp-200](assets/images/jf_astronaut.png)
+![avatar w-300 wp-200 onZTop](assets/images/jf.png)
 
 
-![company_logo](assets/images/lucca_logo.png)
-![gdg_logo](assets/images/GDG-Logo-carre.png)
+![company_logo onZTop](assets/images/lucca_logo.png)
+![gdg_logo onZTop](assets/images/GDG-Logo-carre.png)
 
 <!-- .element: class="twitter" -->
 [@jefBinomed](https://twitter.com/jefBinomed)
@@ -56,6 +56,16 @@ GDE Web Technologies,  Front-end developer & Community Manager
     </svg><br>CSS
 </h1>
 
+
+##==##
+
+Histoire Houdini
+
+Specs
+
+Css Custom Properties
+
+Worlet
 
 
 ##==##
