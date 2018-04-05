@@ -21,51 +21,56 @@ registerPaint('cadre', class {
 		const padding = 50;
 
 		// Internal Border
-		ctx.beginPath();
-		ctx.moveTo(padding, padding);
-		ctx.lineTo(geom.width - padding, padding);
-		ctx.stroke();
+		try{
 
-		ctx.beginPath();
-		ctx.moveTo(geom.width - padding, padding);
-		ctx.lineTo(geom.width - padding, geom.height - padding);
-		ctx.stroke();
+			ctx.beginPath();
+			ctx.moveTo(padding, padding);
+			ctx.lineTo(geom.width - padding, padding);
+			ctx.stroke();
 
-		ctx.beginPath();
-		ctx.moveTo(geom.width - padding, geom.height - padding);
-		ctx.lineTo(padding, geom.height - padding);
-		ctx.stroke();
+			ctx.beginPath();
+			ctx.moveTo(geom.width - padding, padding);
+			ctx.lineTo(geom.width - padding, geom.height - padding);
+			ctx.stroke();
 
-		ctx.beginPath();
-		ctx.moveTo(padding, geom.height - padding);
-		ctx.lineTo(padding, padding);
-		ctx.stroke();
+			ctx.beginPath();
+			ctx.moveTo(geom.width - padding, geom.height - padding);
+			ctx.lineTo(padding, geom.height - padding);
+			ctx.stroke();
 
-		const params = {
-			padding,
-			paddingCurve : 30,
-			lengthLine : 120,
-			lengtShorthLine : 3,
-			distCurve : 17,
-			paddingTop : 10,
-			deltaArrivedSecondCurveX : 30,
-			deltaFirstPointeX: 32,
-			deltaSecondPointeX: 25,
-			deltaSecondPointeY: 15,
-			deltaCourbe2 : 7,
-			deltaWidthArcTallStart: 30,
-			deltaHeightArcGrandArrived: 5,
-			deltaArcTallCurve: 12,
-			deltaWidthArcSmallStart: 35,
-			deltaWidthArcSmallArrived: 20,
-			deltaArcSmallCurve: 8,
+			ctx.beginPath();
+			ctx.moveTo(padding, geom.height - padding);
+			ctx.lineTo(padding, padding);
+			ctx.stroke();
 
+			const params = {
+				padding,
+				paddingCurve : 30,
+				lengthLine : 120,
+				lengtShorthLine : 3,
+				distCurve : 17,
+				paddingTop : 10,
+				deltaArrivedSecondCurveX : 30,
+				deltaFirstPointeX: 32,
+				deltaSecondPointeX: 25,
+				deltaSecondPointeY: 15,
+				deltaCourbe2 : 7,
+				deltaWidthArcTallStart: 30,
+				deltaHeightArcGrandArrived: 5,
+				deltaArcTallCurve: 12,
+				deltaWidthArcSmallStart: 35,
+				deltaWidthArcSmallArrived: 20,
+				deltaArcSmallCurve: 8,
+
+			}
+
+			this.drawCorner(ctx, params, geom, this.TOP_LEFT);
+			this.drawCorner(ctx, params, geom, this.TOP_RIGHT);
+			this.drawCorner(ctx, params, geom, this.BOTTOM_LEFT);
+			this.drawCorner(ctx, params, geom, this.BOTTOM_RIGHT);
+		}catch(e){
+			console.error(e);
 		}
-
-		this.drawCorner(ctx, params, geom, this.TOP_LEFT);
-		this.drawCorner(ctx, params, geom, this.TOP_RIGHT);
-		this.drawCorner(ctx, params, geom, this.BOTTOM_LEFT);
-		this.drawCorner(ctx, params, geom, this.BOTTOM_RIGHT);
 
 		// Objectif : https://www.peanutgalleryfilms.com/
 		// Helper Bezier : http://blogs.sitepointstatic.com/examples/tech/canvas-curves/bezier-curve.html

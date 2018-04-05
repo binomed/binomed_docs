@@ -93,11 +93,11 @@
 	  background: rgba(0, 43, 54, 1);
 	}
 
-	.reveal section.cadre::before {
+	/*.reveal section.cadre::before {
 		content:'';
 		background-image: url('../../assets/images/corner1.png');
-	}
-	.reveal section.cadre {
+	}*/
+	.reveal section.cadre, .reveal section.transition.cadre {
 		// --cadre-corner-1: url('../../assets/images/corner1.png');
 		// --cadre-corner-2: url('../../assets/images/corner2.png');
 		// --cadre-corner-3: url('../../assets/images/corner3.png');
@@ -105,5 +105,6 @@
 		--cadre-color:white;
 		padding:60px;
 		background-image: paint(cadre);
-		height:500px !important;
+		height: calc(100% - 100px) !important;
+    width: calc(100% - 100px);
 	}

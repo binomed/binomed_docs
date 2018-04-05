@@ -1,4 +1,4 @@
-<!-- .slide: class="transition text-white" -->
+<!-- .slide: class="transition text-white cadre" -->
 
 <h1>
     Houdini CSS
@@ -10,26 +10,38 @@
 
 <!-- .slide: class="cadre" -->
 
-## Instant Citation
+## Once uppon a time
 
-<br>
 
-<blockquote>
-<cite>
-  J'ai appris plein de choses mais je vais rien pouvoir utiliser en prod.
-</cite>
-</blockquote>
+<img src="./assets/images/browsers_old.png" class="center"></img>
 
-<div class="citation-author">Vous à la sortie de cette prez</div>
-<img src="./assets/images/NOTSUREIF.png" class="citation-img"></img>
+Notes:
+Des programmes qui nous permettent d'accéder au web
 
 ##==##
 
-<!-- .slide: class="who-am-i" -->
+<!-- .slide: class="cadre" -->
+
+## How it works ?
+
+
+<img src="./assets/images/Midget-Cars-3.jpeg" class="center"></img>
+
+Notes:
+Des programmes qui nous permettent d'accéder au web
+
+##==##
+
+Fonctionnement d'un navigateur avec les icones
+
+##==##
+
+<!-- .slide: class="who-am-i cadre" -->
 
 ## Qui suis-je ?
 
 ### Jean-François Garreau
+
 
 <!-- .element: class="descjf" -->
 GDE Web Technologies,  Front-end developer & Community Manager
@@ -44,33 +56,50 @@ GDE Web Technologies,  Front-end developer & Community Manager
 [@jefBinomed](https://twitter.com/jefBinomed)
 
 
+##==##
+
+La magie sous le chapeau
 
 ##==##
 
-<!-- .slide: class="transition text-white transparent" -->
+WebManifesto
 
+##==##
+
+Diagramme d'accès au rendering
+
+##==##
+
+Diagramme avec Houdini
+
+##==##
+
+<!-- .slide: class="transition text-white transparent cadre" -->
 
 <h1>
-    <svg class="h-150 color-orange">
+    <svg class="h-150 color-white">
         <use xlink:href="#css" />
-    </svg><br>CSS
+    </svg><br>Custom Properties
 </h1>
 
 
 ##==##
 
-Histoire Houdini
+<!-- .slide: class="cadre" -->
 
-Specs
 
 Css Custom Properties
+
+Paint Api
+
+Layout Api
 
 Worlet
 
 
 ##==##
 
-<!-- .slide: class="transition" -->
+<!-- .slide: class="transition cadre" -->
 
 # Merci
 

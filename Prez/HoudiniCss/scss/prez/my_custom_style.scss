@@ -98,11 +98,15 @@ a:visited {
         box-shadow: none;
     }
     img[alt*=company_logo]{
-        top: 550px;
+        top: 460px;
+        left: inherit;
+        right: 300px;
     }
 
     img[alt*=gdg_logo]{
-        top: 540px;
+        top: 450px;
+        left: inherit;
+        right: 100px;
     }
 }
 
