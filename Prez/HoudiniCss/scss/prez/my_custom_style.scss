@@ -308,8 +308,13 @@ svg.color-orange {
     stroke: $orange;
 }
 
-svg.color-red.no-stroke {
-    fill: $red;
+svg.color-red.no-stroke,
+svg.color-white.no-stroke,
+svg.color-green.no-stroke,
+svg.color-blue.no-stroke,
+svg.color-yellow.no-stroke,
+svg.color-orange.no-stroke,
+ {
     stroke: initial;
 }
 

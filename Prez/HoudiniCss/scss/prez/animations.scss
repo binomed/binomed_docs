@@ -1,0 +1,145 @@
+#svg-browser,
+#svg-html,
+#svg-cloud,
+#svg-objects,
+#svg-css-objects,
+#svg-process {
+	position: absolute;
+	opacity: 0;
+	transition: all 1s ease;
+}
+
+#svg-browser {
+	opacity: 1;
+	top: calc(50% - 125px);
+	left: 300px;
+}
+
+#svg-cloud {
+	top: 100px;
+	left: 0px;
+}
+
+#svg-html {
+	top: 100px;
+	left: 100px;
+	height: 150px;
+}
+
+#svg-process {
+	height: 150px;
+	top: calc(50% - 75px);
+	left: 600px;
+}
+
+#svg-objects, #svg-css-objects {
+	height: 150px;
+	top: calc(50% - 75px);
+	left: 700px;
+}
+
+/**
+* Download
+*/
+
+#svg-cloud.html {
+	opacity: 1;
+}
+
+#svg-html.html{
+	opacity: 1;
+	animation: download_html 3s linear 1s forwards;
+}
+
+@keyframes download_html {
+	0% {
+		left:100px;
+		top: 100px;
+	}
+	25%,60% {
+		left:100px;
+		top: calc(50% - 75px);
+	}
+	90%{
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		left: 400px;
+		top: calc(50% - 75px);
+	 }
+}
+
+
+/**
+* Process
+*/
+
+#svg-process.process {
+	opacity: 1;
+	animation: rotate_process 500ms linear 2s 10 forwards;
+}
+
+#svg-html.process{
+	opacity: 1;
+	top: calc(50% - 75px);
+	left:450px;
+	animation: html_process 3s linear 2s forwards;
+}
+
+#svg-objects.process{
+	animation: objects_process 1s linear 4s forwards;
+}
+
+#svg-css-objects.process{
+	animation: css-objects_process 1s linear 4s forwards;
+}
+
+@keyframes rotate_process {
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes html_process {
+	0%{
+		top: calc(50% - 75px);
+		left:450px;
+	}
+	90%{
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		left: 600px;
+		top: calc(50% - 75px);
+	 }
+}
+
+@keyframes objects_process{
+	0%{
+		opacity: 0;
+	}
+	50%{
+		opacity: 1;
+	}
+	100%{
+		opacity: 1;
+		left: 900px;
+		top: calc(50% - 225px);
+	}
+}
+
+@keyframes css-objects_process{
+	0%{
+		opacity: 0;
+	}
+	50%{
+		opacity: 1;
+	}
+	100%{
+		opacity: 1;
+		left: 900px;
+		top: calc(50% + 75px);
+	}
+}
