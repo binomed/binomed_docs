@@ -3,11 +3,26 @@
 #svg-cloud,
 #svg-objects,
 #svg-css-objects,
-#svg-process {
+#svg-process,
+#svg-browser-layout {
 	position: absolute;
 	opacity: 0;
 	transition: all 1s ease;
 }
+
+#title-download,
+#title-parsing,
+#title-layout,
+#title-paint{
+	position: absolute;
+	top:70px;
+	left:0;
+	width: 100%;
+	text-align: center;
+	opacity: 0;
+	transition: all 1s ease;
+}
+
 
 #svg-browser {
 	opacity: 1;
@@ -29,18 +44,40 @@
 #svg-process {
 	height: 150px;
 	top: calc(50% - 75px);
-	left: 600px;
+	left: 670px;
 }
 
 #svg-objects, #svg-css-objects {
-	height: 150px;
+	height: 100px;
 	top: calc(50% - 75px);
 	left: 700px;
 }
 
+#svg-browser-layout {
+	height:300px;
+	top: calc(50% - 150px);
+	right: 200px;
+
+	--rect_bottom_color_fill: transparent;
+	--rect_top_left_color_fill: transparent;
+	--rect_top_right_color_fill: transparent;
+	--rect_center_color_fill: transparent;
+
+	--rect_bottom_color_stroke: transparent;
+	--rect_top_left_color_stroke: transparent;
+	--rect_top_right_color_stroke: transparent;
+	--rect_center_color_stroke: transparent;
+}
+
+
+
 /**
 * Download
 */
+
+#title-download.html{
+	opacity: 1;
+}
 
 #svg-cloud.html {
 	opacity: 1;
@@ -75,9 +112,13 @@
 * Process
 */
 
+#title-parsing.process{
+	opacity: 1;
+}
+
 #svg-process.process {
 	opacity: 1;
-	animation: rotate_process 500ms linear 2s 10 forwards;
+	animation: rotate_process 500ms linear 2s 6 forwards;
 }
 
 #svg-html.process{
@@ -125,7 +166,7 @@
 	}
 	100%{
 		opacity: 1;
-		left: 900px;
+		left: 850px;
 		top: calc(50% - 225px);
 	}
 }
@@ -139,7 +180,115 @@
 	}
 	100%{
 		opacity: 1;
-		left: 900px;
+		left: 850px;
 		top: calc(50% + 75px);
+	}
+}
+
+/**
+* Rendering
+*/
+#svg-browser-layout.render{
+	opacity: 1;
+}
+
+#svg-browser.render{
+	opacity: 0;
+}
+
+#svg-objects.render{
+	animation: objects_render 2s linear 100ms forwards;
+}
+
+#svg-css-objects.render{
+	animation: css-objects_render 2s linear 100ms forwards;
+}
+
+
+@keyframes objects_render{
+	0%{
+		opacity: 1;
+		left: 850px;
+		top: calc(50% - 225px);
+	}
+	100%{
+		opacity: 1;
+		left: 150px;
+		top: calc(50% - 225px);
+	}
+}
+
+@keyframes css-objects_render{
+	0%{
+		opacity: 1;
+		left: 850px;
+		top: calc(50% + 75px);
+	}
+	100%{
+		opacity: 1;
+		left: 150px;
+		top: calc(50% + 75px);
+	}
+}
+
+/**
+* Rendering Layout
+*/
+
+#title-layout.render-layout{
+	opacity: 1;
+}
+
+#svg-browser-layout.render-layout{
+	opacity: 1;
+	animation: render-layout 1s linear forwards;
+}
+
+
+@keyframes render-layout{
+	100%{
+		--rect_bottom_color_stroke: white;
+		--rect_top_left_color_stroke: white;
+		--rect_top_right_color_stroke: white;
+		--rect_center_color_stroke: white;
+	}
+}
+
+
+/**
+* Rendering Paint
+*/
+
+#title-paint.render-paint{
+	opacity: 1;
+}
+
+#svg-browser-layout.render-paint{
+	opacity: 1;
+	animation: render-paint 1s linear forwards;
+}
+
+#svg-browser-layout.render-paint{
+	opacity: 1;
+	animation: render-paint 1s linear forwards;
+}
+
+
+@keyframes render-paint{
+	100%{
+		--rect_bottom_color_stroke: white;
+		--rect_top_left_color_stroke: white;
+		--rect_top_right_color_stroke: white;
+		--rect_center_color_stroke: white;
+	}
+	100%{
+		--rect_bottom_color_stroke: white;
+		--rect_top_left_color_stroke: white;
+		--rect_top_right_color_stroke: white;
+		--rect_center_color_stroke: white;
+		--rect_bottom_color_fill: #EFE0B9;
+		--rect_top_left_color_fill: #E4B04A;
+		--rect_top_right_color_fill: #E4B04A;
+		--rect_center_color_fill: #643B0F;
 	}
 }
