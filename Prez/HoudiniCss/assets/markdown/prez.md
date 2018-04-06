@@ -18,6 +18,22 @@
 Notes:
 Des programmes qui nous permettent d'accéder au web
 
+
+##==##
+
+<!-- .slide: class="cadre" -->
+
+# WebManifesto
+
+<blockquote>
+<cite>
+Browser vendors should provide new low-level capabilities that expose the possibilities of the underlying platform as closely as possible. ...
+</cite>
+</blockquote>
+
+https://github.com/extensibleweb/manifesto
+
+
 ##==##
 
 <!-- .slide: class="cadre" -->
@@ -93,25 +109,26 @@ Des programmes qui nous permettent d'accéder au web
 
 ##==##
 
+<!-- .slide: class="transition text-white transparent cadre"-->
+
+<h1>
+    <svg class="fh-250 color-white">
+        <use xlink:href="#magic" />
+    </svg><br>Houdini CSS
+</h1>
+
+
+##==##
+
+
 <!-- .slide: class="cadre" -->
+# New Apis
 
-# WebManifesto
 
-<blockquote>
-<cite>
-Browser vendors should provide new low-level capabilities that expose the possibilities of the underlying platform as closely as possible. ...
-</cite>
-</blockquote>
+<div class="center-element">
+    <img src="./assets/images/browser_workflow_with_houdini.svg" class="w-800"></img>
+</div>
 
-https://github.com/extensibleweb/manifesto
-
-##==##
-
-Diagramme d'accès au rendering
-
-##==##
-
-Diagramme avec Houdini
 
 ##==##
 
