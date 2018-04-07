@@ -1,8 +1,10 @@
 <!-- .slide: class="transition text-white cadre" -->
 
 <h1>
-    Houdini CSS
+    Let's do magic with Houdini CSS
 </h1>
+
+jefBinomed @ #MixIT18
 
 
 
@@ -120,6 +122,27 @@ Des programmes qui nous permettent d'accéder au web
 
 ##==##
 
+# Houdini Group
+
+<div class="flex-hori">
+    <img src="./assets/images/chrome_logo_old.png" width="200px">
+    <img src="./assets/images/firefox_logo_old.png" width="200px">
+    <img src="./assets/images/edge_logo_old.png" width="200px">
+    <img src="./assets/images/safari_logo_old.png" width="200px">
+    <img src="./assets/images/opera_logo_old.png" width="200px">
+</div>
+<div class="flex-hori">
+    <img src="./assets/images/hp_logo_old.png" width="200px">
+    <img src="./assets/images/lg_logo_old.png" width="200px">
+    <img src="./assets/images/adobe_logo_old.png" width="200px">
+    <img src="./assets/images/intel_logo_old.png" width="200px">
+</div>
+
+Notes:
+Regroupement des acteurs visant à améliorer le web
+
+##==##
+
 
 <!-- .slide: class="cadre" -->
 # New Apis
@@ -140,20 +163,129 @@ Des programmes qui nous permettent d'accéder au web
     </svg><br>Custom Properties
 </h1>
 
+##==##
+
+1 slide sur custom properties
+
+##==##
+
+Mais on peut aller plus loin :
+
+Création d'un custom type et la liste c'est :
+<length>
+<number>
+<percentage>
+<length-percentage>
+<color>
+<image>
+<url>
+<integer>
+<angle>
+<time>
+<resolution>
+<transform-function>
+
+##==##
+
+Montrer les restrictions en terme d'animation
+=> si on déclare avec le type, alors c'est smooth
+
+##==##
+
+<!-- .slide: class="transition text-white transparent cadre" -->
+
+<h1>
+    <svg class="h-150 color-white">
+        <use xlink:href="#css-objects" />
+    </svg><br>Typed OM
+</h1>
+
+
+##==##
+
+montrer le pb du parsing
+
+montrer l'utilisation sur attributeStyleMap.set et get
+
+Values de positions / transform / unit / math
+
+y a un window.CSS
+
+(Dispo sous chrome)
+
+
+##==##
+
+<!-- .slide: class="transition text-white transparent cadre" -->
+
+<h1>
+    <svg class="h-150 color-white">
+        <use xlink:href="#worklet" />
+    </svg><br>Worlet
+</h1>
+
+##==##
+
+tournent en parallèle et sont un peu comme les workers mais orienté perf & travaillant sur le GPU.
+
+ils n'ont pas accès à self ou this
+
+Sont vraiment indep du Main Thread !!!
+
+ils pourront être killé s'ils durent trop longtemps
+
+##==##
+
+Animation worklet
+
+d'un côté un animator de l'autre un WorletAnimation
+
+##==##
+
+<!-- .slide: class="transition text-white transparent cadre" -->
+
+<h1>
+    <svg class="h-150 color-white">
+        <use xlink:href="#paint" />
+    </svg><br>Paint Api
+</h1>
+
+##==##
+
+Comme canvas mais plus light
+
+inputProperties
+inputArguments
+paint(ctx, size, props, args)
+
+##==##
+
+<!-- .slide: class="transition text-white transparent cadre" -->
+
+<h1>
+    <svg class="h-150 color-white">
+        <use xlink:href="#layout" />
+    </svg><br>Layout Api
+</h1>
+
+##==##
+
+Y a un parent layout (flex / grid / ...) au dessus de tout, s'en suit une zone de contrainte
+ on arrive ensuite sur du current layout qui possède des childs ayant eux même un layout et enfin un fragment
 
 ##==##
 
 <!-- .slide: class="cadre" -->
 
 
-Css Custom Properties
 
-Paint Api
+Reste Font Metrics API & CSS Parser API
 
-Layout Api
+parser => parce le CSS en TypedOM
 
-Worlet
+font metrics api => pour s'amuser et comprendre enfin l'utilsiation des fonts
 
+liens : http://snugug.github.io/magic-tricks-with-houdini/#/18/0
 
 ##==##
 
@@ -178,7 +310,7 @@ GDE Web Technologies
 
 <div class="credits">
     <h4 >Crédits : <a href="https://thenounproject.com/" target="_blank">The noun project</a></h4>
-    <p>Alexander Zharikov / Ben Iconator / Christopher T. Howlett / icon 54 / Atif Arshad / Bernar  Novalyi / Kris Prepiakova / Jonathan Collie / ahmad</p>
+    <p>Alexander Zharikov / Ben Iconator / Christopher T. Howlett / icon 54 / Atif Arshad / Bernar  Novalyi / Kris Prepiakova / Jonathan Collie / ahmad / Ana Rosa Botello Hernandez / Petai Jantrapoon / ProSymbols</p>
 </div>
 
 
@@ -230,4 +362,10 @@ GDE Web Technologies
         <path  d="M80.813,6.251H15.183c-4.926,0-8.933,4.007-8.933,8.932v74.568h83.501V15.183C89.751,10.258,85.741,6.251,80.813,6.251z    M31.257,11.206c1.623,0,2.943,1.319,2.943,2.941c0,1.623-1.32,2.943-2.943,2.943c-1.622,0-2.941-1.32-2.941-2.943   C28.315,12.525,29.635,11.206,31.257,11.206z M23.02,11.206c1.622,0,2.942,1.319,2.942,2.941c0,1.623-1.32,2.943-2.942,2.943   s-2.942-1.32-2.942-2.943C20.077,12.525,21.397,11.206,23.02,11.206z M14.782,11.206c1.622,0,2.942,1.319,2.942,2.941   c0,1.623-1.32,2.943-2.942,2.943s-2.942-1.32-2.942-2.943C11.84,12.525,13.16,11.206,14.782,11.206z M84.796,84.796H11.205V22.774   h73.591V84.796z"/>
     </g>
     </svg>
+    <!-- paint -->
+    <svg id="paint" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 90 112.5" enable-background="new 0 0 90 90" xml:space="preserve"><path d="M52.495,52.365h-9.017c-0.722,0-1.342-0.515-1.475-1.225c-0.662-3.539-6.255-34.833,0.985-43.552  c1.334-1.607,3.016-2.422,4.999-2.422s3.664,0.815,4.998,2.422c7.239,8.718,1.646,40.013,0.984,43.552  C53.837,51.851,53.217,52.365,52.495,52.365z M52.097,43.767c1.589-11.422,2.943-29.008-1.419-34.261  c-0.759-0.913-1.613-1.338-2.69-1.338s-1.933,0.425-2.69,1.338c-4.351,5.239-3.004,22.835-1.42,34.261H52.097z M44.394,46.939  c0.115,0.723,0.229,1.8,0.338,2.426h6.51c0.108-0.622,0.222-1.707,0.337-2.426H44.394z M40.312,76.502  C40.312,76.502,40.312,76.502,40.312,76.502c-0.306,0-0.606-0.011-0.9-0.034c-0.661-0.051-1.21-0.529-1.35-1.177  c-0.141-0.648,0.161-1.312,0.741-1.632c1.958-1.081,1.735-3.574,1.17-7.255c-0.195-1.275-0.38-2.479-0.386-3.595  c-0.012-2.303,0.846-4.441,2.417-6.021c1.472-1.479,3.392-2.294,5.409-2.294c4.605,0,7.707,3.632,7.718,9.037  c0.007,3.048-1.219,5.889-3.542,8.217C48.706,74.636,44.28,76.502,40.312,76.502z M47.412,57.494c-1.212,0-2.377,0.501-3.282,1.41  c-1.004,1.009-1.552,2.391-1.544,3.89c0.005,0.895,0.173,1.992,0.352,3.155c0.341,2.225,0.764,4.981-0.041,7.24  c2.43-0.564,4.867-1.857,6.567-3.561c1.219-1.222,2.671-3.27,2.665-6.092C52.123,59.81,50.314,57.494,47.412,57.494z M50.847,83.881  c0.662-0.272,1.275-0.542,1.862-0.8c2.534-1.113,4.364-1.915,7.549-1.734c0.702,0.041,1.648,0.24,2.65,0.452  c2.721,0.572,5.805,1.223,7.963-0.285c1.085-0.757,1.75-1.937,1.977-3.507c0.304-2.104-0.953-4.372-3.363-6.067  c-3.146-2.212-8.848-3.718-14.565-0.682c-0.732,0.389-1.01,1.297-0.622,2.028c0.389,0.732,1.299,1.008,2.028,0.622  c4.518-2.398,8.983-1.238,11.434,0.484c1.423,1.001,2.255,2.252,2.12,3.186c-0.156,1.079-0.585,1.378-0.726,1.477  c-1.091,0.762-3.606,0.234-5.627-0.191c-1.115-0.235-2.168-0.457-3.095-0.511c-3.906-0.232-6.233,0.797-8.93,1.982  c-0.565,0.248-1.157,0.509-1.795,0.771c-3.762,1.542-6.897,0.573-10.915-0.963c-3.857-1.478-6.791-0.924-9.896-0.339  c-0.803,0.151-1.633,0.309-2.518,0.437c-2.558,0.366-4.657-0.384-5.609-2.012c-0.765-1.309-0.632-2.914,0.349-4.188  c2.107-2.738,7.198-3.314,13.616-1.542c0.798,0.22,1.625-0.247,1.846-1.046c0.221-0.798-0.248-1.624-1.046-1.845  c-11.009-3.046-15.412,0.806-16.794,2.604c-1.714,2.228-1.934,5.185-0.561,7.532c1.59,2.719,4.817,4.019,8.626,3.466  c0.929-0.134,1.803-0.298,2.646-0.457c2.907-0.549,5.204-0.981,8.267,0.192c2.771,1.061,5.396,1.94,8.163,1.94  C47.472,84.885,49.108,84.595,50.847,83.881z"/></svg>
+    <!-- Worlet -->
+    <svg id="worklet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 64 80" enable-background="new 0 0 64 64" xml:space="preserve"><g><g><line fill="none" stroke-width="2" stroke-miterlimit="10" x1="40" y1="51" x2="38" y2="51"/><path fill="none" stroke-width="2" stroke-miterlimit="10" d="M36,51H15c-1.1,0-2-0.9-2-2V15c0-1.1,0.9-2,2-2h34    c1.1,0,2,0.9,2,2v34c0,1.1-0.9,2-2,2h-7"/><line fill="none" stroke-width="2" stroke-miterlimit="10" x1="25" y1="17" x2="27" y2="17"/><path fill="none" stroke-width="2" stroke-miterlimit="10" d="M29,17h16c1.1,0,2,0.9,2,2v26c0,1.1-0.9,2-2,2H19    c-1.1,0-2-0.9-2-2V19c0-1.1,0.9-2,2-2h4"/><line fill="none" stroke-width="2" stroke-miterlimit="10" x1="17" y1="10" x2="17" y2="2"/><line fill="none" stroke-width="2" stroke-miterlimit="10" x1="27" y1="10" x2="27" y2="2"/><line fill="none" stroke-width="2" stroke-miterlimit="10" x1="37" y1="10" x2="37" y2="2"/><line fill="none" stroke-width="2" stroke-miterlimit="10" x1="47" y1="10" x2="47" y2="2"/><line fill="none" stroke-width="2" stroke-miterlimit="10" x1="17" y1="62" x2="17" y2="54"/><line fill="none" stroke-width="2" stroke-miterlimit="10" x1="27" y1="62" x2="27" y2="54"/><line fill="none" stroke-width="2" stroke-miterlimit="10" x1="37" y1="62" x2="37" y2="54"/><line fill="none" stroke-width="2" stroke-miterlimit="10" x1="47" y1="62" x2="47" y2="54"/><line fill="none" stroke-width="2" stroke-miterlimit="10" x1="54" y1="17" x2="62" y2="17"/><line fill="none" stroke-width="2" stroke-miterlimit="10" x1="54" y1="27" x2="62" y2="27"/><line fill="none" stroke-width="2" stroke-miterlimit="10" x1="54" y1="37" x2="62" y2="37"/><line fill="none" stroke-width="2" stroke-miterlimit="10" x1="54" y1="47" x2="62" y2="47"/><line fill="none" stroke-width="2" stroke-miterlimit="10" x1="2" y1="17" x2="10" y2="17"/><line fill="none" stroke-width="2" stroke-miterlimit="10" x1="2" y1="27" x2="10" y2="27"/><line fill="none" stroke-width="2" stroke-miterlimit="10" x1="2" y1="37" x2="10" y2="37"/><line fill="none" stroke-width="2" stroke-miterlimit="10" x1="2" y1="47" x2="10" y2="47"/><line fill="none" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" x1="17" y1="23" x2="33" y2="23"/><circle fill="none" stroke-width="2" stroke-miterlimit="10" cx="35" cy="31" r="2"/><circle fill="none" stroke-width="2" stroke-miterlimit="10" cx="23" cy="34" r="2"/><polyline fill="none" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" points="42,18 42,31     36,31   "/><polyline fill="none" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" points="17,28 29,28     29,38 39,38   "/><polyline fill="none" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" points="34,47 34,42     23,42 23,36   "/><rect x="39" y="36" fill="none" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" width="4" height="4"/><rect x="33" y="21" fill="none" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" width="4" height="4"/></g></g></svg>
+    <!-- Layout -->
+    <svg id="layout" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 512 640" enable-background="new 0 0 512 512" xml:space="preserve"><g><path d="M144.2,2H12.2C6.5,2,2,6.5,2,12.2v487.7c0,5.6,4.5,10.2,10.2,10.2h132.1c5.6,0,10.2-4.6,10.2-10.2V12.2   C154.4,6.5,149.9,2,144.2,2z"/><path d="M322,205.2H215.4c-5.6,0-10.2,4.5-10.2,10.2v284.5c0,5.6,4.5,10.2,10.2,10.2H322c5.6,0,10.2-4.6,10.2-10.2V215.4   C332.2,209.7,327.7,205.2,322,205.2z"/><path d="M499.8,205.2H393.2c-5.6,0-10.2,4.5-10.2,10.2v284.5c0,5.6,4.5,10.2,10.2,10.2h106.7c5.6,0,10.2-4.6,10.2-10.2V215.4   C510,209.7,505.5,205.2,499.8,205.2z"/><path d="M499.8,2H215.4c-5.6,0-10.2,4.5-10.2,10.2v132.1c0,5.6,4.5,10.2,10.2,10.2h284.5c5.6,0,10.2-4.6,10.2-10.2V12.2   C510,6.5,505.5,2,499.8,2z"/></g></svg>
 </div>
