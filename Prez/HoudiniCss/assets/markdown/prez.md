@@ -153,6 +153,197 @@ Regroupement des acteurs visant à améliorer le web
 </div>
 
 
+
+##==##
+
+<!-- .slide: class="transition text-white transparent cadre" -->
+
+<h1>
+    <svg class="h-150 color-white">
+        <use xlink:href="#css-objects" />
+    </svg><br>Typed OM
+</h1>
+
+
+
+##==##
+
+<!-- .slide: class="transition text-white transparent cadre with-code big-code"  -->
+
+<h1>Problem</h1>
+```javascript
+$('#div').style.height
+    = getRandomInt() + 'px';
+```
+
+Notes:
+Eviter le parsing inutile
+
+##==##
+
+<!-- .slide: class="transition text-white transparent cadre with-code big-code"  -->
+
+<h2>Introduce</h2>
+```javascript
+$('#div').attributeStyleMap
+// &&
+CSS.px(getRandomInt());
+```
+
+Notes:
+Eviter le parsing inutile
+
+
+
+##==##
+
+<!-- .slide: class="with-code no-highlight cadre" -->
+
+## New Possibilities
+
+```javascript
+// Units
+CSS.em(3);
+
+// Positions
+new CSSPositionValue(CSS.px(5), CSS.px(10));
+
+// Transform
+new CSSRotate(CSS.deg(45));
+
+// Math
+new CSSMathSum(CSS.px(10), CSS.percent(50));
+
+```
+
+Notes:
+Ajout de la propriété CSS à l'obet windows
+
+
+##==##
+
+<!-- .slide: class="with-code no-highlight cadre" -->
+
+## New Api
+
+```javascript
+myElement.attributeStyleMap.set("opacity", CSS.number(3));
+myElement.attributeStyleMap.set("left", CSS.px(15));
+
+console.log(myElement.attributeStyleMap.get("opacity").value); // 3
+console.log(myElement.attributeStyleMap.get("left").value); // 15
+console.log(myElement.attributeStyleMap.get("left").unit); // px
+
+console.log(myElement.attributeStyleMap.has("left")); // true
+
+console.log(myElement.attributeStyleMap.delete("left")); // remove
+console.log(myElement.attributeStyleMap.clear()); // remove
+```
+
+Notes:
+Marche aussi pour ComputeStyle !!!
+
+
+##==##
+
+<!-- .slide: class="with-code no-highlight cadre" -->
+
+## Numeric Values
+
+```javascript
+const {value, unit} = CSS.number('10'); // value === 10, unit === 'number'
+
+const {value, unit} = CSS.px(42); // value === 42, unit === 'px'
+
+const {value, unit} = CSS.vw('100'); // value === 100, unit === 'vw'
+
+const {value, unit} = CSS.percent('10'); // value === 10, unit === 'percent'
+
+const {value, unit} = CSS.deg(45); // value === 45, unit === 'deg'
+
+const {value, unit} = CSS.ms(300); // value === 300, unit === 'ms'
+```
+
+Notes:
+Marche aussi pour ComputeStyle !!!
+
+##==##
+
+<!-- .slide: class="with-code no-highlight cadre" -->
+
+## Maths - calc
+
+```javascript
+new CSSMathSum(CSS.vw(100), CSS.px(-10)).toString(); // "calc(100vw + -10px)"
+
+new CSSMathNegate(CSS.px(42)).toString() // "calc(-42px)"
+
+new CSSMathInvert(CSS.s(10)).toString() // "calc(1 / 10s)"
+
+new CSSMathProduct(CSS.deg(90), CSS.number(Math.PI/180)).toString();
+// "calc(90deg * 0.0174533)"
+```
+
+##==##
+
+<!-- .slide: class="with-code no-highlight cadre" -->
+
+## Maths - operations
+
+```javascript
+CSS.deg(45).mul(2) // {value: 90, unit: "deg"}
+CSS.percent(50).max(CSS.vw(50)).toString() // "max(50%, 50vw)"
+
+// Can Pass CSSUnitValue:
+CSS.px(1).add(CSS.px(2)) // {value: 3, unit: "px"}
+
+// multiple values:
+CSS.s(1).sub(CSS.ms(200), CSS.ms(300)).toString() // "calc(1s + -200ms + -300ms)"
+// or pass a `CSSMathSum`:
+const sum = new CSSMathSum(CSS.percent(100), CSS.px(20)));
+CSS.vw(100).add(sum).toString() // "calc(100vw + (100% + 20px))"
+```
+
+
+##==##
+
+<!-- .slide: class="with-code no-highlight cadre" -->
+
+## Maths - conversion
+
+```javascript
+// Convert px to other absolute/physical lengths.
+el.attributeStyleMap.set('width', '500px');
+const width = el.attributeStyleMap.get('width');
+width.to('mm'); // CSSUnitValue {value: 132.29166666666669, unit: "mm"}
+width.to('cm'); // CSSUnitValue {value: 13.229166666666668, unit: "cm"}
+width.to('in'); // CSSUnitValue {value: 5.208333333333333, unit: "in"}
+
+CSS.deg(200).to('rad').value // 3.49066...
+CSS.s(2).to('ms').value // 2000
+```
+
+
+##==##
+
+<!-- .slide: class="with-code no-highlight cadre" -->
+
+## Transform
+
+```javascript
+// transform: rotateZ(45deg) scale(0.5) translate3d(10px,10px,10px);
+
+const transform =  new CSSTransformValue([
+  new CSSRotate(CSS.deg(45)),
+  new CSSScale(CSS.number(0.5), CSS.number(0.5)),
+  new CSSTranslate(CSS.px(10), CSS.px(10), CSS.px(10))
+]);
+```
+
+Notes:
+En plus : PARSING / ERROR
+CHROME 66
+
 ##==##
 
 <!-- .slide: class="transition text-white transparent cadre" -->
@@ -189,29 +380,6 @@ Création d'un custom type et la liste c'est :
 
 Montrer les restrictions en terme d'animation
 => si on déclare avec le type, alors c'est smooth
-
-##==##
-
-<!-- .slide: class="transition text-white transparent cadre" -->
-
-<h1>
-    <svg class="h-150 color-white">
-        <use xlink:href="#css-objects" />
-    </svg><br>Typed OM
-</h1>
-
-
-##==##
-
-montrer le pb du parsing
-
-montrer l'utilisation sur attributeStyleMap.set et get
-
-Values de positions / transform / unit / math
-
-y a un window.CSS
-
-(Dispo sous chrome)
 
 
 ##==##
@@ -286,6 +454,11 @@ parser => parce le CSS en TypedOM
 font metrics api => pour s'amuser et comprendre enfin l'utilsiation des fonts
 
 liens : http://snugug.github.io/magic-tricks-with-houdini/#/18/0
+
+##==##
+
+Faire un beau tableau
+https://ishoudinireadyyet.com/
 
 ##==##
 
