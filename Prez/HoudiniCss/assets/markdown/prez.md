@@ -344,6 +344,31 @@ Notes:
 En plus : PARSING / ERROR
 CHROME 66
 
+
+##==##
+
+<!-- .slide: class="with-code no-highlight cadre" -->
+
+## Demo
+
+```javascript
+const square = document.querySelector('#square');
+const transform = new CSSRotate(0,0,1, CSS.deg(0))
+
+square.addEventListener('mouseenter', ()=>{
+    transform.anglue.value =
+        (transform.anglue.value +5) % 360
+    square.attributeStyleMap.
+        set('transform', transform);
+});
+```
+
+<div id="squareDemo"></div>
+
+Notes:
+En plus : PARSING / ERROR
+CHROME 66
+
 ##==##
 
 <!-- .slide: class="transition text-white transparent cadre" -->
@@ -354,11 +379,222 @@ CHROME 66
     </svg><br>Custom Properties
 </h1>
 
-##==##
-
-1 slide sur custom properties
 
 ##==##
+
+<!-- .slide: class="with-code no-highlight cadre" -->
+
+## CSS Custom Properties
+
+```css
+// Declaration
+html {
+    --a-name: #333;
+}
+// Usage
+div {
+    color: var(--a-name);
+}
+// Default value
+h1 {
+    color: var(--a-name, red);
+}
+```
+
+
+##==##
+
+<!-- data-type-show="prez" -->
+
+<div id="demo-var" class="flex-hori">
+    <div id="codemirror-css">
+    </div>
+    <div id="render-element">
+        <h2 class="text-1">Du texte</h2>
+        <h2 class="text-2">Du texte encore</h2>
+    </div>
+</div>
+
+Notes:
+Mettre Color => Couleur différente + :hover
+
+
+##==##
+
+<!-- .slide: class="with-code no-highlight cadre" -->
+
+## Javascript Manipulation
+
+
+<p> style.css</p>
+```css
+#idElt{
+    color: --a-super-var;
+}
+```
+main.js
+```javascript
+const elt = document.getElementById('idElt');
+elt.style.setProperty('--a-super-var', '#333');
+elt.style.getProperty('--a-super-var');
+```
+
+##==##
+
+<!-- .slide: class="cadre transition" -->
+
+<h1> Houdini CSS : <br> Properties & Values API</h1>
+
+
+##==##
+
+<!-- .slide: class="with-code no-highlight cadre" -->
+
+## Problem : No Types
+
+
+```css
+.thing {
+  --my-color: green;
+  --my-color: url("not-a-color");
+  color: var(--my-color);
+}
+```
+
+##==##
+
+<!-- .slide: class="with-code no-highlight cadre" -->
+
+## Problem : No Animations
+
+
+```css
+.animate {
+    --my-length: 10px;
+    width: var(--my-length);
+    animation: width 1s ease;
+}
+```
+
+##==##
+
+<!-- .slide: class="with-code no-highlight cadre" -->
+
+## Define Properties !
+
+
+```javascript
+CSS.registerProperty({
+    name: "--my-color",
+    syntax: "<color>",
+    initialValue: "black"
+});
+```
+
+##==##
+
+<!-- .slide: class="with-code no-highlight cadre" -->
+
+## Lots of types
+
+
+```html
+<length>                        <number>                    <custom-ident>
+
+<percentage>                    <length-percentage>
+
+<color>                         <image>
+
+<url>                           <integer>
+
+<angle>                         <time>
+
+<resolution>                    <transform-list>
+```
+
+Notes:
+Creuser custom-ident
+
+##==##
+
+<!-- .slide: class="with-code no-highlight cadre" data-type-show="full" -->
+
+## Defines Values types
+
+
+```javascript
+"<length>"
+accepts length values
+
+"<length> | <percentage>"
+accepts lengths, percentages, percentage calc expressions, and length calc expressions, but not calc expressions containing a combination of length and percentage values.
+
+"<length-percentage>"
+accepts all values that "<length> | <percentage>" would accept, as well as calc expressions containing a combination of both length and percentage values.
+
+"big | bigger | BIGGER"
+accepts the ident "big", or the ident "bigger", or the ident "BIGGER".
+
+"<length>+"
+accepts a list of length values.
+```
+
+##==##
+
+<!-- .slide: class="with-code no-highlight cadre" data-type=show="prez" -->
+
+## Defines Values types
+
+
+```javascript
+"<length>"
+
+"<length> | <percentage>"
+
+"<length-percentage>"
+
+"big | bigger | BIGGER"
+
+"<length>+"
+```
+
+
+
+
+##==##
+
+<!-- .slide: class="with-code no-highlight cadre" -->
+
+## Demo
+
+
+```css
+.animate{
+    --transform:10px;
+    transform: translateY(
+            var(--transform));
+    transition-property: --transform;
+    transition-duration: 1s;
+}
+.animate.move{
+    --transform: -100px;
+}
+```
+
+<div id="parent-demo-properties-values"class="flex-hori">
+    <div class="flex">
+        <div id="square-no-properties"></div>
+        <div id="btn-square-no-properties" class="button3d">No Properties</div>
+    </div>
+    <div class="flex">
+        <div id="square-properties"></div>
+        <div id="btn-square-properties" class="button3d">Properties</div>
+    </div>
+
+</div>
+
+Notes:
+Creuser custom-ident
 
 Mais on peut aller plus loin :
 

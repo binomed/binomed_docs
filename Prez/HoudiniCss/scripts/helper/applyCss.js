@@ -17,7 +17,7 @@ export class ApplyCss {
             showCursorWhenSelecting: true,
             lineWrapping: true,
             scrollbarStyle: 'null',
-            theme: 'blackboard'
+            theme: 'paraiso-dark'
         });
 
         const head = document.head || document.getElementsByTagName('head')[0];

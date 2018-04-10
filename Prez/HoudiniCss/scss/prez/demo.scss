@@ -6,7 +6,7 @@
 #demo-var {
     width: 100;
     height: 100%;
-    --bg-demo-var: $light-blue;
+    --bg-demo-var: #EFE0B9;
 }
 
 #codemirror-css {
@@ -32,6 +32,7 @@
         line-height: 2em;
         text-align: center;
         padding: 0;
+        color:black;
     }
 }
 
@@ -179,41 +180,6 @@
     }
 }
 
-/**
-* PART & THEME
-*/
-
-#demo-part {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-columns: 50%;
-    grid-template-rows: 50%;
-}
-
-#render-element-part {
-    position: relative;
-    margin: 15px;
-    grid-column: 2;
-    grid-row: 1;
-}
-
-#codemirror-part-css .CodeMirror-lines,
-#codemirror-part-html .CodeMirror-lines {
-    font-size: 0.6em;
-}
-
-#codemirror-part-css {
-    margin: 15px;
-    grid-column: 1;
-    grid-row: 1 /span 2;
-}
-
-#codemirror-part-html {
-    margin: 15px;
-    grid-column: 2;
-    grid-row: 2;
-}
 
 /**
 * PAINT API
@@ -249,4 +215,87 @@
     margin: 15px;
     grid-column: 1 / span 2;
     grid-row: 2;
+}
+
+/**
+* TypeOM
+**/
+
+#squareDemo{
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    right: 150px;
+    top: 300px;
+    background: #EFE0B9;
+}
+
+/**
+* Properties And Values
+*/
+$marginCadre: 50px;
+#parent-demo-properties-values{
+    position: absolute;
+    right: $marginCadre;
+    width: 500px;
+    top: $marginCadre;
+    height: calc(100% - #{$marginCadre});
+
+    .flex{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #square-no-properties, #square-properties{
+        animation: transform 1s ease;
+    }
+}
+
+#square-properties{
+    transition-property:--properties-move-register;
+    transition-duration: 1s;
+    --properties-move-register: 10px;
+    transform: translateY(var(--properties-move-register));
+}
+#square-properties.move{
+    --properties-move-register: -150px;
+}
+#square-no-properties{
+    transition-property:--properties-move-no-register;
+    transition-duration: 1s;
+    --properties-move-no-register: 10px;
+    transform: translateY(var(--properties-move-no-register));
+}
+#square-no-properties.move{
+    --properties-move-no-register: -150px;
+}
+
+#square-no-properties, #square-properties{
+    background: #EFE0B9;
+    width: 150px;
+    height: 150px;
+}
+
+
+#parent-demo-properties-values .button3d {
+    position:relative;
+    width: auto;
+    display:inline-block;
+    color:#ecf0f1;
+    text-decoration:none;
+    border-radius:5px;
+    border:solid 1px #E4B04A;
+    background:#e67e22;
+    text-align:center;
+    padding:16px 18px 14px;
+    margin: 12px;
+    transition: all 0.1s;
+    box-shadow: 0px 6px 0px #643B0F;
+  }
+
+#parent-demo-properties-values .button3d:active{
+    box-shadow: 0px 2px 0px #643B0F;
+    position:relative;
+    top:4px;
 }
