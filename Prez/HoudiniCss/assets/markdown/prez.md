@@ -596,28 +596,6 @@ accepts a list of length values.
 Notes:
 Creuser custom-ident
 
-Mais on peut aller plus loin :
-
-Création d'un custom type et la liste c'est :
-<length>
-<number>
-<percentage>
-<length-percentage>
-<color>
-<image>
-<url>
-<integer>
-<angle>
-<time>
-<resolution>
-<transform-function>
-
-##==##
-
-Montrer les restrictions en terme d'animation
-=> si on déclare avec le type, alors c'est smooth
-
-
 ##==##
 
 <!-- .slide: class="transition text-white transparent cadre" -->
@@ -630,6 +608,23 @@ Montrer les restrictions en terme d'animation
 
 ##==##
 
+<!-- .slide: class="text-white transparent cadre" -->
+
+# Like web workers but target for performance !
+
+Decline between 4
+
+
+##==##
+
+<!-- .slide: class="cadre no-filter" data-copyrights="true"-->
+
+<img src="./assets/images/worklet_diagram.svg" class="h-600"></img>
+
+<div class="copyrights">credits to Sam Richard</div>
+
+##==##
+
 tournent en parallèle et sont un peu comme les workers mais orienté perf & travaillant sur le GPU.
 
 ils n'ont pas accès à self ou this
@@ -639,6 +634,15 @@ Sont vraiment indep du Main Thread !!!
 ils pourront être killé s'ils durent trop longtemps
 
 ##==##
+
+<!-- .slide: class="transition text-white transparent cadre" -->
+
+<h1>
+    <svg class="h-150 color-white">
+        <use xlink:href="#animation" />
+    </svg><br>Animation Worklet
+</h1>
+
 
 Animation worklet
 
@@ -676,6 +680,21 @@ paint(ctx, size, props, args)
 
 Y a un parent layout (flex / grid / ...) au dessus de tout, s'en suit une zone de contrainte
  on arrive ensuite sur du current layout qui possède des childs ayant eux même un layout et enfin un fragment
+
+##==##
+
+<!-- .slide: class="transition text-white transparent cadre" -->
+
+<h1>
+    <svg class="h-150 color-white">
+        <use xlink:href="#animation" />
+    </svg><br>Animation Worklet
+</h1>
+
+
+Animation worklet
+
+d'un côté un animator de l'autre un WorletAnimation
 
 ##==##
 
@@ -719,7 +738,7 @@ GDE Web Technologies
 
 <div class="credits">
     <h4 >Crédits : <a href="https://thenounproject.com/" target="_blank">The noun project</a></h4>
-    <p>Alexander Zharikov / Ben Iconator / Christopher T. Howlett / icon 54 / Atif Arshad / Bernar  Novalyi / Kris Prepiakova / Jonathan Collie / ahmad / Ana Rosa Botello Hernandez / Petai Jantrapoon / ProSymbols</p>
+    <p>Alexander Zharikov / Ben Iconator / Christopher T. Howlett / icon 54 / Atif Arshad / Bernar  Novalyi / Kris Prepiakova / Jonathan Collie / ahmad / Ana Rosa Botello Hernandez / Petai Jantrapoon / ProSymbols / Ceative Mania</p>
 </div>
 
 
@@ -777,4 +796,6 @@ GDE Web Technologies
     <svg id="worklet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 64 80" enable-background="new 0 0 64 64" xml:space="preserve"><g><g><line fill="none" stroke-width="2" stroke-miterlimit="10" x1="40" y1="51" x2="38" y2="51"/><path fill="none" stroke-width="2" stroke-miterlimit="10" d="M36,51H15c-1.1,0-2-0.9-2-2V15c0-1.1,0.9-2,2-2h34    c1.1,0,2,0.9,2,2v34c0,1.1-0.9,2-2,2h-7"/><line fill="none" stroke-width="2" stroke-miterlimit="10" x1="25" y1="17" x2="27" y2="17"/><path fill="none" stroke-width="2" stroke-miterlimit="10" d="M29,17h16c1.1,0,2,0.9,2,2v26c0,1.1-0.9,2-2,2H19    c-1.1,0-2-0.9-2-2V19c0-1.1,0.9-2,2-2h4"/><line fill="none" stroke-width="2" stroke-miterlimit="10" x1="17" y1="10" x2="17" y2="2"/><line fill="none" stroke-width="2" stroke-miterlimit="10" x1="27" y1="10" x2="27" y2="2"/><line fill="none" stroke-width="2" stroke-miterlimit="10" x1="37" y1="10" x2="37" y2="2"/><line fill="none" stroke-width="2" stroke-miterlimit="10" x1="47" y1="10" x2="47" y2="2"/><line fill="none" stroke-width="2" stroke-miterlimit="10" x1="17" y1="62" x2="17" y2="54"/><line fill="none" stroke-width="2" stroke-miterlimit="10" x1="27" y1="62" x2="27" y2="54"/><line fill="none" stroke-width="2" stroke-miterlimit="10" x1="37" y1="62" x2="37" y2="54"/><line fill="none" stroke-width="2" stroke-miterlimit="10" x1="47" y1="62" x2="47" y2="54"/><line fill="none" stroke-width="2" stroke-miterlimit="10" x1="54" y1="17" x2="62" y2="17"/><line fill="none" stroke-width="2" stroke-miterlimit="10" x1="54" y1="27" x2="62" y2="27"/><line fill="none" stroke-width="2" stroke-miterlimit="10" x1="54" y1="37" x2="62" y2="37"/><line fill="none" stroke-width="2" stroke-miterlimit="10" x1="54" y1="47" x2="62" y2="47"/><line fill="none" stroke-width="2" stroke-miterlimit="10" x1="2" y1="17" x2="10" y2="17"/><line fill="none" stroke-width="2" stroke-miterlimit="10" x1="2" y1="27" x2="10" y2="27"/><line fill="none" stroke-width="2" stroke-miterlimit="10" x1="2" y1="37" x2="10" y2="37"/><line fill="none" stroke-width="2" stroke-miterlimit="10" x1="2" y1="47" x2="10" y2="47"/><line fill="none" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" x1="17" y1="23" x2="33" y2="23"/><circle fill="none" stroke-width="2" stroke-miterlimit="10" cx="35" cy="31" r="2"/><circle fill="none" stroke-width="2" stroke-miterlimit="10" cx="23" cy="34" r="2"/><polyline fill="none" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" points="42,18 42,31     36,31   "/><polyline fill="none" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" points="17,28 29,28     29,38 39,38   "/><polyline fill="none" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" points="34,47 34,42     23,42 23,36   "/><rect x="39" y="36" fill="none" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" width="4" height="4"/><rect x="33" y="21" fill="none" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" width="4" height="4"/></g></g></svg>
     <!-- Layout -->
     <svg id="layout" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 512 640" enable-background="new 0 0 512 512" xml:space="preserve"><g><path d="M144.2,2H12.2C6.5,2,2,6.5,2,12.2v487.7c0,5.6,4.5,10.2,10.2,10.2h132.1c5.6,0,10.2-4.6,10.2-10.2V12.2   C154.4,6.5,149.9,2,144.2,2z"/><path d="M322,205.2H215.4c-5.6,0-10.2,4.5-10.2,10.2v284.5c0,5.6,4.5,10.2,10.2,10.2H322c5.6,0,10.2-4.6,10.2-10.2V215.4   C332.2,209.7,327.7,205.2,322,205.2z"/><path d="M499.8,205.2H393.2c-5.6,0-10.2,4.5-10.2,10.2v284.5c0,5.6,4.5,10.2,10.2,10.2h106.7c5.6,0,10.2-4.6,10.2-10.2V215.4   C510,209.7,505.5,205.2,499.8,205.2z"/><path d="M499.8,2H215.4c-5.6,0-10.2,4.5-10.2,10.2v132.1c0,5.6,4.5,10.2,10.2,10.2h284.5c5.6,0,10.2-4.6,10.2-10.2V12.2   C510,6.5,505.5,2,499.8,2z"/></g></svg>
+    <!-- animation -->
+    <svg id="animation" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" enable-background="new 0 0 100 100" xml:space="preserve"><g><rect x="80.891" y="27.833" width="2.5" height="2.5"/><path d="M66.621,94.366l-0.258-2.486c1.569-0.162,3.101-0.551,4.549-1.153l0.961,2.309C70.199,93.731,68.432,94.18,66.621,94.366z    M61.21,94.142c-1.784-0.336-3.508-0.931-5.123-1.769l1.15-2.219c1.398,0.725,2.891,1.239,4.436,1.53L61.21,94.142z M76.521,90.247   l-1.584-1.934c1.221-1,2.287-2.166,3.17-3.467l2.068,1.404C79.157,87.751,77.928,89.096,76.521,90.247z M51.689,89.209   c-1.306-1.264-2.42-2.706-3.311-4.287l2.179-1.227c0.771,1.371,1.737,2.621,2.87,3.717L51.689,89.209z M13.583,85.568h-2.5v-5.075   h2.5V85.568z M82.534,81.373l-2.385-0.75c0.469-1.494,0.718-3.053,0.739-4.634l2.5,0.033   C83.364,77.847,83.076,79.646,82.534,81.373z M46.438,79.861c-0.299-1.337-0.451-2.715-0.451-4.098v-1.218h2.5v1.218   c0,1.199,0.131,2.395,0.39,3.553L46.438,79.861z M13.583,75.419h-2.5v-5.075h2.5V75.419z M83.391,70.932h-2.5v-5.075h2.5V70.932z    M48.487,69.472h-2.5v-5.075h2.5V69.472z M13.583,65.27h-2.5v-5.075h2.5V65.27z M83.391,60.782h-2.5v-5.075h2.5V60.782z    M48.487,59.322h-2.5v-5.075h2.5V59.322z M13.583,55.12h-2.5v-5.075h2.5V55.12z M83.391,50.632h-2.5v-5.075h2.5V50.632z    M48.487,49.172h-2.5v-5.075h2.5V49.172z M13.583,44.97h-2.5v-5.075h2.5V44.97z M83.391,40.483h-2.5v-5.075h2.5V40.483z    M48.487,39.023h-2.5v-5.075h2.5V39.023z M13.583,34.821h-2.5v-5.075h2.5V34.821z M48.487,28.874h-2.5v-2.588   c0-0.77-0.055-1.544-0.162-2.302l2.476-0.351c0.124,0.874,0.187,1.766,0.187,2.652V28.874z M13.651,24.788l-2.489-0.228   c0.166-1.813,0.594-3.584,1.273-5.268l2.318,0.936C14.166,21.685,13.795,23.219,13.651,24.788z M44.496,19.485   c-0.66-1.425-1.525-2.747-2.57-3.929l1.873-1.656c1.206,1.364,2.203,2.889,2.965,4.534L44.496,19.485z M17.123,16.177l-1.953-1.561   c1.134-1.419,2.465-2.664,3.957-3.7l1.427,2.053C19.26,13.868,18.106,14.947,17.123,16.177z M38.341,12.524   c-1.338-0.833-2.785-1.465-4.3-1.876l0.655-2.413c1.75,0.476,3.422,1.205,4.967,2.167L38.341,12.524z M24.754,10.879l-0.775-2.377   c1.721-0.562,3.517-0.869,5.339-0.913l0.062,2.499C27.8,10.127,26.244,10.393,24.754,10.879z"/><rect x="11.083" y="90.715" width="2.5" height="2.5"/></g><path d="M82.141,26.75c-5.836,0-10.583-4.748-10.583-10.583S76.305,5.584,82.141,5.584s10.583,4.748,10.583,10.583  S87.977,26.75,82.141,26.75z M82.141,8.084c-4.457,0-8.083,3.626-8.083,8.083s3.626,8.083,8.083,8.083s8.083-3.626,8.083-8.083  S86.598,8.084,82.141,8.084z"/><path d="M82.141,22.417c-3.446,0-6.25-2.804-6.25-6.25s2.804-6.25,6.25-6.25v2.5c-2.067,0-3.75,1.682-3.75,3.75  s1.683,3.75,3.75,3.75V22.417z"/></svg>
 </div>
