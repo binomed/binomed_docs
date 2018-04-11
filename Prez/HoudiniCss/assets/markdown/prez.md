@@ -12,7 +12,7 @@ jefBinomed @ #MixIT18
 
 <!-- .slide: class="cadre" -->
 
-## Once uppon a time
+## Once upon a time
 
 
 <img src="./assets/images/browsers_old.png" class="center"></img>
