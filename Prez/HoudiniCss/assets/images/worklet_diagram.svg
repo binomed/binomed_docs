@@ -1,21 +1,26 @@
 <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 849.09 505.5">
     <defs>
         <style>
-        g{
-        color:white;
+        g, path{
+          color:white;
+          fill: none;
+          stroke:white;
         }
         .cls-1,.cls-11,.cls-4,.cls-5,.cls-6,.cls-7,.cls-8,.cls-9{
             fill:none;
             stroke: white;
+            color:white;
         }
         .cls-2{
             clip-path:url(#clip-path);
         }
         .cls-3{
             stroke: white;
+            color:white;
             fill:transparent; //#fff;
         }
         .cls-4{
+            color:white;
             stroke:#247000;
         }
         .cls-11,.cls-4,.cls-5,.cls-7,.cls-8,.cls-9{
@@ -26,6 +31,7 @@
             stroke-width:2px;
         }
         .cls-11,.cls-5,.cls-6{
+            color:white;
             stroke:#fff;
         }
         .cls-6{

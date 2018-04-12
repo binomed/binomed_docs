@@ -612,26 +612,30 @@ Creuser custom-ident
 
 # Like web workers but target for performance !
 
-Decline between 4
+Paint Worklet
+<br><br>
+Layout Worklet
+<br><br>
+Audio Worklet
+<br><br>
+Animation Worklet
+
 
 
 ##==##
 
 <!-- .slide: class="cadre no-filter" data-copyrights="true"-->
 
-<img src="./assets/images/worklet_diagram.svg" class="h-600"></img>
+<img src="./assets/images/WorkletDiagram.svg" class="w-850"></img>
 
-<div class="copyrights">credits to Sam Richard</div>
+<div class="copyrights diagram">credits to Sam Richard</div>
 
-##==##
-
-tournent en parallèle et sont un peu comme les workers mais orienté perf & travaillant sur le GPU.
-
+Notes:
+Ils peuvent être killé s'ils sont trop long
 ils n'ont pas accès à self ou this
 
 Sont vraiment indep du Main Thread !!!
 
-ils pourront être killé s'ils durent trop longtemps
 
 ##==##
 
