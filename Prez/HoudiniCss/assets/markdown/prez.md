@@ -691,6 +691,9 @@ class MyPainter {
 registerPaint('myPainter', MyPainter);
 ```
 
+Notes:
+Canvas Api mais light !
+
 ##==##
 
 
@@ -734,7 +737,7 @@ Modifier Couleur ou Taille !
 
 Animation worklet
 
-d'un côté un animator de l'autre un WorletAnimation
+d'un côté un animator (celui qui défini comment la timeline est appliquée sur l'animation car qui dit animation dit frames ! on doit donc expliquer où on en est dans les frames) de l'autre un WorletAnimation qui spécifie l'animation qu'on applique avec quels effets et sur quel élément !
 
 ##==##
 
