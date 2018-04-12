@@ -121,6 +121,7 @@ Des programmes qui nous permettent d'accéder au web
 
 
 ##==##
+<!-- .slide: class="cadre"-->
 
 # Houdini Group
 
@@ -173,7 +174,7 @@ Regroupement des acteurs visant à améliorer le web
 <h1>Problem</h1>
 ```javascript
 $('#div').style.height
-    = getRandomInt() + 'px';
+ = getRandomInt() + 'px';
 ```
 
 Notes:
@@ -185,7 +186,7 @@ Eviter le parsing inutile
 
 <h2>Introduce</h2>
 ```javascript
-$('#div').attributeStyleMap
+('#div').attributeStyleMap
 // &&
 CSS.px(getRandomInt());
 ```
@@ -274,7 +275,7 @@ Marche aussi pour ComputeStyle !!!
 ## Maths - calc
 
 ```javascript
-new CSSMathSum(CSS.vw(100), CSS.px(-10)).toString(); // "calc(100vw + -10px)"
+new CSSMathSum(CSS.vw(100), CSS.px(-10)).toString(); // "calc(100vw - 10px)"
 
 new CSSMathNegate(CSS.px(42)).toString() // "calc(-42px)"
 
@@ -298,7 +299,7 @@ CSS.percent(50).max(CSS.vw(50)).toString() // "max(50%, 50vw)"
 CSS.px(1).add(CSS.px(2)) // {value: 3, unit: "px"}
 
 // multiple values:
-CSS.s(1).sub(CSS.ms(200), CSS.ms(300)).toString() // "calc(1s + -200ms + -300ms)"
+CSS.s(1).sub(CSS.ms(200), CSS.ms(300)).toString() // "calc(1s-200ms-300ms)"
 // or pass a `CSSMathSum`:
 const sum = new CSSMathSum(CSS.percent(100), CSS.px(20)));
 CSS.vw(100).add(sum).toString() // "calc(100vw + (100% + 20px))"
@@ -387,16 +388,15 @@ CHROME 66
 ## CSS Custom Properties
 
 ```css
-// Declaration
-html {
+html { // Declaration
     --a-name: #333;
 }
-// Usage
-div {
+
+div { // Usage
     color: var(--a-name);
 }
-// Default value
-h1 {
+
+h1 { // Default value
     color: var(--a-name, red);
 }
 ```
@@ -404,7 +404,7 @@ h1 {
 
 ##==##
 
-<!-- data-type-show="prez" -->
+<!-- .slide: class="cadre" -->
 
 <div id="demo-var" class="flex-hori">
     <div id="codemirror-css">
@@ -610,16 +610,38 @@ Creuser custom-ident
 
 <!-- .slide: class="text-white transparent cadre" -->
 
-# Like web workers but target for performance !
+# Kinda Web workers target for performance !
 
+
+<img src="./assets/images/perf.jpg" class="center"></img>
+
+Notes:
 Paint Worklet
-<br><br>
 Layout Worklet
-<br><br>
 Audio Worklet
-<br><br>
 Animation Worklet
 
+
+
+##==##
+
+<!-- .slide: class="with-code no-highlight cadre" -->
+
+## Worklet (the theory)
+
+
+```javascript
+window.myWorklet.addModule('scriptWorklet.js');
+
+registerMyWorklet('name', class{
+    process(arg){
+        return;
+    }
+});
+```
+
+Notes:
+Générique !! Process change en fonction du worklet !
 
 
 ##==##
@@ -637,20 +659,6 @@ ils n'ont pas accès à self ou this
 Sont vraiment indep du Main Thread !!!
 
 
-##==##
-
-<!-- .slide: class="transition text-white transparent cadre" -->
-
-<h1>
-    <svg class="h-150 color-white">
-        <use xlink:href="#animation" />
-    </svg><br>Animation Worklet
-</h1>
-
-
-Animation worklet
-
-d'un côté un animator de l'autre un WorletAnimation
 
 ##==##
 
@@ -662,13 +670,71 @@ d'un côté un animator de l'autre un WorletAnimation
     </svg><br>Paint Api
 </h1>
 
+
+
 ##==##
 
-Comme canvas mais plus light
+<!-- .slide: class="with-code no-highlight cadre" -->
 
-inputProperties
-inputArguments
-paint(ctx, size, props, args)
+```javascript
+//index.js
+CSS.paintWorklet.addModule('painter.js');
+
+// painter.js
+class MyPainter {
+  static get inputProperties() { return ['--color'];}
+  static get inputArguments() { return ['<length>', '<color>']; }
+  paint(ctx, geometry, properties, args) {
+    // ...
+  }
+}
+registerPaint('myPainter', MyPainter);
+```
+
+##==##
+
+
+<!-- .slide: class="with-code no-highlight cadre" -->
+
+```css
+textarea {
+    --color: red;
+    background-image: paint(myPainter,'10px', green);
+}
+```
+
+
+##==##
+
+<!-- .slide: class="cadre"-->
+
+<div id="demo-paint-api" >
+    <div id="codemirror-paint-api-css"></div>
+    <div id="codemirror-paint-api"></div>
+    <div id="render-element-paint-api"></div>
+</div>
+
+
+Notes:
+Modifier Couleur ou Taille !
+
+##==##
+
+<!-- .slide: class="transition text-white transparent cadre" -->
+
+<h1>
+    <svg class="h-150 color-white">
+        <use xlink:href="#animation" />
+    </svg><br>Animation Worklet
+</h1>
+
+##==##
+
+<!-- .slide: class="transition text-white transparent cadre" -->
+
+Animation worklet
+
+d'un côté un animator de l'autre un WorletAnimation
 
 ##==##
 

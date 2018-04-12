@@ -32,8 +32,8 @@ a:visited {
 }
 
 .reveal .slides section:not(.first-slide):not(.last-slide):not(.who-am-i):not([data-background]):not([class*="transition"]):not(.transition):not(.transition-white):not(.transition-black):not(.with-code) {
-    width: 100%;
-    height: calc(100% - 40px);
+    width: calc(100% - 100px);
+    height: calc(100% - 140px);
     height: -webkit-calc(100% - 40px);
     h1,
     h2 {

@@ -59,13 +59,6 @@ export class Demos {
         );
     }
 
-    _demoPaintApi() {
-        //(CSS.paintWorklet || paintWorklet).addModule('./scripts/houdini/circle-worklet.js');
-        //(CSS.paintWorklet || paintWorklet).addModule('./scripts/houdini/noise-worklet.js');
-
-
-        //requestAnimationFrame(this._frameIncrement.bind(this));
-    }
 
     _frameIncrement(){
         if (this.frame === 9) {
@@ -91,6 +84,35 @@ export class Demos {
             document.querySelector('#square-no-properties').classList.remove('move');
             document.querySelector('#square-no-properties').classList.add('move');
         });
+    }
+
+    _demoPaintApi() {
+        (CSS.paintWorklet || paintWorklet).addModule('./scripts/houdini/circle-worklet.js');
+
+        new ApplyCss(
+            document.getElementById('codemirror-paint-api-css'),
+            `#render-element-paint-api {
+    --circle-color: #FFF;
+    --width-circle: 100px;
+    width: var(--width-circle);
+    background-image: paint(circle, 0px, red);
+}`
+        );
+
+        new ApplyCodeMiror(document.getElementById('codemirror-paint-api'),
+            'javascript',
+            `paint(ctx, geom, properties, args) {
+    // Determine the center point and radius.
+    const radius = Math.min(geom.width / 2, geom.height / 2);
+    const border = args[0].value;
+    // Change the border color.
+    ctx.fillStyle = args[1].toString();
+    ctx.arc(geom.width - border / 2, geom.height -  - border / 2, radius - border, 0, 2 * Math.PI);
+    // Change the fill color.
+    const color = properties.get('--circle-color').toString();
+    ctx.fillStyle = color;
+    ctx.arc(geom.width / 2, geom.height / 2, radius, 0, 2 * Math.PI);
+}`);
     }
 
 }
