@@ -740,6 +740,91 @@ Modifier Couleur ou Taille !
 <img src="./assets/images/worklet_animation.svg" class="center h-500"></img>
 
 
+
+##==##
+
+<!-- .slide: class="with-code no-highlight cadre" -->
+
+## Animator
+
+```javascript
+registerAnimator('animator-name', class {
+  constructor(options) {
+  }
+
+  animate(currentTime, effect) {
+    // console.log(`animate: ${currentTime}`, effect);
+    effect.localTime = currentTime;
+  }
+});
+```
+
+Notes:
+
+##==##
+
+<!-- .slide: class="with-code no-highlight cadre" -->
+
+## Animation - register and time management
+
+```javascript
+// Register the worklet
+animationWorklet.addModule('my-animator.js');
+
+// Define the TimeLineManager
+const scrollTimeline = new ScrollTimeline({
+      document.querySelector('#elementThatScroll'),
+      orientation: 'block',
+      timeRange: 1000,
+    });
+
+```
+##==##
+
+<!-- .slide: class="with-code no-highlight cadre" -->
+
+## Animation - effects
+
+```javascript
+const avatar = document.querySelector('#elementToAnim');
+const avatarEffect = new KeyframeEffect(avatar,
+// List of steps of animation (like @keyframe)
+[
+    {
+        transform: `translateY(0px) scale(1)`,
+        easing: 'ease-in-out',
+        offset:
+    },
+    {
+        transform: `translateY(${avatarTargetTranslate}px) scale(${avatarTargetScale})`,
+        offset: 1
+    },
+], {
+    duration: maxTime
+    easing: 'linear'
+});
+```
+
+Notes:
+Pour l'instant que KeyFrameEvent !! Draft Unofficial !
+
+##==##
+
+<!-- .slide: class="with-code no-highlight cadre" -->
+
+## Animation - Invoke
+
+```javascript
+    new WorkletAnimation('animator-name',// animator name
+      [avatarEffect], //effects
+      scrollTimeline, //timeline
+      {} //options
+    ).play();
+
+```
+
+Notes:
+
 ##==##
 
 
