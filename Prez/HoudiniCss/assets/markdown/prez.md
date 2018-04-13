@@ -733,6 +733,17 @@ Modifier Couleur ou Taille !
 
 ##==##
 
+<!-- .slide: class="cadre" -->
+
+## How it works ?
+
+<img src="./assets/images/worklet_animation.svg" class="center h-500"></img>
+
+
+##==##
+
+
+
 <!-- .slide: class="transition text-white transparent cadre" -->
 
 Animation worklet
@@ -811,7 +822,7 @@ GDE Web Technologies
 
 <div class="credits">
     <h4 >Crédits : <a href="https://thenounproject.com/" target="_blank">The noun project</a></h4>
-    <p>Alexander Zharikov / Ben Iconator / Christopher T. Howlett / icon 54 / Atif Arshad / Bernar  Novalyi / Kris Prepiakova / Jonathan Collie / ahmad / Ana Rosa Botello Hernandez / Petai Jantrapoon / ProSymbols / Ceative Mania</p>
+    <p>Alexander Zharikov / Ben Iconator / Christopher T. Howlett / icon 54 / Atif Arshad / Bernar  Novalyi / Kris Prepiakova / Jonathan Collie / ahmad / Ana Rosa Botello Hernandez / Petai Jantrapoon / ProSymbols / Ceative Mania /Fabiano Coelho / Vectors Market</p>
 </div>
 
 
