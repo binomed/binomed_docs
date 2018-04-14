@@ -5,6 +5,7 @@ import {
 import {
     ApplyCodeMiror
 } from './helper/applyJs.js';
+import {AnimationHeader} from './houdini/animation-header.js'
 
 export class Demos {
 
@@ -15,6 +16,12 @@ export class Demos {
             this._demoPaintApi();
             this._demoCssVar();
             this._demoPropertiesAndValues();
+            this.animationDemoLoad = false;
+            Reveal.addEventListener('animationDemoState', () =>{
+                if (!this.animationDemoLoad){
+                    new AnimationHeader();
+                }
+            })
             this.frame = 0;
 
         } catch (error) {

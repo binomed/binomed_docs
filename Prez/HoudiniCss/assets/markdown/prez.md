@@ -786,20 +786,13 @@ const scrollTimeline = new ScrollTimeline({
 ## Animation - effects
 
 ```javascript
-const avatar = document.querySelector('#elementToAnim');
-const avatarEffect = new KeyframeEffect(avatar,
-// List of steps of animation (like @keyframe)
-[
-    {
-        transform: `translateY(0px) scale(1)`,
-        easing: 'ease-in-out',
-        offset:
-    },
-    {
-        transform: `translateY(${avatarTargetTranslate}px) scale(${avatarTargetScale})`,
-        offset: 1
-    },
-], {
+const avatarEffect = new KeyframeEffect(document.querySelector('#elementToAnim'),
+[{  transform: `translateY(0px) scale(1)`,
+    easing: 'ease-in-out',
+    offset:
+},{ transform: `translateY(${avatarTranslate}px) scale(${avatarScale})`,
+    offset: 1
+}], {
     duration: maxTime
     easing: 'linear'
 });
@@ -827,13 +820,43 @@ Notes:
 
 ##==##
 
+<!-- .slide: class="cadre" data-state="animationDemoState" -->
 
+## Demo
 
-<!-- .slide: class="transition text-white transparent cadre" -->
+<div id="demoAnimationWorklet">
+    <div class="bar">
+    </div>
+    <header class="profile">
+    <img src="./assets/images/jef_avatar.jpg" class="avatar">
+    <h1 class="name">Jean-François Garreau</h1>
+    <h2 class="handle">@jefBinomed</h2>
+    <div class="description">
+        GDG Nantes Leader <a href="#">@GDGNantes</a> / <a href="#">@NantesWit</a> / <a href="#">#devoxx4kids</a> / <a href="#">#GDE Web</a> / developer and proud to be dev <a href="#">@LuccaSoftware</a> / curious geek
+    </div>
+    <div class="homepage">
+        <a href="#">jef.binomed.fr</a>
+    </div>
+    </header>
+    <div class="tweets">
+    <div class="tweet">
+        <img src="./assets/images/jef_avatar.jpg" class="avatar">
+        <div class="meta">
+        <span class="name">Jean-François Garreau</span>
+        <span class="handle">@jefBinomed</span>
+        <span class="date">Apr 14</span>
+        </div>
+        Today I give a talk about #HoudininCSS !!
+        <div class="media">
+        <img src="./assets/images/houdini_old.jpg" width="300px">
+        <p class="title">“A simple dev, GDE Web Technology...” – jef.binomed.fr</p>
+        <p class="domain">jef.binomed.fr</p>
+        </div>
+    </div>
+    </div>
+</div>
 
-Animation worklet
-
-d'un côté un animator (celui qui défini comment la timeline est appliquée sur l'animation car qui dit animation dit frames ! on doit donc expliquer où on en est dans les frames) de l'autre un WorletAnimation qui spécifie l'animation qu'on applique avec quels effets et sur quel élément !
+Notes:
 
 ##==##
 
