@@ -22,6 +22,8 @@ export class Demos {
                     new AnimationHeader();
                 }
             })
+            this.layoutDemoLoad = false;
+            this._demoLayoutApi();
             this.frame = 0;
 
         } catch (error) {
@@ -120,6 +122,27 @@ export class Demos {
     ctx.fillStyle = color;
     ctx.arc(geom.width / 2, geom.height / 2, radius, 0, 2 * Math.PI);
 }`);
+    }
+
+    _demoLayoutApi(){
+        document.querySelectorAll('#demoLayoutWorklet div').forEach(elem => {
+            const t = elem.textContent;
+            // Cut out a random amount of text, but keep at least 10 characters
+            elem.textContent = t.slice(0, Math.floor(Math.random() * (t.length - 10) + 10));
+        })
+        CSS.layoutWorklet.addModule('./scripts/houdini/masonry-worklet.js');
+
+        let cols = 3;
+        document.querySelector('#demoMasonryBtnMinus').addEventListener('click', ()=>{
+            cols = Math.max(3, cols - 1);
+            document.querySelector('#demoMasonryCols').innerHTML = cols;
+            document.querySelector('#demoLayoutWorklet').style.setProperty('--masonry-columns', cols);
+        });
+        document.querySelector('#demoMasonryBtnPlus').addEventListener('click', ()=>{
+            cols = Math.min(8, cols + 1);
+            document.querySelector('#demoMasonryCols').innerHTML = cols;
+            document.querySelector('#demoLayoutWorklet').style.setProperty('--masonry-columns', cols);
+        });
     }
 
 }

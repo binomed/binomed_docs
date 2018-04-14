@@ -820,7 +820,7 @@ Notes:
 
 ##==##
 
-<!-- .slide: class="cadre" data-state="animationDemoState" -->
+<!-- .slide: class="cadre" data-state="animationDemoState" data-copyrights="true" -->
 
 ## Demo
 
@@ -856,6 +856,8 @@ Notes:
     </div>
 </div>
 
+<div class="copyrights diagram">credits to Das Surma</div>
+
 Notes:
 
 ##==##
@@ -870,23 +872,139 @@ Notes:
 
 ##==##
 
-Y a un parent layout (flex / grid / ...) au dessus de tout, s'en suit une zone de contrainte
- on arrive ensuite sur du current layout qui possède des childs ayant eux même un layout et enfin un fragment
+<!-- .slide: class=" cadre" -->
+
+## Layout Worklet
+
+<blockquote>
+<cite>
+The layout stage of CSS is responsible for generating and positioning fragments from the box tree.
+</cite>
+</blockquote>
+
 
 ##==##
 
-<!-- .slide: class="transition text-white transparent cadre" -->
+<!-- .slide: class="cadre" -->
 
-<h1>
-    <svg class="h-150 color-white">
-        <use xlink:href="#animation" />
-    </svg><br>Animation Worklet
-</h1>
+## How it works ?
+
+<img src="./assets/images/layout_diagram.svg" class="center h-500"></img>
+
+Notes:
+border / margin / scrolls / padding => layoutEdges
+
+##==##
+
+<!-- .slide: class="with-code no-highlight cadre" -->
+
+## Layout - Worklet Api
+
+```javascript
+registerLayout('my-layout', class {
+    static get inputProperties() {return ['--foo'] }
+    static get childrenInputProperties() {return ['--bar'] }
+    static get childDisplay() {return 'normal'}
+    *intrinsicSizes(children, edges, styleMap) {// Min Max size of each children
+        return {maxContentSize, minContentSize};
+    }
+    *layout(children, edges, constraints, styleMap) {// Where all magic take place
+        return {autoBlockSize,childFragments};
+    }
+});
+```
+
+Notes:
+Child Display : normal vs block
 
 
-Animation worklet
 
-d'un côté un animator de l'autre un WorletAnimation
+##==##
+
+<!-- .slide: class="cadre with-code"  -->
+
+## Use
+```javascript
+// Index.js
+layoutWorklet.addModule('layout.js');
+```
+```css
+/*Main.css*/
+body{
+    display: layout('my-layout');
+}
+```
+
+##==##
+
+<!-- .slide: class="with-code no-highlight cadre" -->
+
+## Layout - calculate intrinsic size
+
+```javascript
+*intrinsicSizes(children, edges, styleMap) {// Min Max size of each children
+    const childrenSizes = yield children.map((child) => {
+        return child.intrinsicSizes();
+    });
+    const maxContentSize = childrenSizes.reduce((sum, childSizes) => {
+        return sum + childSizes.maxContentSize;
+    }, 0) + edges.all.inline;
+    const minContentSize = childrenSizes.reduce((max, childSizes) => {
+        return sum + childSizes.minContentSize;
+    }, 0) + edges.all.inline;
+    return {maxContentSize, minContentSize}; }
+```
+
+##==##
+
+<!-- .slide: class="with-code no-highlight cadre" -->
+
+## Layout - position fragments
+
+```javascript
+*layout(children, edges, constraints, styleMap) {
+    const childFragments = yield children.map((child) => {
+        return child.layoutNextFragment({availableInlineSize,availableBlockSize});
+    });
+    let blockOffset = edges.all.blockStart;
+    for (let fragment of childFragments) {
+        fragment.blockOffset = blockOffset;
+        fragment.inlineOffset = availableSize;
+        blockOffset += fragment.blockSize;
+    }
+    return { autoBlockSize : blockOffset + edges.all.blockEnd, childFragments}; }
+```
+
+Notes:
+
+
+##==##
+
+<!-- .slide: class="cadre" data-state="layoutDemoState" data-copyrights="true" -->
+
+## Demo - Masonry Layout
+
+<div id="demoLayoutWorklet">
+    <div>1 Lorem ipsum dolor sit amet, consul disputando ne his, et vim accumsan ponderum. Rebum deseruisse ex vix. Vix stet honestatis definitionem an, et natum ocurreret cum, semper interpretaris cu mea. Eam saperet fierent luptatum no. Ius ei dicunt detracto elaboraret.</div>
+<div>2 Lorem ipsum dolor sit amet, consul disputando ne his, et vim accumsan ponderum. Rebum deseruisse ex vix. Vix stet honestatis definitionem an, et natum ocurreret cum, semper interpretaris cu mea. Eam saperet fierent luptatum no. Ius ei dicunt detracto elaboraret.</div>
+<div>3 Lorem ipsum dolor sit amet, consul disputando ne his, et vim accumsan ponderum. Rebum deseruisse ex vix. Vix stet honestatis definitionem an, et natum ocurreret cum, semper interpretaris cu mea. Eam saperet fierent luptatum no. Ius ei dicunt detracto elaboraret.</div>
+<div>4 Lorem ipsum dolor sit amet, consul disputando ne his, et vim accumsan ponderum. Rebum deseruisse ex vix. Vix stet honestatis definitionem an, et natum ocurreret cum, semper interpretaris cu mea. Eam saperet fierent luptatum no. Ius ei dicunt detracto elaboraret.</div>
+<div>5 Lorem ipsum dolor sit amet, consul disputando ne his, et vim accumsan ponderum. Rebum deseruisse ex vix. Vix stet honestatis definitionem an, et natum ocurreret cum, semper interpretaris cu mea. Eam saperet fierent luptatum no. Ius ei dicunt detracto elaboraret.</div>
+<div>6 Lorem ipsum dolor sit amet, consul disputando ne his, et vim accumsan ponderum. Rebum deseruisse ex vix. Vix stet honestatis definitionem an, et natum ocurreret cum, semper interpretaris cu mea. Eam saperet fierent luptatum no. Ius ei dicunt detracto elaboraret.</div>
+<div>7 Lorem ipsum dolor sit amet, consul disputando ne his, et vim accumsan ponderum. Rebum deseruisse ex vix. Vix stet honestatis definitionem an, et natum ocurreret cum, semper interpretaris cu mea. Eam saperet fierent luptatum no. Ius ei dicunt detracto elaboraret.</div>
+<div>8 Lorem ipsum dolor sit amet, consul disputando ne his, et vim accumsan ponderum. Rebum deseruisse ex vix. Vix stet honestatis definitionem an, et natum ocurreret cum, semper interpretaris cu mea. Eam saperet fierent luptatum no. Ius ei dicunt detracto elaboraret.</div>
+<div>9 Lorem ipsum dolor sit amet, consul disputando ne his, et vim accumsan ponderum. Rebum deseruisse ex vix. Vix stet honestatis definitionem an, et natum ocurreret cum, semper interpretaris cu mea. Eam saperet fierent luptatum no. Ius ei dicunt detracto elaboraret.</div>
+</div>
+<div id="demoColParentBtn" class="flex">
+    <span>Nb Colums : <span><span id="demoMasonryCols">3</span>
+    <button id="demoMasonryBtnMinus">-</button>
+    <button id="demoMasonryBtnPlus">+</button>
+</div>
+
+<div class="copyrights diagram">credits to Das Surma</div>
+
+Notes:
+
 
 ##==##
 

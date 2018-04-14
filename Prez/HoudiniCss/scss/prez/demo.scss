@@ -443,3 +443,25 @@ Animation Worklet
         flex-grow: 1;
       }
 }
+
+/*
+* Layout Api
+*/
+#demoLayoutWorklet{
+    display: layout(masonry);
+    --masonry-padding: 20;
+    --masonry-columns: 3;
+
+    div {
+      background-color: #643B0F;
+      color: white;
+      font: 12px sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    div::first-letter {
+      font-size: 200%;
+    }
+}
