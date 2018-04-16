@@ -191,7 +191,7 @@ Eviter le parsing inutile
 
 ##==##
 
-<!-- .slide: class="transition text-white transparent cadre with-code big-code"  -->
+<!-- .slide: class="transition text-white transparent cadre with-code big-code" data-state="stop-code-typedom-new" -->
 
 <h2>Introduce</h2>
 ```javascript
@@ -231,7 +231,7 @@ Ajout de la propriété CSS à l'objet windows
 
 ##==##
 
-<!-- .slide: class="with-code no-highlight cadre" data-type-show="prez" -->
+<!-- .slide: class="with-code cadre" data-type-show="prez" data-state="code-typedom-new stop-code-typedom-api" -->
 
 ## New Possibilities
 
@@ -249,7 +249,16 @@ new CSSRotate(CSS.deg(45));
 new CSSMathSum(CSS.px(10), CSS.percent(50));
 ```
 
-TODO!!!
+
+
+<mask-highlighter id="highlight-typedom-new"></mask-highlighter>
+
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+<div class="fragment" data-fragment-index="4" hidden></div>
+
 
 Notes:
 Ajout de la propriété CSS à l'objet windows
@@ -280,7 +289,7 @@ Marche aussi pour ComputeStyle !!!
 
 ##==##
 
-<!-- .slide: class="with-code no-highlight cadre" data-type-show="pez" -->
+<!-- .slide: class="with-code cadre" data-type-show="prez" data-state="stop-code-typedom-new code-typedom-api" -->
 
 ## New Api
 
@@ -298,7 +307,16 @@ console.log(myElement.attributeStyleMap.delete("left")); // remove
 console.log(myElement.attributeStyleMap.clear()); // remove
 ```
 
-TODO!!
+
+
+<mask-highlighter id="highlight-typedom-api"></mask-highlighter>
+
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+<div class="fragment" data-fragment-index="4" hidden></div>
+
 
 Notes:
 Marche aussi pour ComputeStyle !!!
@@ -306,7 +324,7 @@ Marche aussi pour ComputeStyle !!!
 
 ##==##
 
-<!-- .slide: class="with-code no-highlight cadre" -->
+<!-- .slide: class="with-code no-highlight cadre" data-state="stop-code-typedom-api stop-code-typedom-calc" -->
 
 ## Numeric Values
 
@@ -346,7 +364,7 @@ new CSSMathProduct(CSS.deg(90), CSS.number(Math.PI/180)).toString();
 
 ##==##
 
-<!-- .slide: class="with-code no-highlight cadre" data-type-show="prez" -->
+<!-- .slide: class="with-code cadre" data-type-show="prez" data-state="code-typedom-calc stop-code-typedom-operations" -->
 
 ## Maths - calc
 
@@ -361,7 +379,20 @@ new CSSMathProduct(CSS.deg(90), CSS.number(Math.PI/180)).toString();
 // "calc(90deg * 0.0174533)"
 ```
 
-TODO
+
+
+<mask-highlighter id="highlight-typedom-calc"></mask-highlighter>
+
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+<div class="fragment" data-fragment-index="4" hidden></div>
+<div class="fragment" data-fragment-index="5" hidden></div>
+<div class="fragment" data-fragment-index="6" hidden></div>
+<div class="fragment" data-fragment-index="7" hidden></div>
+<div class="fragment" data-fragment-index="8" hidden></div>
+
 
 ##==##
 
@@ -385,7 +416,7 @@ CSS.vw(100).add(sum).toString() // "calc(100vw + (100% + 20px))"
 
 ##==##
 
-<!-- .slide: class="with-code no-highlight cadre" data-type-show="prez" -->
+<!-- .slide: class="with-code cadre" data-type-show="prez" data-state="stop-code-typedom-calc code-typedom-operations stop-code-typedom-conversion"  -->
 
 ## Maths - operations
 
@@ -403,7 +434,14 @@ const sum = new CSSMathSum(CSS.percent(100), CSS.px(20)));
 CSS.vw(100).add(sum).toString() // "calc(100vw + (100% + 20px))"
 ```
 
-TODO!!
+
+<mask-highlighter id="highlight-typedom-operations"></mask-highlighter>
+
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+
 
 ##==##
 
@@ -425,7 +463,7 @@ CSS.s(2).to('ms').value // 2000
 
 ##==##
 
-<!-- .slide: class="with-code no-highlight cadre" data-type-show="prez" -->
+<!-- .slide: class="with-code no-highlight cadre" data-type-show="prez" data-state="stop-code-typedom-operations code-typedom-conversion stop-code-typedom-transform"  -->
 
 ## Maths - conversion
 
@@ -441,7 +479,15 @@ CSS.deg(200).to('rad').value // 3.49066...
 CSS.s(2).to('ms').value // 2000
 ```
 
-TODO!!
+
+
+<mask-highlighter id="highlight-typedom-conversion"></mask-highlighter>
+
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+
+
 
 ##==##
 
@@ -466,7 +512,7 @@ CHROME 66
 
 ##==##
 
-<!-- .slide: class="with-code no-highlight cadre" data-type-show="prez" -->
+<!-- .slide: class="with-code cadre" data-type-show="prez" data-state="stop-code-typedom-conversion code-typedom-transform"-->
 
 ## Transform
 
@@ -480,7 +526,18 @@ const transform =  new CSSTransformValue([
 ]);
 ```
 
-TODO!!
+
+
+<mask-highlighter id="highlight-typedom-transform"></mask-highlighter>
+
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+<div class="fragment" data-fragment-index="4" hidden></div>
+<div class="fragment" data-fragment-index="5" hidden></div>
+
+
 
 Notes:
 En plus : PARSING / ERROR
@@ -489,7 +546,7 @@ CHROME 66
 
 ##==##
 
-<!-- .slide: class="with-code no-highlight cadre" -->
+<!-- .slide: class="with-code no-highlight cadre" data-state="stop-code-typedom-transform"-->
 
 ## Demo
 
@@ -513,7 +570,7 @@ CHROME 66
 
 ##==##
 
-<!-- .slide: class="transition text-white transparent cadre" -->
+<!-- .slide: class="transition text-white transparent cadre" data-state="stop-code-css-properties" -->
 
 <h1>
     <svg class="h-150 color-white">
@@ -544,7 +601,7 @@ h1 { // Default value
 
 ##==##
 
-<!-- .slide: class="with-code no-highlight cadre" data-type-show="prez" -->
+<!-- .slide: class="with-code cadre" data-type-show="prez" data-state="code-css-properties" -->
 
 ## CSS Custom Properties
 
@@ -562,12 +619,20 @@ h1 { // Default value
 }
 ```
 
-TODO!!
+
+
+<mask-highlighter id="highlight-css-properties"></mask-highlighter>
+
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+
 
 
 ##==##
 
-<!-- .slide: class="cadre" -->
+<!-- .slide: class="cadre" data-state="stop-code-css-properties" -->
 
 <div id="demo-var" class="flex-hori">
     <div id="codemirror-css">
@@ -656,7 +721,7 @@ CSS.registerProperty({
 
 ##==##
 
-<!-- .slide: class="with-code no-highlight cadre" -->
+<!-- .slide: class="with-code no-highlight cadre" data-state="stop-code-propertiesvalues-type" -->
 
 ## Lots of types
 
@@ -704,7 +769,7 @@ accepts a list of length values.
 
 ##==##
 
-<!-- .slide: class="with-code no-highlight cadre" data-type=show="prez" -->
+<!-- .slide: class="with-code cadre" data-type=show="prez" data-state="code-propertiesvalues-type" -->
 
 ## Defines Values types
 
@@ -721,12 +786,23 @@ accepts a list of length values.
 "<length>+"
 ```
 
-TODO!!
+
+
+<mask-highlighter id="highlight-propertiesvalues-type"></mask-highlighter>
+
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+<div class="fragment" data-fragment-index="4" hidden></div>
+<div class="fragment" data-fragment-index="5" hidden></div>
+
+
 
 
 ##==##
 
-<!-- .slide: class="with-code no-highlight cadre" -->
+<!-- .slide: class="with-code no-highlight cadre" data-state="stop-code-propertiesvalues-type"-->
 
 ## Demo
 
@@ -825,7 +901,7 @@ Sont vraiment indep du Main Thread !!!
 
 ##==##
 
-<!-- .slide: class="transition text-white transparent cadre" -->
+<!-- .slide: class="transition text-white transparent cadre" data-state="stop-code-paint-api" -->
 
 <h1>
     <svg class="h-150 color-white">
@@ -839,6 +915,8 @@ Sont vraiment indep du Main Thread !!!
 
 <!-- .slide: class="with-code no-highlight cadre" data-type-show="full" -->
 
+## Declaration
+
 ```javascript
 //index.js
 CSS.paintWorklet.addModule('painter.js');
@@ -859,7 +937,9 @@ Canvas Api mais light !
 
 ##==##
 
-<!-- .slide: class="with-code no-highlight cadre" data-type-show="prez" -->
+<!-- .slide: class="with-code cadre" data-type-show="prez" data-state="code-paint-api" -->
+
+## Declaration
 
 ```javascript
 //index.js
@@ -876,7 +956,15 @@ class MyPainter {
 registerPaint('myPainter', MyPainter);
 ```
 
-TODO!!
+<mask-highlighter id="highlight-paint-api"></mask-highlighter>
+
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+<div class="fragment" data-fragment-index="4" hidden></div>
+<div class="fragment" data-fragment-index="5" hidden></div>
+
 
 Notes:
 Canvas Api mais light !
@@ -884,7 +972,7 @@ Canvas Api mais light !
 ##==##
 
 
-<!-- .slide: class="with-code no-highlight cadre" -->
+<!-- .slide: class="with-code no-highlight cadre" data-state="stop-code-paint-api" -->
 
 ## Usage
 
@@ -922,7 +1010,7 @@ Modifier Couleur ou Taille !
 
 ##==##
 
-<!-- .slide: class="cadre" -->
+<!-- .slide: class="cadre" data-state="stop-code-animator-declaration" -->
 
 ## How it works?
 
@@ -938,7 +1026,7 @@ Modifier Couleur ou Taille !
 
 ```javascript
 registerAnimator('animator-name', class {
-  constructor(options) {
+  constructor() {
   }
 
   animate(currentTime, effect) {
@@ -952,13 +1040,13 @@ Notes:
 
 ##==##
 
-<!-- .slide: class="with-code no-highlight cadre" data-type-show="prez" -->
+<!-- .slide: class="with-code cadre" data-type-show="prez" data-state="code-animator-declaration stop-code-animator-timeline"-->
 
 ## Animator
 
 ```javascript
 registerAnimator('animator-name', class {
-  constructor(options) {
+  constructor() {
   }
 
   animate(currentTime, effect) {
@@ -968,7 +1056,12 @@ registerAnimator('animator-name', class {
 });
 ```
 
-TODO!!
+
+<mask-highlighter id="highlight-animator-declaration"></mask-highlighter>
+
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
 
 Notes:
 
@@ -993,7 +1086,7 @@ const scrollTimeline = new ScrollTimeline({
 
 ##==##
 
-<!-- .slide: class="with-code no-highlight cadre" data-type-show="prez" -->
+<!-- .slide: class="with-code cadre" data-type-show="prez" data-state="stop-code-animator-declaration code-animator-timeline stop-code-animator-effects"-->
 
 ## Animation - register and time management
 
@@ -1010,7 +1103,12 @@ const scrollTimeline = new ScrollTimeline({
 
 ```
 
-TODO!!
+<mask-highlighter id="highlight-animator-timeline"></mask-highlighter>
+
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+
 
 ##==##
 
@@ -1019,7 +1117,8 @@ TODO!!
 ## Animation - effects
 
 ```javascript
-const avatarEffect = new KeyframeEffect(document.querySelector('#elementToAnim'),
+const avatarEffect = new KeyframeEffect(
+    document.querySelector('#elementToAnim'),
 [{  transform: `translateY(0px) scale(1)`,
     easing: 'ease-in-out',
     offset:
@@ -1036,12 +1135,13 @@ Pour l'instant que KeyFrameEvent !! Draft Unofficial !
 
 ##==##
 
-<!-- .slide: class="with-code no-highlight cadre" data-type-show="prez" -->
+<!-- .slide: class="with-code cadre" data-type-show="prez" data-state="stop- code-animator-effects stop-code-animator-invoke" -->
 
 ## Animation - effects
 
 ```javascript
-const avatarEffect = new KeyframeEffect(document.querySelector('#elementToAnim'),
+const avatarEffect = new KeyframeEffect(
+    document.querySelector('#elementToAnim'),
 [{  transform: `translateY(0px) scale(1)`,
     easing: 'ease-in-out',
     offset:
@@ -1053,7 +1153,15 @@ const avatarEffect = new KeyframeEffect(document.querySelector('#elementToAnim')
 });
 ```
 
-TODO!!
+
+<mask-highlighter id="highlight-animator-effects"></mask-highlighter>
+
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+<div class="fragment" data-fragment-index="4" hidden></div>
+
 
 Notes:
 Pour l'instant que KeyFrameEvent !! Draft Unofficial !
@@ -1077,7 +1185,7 @@ Notes:
 
 ##==##
 
-<!-- .slide: class="with-code no-highlight cadre" data-type-show="prez"-->
+<!-- .slide: class="with-code cadre" data-type-show="prez" data-state="stop-code-animator-effects code-animator-invoke"-->
 
 ## Animation - Invoke
 
@@ -1090,13 +1198,22 @@ Notes:
 
 ```
 
-TODO!!
+
+
+<mask-highlighter id="highlight-animator-invoke"></mask-highlighter>
+
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+<div class="fragment" data-fragment-index="4" hidden></div>
+
 
 Notes:
 
 ##==##
 
-<!-- .slide: class="cadre" data-state="animationDemoState" data-copyrights="true" -->
+<!-- .slide: class="cadre" data-state="animationDemoState stop-code-animator-invoke" data-copyrights="true" -->
 
 ## Demo
 
@@ -1161,7 +1278,7 @@ The layout stage of CSS is responsible for generating and positioning fragments 
 
 ##==##
 
-<!-- .slide: class="cadre" -->
+<!-- .slide: class="cadre" data-state="stop-code-layout-api" -->
 
 ## How it works?
 
@@ -1181,10 +1298,10 @@ registerLayout('my-layout', class {
     static get inputProperties() {return ['--foo'] }
     static get childrenInputProperties() {return ['--bar'] }
     static get childDisplay() {return 'normal'}
-    *intrinsicSizes(children, edges, styleMap) {// Min Max size of each children
+    *intrinsicSizes(children, edges, styleMap) {// Min Max of children
         return {maxContentSize, minContentSize};
     }
-    *layout(children, edges, constraints, styleMap) {// Where all magic take place
+    *layout(children, edges, constraints, styleMap) {// Where there is magic
         return {autoBlockSize,childFragments};
     }
 });
@@ -1195,7 +1312,7 @@ Child Display : normal vs block
 
 ##==##
 
-<!-- .slide: class="with-code no-highlight cadre" data-type-show="prez"-->
+<!-- .slide: class="with-code cadre" data-type-show="prez" data-state="code-layout-api"-->
 
 ## Layout - Worklet Api
 
@@ -1204,16 +1321,24 @@ registerLayout('my-layout', class {
     static get inputProperties() {return ['--foo'] }
     static get childrenInputProperties() {return ['--bar'] }
     static get childDisplay() {return 'normal'}
-    *intrinsicSizes(children, edges, styleMap) {// Min Max size of each children
+    *intrinsicSizes(children, edges, styleMap) {// Min Max of children
         return {maxContentSize, minContentSize};
     }
-    *layout(children, edges, constraints, styleMap) {// Where all magic take place
+    *layout(children, edges, constraints, styleMap) {// Where there is magic
         return {autoBlockSize,childFragments};
     }
 });
 ```
 
-TODO!!
+
+<mask-highlighter id="highlight-layout-api"></mask-highlighter>
+
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+<div class="fragment" data-fragment-index="4" hidden></div>
+
 
 Notes:
 Child Display : normal vs block
@@ -1222,7 +1347,7 @@ Child Display : normal vs block
 
 ##==##
 
-<!-- .slide: class="cadre with-code"  -->
+<!-- .slide: class="cadre with-code" data-state="stop-code-layout-api stop-code-layout-intrinsic" -->
 
 ## Use
 ```javascript
@@ -1258,7 +1383,7 @@ body{
 
 ##==##
 
-<!-- .slide: class="with-code no-highlight cadre" data-type-show="prez" -->
+<!-- .slide: class="with-code cadre" data-type-show="prez" data-state="code-layout-intrinsic stop-code-layout-position"-->
 
 ## Layout - calculate intrinsic size
 
@@ -1276,7 +1401,14 @@ body{
     return {maxContentSize, minContentSize}; }
 ```
 
-TODO!!
+
+<mask-highlighter id="highlight-layout-intrinsic"></mask-highlighter>
+
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+<div class="fragment" data-fragment-index="4" hidden></div>
 
 ##==##
 
@@ -1287,7 +1419,7 @@ TODO!!
 ```javascript
 *layout(children, edges, constraints, styleMap) {
     const childFragments = yield children.map((child) => {
-        return child.layoutNextFragment({availableInlineSize,availableBlockSize});
+        return child.layoutNextFragment({usableInlineSize,usableBlockSize});
     });
     let blockOffset = edges.all.blockStart;
     for (let fragment of childFragments) {
@@ -1295,21 +1427,21 @@ TODO!!
         fragment.inlineOffset = availableSize;
         blockOffset += fragment.blockSize;
     }
-    return { autoBlockSize : blockOffset + edges.all.blockEnd, childFragments}; }
+return {autoBlockSize: blockOffset + edges.all.blockEnd, childFragments}; }
 ```
 
 Notes:
 
 ##==##
 
-<!-- .slide: class="with-code no-highlight cadre" data-type-show="prez"-->
+<!-- .slide: class="with-code cadre" data-type-show="prez" data-state="stop-code-layout-intrinsic code-layout-position"-->
 
 ## Layout - position fragments
 
 ```javascript
 *layout(children, edges, constraints, styleMap) {
     const childFragments = yield children.map((child) => {
-        return child.layoutNextFragment({availableInlineSize,availableBlockSize});
+        return child.layoutNextFragment({usableInlineSize,usableBlockSize});
     });
     let blockOffset = edges.all.blockStart;
     for (let fragment of childFragments) {
@@ -1317,17 +1449,25 @@ Notes:
         fragment.inlineOffset = availableSize;
         blockOffset += fragment.blockSize;
     }
-    return { autoBlockSize : blockOffset + edges.all.blockEnd, childFragments}; }
+return {autoBlockSize: blockOffset + edges.all.blockEnd, childFragments}; }
 ```
 
-TODO!!
+
+<mask-highlighter id="highlight-layout-position"></mask-highlighter>
+
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+<div class="fragment" data-fragment-index="4" hidden></div>
+<div class="fragment" data-fragment-index="5" hidden></div>
 
 Notes:
 
 
 ##==##
 
-<!-- .slide: class="cadre" data-state="layoutDemoState" data-copyrights="true" -->
+<!-- .slide: class="cadre" data-state="layoutDemoState stop-code-layout-position" data-copyrights="true" -->
 
 ## Demo - Masonry Layout
 
@@ -1396,7 +1536,7 @@ Notes:
 
 ##==##
 
-<!-- .slide: class="transition text-white transparent cadre" -->
+<!-- .slide: class="transition text-white transparent cadre" data-state="stop-code-parser-api" -->
 
 <h1>
     <svg class="h-150 color-white">
@@ -1417,7 +1557,10 @@ Converti en TypeOM
  var background = window.cssParse.rule("background: green");
 console.log(background.styleMap.get("background").value) // "green"
 
-var styles = window.cssParse.ruleSet(".foo { background: green; margin: 5px; }");
+var styles = window.cssParse.ruleSet(`.foo {
+    background: green;
+    margin: 5px;
+}` );
 console.log(styles.length) // 5
 console.log(styles[0].styleMap.get("margin-top").value) // 5
 console.log(styles[0].styleMap.get("margin-top").type) // "px"
@@ -1425,7 +1568,7 @@ console.log(styles[0].styleMap.get("margin-top").type) // "px"
 
 ##==##
 
-<!-- .slide: class="with-code no-highlight cadre" data-type-show="prez"-->
+<!-- .slide: class="with-code cadre" data-type-show="prez" data-state="code-parser-api" -->
 
 ## Parser Api
 
@@ -1433,17 +1576,29 @@ console.log(styles[0].styleMap.get("margin-top").type) // "px"
  var background = window.cssParse.rule("background: green");
 console.log(background.styleMap.get("background").value) // "green"
 
-var styles = window.cssParse.ruleSet(".foo { background: green; margin: 5px; }");
+var styles = window.cssParse.ruleSet(`.foo {
+    background: green;
+    margin: 5px;
+}`);
 console.log(styles.length) // 5
 console.log(styles[0].styleMap.get("margin-top").value) // 5
 console.log(styles[0].styleMap.get("margin-top").type) // "px"
 ```
 
-TODO!!
+
+
+<mask-highlighter id="highlight-parser-api"></mask-highlighter>
+
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+<div class="fragment" data-fragment-index="4" hidden></div>
+
 
 ##==##
 
-<!-- .slide: class="transition text-white transparent cadre" -->
+<!-- .slide: class="transition text-white transparent cadre" data-state="stop-code-parser-api" -->
 
 <h1>
     <svg class="h-150 color-white">
