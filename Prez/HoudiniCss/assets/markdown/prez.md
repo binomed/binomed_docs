@@ -1,4 +1,13 @@
-<!-- .slide: class="transition text-white cadre" -->
+<!-- .slide: class="transition text-white cadre" data-type-show="full" -->
+
+<h1>
+    Let's do magic with Houdini CSS
+</h1>
+
+
+##==##
+
+<!-- .slide: class="transition text-white cadre" data-type-show="prez" -->
 
 <h1>
     Let's do magic with Houdini CSS
@@ -198,7 +207,7 @@ Eviter le parsing inutile
 
 ##==##
 
-<!-- .slide: class="with-code no-highlight cadre" -->
+<!-- .slide: class="with-code no-highlight cadre" data-type-show="full" -->
 
 ## New Possibilities
 
@@ -218,12 +227,37 @@ new CSSMathSum(CSS.px(10), CSS.percent(50));
 ```
 
 Notes:
-Ajout de la propriété CSS à l'obet windows
+Ajout de la propriété CSS à l'objet windows
+
+##==##
+
+<!-- .slide: class="with-code no-highlight cadre" data-type-show="prez" -->
+
+## New Possibilities
+
+```javascript
+// Units
+CSS.em(3);
+
+// Positions
+new CSSPositionValue(CSS.px(5), CSS.px(10));
+
+// Transform
+new CSSRotate(CSS.deg(45));
+
+// Math
+new CSSMathSum(CSS.px(10), CSS.percent(50));
+```
+
+TODO!!!
+
+Notes:
+Ajout de la propriété CSS à l'objet windows
 
 
 ##==##
 
-<!-- .slide: class="with-code no-highlight cadre" -->
+<!-- .slide: class="with-code no-highlight cadre" data-type-show="full" -->
 
 ## New Api
 
@@ -240,6 +274,31 @@ console.log(myElement.attributeStyleMap.has("left")); // true
 console.log(myElement.attributeStyleMap.delete("left")); // remove
 console.log(myElement.attributeStyleMap.clear()); // remove
 ```
+
+Notes:
+Marche aussi pour ComputeStyle !!!
+
+##==##
+
+<!-- .slide: class="with-code no-highlight cadre" data-type-show="pez" -->
+
+## New Api
+
+```javascript
+myElement.attributeStyleMap.set("opacity", CSS.number(3));
+myElement.attributeStyleMap.set("left", CSS.px(15));
+
+console.log(myElement.attributeStyleMap.get("opacity").value); // 3
+console.log(myElement.attributeStyleMap.get("left").value); // 15
+console.log(myElement.attributeStyleMap.get("left").unit); // px
+
+console.log(myElement.attributeStyleMap.has("left")); // true
+
+console.log(myElement.attributeStyleMap.delete("left")); // remove
+console.log(myElement.attributeStyleMap.clear()); // remove
+```
+
+TODO!!
 
 Notes:
 Marche aussi pour ComputeStyle !!!
@@ -270,7 +329,7 @@ Marche aussi pour ComputeStyle !!!
 
 ##==##
 
-<!-- .slide: class="with-code no-highlight cadre" -->
+<!-- .slide: class="with-code no-highlight cadre" data-type-show="full" -->
 
 ## Maths - calc
 
@@ -287,7 +346,26 @@ new CSSMathProduct(CSS.deg(90), CSS.number(Math.PI/180)).toString();
 
 ##==##
 
-<!-- .slide: class="with-code no-highlight cadre" -->
+<!-- .slide: class="with-code no-highlight cadre" data-type-show="prez" -->
+
+## Maths - calc
+
+```javascript
+new CSSMathSum(CSS.vw(100), CSS.px(-10)).toString(); // "calc(100vw - 10px)"
+
+new CSSMathNegate(CSS.px(42)).toString() // "calc(-42px)"
+
+new CSSMathInvert(CSS.s(10)).toString() // "calc(1 / 10s)"
+
+new CSSMathProduct(CSS.deg(90), CSS.number(Math.PI/180)).toString();
+// "calc(90deg * 0.0174533)"
+```
+
+TODO
+
+##==##
+
+<!-- .slide: class="with-code no-highlight cadre" data-type-show="full" -->
 
 ## Maths - operations
 
@@ -305,10 +383,31 @@ const sum = new CSSMathSum(CSS.percent(100), CSS.px(20)));
 CSS.vw(100).add(sum).toString() // "calc(100vw + (100% + 20px))"
 ```
 
+##==##
+
+<!-- .slide: class="with-code no-highlight cadre" data-type-show="prez" -->
+
+## Maths - operations
+
+```javascript
+CSS.deg(45).mul(2) // {value: 90, unit: "deg"}
+CSS.percent(50).max(CSS.vw(50)).toString() // "max(50%, 50vw)"
+
+// Can Pass CSSUnitValue:
+CSS.px(1).add(CSS.px(2)) // {value: 3, unit: "px"}
+
+// multiple values:
+CSS.s(1).sub(CSS.ms(200), CSS.ms(300)).toString() // "calc(1s-200ms-300ms)"
+// or pass a `CSSMathSum`:
+const sum = new CSSMathSum(CSS.percent(100), CSS.px(20)));
+CSS.vw(100).add(sum).toString() // "calc(100vw + (100% + 20px))"
+```
+
+TODO!!
 
 ##==##
 
-<!-- .slide: class="with-code no-highlight cadre" -->
+<!-- .slide: class="with-code no-highlight cadre" data-type-show="full" -->
 
 ## Maths - conversion
 
@@ -324,10 +423,29 @@ CSS.deg(200).to('rad').value // 3.49066...
 CSS.s(2).to('ms').value // 2000
 ```
 
+##==##
+
+<!-- .slide: class="with-code no-highlight cadre" data-type-show="prez" -->
+
+## Maths - conversion
+
+```javascript
+// Convert px to other absolute/physical lengths.
+el.attributeStyleMap.set('width', '500px');
+const width = el.attributeStyleMap.get('width');
+width.to('mm'); // CSSUnitValue {value: 132.29166666666669, unit: "mm"}
+width.to('cm'); // CSSUnitValue {value: 13.229166666666668, unit: "cm"}
+width.to('in'); // CSSUnitValue {value: 5.208333333333333, unit: "in"}
+
+CSS.deg(200).to('rad').value // 3.49066...
+CSS.s(2).to('ms').value // 2000
+```
+
+TODO!!
 
 ##==##
 
-<!-- .slide: class="with-code no-highlight cadre" -->
+<!-- .slide: class="with-code no-highlight cadre" data-type-show="full" -->
 
 ## Transform
 
@@ -340,6 +458,29 @@ const transform =  new CSSTransformValue([
   new CSSTranslate(CSS.px(10), CSS.px(10), CSS.px(10))
 ]);
 ```
+
+Notes:
+En plus : PARSING / ERROR
+CHROME 66
+
+
+##==##
+
+<!-- .slide: class="with-code no-highlight cadre" data-type-show="prez" -->
+
+## Transform
+
+```javascript
+// transform: rotateZ(45deg) scale(0.5) translate3d(10px,10px,10px);
+
+const transform =  new CSSTransformValue([
+  new CSSRotate(CSS.deg(45)),
+  new CSSScale(CSS.number(0.5), CSS.number(0.5)),
+  new CSSTranslate(CSS.px(10), CSS.px(10), CSS.px(10))
+]);
+```
+
+TODO!!
 
 Notes:
 En plus : PARSING / ERROR
@@ -383,7 +524,7 @@ CHROME 66
 
 ##==##
 
-<!-- .slide: class="with-code no-highlight cadre" -->
+<!-- .slide: class="with-code no-highlight cadre" data-type-show="full" -->
 
 ## CSS Custom Properties
 
@@ -400,6 +541,28 @@ h1 { // Default value
     color: var(--a-name, red);
 }
 ```
+
+##==##
+
+<!-- .slide: class="with-code no-highlight cadre" data-type-show="prez" -->
+
+## CSS Custom Properties
+
+```css
+html { // Declaration
+    --a-name: #333;
+}
+
+div { // Usage
+    color: var(--a-name);
+}
+
+h1 { // Default value
+    color: var(--a-name, red);
+}
+```
+
+TODO!!
 
 
 ##==##
@@ -436,7 +599,7 @@ main.js
 ```javascript
 const elt = document.getElementById('idElt');
 elt.style.setProperty('--a-super-var', '#333');
-elt.style.getProperty('--a-super-var');
+elt.style.getProperty('--a-super-var'); // -> '#333'
 ```
 
 ##==##
@@ -558,7 +721,7 @@ accepts a list of length values.
 "<length>+"
 ```
 
-
+TODO!!
 
 
 ##==##
@@ -674,7 +837,7 @@ Sont vraiment indep du Main Thread !!!
 
 ##==##
 
-<!-- .slide: class="with-code no-highlight cadre" -->
+<!-- .slide: class="with-code no-highlight cadre" data-type-show="full" -->
 
 ```javascript
 //index.js
@@ -696,8 +859,34 @@ Canvas Api mais light !
 
 ##==##
 
+<!-- .slide: class="with-code no-highlight cadre" data-type-show="prez" -->
+
+```javascript
+//index.js
+CSS.paintWorklet.addModule('painter.js');
+
+// painter.js
+class MyPainter {
+  static get inputProperties() { return ['--color'];}
+  static get inputArguments() { return ['<length>', '<color>']; }
+  paint(ctx, geometry, properties, args) {
+    // ...
+  }
+}
+registerPaint('myPainter', MyPainter);
+```
+
+TODO!!
+
+Notes:
+Canvas Api mais light !
+
+##==##
+
 
 <!-- .slide: class="with-code no-highlight cadre" -->
+
+## Usage
 
 ```css
 textarea {
@@ -743,7 +932,7 @@ Modifier Couleur ou Taille !
 
 ##==##
 
-<!-- .slide: class="with-code no-highlight cadre" -->
+<!-- .slide: class="with-code no-highlight cadre" data-type-show="full"-->
 
 ## Animator
 
@@ -763,7 +952,29 @@ Notes:
 
 ##==##
 
-<!-- .slide: class="with-code no-highlight cadre" -->
+<!-- .slide: class="with-code no-highlight cadre" data-type-show="prez" -->
+
+## Animator
+
+```javascript
+registerAnimator('animator-name', class {
+  constructor(options) {
+  }
+
+  animate(currentTime, effect) {
+    // console.log(`animate: ${currentTime}`, effect);
+    effect.localTime = currentTime;
+  }
+});
+```
+
+TODO!!
+
+Notes:
+
+##==##
+
+<!-- .slide: class="with-code no-highlight cadre" data-type-show="full" -->
 
 ## Animation - register and time management
 
@@ -779,9 +990,31 @@ const scrollTimeline = new ScrollTimeline({
     });
 
 ```
+
 ##==##
 
-<!-- .slide: class="with-code no-highlight cadre" -->
+<!-- .slide: class="with-code no-highlight cadre" data-type-show="prez" -->
+
+## Animation - register and time management
+
+```javascript
+// Register the worklet
+animationWorklet.addModule('my-animator.js');
+
+// Define the TimeLineManager
+const scrollTimeline = new ScrollTimeline({
+      document.querySelector('#elementThatScroll'),
+      orientation: 'block',
+      timeRange: 1000,
+    });
+
+```
+
+TODO!!
+
+##==##
+
+<!-- .slide: class="with-code no-highlight cadre" data-type-show="full" -->
 
 ## Animation - effects
 
@@ -803,7 +1036,31 @@ Pour l'instant que KeyFrameEvent !! Draft Unofficial !
 
 ##==##
 
-<!-- .slide: class="with-code no-highlight cadre" -->
+<!-- .slide: class="with-code no-highlight cadre" data-type-show="prez" -->
+
+## Animation - effects
+
+```javascript
+const avatarEffect = new KeyframeEffect(document.querySelector('#elementToAnim'),
+[{  transform: `translateY(0px) scale(1)`,
+    easing: 'ease-in-out',
+    offset:
+},{ transform: `translateY(${avatarTranslate}px) scale(${avatarScale})`,
+    offset: 1
+}], {
+    duration: maxTime
+    easing: 'linear'
+});
+```
+
+TODO!!
+
+Notes:
+Pour l'instant que KeyFrameEvent !! Draft Unofficial !
+
+##==##
+
+<!-- .slide: class="with-code no-highlight cadre" data-type-show="full"-->
 
 ## Animation - Invoke
 
@@ -815,6 +1072,25 @@ Pour l'instant que KeyFrameEvent !! Draft Unofficial !
     ).play();
 
 ```
+
+Notes:
+
+##==##
+
+<!-- .slide: class="with-code no-highlight cadre" data-type-show="prez"-->
+
+## Animation - Invoke
+
+```javascript
+    new WorkletAnimation('animator-name',// animator name
+      [avatarEffect], //effects
+      scrollTimeline, //timeline
+      {} //options
+    ).play();
+
+```
+
+TODO!!
 
 Notes:
 
@@ -896,7 +1172,7 @@ border / margin / scrolls / padding => layoutEdges
 
 ##==##
 
-<!-- .slide: class="with-code no-highlight cadre" -->
+<!-- .slide: class="with-code no-highlight cadre" data-type-show="full" -->
 
 ## Layout - Worklet Api
 
@@ -913,6 +1189,31 @@ registerLayout('my-layout', class {
     }
 });
 ```
+
+Notes:
+Child Display : normal vs block
+
+##==##
+
+<!-- .slide: class="with-code no-highlight cadre" data-type-show="prez"-->
+
+## Layout - Worklet Api
+
+```javascript
+registerLayout('my-layout', class {
+    static get inputProperties() {return ['--foo'] }
+    static get childrenInputProperties() {return ['--bar'] }
+    static get childDisplay() {return 'normal'}
+    *intrinsicSizes(children, edges, styleMap) {// Min Max size of each children
+        return {maxContentSize, minContentSize};
+    }
+    *layout(children, edges, constraints, styleMap) {// Where all magic take place
+        return {autoBlockSize,childFragments};
+    }
+});
+```
+
+TODO!!
 
 Notes:
 Child Display : normal vs block
@@ -937,7 +1238,7 @@ body{
 
 ##==##
 
-<!-- .slide: class="with-code no-highlight cadre" -->
+<!-- .slide: class="with-code no-highlight cadre" data-type-show="full" -->
 
 ## Layout - calculate intrinsic size
 
@@ -957,7 +1258,29 @@ body{
 
 ##==##
 
-<!-- .slide: class="with-code no-highlight cadre" -->
+<!-- .slide: class="with-code no-highlight cadre" data-type-show="prez" -->
+
+## Layout - calculate intrinsic size
+
+```javascript
+*intrinsicSizes(children, edges, styleMap) {// Min Max size of each children
+    const childrenSizes = yield children.map((child) => {
+        return child.intrinsicSizes();
+    });
+    const maxContentSize = childrenSizes.reduce((sum, childSizes) => {
+        return sum + childSizes.maxContentSize;
+    }, 0) + edges.all.inline;
+    const minContentSize = childrenSizes.reduce((max, childSizes) => {
+        return sum + childSizes.minContentSize;
+    }, 0) + edges.all.inline;
+    return {maxContentSize, minContentSize}; }
+```
+
+TODO!!
+
+##==##
+
+<!-- .slide: class="with-code no-highlight cadre" data-type-show="full"-->
 
 ## Layout - position fragments
 
@@ -974,6 +1297,30 @@ body{
     }
     return { autoBlockSize : blockOffset + edges.all.blockEnd, childFragments}; }
 ```
+
+Notes:
+
+##==##
+
+<!-- .slide: class="with-code no-highlight cadre" data-type-show="prez"-->
+
+## Layout - position fragments
+
+```javascript
+*layout(children, edges, constraints, styleMap) {
+    const childFragments = yield children.map((child) => {
+        return child.layoutNextFragment({availableInlineSize,availableBlockSize});
+    });
+    let blockOffset = edges.all.blockStart;
+    for (let fragment of childFragments) {
+        fragment.blockOffset = blockOffset;
+        fragment.inlineOffset = availableSize;
+        blockOffset += fragment.blockSize;
+    }
+    return { autoBlockSize : blockOffset + edges.all.blockEnd, childFragments}; }
+```
+
+TODO!!
 
 Notes:
 
@@ -1062,7 +1409,7 @@ Converti en TypeOM
 
 ##==##
 
-<!-- .slide: class="with-code no-highlight cadre" -->
+<!-- .slide: class="with-code no-highlight cadre" data-type-show="full" -->
 
 ## Parser Api
 
@@ -1075,6 +1422,24 @@ console.log(styles.length) // 5
 console.log(styles[0].styleMap.get("margin-top").value) // 5
 console.log(styles[0].styleMap.get("margin-top").type) // "px"
 ```
+
+##==##
+
+<!-- .slide: class="with-code no-highlight cadre" data-type-show="prez"-->
+
+## Parser Api
+
+```javascript
+ var background = window.cssParse.rule("background: green");
+console.log(background.styleMap.get("background").value) // "green"
+
+var styles = window.cssParse.ruleSet(".foo { background: green; margin: 5px; }");
+console.log(styles.length) // 5
+console.log(styles[0].styleMap.get("margin-top").value) // 5
+console.log(styles[0].styleMap.get("margin-top").type) // "px"
+```
+
+TODO!!
 
 ##==##
 

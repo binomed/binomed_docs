@@ -31,7 +31,7 @@ import {Animations} from './animations/anim.js';
         // new TypeText();
         if (!inIframe) {
             new Demos();
-            // new HighlightEvents();
+            new HighlightEvents();
         }else{
             // document.getElementById('magicVideo').style.display = 'none';
         }
