@@ -700,7 +700,7 @@ elt.style.getProperty('--a-super-var'); // -> '#333'
 .animate {
     --my-length: 10px;
     width: var(--my-length);
-    animation: width 1s ease;
+    transition: width 1s ease;
 }
 ```
 

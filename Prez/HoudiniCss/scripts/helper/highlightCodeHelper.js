@@ -1,7 +1,7 @@
 'use strict'
 
 const MIN_TOP = '100px';
-const LINE_HEIGHT = '1.15em';
+const LINE_HEIGHT = '1.14em';
 const ADDITIONNAL_HEIGHT = '0.4em';
 const COL_WIDTH = 35;
 
@@ -81,6 +81,7 @@ export class HighlightCodeHelper {
             }
             this.eltHiglight.area = area;
             this.eltHiglight.position = position;
+            this.eltHiglight.lineHeight = LINE_HEIGHT;
 
         } catch (e) {
             console.error(e);

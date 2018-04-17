@@ -29,9 +29,9 @@ import {Animations} from './animations/anim.js';
         new Noise();
         new Animations();
         // new TypeText();
+        new HighlightEvents();
         if (!inIframe) {
             new Demos();
-            new HighlightEvents();
         }else{
             // document.getElementById('magicVideo').style.display = 'none';
         }

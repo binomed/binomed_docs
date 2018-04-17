@@ -67,7 +67,7 @@ export class HighlightEvents {
             positionArray: [{
                 line: 1,
                 nbLines: 1,
-                left: '800px',
+                left: '760px', // linux : 800px / windows : 760px
                 width: '350px'
             }, {
                 line: 1,
@@ -76,7 +76,7 @@ export class HighlightEvents {
             }, {
                 line: 3,
                 nbLines: 1,
-                left:'630px',
+                left:'610px', // linux : 630px / windows :  610px
                 width: '300px'
             }, {
                 line: 3,
@@ -85,7 +85,7 @@ export class HighlightEvents {
             }, {
                 line: 5,
                 nbLines: 1,
-                left:'630px',
+                left:'610px', // linux : 630px / windows : 610px
                 width: '300px'
             }, {
                 line: 5,
@@ -257,10 +257,12 @@ export class HighlightEvents {
             keyElt: 'animator-timeline',
             // We start with the first fragment (the initial position is fixed by css)
             positionArray: [{
+                topMargin: '115px',
                 line: 2,
                 nbLines: 2,
                 width: '100%'
             }, {
+                topMargin: '115px',
                 line: 5,
                 nbLines: 6,
                 width: '100%'
