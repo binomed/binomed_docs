@@ -892,6 +892,8 @@ Générique !! Process change en fonction du worklet !
 <div class="copyrights diagram">credits to Sam Richard</div>
 
 Notes:
+Worklet Threads Instanciés de façon indep du main
+le addModule fait 1 ou plusieurs imports de worklets ! En fonction du nombre de worklet threads
 Ils peuvent être killé s'ils sont trop long
 ils n'ont pas accès à self ou this
 
@@ -1341,7 +1343,7 @@ registerLayout('my-layout', class {
 
 
 Notes:
-Child Display : normal vs block
+constraints => available space
 
 
 
