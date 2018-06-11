@@ -13,7 +13,7 @@
     Let's do magic with Houdini CSS
 </h1>
 
-jefBinomed @ #MixIT18
+jefBinomed @ #BestOfWeb18
 
 
 
@@ -1732,7 +1732,7 @@ GDE Web Technologies
 ![avatar w-300 wp-200 onZTop](assets/images/jf.png)
 
 
-![company_logo onZTop](assets/images/lucca_logo.png)
+![company_logo onZTop](assets/images/logo-SFEIR-blanc-orange.svg)
 ![gdg_logo onZTop](assets/images/GDG-Logo-carre_old.png)
 
 <!-- .element: class="twitter" -->
