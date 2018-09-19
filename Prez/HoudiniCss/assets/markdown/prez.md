@@ -1693,7 +1693,7 @@ Notes:
     <div class="browser w3c"> <!-- W3C -->
         <img src="./assets/images/w3c_old_2.png">
         <div class="dev">First public working draft</div><!-- Layout -->
-        <div class="partial">Working Draft</div><!-- Paint -->
+        <div class="available">Candidate Recommendation</div><!-- Paint -->
         <div class="no-signal">no signal</div><!-- Parser -->
         <div class="partial">Working Draft</div><!-- Properties -->
         <div class="intent">Proposal</div><!-- Animation -->
