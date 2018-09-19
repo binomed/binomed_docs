@@ -83,6 +83,7 @@ export class Demos {
         CSS.registerProperty({
             name: '--properties-move-register',
             syntax: '<length>',
+            inherits: false,
             initialValue: '0px',
         });
         document.querySelector('#btn-square-properties').addEventListener('click', ()=>{

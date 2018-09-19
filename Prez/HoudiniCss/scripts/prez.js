@@ -23,6 +23,7 @@ import {Animations} from './animations/anim.js';
         CSS.registerProperty({
             name: '--cadre-color',
             syntax: '<color> | none',
+            inherits: false,
             initialValue: 'white',
         });
         (CSS.paintWorklet || paintWorklet).addModule('./scripts/houdini/cadre-worklet.js');

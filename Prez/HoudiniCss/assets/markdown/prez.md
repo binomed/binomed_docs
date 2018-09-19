@@ -715,6 +715,7 @@ elt.style.getProperty('--a-super-var'); // -> '#333'
 CSS.registerProperty({
     name: "--my-color",
     syntax: "<color>",
+    inherits: false,
     initialValue: "black"
 });
 ```
