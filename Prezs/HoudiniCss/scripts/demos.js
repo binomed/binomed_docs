@@ -83,6 +83,7 @@ export class Demos {
         CSS.registerProperty({
             name: '--properties-move-register',
             syntax: '<length>',
+            inherits: false,
             initialValue: '0px',
         });
         document.querySelector('#btn-square-properties').addEventListener('click', ()=>{
@@ -96,6 +97,10 @@ export class Demos {
     }
 
     _demoPaintApi() {
+        if (!'paintWorklet' in CSS){
+            return;
+        }
+
         (CSS.paintWorklet || paintWorklet).addModule('./scripts/houdini/circle-worklet.js');
 
         new ApplyCss(

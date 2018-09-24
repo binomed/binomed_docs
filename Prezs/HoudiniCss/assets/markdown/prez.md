@@ -13,7 +13,7 @@
     Let's do magic with Houdini CSS
 </h1>
 
-jefBinomed @ #MixIT18
+jefBinomed @ #NantesJS
 
 
 
@@ -715,6 +715,7 @@ elt.style.getProperty('--a-super-var'); // -> '#333'
 CSS.registerProperty({
     name: "--my-color",
     syntax: "<color>",
+    inherits: false,
     initialValue: "black"
 });
 ```
@@ -892,6 +893,8 @@ Générique !! Process change en fonction du worklet !
 <div class="copyrights diagram">credits to Sam Richard</div>
 
 Notes:
+Worklet Threads Instanciés de façon indep du main
+le addModule fait 1 ou plusieurs imports de worklets ! En fonction du nombre de worklet threads
 Ils peuvent être killé s'ils sont trop long
 ils n'ont pas accès à self ou this
 
@@ -1341,7 +1344,7 @@ registerLayout('my-layout', class {
 
 
 Notes:
-Child Display : normal vs block
+constraints => available space
 
 
 
@@ -1690,7 +1693,7 @@ Notes:
     <div class="browser w3c"> <!-- W3C -->
         <img src="./assets/images/w3c_old_2.png">
         <div class="dev">First public working draft</div><!-- Layout -->
-        <div class="partial">Working Draft</div><!-- Paint -->
+        <div class="available">Candidate Recommendation</div><!-- Paint -->
         <div class="no-signal">no signal</div><!-- Parser -->
         <div class="partial">Working Draft</div><!-- Properties -->
         <div class="intent">Proposal</div><!-- Animation -->
@@ -1730,7 +1733,7 @@ GDE Web Technologies
 ![avatar w-300 wp-200 onZTop](assets/images/jf.png)
 
 
-![company_logo onZTop](assets/images/lucca_logo.png)
+![company_logo onZTop](assets/images/logo-SFEIR-blanc-orange.svg)
 ![gdg_logo onZTop](assets/images/GDG-Logo-carre_old.png)
 
 <!-- .element: class="twitter" -->
