@@ -97,6 +97,10 @@ export class Demos {
     }
 
     _demoPaintApi() {
+        if (!'paintWorklet' in CSS){
+            return;
+        }
+
         (CSS.paintWorklet || paintWorklet).addModule('./scripts/houdini/circle-worklet.js');
 
         new ApplyCss(

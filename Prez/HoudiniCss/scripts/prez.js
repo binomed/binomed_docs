@@ -19,14 +19,20 @@ import {Animations} from './animations/anim.js';
 
         const inIframe = window.top != window.self;
 
+        if ('paintWorklet' in CSS){
+            try{
 
-        CSS.registerProperty({
-            name: '--cadre-color',
-            syntax: '<color> | none',
-            inherits: false,
-            initialValue: 'white',
-        });
-        (CSS.paintWorklet || paintWorklet).addModule('./scripts/houdini/cadre-worklet.js');
+                CSS.registerProperty({
+                    name: '--cadre-color',
+                    syntax: '<color> | none',
+                    inherits: false,
+                    initialValue: 'white',
+                });
+                (CSS.paintWorklet || paintWorklet).addModule('./scripts/houdini/cadre-worklet.js');
+            }catch(e){
+                console.warn('Error with cadre');
+            }
+        }
         new Noise();
         new Animations();
         // new TypeText();
