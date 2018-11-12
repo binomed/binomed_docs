@@ -831,9 +831,9 @@ Notes:
     <div class="browser safari"> <!-- Safari -->
         <img src="./assets/images/safari_logo_old_2.png">
         <div class="no-signal">no signal</div><!-- Layout -->
-        <div class="no-signal">no signal</div><!-- Paint -->
+        <div class="dev">In development</div><!-- Paint -->
         <div class="no-signal">no signal</div><!-- Parser -->
-        <div class="no-signal">no signal</div><!-- Properties -->
+        <div class="partial">partially (TP 67)</div><!-- Properties -->
         <div class="no-signal">no signal</div><!-- Animation -->
         <div class="intent">intent</div><!-- TypedOM -->
         <div class="no-signal">no signal</div><!-- Font Metrics -->
@@ -860,7 +860,7 @@ Notes:
     </div>
     <div class="browser firefox"> <!-- Firefox -->
         <img src="./assets/images/firefox_logo_old_2.png">
-        <div class="no-signal">no signal</div><!-- Layout -->
+        <div class="intent">intent</div><!-- Layout -->
         <div class="intent">intent</div><!-- Paint -->
         <div class="no-signal">no signal</div><!-- Parser -->
         <div class="dev">development</div><!-- Properties -->
@@ -875,7 +875,7 @@ Notes:
         <div class="no-signal">no signal</div><!-- Parser -->
         <div class="no-signal">no signal</div><!-- Properties -->
         <div class="no-signal">no signal</div><!-- Animation -->
-        <div class="no-signal">no-signal</div><!-- TypedOM -->
+        <div class="available">yes<br>(Opera 53)</div><!-- TypedOM -->
         <div class="no-signal">no signal</div><!-- Font Metrics -->
     </div>
     <div class="browser w3c"> <!-- W3C -->
@@ -884,7 +884,7 @@ Notes:
         <div class="available">Candidate Recommendation</div><!-- Paint -->
         <div class="no-signal">no signal</div><!-- Parser -->
         <div class="partial">Working Draft</div><!-- Properties -->
-        <div class="intent">Proposal</div><!-- Animation -->
+        <div class="dev">First public working draft</div><!-- Animation -->
         <div class="partial">Working Draft</div><!-- TypedOM -->
         <div class="no-signal">no signal</div><!-- Font Metrics -->
     </div>
