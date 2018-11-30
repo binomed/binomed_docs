@@ -9,21 +9,39 @@
 
 ##==##
 
-<!-- .slide: data-background="./assets/images/jeshoots-com-436787-unsplash.jpg" class="transition text-white" data-type-show="prez"  -->
+<!-- .slide: data-background="./assets/images/jeshoots-com-436787-unsplash.jpg" class="transition text-white"  -->
 
 # Avant
 
 ##==##
 
-# TensorFlow
+## Machine Learning process
+
+![center w-700](./assets/images/Machine_learning.png)
 
 ##==##
 
+
+<!-- .slide: data-background="./assets/images/tensorflow.jpeg" class="no-filter"  -->
+
+
+##==##
+
+<!-- .slide: class="no-filter transition"  -->
+
 # Apis existantes
+
+![center w-700](./assets/images/google-cloud-api.png)
+
+Notes:
+La on parle de google mais ça marche aussi pour Microsoft, IBM, ...
 
 ##==##
 
 # Démo
+
+Notes:
+https://cloud.google.com/vision/docs/detecting-labels
 
 ##==##
 
