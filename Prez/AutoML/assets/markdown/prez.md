@@ -45,6 +45,10 @@ https://cloud.google.com/vision/docs/detecting-labels
 
 ##==##
 
+
+<!-- .slide: data-background="./assets/images/groot-hodor-chewbacca.jpg" class="transition text-red"  -->
+
+
 # Et si je veux mon propre modèle ?
 
 Notes:
@@ -52,7 +56,16 @@ Je s'appelle Groot
 
 ##==##
 
+<!-- .slide: class="no-filter transition"  -->
+
 # AutoML à la rescousse
+
+![center w-700](./assets/images/auto_ml.png)
+
+##==##
+
+
+![center h-500](./assets/images/creating-ml-solutions_2x.png)
 
 ##==##
 
@@ -61,8 +74,14 @@ Je s'appelle Groot
 
 ##==##
 
+
+<!-- .slide: class="no-filter transition"  -->
+
 # Autre APIS
 
+![center w-700](./assets/images/api-lead.png)
+
+Translation | Natural Languages | Vision
 
 Notes:
 Natural Langages / Translation
