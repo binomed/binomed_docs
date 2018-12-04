@@ -38,7 +38,16 @@ La on parle de google mais ça marche aussi pour Microsoft, IBM, ...
 
 ##==##
 
+<!-- .slide: data-type-show="prez"  -->
+
 # Démo
+
+<div id="demo-detect-label">
+    <div id="labels-detected"></div>
+    <video id="mirror-label"></video>
+    <button id="startVideo">Start Video</button>
+    <button id="takeAPicture">Take A Picture</button>
+</div>
 
 Notes:
 https://cloud.google.com/vision/docs/detecting-labels
@@ -69,6 +78,8 @@ Je s'appelle Groot
 
 ##==##
 
+<!-- .slide: data-type-show="prez"  -->
+
 # Démo
 
 
@@ -85,6 +96,16 @@ Translation | Natural Languages | Vision
 
 Notes:
 Natural Langages / Translation
+
+##==##
+
+<!-- .slide: class="no-filter transition"  -->
+
+# Autres solutions
+
+![center w-700](./assets/images/watson_studio.png)
+
+IBM Watson Studio
 
 ##==##
 
