@@ -1,5 +1,26 @@
 'use strict'
 
+
+class MediaCaptureDemo {
+    constructor({video}){
+        this._stream = null;
+        this.video = video;
+        this.track = null;
+        this.imageCapture = null;
+
+    }
+
+    set stream(stream){
+        this._stream = stream;
+        this.track = stream.getVideoTracks()[0];
+        this.imageCapture = new ImageCapture(this.track);
+    }
+
+    get stream() {
+        return this._stream;
+    }
+}
+
 export class Demos {
     constructor() {
         this._detectingLabels();
@@ -8,26 +29,28 @@ export class Demos {
     _detectingLabels() {
 
         const video = document.getElementById('mirror-label');
+        const mediaCaptureDemo = new MediaCaptureDemo({video});
         document.getElementById('startVideo').addEventListener('click', () => {
             navigator.getMedia = (navigator.getUserMedia ||
                 navigator.webkitGetUserMedia ||
                 navigator.mozGetUserMedia ||
                 navigator.msGetUserMedia);
 
-            navigator.getMedia({
-                    video: true,
-                    audio: false
-                },
-                (stream) => {
-                    if (navigator.mozGetUserMedia) {
-                        video.mozSrcObject = stream;
-                    } else {
-                        let vendorURL = window.URL || window.webkitURL;
-                        video.src = vendorURL.createObjectURL(stream);
-                    }
-                    video.play();
-                },
-                (err) => {
+            navigator.mediaDevices.getMedia({
+                video: true,
+                audio: false
+            })
+            .then((stream) => {
+                mediaCaptureDemo.stream = stream;
+                if (navigator.mozGetUserMedia) {
+                    mediaCaptureDemo.video.mozSrcObject = stream;
+                } else {
+                    let vendorURL = window.URL || window.webkitURL;
+                    mediaCaptureDemo.video.src = vendorURL.createObjectURL(stream);
+                }
+                mediaCaptureDemo.video.play();
+            })
+            .catch((err) => {
                     console.log("An error occured! " + err);
                 }
             );
@@ -36,7 +59,10 @@ export class Demos {
         });
 
         document.getElementById('takeAPicture').addEventListener('click', () => {
-            alert('toto');
+            mediaCaptureDemo.imageCapture.takePhoto()
+            .then(blob=> {
+                alert('photo take');
+            })
         });
 
     }

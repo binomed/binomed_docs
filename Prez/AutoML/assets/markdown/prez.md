@@ -45,6 +45,7 @@ La on parle de google mais ça marche aussi pour Microsoft, IBM, ...
 <div id="demo-detect-label">
     <div id="labels-detected"></div>
     <video id="mirror-label"></video>
+    <div id="targetVision">You can drag an image file here</div>
     <button id="startVideo">Start Video</button>
     <button id="takeAPicture">Take A Picture</button>
 </div>
@@ -73,19 +74,6 @@ Je s'appelle Groot
 
 ##==##
 
-
-![center h-500](./assets/images/creating-ml-solutions_2x.png)
-
-##==##
-
-<!-- .slide: data-type-show="prez"  -->
-
-# Démo
-
-
-##==##
-
-
 <!-- .slide: class="no-filter transition"  -->
 
 # Autre APIS
@@ -97,7 +85,76 @@ Translation | Natural Languages | Vision
 Notes:
 Natural Langages / Translation
 
+
 ##==##
+
+<!-- .slide: data-type-show="prez"  -->
+
+# Démo
+
+
+##==##
+
+<!-- .slide: data-background="./assets/images/alen-jacob-589057-unsplash.jpg" class="transition text-red"  -->
+
+# Under the hood
+
+
+##==##
+
+
+![center h-500](./assets/images/creating-ml-solutions_2x.png)
+
+
+##==##
+
+
+<!-- .slide: class="no-filter transition"  -->
+
+# Génération de datasets
+
+![center w-700](./assets/images/automl_datasets.png)
+
+##==##
+
+
+<!-- .slide: class="no-filter transition"  -->
+
+# Détail d'un dataset
+
+![center w-700](./assets/images/automl_dataset_detail.png)
+
+##==##
+
+
+<!-- .slide: class="no-filter transition"  -->
+
+# Entrainement d'un modèle
+
+![center w-700](./assets/images/automl_model_training.png)
+
+##==##
+
+
+<!-- .slide: class="no-filter transition"  -->
+
+# Matrice de confusion d'un modèle
+
+![center w-700](./assets/images/automl_confusion_matrix.png)
+
+##==##
+
+
+<!-- .slide: class="no-filter transition"  -->
+
+# Test du modèle
+
+![center w-700](./assets/images/automl_training.png)
+
+
+##==##
+
+
 
 <!-- .slide: class="no-filter transition"  -->
 
