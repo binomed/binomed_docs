@@ -43,9 +43,9 @@ La on parle de google mais ça marche aussi pour Microsoft, IBM, ...
 # Démo
 
 <div id="demo-detect-label">
-    <div id="labels-detected"></div>
-    <video id="mirror-label"></video>
     <div id="targetVision">You can drag an image file here</div>
+    <video id="mirror-label" class="hide"></video>
+    <div id="labels-detected" class="hide"></div>
     <button id="startVideo">Start Video</button>
     <button id="takeAPicture">Take A Picture</button>
 </div>

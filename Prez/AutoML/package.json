@@ -3,7 +3,9 @@
   "name": "Themes",
   "version": "1.0.0",
   "scripts": {
-    "start": "gulp"
+    "start": "npm run server & npm run gulp",
+    "gulp": "gulp",
+    "server": "node ./server/server.js"
   },
   "devDependencies": {
     "browser-sync": "^2.6.9",

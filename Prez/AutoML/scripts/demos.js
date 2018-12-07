@@ -30,13 +30,14 @@ export class Demos {
 
         const video = document.getElementById('mirror-label');
         const mediaCaptureDemo = new MediaCaptureDemo({video});
+        const targetDrop = document.getElementById('targetVision');
         document.getElementById('startVideo').addEventListener('click', () => {
-            navigator.getMedia = (navigator.getUserMedia ||
-                navigator.webkitGetUserMedia ||
-                navigator.mozGetUserMedia ||
-                navigator.msGetUserMedia);
 
-            navigator.mediaDevices.getMedia({
+            targetDrop.classList.add('hide');
+            video.classList.remove('hide');
+
+            
+            navigator.mediaDevices.getUserMedia({
                 video: true,
                 audio: false
             })
@@ -61,7 +62,13 @@ export class Demos {
         document.getElementById('takeAPicture').addEventListener('click', () => {
             mediaCaptureDemo.imageCapture.takePhoto()
             .then(blob=> {
-                alert('photo take');
+                const formData = new FormData();
+                formData.append('blob', blob);
+                fetch('http://localhost:8000/vision',{
+                    method: 'POST',
+                    mode: 'no-cors',
+                    body: formData
+                });
             })
         });
 
