@@ -1,5 +1,6 @@
 // Imports the Google Cloud client library
 const Hapi=require('hapi');
+const detectLabel = require('./vision.js');
 
 
 // Create a server with a host and port
@@ -25,6 +26,8 @@ async function visionApi(request, h) {
     
     console.log(request);
     console.log(request.payload);
+    detectLabel(request.payload);
+
     return 'helloWorld'
 }
 

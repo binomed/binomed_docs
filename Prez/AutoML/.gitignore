@@ -10,3 +10,5 @@ addon/.sass-cache
 css/theme
 scss/theme
 npm-debug.log
+server/credentials.js
+server/keyfile.json
