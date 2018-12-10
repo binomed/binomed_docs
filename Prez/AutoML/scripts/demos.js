@@ -68,6 +68,21 @@ export class Demos {
                     method: 'POST',
                     mode: 'no-cors',
                     body: formData
+                }).then((tojson) => tojson.text())
+                .then((text)=>{
+                    const results = JSON.parse(text);
+                    video.classList.add('with-label');
+                    const labelDetected = document.getElementById('labels-detected');
+                    labelDetected.classList.remove('hide');
+                    const resultStr = '';
+                    results.foreach((annotationResult, index)=>{
+                        resultStr += `Result : ${index} \n<li>`;
+                        annotationResult.foreach(annotation => {
+                            resultStr += `<ul>${annotation.description} : ${annotation.score}</ul>`;
+                        });
+                        resultStr += '</li>'    
+                    });
+                    labelDetected.innerHTML = resultStr;
                 });
             })
         });

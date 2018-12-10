@@ -24,11 +24,13 @@ server.route({
 async function visionApi(request, h) {
     // Performs label detection on the local file
     
-    console.log(request);
-    console.log(request.payload);
-    detectLabel(request.payload);
-
-    return 'helloWorld'
+    try {
+        const test = await detectLabel(request.payload);
+        console.log(test);
+        return test;
+    }catch(err){
+        return 'error';
+    }
 }
 
 async function autoMLApi(request, h){
