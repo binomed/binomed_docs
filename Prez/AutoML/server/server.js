@@ -6,7 +6,10 @@ const detectLabel = require('./vision.js');
 // Create a server with a host and port
 const server=Hapi.server({
     host:'localhost',
-    port:8000
+    port:8000,
+    routes:{
+        cors:true
+    }
 });
   
 // Add the route
@@ -14,11 +17,11 @@ server.route({
       method:'POST',
       path:'/vision',
       handler: visionApi
-});
-server.route({
-      method:'GET',
-      path:'/automl',
-      handler: autoMLApi
+    });
+    server.route({
+        method:'GET',
+        path:'/automl',
+        handler: autoMLApi
 });
 
 async function visionApi(request, h) {
