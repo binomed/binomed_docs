@@ -92,6 +92,13 @@ Natural Langages / Translation
 
 # Démo
 
+<div id="demo-automl">
+    <div id="automl-targetVision">You can drag an image file here</div>
+    <video id="automl-mirror-label" class="hide"></video>
+    <div id="automl-labels-detected" class="hide"></div>
+    <button id="automl-startVideo">Start Video</button>
+    <button id="automl-takeAPicture">Take A Picture</button>
+</div>
 
 ##==##
 
@@ -168,4 +175,4 @@ IBM Watson Studio
 
 <!-- .slide: class="transition-white" -->
 
-# Des Questions ? <br> :)
+# Des Questions ? <br> 😀

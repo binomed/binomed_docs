@@ -26,6 +26,7 @@ class MediaCaptureDemo {
 export class Demos {
     constructor() {
         this._detectingLabels('', this._callVisionApi);
+        this._detectingLabels('automl-', this._callAutomlApi);
     }
 
     /***
@@ -116,6 +117,36 @@ export class Demos {
                     resultStr += `Result : ${index} \n<ul>`;
                     annotationResult.labelAnnotations.forEach(annotation => {
                         resultStr += `<li>${annotation.description} : ${annotation.score}</li>`;
+                    });
+                    resultStr += '</ul>'
+                });
+                targetElement.innerHTML = resultStr;
+            });
+    }
+    
+    /**
+     * Call Google Vision Api
+     * @param {HTMLElement} elementToReduce 
+     * @param {HTMLElement} targetElement 
+     * @param {Blob} blob 
+     */
+    _callAutomlApi(elementToReduce, targetElement, blob) {
+        const formData = new FormData();
+        formData.append('blob', blob);
+        fetch('http://localhost:8000/automl', {
+                method: 'POST',
+                mode: 'cors',
+                body: formData
+            }).then((tojson) => tojson.json())
+            .then((response) => {
+                const results = response.responses;
+                elementToReduce.classList.add('with-label');
+                targetElement.classList.remove('hide');
+                let resultStr = '';
+                results.forEach((annotationResult, index) => {
+                    resultStr += `Result : ${index} \n<ul>`;
+                    annotationResult.customLabelAnnotations.forEach(annotation => {
+                        resultStr += `<li>${annotation.label} : ${annotation.score}</li>`;
                     });
                     resultStr += '</ul>'
                 });

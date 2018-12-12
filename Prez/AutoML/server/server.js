@@ -1,6 +1,7 @@
 // Imports the Google Cloud client library
 const Hapi=require('hapi');
 const detectLabel = require('./vision.js');
+const automlDetection = require('./automl.js');
 
 
 // Create a server with a host and port
@@ -19,7 +20,7 @@ server.route({
       handler: visionApi
     });
     server.route({
-        method:'GET',
+        method:'POST',
         path:'/automl',
         handler: autoMLApi
 });
@@ -37,7 +38,13 @@ async function visionApi(request, h) {
 }
 
 async function autoMLApi(request, h){
-    return 'hello auto ml';
+    try {
+        const test = await automlDetection(request.payload);
+        console.log(test);
+        return test;
+    }catch(err){
+        return 'error';
+    }
 }
   
   // Start the server
