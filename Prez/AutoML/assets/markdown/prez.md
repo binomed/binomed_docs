@@ -27,6 +27,13 @@
 
 ##==##
 
+## Tensorflow process
+
+![center w-700](./assets/images/Machine_learning_Tensorflow.png)
+
+
+##==##
+
 <!-- .slide: class="no-filter transition"  -->
 
 # Apis existantes
@@ -35,6 +42,14 @@
 
 Notes:
 La on parle de google mais ça marche aussi pour Microsoft, IBM, ...
+
+
+##==##
+
+## CloudML Api 
+
+![center w-700](./assets/images/Machine_learning_visionapi.png)
+
 
 ##==##
 
@@ -71,6 +86,14 @@ Je s'appelle Groot
 # AutoML à la rescousse
 
 ![center w-700](./assets/images/auto_ml.png)
+
+
+##==##
+
+## Automl process
+
+![center w-700](./assets/images/Machine_learning_automl.png)
+
 
 ##==##
 
@@ -145,7 +168,7 @@ Natural Langages / Translation
 
 <!-- .slide: class="no-filter transition"  -->
 
-# Matrice de confusion d'un modèle
+# Matrice de confusion
 
 ![center w-700](./assets/images/automl_confusion_matrix.png)
 
