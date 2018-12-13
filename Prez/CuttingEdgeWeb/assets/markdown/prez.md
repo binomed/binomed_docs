@@ -50,7 +50,7 @@ GDE Web Technologies,  Front-end developer & Community Manager
 ![avatar w-300 wp-200](assets/images/jf_astronaut.png)
 
 
-![company_logo](assets/images/lucca_logo.png)
+![company_logo](assets/images/logo-SFEIR-blanc-orange.svg)
 ![gdg_logo](assets/images/GDG-Logo-carre.png)
 
 <!-- .element: class="twitter" -->
@@ -1090,6 +1090,16 @@ Magnetometer
 </h1>
 
 
+##==##
+
+
+# Demo
+
+<div id="demo-pip">
+    <video id="video-pip" height="400px" controls src="./assets/videos/short.mp4"></video>
+    <button id="button-pip">Start Picture In Picture</button>
+</div>
+
 
 ##==##
 
@@ -1222,7 +1232,7 @@ Beaucoup de polyfills & bcp de proposals !
 
 <p>@jefBinomed</p>
 
-<p>GDG Nantes Leader & Ingénieur Lucca</p>
+<p>GDG Nantes Leader & Directeur Ingineering Sfeir Nantes</p>
 
 https://goo.gl/D5EW29
 

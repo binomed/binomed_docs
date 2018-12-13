@@ -19,6 +19,8 @@ export class Demos {
 
             this._demoPaintApi();
 
+            this._demoPictureInPicture();
+
         } catch (error) {
             console.error(error);
         }
@@ -26,6 +28,9 @@ export class Demos {
     }
 
     _demoCssVar() {
+        if (!document.getElementById('codemirror-css')){
+            return;
+        }
         /** */
         new ApplyCss(
             document.getElementById('codemirror-css'),
@@ -42,6 +47,9 @@ export class Demos {
     }
 
     _demoCssVarInJS() {
+        if (!document.getElementById('demo-ghost-parent')){
+            return;
+        }
 
         let indiceH = -1;
         let subscribe = false;
@@ -96,6 +104,10 @@ export class Demos {
     }
 
     _demoPartTheme() {
+        if(!document.getElementById('codemirror-part-css')){
+            return;
+        }
+
         new ApplyCodeMiror(document.getElementById('codemirror-part-css'),
             'css',
             `x-rating::part(subject) {
@@ -145,6 +157,10 @@ x-rating::theme(thumb-up) {
     }
 
     _demoPaintApi() {
+        if (!document.getElementById('codemirror-paint-api-css')){
+            return;
+        }
+
         (CSS.paintWorklet || paintWorklet).addModule('./scripts/houdini/circle-worklet.js');
 
         new ApplyCss(
@@ -174,6 +190,26 @@ x-rating::theme(thumb-up) {
     ctx.fill();
 }
             `);
+    }
+
+    _demoPictureInPicture(){
+        if (!document.getElementById('demo-pip')){
+            return;
+        }
+
+        const videoPip = document.getElementById('video-pip');
+        const btnPip = document.getElementById('button-pip');
+
+        btnPip.addEventListener('click', async ()=>{
+            btnPip.disabled = true;
+            try{
+
+                await videoPip.requestPictureInPicture();
+            }catch(e){
+                console.error(e);
+            }
+            btnPip.disabled = false;
+        });
     }
 
 }

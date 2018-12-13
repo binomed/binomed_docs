@@ -250,3 +250,14 @@
     grid-column: 1 / span 2;
     grid-row: 2;
 }
+
+/**
+* Picture In Picture
+*/
+
+#demo-pip {
+    width: 100;
+    height: 100%;
+    display: flex;
+
+}

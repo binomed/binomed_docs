@@ -438,6 +438,18 @@ Magnetometer
 </h1>
 
 
+##==##
+
+
+# Demo
+
+<div id="demo-pip">
+    <video id="video-pip" height="400px" controls src="./assets/videos/short.mp4"></video>
+    <button id="button-pip">Start Picture In Picture</button>
+</div>
+
+
+
 
 ##==##
 
@@ -564,7 +576,7 @@ Beaucoup de polyfills & bcp de proposals !
 
 <p>@jefBinomed</p>
 
-<p>GDG Nantes Leader & Directeur Ingeneering Sfeir Nantes</p>
+<p>GDG Nantes Leader & Directeur Ingineering Sfeir Nantes</p>
 
 https://goo.gl/D5EW29
 
