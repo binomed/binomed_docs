@@ -46,7 +46,7 @@ La on parle de google mais ça marche aussi pour Microsoft, IBM, ...
 
 ##==##
 
-## CloudML Api 
+## CloudML Api
 
 ![center w-700](./assets/images/Machine_learning_visionapi.png)
 
@@ -139,16 +139,17 @@ Natural Langages / Translation
 ##==##
 
 
-<!-- .slide: class="no-filter transition"  -->
 
 # Génération de datasets
 
 ![center w-700](./assets/images/automl_datasets.png)
 
+Notes:
+Pricing dépendant du nombre d'images dans le datasets (3$ toutes les 1000 images)
+
 ##==##
 
 
-<!-- .slide: class="no-filter transition"  -->
 
 # Détail d'un dataset
 
@@ -157,7 +158,6 @@ Natural Langages / Translation
 ##==##
 
 
-<!-- .slide: class="no-filter transition"  -->
 
 # Entrainement d'un modèle
 
@@ -166,7 +166,6 @@ Natural Langages / Translation
 ##==##
 
 
-<!-- .slide: class="no-filter transition"  -->
 
 # Matrice de confusion
 
@@ -175,7 +174,6 @@ Natural Langages / Translation
 ##==##
 
 
-<!-- .slide: class="no-filter transition"  -->
 
 # Test du modèle
 
