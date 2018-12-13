@@ -343,6 +343,14 @@ span.webspecs {
     }
 }
 
+img[alt*=company_logo]{
+    top: 460px;
+    left: inherit;
+    right: 300px;
+    max-height: 200px;
+    max-width: 200px;
+}
+
 /**
 * Gestion du highlighting de code
 */

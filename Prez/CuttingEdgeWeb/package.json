@@ -2,6 +2,9 @@
   "author": "JefBinomed",
   "name": "BleedingWeb",
   "version": "1.0.0",
+  "scripts": {
+    "start": "gulp"
+  },
   "dependencies": {
     "codemirror": "^5.34.0",
     "mask-highlighter": "^1.0.1",
