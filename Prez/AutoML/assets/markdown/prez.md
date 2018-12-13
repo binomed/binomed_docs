@@ -19,6 +19,9 @@
 
 ![center w-700](./assets/images/Machine_learning.png)
 
+Notes:
+Fallait tout hoster, tout entrainer, ...
+
 ##==##
 
 
@@ -31,6 +34,9 @@
 
 ![center w-700](./assets/images/Machine_learning_Tensorflow.png)
 
+Notes:
+Ici les algos sont déjà écrits mais reste à gérer soit même l'entrainement etc...
+
 
 ##==##
 
@@ -42,6 +48,7 @@
 
 Notes:
 La on parle de google mais ça marche aussi pour Microsoft, IBM, ...
+Chacun propose la sienne, déjà pré-entrainée, ...
 
 
 ##==##
@@ -50,6 +57,8 @@ La on parle de google mais ça marche aussi pour Microsoft, IBM, ...
 
 ![center w-700](./assets/images/Machine_learning_visionapi.png)
 
+Notes:
+Ici tout est pret pour nous et exposé sous forme d'API Rest
 
 ##==##
 
@@ -95,6 +104,9 @@ Je s'appelle Groot
 ![center w-700](./assets/images/Machine_learning_automl.png)
 
 
+Notes:
+ici, on a plus qu'à gérer le dataset
+
 ##==##
 
 <!-- .slide: class="no-filter transition"  -->
@@ -134,6 +146,9 @@ Natural Langages / Translation
 
 
 ![center h-500](./assets/images/creating-ml-solutions_2x.png)
+
+Notes:
+Tout se joue sur l'utilisation de models pré-entrainés et dédiés à des types de données
 
 
 ##==##
