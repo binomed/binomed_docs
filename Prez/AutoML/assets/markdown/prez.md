@@ -6,6 +6,12 @@
 
 ### Ou comment faire du machine learning sans data Scientist
 
+##==##
+
+# Disclamer ⚠️
+
+![center w-500](./assets/images/cat-meme.jpg)
+
 
 ##==##
 
@@ -47,7 +53,7 @@ Ici les algos sont déjà écrits mais reste à gérer soit même l'entrainement
 ![center w-700](./assets/images/google-cloud-api.png)
 
 Notes:
-La on parle de google mais ça marche aussi pour Microsoft, IBM, ...
+La on parle de google mais ça marche aussi pour Microsoft, IBM, Amazon ...
 Chacun propose la sienne, déjà pré-entrainée, ...
 
 
