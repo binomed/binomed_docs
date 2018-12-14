@@ -3,12 +3,20 @@ const configuration = require('./configuration.js');
 const fs = require('fs');
 
 const clientPredictionAutoML = new automl.PredictionServiceClient(require('./credentials.js'));
+const clientPredictionIsItAShirtAutoML = new automl.PredictionServiceClient(require('./credentials-isitashirt.js'));
 
-module.exports = async function automlDetection(bytes) {
+module.exports = async function automlDetection(modelToUse, bytes) {
 
   return new Promise(async (resolve, reject) => {
+
+    let modelName = configuration.modelName;
+    switch(modelToUse) {
+      case 'shirt':
+      modelName = configuration.modelNameIsItAShirt;
+      break;
+    }
     const body = {
-      name: configuration.modelName,
+      name: modelName,
       payload: {
         image: {
           imageBytes: Buffer.from(bytes.blob).toString('base64')
@@ -24,7 +32,13 @@ module.exports = async function automlDetection(bytes) {
     console.log('sending request with body', JSON.stringify(body));
 
     try {
-      const predictionResponse = await clientPredictionAutoML.predict(body);
+      let clientToUse = clientPredictionAutoML;
+      switch(modelToUse) {
+        case 'shirt':
+          clientToUse = clientPredictionIsItAShirtAutoML;
+        break;
+      }
+      const predictionResponse = await clientToUse.predict(body);
 
       console.log(' Got Prediction : ', JSON.stringify(predictionResponse));
       // We transform the response to match alpha api results
@@ -35,7 +49,7 @@ module.exports = async function automlDetection(bytes) {
             .sort((annotation1, annotation2 ) => annotation2.classification.score - annotation1.classification.score)
             .map(annotation => {
               return {
-                model: configuration.modelName,
+                model: modelName,
                 label: annotation.displayName,
                 score: annotation.classification.score
               }

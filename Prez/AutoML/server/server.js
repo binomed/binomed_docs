@@ -39,7 +39,7 @@ async function visionApi(request, h) {
 
 async function autoMLApi(request, h){
     try {
-        const test = await automlDetection(request.payload);
+        const test = await automlDetection(request.query.model, request.payload);
         console.log(test);
         return test;
     }catch(err){

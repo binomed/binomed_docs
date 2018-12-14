@@ -11,4 +11,6 @@ css/theme
 scss/theme
 npm-debug.log
 server/credentials.js
+server/credentials-isitashirt.js
 server/keyfile.json
+server/keyfile-isitashirt.json

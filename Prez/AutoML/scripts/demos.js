@@ -46,6 +46,8 @@ export class Demos {
         // Result element
         const labelDetected = document.getElementById(`${prefix}labels-detected`);
 
+        const elementToReduceArray = [video, targetDrop];
+
         // Start the camera
         document.getElementById(`${prefix}startVideo`).addEventListener('click', () => {
             targetDrop.classList.add('hide');
@@ -74,7 +76,7 @@ export class Demos {
         document.getElementById(`${prefix}takeAPicture`).addEventListener('click', () => {
             mediaCaptureDemo.imageCapture.takePhoto()
                 .then(blob => {
-                    analyzeMethod(video, labelDetected, blob);
+                    analyzeMethod(elementToReduceArray, labelDetected, blob, 'shirt');
                 })
         });
 
@@ -85,7 +87,7 @@ export class Demos {
             e.preventDefault();
             const file = e.dataTransfer.files[0];
             targetDrop.innerHTML = `<img src='${URL.createObjectURL(file)}' >`
-            analyzeMethod(targetDrop, labelDetected, file);
+            analyzeMethod(elementToReduceArray, labelDetected, file, 'train');
         });
         targetDrop.addEventListener('dragover', (e) => {
             e.stopPropagation();
@@ -110,7 +112,7 @@ export class Demos {
                 body: formData
             }).then((tojson) => tojson.json())
             .then((results) => {
-                elementToReduce.classList.add('with-label');
+                elementToReduce.forEach(element => element.classList.add('with-label'));
                 targetElement.classList.remove('hide');
                 let resultStr = '';
                 results.forEach((annotationResult, index) => {
@@ -129,18 +131,19 @@ export class Demos {
      * @param {HTMLElement} elementToReduce 
      * @param {HTMLElement} targetElement 
      * @param {Blob} blob 
+     * @param {String} type
      */
-    _callAutomlApi(elementToReduce, targetElement, blob) {
+    _callAutomlApi(elementToReduce, targetElement, blob, type) {
         const formData = new FormData();
         formData.append('blob', blob);
-        fetch('http://localhost:8000/automl', {
+        fetch(`http://localhost:8000/automl?model=${type}`, {
                 method: 'POST',
                 mode: 'cors',
                 body: formData
             }).then((tojson) => tojson.json())
             .then((response) => {
                 const results = response.responses;
-                elementToReduce.classList.add('with-label');
+                elementToReduce.forEach(element => element.classList.add('with-label'));
                 targetElement.classList.remove('hide');
                 let resultStr = '';
                 results.forEach((annotationResult, index) => {
