@@ -1,0 +1,31 @@
+@import "compass";
+
+.reveal .slides > section{
+    
+   
+    div.hidden-print+*{
+        display:none;   
+    }
+   
+    
+}
+
+/*
+* 
+* MIXINS
+**/
+
+@mixin img-size-prefix($prefix, $attr,$size){
+    img[alt*=#{$prefix}-#{$size}], .#{$prefix}-#{$size}, .#{$prefix}-#{$size}+*{
+        #{$attr}: #{$size}pt;
+    }
+}
+
+@for $i from 1 through 20{
+    @include img-size-prefix(hp, height, $i * 50);
+    @include img-size-prefix(wp, width, $i * 50);
+}
+
+
+
+
