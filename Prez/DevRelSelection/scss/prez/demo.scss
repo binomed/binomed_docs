@@ -1,0 +1,80 @@
+@import "./colors";
+/**
+* CSS VARIABLES : CSS
+*/
+
+#demo-detect-label,
+#demo-automl {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 50%;
+    //grid-auto-rows: 50%;
+}
+
+
+#demo-detect-label #targetVision,
+#demo-detect-label #mirror-label,
+#demo-automl #automl-targetVision,
+#demo-automl #automl-mirror-label {
+    position: relative;
+    margin: 15px;
+    grid-column: 1  / span 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    grid-row: 1;
+    border: dashed thin black;
+    border-radius: 30px;
+}
+
+#demo-detect-label #mirror-label,
+#demo-automl #automl-mirror-label{
+    align-self: center;
+    justify-self: center; 
+
+}
+
+#demo-detect-label #labels-detected,
+#demo-automl #automl-labels-detected {
+    position: relative;
+    margin: 15px;
+    grid-column: 2;
+    grid-row: 1;
+}
+
+#demo-detect-label #labels-detected ul,
+#demo-automl #automl-labels-detected ul{
+    font-size: .7em;
+    padding-left: 40px;
+}
+
+.hide, 
+#demo-detect-label #targetVision.hide, 
+#demo-detect-label #mirror-label.hide,
+#demo-automl #automl-targetVision.hide, 
+#demo-automl #automl-mirror-label.hide {
+    display: none;
+}
+
+#demo-detect-label #mirror-label.with-label ,
+#demo-detect-label #targetVision.with-label,
+#demo-automl #automl-mirror-label.with-label ,
+#demo-automl #automl-targetVision.with-label {
+    grid-column: 1;
+}
+
+#demo-detect-label #targetVision.with-label img,
+#demo-automl #automl-targetVision.with-label img {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+#demo-detect-label button,
+#demo-automl button {
+    height: 4em;
+    font-size: .5em;
+}
+
