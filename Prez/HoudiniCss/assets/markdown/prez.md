@@ -13,7 +13,7 @@
     Let's do magic with Houdini CSS
 </h1>
 
-jefBinomed @ #NantesJS
+jefBinomed @ #Zenika #NightClazz
 
 
 
@@ -989,7 +989,7 @@ textarea {
 
 ##==##
 
-<!-- .slide: class="cadre"-->
+<!-- .slide: class="cadre parent-demo-paint"-->
 
 <div id="demo-paint-api" >
     <div id="codemirror-paint-api-css"></div>
@@ -1228,7 +1228,7 @@ Notes:
     <h1 class="name">Jean-François Garreau</h1>
     <h2 class="handle">@jefBinomed</h2>
     <div class="description">
-        GDG Nantes Leader <a href="#">@GDGNantes</a> / <a href="#">@NantesWit</a> / <a href="#">#devoxx4kids</a> / <a href="#">#GDE Web</a> / developer and proud to be dev <a href="#">@LuccaSoftware</a> / curious geek
+        GDG Nantes Leader <a href="#">@GDGNantes</a> / <a href="#">@NantesWit</a> / <a href="#">#devoxx4kids</a> / <a href="#">#GDE Web</a> / developer and proud to be dev <a href="#">@Sfeir</a> / curious geek
     </div>
     <div class="homepage">
         <a href="#">jef.binomed.fr</a>
@@ -1240,7 +1240,7 @@ Notes:
         <div class="meta">
         <span class="name">Jean-François Garreau</span>
         <span class="handle">@jefBinomed</span>
-        <span class="date">Apr 14</span>
+        <span class="date">March 5</span>
         </div>
         Today I give a talk about #HoudininCSS !!
         <div class="media">
@@ -1647,7 +1647,7 @@ Notes:
         <div class="no-signal">no signal</div><!-- Parser -->
         <div class="partial">partially (TP 67)</div><!-- Properties -->
         <div class="no-signal">no signal</div><!-- Animation -->
-        <div class="intent">intent</div><!-- TypedOM -->
+        <div class="dev">In development</div><!-- TypedOM -->
         <div class="no-signal">no signal</div><!-- Font Metrics -->
     </div>
     <div class="browser chrome"> <!-- Chrome -->
