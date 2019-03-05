@@ -843,7 +843,7 @@ Creuser custom-ident
 <h1>
     <svg class="h-150 color-white">
         <use xlink:href="#worklet" />
-    </svg><br>Worlet
+    </svg><br>Worklet
 </h1>
 
 ##==##
