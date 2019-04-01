@@ -6,6 +6,8 @@
 
 ### Ou comment faire du machine learning sans data Scientist
 
+<h3>#TNT19</h3>
+
 ##==##
 
 # Disclamer ⚠️
@@ -215,6 +217,20 @@ IBM Watson Studio
 
 ##==##
 
-<!-- .slide: class="transition-white" -->
+<!-- .slide: class="who-am-i" -->
 
-# Des Questions ? <br> 😀
+## Des Questions ?
+
+### Jean-François Garreau
+
+<!-- .element: class="descjf" -->
+GDE Web Technologies,  Front-end developer & Community Manager
+
+![avatar w-300 wp-200](assets/images/jf.jpg)
+
+
+![company_logo](assets/images/logo-SFEIR-blanc-orange.svg)
+![gdg_logo](assets/images/GDG-Logo-carre.png)
+
+<!-- .element: class="twitter" -->
+[@jefBinomed](https://twitter.com/jefBinomed)
