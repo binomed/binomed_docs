@@ -13,15 +13,16 @@
 
 	  height: 100vh;
 
-	  background: linear-gradient(to right, rgba(36,31,31,1) 0%, rgba(36,31,31,1) 32%, rgba(74,71,70,1) 100%);
-	  color: #fff;
+		//background: linear-gradient(to right, rgba(36,31,31,1) 0%, rgba(36,31,31,1) 32%, rgba(74,71,70,1) 100%);
+		background: linear-gradient(to right, rgba(219,224,224,1) 0%, rgba(219,224,224,1) 32%, rgba(181,184,185,1) 100%);
+	  color: #000;
 	  text-align: center;
   }
 
   .vignette{
 	position:absolute;
 	width:100%; height:100%;
-	box-shadow:inset 0px 0px 150px 20px black;
+	box-shadow:inset 0px 0px 150px 20px white;
 	mix-blend-mode: multiply;
 	-webkit-animation: vignette-anim 3s infinite; /* Safari 4+ */
 	-moz-animation:    vignette-anim 3s infinite; /* Fx 5+ */
@@ -46,13 +47,13 @@
 	position:absolute;
 	height:100%; width:1px;
 	opacity:0.1;
-	background-color:#000;
+	background-color:#fff;
   }
 
   .dot{
 	width:3px;
 	height:2px;
-	background-color:white;
+	background-color:black;
 	position:absolute;
 	opacity:0.3;
   }
@@ -102,7 +103,7 @@
 		// --cadre-corner-2: url('../../assets/images/corner2.png');
 		// --cadre-corner-3: url('../../assets/images/corner3.png');
 		// --cadre-corner-4: url('../../assets/images/corner4.png');
-		--cadre-color:white;
+		--cadre-color:black;
 		padding:60px;
 		background-image: paint(cadre);
 		height: calc(100% - 100px) !important;

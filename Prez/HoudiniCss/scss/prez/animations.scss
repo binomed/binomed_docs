@@ -247,10 +247,10 @@
 
 @keyframes render-layout{
 	100%{
-		--rect_bottom_color_stroke: white;
-		--rect_top_left_color_stroke: white;
-		--rect_top_right_color_stroke: white;
-		--rect_center_color_stroke: white;
+		--rect_bottom_color_stroke: black;
+		--rect_top_left_color_stroke: black;
+		--rect_top_right_color_stroke: black;
+		--rect_center_color_stroke: black;
 	}
 }
 
@@ -276,16 +276,16 @@
 
 @keyframes render-paint{
 	100%{
-		--rect_bottom_color_stroke: white;
-		--rect_top_left_color_stroke: white;
-		--rect_top_right_color_stroke: white;
-		--rect_center_color_stroke: white;
+		--rect_bottom_color_stroke: black;
+		--rect_top_left_color_stroke: black;
+		--rect_top_right_color_stroke: black;
+		--rect_center_color_stroke: black;
 	}
 	100%{
-		--rect_bottom_color_stroke: white;
-		--rect_top_left_color_stroke: white;
-		--rect_top_right_color_stroke: white;
-		--rect_center_color_stroke: white;
+		--rect_bottom_color_stroke: black;
+		--rect_top_left_color_stroke: black;
+		--rect_top_right_color_stroke: black;
+		--rect_center_color_stroke: black;
 		--rect_bottom_color_fill: #EFE0B9;
 		--rect_top_left_color_fill: #E4B04A;
 		--rect_top_right_color_fill: #E4B04A;

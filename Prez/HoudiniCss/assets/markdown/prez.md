@@ -13,7 +13,7 @@
     Let's do magic with Houdini CSS
 </h1>
 
-jefBinomed @ #Zenika #NightClazz
+jefBinomed @DevoxxFR #HoudiniCSS
 
 
 
