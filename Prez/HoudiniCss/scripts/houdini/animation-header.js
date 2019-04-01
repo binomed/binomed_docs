@@ -14,9 +14,9 @@ export class AnimationHeader{
 			  inherits: true
 			});
 			});
-		//let animationWorklet = window.animationWorklet;
-		//if (CSS)
-			//animationWorklet = CSS.animationWorklet;
+		let animationWorklet = window.animationWorklet;
+		if (CSS)
+			animationWorklet = CSS.animationWorklet;
 
 		this.sizes = document.querySelector('#demoAnimationWorklet').computedStyleMap();
 		this.scrollSource = document.querySelector('#demoAnimationWorklet');
@@ -45,7 +45,7 @@ export class AnimationHeader{
 		/* crbug(824782): delay is not working as expected in worklet, instead here we combine
 		   what would have been a delayed animation with the other avatar animation but start
 		   it at a different offset.
-
+		*/
 		  new WorkletAnimation('twitter-header',
 			[
 			  new KeyframeEffect(avatar, [
@@ -59,8 +59,8 @@ export class AnimationHeader{
 			],
 			scrollTimeline,
 			{}
-		  )//.play();
-		*/
+		  ).play();
+		/**/
 	}
 
 	update() {

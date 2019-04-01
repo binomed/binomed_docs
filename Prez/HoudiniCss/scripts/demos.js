@@ -110,6 +110,9 @@ export class Demos {
     --width-circle: 100px;
     width: var(--width-circle);
     background-image: paint(circle, 0px, red);
+}
+.reveal section.parent-demo-paint.cadre{
+    --cadre-color:#FFF;
 }`
         );
 
