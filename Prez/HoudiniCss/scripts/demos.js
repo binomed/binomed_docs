@@ -106,13 +106,13 @@ export class Demos {
         new ApplyCss(
             document.getElementById('codemirror-paint-api-css'),
             `#render-element-paint-api {
-    --circle-color: #FFF;
+    --circle-color: black;
     --width-circle: 100px;
     width: var(--width-circle);
     background-image: paint(circle, 0px, red);
 }
 .reveal section.parent-demo-paint.cadre{
-    --cadre-color:#FFF;
+    --cadre-color:black;
 }`
         );
 

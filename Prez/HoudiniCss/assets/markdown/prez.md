@@ -112,8 +112,8 @@ Des programmes qui nous permettent d'accéder au web
 
 
 <div class="center-element">
-    <img id="houdini_workflow-1" src="./assets/images/browser_workflow.svg" class="w-800"></img>
-    <img id="houdini_workflow-2" src="./assets/images/browser_workflow_with_houdini_light.svg" class="w-800" style="display:none"></img>
+    <img id="houdini_workflow-1" src="./assets/images/browser_workflow_black.svg" class="w-1000"></img>
+    <img id="houdini_workflow-2" src="./assets/images/browser_workflow_black_with_houdini_light.svg" class="w-1000" style="display:none"></img>
 </div>
 
 <div class="fragment" data-fragment-index="1" hidden></div>
@@ -159,7 +159,7 @@ Regroupement des acteurs visant à améliorer le web
 
 
 <div class="center-element">
-    <img src="./assets/images/browser_workflow_with_houdini.svg" class="w-800"></img>
+    <img src="./assets/images/browser_workflow_black_with_houdini.svg" class="w-900"></img>
 </div>
 
 
@@ -888,7 +888,7 @@ Générique !! Process change en fonction du worklet !
 
 <!-- .slide: class="cadre no-filter" data-copyrights="true"-->
 
-<img src="./assets/images/WorkletDiagram.svg" class="w-850"></img>
+<img src="./assets/images/WorkletDiagram_black.svg" class="w-850"></img>
 
 <div class="copyrights diagram">credits to Sam Richard</div>
 
@@ -1017,7 +1017,7 @@ Modifier Couleur ou Taille !
 
 ## How it works?
 
-<img src="./assets/images/worklet_animation.svg" class="center h-500"></img>
+<img src="./assets/images/worklet_animation_black.svg" class="center h-500"></img>
 
 
 
@@ -1285,7 +1285,7 @@ The layout stage of CSS is responsible for generating and positioning fragments 
 
 ## How it works?
 
-<img src="./assets/images/layout_diagram.svg" class="center h-500"></img>
+<img src="./assets/images/layout_diagram_black.svg" class="center h-500"></img>
 
 Notes:
 border / margin / scrolls / padding => layoutEdges
