@@ -2,7 +2,7 @@
 
 # **Cursus Speaker**
 
-### **Session 3** 2017
+### **Session 3** 2019
 
 
 ##==##
@@ -12,7 +12,7 @@
 # **Cursus Speaker**
 ## **Session 3**
 
-### 2017  @ **Nantes**
+### 2019  @ **Bouygues**
 
 
 Notes:
@@ -272,7 +272,7 @@ Notes:
 
 <!-- .element: class="presenter" --> **Jean-François Garreau  **
 
-<!-- .element: class="work-rule" --> GDG Nantes Leader & Ingénieur Lucca
+<!-- .element: class="work-rule" --> GDG Nantes Leader & Directeur Engineering Sfeir
 
 <!-- .element: class="email" --> **jef**@gdgnantes.com
 

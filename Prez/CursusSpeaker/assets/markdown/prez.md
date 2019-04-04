@@ -2,7 +2,7 @@
 
 # **Cursus Speaker**
 
-### **Session 1** 2018
+### **Session 1** 2019
 
 
 ##==##
@@ -12,7 +12,7 @@
 # **Cursus Speaker**
 ## **Session 1**
 
-### 2018  @ **Lucca**
+### 2019  @ **Bouygues**
 
 
 Notes:
@@ -35,14 +35,12 @@ Senior innovation developper & Community Manager
 ![avatar w-300 wp-200](assets/images/jf.jpg)
 
 
-![company_logo](assets/images/lucca_logo.png)
+![company_logo](assets/images/logo-SFEIR-blanc-orange.svg)
 ![gdg_logo](assets/images/GDG-Logo-carre.png)
 
 <!-- .element: class="twitter" -->
 [@jefBinomed](https://twitter.com/jefBinomed)
 
-<!-- .element: class="gplus" -->
-[+JeanFrancoisGarreau](http://plus.google.com/+JeanFrancoisGarreau)
 
 
 
@@ -323,7 +321,7 @@ Notes:
 
 <!-- .element: class="presenter" --> **Jean-François Garreau  **
 
-<!-- .element: class="work-rule" --> GDG Nantes Leader & Ingénieur Lucca
+<!-- .element: class="work-rule" --> GDG Nantes Leader & Directeur Engineering Sfeir
 
 <!-- .element: class="email" --> **jef**@gdgnantes.com   [@jefBinomed](https://twitter.com/jefBinomed)
 
