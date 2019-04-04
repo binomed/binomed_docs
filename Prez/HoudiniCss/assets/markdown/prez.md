@@ -324,7 +324,7 @@ Marche aussi pour ComputeStyle !!!
 
 ##==##
 
-<!-- .slide: class="with-code no-highlight cadre" data-state="stop-code-typedom-api stop-code-typedom-calc" -->
+<!-- .slide: class="with-code no-highlight cadre" data-state="stop-code-typedom-api" -->
 
 ## Numeric Values
 
@@ -347,7 +347,7 @@ Marche aussi pour ComputeStyle !!!
 
 ##==##
 
-<!-- .slide: class="with-code no-highlight cadre" data-type-show="full" -->
+<!-- .slide: class="with-code no-highlight cadre" -->
 
 ## Maths - calc
 
@@ -361,42 +361,9 @@ new CSSMathInvert(CSS.s(10)).toString() // "calc(1 / 10s)"
 new CSSMathProduct(CSS.deg(90), CSS.number(Math.PI/180)).toString();
 // "calc(90deg * 0.0174533)"
 ```
-
 ##==##
 
-<!-- .slide: class="with-code cadre" data-type-show="prez" data-state="code-typedom-calc stop-code-typedom-operations" -->
-
-## Maths - calc
-
-```javascript
-new CSSMathSum(CSS.vw(100), CSS.px(-10)).toString(); // "calc(100vw - 10px)"
-
-new CSSMathNegate(CSS.px(42)).toString() // "calc(-42px)"
-
-new CSSMathInvert(CSS.s(10)).toString() // "calc(1 / 10s)"
-
-new CSSMathProduct(CSS.deg(90), CSS.number(Math.PI/180)).toString();
-// "calc(90deg * 0.0174533)"
-```
-
-
-
-<mask-highlighter id="highlight-typedom-calc"></mask-highlighter>
-
-
-<div class="fragment" data-fragment-index="1" hidden></div>
-<div class="fragment" data-fragment-index="2" hidden></div>
-<div class="fragment" data-fragment-index="3" hidden></div>
-<div class="fragment" data-fragment-index="4" hidden></div>
-<div class="fragment" data-fragment-index="5" hidden></div>
-<div class="fragment" data-fragment-index="6" hidden></div>
-<div class="fragment" data-fragment-index="7" hidden></div>
-<div class="fragment" data-fragment-index="8" hidden></div>
-
-
-##==##
-
-<!-- .slide: class="with-code no-highlight cadre" data-type-show="full" -->
+<!-- .slide: class="with-code no-highlight cadre" data-state="stop-code-typedom-conversion -->
 
 ## Maths - operations
 
@@ -413,35 +380,6 @@ CSS.s(1).sub(CSS.ms(200), CSS.ms(300)).toString() // "calc(1s-200ms-300ms)"
 const sum = new CSSMathSum(CSS.percent(100), CSS.px(20)));
 CSS.vw(100).add(sum).toString() // "calc(100vw + (100% + 20px))"
 ```
-
-##==##
-
-<!-- .slide: class="with-code cadre" data-type-show="prez" data-state="stop-code-typedom-calc code-typedom-operations stop-code-typedom-conversion"  -->
-
-## Maths - operations
-
-```javascript
-CSS.deg(45).mul(2) // {value: 90, unit: "deg"}
-CSS.percent(50).max(CSS.vw(50)).toString() // "max(50%, 50vw)"
-
-// Can Pass CSSUnitValue:
-CSS.px(1).add(CSS.px(2)) // {value: 3, unit: "px"}
-
-// multiple values:
-CSS.s(1).sub(CSS.ms(200), CSS.ms(300)).toString() // "calc(1s-200ms-300ms)"
-// or pass a `CSSMathSum`:
-const sum = new CSSMathSum(CSS.percent(100), CSS.px(20)));
-CSS.vw(100).add(sum).toString() // "calc(100vw + (100% + 20px))"
-```
-
-
-<mask-highlighter id="highlight-typedom-operations"></mask-highlighter>
-
-
-<div class="fragment" data-fragment-index="1" hidden></div>
-<div class="fragment" data-fragment-index="2" hidden></div>
-<div class="fragment" data-fragment-index="3" hidden></div>
-
 
 ##==##
 
@@ -886,7 +824,36 @@ Générique !! Process change en fonction du worklet !
 
 ##==##
 
-<!-- .slide: class="cadre no-filter" data-copyrights="true"-->
+<!-- .slide: class="cadre no-filter worklet-steps" data-copyrights="true" data-type-show="prez" data-state="worklet-steps"-->
+
+<!--<img src="./assets/images/WorkletDiagram_black.svg" class="w-850"></img>-->
+<svg class="w-850">
+    <use xlink:href="#worklet-diagram" />
+</svg>
+
+<div class="copyrights diagram">credits to Sam Richard</div>
+
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+<div class="fragment" data-fragment-index="4" hidden></div>
+<div class="fragment" data-fragment-index="5" hidden></div>
+<div class="fragment" data-fragment-index="6" hidden></div>
+
+
+Notes:
+Worklet Threads Instanciés de façon indep du main
+le addModule fait 1 ou plusieurs imports de worklets ! En fonction du nombre de worklet threads
+Ils peuvent être killé s'ils sont trop long
+ils n'ont pas accès à self ou this
+
+Sont vraiment indep du Main Thread !!!
+
+
+##==##
+
+<!-- .slide: class="cadre no-filter" data-copyrights="true" data-type-show="full"-->
 
 <img src="./assets/images/WorkletDiagram_black.svg" class="w-850"></img>
 
@@ -1583,7 +1550,7 @@ var styles = window.cssParse.ruleSet(`.foo {
     background: green;
     margin: 5px;
 }`);
-console.log(styles.length) // 5
+console.log(styles.length) // 2
 console.log(styles[0].styleMap.get("margin-top").value) // 5
 console.log(styles[0].styleMap.get("margin-top").type) // "px"
 ```
