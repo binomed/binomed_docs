@@ -1695,13 +1695,15 @@ https://ishoudinireadyyet.com/
 
 
 <!-- .element: class="descjf" -->
-GDE Web Technologies
+GDE Web Technologies & Mozilla Tech Speaker
 
 ![avatar w-300 wp-200 onZTop](assets/images/jf.png)
 
 
-![company_logo onZTop](assets/images/logo-SFEIR-blanc-orange.svg)
+![company_logo onZTop](assets/images/logo-SFEIR-monochrome-noir.png)
 ![gdg_logo onZTop](assets/images/GDG-Logo-carre_old.png)
+![gde_logo onZTop](assets/images/gde_old.png)
+![mts_logo onZTop](assets/images/mts_old.png)
 
 <!-- .element: class="twitter" -->
 [@jefBinomed](https://twitter.com/jefBinomed)

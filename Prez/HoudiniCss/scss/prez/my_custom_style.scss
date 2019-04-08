@@ -102,17 +102,31 @@ a:visited {
         box-shadow: none;
     }
     img[alt*=company_logo]{
-        top: 460px;
+        top: 440px;
         left: inherit;
         right: 300px;
         max-height: 200px;
-        max-width: 200px;
+        max-width: 300px;
     }
 
     img[alt*=gdg_logo]{
         top: 450px;
         left: inherit;
         right: 100px;
+    }
+    img[alt*=gde_logo]{
+        position: absolute;
+        top: 250px;
+        left: inherit;
+        right: 80px;
+        width: 150px;
+    }
+    img[alt*=mts_logo]{
+        position: absolute;
+        top: 120px;
+        left: inherit;
+        right: 70px;
+        width: 200px;
     }
 }
 
