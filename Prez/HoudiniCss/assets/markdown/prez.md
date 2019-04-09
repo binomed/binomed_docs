@@ -970,6 +970,19 @@ Modifier Couleur ou Taille !
 
 ##==##
 
+<!-- .slide: class="cadre parent-demo-paint-js-in-css"-->
+
+<div id="demo-paint-api-js-in-css" >
+    <div id="codemirror-paint-api-js-in-css"></div>
+    <div id="render-element-paint-api-js-in-css"></div>
+</div>
+
+
+Notes:
+Modifier Couleur ou Taille !
+
+##==##
+
 <!-- .slide: class="transition text-white transparent cadre" -->
 
 <h1>

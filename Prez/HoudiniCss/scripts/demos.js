@@ -14,6 +14,7 @@ export class Demos {
 
             this._demoTypeOM();
             this._demoPaintApi();
+            this._demoPaintApiJsInCss();
             this._demoCssVar();
             this._demoPropertiesAndValues();
             this.animationDemoLoad = false;
@@ -130,6 +131,35 @@ export class Demos {
     ctx.fillStyle = color;
     ctx.arc(geom.width / 2, geom.height / 2, radius, 0, 2 * Math.PI);
 }`);
+    }
+
+    _demoPaintApiJsInCss() {
+        if (!'paintWorklet' in CSS){
+            return;
+        }
+
+        (CSS.paintWorklet || paintWorklet).addModule('./scripts/houdini/circle-from-css-worklet.js');
+
+        new ApplyCss(
+            document.getElementById('codemirror-paint-api-js-in-css'),
+            `#render-element-paint-api-js-in-css {
+    --circle-color: black;
+    --width-circle: 100px;
+    width: var(--width-circle);
+    background-image: paint(circle-from-css);
+    --circle-js-in-css: (ctx, geom) => {
+        const color = \`var(--circle-color)\`;
+        ctx.fillStyle = color;
+        const x = geom.width / 2;
+        const y = geom.height / 2;
+        let radius = Math.min(x, y);
+        ctx.beginPath();
+        ctx.fillStyle = color;
+        ctx.arc(x, y, radius, 0, 2 * Math.PI);
+        ctx.fill();
+    }
+}`,
+true);
     }
 
     _demoLayoutApi(){
