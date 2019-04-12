@@ -48,48 +48,48 @@ export class AnimationHeader{
 		*/
 		  new WorkletAnimation('twitter-header',
 			[
-			  new KeyframeEffect(avatar, [
+			  new KeyframeEffect(this.avatar, [
 				{transform: `translateY(0px)`},
-				{transform: `translateY(${scrollHeight - clientHeight}px)`},
+				{transform: `translateY(${this.scrollHeight - this.clientHeight}px)`},
 			  ], {
-				delay: avatarScrollEndPos/scrollHeight * maxTime,
-				duration: (scrollHeight - clientHeight)/scrollHeight * maxTime,
+				delay: this.avatarScrollEndPos/this.scrollHeight * this.maxTime,
+				duration: (this.scrollHeight - this.clientHeight)/this.scrollHeight * this.maxTime,
 				fill: 'both',
 			  }),
 			],
-			scrollTimeline,
+			this.scrollTimeline,
 			{}
 		  ).play();
 		/**/
 	}
 
 	update() {
-		const clientHeight = this.scrollSource.clientHeight;
-		const scrollHeight = this.scrollSource.scrollHeight;
-		const maxScroll = scrollHeight - clientHeight;
-		console.log(clientHeight, scrollHeight, maxScroll);
-		const avatarTargetScale = this.sizes.get('--bar-height').value / (this.sizes.get('--avatar-size').value + 2 * this.sizes.get('--avatar-border').value);
-		const avatarScrollEndPos = (this.sizes.get('--header-height').value/2 - this.sizes.get('--avatar-size').value/2 - this.sizes.get('--avatar-border').value);
-		const avatarTargetTranslate = maxScroll - avatarScrollEndPos;
+		this.clientHeight = this.scrollSource.clientHeight;
+		this.scrollHeight = this.scrollSource.scrollHeight;
+		this.maxScroll = this.scrollHeight - this.clientHeight;
+		console.log(this.clientHeight, this.scrollHeight, this.maxScroll);
+		this.avatarTargetScale = this.sizes.get('--bar-height').value / (this.sizes.get('--avatar-size').value + 2 * this.sizes.get('--avatar-border').value);
+		this.avatarScrollEndPos = (this.sizes.get('--header-height').value/2 - this.sizes.get('--avatar-size').value/2 - this.sizes.get('--avatar-border').value);
+		this.avatarTargetTranslate = this.maxScroll - this.avatarScrollEndPos;
 		// Stop scaling at this offset and start transform.
-		const avatarScrollEndOffset = avatarScrollEndPos / maxScroll;
+		this.avatarScrollEndOffset = this.avatarScrollEndPos / this.maxScroll;
 
 		const aekf = this.avatarEffect.getKeyframes();
-		aekf[1].transform = `translateY(0px) scale(${avatarTargetScale})`;
-		aekf[1].offset = avatarScrollEndOffset;
-		aekf[2].transform = `translateY(${avatarTargetTranslate}px) scale(${avatarTargetScale})`;
+		aekf[1].transform = `translateY(0px) scale(${this.avatarTargetScale})`;
+		aekf[1].offset = this.avatarScrollEndOffset;
+		aekf[2].transform = `translateY(${this.avatarTargetTranslate}px) scale(${this.avatarTargetScale})`;
 		this.avatarEffect.setKeyframes(aekf);
 
 		const bekf = this.barEffect.getKeyframes();
-		bekf[1].offset = avatarScrollEndOffset;
+		bekf[1].offset = this.avatarScrollEndOffset;
 		this.barEffect.setKeyframes(bekf);
 	}
 
 	initAvatarEffect() {
 		this.avatarEffect = new KeyframeEffect(this.avatar, [
 			{transform: `translateY(0px) scale(1)`, easing: 'ease-in-out', offset: 0},
-			{transform: `translateY(0px) scale(${0/*avatarTargetScale*/})`, easing: 'linear', offset: 0 /*avatarScrollEndOffset*/},
-			{transform: `translateY(${0/*avatarTargetTranslate*/}px) scale(${0/*avatarTargetScale*/})`, offset: 1},
+			{transform: `translateY(0px) scale(${0/*this.avatarTargetScale*/})`, easing: 'linear', offset: 0 /*this.avatarScrollEndOffset*/},
+			{transform: `translateY(${0/*this.avatarTargetTranslate*/}px) scale(${0/*this.avatarTargetScale*/})`, offset: 1},
 		], {
 			duration: this.maxTime + this.epsilon,
 			fill: 'both',

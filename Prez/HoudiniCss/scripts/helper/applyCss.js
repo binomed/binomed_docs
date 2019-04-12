@@ -9,7 +9,7 @@ export class ApplyCss {
      * @param {boolean} noTrim
      */
     constructor(elt, initialContent, noTrim = false) {
-        const codeMirrorCss = CodeMirror(elt, {
+        this.codeMirrorCss = CodeMirror(elt, {
             value: initialContent,
             mode: 'css',
             lineNumbers: true,
@@ -34,9 +34,9 @@ export class ApplyCss {
         }
         head.appendChild(this.style);
 
-        codeMirrorCss.setSize('100%', '100%');
-        codeMirrorCss.on('change', (...obj) => {
-            this.applyCss(codeMirrorCss.getValue());
+        this.codeMirrorCss.setSize('100%', '100%');
+        this.codeMirrorCss.on('change', (...obj) => {
+            this.applyCss(this.codeMirrorCss.getValue());
         });
         this.applyCss(initialContent);
     }

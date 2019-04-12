@@ -413,6 +413,12 @@ span.webspecs {
     font-size: 0.7em;
 }
 
+.reveal .CodeMirror-cursor {
+    width: 1px !important;
+    background: #30a;
+}
+
+
 mask-highlighter {
     display: none;
     position: absolute;
