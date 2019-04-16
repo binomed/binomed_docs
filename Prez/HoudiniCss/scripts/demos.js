@@ -19,6 +19,9 @@ export class Demos {
             this._demoPropertiesAndValues();
             this.animationDemoLoad = false;
             Reveal.addEventListener('animationDemoState', () =>{
+                if (!'animationWorklet' in CSS){
+                    return;
+                }
                 if (!this.animationDemoLoad){
                     new AnimationHeader();
                 }
@@ -81,6 +84,10 @@ export class Demos {
     }
 
     _demoPropertiesAndValues() {
+        if (!'registerProperty' in CSS){
+            return;
+        }
+
         CSS.registerProperty({
             name: '--properties-move-register',
             syntax: '<length>',
@@ -163,6 +170,9 @@ true);
     }
 
     _demoLayoutApi(){
+        if (!'layoutWorklet' in CSS){
+            return;
+        }
         document.querySelectorAll('#demoLayoutWorklet div').forEach(elem => {
             const t = elem.textContent;
             // Cut out a random amount of text, but keep at least 10 characters

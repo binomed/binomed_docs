@@ -324,7 +324,22 @@ Marche aussi pour ComputeStyle !!!
 
 ##==##
 
-<!-- .slide: class="with-code no-highlight cadre" data-state="stop-code-typedom-api" -->
+<!-- .slide: class="with-code no-highlight cadre big-code" data-type-show="prez" data-state="stop-code-typedom-api" -->
+
+## Numeric Values
+
+```javascript
+const { value /*42*/
+      , unit  /*px*/ } =
+        CSS.px(42);
+```
+
+Notes:
+Marche aussi pour ComputeStyle !!!
+
+##==##
+
+<!-- .slide: class="with-code no-highlight cadre" data-type-show="full" -->
 
 ## Numeric Values
 
@@ -347,7 +362,19 @@ Marche aussi pour ComputeStyle !!!
 
 ##==##
 
-<!-- .slide: class="with-code no-highlight cadre" -->
+<!-- .slide: class="with-code no-highlight cadre big-code" data-type-show="prez" -->
+
+## Maths - calc : calc(100vw - 10px)
+
+```javascript
+new CSSMathSum(
+    CSS.vw(100),
+    CSS.px(-10));
+```
+
+##==##
+
+<!-- .slide: class="with-code no-highlight cadre" data-type-show="full" -->
 
 ## Maths - calc
 
@@ -361,9 +388,21 @@ new CSSMathInvert(CSS.s(10)).toString() // "calc(1 / 10s)"
 new CSSMathProduct(CSS.deg(90), CSS.number(Math.PI/180)).toString();
 // "calc(90deg * 0.0174533)"
 ```
+
 ##==##
 
-<!-- .slide: class="with-code no-highlight cadre" data-state="stop-code-typedom-conversion -->
+<!-- .slide: class="with-code no-highlight cadre big-code" data-state="stop-code-typedom-conversion" data-type-show="prez" -->
+
+## Maths - operations
+
+```javascript
+CSS.deg(45).mul(2)
+// {value:90, unit:"deg"}
+```
+
+##==##
+
+<!-- .slide: class="with-code no-highlight cadre" data-type-show="full" -->
 
 ## Maths - operations
 
@@ -380,6 +419,7 @@ CSS.s(1).sub(CSS.ms(200), CSS.ms(300)).toString() // "calc(1s-200ms-300ms)"
 const sum = new CSSMathSum(CSS.percent(100), CSS.px(20)));
 CSS.vw(100).add(sum).toString() // "calc(100vw + (100% + 20px))"
 ```
+
 
 ##==##
 
@@ -660,7 +700,7 @@ CSS.registerProperty({
 
 ##==##
 
-<!-- .slide: class="with-code no-highlight cadre" data-state="stop-code-propertiesvalues-type" -->
+<!-- .slide: class="with-code no-highlight cadre" data-state="stop-code-propertiesvalues-type" data-type-show="prez" -->
 
 ## Lots of types
 
@@ -677,6 +717,30 @@ CSS.registerProperty({
 <angle>                         <time>
 
 <resolution>                    <transform-list>
+```
+
+Notes:
+Creuser custom-ident
+
+##==##
+
+<!-- .slide: class="with-code no-highlight cadre" data-state="stop-code-propertiesvalues-type" -->
+
+## Lots of types
+
+
+```html
+<length> : "10px"               <number> : "2"              <custom-ident>
+
+<percentage> : "10%"            <length-percentage> : "10px"
+
+<color> : "red"                 <image> : url("img.png")
+
+<url> : url("http")             <integer> : "3"
+
+<angle> : "15deg"               <time> : "100ms"
+
+<resolution> : "200dpi"         <transform-list> : "scaleX"
 ```
 
 Notes:
@@ -714,15 +778,15 @@ accepts a list of length values.
 
 
 ```javascript
-"<length>"
+"<length>" // 10px
 
-"<length> | <percentage>"
+"<length> | <percentage>" // 10px || 50%
 
-"<length-percentage>"
+"<length-percentage>" // calc(10px - 50%)
 
-"big | bigger | BIGGER"
+"big | bigger | BIGGER" // "big"
 
-"<length>+"
+"<length>+" // 10px, 20px, 30px
 ```
 
 
