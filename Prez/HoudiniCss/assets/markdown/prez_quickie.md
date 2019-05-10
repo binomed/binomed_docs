@@ -327,7 +327,7 @@ main.js
 ```javascript
 const elt = document.getElementById('idElt');
 elt.style.setProperty('--a-super-var', '#333');
-elt.style.getProperty('--a-super-var'); // -> '#333'
+elt.style.getPropertyValue('--a-super-var'); // -> '#333'
 ```
 
 ##==##
@@ -721,7 +721,7 @@ Représentation ++ des éléments avec les positionnements de chaques fragments
 <p> Hello <i>Houdini World</i></p>
 ```
 
-<img src="./assets/images/box_tree_sample.png" class="center"></img>
+<img src="./assets/images/box_tree_sample_black.png" class="center"></img>
 
 Notes:
 
