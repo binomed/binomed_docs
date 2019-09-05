@@ -1,0 +1,97 @@
+:root{
+    --color: red;
+    --scheme: http;
+    --hostname: localhost;
+    --port: 3000;
+    --path: assets/images;
+    /*
+    --img1: hack1.jpg;
+    --img2: hack2.jpg;
+
+    --randomColor: () => {
+        let red = Math.random()*255;
+        let green = Math.random()*255;
+        let blue = Math.random()*255;
+        return "rgb("+red+","+green+","+blue+")";
+    };
+
+    --dependancy: () => {
+        let color = `var(--color)`;
+        return color;
+    };
+
+    --url: (img) => {
+        let scheme = `var(--scheme)`;
+        let host = `var(--hostname)`;
+        let port = var(--port);
+        let path = `var(--path)`;
+        let urlConcat = scheme+'://'+host+':'+port+'/'+path+'/'+img;
+        return "url("+urlConcat.split(' ').join('')+")";
+    };
+
+    */
+
+    --computeUrl:initial;
+
+}
+
+body>div{
+    width: 100%;
+    display: flex;
+    flex-direction:column;
+}
+
+#demo-var{
+    align-items: initial;
+}
+
+
+#codemirror-css{
+    flex:1;
+    text-align: left;
+    font-size: var(--codemiror-size, 30px);
+}
+
+#pure-css .bg{
+    width: 100%;
+    height: 300px;
+    background-size:cover;
+    background-image:var(--computeUrl);
+    border: 3px dotted black;
+    position: relative;
+    margin: 6px 0px;
+}
+
+#pure-css .bg:before{
+    position: absolute;
+    line-height: 300px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+
+#pure-css{
+    background: var(--computeRandomColor);
+}
+
+#pure-css h1 {
+    --color: blue;
+    color: var(--computeDependancy);
+}
+
+
+#pure-css #bg1:before{
+    content: '#pure-css #bg1';
+}
+#pure-css #bg2:before{
+    content: '#pure-css #bg2';
+}
+
+#pure-css #bg1 {
+    --imgToUse: var(--img1);
+}
+#pure-css #bg2 {
+    --imgToUse: var(--img2);
+}
