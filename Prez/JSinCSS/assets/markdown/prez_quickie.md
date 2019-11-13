@@ -2,7 +2,7 @@
 
 # Let's play with CSS !
 
-## jefBinomed @ #SfeirDinner
+## jefBinomed @ #SfeirLunch
 
 
 ##==##

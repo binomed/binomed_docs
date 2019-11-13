@@ -382,9 +382,14 @@ span.webspecs {
     z-index: 100;
 }
 
+.reveal .slides section.with-code pre code{
+    font-size: 2.5rem;
+    line-height: 2.6rem;
+}
+
 .reveal .slides section.with-code.big-code pre code {
-    font-size: 2em;
-    line-height: 2.1em;
+    font-size: 4rem;
+    line-height: 4.1rem;
 }
 
 .reveal .CodeMirror {}

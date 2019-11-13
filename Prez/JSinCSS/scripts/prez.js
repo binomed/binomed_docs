@@ -1,6 +1,9 @@
 'use strict';
 
 import {
+    HighlightEvents
+} from './highlightEvent.js';
+import {
     Demos
 } from './demos.js';
 
@@ -12,6 +15,7 @@ import {
 
         const inIframe = window.top != window.self;
 
+        new HighlightEvents()
         if (!inIframe) {
             new Demos();
         }
