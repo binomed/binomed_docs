@@ -41,19 +41,19 @@ body>div{
     flex-direction:column;
 }
 
-#demo-var{
+#demo-var, #demo-random-color, #demo-dependancy, #demo-args{
     align-items: initial;
     max-height: 100%;
 }
 
 
-#codemirror-css{
+.codemirror-code{
     flex:1;
     text-align: left;
     font-size: var(--codemiror-size, 30px);
 }
 
-#pure-css .bg{
+#pure-css .bg, #args-css .bg{
     width: 100%;
     height: 300px;
     background-size:cover;
@@ -63,7 +63,7 @@ body>div{
     margin: 6px 0px;
 }
 
-#pure-css .bg:before{
+#pure-css .bg:before, #args-css .bg:before{
     position: absolute;
     line-height: 300px;
     top: 0;
@@ -73,11 +73,12 @@ body>div{
 }
 
 
-#pure-css{
+#pure-css, #random-color-css{
     background: var(--computeRandomColor);
 }
 
-#pure-css h1 {
+
+#pure-css h1, #dependancy-css h1  {
     --color: blue;
     color: var(--computeDependancy);
 }
@@ -89,10 +90,16 @@ body>div{
 #pure-css #bg2:before{
     content: '#pure-css #bg2';
 }
+#args-css #bg1-args:before{
+    content: '#args-css #bg1';
+}
+#args-css #bg2-args:before{
+    content: '#args-css #bg2';
+}
 
-#pure-css #bg1 {
+#pure-css #bg1, #args-css #bg1-args {
     --imgToUse: var(--img1);
 }
-#pure-css #bg2 {
+#pure-css #bg2, #args-css #bg2-args {
     --imgToUse: var(--img2);
 }

@@ -10,6 +10,9 @@ export class Demos {
         try {
 
             this._demoCssVar();
+            this._demoRandomColor();
+            this._demoDependancy();
+            this._demoArgs();
         } catch (error) {
             console.error(error);
         }
@@ -47,6 +50,92 @@ export class Demos {
 }`,
 false,
 [helperColor, helperDependancy, helperBg1, helperBg2]
+        );
+    }
+
+    _demoRandomColor() {
+
+        const helperColor = new HelperJsInCss(document.body.querySelector('#random-color-css'), "--randomColor");
+        /** */
+        new ApplyCss(
+            document.getElementById('codemirror-random'),
+            `:root{
+    --codemiror-size: 30px;
+}
+#random-color-css{
+    --randomColor: () => {
+        let red = Math.random()*255;
+        let green = Math.random()*255;
+        let blue = Math.random()*255;
+        return \`rgb(\${red},\${green},\${blue})\`;
+    };
+    background: var(--computeRandomColor);
+}
+`,
+false,
+[helperColor]
+        );
+    }
+
+
+    _demoDependancy() {
+
+        const helperDependancy = new HelperJsInCss(document.body.querySelector('#dependancy-css h1'), "--dependancy", false);
+
+
+        /** */
+        new ApplyCss(
+            document.getElementById('codemirror-dependancy'),
+            `:root{
+    --codemiror-size: 30px;
+}
+#dependancy-css h1 {
+    --color:blue;
+    --dependancy : () => \`var(--color)\`;
+    color: var(--computeDependancy);
+}
+`,
+false,
+[helperDependancy]
+        );
+    }
+
+    _demoArgs() {
+
+        
+        const helperBg1 = new HelperJsInCss(document.getElementById('bg1-args'), '--url', false, ['--imgToUse']);
+        const helperBg2 = new HelperJsInCss(document.getElementById('bg2-args'), '--url', false, ['--imgToUse']);
+
+        /** */
+        new ApplyCss(
+            document.getElementById('codemirror-args'),
+            `:root{
+    --scheme: http;
+    --hostname: localhost;
+    --port: 3000;
+    --path: assets/images;
+    --img1: hack1.jpg;
+    --img2: hack2.jpg;
+}
+#args-css .bg{
+    --url: (img) => {
+        let scheme = \`var(--scheme)\`;
+        let host = \`var(--hostname)\`;
+        let port = var(--port);
+        let path = \`var(--path)\`;
+        let urlConcat = scheme+'://'+host+':'+port+'/'+path+'/'+img;
+        return "url("+urlConcat.split(' ').join('')+")";
+    };
+    background-image:var(--computeUrl);
+}
+#args-css #bg1-args {
+    --imgToUse: var(--img1);
+}
+#args-css #bg2-args {
+    --imgToUse: var(--img2);
+}`,
+false,
+[helperBg1, helperBg2]
         );
     }
 

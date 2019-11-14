@@ -43,7 +43,7 @@ export class HighlightEvents {
                 width: '100%'
             }, {
                 top: '0',
-                height: '350px',
+                height: '450px',
                 leftMargin: '50px',
                 width: '100%'
             }]
