@@ -6,9 +6,10 @@ export class ApplyCss {
      *
      * @param {HtmlElement} elt
      * @param {string} initialContent
+     * @param {boolean} noTrim
      */
-    constructor(elt, initialContent) {
-        const codeMirrorCss = CodeMirror(elt, {
+    constructor(elt, initialContent, noTrim = false) {
+        this.codeMirrorCss = CodeMirror(elt, {
             value: initialContent,
             mode: 'css',
             lineNumbers: true,
@@ -17,12 +18,13 @@ export class ApplyCss {
             showCursorWhenSelecting: true,
             lineWrapping: true,
             scrollbarStyle: 'null',
-            theme: 'paraiso-dark'
+            theme: 'idea'
         });
 
         const head = document.head || document.getElementsByTagName('head')[0];
         this.style = document.createElement('style');
         this.nbElts = 0;
+        this.noTrim = noTrim;
 
         this.style.type = 'text/css';
         if (this.style.styleSheet) {
@@ -32,9 +34,9 @@ export class ApplyCss {
         }
         head.appendChild(this.style);
 
-        codeMirrorCss.setSize('100%', '100%');
-        codeMirrorCss.on('change', (...obj) => {
-            this.applyCss(codeMirrorCss.getValue());
+        this.codeMirrorCss.setSize('100%', '100%');
+        this.codeMirrorCss.on('change', (...obj) => {
+            this.applyCss(this.codeMirrorCss.getValue());
         });
         this.applyCss(initialContent);
     }
@@ -44,16 +46,25 @@ export class ApplyCss {
             this.style.sheet.deleteRule(0);
         }
         this.nbElts = 0;
-        value.split('}')
-            .map(str => str.trim())
-            .forEach(selectorCss => {
-                try {
-                    this.style.sheet.insertRule(selectorCss + '}');
-                    this.nbElts++;
-                } catch (e) {
-                    console.error(e);
-                }
-            });
+        if (!this.noTrim){
+            value.split('}')
+                .map(str => str.trim())
+                .forEach(selectorCss => {
+                    try {
+                        this.style.sheet.insertRule(selectorCss + '}');
+                        this.nbElts++;
+                    } catch (e) {
+                        console.error(e);
+                    }
+                });
+        }else{
+            try {
+                this.style.sheet.insertRule(value);
+                this.nbElts++;
+            } catch (e) {
+                console.error(e);
+            }
+        }
 
     }
 }

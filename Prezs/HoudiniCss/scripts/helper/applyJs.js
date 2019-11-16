@@ -19,7 +19,7 @@ export class ApplyCodeMiror {
             showCursorWhenSelecting: true,
             lineWrapping: true,
             scrollbarStyle: 'null',
-            theme: 'paraiso-dark'
+            theme: 'idea'
         });
 
         codeMirrorJS.setSize('100%', '100%');

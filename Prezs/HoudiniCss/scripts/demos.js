@@ -14,10 +14,14 @@ export class Demos {
 
             this._demoTypeOM();
             this._demoPaintApi();
+            this._demoPaintApiJsInCss();
             this._demoCssVar();
             this._demoPropertiesAndValues();
             this.animationDemoLoad = false;
             Reveal.addEventListener('animationDemoState', () =>{
+                if (!'animationWorklet' in CSS){
+                    return;
+                }
                 if (!this.animationDemoLoad){
                     new AnimationHeader();
                 }
@@ -80,6 +84,10 @@ export class Demos {
     }
 
     _demoPropertiesAndValues() {
+        if (!'registerProperty' in CSS){
+            return;
+        }
+
         CSS.registerProperty({
             name: '--properties-move-register',
             syntax: '<length>',
@@ -106,10 +114,13 @@ export class Demos {
         new ApplyCss(
             document.getElementById('codemirror-paint-api-css'),
             `#render-element-paint-api {
-    --circle-color: #FFF;
+    --circle-color: black;
     --width-circle: 100px;
     width: var(--width-circle);
     background-image: paint(circle, 0px, red);
+}
+.reveal section.parent-demo-paint.cadre{
+    --cadre-color:black;
 }`
         );
 
@@ -129,7 +140,39 @@ export class Demos {
 }`);
     }
 
+    _demoPaintApiJsInCss() {
+        if (!'paintWorklet' in CSS){
+            return;
+        }
+
+        (CSS.paintWorklet || paintWorklet).addModule('./scripts/houdini/circle-from-css-worklet.js');
+
+        new ApplyCss(
+            document.getElementById('codemirror-paint-api-js-in-css'),
+            `#render-element-paint-api-js-in-css {
+    --circle-color: black;
+    --width-circle: 100px;
+    width: var(--width-circle);
+    background-image: paint(circle-from-css);
+    --circle-js-in-css: (ctx, geom) => {
+        const color = \`var(--circle-color)\`;
+        ctx.fillStyle = color;
+        const x = geom.width / 2;
+        const y = geom.height / 2;
+        let radius = Math.min(x, y);
+        ctx.beginPath();
+        ctx.fillStyle = color;
+        ctx.arc(x, y, radius, 0, 2 * Math.PI);
+        ctx.fill();
+    }
+}`,
+true);
+    }
+
     _demoLayoutApi(){
+        if (!'layoutWorklet' in CSS){
+            return;
+        }
         document.querySelectorAll('#demoLayoutWorklet div').forEach(elem => {
             const t = elem.textContent;
             // Cut out a random amount of text, but keep at least 10 characters

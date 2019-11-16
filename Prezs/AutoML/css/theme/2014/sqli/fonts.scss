@@ -1,0 +1,56 @@
+@font-face {
+    font-family: "DINNextLTPro-MediumCond";
+    src: url("fonts/DINNextLTPro-MediumCond.eot");
+    src: local("☺"),
+    url("fonts/DINNextLTPro-MediumCond.woff") format("woff"),
+    url("fonts/DINNextLTPro-MediumCond.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "DIN-Next-LT-Pro-Condensed";
+    src: url('fonts/DINNextLTPro-Condensed.eot');
+    src: url('fonts/DINNextLTPro-Condensed.eot?#iefix') format('embedded-opentype'),
+    url('fonts/DINNextLTPro-Condensed.svg#DIN Next LT Pro') format('svg'),
+    url('fonts/DINNextLTPro-Condensed.woff') format('woff'),
+    url('fonts/DINNextLTPro-Condensed.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "DIN-Next-LT-Pro-UltraLightCond";
+    src: url('fonts/DINNextLTPro-UltraLightCond.eot');
+    src: url('fonts/DINNextLTPro-UltraLightCond.eot?#iefix') format('embedded-opentype'),
+    url('fonts/DINNextLTPro-UltraLightCond.svg#DIN Next LT Pro') format('svg'),
+    url('fonts/DINNextLTPro-UltraLightCond.woff') format('woff'),
+    url('fonts/DINNextLTPro-UltraLightCond.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "DIN-Next-LT-Pro-LightCondensed";
+    src: url('fonts/DINNextLTPro-LightCondensed.eot');
+    src: url('fonts/DINNextLTPro-LightCondensed.eot?#iefix') format('embedded-opentype'),
+    url('fonts/DINNextLTPro-LightCondensed.svg#DIN Next LT Pro') format('svg'),
+    url('fonts/DINNextLTPro-LightCondensed.woff') format('woff'),
+    url('fonts/DINNextLTPro-LightCondensed.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "DIN-Next-LT-Pro-BoldCondensed";
+    src: url('fonts/DINNextLTPro-BoldCondensed.eot');
+    src: url('fonts/DINNextLTPro-BoldCondensed.eot?#iefix') format('embedded-opentype'),
+    url('fonts/DINNextLTPro-BoldCondensed.svg#DIN Next LT Pro') format('svg'),
+    url('fonts/DINNextLTPro-BoldCondensed.woff') format('woff'),
+    url('fonts/DINNextLTPro-BoldCondensed.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.reveal{ 
+	font-family: "DIN-Next-LT-Pro-Condensed", Arial, sans-serif;
+	font-size: 2.5em;
+}

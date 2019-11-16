@@ -60,66 +60,6 @@ export class HighlightEvents {
             }]
         });
 
-        //  Typed OM New calc
-        new HighlightCodeHelper({
-            keyElt: 'typedom-calc',
-            // We start with the first fragment (the initial position is fixed by css)
-            positionArray: [{
-                line: 1,
-                nbLines: 1,
-                left: '760px', // linux : 800px / windows : 760px
-                width: '350px'
-            }, {
-                line: 1,
-                nbLines: 1,
-                width: '100%'
-            }, {
-                line: 3,
-                nbLines: 1,
-                left:'610px', // linux : 630px / windows :  610px
-                width: '300px'
-            }, {
-                line: 3,
-                nbLines: 1,
-                width: '100%'
-            }, {
-                line: 5,
-                nbLines: 1,
-                left:'610px', // linux : 630px / windows : 610px
-                width: '300px'
-            }, {
-                line: 5,
-                nbLines: 1,
-                width: '100%'
-            }, {
-                line: 8,
-                nbLines: 1,
-                width: '500px'
-            }, {
-                line: 7,
-                nbLines: 2,
-                width: '100%'
-            }]
-        });
-
-        //  Typed OM Operations
-        new HighlightCodeHelper({
-            keyElt: 'typedom-operations',
-            // We start with the first fragment (the initial position is fixed by css)
-            positionArray: [{
-                line: 1,
-                nbLines: 2,
-                width: '100%'
-            }, {
-                line: 4,
-                nbLines: 2,
-                width: '100%'
-            }, {
-                line: 7,
-                nbLines: 5,
-                width: '100%'
-            }]
-        });
 
         //  Typed OM Conversion
         new HighlightCodeHelper({
