@@ -48,6 +48,33 @@ export class HighlightEvents {
                 width: '100%'
             }]
         });
+        
+        //  limit Houdini
+        new HighlightCodeHelper({
+            keyElt: 'houdini',
+            // We start with the first fragment (the initial position is fixed by css)
+            positionArray: [{
+                top: '0px',
+                height: '280px',
+                leftMargin: '50px',
+                width: '100%'
+            }, {
+                top: '280px',
+                height: '50px',
+                leftMargin: '50px',
+                width: '100%'
+            }, {
+                top: '330px',
+                height: '50px',
+                leftMargin: '50px',
+                width: '100%'
+            }, {
+                top: '380px',
+                height: '350px',
+                leftMargin: '50px',
+                width: '100%'
+            }]
+        });
 
     }
 }

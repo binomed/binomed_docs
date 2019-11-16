@@ -103,3 +103,42 @@ body>div{
 #pure-css #bg2, #args-css #bg2-args {
     --imgToUse: var(--img2);
 }
+
+/**
+* PAINT API
+*/
+
+#demo-paint-api-js-in-css {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 50%;
+    grid-template-rows: 50%;
+}
+
+#render-element-paint-api-js-in-css {
+    position: relative;
+    margin: 15px;
+    grid-column: 2;
+    grid-row: 1;
+}
+
+#codemirror-paint-api-js-in-css .CodeMirror-lines,
+#codemirror-paint-api-js-in-css .CodeMirror-lines{
+    font-size: 0.6em;
+}
+
+#codemirror-paint-api-js-in-css {
+    margin: 15px;
+    grid-column: 1;
+    grid-row: 1 / span 2;
+}
+
+#codemirror-paint-api {
+    margin: 15px;
+    grid-column: 1 / span 2;
+    grid-row: 2;
+}
+#render-element-paint-api-js-in-css {
+    grid-row: 1 / span 2;
+}

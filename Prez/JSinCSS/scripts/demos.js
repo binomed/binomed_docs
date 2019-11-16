@@ -13,6 +13,7 @@ export class Demos {
             this._demoRandomColor();
             this._demoDependancy();
             this._demoArgs();
+            this._demoPaintApiJsInCss();
         } catch (error) {
             console.error(error);
         }
@@ -110,20 +111,14 @@ false,
         new ApplyCss(
             document.getElementById('codemirror-args'),
             `:root{
-    --scheme: http;
-    --hostname: localhost;
-    --port: 3000;
-    --path: assets/images;
+    --prefix: http://localhost:3000/assets/images;
     --img1: hack1.jpg;
     --img2: hack2.jpg;
 }
 #args-css .bg{
     --url: (img) => {
-        let scheme = \`var(--scheme)\`;
-        let host = \`var(--hostname)\`;
-        let port = var(--port);
-        let path = \`var(--path)\`;
-        let urlConcat = scheme+'://'+host+':'+port+'/'+path+'/'+img;
+        let prefix = \`var(--prefix)\`;
+        let urlConcat = prefix+'/'+img;
         return "url("+urlConcat.split(' ').join('')+")";
     };
     background-image:var(--computeUrl);
@@ -138,6 +133,36 @@ false,
 [helperBg1, helperBg2]
         );
     }
+
+    _demoPaintApiJsInCss() {
+        if (!'paintWorklet' in CSS){
+            return;
+        }
+
+        (CSS.paintWorklet || paintWorklet).addModule('./scripts/houdini/circle-from-css-worklet.js');
+
+        new ApplyCss(
+            document.getElementById('codemirror-paint-api-js-in-css'),
+            `#render-element-paint-api-js-in-css {
+    --circle-color: black;
+    --width-circle: 100px;
+    width: var(--width-circle);
+    background-image: paint(circle-from-css);
+    --circle: (ctx, geom) => {
+        const color = \`var(--circle-color)\`;
+        ctx.fillStyle = color;
+        const x = geom.width / 2;
+        const y = geom.height / 2;
+        let radius = Math.min(x, y);
+        ctx.beginPath();
+        ctx.fillStyle = color;
+        ctx.arc(x, y, radius, 0, 2 * Math.PI);
+        ctx.fill();
+    }
+}`,
+true);
+    }
+
 
 
 

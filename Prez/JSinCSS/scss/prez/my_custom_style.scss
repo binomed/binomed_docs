@@ -64,10 +64,11 @@ a:visited {
 }
 
 .reveal .slides section.who-am-i {
-    color: $dark-grey;
+    color: $text-color;
     text-align: left;
+    height: 100%;
     h2 {
-        color: $dark-grey;
+        color: $text-color;
         font-weight: 400;
         line-height: 2em;
         height: 2em;
@@ -80,12 +81,12 @@ a:visited {
         left: 350px;
         top: 250px;
         font-size: 1.2em;
-        color: $dark-grey;
+        color: $text-color;
         margin-bottom: 20px;
     }
     .descjf {
         position: absolute;
-        color: $dark-grey;
+        color: $text-color;
         font-size: 100%;
         line-height: 1.5em;
         left: 350px;
@@ -102,17 +103,31 @@ a:visited {
         box-shadow: none;
     }
     img[alt*=company_logo]{
-        top: 460px;
+        top: 440px;
         left: inherit;
         right: 300px;
         max-height: 200px;
-        max-width: 200px;
+        max-width: 300px;
     }
 
     img[alt*=gdg_logo]{
         top: 450px;
         left: inherit;
         right: 100px;
+    }
+    img[alt*=gde_logo]{
+        position: absolute;
+        top: 250px;
+        left: inherit;
+        right: 80px;
+        width: 150px;
+    }
+    img[alt*=mts_logo]{
+        position: absolute;
+        top: 120px;
+        left: inherit;
+        right: 70px;
+        width: 200px;
     }
 }
 
@@ -219,9 +234,12 @@ a:visited {
     }
 }
 
-.reveal .slides section.transition-black h1,
-.reveal .slides section.transition.text-white h1 {
+.reveal .slides section.transition-black h1{
     color: $black;
+}
+.reveal .slides section.transition.text-white h1 {
+    color: $white;
+
 }
 
 .reveal .slides section.transition.text-green h1 {
@@ -372,6 +390,7 @@ span.webspecs {
         font-size: 20px;
     }
 }
+
 
 /**
 * Gestion du highlighting de code

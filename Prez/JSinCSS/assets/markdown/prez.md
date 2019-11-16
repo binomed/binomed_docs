@@ -1,4 +1,4 @@
-<!-- .slide: class="transition text-white cadre" -->
+<!-- .slide: class="transition" -->
 
 # JS in CSS, yes we can 🤔
 
@@ -32,7 +32,7 @@ Mettre Color => Couleur différente + :hover
 
 ##==##
 
-<!-- .slide: class="transition text-white cadre" -->
+<!-- .slide: class="transition" -->
 
 <h1>Custom Properties <br>& eval()<br> & raf<br> = 🧙‍♀️</h1>
 
@@ -56,8 +56,8 @@ Mettre Color => Couleur différente + :hover
 <br><br>
 
 ```css
---myvar: 🤘; 
---myvar2: () => {console.log('🤘')};
+--var: 🤘;
+--var2: ()=>console.log('🤘');
 /* Valid Css 🤘*/
 ```
 
@@ -150,6 +150,23 @@ background-url: url(var(--prefix)var(--img));
 
 ##==##
 
+<!-- .slide: class="with-code big-code" -->
+
+# Code to produce
+
+```javascript
+new HelperJsInCss(
+  domElement, // DOM 
+  '--url', // CustomProperty
+  false, // Raf ?
+  ['--imgToUse'] // Args
+);
+```
+
+[HelperJsInCss Gist](https://gist.github.com/jefBinomed/6d4e79bec71d365e8e0828c55ccbb925)
+
+##==##
+
 <video height="80%" src="./assets/videos/magic.mp4" data-autoplay></video>
 
 ##==##
@@ -190,11 +207,114 @@ background-url: url(var(--prefix)var(--img));
     </div>
 </div>
 
+##==##
+
+<!-- .slide: class="transition text-white no-filter " data-state="stop-code-houdini" data-background="./assets/images/artem-maltsev-3n7DdlkMfEg-unsplash.jpg" -->
+
+# ‍🧙‍♀️Houdini CSS does magic !
+
+##==##
+
+<!-- .slide: class="with-code" data-state="code-houdini" data-type-show="prez" -->
+
+## Paint Api
+
+```javascript
+registerPaint('circle-from-css', class {
+ static get inputProperties() {
+  return ['--circle'];
+ }
+ paint(ctx, geom, properties, args) {
+  eval(
+   properties.get('--circle').toString()
+  )(ctx, geom, properties);
+ }
+});
+```
+
+<mask-highlighter id="highlight-houdini"></mask-highlighter>
+
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+<div class="fragment" data-fragment-index="4" hidden></div>
+
+##==##
+
+<!-- .slide: class="with-code" data-type-show="full" -->
+
+## Paint Api
+
+```javascript
+registerPaint('circle-from-css', class {
+   static get inputProperties() {
+      return ['--circle-js-in-css'];
+   }
+   paint(ctx, geom, properties, args) {
+      eval(properties.get('--circle-js-in-css')
+        .toString())(ctx, geom, properties);
+   }
+});
+```
 
 
 ##==##
 
+<!-- .slide: class="cadre parent-demo-paint-js-in-css" data-state="stop-code-houdini" -->
 
-Credits
+<div id="demo-paint-api-js-in-css" >
+    <div id="codemirror-paint-api-js-in-css"></div>
+    <div id="render-element-paint-api-js-in-css"></div>
+</div>
 
-tracking by balyanbinmalkan / Engine by ibrandify from the Noun Project
+
+Notes:
+Modifier Couleur ou Taille !
+
+
+##==##
+
+## Where does it work?
+
+|Mecanism|IE|Edge|Firefox|Safari|Chrome|
+|---|---|---|---|---|---|
+|HelperJsInCss|❌|✅|✅|✅|✅|
+|Houdini|❌|❌|❌|❌|✅|
+
+##==##
+
+<!-- .slide: class="transition no-filter" data-background="./assets/images/kelly-sikkema-bj3l739cwc8-unsplash.jpg" -->
+
+# To conclude
+
+##==##
+
+
+<!-- .slide: class="who-am-i" -->
+
+## Questions?
+
+### Jean-François Garreau
+
+
+<!-- .element: class="descjf" -->
+GDE Web Technologies & Mozilla Tech Speaker
+
+![avatar w-300 wp-200 onZTop](./assets/images/jf.jpg)
+
+
+![company_logo onZTop](./assets/images/Sfeir-Gris.png)
+![gdg_logo onZTop](./assets/images/GDG-Logo-carre.png)
+![gde_logo onZTop](./assets/images/gde.png)
+![mts_logo onZTop](./assets/images/mts.png)
+
+<!-- .element: class="twitter" -->
+[@jefBinomed](https://twitter.com/jefBinomed)
+
+
+
+<div class="credits">
+    <h4 >Credits : <a href="https://thenounproject.com/" target="_blank">The noun project</a></h4>
+    <p>tracking by balyanbinmalkan / Engine by ibrandify</p>
+</div>
