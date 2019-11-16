@@ -7,7 +7,7 @@
 
 ##==##
 
-<!-- .slide:  -->
+<!-- .slide: data-type-show="prez" -->
 
 <div id="demo-var" class="flex-hori">
     <div id="codemirror-css" class="codemirror-code">
