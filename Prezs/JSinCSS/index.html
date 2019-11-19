@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="utf-8">
-    <base href="/Prezs/JSinCSS/">
 
     <title>JS in CSS</title>
 
@@ -18,7 +17,7 @@
     <!-- ----------------------------------------------------
         ---------------- REVEAL STYLES  -------------------------
         ------------------------------------------------------ -->
-    <link rel="stylesheet" href="./reveal/css/reveal.css">
+    <link rel="stylesheet" href="reveal/css/reveal.css">
     <!--<link rel="stylesheet" href="reveal/css/theme/white.css" id="theme">-->
 
     <!-- For syntax highlighting -->
@@ -75,11 +74,11 @@
 
         <!-- Any section element inside of this container is displayed as a slide -->
         <div class="slides" data-type-show="full">
-            <section data-markdown="./assets/markdown/prez.md" data-separator="##==##" data-separator-vertical="##--##" data-separator-notes="^Notes:"></section>
+            <section data-markdown="assets/markdown/prez.md" data-separator="##==##" data-separator-vertical="##--##" data-separator-notes="^Notes:"></section>
         </div>
     </div>
-    <script src="./reveal/lib/js/head.min.js"></script>
-    <script src="./reveal/js/reveal.js"></script>
+    <script src="reveal/lib/js/head.min.js"></script>
+    <script src="reveal/js/reveal.js"></script>
 
     <script>
         // Full list of configuration options available here:
@@ -97,19 +96,19 @@
 
             // Optional libraries used to extend on reveal.js
             dependencies: [{
-                    src: './reveal/lib/js/classList.js',
+                    src: 'reveal/lib/js/classList.js',
                     condition: function () {
                         return !document.body.classList;
                     }
                 },
                 {
-                    src: './reveal/plugin/markdown/marked.js',
+                    src: 'reveal/plugin/markdown/marked.js',
                     condition: function () {
                         return !!document.querySelector('[data-markdown]');
                     }
                 },
                 {
-                    src: './reveal/plugin/markdown/markdown.js',
+                    src: 'reveal/plugin/markdown/markdown.js',
                     condition: function () {
                         return !!document.querySelector('[data-markdown]');
                     }
@@ -122,20 +121,20 @@
                     }
                 },
                 {
-                    src: './reveal/plugin/zoom-js/zoom.js',
+                    src: 'reveal/plugin/zoom-js/zoom.js',
                     async: true,
                     condition: function () {
                         return !!document.body.classList;
                     }
                 },
                 {
-                    src: './reveal/plugin/notes/notes.js',
+                    src: 'reveal/plugin/notes/notes.js',
                     async: true,
                     condition: function () {
                         return !!document.body.classList;
                     }
                 }
-                // { src: './reveal/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+                // { src: 'reveal/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
                 // { src: 'reveal/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
             ]
         });
