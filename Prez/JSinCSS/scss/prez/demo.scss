@@ -4,9 +4,10 @@
     --hostname: localhost;
     --port: 3000;
     --path: assets/images;
-    /*
+    --prefix: http://localhost:3000/assets/images;
     --img1: hack1.jpg;
     --img2: hack2.jpg;
+    /*
 
     --randomColor: () => {
         let red = Math.random()*255;
@@ -47,7 +48,7 @@ body>div{
 }
 
 
-.codemirror-code{
+.reveal .slides section .codemirror-code{
     flex:1;
     text-align: left;
     font-size: var(--codemiror-size, 30px);

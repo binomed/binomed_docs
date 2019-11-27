@@ -48,7 +48,8 @@ export class Demos {
 }
 #pure-css #bg2 {
     --imgToUse: var(--img2);
-}`,
+}
+`,
 false,
 [helperColor, helperDependancy, helperBg1, helperBg2]
         );
@@ -60,10 +61,7 @@ false,
         /** */
         new ApplyCss(
             document.getElementById('codemirror-random'),
-            `:root{
-    --codemiror-size: 30px;
-}
-#random-color-css{
+            `#random-color-css{
     --randomColor: () => {
         let red = Math.random()*255;
         let green = Math.random()*255;
@@ -87,10 +85,7 @@ false,
         /** */
         new ApplyCss(
             document.getElementById('codemirror-dependancy'),
-            `:root{
-    --codemiror-size: 30px;
-}
-#dependancy-css h1 {
+            `#dependancy-css h1 {
     --color:blue;
     --dependancy : () => \`var(--color)\`;
     color: var(--computeDependancy);
@@ -128,7 +123,8 @@ false,
 }
 #args-css #bg2-args {
     --imgToUse: var(--img2);
-}`,
+}
+`,
 false,
 [helperBg1, helperBg2]
         );
@@ -159,7 +155,8 @@ false,
         ctx.arc(x, y, radius, 0, 2 * Math.PI);
         ctx.fill();
     }
-}`,
+}
+`,
 true);
     }
 
