@@ -20,7 +20,7 @@
     </div>
 </div>
 
-@jefbinomed #dotCSS
+@jefbinomed #dotCSS #JsInCSS
 
 Notes:
 Mettre Color => Couleur différente + :hover
