@@ -23,7 +23,6 @@ export class Demos {
     _demoCssVar() {
 
         const helperColor = new HelperJsInCss(document.body.querySelector('#pure-css'), "--randomColor");
-        const helperDependancy = new HelperJsInCss(document.body.querySelector('#pure-css h1'), "--dependancy", false);
 
         const helperBg1 = new HelperJsInCss(document.getElementById('bg1'), '--url', false, ['--imgToUse']);
         const helperBg2 = new HelperJsInCss(document.getElementById('bg2'), '--url', false, ['--imgToUse']);
@@ -37,9 +36,6 @@ export class Demos {
 #pure-css{
     background: var(--computeRandomColor);
 }
-#pure-css h1 {
-    color: var(--computeDependancy);
-}
 #pure-css .bg{
     background-image:var(--computeUrl);
 }
@@ -48,9 +44,10 @@ export class Demos {
 }
 #pure-css #bg2 {
     --imgToUse: var(--img2);
-}`,
+}
+`,
 false,
-[helperColor, helperDependancy, helperBg1, helperBg2]
+[helperColor, helperBg1, helperBg2]
         );
     }
 
@@ -60,10 +57,7 @@ false,
         /** */
         new ApplyCss(
             document.getElementById('codemirror-random'),
-            `:root{
-    --codemiror-size: 30px;
-}
-#random-color-css{
+            `#random-color-css{
     --randomColor: () => {
         let red = Math.random()*255;
         let green = Math.random()*255;
@@ -87,10 +81,7 @@ false,
         /** */
         new ApplyCss(
             document.getElementById('codemirror-dependancy'),
-            `:root{
-    --codemiror-size: 30px;
-}
-#dependancy-css h1 {
+            `#dependancy-css h1 {
     --color:blue;
     --dependancy : () => \`var(--color)\`;
     color: var(--computeDependancy);
@@ -111,14 +102,14 @@ false,
         new ApplyCss(
             document.getElementById('codemirror-args'),
             `:root{
-    --prefix: http://localhost:3000/assets/images;
+    --prefix: http://localhost:3000/assets/images/;
     --img1: hack1.jpg;
     --img2: hack2.jpg;
 }
 #args-css .bg{
     --url: (img) => {
         let prefix = \`var(--prefix)\`;
-        let urlConcat = prefix+'/'+img;
+        let urlConcat = prefix+img;
         return "url("+urlConcat.split(' ').join('')+")";
     };
     background-image:var(--computeUrl);
@@ -128,7 +119,8 @@ false,
 }
 #args-css #bg2-args {
     --imgToUse: var(--img2);
-}`,
+}
+`,
 false,
 [helperBg1, helperBg2]
         );
@@ -159,7 +151,8 @@ false,
         ctx.arc(x, y, radius, 0, 2 * Math.PI);
         ctx.fill();
     }
-}`,
+}
+`,
 true);
     }
 

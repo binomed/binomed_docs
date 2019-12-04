@@ -54,6 +54,9 @@ export class ApplyCss {
                 .map(str => str.trim())
                 .forEach(selectorCss => {
                     try {
+                        if (!selectorCss || selectorCss.length === 0){
+                            return;
+                        }
                         this.style.sheet.insertRule(selectorCss + '}');
                         this.nbElts++;
                     } catch (e) {

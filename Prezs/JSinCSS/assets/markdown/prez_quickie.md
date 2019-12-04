@@ -1,8 +1,9 @@
-<!-- .slide: class="transition text-white cadre" -->
+<!-- .slide: class="transition" -->
 
-# Let's play with CSS !
+# JS in CSS, yes we can 🤔
 
-## jefBinomed @ #SfeirLunch
+
+## jefBinomed @ #DotCSS
 
 
 ##==##
@@ -10,7 +11,7 @@
 <!-- .slide:  -->
 
 <div id="demo-var" class="flex-hori">
-    <div id="codemirror-css">
+    <div id="codemirror-css" class="codemirror-code">
     </div>
     <div id="pure-css">
         <h1>JS in CSS with Pure CSS</h1>
@@ -18,6 +19,8 @@
         <div id="bg2" class="bg"></div>
     </div>
 </div>
+
+@jefbinomed #dotCSS #JsInCSS
 
 Notes:
 Mettre Color => Couleur différente + :hover
