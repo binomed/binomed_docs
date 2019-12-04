@@ -21,6 +21,9 @@ export class Demos {
     }
 
     _demoCssVar() {
+        if (!document.getElementById('pure-css')){
+            return;
+        }
 
         const helperColor = new HelperJsInCss(document.body.querySelector('#pure-css'), "--randomColor");
 
@@ -52,6 +55,9 @@ false,
     }
 
     _demoRandomColor() {
+        if (!document.getElementById('random-color-css')){
+            return;
+        }
 
         const helperColor = new HelperJsInCss(document.body.querySelector('#random-color-css'), "--randomColor");
         /** */
@@ -74,6 +80,9 @@ false,
 
 
     _demoDependancy() {
+        if (!document.getElementById('dependancy-css')){
+            return;
+        }
 
         const helperDependancy = new HelperJsInCss(document.body.querySelector('#dependancy-css h1'), "--dependancy", false);
 
@@ -93,6 +102,9 @@ false,
     }
 
     _demoArgs() {
+        if (!document.getElementById('bg1-args')){
+            return;
+        }
 
         
         const helperBg1 = new HelperJsInCss(document.getElementById('bg1-args'), '--url', false, ['--imgToUse']);
@@ -128,6 +140,10 @@ false,
 
     _demoPaintApiJsInCss() {
         if (!'paintWorklet' in CSS){
+            return;
+        }
+
+        if (!document.getElementById('codemirror-paint-api-js-in-css')){
             return;
         }
 
