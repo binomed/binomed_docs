@@ -2,7 +2,7 @@
 
 # JS in CSS, yes we can 🤔
 
-## jefBinomed @ #SfeirLunch
+## jefBinomed 
 
 
 ##==##
