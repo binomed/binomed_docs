@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Native Web</title>
+
+    <meta name="description" content="A presentation about Fun JS in CSS. Don't do that in production ;)">
+    <meta name="author" content="Jean-François Garreau">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- ----------------------------------------------------
+        ---------------- REVEAL STYLES  -------------------------
+        ------------------------------------------------------ -->
+    <link rel="stylesheet" href="reveal/css/reveal.css">
+    <!--<link rel="stylesheet" href="reveal/css/theme/white.css" id="theme">-->
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="libs/vs.css">
+
+
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+    <script>
+        document.write('<link rel="stylesheet" href="reveal/css/print/' + (window.location.search.match(/print-pdf/gi) ?
+            'pdf' : 'paper') + '.css" type="text/css" media="print">');
+    </script>
+
+    <!--[if lt IE 9]>
+		<script src="reveal/lib/js/html5shiv.js"></script>
+		<![endif]-->
+
+    <!-- ----------------------------------------------------
+	    ---------------- PREZ STYLES  ---------------------------
+	    ------------------------------------------------------ -->
+    <link rel="stylesheet" href="libs/reveal-md-style-bootstrap/css/bootstrap.css" id="utils">
+    <link rel="stylesheet" href="libs/reveal-md-style-bootstrap/css/bootstrap_print.css" id="utils-print">
+    <script src="libs/reveal-md-style-bootstrap/css/js/bootstrap_theme.js"></script>
+
+
+    <link rel="stylesheet" href="css/theme/2016/binomed/binomed.css" id="theme">
+    <script src="css/theme/2016/binomed/js/binomed_theme_addons.js"></script>
+
+    <!--
+        <link rel="stylesheet" href="css/theme/2013/gdg/gdg_print.css" id="theme" media="print">
+        <link rel="stylesheet" href="css/theme/2013/gdg/gdg_print.css" id="theme" media="print">
+        -->
+    <link rel="stylesheet" href="./css/prez/style.css">
+
+    <!-- Component -->
+    <script src="./node_modules/webcomponents.js/webcomponents-lite.js"></script>
+    <script type="module" src="./node_modules/mask-highlighter/mask-highlighter.js"></script>
+    <script src="./libs/typing.js"></script>
+    <!-- Code & Syntax Editor -->
+    <script src="./node_modules/codemirror/lib/codemirror.js"></script>
+    <link rel="stylesheet" href="./node_modules/codemirror/lib/codemirror.css">
+    <script src="./node_modules/codemirror/mode/javascript/javascript.js"></script>
+    <script src="./node_modules/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+    <script src="./node_modules/codemirror/mode/xml/xml.js"></script>
+    <script src="./node_modules/codemirror/mode/css/css.js"></script>
+    <script src="./node_modules/codemirror/addon/display/autorefresh.js"></script>
+    <!--<link rel="stylesheet" href="./node_modules/codemirror/theme/paraiso-dark.css">-->
+    <link rel="stylesheet" href="./node_modules/codemirror/theme/idea.css">
+
+</head>
+
+<body>
+
+    <div class="reveal">
+
+        <!-- Any section element inside of this container is displayed as a slide -->
+        <div class="slides" data-type-show="prez">
+            <section data-markdown="assets/markdown/prez.md" data-separator="##==##" data-separator-vertical="##--##" data-separator-notes="^Notes:"></section>
+        </div>
+    </div>
+    <script src="reveal/lib/js/head.min.js"></script>
+    <script src="reveal/js/reveal.js"></script>
+
+    <script>
+        // Full list of configuration options available here:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: false,
+            width: 1280,
+            height: 800,
+
+            theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+            transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+            // Optional libraries used to extend on reveal.js
+            dependencies: [{
+                    src: 'reveal/lib/js/classList.js',
+                    condition: function () {
+                        return !document.body.classList;
+                    }
+                },
+                {
+                    src: 'reveal/plugin/markdown/marked.js',
+                    condition: function () {
+                        return !!document.querySelector('[data-markdown]');
+                    }
+                },
+                {
+                    src: 'reveal/plugin/markdown/markdown.js',
+                    condition: function () {
+                        return !!document.querySelector('[data-markdown]');
+                    }
+                },
+                {
+                    src: 'libs/highlight_reveal_fix_v9.js',
+                    async: true,
+                    callback: function () {
+                        hljs.initHighlightingOnLoad();
+                    }
+                },
+                {
+                    src: 'reveal/plugin/zoom-js/zoom.js',
+                    async: true,
+                    condition: function () {
+                        return !!document.body.classList;
+                    }
+                },
+                {
+                    src: 'reveal/plugin/notes/notes.js',
+                    async: true,
+                    condition: function () {
+                        return !!document.body.classList;
+                    }
+                }
+                // { src: 'reveal/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+                // { src: 'reveal/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+            ]
+        });
+    </script>
+
+    <script nomodule src="./prez_bundle.js"></script>
+    <script type="module" src="./node_modules/mask-highlighter/mask-highlighter.js"></script>
+    <script type="module" src="./scripts/prez.js"></script>
+
+
+
+
+</body>
+
+</html>
