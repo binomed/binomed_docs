@@ -1,0 +1,18 @@
+// Dekiru
+
+@font-face {
+    font-family: 'Dekiru';
+    src: url('../../assets/fonts/Dekiru.ttf');
+}
+
+
+
+.reveal{
+	font-family: 'Dekiru', 'Helvetica Neue', Helvetica, 'Microsoft YaHei', 'WenQuanYi Micro Hei', Arial, sans-serif;
+}
+
+.reveal h1, .reveal h2, .reveal h3, .reveal h4,
+.reveal .slides section.with-code h1, .reveal .slides section.with-code h2{
+    font-family: 'Dekiru', 'Helvetica Neue', Helvetica, 'Microsoft YaHei', 'WenQuanYi Micro Hei', Arial, sans-serif;
+    font-weight: 600;
+}

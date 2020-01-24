@@ -1,7 +1,7 @@
 {
-  "name": "jsincss",
+  "name": "nativeweb",
   "version": "1.0.0",
-  "description": "JS in Css presentation",
+  "description": "Native Web presentation",
   "main": "index.js",
   "scripts": {
     "start": "gulp",

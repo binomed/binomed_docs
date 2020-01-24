@@ -1,0 +1,458 @@
+@import "./font";
+@import "./colors";
+// Commons slides
+body,
+html {
+    background: $page-bg-color;
+}
+
+::selection {
+    background: #E4B04A; /* WebKit/Blink Browsers */
+  }
+
+a:link,
+a:focus,
+a:hover,
+a:active,
+a:visited {
+    color: $dark-grey;
+    ;
+}
+
+.reveal .slides {
+    color: $black;
+}
+
+.reveal .slides section p+p {
+    margin-top: 40px;
+}
+
+.reveal .slides section p {
+    font-size: 40px;
+}
+
+.reveal .slides section:not(.first-slide):not(.last-slide):not(.who-am-i):not([data-background]):not([class*="transition"]):not(.transition):not(.transition-white):not(.transition-black):not(.with-code) {
+    width: calc(100% - 100px);
+    height: calc(100% - 140px);
+    height: -webkit-calc(100% - 40px);
+    h1,
+    h2 {
+        color: $japan-red; // $red;
+        font-size: 1.5em;
+        font-weight: 400;
+        text-align: left;
+        padding-left: 25px;
+        margin-left: 5px;
+    }
+    h1,
+    h2,
+    h3 {
+        margin-bottom: 50px;
+        text-align: left; //font-size: 2.5em;
+    }
+    h1~h2,
+    h2~h3,
+    h1~h3 {
+        margin-top: -30px;
+        padding-left: 30px;
+        color: $japan-red; //$medium-grey;
+    }
+}
+
+.reveal .slides section [alt*=onZTop]{
+    z-index: 200;
+}
+
+.reveal .slides section.who-am-i {
+    color: $text-color;
+    text-align: left;
+    height: 100%;
+    h2 {
+        color: $japan-red;
+        font-weight: 400;
+        line-height: 2em;
+        height: 2em;
+        font-size: 2em;
+        margin-top: -20px;
+        margin-bottom: 20px;
+    }
+    h3 {
+        position: absolute;
+        left: 350px;
+        top: 250px;
+        font-size: 1.2em;
+        color: $text-color;
+        margin-bottom: 20px;
+    }
+    .descjf {
+        position: absolute;
+        color: $text-color;
+        font-size: 100%;
+        line-height: 1.5em;
+        left: 350px;
+        top: 320px;
+        width: calc(100% - 350px);
+        width: -webkit-calc(100% - 350px);
+    }
+    img[alt*=avatar] {
+        position: absolute;
+        left: 100px;
+        top: 200px;
+        width: 200px;
+        margin-top: 20px;
+        box-shadow: none;
+    }
+    img[alt*=company_logo]{
+        top: 440px;
+        left: inherit;
+        right: 300px;
+        max-height: 200px;
+        max-width: 300px;
+    }
+
+    img[alt*=gdg_logo]{
+        top: 450px;
+        left: inherit;
+        right: 100px;
+    }
+    img[alt*=gde_logo]{
+        position: absolute;
+        top: 250px;
+        left: inherit;
+        right: 80px;
+        width: 150px;
+    }
+    img[alt*=mts_logo]{
+        position: absolute;
+        top: 120px;
+        left: inherit;
+        right: 70px;
+        width: 200px;
+    }
+}
+
+.reveal blockquote::before {
+    content: '\“';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+}
+
+.reveal blockquote::after {
+    content: '\”';
+    position: absolute;
+    bottom: -0.5em;
+    right: -0.5em;
+    width: 50px;
+    height: 50px;
+}
+
+.reveal blockquote {
+    display: block;
+    position: relative;
+    width: 70%;
+    margin: 20px auto;
+    padding: 1em;
+    text-align: left;
+    font-style: italic;
+    background: transparent;
+    color: $black;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+}
+
+// Specifics slides !!
+.reveal .slides section.first-slide {
+    color: $black;
+    background: $light-grey;
+    h1 {
+        color: $japan-red;
+        margin-top: 150px;
+        font-size: 2.5em;
+        font-weight: 400;
+        margin-bottom: 40px;
+    }
+    h2 {
+        margin-bottom: 20px;
+    }
+    h3 {
+        color: $medium-grey;
+    }
+}
+
+.reveal .slides section.last-slide {
+    text-align: center;
+    color: $medium-grey;
+    .presenter {
+        color: $japan-red;
+        top: 1.5em;
+        height: 2em;
+        line-height: 2em;
+        font-size: 1.2em;
+        font-weight: 600;
+    }
+    .topic-title {
+        color: $japan-red;
+        top: 0;
+        height: 1.7em;
+        font-size: 2em;
+    }
+    img[alt*=avatar],
+    img.avatar {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        top: 50%;
+        left: 50%;
+        margin-left: -150px;
+        margin-top: -150px;
+    }
+}
+
+.reveal .slides section[data-background],
+.reveal .slides section[class*="transition"],
+.reveal .slides section.transition,
+.reveal .slides section.transition-white,
+.reveal .slides section.transition-black,
+    {
+    background: rgba(0, 0, 0, 0);
+}
+
+.reveal .slides section[data-background],
+.reveal .slides section[class*="transition"],
+.reveal .slides section.transition,
+.reveal .slides section.transition-white,
+.reveal .slides section.transition-black {
+    h1 {
+        color: $japan-red; //$red;
+        margin-top: 150px;
+        font-size: 2.5em;
+        font-weight: 400;
+        margin-bottom: 40px;
+        text-transform: uppercase;
+    }
+}
+
+.reveal .slides section.transition-black h1{
+    color: $japan-red;
+}
+.reveal .slides section.transition.text-white h1 {
+    color: $white;
+
+}
+
+.reveal .slides section.transition.text-green h1 {
+    color: $green;
+}
+
+.reveal .slides section.transition.text-red h1 {
+    color: $red;
+}
+
+.reveal .slides section.transition h1.h1-light {
+    font-size: 50px;
+    text-transform: initial;
+}
+
+div.flex-hori {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    .space {
+        margin: 20px 50px;
+    }
+}
+
+div.flex-hori.flex-start,
+div.flex-start {
+    align-items: flex-start;
+}
+
+div.flex-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+div.flex-col.left-align {
+    align-items: flex-start;
+}
+
+div.flex-hori.spacing {
+    margin-top: 50px;
+    img {
+        margin-left: 50px;
+    }
+}
+
+div.flex-col.timer {
+    height: 100%;
+    justify-content: center;
+}
+
+.reveal .slides section img.absolute_img_code {
+    position: absolute;
+    top: 0;
+}
+
+div.padding~* {
+    padding-left: 50px;
+}
+
+svg.color-white {
+    fill: $light-color-white;
+    stroke: $light-color-white;
+}
+
+svg.color-green {
+    fill: $green;
+    stroke: $green;
+}
+
+svg.color-red {
+    fill: $red;
+    stroke: $red;
+}
+
+svg.color-blue {
+    fill: $light-blue;
+    stroke: $light-blue;
+}
+
+svg.color-yellow {
+    fill: $yellow;
+    stroke: $yellow;
+}
+
+svg.color-orange {
+    fill: $orange;
+    stroke: $orange;
+}
+
+svg.color-red.no-stroke,
+svg.color-white.no-stroke,
+svg.color-green.no-stroke,
+svg.color-blue.no-stroke,
+svg.color-yellow.no-stroke,
+svg.color-orange.no-stroke,
+ {
+    stroke: initial;
+}
+
+svg#happy {
+    stroke-width: 0px;
+}
+
+span.webspecs {
+    color: $light-color-white;
+    text-transform: uppercase;
+    line-height: 150px;
+}
+
+.clip_path {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0; //clip-path: inset(19% 17% 34% 10%);
+    //background: red;
+    //-webkit-mask: url(#code-mask);
+    //mask: url(#code-mask);
+    //clip-path: polygon(0 29%, 100% 27%, 100% 100%, 0% 100%);
+}
+
+.clip_path:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+}
+
+.reveal .slides section h1 a {
+    text-transform: initial;
+}
+
+.reveal .slides section div.credits {
+    position: absolute;
+    left:50%;
+    bottom: 100px;
+    margin-left: calc((100% - 100px) / -2);
+    width:calc(100% - 100px);
+    text-align: center;
+    font-size: 20px;
+    p {
+        margin-top: 20px;
+        font-size: 20px;
+    }
+}
+
+
+/**
+* Gestion du highlighting de code
+*/
+
+.reveal .slides section.with-code h2 {
+    color: $black;
+    position: relative;
+    z-index: 100;
+}
+
+.reveal .slides section.with-code pre code{
+    font-size: 2.5rem;
+    line-height: 2.6rem;
+}
+
+.reveal .slides section.with-code.big-code pre code {
+    font-size: 4rem;
+    line-height: 4.1rem;
+}
+
+.reveal .CodeMirror {}
+
+.reveal .CodeMirror-scroll {
+    overflow: hidden !important;
+}
+
+.reveal .CodeMirror-lines {
+    text-align: left !important;
+    font-size: 0.7em !important;
+}
+
+.reveal .CodeMirror-cursor {
+    width: 1px !important;
+    background: #30a !important;
+}
+
+
+
+mask-highlighter {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    --mask-highlighter-bg-color: rgba(221, 221, 221, 0.9);
+}
+
+.reveal .slides section.present mask-highlighter {
+    display: block;
+    top:55px;
+    left:55px;
+    width: calc(100% - 110px);
+    height: calc(100% - 110px);
+}
+
+.reveal .slides section.present.with-code:not(.no-highlight) code.hljs{
+    background: none;
+}
+
+.reveal .slides section .copyrights.diagram {
+    bottom: 60px;
+    left: 60px;
+}
