@@ -237,7 +237,8 @@ a:visited {
 .reveal .slides section.transition-black h1{
     color: $japan-red;
 }
-.reveal .slides section.transition.text-white h1 {
+.reveal .slides section.transition.text-white h1,
+.reveal .slides section .text-white{
     color: $white;
 
 }
@@ -332,12 +333,18 @@ svg.color-orange {
     stroke: $orange;
 }
 
+svg.color-japan-red {
+    fill: $japan-red;
+    stroke: $japan-red;
+}
+
 svg.color-red.no-stroke,
 svg.color-white.no-stroke,
 svg.color-green.no-stroke,
 svg.color-blue.no-stroke,
 svg.color-yellow.no-stroke,
 svg.color-orange.no-stroke,
+svg.color-japan-red.no-stroke,
  {
     stroke: initial;
 }
@@ -375,6 +382,10 @@ span.webspecs {
 
 .reveal .slides section h1 a {
     text-transform: initial;
+}
+
+.reveal .slides section.transition h1.top{
+    margin-top:0
 }
 
 .reveal .slides section div.credits {
