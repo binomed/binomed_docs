@@ -192,6 +192,21 @@ h4.color-blue{
   line-height: 4rem;
 }
 
+.reveal .slides section#initiatives-manifesto{
+  h1:not(.color-black){
+    text-align: center;
+  }
+  h1.color-black{
+    color:$black;
+  }
+}
+
+.reveal .slides section#fugu-contributors{
+  h1{
+    margin-top: 0;
+  }
+}
+
 /*
 *
 * MIXINS
