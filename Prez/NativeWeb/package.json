@@ -4,14 +4,18 @@
   "description": "Native Web presentation",
   "main": "index.js",
   "scripts": {
-    "start": "gulp",
+    "start": "npm run start-prez & npm run start-server",
+    "start-prez":"gulp",
+    "start-server":"node ./server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "jefBinomed",
   "license": "MIT",
   "dependencies": {
     "codemirror": "^5.34.0",
+    "express": "^4.15.2",
     "mask-highlighter": "^1.0.1",
+    "socket.io": "^2.3.0",
     "webcomponents.js": "^0.7.24"
   },
   "devDependencies": {

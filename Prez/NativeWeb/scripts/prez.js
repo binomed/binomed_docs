@@ -3,6 +3,7 @@
 import {
     HighlightEvents
 } from './highlightEvent.js';
+import { Demos } from './demos.js';
 
 
 (async function () {
