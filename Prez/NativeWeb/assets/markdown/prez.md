@@ -1,4 +1,4 @@
-<!-- .slide: class="transition" -->
+<!-- .slide: class="transition no-filter" data-background="./assets/images/great-wave-color.png" -->
 
 # The Native Web is coming
 
@@ -8,11 +8,10 @@
     <use xlink:href="#fugu" />
 </svg>
 
+
 ##==##
 
-
-
-<!-- .slide: class="who-am-i" -->
+<!-- .slide: class="who-am-i"  data-background="./assets/images/great-wave-color-small.png" -->
 
 ## Jean-François Garreau
 
@@ -92,7 +91,7 @@ Parler de WASM
 ##==##
 
 
-<!-- .slide: class="transition transparent"-->
+<!-- .slide: class="transition transparent no-filter" data-background="./assets/images/great-wave-color.png" -->
 
 <h1>
     <svg class="fh-250 color-japan-red no-stroke">
@@ -102,6 +101,9 @@ Parler de WASM
 
 
 ##==##
+
+
+<!-- .slide: class="no-filter" data-background="./assets/images/great-wave-color-small.png" -->
 
 <br><br>
 
@@ -115,7 +117,7 @@ Date de 2013
 
 ##==##
 
-<!-- .slide: id="initiatives-manifesto" -->
+<!-- .slide: id="initiatives-manifesto" class="no-filter standard" data-background="./assets/images/great-wave-color-small.png" -->
 
 # Some initiatives
 
@@ -143,6 +145,8 @@ Les fugu sont des poissons japonais
 
 ##==##
 
+<!-- .slide: class="no-filter" data-background="./assets/images/great-wave-color-small.png"-->
+
 <div>
 <svg class="fh-200 w-300 center">
     <use xlink:href="#spiderman" />
@@ -157,7 +161,7 @@ Les fugu sont des poissons japonais
 
 
 
-<!-- .slide: class="transition transparent" id="fugu-contributors"-->
+<!-- .slide: class="transition transparent no-filter" id="fugu-contributors" data-background="./assets/images/great-wave-color-small.png"-->
 
 <h1>
     <svg class="fh-250 color-japan-red no-stroke">
@@ -178,7 +182,7 @@ Toujours pas de signe de vie des autres acteurs...
 
 
 
-<!-- .slide: class="transition transparent"-->
+<!-- .slide: class="transition transparent no-filter" data-background="./assets/images/great-wave-color.png"-->
 
 <h1>
     <svg class="fh-250 color-japan-red no-stroke">
@@ -189,6 +193,8 @@ Toujours pas de signe de vie des autres acteurs...
 
 
 ##==##
+
+<!-- .slide: class="transition transparent no-filter standard" data-background="./assets/images/great-wave-color-small.png"-->
 
 # New Capabilities workflow
 
@@ -208,6 +214,8 @@ Ship : on délivre dans le browser
 
 ##==##
 
+<!-- .slide: class="no-filter standard" data-background="./assets/images/great-wave-color-small.png"-->
+
 <h1 style="display:flex; align-items:center;">
     <svg class="fh-100 color-japan-red no-stroke">
         <use xlink:href="#origin-trial" />
@@ -224,71 +232,149 @@ https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md
 
 ##==##
 
-Comment le configurer (origin trial)
+<!-- .slide: class="no-filter standard" data-background="./assets/images/great-wave-color-small.png"-->
+
+# How to?
+
+<br><br>
+
+<ul class="fragment">
+<li>Go to <a href="https://developers.chrome.com/origintrials/#/trials/active" target="_blank">request origin trial token</a>
+</li>
+</ul>
+
+<br><br>
+<ul class="fragment">
+<li>Add in header : <code><pre>&lt;meta http-equiv="origin-trial" content="**mytoken**"&gt;</pre></code>
+</li>
+</ul>
+
+
 
 ##==##
 
-Retour sur Fugu
+<!-- .slide: class="transition transition-center no-filter" data-background="./assets/images/great-wave-color-small.png"-->
+
+# Back to fugu
+
+<svg class="fh-500 fw-600 center">
+    <use xlink:href="#fugu" />
+</svg>
+
 
 ##==##
 
-Qu'est ce qui est présent
+
+<!-- .slide: class="transition" data-background="./assets/images/richard-iwaki-RM_z7uXAes0-unsplash.jpg" -->
+
+# What's available
+<!-- .element: class="top" -->
+
+Badging API / Contact Picker / Get Installed Related Apps / Native File System API / Shape Detection API / Wake Lock API / Content Indexing API / Periodic Background Sync API / SMS Receiver API / Web NFC / Web Share Target / Web Share / Async Clipboard API
+<!-- .element: class="text-white features-spacing" -->
 
 ##==##
 
-Slide sur la compat (en gros y a que chrome / edge)
+<!-- .slide: class="no-filter standard" data-background="./assets/images/great-wave-color-small.png"-->
+
+# ⚠️ Disclaimer ⚠️
+
+<br>
+
+<div class="flex-hori">
+    <img src="./assets/images/1024px-Google_Chrome_icon_(September_2014).svg.webp" width="200px">
+    <img src="./assets/images/1200px-Microsoft_Edge_logo_(2019).svg.png" width="200px">
+    <img src="./assets/images/1200px-Safari_browser_logo.svg.png" width="200px">
+    <img src="./assets/images/Brave-logo.png" width="200px">
+    <img src="./assets/images/Firefox_Logo,_2017.png" width="200px">
+</div>
+<br><br>
+
+👩‍🔬 Not ready for production 🔧
 
 ##==##
+
+<!-- .slide: class="transition text-white" data-background="./assets/images/dayo-adepoju-SjVxkkgTnTc-unsplash.jpg" -->
+
+# Are you ready?
+
+##==##
+
+<!-- .slide: class="no-filter standard" data-background="./assets/images/great-wave-color-small.png"-->
 
 File API
 
 ##==##
 
+<!-- .slide: class="no-filter standard" data-background="./assets/images/great-wave-color-small.png"-->
+
 Demo avec édition d'un fichier depuis les slides (un fichier text basique)
 
 ##==##
+
+<!-- .slide: class="no-filter standard" data-background="./assets/images/great-wave-color-small.png"-->
 
 Contact
 
 ##==##
 
+<!-- .slide: class="no-filter standard" data-background="./assets/images/great-wave-color-small.png"-->
+
 NFC ?
 
 ##==##
 
+<!-- .slide: class="no-filter standard" data-background="./assets/images/great-wave-color-small.png"-->
+
 Serial avec arduino
 
 ##==##
+<!-- .slide: class="no-filter standard" data-background="./assets/images/great-wave-color-small.png"-->
+
 
 Demo serial
 
 ##==##
 
+<!-- .slide: class="no-filter standard" data-background="./assets/images/great-wave-color-small.png"-->
+
 Sensor
 
 ##==## 
 
+<!-- .slide: class="no-filter standard" data-background="./assets/images/great-wave-color-small.png"-->
+
 Démo ambiant light
 
 ##==##
+<!-- .slide: class="no-filter standard" data-background="./assets/images/great-wave-color-small.png"-->
+
 
 Shape Detection
 
 ##==##
 
+<!-- .slide: class="no-filter standard" data-background="./assets/images/great-wave-color-small.png"-->
+
 SMS receiver
 
 ##==##
 
+<!-- .slide: class="no-filter standard" data-background="./assets/images/great-wave-color-small.png"-->
+
 Share Target
 
 ##==##
+
+<!-- .slide: class="no-filter standard" data-background="./assets/images/great-wave-color-small.png"-->
 
 Demo Share Target avec twitter pendant la conf
 
 (prévoir un écran twitter ouvert pour afficher le tweet après)
 
 ##==##
+
+<!-- .slide: class="no-filter standard" data-background="./assets/images/great-wave-color-small.png"-->
 
 Grouper
 
@@ -298,13 +384,19 @@ Media Keys
 
 ##==##
 
+<!-- .slide: class="no-filter standard" data-background="./assets/images/great-wave-color-small.png"-->
+
 Et ensuite ?
 
 ##==##
 
+<!-- .slide: class="no-filter standard" data-background="./assets/images/great-wave-color-small.png"-->
+
 Suivre l'avancement : https://goo.gle/fugu-api-tracker
 
 ##==##
+
+<!-- .slide: class="no-filter standard" data-background="./assets/images/great-wave-color-small.png"-->
 
 Liste des capabilities : 
 https://goo.gle/capabilities
@@ -312,7 +404,7 @@ https://goo.gle/capabilities
 
 ##==##
 
-<!-- .slide: class="who-am-i " -->
+<!-- .slide: class="who-am-i "  data-background="./assets/images/great-wave-color-small.png"  -->
 
 ## Merci
 
