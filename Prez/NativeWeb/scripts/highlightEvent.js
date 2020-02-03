@@ -10,71 +10,95 @@ const COL_WIDTH = 35;
 
 export class HighlightEvents {
     constructor() {
-        //  My var space explanation
+        //  Read File space explanation
         new HighlightCodeHelper({
-            keyElt: 'myvar',
+            keyElt: 'read-file',
             // We start with the first fragment (the initial position is fixed by css)
             positionArray: [{
-                line: 1,
-                height: '200px',
+                top: '110px',
+                height: '150px',
                 leftMargin: '50px',
                 width: '100%'
             }, {
-                top: '270px',
-                height: '300px',
+                top: '250px',
+                height: '80px',
+                leftMargin: '50px',
+                width: '100%'
+            }, {
+                top: '320px',
+                height: '80px',
+                leftMargin: '50px',
+                width: '100%'
+            }, {
+                top: '0px',
+                height: '400px',
                 leftMargin: '50px',
                 width: '100%'
             }]
         });
         
-        //  limit url concat
+       
+        //  Create File space explanation
         new HighlightCodeHelper({
-            keyElt: 'url',
+            keyElt: 'create-file',
             // We start with the first fragment (the initial position is fixed by css)
             positionArray: [{
                 top: '0px',
-                height: '180px',
+                height: '120px',
                 leftMargin: '50px',
                 width: '100%'
             }, {
-                top: '0',
-                height: '250px',
+                top: '110px',
+                height: '80px',
                 leftMargin: '50px',
                 width: '100%'
             }, {
-                top: '0',
-                height: '450px',
+                top: '170px',
+                height: '290px',
+                leftMargin: '50px',
+                width: '100%'
+            }, {
+                top: '500px',
+                height: '150px',
+                leftMargin: '50px',
+                width: '100%'
+            }, {
+                top: '0px',
+                height: '700px',
                 leftMargin: '50px',
                 width: '100%'
             }]
         });
         
-        //  limit Houdini
+       
+        //  Write File space explanation
         new HighlightCodeHelper({
-            keyElt: 'houdini',
+            keyElt: 'write-file',
             // We start with the first fragment (the initial position is fixed by css)
             positionArray: [{
                 top: '0px',
-                height: '280px',
+                height: '190px',
                 leftMargin: '50px',
                 width: '100%'
             }, {
-                top: '280px',
-                height: '50px',
+                top: '180px',
+                height: '120px',
                 leftMargin: '50px',
                 width: '100%'
             }, {
-                top: '330px',
-                height: '50px',
+                top: '300px',
+                height: '120px',
                 leftMargin: '50px',
                 width: '100%'
             }, {
-                top: '380px',
-                height: '350px',
+                top: '0',
+                height: '500px',
                 leftMargin: '50px',
                 width: '100%'
             }]
         });
+        
+       
 
     }
 }

@@ -13,8 +13,8 @@ import { Demos } from './demos.js';
 
         const inIframe = window.top != window.self;
 
-        new HighlightEvents()
         if (!inIframe) {
+            new HighlightEvents()
             new Demos();
         }
 

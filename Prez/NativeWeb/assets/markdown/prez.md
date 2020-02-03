@@ -300,15 +300,155 @@ Badging API / Contact Picker / Get Installed Related Apps / Native File System A
 
 ##==##
 
-<!-- .slide: class="no-filter standard" data-background="./assets/images/great-wave-color-small.png"-->
+<!-- .slide: class="transition text-white" data-background="./assets/images/black-and-green-hard-disc-drive-3531902.jpg" data-state="stop-code-read-file"-->
 
-File API
+# File API
 
 ##==##
 
-<!-- .slide: class="no-filter standard" data-background="./assets/images/great-wave-color-small.png"-->
+<!-- .slide: class="with-code no-filter standard" data-background="./assets/images/great-wave-color-small.png" data-state="code-read-file stop-code-create-file" data-type-show="prez" -->
 
-Demo avec édition d'un fichier depuis les slides (un fichier text basique)
+## Read File
+
+<br>
+<br>
+
+```javascript
+const fileHandle = 
+    await window.chooseFileSystemEntries();
+const file = await fileHandle.getFile();
+const contents = await file.text();
+```
+
+
+<mask-highlighter id="highlight-read-file"></mask-highlighter>
+
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+<div class="fragment" data-fragment-index="4" hidden></div>
+
+##==##
+
+<!-- .slide: class="with-code no-filter standard" data-background="./assets/images/great-wave-color-small.png" data-type-show="full" -->
+
+## Read File
+
+<br>
+<br>
+
+```javascript
+const fileHandle = 
+    await window.chooseFileSystemEntries();
+const file = await fileHandle.getFile();
+const contents = await file.text();
+```
+
+##==##
+
+<!-- .slide: class="with-code no-filter standard" data-background="./assets/images/great-wave-color-small.png" data-state="stop-code-read-file code-create-file stop-code-write-file" data-type-show="prez" -->
+
+## Create new File
+
+```javascript
+const opts = {
+    type: 'saveFile',
+    accepts: [{
+        description: 'Text file',
+        extensions: ['txt'],
+        mimeTypes: ['text/plain'],
+    }],
+};
+const handle =
+    await window.chooseFileSystemEntries(opts);
+```
+
+
+<mask-highlighter id="highlight-create-file"></mask-highlighter>
+
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+<div class="fragment" data-fragment-index="4" hidden></div>
+<div class="fragment" data-fragment-index="5" hidden></div>
+
+
+##==##
+
+<!-- .slide: class="with-code no-filter standard" data-background="./assets/images/great-wave-color-small.png" data-type-show="full" -->
+
+## Create new File
+
+```javascript
+const opts = {
+    type: 'saveFile',
+    accepts: [{
+        description: 'Text file',
+        extensions: ['txt'],
+        mimeTypes: ['text/plain'],
+    }],
+};
+const handle =
+    await window.chooseFileSystemEntries(opts);
+```
+
+##==##
+
+<!-- .slide: class="with-code no-filter standard" data-background="./assets/images/great-wave-color-small.png" data-state="stop-code-create-file code-write-file" data-type-show="prez" -->
+
+## Write File
+
+```javascript
+// Create a writer (request permission if necessary).
+const writer = await fileHandle.createWriter();
+// Write the full length of the contents
+await writer.write(0, contents);
+// Close the file and write the contents to disk
+await writer.close();
+```
+
+
+<mask-highlighter id="highlight-write-file"></mask-highlighter>
+
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+<div class="fragment" data-fragment-index="4" hidden></div>
+
+##==##
+
+<!-- .slide: class="with-code no-filter standard" data-background="./assets/images/great-wave-color-small.png" data-type-show="full" -->
+
+## Write File
+
+```javascript
+// Create a writer (request permission if necessary).
+const writer = await fileHandle.createWriter();
+// Write the full length of the contents
+await writer.write(0, contents);
+// Close the file and write the contents to disk
+await writer.close();
+```
+
+
+##==##
+
+<!-- .slide: class="no-filter standard" data-background="./assets/images/great-wave-color-small.png" data-state="stop-code-write-file"-->
+
+# Demo File Api
+
+<div id="demo-file" class="flex-hori">
+    <div id="file-picker">
+        <button id="file-chooser">Choose a file to edit</button>
+        <button id="file-save">Save the file</button>
+    </div>
+    <div id="render-element">
+        <textarea id="edit-file"></textarea>
+    </div>
+</div>
 
 ##==##
 

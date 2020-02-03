@@ -109,3 +109,47 @@ body>div{
         text-shadow: none;
     }    
 }
+
+
+/**
+* CSS VARIABLES : CSS
+*/
+
+#demo-file {
+    width: 100;
+    height: 600px;
+    --bg-demo-var: #EFE0B9;
+}
+
+#file-picker {
+    width: 100%;
+    height: 100%;
+    flex: 1;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    button{
+        margin: 5px;
+        font-size: 1em;
+    }
+}
+
+#render-element {
+    width: 70%;
+    height: 100%;
+    align-self: center;
+    flex: 1;
+    background: var(--bg-demo-var);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 15px;
+    textarea{
+        font-size: 1em;
+        width: 100%;
+        height: 100%;
+    }
+}

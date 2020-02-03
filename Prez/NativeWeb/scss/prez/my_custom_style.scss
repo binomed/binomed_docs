@@ -433,6 +433,12 @@ span.webspecs {
     line-height: 4.1rem;
 }
 
+.reveal .backgrounds div.slide-background.with-code.standard{
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .reveal .CodeMirror {}
 
 .reveal .CodeMirror-scroll {
@@ -458,7 +464,8 @@ mask-highlighter {
     left: 0;
     width: 100%;
     height: 100%;
-    --mask-highlighter-bg-color: rgba(221, 221, 221, 0.9);
+    //--mask-highlighter-bg-color: rgba(221, 221, 221, 0.9);
+    --mask-highlighter-bg-color: rgba(250, 250, 250, 0.9);
 }
 
 .reveal .slides section.present mask-highlighter {
