@@ -99,6 +99,34 @@ export class HighlightEvents {
         });
         
        
+        //  Contact Picker File explanation
+        new HighlightCodeHelper({
+            keyElt: 'contact',
+            // We start with the first fragment (the initial position is fixed by css)
+            positionArray: [{
+                top: '0px',
+                height: '190px',
+                leftMargin: '50px',
+                width: '100%'
+            }, {
+                top: '180px',
+                height: '90px',
+                leftMargin: '50px',
+                width: '100%'
+            }, {
+                top: '350px',
+                height: '110px',
+                leftMargin: '50px',
+                width: '100%'
+            }, {
+                top: '0',
+                height: '600px',
+                leftMargin: '50px',
+                width: '100%'
+            }]
+        });
+        
+       
 
     }
 }

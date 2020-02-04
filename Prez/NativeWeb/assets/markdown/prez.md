@@ -452,9 +452,81 @@ await writer.close();
 
 ##==##
 
-<!-- .slide: class="no-filter standard" data-background="./assets/images/great-wave-color-small.png"-->
+<!-- .slide: class="transition text-white" data-background="./assets/images/pavan-trikutam-71CjSSB83Wo-unsplash.jpg" data-state="stop-code-contact" -->
 
-Contact
+# Contact Picker API
+
+
+##==##
+
+<!-- .slide: class="with-code no-filter standard" data-background="./assets/images/great-wave-color-small.png" data-state="code-contact" data-type-show="prez" -->
+
+## Pick a contact File
+
+```javascript
+const props = ['name', 'email',
+        'tel', 'address', 'icon'];
+const opts = {multiple: true};
+
+try {
+  const contacts = 
+    await navigator.contacts.select(props, opts);
+} catch (ex) {
+}
+```
+
+
+
+<mask-highlighter id="highlight-contact"></mask-highlighter>
+
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+<div class="fragment" data-fragment-index="4" hidden></div>
+
+
+
+##==##
+
+<!-- .slide: class="with-code no-filter standard" data-background="./assets/images/great-wave-color-small.png" data-type-show="full" -->
+
+## Pick a contact File
+
+```javascript
+const props = ['name', 'email',
+        'tel', 'address', 'icon'];
+const opts = {multiple: true};
+
+try {
+  const contacts = 
+    await navigator.contacts.select(props, opts);
+} catch (ex) {
+}
+```
+
+##==##
+
+<!-- .slide: class="no-filter standard" data-background="./assets/images/great-wave-color-small.png" data-state="stop-code-contact" data-type-show="prez"-->
+
+# Demo Contact Picker Api
+
+<div id="demo-contact">
+    <img id="contact-icon">
+    <div id="div-name">
+        <label>Name:</label><span id="contact-name"></span>
+    </div>
+    <div id="div-tel">
+        <label>Tel:</label><span id="contact-tel"></span>
+    </div>
+    <div id="div-email">
+        <label>Email:</label><span id="contact-email"></span>
+    </div>
+    <div id="div-address">
+        <label>Address:</label><span id="contact-address"></span>
+    </div>
+</div>
+
 
 ##==##
 

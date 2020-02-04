@@ -1,14 +1,14 @@
 export class Demos{
     constructor(){
-        this.socketInit();
+        this.socket = this.socketInit();
         this._fileDemo();
+        this._contactDemo();
     }
 
     socketInit(){
         try{
-            const socket = io('http://localhost:9999');
+            return io('http://localhost:9999');
     
-            socket.emit('chat message', {test:'test'});
         }catch(e){
             console.warn(e);
         }
@@ -56,6 +56,32 @@ export class Demos{
         }catch(e){
             console.warn(e);
         }
+    }
+
+    async _contactDemo(){
+        const contactIcon = document.getElementById('contact-icon');
+        const contactName = document.getElementById('contact-name');
+        const contactTel = document.getElementById('contact-tel');
+        const contactEmail = document.getElementById('contact-email');
+        const contactAddress = document.getElementById('contact-address');
+        this.socket.on('contacts', (contact)=>{
+            if (contact.icon){
+                contactIcon.src = contact.icon;
+            }
+            if(contact.name){
+                contactName.innerHTML = contact.name;
+            }
+            if(contact.tel && contact.tel.length > 0){
+                contactTel.innerHTML = contact.tel[0].substr(0,3)+'** ** ** **';
+            }
+            if (contact.email && contact.email.length > 0){
+                contactEmail.innerHTML = contact.email[0].substr(0, 4)+'****@gmail.com';
+            }
+            if (contact.address && contact.address.length > 0){
+                contactAddress.innerHTML = contact.address[0].city;
+            }
+            console.log(contacts);
+        });
     }
 
 }

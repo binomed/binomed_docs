@@ -1,3 +1,5 @@
+@import "colors";
+
 :root{
     --neon-text-color: #b71c1c;
     --neon-border-color: #08f;
@@ -151,5 +153,56 @@ body>div{
         font-size: 1em;
         width: 100%;
         height: 100%;
+    }
+}
+
+
+/**
+* Contact Demo
+*/
+
+#demo-contact{
+    display: grid;
+    width: 800px;
+    height: 400px;
+    grid-template-columns: 250px 450px;
+    grid-template-rows: auto;
+    align-items: center;
+    margin: auto;
+    grid-gap: 15px;
+    padding: 15px;
+    box-shadow: 4px 4px 3px 1px #807b7b;
+    border-radius: 15px;
+    border: thin solid $black;
+    grid-template-areas: 
+        "icon name"
+        "icon tel"
+        "icon email"
+        "icon address"
+        ;
+
+    div{
+        justify-self: start;
+    }
+
+    #contact-icon{
+        grid-area: icon;
+        width: 200px;
+        box-shadow: 4px 4px 6px 2px black;
+    }
+    
+    
+    }
+    #div-name{
+        grid-area: name;
+    }
+    #div-tel{
+        grid-area: tel;
+    }
+    #div-address{
+        grid-area: address;
+    }
+    #div-email{
+        grid-area: email;
     }
 }
