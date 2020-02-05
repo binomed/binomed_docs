@@ -21,9 +21,11 @@ io.on('connection', (socket) => {
       });
 
     socket.on('contacts', (contacts)=>{
-      console.log('contacts');
-      console.log(contacts);
       socket.broadcast.emit('contacts', contacts);
+    })
+    socket.on('nfc', (ndef)=>{
+      console.log(ndef)
+      socket.broadcast.emit('nfc', ndef);
     })
   });
 

@@ -127,6 +127,62 @@ export class HighlightEvents {
         });
         
        
+        //  NFC Read Tag
+        new HighlightCodeHelper({
+            keyElt: 'read-tag',
+            // We start with the first fragment (the initial position is fixed by css)
+            positionArray: [{
+                top: '0px',
+                height: '190px',
+                leftMargin: '50px',
+                width: '100%'
+            }, {
+                top: '180px',
+                height: '60px',
+                leftMargin: '50px',
+                width: '100%'
+            }, {
+                top: '220px',
+                height: '150px',
+                leftMargin: '50px',
+                width: '100%'
+            }, {
+                top: '0',
+                height: '600px',
+                leftMargin: '50px',
+                width: '100%'
+            }]
+        });
+        
+       
+        //  NFC Write Tag
+        new HighlightCodeHelper({
+            keyElt: 'write-tag',
+            // We start with the first fragment (the initial position is fixed by css)
+            positionArray: [{
+                top: '0px',
+                height: '110px',
+                leftMargin: '50px',
+                width: '100%'
+            }, {
+                top: '110px',
+                height: '170px',
+                leftMargin: '50px',
+                width: '100%'
+            }, {
+                top: '330px',
+                height: '150px',
+                leftMargin: '50px',
+                width: '100%'
+            }, {
+                top: '0',
+                height: '600px',
+                leftMargin: '50px',
+                width: '100%'
+            }]
+        });
+        
+       
 
     }
 }

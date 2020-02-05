@@ -191,8 +191,6 @@ body>div{
         box-shadow: 4px 4px 6px 2px black;
     }
     
-    
-    }
     #div-name{
         grid-area: name;
     }
@@ -205,4 +203,40 @@ body>div{
     #div-email{
         grid-area: email;
     }
+}
+
+/**
+* NFC Demo
+*/
+
+#demo-nfc{
+    display: grid;
+    width: 800px;
+    height: 400px;
+    grid-template-columns: 800px;
+    grid-template-rows: auto;
+    align-items: center;
+    margin: auto;
+    grid-gap: 15px;
+    padding: 15px;
+    box-shadow: 4px 4px 3px 1px #807b7b;
+    border-radius: 15px;
+    border: thin solid $black;
+    grid-template-areas: 
+        "type"
+        "data"
+        ;
+
+    div{
+        justify-self: start;
+    }
+
+    
+    #div-type-nfc{
+        grid-area: type;
+    }
+    #div-data-nfc{
+        grid-area: data;
+    }
+    
 }

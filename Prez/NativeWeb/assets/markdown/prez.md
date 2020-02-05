@@ -452,6 +452,12 @@ await writer.close();
 
 ##==##
 
+<!-- .slide: class="transition text-white" data-background="./assets/images/store-facade-2816904.jpg"  -->
+
+# In the real world
+
+##==##
+
 <!-- .slide: class="transition text-white" data-background="./assets/images/pavan-trikutam-71CjSSB83Wo-unsplash.jpg" data-state="stop-code-contact" -->
 
 # Contact Picker API
@@ -530,9 +536,95 @@ try {
 
 ##==##
 
-<!-- .slide: class="no-filter standard" data-background="./assets/images/great-wave-color-small.png"-->
+<!-- .slide: class="transition text-white" data-background="./assets/images/store-facade-2816904.jpg"  -->
 
-NFC ?
+# In the real world
+
+
+##==##
+
+<!-- .slide: class="transition text-white" data-background="./assets/images/jonas-leupe-0IVop5v4MMU-unsplash.jpg" data-state="stop-code-read-tag" -->
+
+# NFC
+
+##==##
+
+<!-- .slide: class="with-code no-filter standard" data-background="./assets/images/great-wave-color-small.png" data-state="code-read-tag stop-code-write-tag" data-type-show="prez" -->
+
+## Read a Tag
+
+```javascript
+const reader = new NDEFReader();
+await reader.scan();
+reader.onreading = event => {
+    //NDEF Message
+  const message = event.message; 
+}
+```
+
+
+
+<mask-highlighter id="highlight-read-tag"></mask-highlighter>
+
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+<div class="fragment" data-fragment-index="4" hidden></div>
+
+
+##==##
+
+<!-- .slide: class="with-code no-filter standard" data-background="./assets/images/great-wave-color-small.png" data-state="code-write-tag stop-code-read-tag" data-type-show="prez" -->
+
+## Write a Tag
+
+```javascript
+const writer = new NDEFWriter();
+writer.write({
+  records: [{ recordType: "url", 
+    data: "https://w3c.github.io/web-nfc/" }]
+}).then(() => {
+  console.log("Message written.");
+})
+```
+
+
+
+<mask-highlighter id="highlight-write-tag"></mask-highlighter>
+
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+<div class="fragment" data-fragment-index="4" hidden></div>
+
+
+##==##
+
+<!-- .slide: class="no-filter standard" data-background="./assets/images/great-wave-color-small.png" data-state="stop-code-write-tag" data-type-show="prez"-->
+
+# Demo NFC Api
+
+<div id="demo-nfc">
+    <div id="div-type-nfc">
+        <label>Type:</label><span id="nfc-type"></span>
+    </div>
+    <div id="div-data-nfc">
+        <label>Data:</label><span id="nfc-data"></span>
+    </div>
+</div>
+
+
+
+
+##==##
+
+<!-- .slide: class="transition text-white" data-background="./assets/images/store-facade-2816904.jpg"  -->
+
+# In the real world
+
+
 
 ##==##
 

@@ -3,6 +3,7 @@ export class Demos{
         this.socket = this.socketInit();
         this._fileDemo();
         this._contactDemo();
+        this._nfcDemo();
     }
 
     socketInit(){
@@ -82,6 +83,26 @@ export class Demos{
             }
             console.log(contacts);
         });
+    }
+
+    async _nfcDemo(){
+        const nfcType = document.getElementById('nfc-type');
+        const nfcData = document.getElementById('nfc-data');
+        this.socket.on('nfc', (message) => {
+            for (const record of message.records) {
+                nfcType.innerHTML = record.recordType;
+                switch (record.recordType) {
+                case "text":
+                    nfcData.innerHTML = `${record.data} (${record.lang})`;
+                    break;
+                case "url":
+                    nfcData.innerHTML = `${record.data}`;
+                    break;
+                default:
+                    nfcData.innerHTML = 'Not implemented'
+                }
+            }
+        })
     }
 
 }
