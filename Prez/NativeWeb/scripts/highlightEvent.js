@@ -183,6 +183,39 @@ export class HighlightEvents {
         });
         
        
+        //  Serial
+        new HighlightCodeHelper({
+            keyElt: 'serial',
+            // We start with the first fragment (the initial position is fixed by css)
+            positionArray: [{
+                top: '0px',
+                height: '180px',
+                leftMargin: '50px',
+                width: '100%'
+            }, {
+                top: '170px',
+                height: '120px',
+                leftMargin: '50px',
+                width: '100%'
+            }, {
+                top: '290px',
+                height: '70px',
+                leftMargin: '50px',
+                width: '100%'
+            }, {
+                top: '340px',
+                height: '400px',
+                leftMargin: '50px',
+                width: '100%'
+            }, {
+                top: '0',
+                height: '700px',
+                leftMargin: '50px',
+                width: '100%'
+            }]
+        });
+        
+       
 
     }
 }

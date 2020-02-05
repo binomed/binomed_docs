@@ -4,6 +4,7 @@ export class Demos{
         this._fileDemo();
         this._contactDemo();
         this._nfcDemo();
+        this._demoSerial();
     }
 
     socketInit(){
@@ -103,6 +104,65 @@ export class Demos{
                 }
             }
         })
+    }
+
+    async _demoSerial(){
+        const connectButton = document.getElementById ('connect-button');
+        let port;
+        let lineBuffer = '';
+        let stopSerial = true;
+        let latestValue = 0;
+
+        if ('serial' in navigator) {
+            connectButton.addEventListener('click',  async () => {
+                stopSerial = false;
+                renderDemo()
+                port = await navigator.serial.requestPort({});
+                await port.open({ baudrate: 9600 });
+        
+                const appendStream = new WritableStream({
+                  write(chunk) {
+                    lineBuffer += chunk;
+        
+                    let lines = lineBuffer.split('\n');
+        
+                    if (lines.length > 1) {
+                      lineBuffer = lines.pop();
+                      latestValue = parseInt(lines.pop().trim());
+                    }
+                  }
+                });
+        
+                port.readable
+                  .pipeThrough(new TextDecoderStream())
+                  .pipeTo(appendStream,{preventClose:true, preventCancel:true});
+
+                function unsubscribeSerial(){
+                    port.close();
+                    port = undefined;
+                    stopSerial = true;
+                    Reveal.removeEventListener('slidechanged', unsubscribeSerial);
+                }
+
+                Reveal.addEventListener('slidechanged', unsubscribeSerial)
+            });
+
+            connectButton.disabled = false;
+        }
+
+        function renderDemo() {
+            const rabbit = document.querySelector('.panda');
+            const percentage = Math.floor(latestValue / 1023 * 100);
+            //const percentageStatus = document.querySelector('figcaption span');
+    
+            rabbit.style.left = 'calc(' + percentage + '% - 2em)';
+            //percentageStatus.innerText = percentage;
+    
+            if (!stopSerial){
+                window.requestAnimationFrame(renderDemo);
+            }
+        }
+
     }
 
 }

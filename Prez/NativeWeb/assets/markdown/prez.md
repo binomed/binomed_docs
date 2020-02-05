@@ -452,7 +452,7 @@ await writer.close();
 
 ##==##
 
-<!-- .slide: class="transition text-white" data-background="./assets/images/store-facade-2816904.jpg"  -->
+<!-- .slide: class="transition text-white" data-background="./assets/images/store-facade-2816904.jpg"  data-type-show="prez"  -->
 
 # In the real world
 
@@ -536,7 +536,7 @@ try {
 
 ##==##
 
-<!-- .slide: class="transition text-white" data-background="./assets/images/store-facade-2816904.jpg"  -->
+<!-- .slide: class="transition text-white" data-background="./assets/images/store-facade-2816904.jpg"  data-type-show="prez" -->
 
 # In the real world
 
@@ -620,7 +620,7 @@ writer.write({
 
 ##==##
 
-<!-- .slide: class="transition text-white" data-background="./assets/images/store-facade-2816904.jpg"  -->
+<!-- .slide: class="transition text-white" data-background="./assets/images/store-facade-2816904.jpg"  data-type-show="prez"  -->
 
 # In the real world
 
@@ -628,15 +628,84 @@ writer.write({
 
 ##==##
 
-<!-- .slide: class="no-filter standard" data-background="./assets/images/great-wave-color-small.png"-->
+<!-- .slide: class="transition text-white" data-background="./assets/images/robin-glauser-zP7X_B86xOg-unsplash.jpg" data-state="stop-code-serial" -->
 
-Serial avec arduino
+# Serial API
+
 
 ##==##
-<!-- .slide: class="no-filter standard" data-background="./assets/images/great-wave-color-small.png"-->
+
+<!-- .slide: class="with-code no-filter standard" data-background="./assets/images/great-wave-color-small.png" data-state="code-serial" data-type-show="prez" -->
+
+## Serial 
+
+```javascript
+const port = 
+    await navigator.serial.requestPort({});
+// Open and begin reading.
+await port.open({ baudrate: 9600 });
+const reader = port.in.getReader();
+// Read
+for await (const { done, data } of reader.read()) {
+  if (done) break;
+  console.log(data);
+}
+```
+
+<mask-highlighter id="highlight-serial"></mask-highlighter>
 
 
-Demo serial
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+<div class="fragment" data-fragment-index="4" hidden></div>
+<div class="fragment" data-fragment-index="5" hidden></div>
+
+Notes:
+On peut choisir son port
+
+
+##==##
+
+<!-- .slide: class="with-code no-filter standard" data-background="./assets/images/great-wave-color-small.png" data-type-show="full" -->
+
+## Serial 
+
+```javascript
+const port = 
+    await navigator.serial.requestPort({});
+// Open and begin reading.
+await port.open({ baudrate: 9600 });
+const reader = port.in.getReader();
+// Read
+for await (const { done, data } of reader.read()) {
+  if (done) break;
+  console.log(data);
+}
+```
+
+##==##
+
+<!-- .slide: class="no-filter standard" data-background="./assets/images/great-wave-color-small.png" data-state="stop-code-serial" data-type-show="prez"-->
+
+# Demo Serial Api
+
+<div id="demo-serial">
+    <button id="connect-button">🔌 Connect</button>
+    <figure>
+        <div class="demo bubble"><span class="panda tile">🐼</span><span class="temple tile">⛩</span></div>
+    </figure>
+</div>
+
+<br>
+code from [svendahlstrand/web-serial-api](https://github.com/svendahlstrand/web-serial-api)
+
+
+##==##
+
+<!-- .slide: class="transition text-white" data-background="./assets/images/store-facade-2816904.jpg" data-type-show="prez"  -->
+
+# In the real world
 
 ##==##
 
@@ -705,6 +774,11 @@ Suivre l'avancement : https://goo.gle/fugu-api-tracker
 Liste des capabilities : 
 https://goo.gle/capabilities
 
+##==##
+
+<!-- .slide: class="no-filter standard" data-background="./assets/images/great-wave-color-small.png"-->
+
+Liens et ressources
 
 ##==##
 

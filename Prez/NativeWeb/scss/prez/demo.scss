@@ -240,3 +240,74 @@ body>div{
     }
     
 }
+
+/**
+* Serial Demo
+*/
+
+#demo-serial{
+    display: grid;
+    width: 900px;
+    height: 400px;
+    grid-template-columns: 300px 600px;
+    grid-template-rows: auto;
+    align-items: center;
+    margin: auto;
+    grid-gap: 15px;
+    padding: 15px;
+    box-shadow: 4px 4px 3px 1px #807b7b;
+    border-radius: 15px;
+    border: thin solid $black;
+    grid-template-areas: 
+        "button demo"
+        ;
+
+    button, figure{
+        justify-self: start;
+    }
+
+    
+    button{
+        grid-area: button;
+    }
+    figure{
+        grid-area: demo;
+    }
+
+    .demo {
+        background: #2c2b2f;
+        border-radius: 3em;
+        padding: 0.5em 1em;
+        overflow: auto;
+        position: relative;
+        width: 100%;
+    }
+    
+    
+    button {
+        font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+        font-size: 1em;
+        border-radius: 1em;
+        border-width: 2px;
+        padding: 0.5em 1em;
+        border-color: #2c2b2f;
+        outline: none;
+    }
+    
+    figure {
+        width: 500px;
+    }
+    
+    .tile {
+        font-size: 2em;
+    }
+    
+    .panda {
+        position: absolute;
+    }
+    
+    .temple {
+        float: right;
+    }
+    
+}
