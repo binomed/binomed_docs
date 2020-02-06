@@ -24,8 +24,10 @@ io.on('connection', (socket) => {
       socket.broadcast.emit('contacts', contacts);
     })
     socket.on('nfc', (ndef)=>{
-      console.log(ndef)
       socket.broadcast.emit('nfc', ndef);
+    })
+    socket.on('light', (light)=>{
+      socket.broadcast.emit('light', light);
     })
   });
 

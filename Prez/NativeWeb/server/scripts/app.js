@@ -128,6 +128,17 @@ function blobToBase64(blob){
         });
     }
 
+    async function ambiantLight(){
+        if ('AmbientLightSensor' in window) {
+            const sensor = new AmbientLightSensor({frequency: 9});
+            sensor.addEventListener('acticate', ()=> console.log('Activate and measuring'))
+            sensor.onreading = () => {
+                socket.emit('light', {illuminance : sensor.illuminance});
+            }
+            sensor.start();
+        }
+    }
+
 
     /**
      * Call all Apis
@@ -139,5 +150,7 @@ function blobToBase64(blob){
     document.getElementById('readTag').addEventListener('click', readTag)
     document.getElementById('writeTagUrl').addEventListener('click', () => writeTag('url'))
     document.getElementById('writeTagText').addEventListener('click', () => writeTag('text'))
+    // Ambiant Light
+    document.getElementById('readLight').addEventListener('click', ambiantLight)
 
 })()

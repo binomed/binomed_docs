@@ -216,6 +216,62 @@ export class HighlightEvents {
         });
         
        
+        //  Sensors interface
+        new HighlightCodeHelper({
+            keyElt: 'sensors-interface',
+            // We start with the first fragment (the initial position is fixed by css)
+            positionArray: [{
+                top: '0px',
+                height: '230px',
+                leftMargin: '50px',
+                width: '100%'
+            }, {
+                top: '220px',
+                height: '120px',
+                leftMargin: '50px',
+                width: '100%'
+            }, {
+                top: '340px',
+                height: '3000px',
+                leftMargin: '50px',
+                width: '100%'
+            }, {
+                top: '0',
+                height: '700px',
+                leftMargin: '50px',
+                width: '100%'
+            }]
+        });
+        
+       
+        //  Sensors Light
+        new HighlightCodeHelper({
+            keyElt: 'sensors-light',
+            // We start with the first fragment (the initial position is fixed by css)
+            positionArray: [{
+                top: '0px',
+                height: '120px',
+                leftMargin: '50px',
+                width: '100%'
+            }, {
+                top: '110px',
+                height: '70px',
+                leftMargin: '50px',
+                width: '100%'
+            }, {
+                top: '190px',
+                height: '150px',
+                leftMargin: '50px',
+                width: '100%'
+            }, {
+                top: '0',
+                height: '700px',
+                leftMargin: '50px',
+                width: '100%'
+            }]
+        });
+        
+       
 
     }
 }

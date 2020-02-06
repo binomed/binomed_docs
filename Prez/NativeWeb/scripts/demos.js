@@ -5,6 +5,7 @@ export class Demos{
         this._contactDemo();
         this._nfcDemo();
         this._demoSerial();
+        this._demoLight();
     }
 
     socketInit(){
@@ -163,6 +164,17 @@ export class Demos{
             }
         }
 
+    }
+
+    async _demoLight(){
+        const boo = document.getElementById('boo');
+        this.socket.on('light', (message) => {
+            if (message.illuminance === 0){
+                boo.classList.remove('hide')
+            }else{
+                boo.classList.add('hide')
+            }
+        });
     }
 
 }
