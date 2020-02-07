@@ -6,6 +6,7 @@ export class Demos{
         this._nfcDemo();
         this._demoSerial();
         this._demoLight();
+        this._demoMustache();
     }
 
     socketInit(){
@@ -175,6 +176,144 @@ export class Demos{
                 boo.classList.add('hide')
             }
         });
+    }
+
+    async _demoMustache(){
+
+        if (!('FaceDetector' in window)) {
+            FaceDetector = function() {
+              console.log('Fake Face Detector used...');
+              return {
+                detect: async function() { return [] }
+              }
+            }
+          }
+        const faceDetector = new FaceDetector({ fastMode: true, maxDetectedFaces: 1 }); // Fast Detection
+        let faces = []; // First initialisation to be sure to not have a NPE
+
+        let isDetectingFaces = false;
+
+        // this.easterEgg = false; Not use
+        let context = undefined;
+        let ratio = 0;
+        let stopDraw = false;
+
+        Reveal.addEventListener('start-mustache', async ()=>{
+
+            async function getUserMedia() {
+                // Grab camera stream.
+                const constraints = {
+                    video: {
+                    facingMode: 'user', // To be sure to use the front camera for smartphones !
+                    frameRate: 60, // To be sure to have a high rate of images
+                    }
+                };
+        
+                video.srcObject = await navigator.mediaDevices.getUserMedia(constraints);
+                // We starts the video
+                await video.play();
+        
+                // The canvas take the size of the screen
+                const demoDiv = document.getElementById('demo-mustache');
+                canvas.height = demoDiv.getBoundingClientRect().height;
+                canvas.width = demoDiv.getBoundingClientRect().width;
+                // HACK: Face Detector doesn't accept canvas whose width is odd.
+                if (canvas.width % 2 == 1) {
+                    canvas.width += 1;
+                }
+        
+                context = canvas.getContext('2d');
+                // Ratio use to determine the rendering of video in canvas
+                // We take the max ratio and apply it to canvas after
+                // Width could be diferent from camera and screen !
+                ratio = Math.max(canvas.width / video.videoWidth, canvas.height / video.videoHeight);
+        
+                console.log('Ratio Width', canvas.width, video.videoWidth, canvas.width / video.videoWidth);
+                console.log('Ratio Height', canvas.height, video.videoHeight, canvas.height / video.videoHeight);
+        
+                console.log('X Dest', canvas.width - video.videoWidth * ratio);
+                draw();
+            }
+        
+            async function draw() {
+                if (stopDraw){
+                    return;
+                }
+                // To be sure to have the minimum delay between frames
+                requestAnimationFrame(draw);
+        
+                // Draw video frame.
+                context.drawImage(video, // Source
+                    (canvas.width - video.videoWidth * ratio) / 2, // x dest in canvas
+                    // => use to manage portrait vs landscape
+                    0, // y dest in canvas
+                    video.videoWidth * ratio, // width video in canvas
+                    video.videoHeight * ratio); // height video in canvas
+        
+                if (!isDetectingFaces) {
+                    // Detect faces.
+                    isDetectingFaces = true;
+                    faceDetector.detect(canvas).then((facesArray => {
+                        faces = facesArray;
+                        isDetectingFaces = false;
+                    }));
+                }
+                // Draw mustache and hat on previously detected face.
+                if (faces.length) {
+                    const face = faces[0].boundingBox;
+                    // we get a clientBoudingRect of face placed in the image !
+                    /*
+                        height and width give the height and width in px of the face (in the image)
+                        left, top, bottom, right give the absolute position of the face (in the image)
+                    */
+                    context.drawImage(hat, // Source Hat
+                        face.left, // x dest Hat
+                        // we start from the left position
+                        face.bottom - face.height * 3 / 4 - hat.height * face.width / hat.width, // Y dest Hat
+                        // 3/4 of the face height - height of hat apply to ratio of the face width !
+                        face.width, // width of hat in canvas
+                        // We take the face width
+                        hat.height * face.width / hat.width // height of hat apply to ratio of the face width
+                    );
+                    context.drawImage(mustache, // Source Mustache
+                        face.left + face.width / 4, // X dest mustache
+                        // 1 / 4
+                        face.top + face.height * 3 / 5, // Y dest mustache
+                        // 3/4 of the face
+                        face.width / 2,  // width of mustache in canvas
+                        // The mustache will take the half of the face width
+                        mustache.height * face.width / 2 / mustache.width // height of mustache in canvas
+                        // The mustache will take the ratio of half the widht of face divide by mustache width to respect proportions
+                    );
+                }
+            }
+
+            function unsubscribeMustache(){
+                const stream = video.srcObject;
+                let tracks = stream.getTracks();
+                tracks.forEach(function(track) {
+                  track.stop();
+                });
+                video.pause();
+                stopDraw = true;
+                Reveal.removeEventListener('slidechanged', unsubscribeMustache);
+            }
+    
+            Reveal.addEventListener('slidechanged', unsubscribeMustache);
+
+             // Get elements from Id
+             const canvas = document.getElementById('canvas');
+             const video = document.getElementById('video');
+             const mustache = document.getElementById('mustache');
+             const hat = document.getElementById('hat');
+ 
+             //Affect url to images
+             hat.src = './assets/images/hat.png';
+             mustache.src = './assets/images/mustache.png';
+ 
+             // Inner method User Media (different from real user media method !)
+             await getUserMedia();
+        })
     }
 
 }

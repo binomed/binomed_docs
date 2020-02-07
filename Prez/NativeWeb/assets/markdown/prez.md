@@ -959,9 +959,16 @@ Ne fonctionne pas pour tous les langages !
 
 ##==##
 
-<!-- .slide: class="transition text-white" data-background="./assets/images/store-facade-2816904.jpg"  data-type-show="prez"  -->
+<!-- .slide:  class="no-filter standard" data-background="./assets/images/great-wave-color-small.png" data-state="start-mustache" data-type-show="prez"  -->
 
-Démo avec mustache
+# Demo FaceDetector
+
+<div id="demo-mustache">
+    <canvas id="canvas"></canvas>
+    <video id="video" autoplay muted></video>
+    <img id="mustache">
+    <img id="hat">
+</div>
 
 ##==##
 
