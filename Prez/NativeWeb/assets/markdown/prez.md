@@ -994,16 +994,24 @@ Ne fonctionne pas pour tous les langages !
 
 # Share Target
 
+##==##
+
+<!-- .slide: class="transition text-white" data-background="./assets/images/yahdi-romelo-Ly6XMmiFXIM-unsplash.jpg"-->
+
+# Wake lock
 
 ##==##
 
-<!-- .slide: class="no-filter standard" data-background="./assets/images/great-wave-color-small.png"-->
+<!-- .slide: class="transition text-white" data-background="./assets/images/badging.jpg"-->
 
-Grouper
+# Badging API
 
-Wake lock
-Badge
-Media Keys
+##==##
+
+<!-- .slide: class="transition text-white" data-background="./assets/images/gray-and-white-electronic-keyboard-3532803.jpg"-->
+
+# Media Keys
+
 
 ##==##
 
