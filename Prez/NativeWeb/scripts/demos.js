@@ -1,12 +1,36 @@
 export class Demos{
     constructor(){
         this.socket = this.socketInit();
-        this._fileDemo();
-        this._contactDemo();
-        this._nfcDemo();
-        this._demoSerial();
-        this._demoLight();
-        this._demoMustache();
+        try{
+            this._fileDemo();
+        }catch(e){
+            console.warn(e);
+        }
+        try{
+            this._contactDemo();
+        }catch(e){
+            console.warn(e);
+        }
+        try{
+            this._nfcDemo();
+        }catch(e){
+            console.warn(e);
+        }
+        try{
+            this._demoSerial();
+        }catch(e){
+            console.warn(e);
+        }
+        try{
+            this._demoLight();
+        }catch(e){
+            console.warn(e);
+        }
+        try{
+            this._demoMustache();
+        }catch(e){
+            console.warn(e);
+        }
     }
 
     socketInit(){

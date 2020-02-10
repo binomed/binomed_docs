@@ -39,17 +39,23 @@ body>div{
     }
   }
 
+.reveal .slides section#quiz{
+    h2{
+        margin-bottom: 50px;
+    }
+}
+
 .reveal .slides section .quizz-cell {
     font-size: 3rem;
     font-weight: 200;
     font-style: italic;
     color: #fff;
-    padding: 4rem 6rem 5.5rem;
+    padding-top: 3.5rem;
     margin: 15px;
     border: 0.4rem solid #fff;
     border-radius: 2rem;
-    width: 40%;
-    height: 7rem;
+    width: 700px;
+    height: 200px;
     text-transform: uppercase;
     background: rgba(0,0,0,0.6);
     animation: flicker 1.5s infinite alternate;
@@ -304,10 +310,13 @@ body>div{
     
     .panda {
         position: absolute;
+        top:30px;
     }
     
     .temple {
         float: right;
+        position: relative;
+        top:10px;
     }
     
 }
