@@ -114,8 +114,8 @@ export class HighlightEvents {
                 leftMargin: '50px',
                 width: '100%'
             }, {
-                top: '350px',
-                height: '110px',
+                top: '320px',
+                height: '140px',
                 leftMargin: '50px',
                 width: '100%'
             }, {

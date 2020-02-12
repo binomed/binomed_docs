@@ -477,11 +477,9 @@ const props = ['name', 'email',
         'tel', 'address', 'icon'];
 const opts = {multiple: true};
 
-try {
-  const contacts = 
-    await navigator.contacts.select(props, opts);
-} catch (ex) {
-}
+
+const contacts = 
+  await navigator.contacts.select(props, opts);
 ```
 
 
@@ -507,11 +505,8 @@ const props = ['name', 'email',
         'tel', 'address', 'icon'];
 const opts = {multiple: true};
 
-try {
-  const contacts = 
-    await navigator.contacts.select(props, opts);
-} catch (ex) {
-}
+const contacts = 
+  await navigator.contacts.select(props, opts);
 ```
 
 ##==##
@@ -578,6 +573,21 @@ reader.onreading = event => {
 
 ##==##
 
+<!-- .slide: class="with-code no-filter standard" data-background="./assets/images/great-wave-color-small.png" data-type-show="full" -->
+
+## Read a Tag
+
+```javascript
+const reader = new NDEFReader();
+await reader.scan();
+reader.onreading = event => {
+    //NDEF Message
+  const message = event.message; 
+}
+```
+
+##==##
+
 <!-- .slide: class="with-code no-filter standard" data-background="./assets/images/great-wave-color-small.png" data-state="code-write-tag stop-code-read-tag" data-type-show="prez" -->
 
 ## Write a Tag
@@ -602,6 +612,22 @@ writer.write({
 <div class="fragment" data-fragment-index="3" hidden></div>
 <div class="fragment" data-fragment-index="4" hidden></div>
 
+
+##==##
+
+<!-- .slide: class="with-code no-filter standard" data-background="./assets/images/great-wave-color-small.png" data-type-show="full" -->
+
+## Write a Tag
+
+```javascript
+const writer = new NDEFWriter();
+writer.write({
+  records: [{ recordType: "url", 
+    data: "https://w3c.github.io/web-nfc/" }]
+}).then(() => {
+  console.log("Message written.");
+})
+```
 
 ##==##
 
@@ -644,7 +670,7 @@ writer.write({
 
 ```javascript
 const port = 
-    await navigator.serial.requestPort({});
+    await navigator.serial.requestPort();
 // Open and begin reading.
 await port.open({ baudrate: 9600 });
 const reader = port.in.getReader();
@@ -676,7 +702,7 @@ On peut choisir son port
 
 ```javascript
 const port = 
-    await navigator.serial.requestPort({});
+    await navigator.serial.requestPort();
 // Open and begin reading.
 await port.open({ baudrate: 9600 });
 const reader = port.in.getReader();
@@ -804,11 +830,11 @@ interface Sensor : EventTarget {
 
 ```javascript
 if ('AmbientLightSensor' in window) {
-    this.sensor = new AmbientLightSensor();
-    this.sensor.onreading = () => {
-        console.log(this.sensor.illuminance);
+    sensor = new AmbientLightSensor();
+    sensor.onreading = () => {
+        console.log(sensor.illuminance);
     }
-    this.sensor.start();
+    sensor.start();
 }
 ```
 
@@ -829,11 +855,11 @@ if ('AmbientLightSensor' in window) {
 
 ```javascript
 if ('AmbientLightSensor' in window) {
-    this.sensor = new AmbientLightSensor();
-    this.sensor.onreading = () => {
-        console.log(this.sensor.illuminance);
+    sensor = new AmbientLightSensor();
+    sensor.onreading = () => {
+        console.log(sensor.illuminance);
     }
-    this.sensor.start();
+    sensor.start();
 }
 ```
 
@@ -910,12 +936,11 @@ if ('AmbientLightSensor' in window) {
 
 ```javascript
 const detector = new FaceDetector();
-try {
-  const faces = await detector.detect(image);
-  faces.forEach(face => drawMustache(face));
-} catch (e) {
-  console.error('Face detection failed:', e);
-}
+
+const faces = await detector.detect(image);
+faces.forEach(face => 
+    console.log(face)
+);
 ```
 
 Notes:
@@ -929,13 +954,11 @@ Nombre de visages optionnel
 
 ```javascript
 const detector = new BarcodeDetector();
-try {
-  const barcodes = await detector.detect(image);
-  barcodes.forEach(barcode => 
-                console.log(barcode));
-} catch (e) {
-  console.error('Barcode detection failed:', e);
-}
+
+const barcodes = await detector.detect(image);
+barcodes.forEach(barcode => 
+    console.log(barcode)
+);
 ```
 
 Notes:
@@ -949,12 +972,11 @@ Formats optionnels
 
 ```javascript
 const detector = new TextDetector();
-try {
-  const texts = await detector.detect(image);
-  texts.forEach(text => textToSpeech(text));
-} catch (e) {
-  console.error('Text detection failed:', e);
-}
+
+const texts = await detector.detect(image);
+texts.forEach(text => 
+    console.log(text)
+);
 ```
 
 Notes:
