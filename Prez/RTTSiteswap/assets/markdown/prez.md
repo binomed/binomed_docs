@@ -3,7 +3,7 @@
 
 # **Le Siteswap**
 
-### RTT  @ **Lucca**
+### Weekly C'est bientôt le weekend
 
 
 ##==##
@@ -100,7 +100,7 @@ Lancées issus d'une même main
 
 <!-- .slide: class="transition text-white" data-background="#4CAF50" -->
 
-# Exemple : <br> [42]
+# Exemple : <br> [43]
 
 Notes:
 Lancées issus d'une même main
@@ -163,7 +163,7 @@ Le côté répétable représente la notion de cycle d'un siteswap 321 => fini d
 
 <!-- .slide: class="transition text-white" data-background="#4CAF50" -->
 
-# 41[43]0 <br> 12 / 4 = 3
+# 41[41]0 <br> 12 / 4 = 3
 
 
 ##==##

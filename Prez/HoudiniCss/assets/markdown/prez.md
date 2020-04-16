@@ -13,7 +13,7 @@
     Let's do magic with Houdini CSS
 </h1>
 
-jefBinomed @DevoxxFR #HoudiniCSS
+jefBinomed #SfeirTalk #HoudiniCSS
 
 
 
@@ -1391,11 +1391,13 @@ border / margin / scrolls / padding => layoutEdges
 registerLayout('my-layout', class {
     static get inputProperties() {return ['--foo'] }
     static get childrenInputProperties() {return ['--bar'] }
-    static get childDisplay() {return 'normal'}
-    *intrinsicSizes(children, edges, styleMap) {// Min Max of children
+    static get layoutOptions() {return
+        {childDisplay: 'normal', sizing: 'block-like'}
+    }
+    async intrinsicSizes(children, edges, styleMap) {// Min Max of children
         return {maxContentSize, minContentSize};
     }
-    *layout(children, edges, constraints, styleMap) {// Where there is magic
+    async layout(children, edges, constraints, styleMap) {// Magic here
         return {autoBlockSize,childFragments};
     }
 });
@@ -1414,11 +1416,13 @@ Child Display : normal vs block
 registerLayout('my-layout', class {
     static get inputProperties() {return ['--foo'] }
     static get childrenInputProperties() {return ['--bar'] }
-    static get childDisplay() {return 'normal'}
-    *intrinsicSizes(children, edges, styleMap) {// Min Max of children
+    static get layoutOptions() {return
+        {childDisplay: 'normal', sizing: 'block-like'}
+    }
+    async intrinsicSizes(children, edges, styleMap) {// Min Max of children
         return {maxContentSize, minContentSize};
     }
-    *layout(children, edges, constraints, styleMap) {// Where there is magic
+    async layout(children, edges, constraints, styleMap) {// Magic here
         return {autoBlockSize,childFragments};
     }
 });
@@ -1462,7 +1466,7 @@ body{
 ## Layout - calculate intrinsic size
 
 ```javascript
-*intrinsicSizes(children, edges, styleMap) {// Min Max size of each children
+async intrinsicSizes(children, edges, styleMap) {// Min Max of childs
     const childrenSizes = yield children.map((child) => {
         return child.intrinsicSizes();
     });
@@ -1482,7 +1486,7 @@ body{
 ## Layout - calculate intrinsic size
 
 ```javascript
-*intrinsicSizes(children, edges, styleMap) {// Min Max size of each children
+async intrinsicSizes(children, edges, styleMap) {// Min Max of childs
     const childrenSizes = yield children.map((child) => {
         return child.intrinsicSizes();
     });
@@ -1511,7 +1515,7 @@ body{
 ## Layout - position fragments
 
 ```javascript
-*layout(children, edges, constraints, styleMap) {
+async layout(children, edges, constraints, styleMap, breakToken) {
     const childFragments = yield children.map((child) => {
         return child.layoutNextFragment({usableInlineSize,usableBlockSize});
     });
@@ -1533,7 +1537,7 @@ Notes:
 ## Layout - position fragments
 
 ```javascript
-*layout(children, edges, constraints, styleMap) {
+async layout(children, edges, constraints, styleMap, breakToken) {
     const childFragments = yield children.map((child) => {
         return child.layoutNextFragment({usableInlineSize,usableBlockSize});
     });
@@ -1757,19 +1761,19 @@ Notes:
         <div class="partial">partially<br>(Canary)</div><!-- Layout -->
         <div class="available">yes<br>(Chrome 65)</div><!-- Paint -->
         <div class="no-signal">no signal</div><!-- Parser -->
-        <div class="partial">partially<br>(Canary)</div><!-- Properties -->
-        <div class="partial">partially<br>(Canary)</div><!-- Animation -->
+        <div class="available">yes<br>(Chrome 78)</div><!-- Properties -->
+        <div class="partial">partially<br>(Chrome 71)</div><!-- Animation -->
         <div class="available">yes<br>(Chrome 66)</div><!-- TypedOM -->
         <div class="no-signal">no signal</div><!-- Font Metrics -->
     </div>
     <div class="browser edge"> <!-- Edge -->
         <img src="./assets/images/edge_logo_old_2.png">
-        <div class="no-signal">no signal</div><!-- Layout -->
-        <div class="no-signal">no signal</div><!-- Paint -->
+        <div class="partial">partially<br>(Canary)</div><!-- Layout -->
+        <div class="available">yes<br>(Edge 79)</div><!-- Paint -->
         <div class="no-signal">no signal</div><!-- Parser -->
-        <div class="no-signal">no signal</div><!-- Properties -->
-        <div class="no-signal">no signal</div><!-- Animation -->
-        <div class="no-signal">no signal</div><!-- TypedOM -->
+        <div class="available">yes<br>(Edge 79)</div><!-- Properties -->
+        <div class="partial">partially<br>(Edge 79)</div><!-- Animation -->
+        <div class="available">yes<br>(Edge 79)</div><!-- TypedOM -->
         <div class="no-signal">no signal</div><!-- Font Metrics -->
     </div>
     <div class="browser firefox"> <!-- Firefox -->
@@ -1784,11 +1788,11 @@ Notes:
     </div>
     <div class="browser opera"> <!-- Opera -->
         <img src="./assets/images/opera_logo_old_2.png">
-        <div class="no-signal">no signal</div><!-- Layout -->
+        <div class="partial">partially<br>(Developer)</div><!-- Layout -->
         <div class="available">yes<br>(Opera 52)</div><!-- Paint -->
         <div class="no-signal">no signal</div><!-- Parser -->
-        <div class="no-signal">no signal</div><!-- Properties -->
-        <div class="no-signal">no signal</div><!-- Animation -->
+        <div class="available">yes<br>(Opera 65)</div><!-- Properties -->
+        <div class="partial">partially<br>(Opera 58)</div><!-- Animation -->
         <div class="available">yes<br>(Opera 53)</div><!-- TypedOM -->
         <div class="no-signal">no signal</div><!-- Font Metrics -->
     </div>

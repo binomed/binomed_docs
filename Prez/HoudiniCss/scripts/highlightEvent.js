@@ -265,14 +265,14 @@ export class HighlightEvents {
                 width: '100%'
             }, {
                 line: 2,
+                nbLines: 5,
+                width: '100%'
+            }, {
+                line: 7,
                 nbLines: 3,
                 width: '100%'
             }, {
-                line: 5,
-                nbLines: 3,
-                width: '100%'
-            }, {
-                line: 8,
+                line: 10,
                 nbLines: 3,
                 width: '100%'
             }]
