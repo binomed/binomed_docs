@@ -2,7 +2,7 @@
 
 # The Native Web is coming
 
-## jefBinomed @ #DevFestParis
+## jefBinomed @ #ProjectFugu
 
 <svg class="fh-500 fw-600 center">
     <use xlink:href="#fugu" />
@@ -405,9 +405,9 @@ const handle =
 
 ```javascript
 // Create a writer (request permission).
-const writer = await fileHandle.createWriter();
+const writer = await fileHandle.createWritable();
 // Write the full length of the contents
-await writer.write(0, contents);
+await writer.write(contents);
 // Close the file and write content
 await writer.close();
 ```
@@ -429,9 +429,9 @@ await writer.close();
 
 ```javascript
 // Create a writer (request permission).
-const writer = await fileHandle.createWriter();
+const writer = await fileHandle.createWritable();
 // Write the full length of the contents
-await writer.write(0, contents);
+await writer.write(contents);
 // Close the file and write content
 await writer.close();
 ```

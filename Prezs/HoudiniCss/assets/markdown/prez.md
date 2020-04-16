@@ -13,7 +13,7 @@
     Let's do magic with Houdini CSS
 </h1>
 
-jefBinomed @DevoxxFR #HoudiniCSS
+jefBinomed #SfeirTalk #HoudiniCSS
 
 
 
@@ -548,6 +548,17 @@ CHROME 66
 
 ##==##
 
+
+<!-- .slide: class="transition text-white transparent cadre" data-type-show="prez" -->
+
+<h1>
+    <svg class="h-150 color-white">
+        <use xlink:href="#factory" />
+    </svg><br>In the real world
+</h1>
+
+##==##
+
 <!-- .slide: class="transition text-white transparent cadre" data-state="stop-code-css-properties" -->
 
 <h1>
@@ -642,7 +653,7 @@ main.js
 ```javascript
 const elt = document.getElementById('idElt');
 elt.style.setProperty('--a-super-var', '#333');
-elt.style.getProperty('--a-super-var'); // -> '#333'
+elt.style.getPropertyValue('--a-super-var'); // -> '#333'
 ```
 
 ##==##
@@ -837,6 +848,18 @@ accepts a list of length values.
 
 Notes:
 Creuser custom-ident
+
+
+##==##
+
+
+<!-- .slide: class="transition text-white transparent cadre" data-type-show="prez" -->
+
+<h1>
+    <svg class="h-150 color-white">
+        <use xlink:href="#factory" />
+    </svg><br>In the real world
+</h1>
 
 ##==##
 
@@ -1044,6 +1067,18 @@ Modifier Couleur ou Taille !
 
 Notes:
 Modifier Couleur ou Taille !
+
+
+##==##
+
+
+<!-- .slide: class="transition text-white transparent cadre" data-type-show="prez" -->
+
+<h1>
+    <svg class="h-150 color-white">
+        <use xlink:href="#factory" />
+    </svg><br>In the real world
+</h1>
 
 ##==##
 
@@ -1300,6 +1335,18 @@ Notes:
 
 Notes:
 
+
+##==##
+
+
+<!-- .slide: class="transition text-white transparent cadre" data-type-show="prez" -->
+
+<h1>
+    <svg class="h-150 color-white">
+        <use xlink:href="#factory" />
+    </svg><br>In the real world
+</h1>
+
 ##==##
 
 <!-- .slide: class="transition text-white transparent cadre" -->
@@ -1344,11 +1391,13 @@ border / margin / scrolls / padding => layoutEdges
 registerLayout('my-layout', class {
     static get inputProperties() {return ['--foo'] }
     static get childrenInputProperties() {return ['--bar'] }
-    static get childDisplay() {return 'normal'}
-    *intrinsicSizes(children, edges, styleMap) {// Min Max of children
+    static get layoutOptions() {return
+        {childDisplay: 'normal', sizing: 'block-like'}
+    }
+    async intrinsicSizes(children, edges, styleMap) {// Min Max of children
         return {maxContentSize, minContentSize};
     }
-    *layout(children, edges, constraints, styleMap) {// Where there is magic
+    async layout(children, edges, constraints, styleMap) {// Magic here
         return {autoBlockSize,childFragments};
     }
 });
@@ -1367,11 +1416,13 @@ Child Display : normal vs block
 registerLayout('my-layout', class {
     static get inputProperties() {return ['--foo'] }
     static get childrenInputProperties() {return ['--bar'] }
-    static get childDisplay() {return 'normal'}
-    *intrinsicSizes(children, edges, styleMap) {// Min Max of children
+    static get layoutOptions() {return
+        {childDisplay: 'normal', sizing: 'block-like'}
+    }
+    async intrinsicSizes(children, edges, styleMap) {// Min Max of children
         return {maxContentSize, minContentSize};
     }
-    *layout(children, edges, constraints, styleMap) {// Where there is magic
+    async layout(children, edges, constraints, styleMap) {// Magic here
         return {autoBlockSize,childFragments};
     }
 });
@@ -1415,7 +1466,7 @@ body{
 ## Layout - calculate intrinsic size
 
 ```javascript
-*intrinsicSizes(children, edges, styleMap) {// Min Max size of each children
+async intrinsicSizes(children, edges, styleMap) {// Min Max of childs
     const childrenSizes = yield children.map((child) => {
         return child.intrinsicSizes();
     });
@@ -1435,7 +1486,7 @@ body{
 ## Layout - calculate intrinsic size
 
 ```javascript
-*intrinsicSizes(children, edges, styleMap) {// Min Max size of each children
+async intrinsicSizes(children, edges, styleMap) {// Min Max of childs
     const childrenSizes = yield children.map((child) => {
         return child.intrinsicSizes();
     });
@@ -1464,7 +1515,7 @@ body{
 ## Layout - position fragments
 
 ```javascript
-*layout(children, edges, constraints, styleMap) {
+async layout(children, edges, constraints, styleMap, breakToken) {
     const childFragments = yield children.map((child) => {
         return child.layoutNextFragment({usableInlineSize,usableBlockSize});
     });
@@ -1486,7 +1537,7 @@ Notes:
 ## Layout - position fragments
 
 ```javascript
-*layout(children, edges, constraints, styleMap) {
+async layout(children, edges, constraints, styleMap, breakToken) {
     const childFragments = yield children.map((child) => {
         return child.layoutNextFragment({usableInlineSize,usableBlockSize});
     });
@@ -1542,6 +1593,17 @@ Notes:
 
 ##==##
 
+
+<!-- .slide: class="transition text-white transparent cadre" data-type-show="prez" -->
+
+<h1>
+    <svg class="h-150 color-white">
+        <use xlink:href="#factory" />
+    </svg><br>In the real world
+</h1>
+
+##==##
+
 <!-- .slide: class="transition text-white transparent cadre" -->
 
 <h1>
@@ -1577,7 +1639,7 @@ Représentation ++ des éléments avec les positionnements de chaques fragments
 <p> Hello <i>Houdini World</i></p>
 ```
 
-<img src="./assets/images/box_tree_sample.png" class="center"></img>
+<img src="./assets/images/box_tree_sample_black.png" class="center"></img>
 
 Notes:
 
@@ -1699,19 +1761,19 @@ Notes:
         <div class="partial">partially<br>(Canary)</div><!-- Layout -->
         <div class="available">yes<br>(Chrome 65)</div><!-- Paint -->
         <div class="no-signal">no signal</div><!-- Parser -->
-        <div class="partial">partially<br>(Canary)</div><!-- Properties -->
-        <div class="partial">partially<br>(Canary)</div><!-- Animation -->
+        <div class="available">yes<br>(Chrome 78)</div><!-- Properties -->
+        <div class="partial">partially<br>(Chrome 71)</div><!-- Animation -->
         <div class="available">yes<br>(Chrome 66)</div><!-- TypedOM -->
         <div class="no-signal">no signal</div><!-- Font Metrics -->
     </div>
     <div class="browser edge"> <!-- Edge -->
         <img src="./assets/images/edge_logo_old_2.png">
-        <div class="no-signal">no signal</div><!-- Layout -->
-        <div class="no-signal">no signal</div><!-- Paint -->
+        <div class="partial">partially<br>(Canary)</div><!-- Layout -->
+        <div class="available">yes<br>(Edge 79)</div><!-- Paint -->
         <div class="no-signal">no signal</div><!-- Parser -->
-        <div class="no-signal">no signal</div><!-- Properties -->
-        <div class="no-signal">no signal</div><!-- Animation -->
-        <div class="no-signal">no signal</div><!-- TypedOM -->
+        <div class="available">yes<br>(Edge 79)</div><!-- Properties -->
+        <div class="partial">partially<br>(Edge 79)</div><!-- Animation -->
+        <div class="available">yes<br>(Edge 79)</div><!-- TypedOM -->
         <div class="no-signal">no signal</div><!-- Font Metrics -->
     </div>
     <div class="browser firefox"> <!-- Firefox -->
@@ -1726,11 +1788,11 @@ Notes:
     </div>
     <div class="browser opera"> <!-- Opera -->
         <img src="./assets/images/opera_logo_old_2.png">
-        <div class="no-signal">no signal</div><!-- Layout -->
+        <div class="partial">partially<br>(Developer)</div><!-- Layout -->
         <div class="available">yes<br>(Opera 52)</div><!-- Paint -->
         <div class="no-signal">no signal</div><!-- Parser -->
-        <div class="no-signal">no signal</div><!-- Properties -->
-        <div class="no-signal">no signal</div><!-- Animation -->
+        <div class="available">yes<br>(Opera 65)</div><!-- Properties -->
+        <div class="partial">partially<br>(Opera 58)</div><!-- Animation -->
         <div class="available">yes<br>(Opera 53)</div><!-- TypedOM -->
         <div class="no-signal">no signal</div><!-- Font Metrics -->
     </div>
@@ -1799,7 +1861,7 @@ GDE Web Technologies & Mozilla Tech Speaker
 
 <div class="credits">
     <h4 >Credits : <a href="https://thenounproject.com/" target="_blank">The noun project</a></h4>
-    <p>Alexander Zharikov / Ben Iconator / Christopher T. Howlett / icon 54 / Atif Arshad / Bernar  Novalyi / Kris Prepiakova / Jonathan Collie / ahmad / Ana Rosa Botello Hernandez / Petai Jantrapoon / ProSymbols / Ceative Mania /Fabiano Coelho / Vectors Market / Magicon / Arthur Shlain / Kirby Wu / Ralf Schmitzer / Gan Khoon Lay / Hopkins</p>
+    <p>Alexander Zharikov / Ben Iconator / Christopher T. Howlett / icon 54 / Atif Arshad / Bernar  Novalyi / Kris Prepiakova / Jonathan Collie / ahmad / Ana Rosa Botello Hernandez / Petai Jantrapoon / ProSymbols / Ceative Mania /Fabiano Coelho / Vectors Market / Magicon / Arthur Shlain / Kirby Wu / Ralf Schmitzer / Gan Khoon Lay / Hopkins / Creative Stall</p>
 </div>
 
 
@@ -1871,4 +1933,6 @@ GDE Web Technologies & Mozilla Tech Speaker
     <svg id="can-i-use" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 388 286.65625" style="enable-background:new 0 0 388 229.325;" xml:space="preserve"><g><path d="M383.391,205.293v-0.002l-0.009,0.007c-0.462,0.269-6.957,4.021-19.633,4.025c-6.44,0.016-13.257-2.096-20.342-4.357   c-7.085-2.238-14.433-4.627-22.157-4.643c-7.727,0.016-15.076,2.404-22.16,4.643c-7.082,2.262-13.902,4.373-20.342,4.357   c-6.44,0.016-13.257-2.096-20.339-4.357c-7.084-2.238-14.434-4.627-22.16-4.643c-7.727,0.016-15.075,2.404-22.158,4.643   c-7.084,2.262-13.902,4.373-20.342,4.357c-6.44,0.016-13.26-2.096-20.342-4.357c-3.37-1.064-6.802-2.156-10.303-3.018v-3.805   c2.78,0.736,5.609,1.621,8.485,2.538c7.085,2.24,14.434,4.628,22.16,4.644c7.724-0.016,15.073-2.403,22.158-4.644   c7.083-2.26,13.901-4.372,20.342-4.356c6.439-0.016,13.257,2.097,20.34,4.356c7.085,2.24,14.434,4.628,22.16,4.644   c7.724-0.016,15.073-2.403,22.158-4.644c7.082-2.26,13.901-4.372,20.342-4.356c6.439-0.016,13.257,2.097,20.34,4.356   c7.085,2.24,14.434,4.628,22.16,4.644c0.006,0,0.014,0,0.021,0c14.798,0,22.465-4.726,22.837-4.968   c1.398-0.889,1.812-2.743,0.923-4.141c-0.889-1.399-2.741-1.813-4.141-0.925l-0.009,0.006c-0.461,0.269-6.955,4.021-19.631,4.025   c-6.441,0.016-13.26-2.097-20.342-4.358c-7.085-2.238-14.434-4.626-22.158-4.642c-7.726,0.016-15.075,2.403-22.16,4.642   c-7.083,2.262-13.901,4.374-20.34,4.358c-6.441,0.016-13.26-2.097-20.342-4.358c-7.085-2.238-14.434-4.626-22.158-4.642   c-7.726,0.016-15.075,2.403-22.16,4.642c-7.083,2.262-13.901,4.374-20.34,4.358c-6.441,0.016-13.26-2.097-20.342-4.358   c-3.37-1.064-6.802-2.155-10.303-3.017v-6.551V122.97H40v43.928H0v62.427h163.105v-21.182c2.781,0.736,5.61,1.621,8.485,2.54   c7.084,2.238,14.434,4.627,22.16,4.642c7.724-0.015,15.073-2.403,22.158-4.642c7.084-2.263,13.902-4.373,20.342-4.358   c6.44-0.015,13.257,2.096,20.342,4.358c7.084,2.238,14.433,4.627,22.157,4.642c7.727-0.015,15.076-2.403,22.16-4.642   c7.082-2.263,13.902-4.373,20.342-4.358c6.44-0.015,13.257,2.096,20.339,4.358c7.085,2.238,14.434,4.627,22.16,4.642   c0.006,0,0.014,0,0.021,0c14.798,0,22.467-4.727,22.838-4.967c1.399-0.89,1.813-2.744,0.924-4.142   C386.643,204.816,384.79,204.403,383.391,205.293z"/><g><ellipse transform="matrix(0.6318 -0.7751 0.7751 0.6318 34.4356 178.8613)" cx="205.497" cy="53.182" rx="22.496" ry="22.493"/><path d="M160.501,34.823c1.303,0,2.581,0.251,3.794,0.75c5.102,2.093,7.548,7.946,5.457,13.047l-0.049,0.133    c-0.075,0.181-0.163,0.417-0.284,0.734c-0.247,0.668-0.623,1.714-1.082,3.111c-0.699,2.113-1.696,5.344-2.779,9.488    c3.966-0.289,7.511-1.837,9.723-4.875c5.177-7.114,5.22-24.179-6.46-34.341c-16.143-13.882-28.76-18.967-49.02-22.26    C103.705-2.535,98.03,7.073,94.695,15.61c-0.253,0.647-0.487,1.267-0.704,1.867c-0.246,0.584-0.451,1.182-0.604,1.793    c-0.986,3.229-1.103,5.74,0.612,7.943c0.341,0.802,0.767,1.58,1.289,2.32c0.08,0.116,0.731,1.071,1.707,2.835    c3.152,5.669,9.28,19.177,9.259,37.025c-0.008,9.946-1.836,21.293-7.216,33.884c-2.716,6.348,0.228,13.695,6.575,16.411    c1.604,0.686,3.271,1.012,4.913,1.012c4.852,0,9.468-2.843,11.499-7.586h-0.002c6.748-15.752,9.24-30.655,9.233-43.721    c-0.003-13.05-2.441-24.239-5.363-32.991c9.662,3.659,15.803,9.813,21.258,17.209c2.167-7.742,3.918-12.136,4.096-12.574    C152.794,37.258,156.427,34.823,160.501,34.823z"/><path d="M148.045,120.246c0.11,0.005,0.219,0.007,0.328,0.007c4.27,0,7.814-3.375,7.985-7.681    c0.813-20.367,3.759-36.701,6.475-47.868c0.217-0.894,0.432-1.742,0.646-2.569c1.119-4.339,2.164-7.762,2.957-10.16    c0.472-1.429,0.856-2.497,1.111-3.188c0.129-0.345,0.226-0.599,0.288-0.75c0.06-0.157,0.069-0.174,0.066-0.174    c1.678-4.089-0.276-8.762-4.363-10.439c-4.087-1.676-8.761,0.276-10.437,4.365c-0.109,0.27-2.086,5.135-4.462,13.89    c-3.257,11.999-7.267,31.317-8.266,56.256C140.195,116.347,143.63,120.07,148.045,120.246z"/></g></g></svg>
     <!-- Finish -->
     <svg id="finish" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" viewBox="0 0 373.06899 618.2425" version="1.1" x="0px" y="0px"><g transform="translate(-240.79302,-371.6545)"><path style="" d="m 427.28732,371.65452 a 51.491407,51.491407 0 0 0 -51.4587,51.459 51.491407,51.491407 0 0 0 51.4587,51.538 51.491407,51.491407 0 0 0 51.538,-51.538 51.491407,51.491407 0 0 0 -51.538,-51.459 z m -120.7962,0.245 c -2.4945,0.385 -4.9937,1.261 -7.2823,2.669 -9.1133,5.634 -11.9448,17.507 -6.3101,26.62 l 82.9299,134.712 0,66.021 10.762,-1.78 c 27.0085,-4.515 54.3837,-4.515 81.3934,0 l 10.8413,1.78 0,-66.102 82.931,-134.631 c 5.6336,-9.113 2.7606,-20.986 -6.31,-26.62 -9.1559,-5.592 -21.1077,-2.803 -26.6999,6.312 l -70.8762,115.132 -61.0049,0 -70.9567,-115.132 c -4.2248,-6.866 -11.9365,-10.137 -19.4175,-8.981 z m 120.7962,231.316 c -13.2458,0 -26.4538,1.123 -39.5648,3.318 l -146.9295,24.758 0,21.037 146.9295,-24.84 c 26.222,-4.39 52.9869,-4.39 79.2089,0 l 146.9306,24.84 0,-21.037 -146.9306,-24.758 c -13.1099,-2.195 -26.3983,-3.318 -39.6441,-3.318 z m 0,27.429 c -12.878,0 -25.7335,1.102 -38.5133,3.236 l -12.9454,2.184 0,35.439 c 0,0.03 0,0.12 0,0.159 l 0,170.637 c 0,13.173 10.6957,23.949 23.8682,23.949 13.1737,0 23.8683,-10.735 23.8683,-23.949 l 0,-158.581 7.5248,0 0,60.52 c 0,13.173 10.6946,23.867 23.8671,23.867 13.1737,0 23.8683,-10.694 23.8683,-23.867 l 0,-72.576 0,-0.08 0,-35.518 -12.9454,-2.183 c -12.8,-2.134 -25.7146,-3.238 -38.5926,-3.238 z" /></g></svg>
+    <!-- factory -->
+    <svg id="factory" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 512 640" enable-background="new 0 0 512 512" xml:space="preserve"><g><path d="M506.7,244.2c-2.1-1.5-4.7-1.9-7.2-1.1l-61,20.5L410.1,9.1c-0.4-4-3.8-7.1-7.9-7.1h-75.6c-4,0-7.4,3-7.9,7.1l-27.9,249.7   l-70.2,21.4L198.7,83.9c-0.4-4-3.8-7.1-7.9-7.1h-57c-4,0-7.4,3-7.9,7.1l-20.4,182.8L7.2,302.8C4.1,304,2,306.9,2,310.3v191.8   c0,4.4,3.6,7.9,7.9,7.9h492.1c4.4,0,7.9-3.6,7.9-7.9V250.6C510,248,508.8,245.6,506.7,244.2z M395.1,17.9l3.8,34.2h-69.1l3.8-34.2   H395.1z M307.4,253.7L328.1,68h72.6l22.4,200.7l-70.2,23.5v-41.6c0-2.5-1.2-4.9-3.2-6.4c-0.9-0.7-1.9-1-3-1.3   c-0.3-0.1-0.5-0.1-0.8-0.1c-0.3,0-0.6-0.1-0.9-0.1c-0.8,0-1.6,0.1-2.3,0.3L307.4,253.7z M183.7,92.7l2.4,21.9h-47.7l2.4-21.9H183.7   z M136.7,130.4h51.2l17.2,154.4l-25.2,7.7v-41.9c0-2.6-1.3-5-3.4-6.5c-0.6-0.4-1.3-0.7-2-1c-0.2-0.1-0.4-0.1-0.6-0.2   c-0.5-0.1-1-0.2-1.6-0.2c-0.1,0-0.2-0.1-0.4-0.1c-0.1,0-0.2,0-0.3,0.1c-0.8,0-1.7,0.1-2.5,0.4l-47.1,17.3L136.7,130.4z    M494.1,494.1H17.9V315.8L164.1,262v41.3c0,2.5,1.2,4.9,3.2,6.4c0.9,0.7,1.9,1,3,1.3c0.3,0.1,0.5,0.1,0.8,0.1   c0.3,0,0.6,0.1,0.9,0.1c0.8,0,1.6-0.1,2.3-0.3L337,261.3v42c0,2.6,1.2,5,3.3,6.4c0.6,0.4,1.3,0.8,2,1c0.2,0.1,0.5,0.1,0.7,0.2   c0.5,0.1,1,0.2,1.5,0.2c0.2,0,0.3,0.1,0.5,0.1c0.1,0,0.2,0,0.3,0c0.7,0,1.5-0.1,2.2-0.4c0,0,0,0,0,0l146.6-49.2V494.1z"/><path d="M146.2,385.7H64.3c-4.4,0-7.9,3.6-7.9,7.9v57.4c0,4.4,3.5,7.9,7.9,7.9h81.8c4.4,0,7.9-3.6,7.9-7.9v-57.4   C154.1,389.2,150.5,385.7,146.2,385.7z M138.2,443.1h-66v-41.6h66V443.1z"/><path d="M296.9,385.7h-81.8c-4.4,0-7.9,3.6-7.9,7.9v57.4c0,4.4,3.6,7.9,7.9,7.9h81.8c4.4,0,7.9-3.6,7.9-7.9v-57.4   C304.8,389.2,301.3,385.7,296.9,385.7z M289,443.1h-66v-41.6h66V443.1z"/><path d="M365.8,385.7c-4.4,0-7.9,3.6-7.9,7.9v57.4c0,4.4,3.6,7.9,7.9,7.9h81.8c4.4,0,7.9-3.6,7.9-7.9v-57.4c0-4.4-3.6-7.9-7.9-7.9   H365.8z M439.7,443.1h-66v-41.6h66V443.1z"/></g></svg>
 </div>
