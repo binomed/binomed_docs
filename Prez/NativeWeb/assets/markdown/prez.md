@@ -317,8 +317,8 @@ Badging API / Contact Picker / Get Installed Related Apps / Native File System A
 <br>
 
 ```javascript
-const fileHandle = 
-    await window.chooseFileSystemEntries();
+const [fileHandle] = 
+    await window.showOpenFilePicker();
 const file = await fileHandle.getFile();
 const contents = await file.text();
 ```
@@ -342,8 +342,8 @@ const contents = await file.text();
 <br>
 
 ```javascript
-const fileHandle = 
-    await window.chooseFileSystemEntries();
+const [fileHandle] = 
+    await window.showOpenFilePicker();
 const file = await fileHandle.getFile();
 const contents = await file.text();
 ```
@@ -363,8 +363,8 @@ const opts = {
         mimeTypes: ['text/plain'],
     }],
 };
-const handle =
-    await window.chooseFileSystemEntries(opts);
+const [handle] =
+    await window.showOpenFilePicker(opts);
 ```
 
 
@@ -393,8 +393,8 @@ const opts = {
         mimeTypes: ['text/plain'],
     }],
 };
-const handle =
-    await window.chooseFileSystemEntries(opts);
+const [handle] =
+    await window.showOpenFilePicker(opts);
 ```
 
 ##==##
@@ -593,7 +593,7 @@ reader.onreading = event => {
 ## Write a Tag
 
 ```javascript
-const writer = new NDEFWriter();
+const writer = new NDEFReader();
 writer.write({
   records: [{ recordType: "url", 
     data: "https://w3c.github.io/web-nfc/" }]
@@ -620,7 +620,7 @@ writer.write({
 ## Write a Tag
 
 ```javascript
-const writer = new NDEFWriter();
+const writer = new NDEFReader();
 writer.write({
   records: [{ recordType: "url", 
     data: "https://w3c.github.io/web-nfc/" }]
@@ -672,7 +672,7 @@ writer.write({
 const port = 
     await navigator.serial.requestPort();
 // Open and begin reading.
-await port.open({ baudrate: 9600 });
+await port.open({ baudRate: 9600 });
 const reader = port.in.getReader();
 // Read
 for await (const { done, data } of reader.read()) {
@@ -704,7 +704,7 @@ On peut choisir son port
 const port = 
     await navigator.serial.requestPort();
 // Open and begin reading.
-await port.open({ baudrate: 9600 });
+await port.open({ baudRate: 9600 });
 const reader = port.in.getReader();
 // Read
 for await (const { done, data } of reader.read()) {

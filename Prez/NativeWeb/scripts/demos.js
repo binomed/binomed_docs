@@ -48,7 +48,7 @@ export class Demos{
             const butOpenFile = document.getElementById('file-chooser');
             const editArea = document.getElementById('edit-file');
             butOpenFile.addEventListener('click', async (e) => {
-                fileHandle = await window.chooseFileSystemEntries();
+                [fileHandle] = await window.showOpenFilePicker();
                 //fileHandle = await getNewFileHandle();
                 const file = await fileHandle.getFile();
                 const contents = await file.text();
@@ -69,7 +69,7 @@ export class Demos{
                     mimeTypes: ['text/plain'],
                   }],
                 };
-                return await window.chooseFileSystemEntries(opts);
+                return await window.showOpenFilePicker(opts);
               }
 
             async function writeFile(fileHandle, contents) {
@@ -144,7 +144,7 @@ export class Demos{
                 stopSerial = false;
                 renderDemo()
                 port = await navigator.serial.requestPort({});
-                await port.open({ baudrate: 9600 });
+                await port.open({ baudRate: 9600 });
         
                 const appendStream = new WritableStream({
                   write(chunk) {

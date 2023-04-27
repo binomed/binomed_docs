@@ -62,7 +62,7 @@ function blobToBase64(blob){
 
         if (message.records.length == 0 ||     // unformatted tag
             message.records[0].recordType == 'empty' ) {  // empty record
-            const writer = new NDEFWriter();
+            const writer = new NDEFReader();
             writer.write({
             records: [{ recordType: "text", data: 'Hello World' }]
             });
@@ -116,7 +116,7 @@ function blobToBase64(blob){
     }
 
     async function writeTag(type){
-        const writer = new NDEFWriter();
+        const writer = new NDEFReader();
         const recordUrl = { recordType: "url", data: "https://sfeir.com" };
         const recordText = { recordType: "text", data: 'Hello Fugu lovers' }
         writer.write({

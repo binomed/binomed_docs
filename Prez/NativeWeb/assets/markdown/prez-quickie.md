@@ -187,8 +187,8 @@ Badging API / Contact Picker / Get Installed Related Apps / Native File System A
 <br>
 
 ```javascript
-const fileHandle = 
-    await window.chooseFileSystemEntries();
+const [fileHandle] = 
+    await window.showOpenFilePicker();
 const file = await fileHandle.getFile();
 const contents = await file.text();
 ```
@@ -212,8 +212,8 @@ const contents = await file.text();
 <br>
 
 ```javascript
-const fileHandle = 
-    await window.chooseFileSystemEntries();
+const [fileHandle] = 
+    await window.showOpenFilePicker();
 const file = await fileHandle.getFile();
 const contents = await file.text();
 ```
@@ -233,8 +233,8 @@ const opts = {
         mimeTypes: ['text/plain'],
     }],
 };
-const handle =
-    await window.chooseFileSystemEntries(opts);
+const [handle] =
+    await window.showOpenFilePicker(opts);
 ```
 
 
@@ -263,8 +263,8 @@ const opts = {
         mimeTypes: ['text/plain'],
     }],
 };
-const handle =
-    await window.chooseFileSystemEntries(opts);
+const [handle] =
+    await window.showOpenFilePicker(opts);
 ```
 
 ##==##
