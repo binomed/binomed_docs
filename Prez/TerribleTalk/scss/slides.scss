@@ -1,0 +1,64 @@
+.reveal .slides section:not(.sfeir-specific-slide):not(.stack):not([class*=transition])  {
+
+    &.awefull-slide{
+        .big-text{
+            font-size: 1.5em;
+            font-weight: 600;
+        }
+
+        blockquote{
+            width: 800px;
+            color:black;
+            background: orange;
+        }
+    }
+
+    &.no-style{
+        h1{
+            color:black;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 400;
+        }
+    }
+
+    &.history{
+        h1{
+            color:black;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 400;
+            font-size: 1.05em;
+            position: absolute;
+            left: 510px;
+            top: 200px;
+        }
+    }
+
+    
+    &#dark-theme-slide h1{
+        color: orange;
+    }
+    
+    .moteur{
+        width: 45%;
+        .box-moteur{
+            border: black thin solid;
+        }
+    }
+    
+
+    .objet{
+        position:relative;
+        width: 100px;
+        height: 100px;
+        border-radius: 100px;
+        background: var(--black);
+    }
+}
+
+.reveal .slides section[class*="transition"].bg-white {
+    &.no-more-seven-words{
+        h1{
+            font-size: 2.9em;
+        }
+    }
+}
