@@ -1199,9 +1199,6 @@ le plus important c’est le focus !!! c’est le conseil numéro 1
 
 # Comment je code mes slides
 
-![center h-250](./assets/images/how-is-that-possible-dr-jill-gideon.gif)
-<!-- .element: style="margin-top:-200px; margin-left:400px;" -->
-
 
 
 <div class="flex-row" >
@@ -1271,7 +1268,9 @@ National Institute of Mental Health (2017) https://www.nimh.nih.gov/health/stati
  <! -- .element: class="small-text"  --> 
 
 ```
-<!-- .element: style="width:45%;" -->
+<!-- .element: style="width:600px;" -->
+
+![center h-350](./assets/images/how-is-that-possible-dr-jill-gideon.gif)
 
 ```javascript
 // Code from taken from https://github.com/kuroidoruido/js-libs/blob/main/libs/marked-djot-div
@@ -1366,7 +1365,7 @@ export function isTcColToken(
     return token.type === TYPE_COL_TC;
 }
 ```
-<!-- .element: style="width:45%; margin-left:5%;" -->
+<!-- .element: style="width:600px;" -->
 
 
 </div>
@@ -1624,10 +1623,11 @@ Conclusion !
 
 ![company](./assets/images/logo-sfeir-blanc.png)
 
-<a style="color:white; top: 400px;" href="https://bit.ly/terrible-talk">https://bit.ly/terrible-talk</a>
+<a style="color:white; top: 400px;" href="https://bit.ly/conf-rate">https://bit.ly/conf-rate</a>
 
 © Chet Haase / SFEIR School Speaker
-<!-- .element: class="credits"-->
+<!-- .
+element: class="credits"-->
 
 Notes:
 Un rappel de son twitter, l’url des slides, faire en sorte d’ouvrir la discussion avant tout !
