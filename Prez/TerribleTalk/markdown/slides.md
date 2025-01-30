@@ -1,5 +1,6 @@
+<!-- .slide: data-background="./assets/images/stock-photo-happy-businessman-presentation-and-meeting-with-whiteboard-for-review-coaching-or-training-staff-2513213405-600x400.jpg" class="transition" -->
 
-<br><br><br><br>
+
 
 # L'importance de faire des conférence impactatntes et comment on peut optimiser nos slides pour être plus impactant
 
@@ -42,8 +43,8 @@ MTS = Mozilla Tech Speaker
 * Présentation du speaker
 * Agenda
 * Introduction
-* Des nombres premiers
-* Formules
+* Des stats
+* Recette secrète
 * Du code
 * La conclusion
 * Questions
@@ -59,8 +60,8 @@ MTS = Mozilla Tech Speaker
 * Présentation du speaker
 * Agenda
 * Introduction
-* Des nombres premiers
-* Formules
+* Des stats
+* Recette secrète
 * Du code
 * La conclusion
 * Questions
@@ -76,8 +77,8 @@ MTS = Mozilla Tech Speaker
 * ~~Présentation du speaker~~
 * Agenda
 * Introduction
-* Des nombres premiers
-* Formules
+* Des stats
+* Recette secrète
 * Du code
 * La conclusion
 * Questions
@@ -93,27 +94,62 @@ MTS = Mozilla Tech Speaker
 * ~~Présentation du speaker~~
 * ~~Agenda~~
 * Introduction
-* Des nombres premiers
-* Formules
+* Des stats
+* Recette secrète
 * Du code
 * La conclusion
 * Questions
 
 
 ##==##
-<!-- .slide:-->
 
-# Introduction : Pourquoi nous devons nous intéresser à cette problématique compliquée
+# Introduction : Pourquoi nous devons nous intéresser à cette problématique essentielle
 
-<br>
+![h-300 center](./assets/images/hazbin-hazbin-hotel.gif) <!-- .element: style="margin-top:-100px;" -->
 
-* L’objectif de cette présentation est de revenir sur l'importance des nombres premiers
-* Pour rappel un nombre premier est un nombre dont le reste de la division par lui et 1 et uniquement par ces chiffres est 0. 1 exclu
-* En effet, ils sont souvent utilisés pour les calculs de crytpograhie
-* Cette présentation s’adresse à toutes les personnes qui se posent des questions sur leur compréhension des nombres premiers
+* L’objectif de cette présentation est de revenir sur les techniques majeurs permettant un présentation réussie
+* En effet, trop de personnes usent de slides avec des bullets points hyper chargées qui n'ont que peu de valeur ajoutée
+* En effet, c'est répétitif et en plus, il y a de grande chance que les personnes lisent les slides et donc que le présentateur ne serve pas à grand chose
+* Donc on pourrait dire que commencer par éviter de faire des slides à bullets points est un premier point !
+
 
 Notes:
 Ne pas regarder les participants
+
+##==##
+
+# Conseils pratiques et tips pour des slides impactants
+
+![h-300 center](./assets/images/happy-dance-dance.gif) <!-- .element: style="margin-top:-100px;" -->
+
+<div class="flex-row">
+
+<div style="flex:1">
+
+* Faire bien attention à ne pas se répéter car ça se remarque.
+* penser à ne pas mettre trop de choses à lire sur le slide pour éviter que ça soit trop lourd
+
+</div>
+<div style="flex:1">
+
+* faire attention à bien respecter la règle des 7 mots par ligne.
+* Eviter les distractions sur les slides car ça n'aide pas à se concentrer
+* faire attention à l'harmonie du slide.
+
+</div>
+
+<div style="flex:1">
+
+* Ne pas oublier de conclusion.
+* avoir une cohérence et un ordre dans ses slides
+* Ne pas lire ses slides
+* Faire attention à ne pas se répéter.
+
+</div>
+
+</div>
+
+
 
 ##==##
 <!-- .slide:-->
@@ -125,8 +161,8 @@ Ne pas regarder les participants
 * ~~Présentation du speaker~~
 * ~~Agenda~~
 * ~~Introduction~~
-* Des nombres premiers
-* Formules
+* Des stats
+* Recette secrète
 * Du code
 * La conclusion
 * Questions
@@ -135,21 +171,44 @@ Ne pas regarder les participants
 ##==##
 <!-- .slide:-->
 
-# Des nombres premiers !
+# Quelques stats
 
 
-![full-center h-900](./assets/images/first-1000-prime-numbers-thumb.png)
+![full-center h-300](./assets/images/stats_speaking.svg)
+
+### Source © : 
+National Institute of Mental Health (2017) https://www.nimh.nih.gov/health/statistics/ |Statistic Brain Research Institute (2019) https://www.statisticbrain.com/fear-of-public-speaking-statistics/ | Étude de l'Université du Minnesota (2018) https://twin-cities.umn.edu/news-events/ |
+ Recherches du Dr. Albert Mehrabian, UCLA "Silent Messages: Implicit Communication of Emotions and Attitudes" (1981) | Project Management Institute (PMI) Pulse of the Profession (2020) https://www.pmi.org/learning/thought-leadership/pulse |
+ Recherches du Dr. Albert Mehrabian, UCLA "Silent Messages: Implicit Communication of Emotions and Attitudes" (1981) | Project Management Institute (PMI) Pulse of the Profession (2020) https://www.pmi.org/learning/thought-leadership/pulse | Educational Psychology Review (2019) https://link.springer.com/journal/10648 | Harvard Business Review (2020) https://hbr.org/topic/presentations  | Presentation Design Statistics, Venngage (2021) https://venngage.com/blog/presentation-statistics/ |  Forbes Business Communications Council (2019) https://www.forbes.com/sites/forbescommunicationscouncil/ | National Center for Voice and Speech (2018) https://www.ncvs.org/ |  Presentation Software Statistics, Presentation Magazine (2020) https://www.presentationmagazine. com/ |  Stanford Graduate School of Business Research (2018) https://www.gsb.stanford.edu/insights/ |  TED Talks Analytics Report (2019) https://www.ted.com/about/research-surveys/
+ 
+ <!-- .element: class="small-text"  --> 
 
 Notes: 
-Ici on voit très bien les 1000 premiers nombres premiers c'est important comme information !!
+PRESENTATIONS
+* Les présentateurs n'utilisent en moyenne que 37% du temps alloué pour leur présentation
+* 40% du temps de présentation est consacré à l'introduction et à la conclusion
+* 83% des présentateurs utilisent PowerPoint comme support visuel
+* Les présentations avec des histoires sont 22% plus mémorables que celles basées uniquement sur des faits
+PAROLE EN PUBLIC
+* 77% des personnes déclarent avoir peur de parler en public (glossophobie)
+* 75% des personnes ressentent de l'anxiété avant de prendre la parole en public
+* Une personne moyenne parle à un rythme de 125-150 mots par minute lors d'une présentation
+AUDIENCE / IMPACT
+* 73% des auditeurs se déconnectent mentalement d'une présentation après 10 minutes
+* 65% des personnes préfèrent les présentations avec des supports visuels
+* 55% de l'impact d'une présentation provient du langage corporel
+* 47% des professionnels considèrent que les présentations trop longues sont le principal problème des conférences
+LEADER/PROFESSIONNEL
+* 90% des leaders considèrent que les compétences en communication orale sont essentielles pour le succès
+* Les auditeurs ne retiennent en moyenne que 10% du contenu d'une présentation après 24h
 
 ##==##
 <!-- .slide:-->
 
-# Des statistiques de nombres
+# Nombre de graphiques qui ressemblent à ça
 
 
-![full-center h-800](./assets/images/distribution-chiffres.avif)
+![full-center h-800](./assets/images/Pacman-chart.svg)
 
 Notes: 
 Très très important de constater cette répartition de nombres surtout si on parle de nombres premiers.
@@ -164,8 +223,8 @@ Très très important de constater cette répartition de nombres surtout si on p
 * ~~Présentation du speaker~~
 * ~~Agenda~~
 * ~~Introduction~~
-* ~~Des nombres premiers~~
-* Formules
+* ~~Des stats~~
+* Recette secrète
 * Du code
 * La conclusion
 * Questions
@@ -174,10 +233,15 @@ Très très important de constater cette répartition de nombres surtout si on p
 ##==##
 <!-- .slide:  data-state="show-notification-event"-->
 
-# Une formule triviale
+# La recette d'une présentation réussie
 
+<div class="flex-row" style="margin-top:-150px">
 
-![full-center h-500](./assets/images/generation-nb-premiers.svg)
+![h-400](./assets/images/rainn-wilson.gif) 
+
+![h-1000](./assets/images/bonne-presentation-choses-importantes-fake.svg)
+
+</div>
 
 Notes:
 Lire les notes sur ce slide !!
@@ -186,30 +250,6 @@ Pour connaitre le Nième nombre premier, il suffit d'ajouter à 1 la somme des e
 
 Il s'agit du théorème de Wilson créé en 1964
 
-
-
-##==##
-<!-- .slide: class="two-column" data-state="hide-notification-event"-->
-
-# Le saviez-vous ?
-
-Il existe des nombres probablement premiers qui permettent de calculer si un nombre peut être considéré comme premier.
-
-N est probablement premier sur une base B si :
-
-
-<blockquote><cite>N>1 et B^(N-1)%N ==1 </cite></blockquote>
-
-Notes: 
-Alors là c'est facile ! 
-
-ça sert en fait pour éviter de partir sur des calculs trop longs ou complexes surtout en crypto où on va chercher à avoir des grands chiffres premiers et donc on aura besoin d'avoir une méthode de calcul plus rapide
-
-##--##
-
-<br><br>
-
-![h-500](./assets/images/g3a864e7b0c_0_125.png)
 
 ##==##
 <!-- .slide: data-state="hide-notification-event"-->
@@ -221,8 +261,8 @@ Alors là c'est facile !
 * ~~Présentation du speaker~~
 * ~~Agenda~~
 * ~~Introduction~~
-* ~~Des nombres premiers~~
-* ~~Formules~~
+* ~~Des stats~~
+* ~~Recette secrète~~
 * Du code
 * La conclusion
 * Questions
@@ -231,56 +271,178 @@ Alors là c'est facile !
 ##==##
 <!-- .slide: class="with-code"-->
 
-# Un slide de code qui compile car c’est important
+# Comment je code mes slides
 
 
-```java
-package com.sfeir.school.speaker;
 
-import java.lang.Math;
+<div class="flex-row" >
 
-public class ProbablePrimeClassMain {
+```md
 
-	public static void main(String[] args) {
-		
-		int nbr = 17;
-		ProbablePrimeClass instance = new ProbablePrimeClass();
-		int result = instance.isWeakProbablePrime(nbr, 10);
-		
-		if(result == 1)
-			System.out.println(nbr + " is a probable prime");
-		else
-			System.out.println(nbr + " is not a probable prime");
-	}
+<! -- .slide: data-background="./assets/images/stock-photo-happy-businessman-presentation-and-meeting-with-whiteboard-for-review-coaching-or-training-staff-2513213405-600x400.jpg" class="transition" -->
 
+
+# L'importance de faire des conférence impactatntes et comment on peut optimiser nos slides pour être plus impactant
+
+
+Nantes le 15 juillet 2018 <! --.element: class="center" -->< br>
+
+Jean-François Garreau : Director Engineering Sfeir Nantes <! --.element: class="center" -->
+
+
+## == ##
+
+# Jean-François Garreau
+
+![float-left](./assets/images/photo-jf-old.png)
+
+* Mutiples diplômes
+  * Bac S spé Math
+  * DEUG MIAS
+  * SILR
+  * Bafa
+  * SB
+  * GDE 
+  * MTS
+* Travaillé pour beaucoup de société en informatique
+* Travaillé en tant qu’ingénieur web dans beaucoup de société
+* J’aime jongler
+* J’ai parlé dans beaucoup de conférence
+
+
+## == ##
+
+# Agenda
+
+
+* Titre
+* Présentation du speaker
+* Agenda
+* Introduction
+* Des stats
+* Recette secrète
+* Du code
+* La conclusion
+* Questions
+
+## == ##
+
+
+<! -- .slide:-->
+
+# Quelques stats
+
+![full-center h-300](./assets/images/stats_speaking.svg)
+
+### Source © : 
+National Institute of Mental Health (2017) https://www.nimh.nih.gov/health/statistics/ |Statistic Brain Research Institute (2019) https://www.statisticbrain.com/fear-of-public-speaking-statistics/ | Étude de l'Université du Minnesota (2018) https://twin-cities.umn.edu/news-events/ |
+ Recherches du Dr. Albert Mehrabian, UCLA "Silent Messages: Implicit Communication of Emotions and Attitudes" (1981) | Project Management Institute (PMI) Pulse of the Profession (2020) https://www.pmi.org/learning/thought-leadership/pulse |
+ Recherches du Dr. Albert Mehrabian, UCLA "Silent Messages: Implicit Communication of Emotions and Attitudes" (1981) | Project Management Institute (PMI) Pulse of the Profession (2020) https://www.pmi.org/learning/thought-leadership/pulse | Educational Psychology Review (2019) https://link.springer.com/journal/10648 | Harvard Business Review (2020) https://hbr.org/topic/presentations  | Presentation Design Statistics, Venngage (2021) https://venngage.com/blog/presentation-statistics/ |  Forbes Business Communications Council (2019) https://www.forbes.com/sites/forbescommunicationscouncil/ | National Center for Voice and Speech (2018) https://www.ncvs.org/ |  Presentation Software Statistics, Presentation Magazine (2020) https://www.presentationmagazine. com/ |  Stanford Graduate School of Business Research (2018) https://www.gsb.stanford.edu/insights/ |  TED Talks Analytics Report (2019) https://www.ted.com/about/research-surveys/
+ 
+ <! -- .element: class="small-text"  --> 
+
+```
+<!-- .element: style="width:600px; " -->
+
+![center h-350](./assets/images/how-is-that-possible-dr-jill-gideon.gif)
+
+```javascript
+// Code from taken from https://github.com/kuroidoruido/js-libs/blob/main/libs/marked-djot-div
+import { marked } from 'marked';
+
+const symbolRegex = new RegExp(`^##\\+\\+##`);
+const colRegex = new RegExp(`${symbolRegex.source}( (.*))?`);
+const TYPE_COL_TC = 'colTc';
+
+function isDefined<T>(x: T | null | undefined): x is T {
+    return x != undefined;
 }
 
-public class ProbablePrimeClass {
 
-	public ProbablePrimeClass(){
-	}
+interface TcColToken extends marked.Tokens.Generic {
+    type: 'colTc';
+    raw: string;
+    attributes?: string;
+    tokens: marked.Token[];
+}
 
-	public boolean isWeakProbablePrime(int n, int base) {
-		boolean result = modularExponentiation(base, n - 1, n) == 1;
+export function markedTcCols(): marked.MarkedExtension {
+    return {
+        extensions: [
+            {
+                name: TYPE_COL_TC,
+                level: 'block',
+                start(src: string): number | undefined {
+                    return src.match(symbolRegex)?.index;
+                },
+                tokenizer(src): TcColToken | undefined {
+                    const match = colRegex.exec(src);
+                    if (!isDefined(match)) {
+                        return undefined;
+                    }
+                    const attributes = match?.[1];
+                    const rows = src.split('\n');
+                    const nextRows = rows.slice(1);
+                    const closingTokenIndex = nextRows.findIndex((row) =>
+                        row.match(symbolRegex),
+                    );
+                    const closingToken =
+                        closingTokenIndex === -1
+                            ? ''
+                            : '\n' + nextRows[closingTokenIndex];
+                    const sliceEnd =
+                        closingTokenIndex === -1 ? undefined : closingTokenIndex;
+                    const divContent = nextRows.slice(0, sliceEnd);
+                    const rawContent = divContent.join('\n');
 
-  		return result;
-	}
+                    const token: TcColToken = {
+                        type: TYPE_COL_TC,
+                        raw: `${rows[0]}\n${rawContent}${closingToken}`,
+                        attributes,
+                        tokens: [],
+                    }
+                    this.lexer.blockTokens(rawContent, token.tokens);
+                    return token;
 
 
-	public integer modularExponentiation(int base, int exp, int mod){
-		int result = 1;
-		while (exp > 0){
-			if (exp %2 != 0){
-				result = (result * base) % mod
-			}
-			exp = exp >> 1;
-			base = Math.pow(base,2) % mod 
-		}
-		return result;
-	}  
+                },
+                renderer(token) {
+                    if (!isTcColToken(token)) {
+                        return false;
+                    }
+                    let attributes = '';
+                    let classes = '';
+                    if (token.attributes) {
+                        const splitAttributes = token.attributes.split(' ');
+                        let attributesWithoutClasses = '';
+                        for (let attr of splitAttributes) {
+                            if (attr && attr.startsWith('class')) {
+                                classes = " " + attr.substring(attr.indexOf('=') + 2, attr.length - 1);
+                            } else if (attr && attr.length > 0) {
+                                attributesWithoutClasses += attr;
+                            }
+                        }
+                        attributes = ` ${attributesWithoutClasses}`;
+                    }
+                    const content = this.parser.parse(token.tokens);
+                    return `<div class="tc-column"><section${attributes} class="tc-column${classes}">\n${content}\n</section></div>`;
+                },
+            },
+        ],
+    };
+}
+
+
+
+export function isTcColToken(
+    token: TcColToken | { type: unknown }): token is TcColToken {
+    return token.type === TYPE_COL_TC;
 }
 ```
+<!-- .element: style="width:600px;" -->
 
+
+</div>
 
 ##==##
 <!-- .slide:-->
@@ -292,20 +454,26 @@ public class ProbablePrimeClass {
 * ~~Présentation du speaker~~
 * ~~Agenda~~
 * ~~Introduction~~
-* ~~Des nombres premiers~~
-* ~~Formules~~
+* ~~Des stats~~
+* ~~Recette secrète~~
 * ~~Du code~~
 * La conclusion
 * Questions
 
 
 ##==##
-<!-- .slide:-->
 
-# Pour conclure
+<!-- .slide: class="quote-slide" -->
 
 
-Pour conclure, les nombres premiers sont une chose complexe pouvant demander une très grande puissance de calcul et donc, on doit toujours manipuler ses nombres avec précautions et éventuellement faire appels à des variantes comme les nombres probablement premiers vus précédement.
+# En résumé ![h-300 center](./assets/images/advice-my-advice.gif)
+
+<blockquote style="top:-300px;">
+<cite>
+  Il est important d'avoir en tête et de penser à la non complexité de ses idées et mises en oeuvre dans les slides afin de toujours focuser l'objectif principal de simplication du processus de transmission de connaissance.
+</cite>
+</blockquote>
+
 
 
 ##==##
@@ -318,8 +486,8 @@ Pour conclure, les nombres premiers sont une chose complexe pouvant demander une
 * ~~Présentation du speaker~~
 * ~~Agenda~~
 * ~~Introduction~~
-* ~~Des nombres premiers~~
-* ~~Formules~~
+* ~~Des stats~~
+* ~~Recette secrète~~
 * ~~Du code~~
 * ~~La conclusion~~
 * Questions
@@ -355,6 +523,7 @@ Rester 2 sec
 * Titulaire d'un bac S, DEUG MIAS, Diplome SLIR, Bafa
 * Contactez moi par Phax au +33666555444333
 
+![full-center](./assets/images/keyaan-john-wick.gif)
 
 ##==##
 
@@ -396,9 +565,8 @@ Toujours  en 2 temps, le slide qui va pas, on interroge les gens et on fait mieu
 
 ##==##
 
-<!-- .slide: -->
+<!-- .slide: data-background="./assets/images/stock-photo-happy-businessman-presentation-and-meeting-with-whiteboard-for-review-coaching-or-training-staff-2513213405-600x400.jpg" class="transition" -->
 
-<br><br><br><br>
 
 
 # L'importance de faire des conférence impactatntes et comment on peut optimiser nos slides pour être plus impactant
@@ -408,10 +576,12 @@ Nantes le 15 juillet 2018 <!--.element: class="center" --><br>
 
 Jean-François Garreau : Director Engineering Sfeir Nantes <!--.element: class="center" -->
 
+
 <br>
 
-<div class="fragment" data-fragment-index="1" style="border-radius:60px; border:3px solid red; width:120px; height:120px; position: absolute; left:250px; top:370px;"></div>
-<div class="fragment" data-fragment-index="1" style="border-bottom:3px solid red; width:410px; height:120px; position: absolute; left:750px; top:520px;"></div>
+<div class="fragment" data-fragment-index="1" style="border-radius:60px; border:6px solid red; width:120px; height:120px; position: absolute; left:1500px; top:470px;"></div>
+<div class="fragment" data-fragment-index="1" style="border-bottom:6px solid red; width:510px; height:120px; position: absolute; left:50px; top:550px;"></div>
+<div class="fragment" data-fragment-index="1" style="border-bottom:6px solid red; width:350px; height:120px; position: absolute; left:850px; top:770px;"></div>
 
 Notes:
 Le titre est beaucoup trop long, tout droit sorti d’une thèse ! Il faut que le titre soit compréhensible. REX Sujet du talk !
@@ -420,10 +590,10 @@ Le titre est beaucoup trop long, tout droit sorti d’une thèse ! Il faut que l
 
 ##==##
 
-<!-- .slide: data-background="./assets/images/numbers.jpeg" class="transition mask" -->
+<!-- .slide: data-background="./assets/images/matthias-wagner-QrqeusbpFMM-unsplash.jpg" class="transition top" -->
 
 
-# Les nombres premiers et ses enjeux
+# 🧑‍🎨 L’art de bien rater sa conférence 🥱
 
 
 Nantes le 31/05/22<!--.element: class="center" id="real-hour"--><br>
@@ -504,8 +674,8 @@ ce qui est important pour les gens : votre nom, votre boite (histoire de faire u
 * Présentation du speaker
 * Agenda
 * Introduction
-* Des nombres premiers
-* Formules
+* Des stats
+* Recette secrète
 * Du code
 * La conclusion
 * Questions
@@ -533,33 +703,30 @@ https://imgflip.com/meme/Running-Away-Balloon
 
 
 ##==##
-<!-- .slide:-->
 
-# Introduction : Pourquoi nous devons nous intéresser à cette problématique compliquée
+# Introduction : Pourquoi nous devons nous intéresser à cette problématique essentielle
 
-<br>
+![h-300 center](./assets/images/hazbin-hazbin-hotel.gif) <!-- .element: style="margin-top:-100px;" -->
 
-* L’objectif de cette présentation est de revenir sur l'importance des nombres premiers
-* Pour rappel un nombre premier est un nombre dont le reste de la division par lui et 1 et uniquement par ces chiffres est 0. 1 exclu
-* En effet, ils sont souvent utilisés pour les calculs de crytpograhie
-* Cette présentation s’adresse à toutes les personnes qui se posent des questions sur leur compréhension des nombres premiers
+* L’objectif de cette présentation est de revenir sur les techniques majeurs permettant un présentation réussie
+* En effet, trop de personnes usent de slides avec des bullets points hyper chargées qui n'ont que peu de valeur ajoutée
+* En effet, c'est répétitif et en plus, il y a de grande chance que les personnes lisent les slides et donc que le présentateur ne serve pas à grand chose
+* Donc on pourrait dire que commencer par éviter de faire des slides à bullets points est un premier point !
+
 
 Notes:
-Pas de bullets points, rappel, 1 bullet point = une idée et surtout il ne faut pas des pavés ! sinon les gens lisent
-
-
+Ne pas regarder les participants
 
 ##==##
-<!-- .slide:-->
 
 # Pourquoi ?
 
 <br>
 
-* L’objectif de cette présentation est de revenir sur l'importance des nombres premiers
-* Pour rappel un nombre premier est un nombre dont le reste de la division par lui et 1 et uniquement par ces chiffres est 0. 1 exclu
-* En effet, ils sont souvent utilisés pour les calculs de crytpograhie
-* Cette présentation s’adresse à toutes les personnes qui se posent des questions sur leur compréhension des nombres premiers
+* L’objectif de cette présentation est de revenir sur les techniques majeures permettant une présentation réussie
+* En effet, trop de personnes usent de slides avec des boulets points hyper chargées qui n'ont que peu de valeur ajoutée
+* En effet, c'est répétitif et en plus, il y a de grande chance que les personnes lisent les slides et donc que le présentateur ne serve pas à grand chose
+* Donc on pourrait dire que commencer par éviter de faire des slides à bullets points est un premier point !
 
 
 Notes:
@@ -568,16 +735,15 @@ on va réduire le texte affiché !
 
 
 ##==##
-<!-- .slide:-->
 
 # Pourquoi ?
 
 <br>
 
-* Revenir sur **l'importance** des nombres premiers
-* Pour rappel un nombre premier est un nombre dont le reste de la division par lui et 1 et uniquement par ces chiffres est 0. 1 exclu
-* En effet, ils sont souvent utilisés pour les calculs de crytpograhie
-* Cette présentation s’adresse à toutes les personnes qui se posent des questions sur leur compréhension des nombres premiers
+* Revenir sur les **techniques majeures**
+* En effet, trop de personnes usent de slides avec des bullets points hyper chargées qui n'ont que peu de valeur ajoutée
+* En effet, c'est répétitif et en plus, il y a de grande chance que les personnes lisent les slides et donc que le présentateur ne serve pas à grand chose
+* Donc on pourrait dire que commencer par éviter de faire des slides à bullets points est un premier point !
 
 
 
@@ -587,54 +753,51 @@ on met des mots en gras, pour faire apparaître les infos principales
 
 
 ##==##
-<!-- .slide:-->
 
 # Pourquoi ?
 
 <br>
 
-* Revenir sur **l'importance** des nombres premiers
-* N est premier si **N%N & N%1 == 0** et que pour eux !!
-* En effet, ils sont souvent utilisés pour les calculs de crytpograhie
-* Cette présentation s’adresse à toutes les personnes qui se posent des questions sur leur compréhension des nombres premiers
+* Revenir sur les **techniques majeures**
+* Les bullets points n'ont que **peu de valeur ajoutée**
+* En effet, c'est répétitif et en plus, il y a de grande chance que les personnes lisent les slides et donc que le présentateur ne serve pas à grand chose
+* Donc on pourrait dire que commencer par éviter de faire des slides à bullets points est un premier point !
+
 
 
 
 ##==##
-<!-- .slide:-->
 
 # Pourquoi ?
 
 <br>
 
-* Revenir sur **l'importance** des nombres premiers
-* N est premier si **N%N & N%1 == 0** et que pour eux !!
-* Utile en **cryptograhie**
-* Cette présentation s’adresse à toutes les personnes qui se posent des questions sur leur compréhension des nombres premiers
+* Revenir sur les **techniques majeures**
+* Les bullets points n'ont que **peu de valeur ajoutée**
+* De plus, les participants **lisent les slides**
+* Donc on pourrait dire que commencer par éviter de faire des slides à bullets points est un premier point !
 
 
 ##==##
-<!-- .slide:-->
 
 # Pourquoi ?
 
 <br>
 
-* Revenir sur **l'importance** des nombres premiers
-* N est premier si **N%N & N%1 == 0** et que pour eux !!
-* Utile en **cryptograhie**
-* Pour **qui ?**
+* Revenir sur les **techniques majeures**
+* Les bullets points n'ont que **peu de valeur ajoutée**
+* De plus, les participants **lisent les slides**
+* **Commencez** par évitez les bullets points
 
 
 ##==##
-<!-- .slide:-->
 
 # Pourquoi ?
 
-* Revenir sur **l'importance** des nombres premiers
-* N est premier si **N%N & N%1 == 0** et que pour eux !!
-* Utile en **cryptograhie**
-* Pour **qui ?**
+* Revenir sur les **techniques majeures**
+* Les bullets points n'ont que **peu de valeur ajoutée**
+* De plus, les participants **lisent les slides**
+* **Commencez** par évitez les bullets points
 <!-- .element: class="list-fragment" -->
 
 Notes:
@@ -643,7 +806,7 @@ avec une animation d’affichage
 
 
 ##==##
-<!-- .slide: class="bg-white transition" -->
+<!-- .slide: class="transition" data-background="./assets/images/idea-slide.png" -->
 
 
 # Une Idée = 1 Slide
@@ -651,7 +814,9 @@ avec une animation d’affichage
 
 
 ##==##
-<!-- .slide: data-background="./assets/images/numbers-why.jpeg" class="transition right" -->
+
+<!-- .slide: data-background="./assets/images/joshua-hoehne-6M9jjeZjscE-unsplash.jpg" class="transition mask" -->
+
 
 
 # Pourquoi ?
@@ -663,9 +828,9 @@ Ou alternative : 1 idée = 1 slide
 
 
 ##==##
-<!-- .slide: class="transition mask" data-background="./assets/images/pexels-black-ice-551383-1314543.jpg" -->
+<!-- .slide: class="transition mask" data-background="./assets/images/absolutvision-82TpEld0_e4-unsplash.jpg" -->
 
-# Pourquoi c'est important
+# Revenir sur les **techniques majeures**
 
 
 Notes:
@@ -674,9 +839,9 @@ Soit juste du texte
 
 
 ##==##
-<!-- .slide: class="transition underline bottom" data-background="./assets/images/markus-spiske-iar-afB0QQw-unsplash.jpg" -->
+<!-- .slide: class="transition mask" data-background="./assets/images/aaron-burden-6jYoil2GhVk-unsplash.jpg" -->
 
-# utile en cryptographie
+# Simplifions pour éviter la lecture des slides
 
 
 Notes:
@@ -688,8 +853,8 @@ Une image peut aider à faire passer un message
 # Des stats importantes !
 
 
-![h-500](./assets/images/first-1000-prime-numbers-thumb.png)
-![h-500](./assets/images/distribution-chiffres.avif)
+![h-500](./assets/images/stats_speaking.svg)
+![h-500](./assets/images/Pacman-chart.svg)
 
 **On ne peut rien dégager comme information !!**<!-- .element: class="fragment"  -->
 
@@ -701,162 +866,196 @@ D'un côté, contextualiser ! De l'autre trop fouilli
 ##==##
 <!-- .slide: class="flex-row" data-state="hide-notification-event"-->
 
-# Nombres premiers dans les 100 premiers nombres
+# Quelques statistiques liés au monde des conférences
 
 
-![h-700](./assets/images/Primencomposite0100.svg.png)
+![h-700](./assets/images/chart-better.svg)
 
 Notes:
+Revoir à minima l'agencement des éléments par catégorie pour fluidifier la lecture. Là, il reste encore trop d'éléments à l'écran
+
+##==##
+
+# Quelques statistiques liés au monde des conférences - Sources
+
+**En lien avec les présentations** 
+<!-- .element: style="margin-top:-100px;"  -->
+
+* 37% temps utilisé : [Étude de l'Université du Minnesota (2018)](https://twin-cities.umn.edu/news-events/) 
+* 40% intro/conclusion : [Harvard Business Review (2020)](https://hbr.org/topic/presentations)
+* 83%  utilisent PowerPoint :  [Presentation Software Statistics, Presentation Magazine (2020)](https://www.presentationmagazine.com/)
+* 22% plus mémorables avec histoires : [Stanford Graduate School of Business Research (2018)](https://www.gsb.stanford.edu/insights/)
+
+<!-- .element: class="small-text"  -->
+
+**En lien avec parole en public**
+
+* 77% ont peur : [National Institute of Mental Health (2017)](https://www.nimh.nih.gov/health/statistics/)
+* 75% anxiété : [Statistic Brain Research Institute (2019)](https://www.statisticbrain.com/fear-of-public-speaking-statistics/) 
+
+<!-- .element: class="small-text"  -->
+
+**En lien avec l'audience et l'impact**
+
+* 73% déconnexion après 10min : [TED Talks Analytics Report (2019)](https://www.ted.com/about/research-surveys/)
+* 65% préfèrent supports visuels : [Presentation Design Statistics, Venngage (2021)](https://venngage.com/blog/presentation-statistics/)
+* 55% impact langage corporel : Recherches du Dr. Albert Mehrabian, UCLA "Silent Messages: Implicit Communication of Emotions and Attitudes" (1981)
+* 10% rétention après 24h : [Educational Psychology Review (2019)](https://link.springer.com/journal/10648)
+* 47% trouvent les présentations trop longues : [Forbes Business Communications Council (2019)](https://www.forbes.com/sites/forbescommunicationscouncil/)
+
+<!-- .element: class="small-text"  -->
 
 ##==##
 <!-- .slide: class="flex-row" data-state="hide-notification-event"-->
 
-# Loi de Benford
+# Pourcentage de graphiques qui ressemble à un Pacman
 
 
-![h-700](./assets/images/distribution-chiffres.avif)
+![h-700](./assets/images/Pacman-chart-good.svg)
 
-Fréquence relative d'apparition de la 1ère décimale
+source ©: internet of useless ideas 
 
 Notes:
-La loi de Benford, initialement appelée loi des nombres anormaux par Benford1,2, fait référence à une fréquence de distribution statistique observée empiriquement sur de nombreuses sources de données dans la vraie vie, ainsi qu'en mathématiques.
+Un graphique doit au moins affiche des légendes des mesures
 
 
 
 ##==##
-<!-- .slide: data-state="show-notification-event"-->
+<!-- .slide:  data-state="show-notification-event"-->
 
-# Une formule triviale
+# La recette d'une présentation réussie
 
+<div class="flex-row" style="margin-top:-150px">
 
-![full-center h-500](./assets/images/generation-nb-premiers.svg)
+![h-400](./assets/images/rainn-wilson.gif) 
 
+![h-1000](./assets/images/bonne-presentation-choses-importantes-fake.svg)
+
+</div>
 Notes:
 En soit pourquoi pas, mais il faut guider, diviser le problème, mettre en avant les choses à highlighter
 
 ##==##
 <!-- .slide: data-state="hide-notification-event"-->
 
-# Une formule triviale
+# La recette d'une présentation réussie
 
 
-![full-center h-500](./assets/images/generation-nb-premiers-1.svg)
+![full-center h-800](./assets/images/bonne-presentation-choses-importantes-rework.svg)
 
 Notes:
-En soit pourquoi pas, mais il faut guider, diviser le problème, mettre en avant les choses à highlighter
+On va retravailler le contenu de la présentation pour le rendre plus impactant
 
 ##==##
 <!-- .slide:-->
 
-# Une formule triviale
+# La recette d'une présentation réussie
 
 
-![full-center h-500](./assets/images/generation-nb-premiers-2.svg)
+![full-center h-800](./assets/images/bonne-presentation-choses-importantes-rework-1.svg)
 
 Notes:
-En soit pourquoi pas, mais il faut guider, diviser le problème, mettre en avant les choses à highlighter
+On va mettre le contenu petit à petit
 
 ##==##
 <!-- .slide:-->
 
-# Une formule triviale
+# La recette d'une présentation réussie
 
 
-![full-center h-500](./assets/images/generation-nb-premiers-3.svg)
+![full-center h-800](./assets/images/bonne-presentation-choses-importantes-rework-2.svg)
 
 Notes:
-En soit pourquoi pas, mais il faut guider, diviser le problème, mettre en avant les choses à highlighter
+On va mettre le contenu petit à petit
 
 ##==##
 <!-- .slide:-->
 
-# Une formule triviale
+# La recette d'une présentation réussie
 
 
-![full-center h-500](./assets/images/generation-nb-premiers-4.svg)
+![full-center h-800](./assets/images/bonne-presentation-choses-importantes-rework-3.svg)
 
 Notes:
-En soit pourquoi pas, mais il faut guider, diviser le problème, mettre en avant les choses à highlighter
+On va mettre le contenu petit à petit
 
 ##==##
 <!-- .slide:-->
 
-# Une formule triviale
+# La recette d'une présentation réussie
 
 
-![full-center h-500](./assets/images/generation-nb-premiers-5.svg)
+![full-center h-800](./assets/images/bonne-presentation-choses-importantes-rework.svg)
 
 Notes:
-En soit pourquoi pas, mais il faut guider, diviser le problème, mettre en avant les choses à highlighter
+On va mettre le contenu petit à petit
 
 
 ##==##
-<!-- .slide:-->
 
-# Une formule triviale
+# Conseils pratiques et tips pour des slides impactants
 
+![h-300 center](./assets/images/happy-dance-dance.gif) <!-- .element: style="margin-top:-100px;" -->
 
-![full-center h-500](./assets/images/generation-nb-premiers.svg)
+<div class="flex-row">
 
-Notes:
-En soit pourquoi pas, mais il faut guider, diviser le problème, mettre en avant les choses à highlighter
+<div style="flex:1">
 
-##==##
-<!-- .slide: class="two-column" data-state="hide-notification-event"-->
+* Faire bien attention à ne pas se répéter car ça se remarque.
+* penser à ne pas mettre trop de choses à lire sur le slide pour éviter que ça soit trop lourd
 
-# Le saviez-vous ?
+</div>
+<div style="flex:1">
 
-Il existe des nombres probablement premiers qui permettent de calculer si un nombre peut être considéré comme premier.
+* faire attention à bien respecter la règle des 7 mots par ligne.
+* Eviter les distractions sur les slides car ça n'aide pas à se concentrer
+* faire attention à l'harmonie du slide.
 
-N est probablement premier sur une base B si :
+</div>
 
+<div style="flex:1">
 
-<blockquote><cite>N>1 et B^(N-1)%N ==1 </cite></blockquote>
+* Ne pas oublier de conclusion.
+* avoir une cohérence et un ordre dans ses slides
+* Ne pas lire ses slides
+* Faire attention à ne pas se répéter.
+
+</div>
+
+</div>
+
 
 Notes: 
-Alors là c'est facile ! 
+Le problème de ce genre de slide est un manque de cohérence et d'ordre. La présence du gif n'aide pas non plus à se concentrer.
 
-La théorie, c'est quand on sait tout et que rien ne fonctionne. La pratique, c'est quand tout fonctionne et que personne ne sait pourquoi. Ici, nous avons réuni théorie et pratique : Rien ne fonctionne... et personne ne sait pourquoi !
 
-Trivial non ?
+##==##
 
-##--##
+# Pro tips
+
+* Ne pas se répéter.
+* **No** bullet points ! ou alors en step by step.
+* Pas plus de **7 mots** par ligne.
+* /!\ à **l'harmonie** du slide.
+* Ne **pas lire** ses slides.
+<!-- .element: class="list-fragment"  -->
+
+Notes:
+J'ai volontairement enlevé pleins de points que je vais les évoquer plus tard avec 1 slide par point
+
+
+
+##==##
+
+# Easy !
 
 <br><br>
 
-![h-500](./assets/images/g3a864e7b0c_0_125.png)
-
-##==##
-<!-- .slide:-->
-
-# Le saviez-vous ?
-
-
-* Il existe des nombres **probables premiers**
-* Calculé de la manière suivante : 
-<!-- .element: class="list-fragment" -->
-
-> b^n-1 % n = 1
-<!-- .element: class="fragment" -->
+![h-500 center](./assets/images/happy-dance-dance.gif) 
 
 
 Notes:
-Plutôt que d’avoir de longues phrase que l’on va paraphraser, il ne faut pas hésiter à mettre juste des mots clés
-
-##==##
-
-<!-- .slide:-->
-
-# Logique !
-
-
-
-![h-700 center](./assets/images/g3a864e7b0c_0_125.png)
-
-
-Notes:
-Plutôt que d’avoir de longues phrase que l’on va paraphraser, il ne faut pas hésiter à mettre juste des mots clés
-
+On peut mettre des gif mais pour faire des pauses
 
 
 ##==##
@@ -998,55 +1197,178 @@ le plus important c’est le focus !!! c’est le conseil numéro 1
 ##==##
 <!-- .slide: class="with-code"-->
 
-# Un slide de code qui compile car c’est important
+# Comment je code mes slides
 
 
-```java
-package com.sfeir.school.speaker;
 
-import java.lang.Math;
+<div class="flex-row" >
 
-public class ProbablePrimeClassMain {
+```md
 
-	public static void main(String[] args) {
-		
-		int nbr = 17;
-		ProbablePrimeClass instance = new ProbablePrimeClass();
-		int result = instance.isWeakProbablePrime(nbr, 10);
-		
-		if(result == 1)
-			System.out.println(nbr + " is a probable prime");
-		else
-			System.out.println(nbr + " is not a probable prime");
-	}
+<! -- .slide: data-background="./assets/images/stock-photo-happy-businessman-presentation-and-meeting-with-whiteboard-for-review-coaching-or-training-staff-2513213405-600x400.jpg" class="transition" -->
 
+
+# L'importance de faire des conférence impactatntes et comment on peut optimiser nos slides pour être plus impactant
+
+
+Nantes le 15 juillet 2018 <! --.element: class="center" -->< br>
+
+Jean-François Garreau : Director Engineering Sfeir Nantes <! --.element: class="center" -->
+
+
+## == ##
+
+# Jean-François Garreau
+
+![float-left](./assets/images/photo-jf-old.png)
+
+* Mutiples diplômes
+  * Bac S spé Math
+  * DEUG MIAS
+  * SILR
+  * Bafa
+  * SB
+  * GDE 
+  * MTS
+* Travaillé pour beaucoup de société en informatique
+* Travaillé en tant qu’ingénieur web dans beaucoup de société
+* J’aime jongler
+* J’ai parlé dans beaucoup de conférence
+
+
+## == ##
+
+# Agenda
+
+
+* Titre
+* Présentation du speaker
+* Agenda
+* Introduction
+* Des stats
+* Recette secrète
+* Du code
+* La conclusion
+* Questions
+
+## == ##
+
+
+<! -- .slide:-->
+
+# Quelques stats
+
+![full-center h-300](./assets/images/stats_speaking.svg)
+
+### Source © : 
+National Institute of Mental Health (2017) https://www.nimh.nih.gov/health/statistics/ |Statistic Brain Research Institute (2019) https://www.statisticbrain.com/fear-of-public-speaking-statistics/ | Étude de l'Université du Minnesota (2018) https://twin-cities.umn.edu/news-events/ |
+ Recherches du Dr. Albert Mehrabian, UCLA "Silent Messages: Implicit Communication of Emotions and Attitudes" (1981) | Project Management Institute (PMI) Pulse of the Profession (2020) https://www.pmi.org/learning/thought-leadership/pulse |
+ Recherches du Dr. Albert Mehrabian, UCLA "Silent Messages: Implicit Communication of Emotions and Attitudes" (1981) | Project Management Institute (PMI) Pulse of the Profession (2020) https://www.pmi.org/learning/thought-leadership/pulse | Educational Psychology Review (2019) https://link.springer.com/journal/10648 | Harvard Business Review (2020) https://hbr.org/topic/presentations  | Presentation Design Statistics, Venngage (2021) https://venngage.com/blog/presentation-statistics/ |  Forbes Business Communications Council (2019) https://www.forbes.com/sites/forbescommunicationscouncil/ | National Center for Voice and Speech (2018) https://www.ncvs.org/ |  Presentation Software Statistics, Presentation Magazine (2020) https://www.presentationmagazine. com/ |  Stanford Graduate School of Business Research (2018) https://www.gsb.stanford.edu/insights/ |  TED Talks Analytics Report (2019) https://www.ted.com/about/research-surveys/
+ 
+ <! -- .element: class="small-text"  --> 
+
+```
+<!-- .element: style="width:600px;" -->
+
+![center h-350](./assets/images/how-is-that-possible-dr-jill-gideon.gif)
+
+```javascript
+// Code from taken from https://github.com/kuroidoruido/js-libs/blob/main/libs/marked-djot-div
+import { marked } from 'marked';
+
+const symbolRegex = new RegExp(`^##\\+\\+##`);
+const colRegex = new RegExp(`${symbolRegex.source}( (.*))?`);
+const TYPE_COL_TC = 'colTc';
+
+function isDefined<T>(x: T | null | undefined): x is T {
+    return x != undefined;
 }
 
-public class ProbablePrimeClass {
 
-	public ProbablePrimeClass(){
-	}
+interface TcColToken extends marked.Tokens.Generic {
+    type: 'colTc';
+    raw: string;
+    attributes?: string;
+    tokens: marked.Token[];
+}
 
-	public boolean isWeakProbablePrime(int n, int base) {
-		boolean result = modularExponentiation(base, n - 1, n) == 1;
+export function markedTcCols(): marked.MarkedExtension {
+    return {
+        extensions: [
+            {
+                name: TYPE_COL_TC,
+                level: 'block',
+                start(src: string): number | undefined {
+                    return src.match(symbolRegex)?.index;
+                },
+                tokenizer(src): TcColToken | undefined {
+                    const match = colRegex.exec(src);
+                    if (!isDefined(match)) {
+                        return undefined;
+                    }
+                    const attributes = match?.[1];
+                    const rows = src.split('\n');
+                    const nextRows = rows.slice(1);
+                    const closingTokenIndex = nextRows.findIndex((row) =>
+                        row.match(symbolRegex),
+                    );
+                    const closingToken =
+                        closingTokenIndex === -1
+                            ? ''
+                            : '\n' + nextRows[closingTokenIndex];
+                    const sliceEnd =
+                        closingTokenIndex === -1 ? undefined : closingTokenIndex;
+                    const divContent = nextRows.slice(0, sliceEnd);
+                    const rawContent = divContent.join('\n');
 
-  		return result;
-	}
+                    const token: TcColToken = {
+                        type: TYPE_COL_TC,
+                        raw: `${rows[0]}\n${rawContent}${closingToken}`,
+                        attributes,
+                        tokens: [],
+                    }
+                    this.lexer.blockTokens(rawContent, token.tokens);
+                    return token;
 
 
-	public integer modularExponentiation(int base, int exp, int mod){
-		int result = 1;
-		while (exp > 0){
-			if (exp %2 != 0){
-				result = (result * base) % mod
-			}
-			exp = exp >> 1;
-			base = Math.pow(base,2) % mod 
-		}
-		return result;
-	}  
+                },
+                renderer(token) {
+                    if (!isTcColToken(token)) {
+                        return false;
+                    }
+                    let attributes = '';
+                    let classes = '';
+                    if (token.attributes) {
+                        const splitAttributes = token.attributes.split(' ');
+                        let attributesWithoutClasses = '';
+                        for (let attr of splitAttributes) {
+                            if (attr && attr.startsWith('class')) {
+                                classes = " " + attr.substring(attr.indexOf('=') + 2, attr.length - 1);
+                            } else if (attr && attr.length > 0) {
+                                attributesWithoutClasses += attr;
+                            }
+                        }
+                        attributes = ` ${attributesWithoutClasses}`;
+                    }
+                    const content = this.parser.parse(token.tokens);
+                    return `<div class="tc-column"><section${attributes} class="tc-column${classes}">\n${content}\n</section></div>`;
+                },
+            },
+        ],
+    };
+}
+
+
+
+export function isTcColToken(
+    token: TcColToken | { type: unknown }): token is TcColToken {
+    return token.type === TYPE_COL_TC;
 }
 ```
+<!-- .element: style="width:600px;" -->
+
+
+</div>
 
 
 Notes:
@@ -1057,19 +1379,21 @@ un slide de code ne doit pas compiler !!! on doit faire passer des messages !
 ##==##
 <!-- .slide: class="with-code max-height"-->
 
-# WeakProbalePrime.java
+# Marked plugin
 
-```java
-public integer modularExponentiation(int base, int exp, int mod){
-	int result = 1;
-	
-	
-	
-	
-	
-	
-	return result;
-}  
+```javascript
+const markedTcCols () => {
+        extensions: [{
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                },}]};
 ```
 <!-- .element: class="big-code " -->
 
@@ -1081,63 +1405,125 @@ c’est mieux si on guide l’attention du participant
 ##==##
 <!-- .slide: class="with-code max-height"-->
 
-# WeakProbalePrime.java
+# Marked plugin
 
+```javascript
+const markedTcCols () => {
+        extensions: [{
+                name: TYPE_COL_TC, level: 'block',
+                
+                
+                
+                
+                
+                
+                
+                
+                },}]};
 ```
-public integer modularExponentiation(int base, int exp, int mod){
-	int result = 1;
-	while (exp > 0){
-		if (exp %2 != 0)
-			result = (result * base) % mod
-		
-	
-	}
-	return result;
-}  
-```
-<!-- .element: class="big-code" -->
+<!-- .element: class="big-code " -->
+
+Notes:
+c’est mieux si on guide l’attention du participant
 
 
 ##==##
 <!-- .slide: class="with-code max-height"-->
 
-# WeakProbalePrime.java
+# Marked plugin
 
+```javascript
+const markedTcCols () => {
+        extensions: [{
+                name: TYPE_COL_TC, level: 'block',
+                start(src) => src.match(/^##\\+\\+##/)?.index,
+                
+                
+                
+                
+                
+                
+                
+                },}]};
 ```
-public integer modularExponentiation(int base, int exp, int mod){
-	int result = 1;
-	while (exp > 0){
-		if (exp %2 != 0)
-			result = (result * base) % mod
-		exp = exp >> 1;
-		base = Math.pow(base,2) % mod 
-	}
-	return result;
-}  
+<!-- .element: class="big-code " -->
+
+Notes:
+c’est mieux si on guide l’attention du participant
+
+##==##
+
+<!-- .slide: class="with-code max-height"-->
+
+# Marked plugin
+
+```javascript
+const markedTcCols () => {
+        extensions: [{
+                name: TYPE_COL_TC, level: 'block',
+                start(src) => src.match(/^##\\+\\+##/)?.index,
+                tokenizer(src) {
+                    const match = /^##\\+\\+##/.exec(src);
+                    //...
+                },
+                
+                
+                
+                },}]};
 ```
-<!-- .element: class="big-code" -->
+<!-- .element: class="big-code " -->
 
+Notes:
+c’est mieux si on guide l’attention du participant
 
+##==##
+
+<!-- .slide: class="with-code max-height"-->
+
+# Marked plugin
+
+```javascript
+const markedTcCols () => {
+        extensions: [{
+                name: TYPE_COL_TC, level: 'block',
+                start(src) => src.match(/^##\\+\\+##/)?.index,
+                tokenizer(src) {
+                    const match = /^##\\+\\+##/.exec(src);
+                    //...
+                },
+                renderer(token) {
+                    //...
+                    return `<div class="tc-column">...</div>`;
+                },}]};
+```
+<!-- .element: class="big-code " -->
+
+Notes:
+c’est mieux si on guide l’attention du participant
 
 ##==##
 <!-- .slide: class="with-code max-height"-->
 
-# WeakProbalePrime.java
+# Marked plugin
 
-```[1-2,10-11|3-5,8|6-7|1-10]
-public integer modularExponentiation(int base, int exp, int mod){
-	int result = 1;
-	while (exp > 0){
-		if (exp %2 != 0)
-			result = (result * base) % mod
-		exp = exp >> 1;
-		base = Math.pow(base,2) % mod 
-	}
-	return result;
-}  
+```javascript[1-2,12|3|4|5-8|9-11|1-12]
+const markedTcCols () => {
+        extensions: [{
+                name: TYPE_COL_TC, level: 'block',
+                start(src) => src.match(/^##\\+\\+##/)?.index,
+                tokenizer(src) {
+                    const match = /^##\\+\\+##/.exec(src);
+                    //...
+                },
+                renderer(token) {
+                    //...
+                    return `<div class="tc-column">...</div>`;
+                },}]};
 ```
-<!-- .element: class="big-code" -->
+<!-- .element: class="big-code " -->
 
+Notes:
+c’est mieux si on guide l’attention du participant
 
 
 ##==##
@@ -1152,12 +1538,16 @@ public integer modularExponentiation(int base, int exp, int mod){
 
 
 ##==##
-<!-- .slide:-->
-
-# Pour conclure
+<!-- .slide: class="quote-slide" -->
 
 
-Pour conclure, les nombres premiers sont une chose complexe pouvant demander une très grande puissance de calcul et donc, on doit toujours manipuler ses nombres avec précautions et éventuellement faire appels à des variantes comme les nombres probablement premiers vus précédement.
+# En résumé ![h-300 center](./assets/images/advice-my-advice.gif)
+
+<blockquote style="top:-300px;">
+<cite>
+  Il est important d'avoir en tête et de penser à la non complexité de ses idées et mises en oeuvre dans les slides afin de toujours focuser l'objectif principal de simplication du processus de transmission de connaissance.
+</cite>
+</blockquote>
 
 
 Notes:
@@ -1233,10 +1623,11 @@ Conclusion !
 
 ![company](./assets/images/logo-sfeir-blanc.png)
 
-<a style="color:white; top: 400px;" href="https://bit.ly/terrible-talk">https://bit.ly/terrible-talk</a>
+<a style="color:white; top: 400px;" href="https://bit.ly/conf-rate">https://bit.ly/conf-rate</a>
 
-© Chet Haase
-<!-- .element: class="credits"-->
+© Chet Haase / SFEIR School Speaker
+<!-- .
+element: class="credits"-->
 
 Notes:
 Un rappel de son twitter, l’url des slides, faire en sorte d’ouvrir la discussion avant tout !

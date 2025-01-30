@@ -194,4 +194,8 @@ body .notification-tmp:hover::after {
   opacity: 1;
 }
 
+.reveal .slides section .small-text {
+  font-size: 1.8rem;
+}
+
 /*# sourceMappingURL=slides.css.map */
