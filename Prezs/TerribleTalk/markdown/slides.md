@@ -1,4 +1,4 @@
-<!-- .slide: data-background="./assets/images/stock-photo-happy-businessman-presentation-and-meeting-with-whiteboard-for-review-coaching-or-training-staff-2513213405-600x400.jpg" class="transition" -->
+<!-- .slide: data-background="./assets/images/stock-photo-happy-businessman-presentation-and-meeting-with-whiteboard-for-review-coaching-or-training-staff-2513213405-600x400.jpg" class="transition" data-type-show="prez" -->
 
 
 
@@ -26,7 +26,7 @@ Notes:
 
 
 ##==##
-<!-- .slide:-->
+<!-- .slide: data-type-show="prez"-->
 
 # Jean-François Garreau
 
@@ -49,7 +49,7 @@ Notes:
 MTS = Mozilla Tech Speaker
 
 ##==##
-<!-- .slide:-->
+<!-- .slide: data-type-show="prez"-->
 
 # Agenda
 
@@ -66,7 +66,7 @@ MTS = Mozilla Tech Speaker
 
 
 ##==##
-<!-- .slide:-->
+<!-- .slide: data-type-show="prez"-->
 
 # Agenda
 
@@ -83,7 +83,7 @@ MTS = Mozilla Tech Speaker
 
 
 ##==##
-<!-- .slide:-->
+<!-- .slide: data-type-show="prez"-->
 
 # Agenda
 
@@ -100,7 +100,7 @@ MTS = Mozilla Tech Speaker
 
 
 ##==##
-<!-- .slide:-->
+<!-- .slide: data-type-show="prez"-->
 
 # Agenda
 
@@ -118,6 +118,8 @@ MTS = Mozilla Tech Speaker
 
 ##==##
 
+<!-- .slide: data-type-show="prez" -->
+
 # Introduction : Pourquoi nous devons nous intéresser à cette problématique essentielle
 
 ![h-300 center](./assets/images/hazbin-hazbin-hotel.gif) <!-- .element: style="margin-top:-100px;" -->
@@ -133,6 +135,8 @@ Prendre son temps et bien paraphrasé !
 Ne pas regarder les participants
 
 ##==##
+
+<!-- .slide: data-type-show="prez" -->
 
 # Conseils pratiques et tips pour des slides impactants
 
@@ -168,7 +172,7 @@ Ne pas regarder les participants
 
 
 ##==##
-<!-- .slide: data-state="hide-notification-event"-->
+<!-- .slide: data-state="hide-notification-event" data-type-show="prez"-->
 
 # Agenda
 
@@ -185,7 +189,7 @@ Ne pas regarder les participants
 
 
 ##==##
-<!-- .slide:  data-state="show-notification-event"-->
+<!-- .slide:  data-state="show-notification-event" data-type-show="prez"-->
 
 # Quelques stats
 
@@ -220,7 +224,7 @@ LEADER/PROFESSIONNEL
 * Les auditeurs ne retiennent en moyenne que 10% du contenu d'une présentation après 24h
 
 ##==##
-<!-- .slide: data-state="hide-notification-event"-->
+<!-- .slide: data-state="hide-notification-event" data-type-show="prez"-->
 
 # Nombre de graphiques qui ressemblent à ça
 
@@ -232,6 +236,7 @@ Très important d'avoir ça en tête
 
 ##==##
 
+<!-- .slide: data-type-show="prez" -->
 
 # Agenda
 
@@ -249,6 +254,7 @@ Très important d'avoir ça en tête
 
 ##==##
 
+<!-- .slide: data-type-show="prez" -->
 
 # La recette d'une présentation réussie
 
@@ -267,7 +273,7 @@ Donc pour faire une présentation réussie, il faut .... prendre dans le désord
 
 
 ##==##
-<!-- .slide: data-state="hide-notification-event"-->
+<!-- .slide: data-state="hide-notification-event" data-type-show="prez"-->
 
 # Agenda
 
@@ -284,7 +290,7 @@ Donc pour faire une présentation réussie, il faut .... prendre dans le désord
 
 
 ##==##
-<!-- .slide: class="with-code"-->
+<!-- .slide: class="with-code" data-type-show="prez"-->
 
 # Comment je code mes slides
 
@@ -460,7 +466,7 @@ export function isTcColToken(
 </div>
 
 ##==##
-<!-- .slide:-->
+<!-- .slide: data-type-show="prez"-->
 
 # Agenda
 
@@ -478,7 +484,7 @@ export function isTcColToken(
 
 ##==##
 
-<!-- .slide: class="quote-slide" -->
+<!-- .slide: class="quote-slide" data-type-show="prez"-->
 
 
 # En résumé ![h-300 center](./assets/images/advice-my-advice.gif)
@@ -492,10 +498,10 @@ export function isTcColToken(
 
 Notes: 
 
-En résumé : faire simple
+En résumé : je pense que c'est clair
 
 ##==##
-<!-- .slide:-->
+<!-- .slide: data-type-show="prez"-->
 
 # Agenda
 
@@ -512,7 +518,7 @@ En résumé : faire simple
 
 
 ##==##
-<!-- .slide:-->
+<!-- .slide: data-type-show="prez"-->
 
 # C’est le moment d'interagir
 
@@ -532,6 +538,8 @@ Rester 2 sec
 
 ##==##
 
+<!-- .slide: data-type-show="prez" -->
+
 # Merci de votre attention
 
 ## Jean-François Garreau
@@ -545,7 +553,7 @@ Rester 2 sec
 
 ##==##
 
-<!-- .slide: data-background="./assets/images/seriously.gif" class="transition" -->
+<!-- .slide: data-background="./assets/images/seriously.gif" class="transition" data-type-show="prez" -->
 
 # T'es sérieux là ?
 
@@ -555,7 +563,7 @@ On va revoir tous les slides pour faire un truc propre mais pas forcément parfa
 
 
 ##==##
-<!-- .slide:-->
+<!-- .slide: data-type-show="prez"-->
 
 # On peut faire mieux
 
@@ -696,6 +704,7 @@ Notes:
 
 ##==##
 
+<!-- .slide: class="quote-slide" -->
 
 ## ⏳
 
@@ -941,12 +950,26 @@ D'un côté, contextualiser ! De l'autre trop fouilli
 
 ##==##
 
-<!-- .slide: data-state="hide-notification-event"-->
+<!-- .slide: data-state="hide-notification-event" data-type-show="prez"-->
 
 # Quelques statistiques liés au monde des conférences
 
 
 ![h-800](./assets/images/chart-better-presentations.svg)
+
+Notes:
+Revoir à minima l'agencement des éléments par catégorie pour fluidifier la lecture. Là, il reste encore trop d'éléments à l'écran
+
+##==##
+
+<!-- .slide: data-state="hide-notification-event" data-type-show="restit"-->
+
+# Quelques statistiques liés au monde des conférences
+
+
+![h-700](./assets/images/chart-better-presentations.svg)
+
+Pensez à mettre en avant le contenu de manière lisbile et itérative ! Ici nous avons utilisé un mécanisme de masques pour faire apparaître des informations sur les éléments de la liste.
 
 Notes:
 Revoir à minima l'agencement des éléments par catégorie pour fluidifier la lecture. Là, il reste encore trop d'éléments à l'écran
@@ -972,12 +995,25 @@ Notes:
 Revoir à minima l'agencement des éléments par catégorie pour fluidifier la lecture. Là, il reste encore trop d'éléments à l'écran
 
 ##==##
-<!-- .slide: data-state="hide-notification-event"-->
+<!-- .slide: data-state="hide-notification-event" data-type-show="prez"-->
 
 # Quelques statistiques liés au monde des conférences
 
 
 ![h-800](./assets/images/chart-better.svg)
+
+Notes:
+Revoir à minima l'agencement des éléments par catégorie pour fluidifier la lecture. Là, il reste encore trop d'éléments à l'écran
+
+##==##
+<!-- .slide: data-state="hide-notification-event" data-type-show="restit"-->
+
+# Quelques statistiques liés au monde des conférences
+
+
+![h-700](./assets/images/chart-better.svg)
+
+Finir sur le graphique avec toutes les données n'est pas un soucis car il a été amené progresivement.
 
 Notes:
 Revoir à minima l'agencement des éléments par catégorie pour fluidifier la lecture. Là, il reste encore trop d'éléments à l'écran
@@ -1052,12 +1088,14 @@ J'arrive aux abords de la gare, je regarde mon billet
 
 ##==##
 
-<!-- .slide: data-background="./assets/images/charles-forerunner-gapYVvUg1M8-unsplash.jpg"-->
+<!-- .slide: data-background="./assets/images/charles-forerunner-gapYVvUg1M8-unsplash.jpg" data-type-show="prez"-->
 
 Notes: 
 J'arrive en gare, mince quelle voie ?
 
 ##==##
+
+<!-- .slide: data-type-show="prez" -->
 
 # Mince c'est la voie déjà ?
 
@@ -1065,12 +1103,14 @@ J'arrive en gare, mince quelle voie ?
 
 ##==##
 
-<!-- .slide: data-background="./assets/images/charles-forerunner-gapYVvUg1M8-unsplash.jpg"-->
+<!-- .slide: data-background="./assets/images/charles-forerunner-gapYVvUg1M8-unsplash.jpg" data-type-show="prez"-->
 
 Notes: 
 j'arrive voie 3, mince quelle voiture ?
 
 ##==##
+
+<!-- .slide: data-type-show="prez" -->
 
 # Et zut, c'est quoi la voiture ?
 
@@ -1078,12 +1118,14 @@ j'arrive voie 3, mince quelle voiture ?
 
 ##==##
 
-<!-- .slide: data-background="./assets/images/charles-forerunner-gapYVvUg1M8-unsplash.jpg"-->
+<!-- .slide: data-background="./assets/images/charles-forerunner-gapYVvUg1M8-unsplash.jpg" data-type-show="prez"-->
 
 Notes: 
 Bon voiture 11, et mine ma place ?
 
 ##==##
+
+<!-- .slide: data-type-show="prez" -->
 
 # A oui et quel siège ?
 
@@ -1092,11 +1134,11 @@ Bon voiture 11, et mine ma place ?
 
 ##==##
 
-<!-- .slide: data-background="./assets/images/javier-martinez-hUD0PUczwJQ-unsplash.jpg" class="transition" data-type-show="terrible"-->
+<!-- .slide: data-background="./assets/images/javier-martinez-hUD0PUczwJQ-unsplash.jpg" class="transition" data-type-show="prez"-->
 # Jouons un petit jeu
 
 ##==##
-<!-- .slide: class="flew-row" data-type-show="terrible"-->
+<!-- .slide: class="flew-row" data-type-show="prez"-->
 
 # Combien d'objets ?
 
@@ -1119,7 +1161,7 @@ Bon voiture 11, et mine ma place ?
 
 
 ##==##
-<!-- .slide: class="flew-row" data-type-show="terrible"-->
+<!-- .slide: class="flew-row" data-type-show="prez"-->
 
 # Combien d'objets ?
 
@@ -1141,7 +1183,7 @@ Bon voiture 11, et mine ma place ?
 
 
 ##==##
-<!-- .slide: class="flew-row" data-type-show="terrible"-->
+<!-- .slide: class="flew-row" data-type-show="prez"-->
 
 # Combien d'objets ?
 
@@ -1176,12 +1218,25 @@ Notes:
 En soit pourquoi pas, mais il faut guider, diviser le problème, mettre en avant les choses à highlighter
 
 ##==##
-<!-- .slide: data-state="hide-notification-event"-->
+<!-- .slide: data-state="hide-notification-event" data-type-show="prez"-->
 
 # La recette d'une présentation réussie
 
 
 ![full-center h-800](./assets/images/bonne-presentation-choses-importantes-rework.svg)
+
+Notes:
+On va retravailler le contenu de la présentation pour le rendre plus impactant
+
+##==##
+<!-- .slide: data-state="hide-notification-event" data-type-show="restit"-->
+
+# La recette d'une présentation réussie
+
+
+![full-center h-600](./assets/images/bonne-presentation-choses-importantes-rework.svg)
+
+Encore une fois, on va afficher le contenu petit à petit. Le résultat final sera complet (ce schéma qui reprend tous les éléments nécessaires, mais on va afficher blocs par blocs les informations pour accompagner la compréhension).
 
 Notes:
 On va retravailler le contenu de la présentation pour le rendre plus impactant
@@ -1239,6 +1294,16 @@ On va mettre le contenu petit à petit
 
 Notes:
 le plus important c’est le focus !!! c’est le conseil numéro 1
+
+
+##==##
+<!-- .slide: data-type-show="restit"-->
+
+# Gérer le focus
+
+* En résumé, le plus important c’est le focus !!!
+* Gérez là où doit aller l'attention de votre audience
+* Vous pouvez usez du tips du slide noir (prochain slide) pour garder l'attention
 
 
 ##==##
@@ -1438,7 +1503,16 @@ export function isTcColToken(
 Notes:
 un slide de code ne doit pas compiler !!! on doit faire passer des messages !
 
+##==##
 
+<!-- .slide: data-type-show="restit"-->
+
+# Pour les slides de code
+
+* Le code ne doit pas compiler !!!
+* Éviter plus de 9 lignes de code
+* Si vous n'avez pas de mécanisme d'affichage séquentiel, prévoyez N slides de code
+* Sinon utilisez des mécanismes de masques avec de l'opacité
 
 ##==##
 <!-- .slide: class="with-code max-height"-->
@@ -1620,7 +1694,7 @@ le pavé ne sert pas à grand chose sur scène
 
 
 ##==##
-<!-- .slide: data-background="./assets/images/g3a864e7b0c_0_411.png"-->
+<!-- .slide: data-background="./assets/images/tim-mossholder-7aBrZmwEQtg-unsplash.jpg"-->
 
 
 Notes:
@@ -1658,7 +1732,7 @@ Avec un peu de technologie c’est encore mieux
 
 ![company](./assets/images/logo-sfeir-blanc.png)
 
-<a style="color:white" href="https://url-slides">https://url-slides</a>
+<a style="color:white" href="#">https://url-slides</a>
 
 Notes:
 Un rappel de son twitter, l’url des slides, faire en sorte d’ouvrir la discussion avant tout !
@@ -1666,14 +1740,14 @@ Un rappel de son twitter, l’url des slides, faire en sorte d’ouvrir la discu
 
 ##==##
 
-<!-- .slide: data-background="./assets/images/pexels-ann-h-6980523.jpg" data-type-show="terrible"-->
+<!-- .slide: data-background="./assets/images/pexels-ann-h-6980523.jpg" data-type-show="prez"-->
 
 Notes:
 Conclusion !
 
 ##==##
 
-<!-- .slide: class="speaker-slide" data-type-show="terrible" -->
+<!-- .slide: class="speaker-slide" data-type-show="prez" -->
 
 # Des Questions ?
 
