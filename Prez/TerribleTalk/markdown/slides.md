@@ -9,6 +9,21 @@ Nantes le 15 juillet 2018 <!--.element: class="center" --><br>
 
 Jean-François Garreau : Director Engineering Sfeir Nantes <!--.element: class="center" -->
 
+<br>
+
+Notes:
+
+**Objectif :**  Vendre la formation 
+
+**Public cible :** Personnes peu attentives au détails et qui veulent des slides impactants
+
+**Points d'attention :** 
+* Regarder les participants 
+* Être inclusif
+* Être concis
+* Être clair
+* Être impactant
+
 
 ##==##
 <!-- .slide:-->
@@ -114,6 +129,7 @@ MTS = Mozilla Tech Speaker
 
 
 Notes:
+Prendre son temps et bien paraphrasé ! 
 Ne pas regarder les participants
 
 ##==##
@@ -152,7 +168,7 @@ Ne pas regarder les participants
 
 
 ##==##
-<!-- .slide:-->
+<!-- .slide: data-state="hide-notification-event"-->
 
 # Agenda
 
@@ -169,7 +185,7 @@ Ne pas regarder les participants
 
 
 ##==##
-<!-- .slide:-->
+<!-- .slide:  data-state="show-notification-event"-->
 
 # Quelques stats
 
@@ -184,6 +200,7 @@ National Institute of Mental Health (2017) https://www.nimh.nih.gov/health/stati
  <!-- .element: class="small-text"  --> 
 
 Notes: 
+Faire une pause longue et génante
 PRESENTATIONS
 * Les présentateurs n'utilisent en moyenne que 37% du temps alloué pour leur présentation
 * 40% du temps de présentation est consacré à l'introduction et à la conclusion
@@ -203,7 +220,7 @@ LEADER/PROFESSIONNEL
 * Les auditeurs ne retiennent en moyenne que 10% du contenu d'une présentation après 24h
 
 ##==##
-<!-- .slide:-->
+<!-- .slide: data-state="hide-notification-event"-->
 
 # Nombre de graphiques qui ressemblent à ça
 
@@ -211,10 +228,10 @@ LEADER/PROFESSIONNEL
 ![full-center h-800](./assets/images/Pacman-chart.svg)
 
 Notes: 
-Très très important de constater cette répartition de nombres surtout si on parle de nombres premiers.
+Très important d'avoir ça en tête
 
 ##==##
-<!-- .slide: data-state="hide-notification-event"-->
+
 
 # Agenda
 
@@ -231,7 +248,7 @@ Très très important de constater cette répartition de nombres surtout si on p
 
 
 ##==##
-<!-- .slide:  data-state="show-notification-event"-->
+
 
 # La recette d'une présentation réussie
 
@@ -246,9 +263,7 @@ Très très important de constater cette répartition de nombres surtout si on p
 Notes:
 Lire les notes sur ce slide !!
 
-Pour connaitre le Nième nombre premier, il suffit d'ajouter à 1 la somme des en allant de 1 à n au carré le chiffre n divisé par la somme des cosinus entre 1 et i précédement donné donc du cosinus du factoriel de (j-1) + 1 divisé par j le tout multiplié par Pi qu'on met au carré. Cette division est ensuite mise à la puissance 1/n
-
-Il s'agit du théorème de Wilson créé en 1964
+Donc pour faire une présentation réussie, il faut .... prendre dans le désordre les points et en oublier
 
 
 ##==##
@@ -475,6 +490,9 @@ export function isTcColToken(
 </blockquote>
 
 
+Notes: 
+
+En résumé : faire simple
 
 ##==##
 <!-- .slide:-->
@@ -532,12 +550,9 @@ Rester 2 sec
 # T'es sérieux là ?
 
 Notes: 
-### revenir sur : 
-* Bureau 
-* Ecran non préparé
-* T-shirt
-* Ne pas regarder le public
-* Non inclusif
+
+On va revoir tous les slides pour faire un truc propre mais pas forcément parfait ni ultra beau ! mais juste qui respecte les règles de base
+
 
 ##==##
 <!-- .slide:-->
@@ -548,19 +563,14 @@ Notes:
 ![full-center h-600](./assets/images/g3a864e7b0c_0_158.png)
 
 Notes: 
-### revenir sur : 
+* Arriver en avance
+* Téléphone portable
 * Bureau 
 * Ecran non préparé
 * T-shirt
 * Ne pas regarder le public
+* Posture
 * Non inclusif
-
-
-
-Notes speaker :
-Toujours  en 2 temps, le slide qui va pas, on interroge les gens et on fait mieux
-
-
 
 
 ##==##
@@ -686,15 +696,10 @@ Notes:
 
 ##==##
 
-<!-- .slide: class="quote-slide" -->
 
 ## ⏳
 
 <img src="./assets/images/meme-agenda.png" class="h-800">
-<!--<blockquote>
-<cite>  
-</cite>
-</blockquote>-->
 
 
 
@@ -787,7 +792,7 @@ on met des mots en gras, pour faire apparaître les infos principales
 * Revenir sur les **techniques majeures**
 * Les bullets points n'ont que **peu de valeur ajoutée**
 * De plus, les participants **lisent les slides**
-* **Commencez** par évitez les bullets points
+* **Commencez** par éviter les bullets points
 
 
 ##==##
@@ -797,7 +802,7 @@ on met des mots en gras, pour faire apparaître les infos principales
 * Revenir sur les **techniques majeures**
 * Les bullets points n'ont que **peu de valeur ajoutée**
 * De plus, les participants **lisent les slides**
-* **Commencez** par évitez les bullets points
+* **Commencez** par éviter les bullets points
 <!-- .element: class="list-fragment" -->
 
 Notes:
@@ -839,157 +844,13 @@ Soit juste du texte
 
 
 ##==##
-<!-- .slide: class="transition mask" data-background="./assets/images/aaron-burden-6jYoil2GhVk-unsplash.jpg" -->
+<!-- .slide: class="transition mask" data-background="./assets/images/aaron-burden-6jYoil2GhVk-unsplash.jpg"  -->
 
 # Simplifions pour éviter la lecture des slides
 
 
 Notes:
 Une image peut aider à faire passer un message
-
-##==##
-<!-- .slide: class="flex-row" data-state="hide-notification-event"-->
-
-# Des stats importantes !
-
-
-![h-500](./assets/images/stats_speaking.svg)
-![h-500](./assets/images/Pacman-chart.svg)
-
-**On ne peut rien dégager comme information !!**<!-- .element: class="fragment"  -->
-
-Notes:
-Il faut donc soit des unitées, soit guider le participant
-D'un côté, contextualiser ! De l'autre trop fouilli
-
-
-##==##
-<!-- .slide: class="flex-row" data-state="hide-notification-event"-->
-
-# Quelques statistiques liés au monde des conférences
-
-
-![h-700](./assets/images/chart-better.svg)
-
-Notes:
-Revoir à minima l'agencement des éléments par catégorie pour fluidifier la lecture. Là, il reste encore trop d'éléments à l'écran
-
-##==##
-
-# Quelques statistiques liés au monde des conférences - Sources
-
-**En lien avec les présentations** 
-<!-- .element: style="margin-top:-100px;"  -->
-
-* 37% temps utilisé : [Étude de l'Université du Minnesota (2018)](https://twin-cities.umn.edu/news-events/) 
-* 40% intro/conclusion : [Harvard Business Review (2020)](https://hbr.org/topic/presentations)
-* 83%  utilisent PowerPoint :  [Presentation Software Statistics, Presentation Magazine (2020)](https://www.presentationmagazine.com/)
-* 22% plus mémorables avec histoires : [Stanford Graduate School of Business Research (2018)](https://www.gsb.stanford.edu/insights/)
-
-<!-- .element: class="small-text"  -->
-
-**En lien avec parole en public**
-
-* 77% ont peur : [National Institute of Mental Health (2017)](https://www.nimh.nih.gov/health/statistics/)
-* 75% anxiété : [Statistic Brain Research Institute (2019)](https://www.statisticbrain.com/fear-of-public-speaking-statistics/) 
-
-<!-- .element: class="small-text"  -->
-
-**En lien avec l'audience et l'impact**
-
-* 73% déconnexion après 10min : [TED Talks Analytics Report (2019)](https://www.ted.com/about/research-surveys/)
-* 65% préfèrent supports visuels : [Presentation Design Statistics, Venngage (2021)](https://venngage.com/blog/presentation-statistics/)
-* 55% impact langage corporel : Recherches du Dr. Albert Mehrabian, UCLA "Silent Messages: Implicit Communication of Emotions and Attitudes" (1981)
-* 10% rétention après 24h : [Educational Psychology Review (2019)](https://link.springer.com/journal/10648)
-* 47% trouvent les présentations trop longues : [Forbes Business Communications Council (2019)](https://www.forbes.com/sites/forbescommunicationscouncil/)
-
-<!-- .element: class="small-text"  -->
-
-##==##
-<!-- .slide: class="flex-row" data-state="hide-notification-event"-->
-
-# Pourcentage de graphiques qui ressemble à un Pacman
-
-
-![h-700](./assets/images/Pacman-chart-good.svg)
-
-source ©: internet of useless ideas 
-
-Notes:
-Un graphique doit au moins affiche des légendes des mesures
-
-
-
-##==##
-<!-- .slide:  data-state="show-notification-event"-->
-
-# La recette d'une présentation réussie
-
-<div class="flex-row" style="margin-top:-150px">
-
-![h-400](./assets/images/rainn-wilson.gif) 
-
-![h-1000](./assets/images/bonne-presentation-choses-importantes-fake.svg)
-
-</div>
-Notes:
-En soit pourquoi pas, mais il faut guider, diviser le problème, mettre en avant les choses à highlighter
-
-##==##
-<!-- .slide: data-state="hide-notification-event"-->
-
-# La recette d'une présentation réussie
-
-
-![full-center h-800](./assets/images/bonne-presentation-choses-importantes-rework.svg)
-
-Notes:
-On va retravailler le contenu de la présentation pour le rendre plus impactant
-
-##==##
-<!-- .slide:-->
-
-# La recette d'une présentation réussie
-
-
-![full-center h-800](./assets/images/bonne-presentation-choses-importantes-rework-1.svg)
-
-Notes:
-On va mettre le contenu petit à petit
-
-##==##
-<!-- .slide:-->
-
-# La recette d'une présentation réussie
-
-
-![full-center h-800](./assets/images/bonne-presentation-choses-importantes-rework-2.svg)
-
-Notes:
-On va mettre le contenu petit à petit
-
-##==##
-<!-- .slide:-->
-
-# La recette d'une présentation réussie
-
-
-![full-center h-800](./assets/images/bonne-presentation-choses-importantes-rework-3.svg)
-
-Notes:
-On va mettre le contenu petit à petit
-
-##==##
-<!-- .slide:-->
-
-# La recette d'une présentation réussie
-
-
-![full-center h-800](./assets/images/bonne-presentation-choses-importantes-rework.svg)
-
-Notes:
-On va mettre le contenu petit à petit
-
 
 ##==##
 
@@ -1047,6 +908,8 @@ J'ai volontairement enlevé pleins de points que je vais les évoquer plus tard 
 
 ##==##
 
+<!-- .slide: data-state="hide-notification-event" -->
+
 # Easy !
 
 <br><br>
@@ -1057,6 +920,112 @@ J'ai volontairement enlevé pleins de points que je vais les évoquer plus tard 
 Notes:
 On peut mettre des gif mais pour faire des pauses
 
+
+
+##==##
+
+<!-- .slide: class="flex-row" data-state="show-notification-event"-->
+
+# Des stats importantes !
+
+
+![h-500](./assets/images/stats_speaking.svg)
+![h-500](./assets/images/Pacman-chart.svg)
+
+**On ne peut rien dégager comme information !!**<!-- .element: class="fragment"  -->
+
+Notes:
+Il faut donc soit des unitées, soit guider le participant
+D'un côté, contextualiser ! De l'autre trop fouilli
+
+
+##==##
+
+<!-- .slide: data-state="hide-notification-event"-->
+
+# Quelques statistiques liés au monde des conférences
+
+
+![h-800](./assets/images/chart-better-presentations.svg)
+
+Notes:
+Revoir à minima l'agencement des éléments par catégorie pour fluidifier la lecture. Là, il reste encore trop d'éléments à l'écran
+
+##==##
+
+# Quelques statistiques liés au monde des conférences
+
+
+![h-800](./assets/images/chart-better-parole.svg)
+
+Notes:
+Revoir à minima l'agencement des éléments par catégorie pour fluidifier la lecture. Là, il reste encore trop d'éléments à l'écran
+
+##==##
+
+# Quelques statistiques liés au monde des conférences
+
+
+![h-800](./assets/images/chart-better-audience.svg)
+
+Notes:
+Revoir à minima l'agencement des éléments par catégorie pour fluidifier la lecture. Là, il reste encore trop d'éléments à l'écran
+
+##==##
+<!-- .slide: data-state="hide-notification-event"-->
+
+# Quelques statistiques liés au monde des conférences
+
+
+![h-800](./assets/images/chart-better.svg)
+
+Notes:
+Revoir à minima l'agencement des éléments par catégorie pour fluidifier la lecture. Là, il reste encore trop d'éléments à l'écran
+
+
+##==##
+
+# Quelques statistiques liés au monde des conférences - Sources
+
+**En lien avec les présentations** 
+<!-- .element: style="margin-top:-100px;"  -->
+
+* 37% temps utilisé : [Étude de l'Université du Minnesota (2018)](https://twin-cities.umn.edu/news-events/) 
+* 40% intro/conclusion : [Harvard Business Review (2020)](https://hbr.org/topic/presentations)
+* 83%  utilisent PowerPoint :  [Presentation Software Statistics, Presentation Magazine (2020)](https://www.presentationmagazine.com/)
+* 22% plus mémorables avec histoires : [Stanford Graduate School of Business Research (2018)](https://www.gsb.stanford.edu/insights/)
+
+<!-- .element: class="small-text"  -->
+
+**En lien avec parole en public**
+
+* 77% ont peur : [National Institute of Mental Health (2017)](https://www.nimh.nih.gov/health/statistics/)
+* 75% anxiété : [Statistic Brain Research Institute (2019)](https://www.statisticbrain.com/fear-of-public-speaking-statistics/) 
+
+<!-- .element: class="small-text"  -->
+
+**En lien avec l'audience et l'impact**
+
+* 73% déconnexion après 10min : [TED Talks Analytics Report (2019)](https://www.ted.com/about/research-surveys/)
+* 65% préfèrent supports visuels : [Presentation Design Statistics, Venngage (2021)](https://venngage.com/blog/presentation-statistics/)
+* 55% impact langage corporel : Recherches du Dr. Albert Mehrabian, UCLA "Silent Messages: Implicit Communication of Emotions and Attitudes" (1981)
+* 10% rétention après 24h : [Educational Psychology Review (2019)](https://link.springer.com/journal/10648)
+* 47% trouvent les présentations trop longues : [Forbes Business Communications Council (2019)](https://www.forbes.com/sites/forbescommunicationscouncil/)
+
+<!-- .element: class="small-text"  -->
+
+##==##
+<!-- .slide: class="flex-row"-->
+
+# Pourcentage de graphiques qui ressemble à un Pacman
+
+
+![h-700](./assets/images/Pacman-chart-good.svg)
+
+source ©: internet of useless ideas 
+
+Notes:
+Un graphique doit au moins affiche des légendes des mesures
 
 ##==##
 
@@ -1072,6 +1041,8 @@ On peut mettre des gif mais pour faire des pauses
 
 <!-- .slide: data-background="./assets/images/charles-forerunner-gapYVvUg1M8-unsplash.jpg"-->
 
+Notes: 
+J'arrive aux abords de la gare, je regarde mon billet
 
 ##==##
 
@@ -1083,15 +1054,34 @@ On peut mettre des gif mais pour faire des pauses
 
 <!-- .slide: data-background="./assets/images/charles-forerunner-gapYVvUg1M8-unsplash.jpg"-->
 
+Notes: 
+J'arrive en gare, mince quelle voie ?
+
 ##==##
 
-# Mince c'est quoi déjà ?
+# Mince c'est la voie déjà ?
 
 ![center h-600](./assets/images/billet-train.png)
 
 ##==##
 
 <!-- .slide: data-background="./assets/images/charles-forerunner-gapYVvUg1M8-unsplash.jpg"-->
+
+Notes: 
+j'arrive voie 3, mince quelle voiture ?
+
+##==##
+
+# Et zut, c'est quoi la voiture ?
+
+![center h-600](./assets/images/billet-train.png)
+
+##==##
+
+<!-- .slide: data-background="./assets/images/charles-forerunner-gapYVvUg1M8-unsplash.jpg"-->
+
+Notes: 
+Bon voiture 11, et mine ma place ?
 
 ##==##
 
@@ -1167,6 +1157,80 @@ On peut mettre des gif mais pour faire des pauses
 <div class="flex-row">
   <div class="objet" style="top:150px; left:-90px;"></div>
 </div>
+
+
+
+##==##
+
+
+# La recette d'une présentation réussie
+
+<div class="flex-row" style="margin-top:-150px">
+
+![h-400](./assets/images/rainn-wilson.gif) 
+
+![h-1000](./assets/images/bonne-presentation-choses-importantes-fake.svg)
+
+</div>
+Notes:
+En soit pourquoi pas, mais il faut guider, diviser le problème, mettre en avant les choses à highlighter
+
+##==##
+<!-- .slide: data-state="hide-notification-event"-->
+
+# La recette d'une présentation réussie
+
+
+![full-center h-800](./assets/images/bonne-presentation-choses-importantes-rework.svg)
+
+Notes:
+On va retravailler le contenu de la présentation pour le rendre plus impactant
+
+##==##
+<!-- .slide:-->
+
+# La recette d'une présentation réussie
+
+
+![full-center h-800](./assets/images/bonne-presentation-choses-importantes-rework-1.svg)
+
+Notes:
+On va mettre le contenu petit à petit
+
+##==##
+<!-- .slide:-->
+
+# La recette d'une présentation réussie
+
+
+![full-center h-800](./assets/images/bonne-presentation-choses-importantes-rework-2.svg)
+
+Notes:
+On va mettre le contenu petit à petit
+
+##==##
+<!-- .slide:-->
+
+# La recette d'une présentation réussie
+
+
+![full-center h-800](./assets/images/bonne-presentation-choses-importantes-rework-3.svg)
+
+Notes:
+On va mettre le contenu petit à petit
+
+##==##
+<!-- .slide:-->
+
+# La recette d'une présentation réussie
+
+
+![full-center h-800](./assets/images/bonne-presentation-choses-importantes-rework.svg)
+
+Notes:
+On va mettre le contenu petit à petit
+
+
 
 
 ##==##
@@ -1621,11 +1685,11 @@ Conclusion !
 ### @jefbinomed
 <!-- .element: class="icon-twitter icon-second" -->
 
-![company](./assets/images/logo-sfeir-blanc.png)
+![company](./assets/images/logo-sfeir-blanc.png)<!-- .element: style="right:200px;" -->
 
-<a style="color:white; top: 400px;" href="https://bit.ly/conf-rate">https://bit.ly/conf-rate</a>
+<a style="color:white; top: 600px;" href="https://bit.ly/conf-rate">https://bit.ly/conf-rate</a>
 
-© Chet Haase / SFEIR School Speaker
+© Chet Haase <br>/ <br>SFEIR School Speaker
 <!-- .
 element: class="credits"-->
 
