@@ -1767,6 +1767,8 @@ Conclusion !
 <!-- .
 element: class="credits"-->
 
+![h-500](./assets/images/qr-code-touraine-tech-25.png)<!-- .element: style="position:absolute; right:200px; top:500px;" -->
+
 Notes:
 Un rappel de son twitter, l’url des slides, faire en sorte d’ouvrir la discussion avant tout !
 
