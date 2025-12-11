@@ -1,0 +1,47 @@
+{
+  "name": "@talk-control/talk-control-revealjs-extensions",
+  "version": "1.0.0-rc-3",
+  "description": "TalkControl aims to provides an easy to use extensions for anyone wanted to create slides with reveal.js",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TalkControl/talk-control-revealjs-extensions.git"
+  },
+  "keywords": [
+    "css",
+    "revealjs"
+  ],
+  "author": "jefbinomed",
+  "contributors": [
+    "kuroidoruido"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TalkControl/talk-control-revealjs-extensions/issues"
+  },
+  "homepage": "https://github.com/TalkControl/talk-control-revealjs-extensions#readme",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./talk-control-revealjs-extensions.js",
+  "module": "./dist/talk-control-revealjs-extensions.js",
+  "types": "./dist/talk-control-revealjs-extensions.d.ts",
+  "style": "./dist/talk-control-revealjs-theme.css",
+  "exports": {
+    ".": {
+      "import": "./dist/talk-control-revealjs-extensions.js",
+      "require": "./dist/talk-control-revealjs-extensions.umd.cjs",
+      "types": "./dist/talk-control-revealjs-extensions.d.ts"
+    },
+    "./theme": {
+      "import": "./dist/talk-control-revealjs-theme.css",
+      "require": "./dist/talk-control-revealjs-theme.css"
+    }
+  },
+  "peerDependencies": {
+    "marked": "^5.0.0"
+  }
+}
