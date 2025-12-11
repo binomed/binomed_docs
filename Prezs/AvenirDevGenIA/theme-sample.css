@@ -1,0 +1,46 @@
+/**
+* Theme demo
+**/
+
+:root {
+            /* Palette ajustée pour fond blanc */
+            --accent-color: #2563eb; /* Bleu Roi (plus lisible sur blanc que le cyan) */
+            --danger-color: #dc2626; /* Rouge plus sombre */
+            --warning-color: #d97706; /* Orange plus sombre */
+            --text-main: #1e293b; /* Gris très foncé (Slate 800) */
+            --bg-main: #ffffff;
+            --card-bg: #f8fafc; /* Gris très clair pour les cartes */
+            --card-border: #e2e8f0;
+        }
+
+
+body[data-theme='sample'] {
+    
+
+    /**
+    * Reveal JS theme variables
+    */
+    --r-main-font: 'Inter', 'Segoe UI', sans-serif; color: var(--text-main);
+    --tc-heading-color: var(--accent-color);
+    
+    /**
+    * TalkControl theme variables
+    */
+    /*////////////////////////
+    // Properties for globals layouts
+    ////////////////////////*/
+    /* tables */
+    
+    /*////////////////////////
+    // Properties for transitions slides
+    ////////////////////////*/
+    --tc-transition-padding-h1: 30px; /* Area around title */    
+    --tc-transition-color: white; /* Color of title */
+    
+    /*////////////////////////
+    // Properties for icons
+    ////////////////////////*/
+    --tc-icon-color: var(--text-main);
+
+    
+}
