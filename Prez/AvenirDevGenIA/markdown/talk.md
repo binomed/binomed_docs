@@ -15,13 +15,17 @@
 
 ## Engineering Director @SFEIR
 
-### @jefbinomed
+### ![](fa-bluesky "fa fa-brands tc-icons") jefbinomed
 
-### GDG Nantes Organizer
+### ![](fa-linkedin "fa fa-brands tc-icons") jeanfrancois.garreau
+
 
 ![](./assets/images/jf.jpg 'speaker')
 
-![](./assets/images/gdg-nantes.png 'company')
+
+![](./assets/images/Sfeir-Gris-vector.svg 'company')
+
+![](./assets/images/gdg-nantes.png 'badge')
 
 ![](./assets/images/gde.png 'badge')
 
@@ -40,7 +44,7 @@ source: [unsplash](https://unsplash.com/fr/photos/minifig-lego-bleue-sur-surface
 ## La fin du code est-elle (encore) annoncée ?
 
 <div class="headline-box fragment"><i class="fa-solid fa-newspaper"></i>"Devin, le premier ingénieur IA autonome"</div>
-<div class="headline-box fragment" style="transform: rotate(1deg);"><i class="fa-solid fa-newspaper"></i>"ChatGPT remplace les développeurs juniors"</div>
+<div class="headline-box fragment" style="transform: rotate(1deg);"><i class="fa-solid fa-newspaper"></i>"ChatGPT remplace les développeur·euses juniors"</div>
 
 * <i class="fa-solid fa-bullhorn text-warning"></i> **Promesse Marketing :** +100% de productivité.
 * <i class="fa-solid fa-skull-crossbones text-danger"></i> **Peur Diffuse :** Le syndrome du remplacement.
@@ -130,7 +134,7 @@ source: [unsplash](https://unsplash.com/fr/photos/minifig-lego-bleue-sur-surface
 ##++##
 ## 1990-2000 : Le rêve du "No Code" (V1)
 
-*L'informatique promettait déjà de se débarrasser des développeurs.*
+*L'informatique promettait déjà de se débarrasser des développeur·euses.*
 
 <div class="timeline-step fragment">
 
@@ -170,7 +174,7 @@ source: [unsplash](https://unsplash.com/fr/photos/un-gros-plan-dun-ascenseur-met
 # La leçon de l'histoire
 
 
-Chaque abstraction promet la mort du développeur...
+Chaque abstraction promet la mort du développeur·euse...
 ...et finit par **l'élever**.
 
 1. **Binaire** -> On gère des signaux.
@@ -262,6 +266,25 @@ source: [unsplash](https://unsplash.com/fr/photos/lot-de-canettes-de-boisson-ass
 * 📋 Moins de réutilisation, plus de copier-coller.
 ##++##
 
+
+
+##==##
+
+<!--  .slide: class="tc-multiple-columns" -->
+
+##++## data-background="./assets/images/eco-desastre-gemini.png"
+##++##
+##++##
+
+# Impacts écologiques très forts
+
+<ul>
+<li class="fragment"><i class="fa-regular fa-message fa-2x text-danger"></i> 1 prompt = 10x à 25x une recherche Google</li>
+<li class="fragment"><i class="fa-solid fa-image fa-2x text-danger"></i> 1 Image = 1 charge de smartphone</li>
+<li class="fragment"><i class="fa-solid fa-laptop-code fa-2x text-danger"></i> 1 Image (Standard)≈400 à 500 lignes de code généré </li>
+
+##++##
+
 ##==##
 
 <!-- SLIDE 10 .slide: class="tc-multiple-columns" -->
@@ -299,6 +322,15 @@ source: [unsplash](https://unsplash.com/fr/photos/chaine-en-acier-gris-verrouill
     <i class="fa-solid fa-shield-cat fa-3x text-danger"></i><br>
     🛡️ <em>Approche nécessaire : Zero Trust.</em>
 </div>
+
+Notes:
+Histoire de l'hallucination de paquets. C'est visuel et effrayant :
+* Le dev demande : "Comment je convertis ce fichier ?"
+* L'IA répond : import fast-converter-lib (qui n'existe pas).
+* Le dev fait npm install fast-converter-lib.
+* Un hacker a réservé ce nom 1h avant.
+Boum : Injection de code dans l'entreprise.
+
 ##++##
 
 ##==##
@@ -393,6 +425,9 @@ Si l'IA code, l'humain doit savoir **parfaitement demander**.
 * ✅ **Validation :** Écrire les tests *avant* l'implémentation pour vérifier l'IA.
 ##++##
 
+Notes:
+Parler de speckit / OpenSpec / BMAD
+
 
 ##==##
 
@@ -432,9 +467,14 @@ Le "Craft" ne disparaît pas, il se déplace vers la conception de haut niveau.
 ##++## data-background="./assets/images/penseur-rodin-gemini.png"
 ##++##
 
+Notes:
+Le boilerplate ne plait à personne, possibilité de refacto facilement
+
 ##==##
 
-<!-- .slide: data-background="./assets/images/robot-train-gemini.png" -->
+<!-- .slide: data-background="./assets/images/robot-train-gemini.png" class="transition bottom" -->
+
+# Devenons coach d'IA !
 
 Notes:
 On est là pour driver le programme, et si au lieu de voir le remplacement, on commençait à voir le potentiel de code bien écrit ?
@@ -450,11 +490,150 @@ source: [unsplash](https://unsplash.com/fr/photos/a-group-of-friends-at-a-coffee
 ##++##
 ## Soft Skills > Hard Skills ?
 
-### Savoir parler... aux machines et aux humains
+### Savoir parler... aux machines et aux humains <!-- .element: class="fragment" -->
 
 1. 🗣️ **Communication :** Compétence #1 pour prompter (machine) et collaborer (humain).
 2. 🧐 **Esprit Critique :** Ne jamais faire confiance aveuglément (Zero Trust AI).
+<!-- .element: class="list-fragment" -->
+
+Notes:
+C'est une opportunité pour se rapprocher des nos collègues
+
 ##++##
+
+
+##==##
+
+<!-- SLIDE 19 .slide: class="tc-multiple-columns" -->
+
+##++## data-background="./assets/images/redcharlie-HxxmKwvUbgI-unsplash.jpg"
+source: [unsplash](https://unsplash.com/fr/photos/sol-brun-fissure-HxxmKwvUbgI) by [redcharlie](https://unsplash.com/fr/@redcharlie)
+<!-- .element: class="credits" -->
+##++##
+##++##
+## Éthique et Écologie
+
+<div style="text-align: center;">
+    <i class="fa-solid fa-leaf fa-2x" style="color:#48bb78;"></i><br>
+    50 questions = 500ml d'eau évaporée
+</div>
+<br><br>
+<div style="text-align: center;">
+    <i class="fa-solid fa-server fa-2x" style="color:#f56565;"></i><br>
+    Data Centers =Impact Carbone
+</div>
+
+<br>
+
+*Question : "A-t-on besoin d'une IA pour centrer une div ?"*
+##++##
+
+Notes:
+Nous nous devons d'être critique d'amener de par notre connaissance de ce monde à challenger les usages.
+
+##==##
+
+<!-- SLIDE 15 -->
+## L'avenir : SLM vs LLM
+
+
+![](./assets/images/david-goliat-gemini.png "h-800 center")
+
+Notes:
+<div style="display: flex; gap: 20px;">
+    <div style="flex: 1; border: 1px solid #444; padding: 20px;">
+        <h4 style="color:#aaa">☁️ LLM (Huge)</h4>
+        <small>Généraliste, Cloud, Coûteux.</small>
+    </div>
+    <div style="flex: 1; border: 1px solid var(--accent-color); padding: 20px; background: rgba(0, 242, 234, 0.1);">
+        <h4 style="color:var(--accent-color)">💻 SLM (Small)</h4>
+        <small>Spécialisé, Local, Rapide, Privé.</small>
+    </div>
+</div>
+Regarder du côté des modèles nanos, des futurs usages intégrés, edge computing
+
+##==##
+
+<!-- .slide: data-background="./assets/images/ia-zombi-gemini.png" class="transition top"-->
+
+# L'IA n'est pas morte
+
+Notes:
+On se rabat vers l'IA gen mais l'IA spécialisée
+
+##==##
+
+<!-- ACTE 4 .slide: class="transition act-slide"-->
+
+# ACTE 4 : ON FAIT QUOI ?
+### (Plan d'action)
+
+
+##==##
+
+<!-- SLIDE 20 .slide: class="tc-multiple-columns" -->
+
+##++## data-background="./assets/images/lilartsy-1KkhQ8uL28g-unsplash.jpg"
+source: [unsplash](https://unsplash.com/fr/photos/deux-mains-sur-le-point-de-tenir-le-papier-peint-1KkhQ8uL28g) by [lilartsy](https://unsplash.com/fr/@lilartsy)
+<!-- .element: class="credits" -->
+##++##
+##++##
+## Accompagner, ne pas subir
+
+**Stratégie d'entreprise :**
+* 🔦 **Shadow AI :** Ne pas interdire, mais encadrer.
+* 🤝 **Gestion des profils :** Calmer les enthousiastes, rassurer les sceptiques.
+* ⏳ **Temps :** Accepter que la courbe d'apprentissage est réelle.
+##++##
+
+##==##
+
+<!-- .slide: data-background="./assets/images/personas-gemini.png" class="transition bottom" style="--tc-transition-color:var(--danger-color)" -->
+
+# Pensez produit
+
+##==##
+
+<!-- .slide: class="tc-multiple-columns" -->
+
+##++## data-background="./assets/images/yumu-Ia3Dwq_azas-unsplash.jpg"
+source: [unsplash](https://unsplash.com/fr/photos/un-masque-noir-sur-fond-rouge-Ia3Dwq_azas) by [Yumu](https://unsplash.com/fr/@cdd20)
+<!-- .element: class="credits" -->
+##++##
+##++##
+
+# Comprenez vos équipes
+
+* ![](fa-hand-holding-medical "fa tc-icons fa-solid") Quelles sont leurs attentes ?
+* ![](fa-hand "fa tc-icons fa-solid") Quels sont leur freins ?
+* ![](fa-hand-holding-heart "fa tc-icons fa-solid") Quels sont leur besoins ?
+* ![](fa-list-check "fa tc-icons fa-solid") Quelles actions mettre en place par personas ?
+
+##++##
+
+##==##
+
+<!-- SLIDE 21 -->
+## Exemple d'actions mise en place
+
+<div class="card-container">
+    <div class="card">
+        <i class="fa-solid fa-hand"></i><br>Ask me GenAI
+    </div>
+    <div class="card">
+        <i class="fa-solid fa-share-nodes"></i><br>Made with GenAI
+    </div>
+    <div class="card">
+        <i class="fa-regular fa-comments"></i><br>Opentalk GenAI
+    </div>
+    <div class="card">
+        <i class="fa-solid fa-laptop-code"></i><br>AI Dojo
+    </div>
+</div>
+
+Notes:
+objectif majeur, désanclaver, amener de la confiance
+Mais aussi, partage de prompts, controles, 
 
 
 ##==##
@@ -478,98 +657,90 @@ source: [unsplash](https://unsplash.com/fr/photos/a-group-of-friends-at-a-coffee
 Notes:
 Pourquoi ne pas proposer d'accompagner les juniors à tri-programmer
 
+##==##
+
+<!-- .slide: class="tc-multiple-columns" -->
+
+##++## data-background="./assets/images/valeur-ajoute-gemini.png"
+##++##
+##++##
+
+# Opportunité pour se concentrer sur les bons éléments
+
+* Mon code est-il de qualité ?
+* Puis-je faire ce refactoring tant attendu ?
+* Je me concentre sur la conception et la montée en compétence des équipes
+* ...
+
+Notes:
+De nombreux éléments sont là pour nous guider et redéfinir ensemble les enjeux futurs
+
+##++##
 
 ##==##
 
-<!-- SLIDE 19 .slide: class="tc-multiple-columns" -->
+<!-- .slide: class="transition bottom" data-background="./assets/images/genia-sous-gemini.png" -->
 
-##++## data-background="./assets/images/redcharlie-HxxmKwvUbgI-unsplash.jpg"
-source: [unsplash](https://unsplash.com/fr/photos/sol-brun-fissure-HxxmKwvUbgI) by [redcharlie](https://unsplash.com/fr/@redcharlie)
+# Quid de déploiement à l'échelle ?
+
+##==##
+
+<!-- .slide: class="tc-multiple-columns" -->
+
+##++## data-background="./assets/images/elena-mozhvilo-j06gLuKK0GM-unsplash.jpg"
+source: [unsplash](https://unsplash.com/fr/photos/loupe-cadre-rond-dore-et-argent-j06gLuKK0GM) by [Elena Mozhvilo](https://unsplash.com/fr/@miracleday)
 <!-- .element: class="credits" -->
 ##++##
 ##++##
-## Éthique et Écologie
 
-<div style="text-align: center;">
-    <i class="fa-solid fa-leaf fa-2x" style="color:#48bb78;"></i><br>
-    1 Image =<br>1 recharge smartphone
-</div>
-<br><br>
-<div style="text-align: center;">
-    <i class="fa-solid fa-server fa-2x" style="color:#f56565;"></i><br>
-    Data Centers =<br>Impact Carbone
-</div>
+# Coute-t-elle vraiment cher ?
 
-<br>
+* Rappelez-vous le gain de productivité proche de 20-45%
+* Équipez vos équipe ne se discute plus.
 
-*Question : "A-t-on besoin d'une IA pour centrer une div ?"*
 ##++##
 
+Notes:
+Un ajustement marché va devoir s'effectuer par contre.
+
 ##==##
 
-<!-- SLIDE 15 -->
-## L'avenir : SLM vs LLM
+<!-- .slide: class="tc-multiple-columns" -->
 
+##++## data-background="./assets/images/christina-kirschnerova-ul_xnAPWc0g-unsplash.jpg"
+source: [unsplash](https://unsplash.com/fr/photos/personnes-debout-sur-un-ecran-en-metal-gris-pendant-la-journee-ul_xnAPWc0g) by [Christina Kirschnerova
+](https://unsplash.com/fr/@tina_96)
+<!-- .element: class="credits" -->
+##++##
+##++##
 
-![](./assets/images/david-goliat-gemini.png "h-800 center")
+# Pas sans controle ni-mesure
+
+1. Universalité : Éviter le "Shadow AI" en fournissant un outil sécurisé à tous.
+2. Conditionnalité : Pas de licence sans formation ("Le permis de prompter").
+3. Responsabilité : L'outil change, la responsabilité reste (Le développeur est seul signataire du commit).
+
+##++##
 
 Notes:
-<div style="display: flex; gap: 20px;">
-    <div style="flex: 1; border: 1px solid #444; padding: 20px;">
-        <h4 style="color:#aaa">☁️ LLM (Huge)</h4>
-        <small>Généraliste, Cloud, Coûteux.</small>
-    </div>
-    <div style="flex: 1; border: 1px solid var(--accent-color); padding: 20px; background: rgba(0, 242, 234, 0.1);">
-        <h4 style="color:var(--accent-color)">💻 SLM (Small)</h4>
-        <small>Spécialisé, Local, Rapide, Privé.</small>
-    </div>
-</div>
+Parler de la formation SFEIR
 
 ##==##
 
-<!-- ACTE 4 .slide: class="transition act-slide"-->
+<!-- SLIDE 22 .slide: class="tc-multiple-columns" -->
 
-# ACTE 4 : ON FAIT QUOI ?
-### (Plan d'action)
+##++##
+# Le/la développeur·euse augmenté·e
 
-
-##==##
-
-<!-- SLIDE 20 -->
-## Accompagner, ne pas subir
-
-**Stratégie d'entreprise :**
-* 🔦 **Shadow AI :** Ne pas interdire, mais encadrer.
-* 🤝 **Gestion des profils :** Calmer les enthousiastes, rassurer les sceptiques.
-* ⏳ **Temps :** Accepter que la courbe d'apprentissage est réelle.
-
-##==##
-
-<!-- SLIDE 21 -->
-## Créer une culture de l'IA
-
-<div class="card-container">
-    <div class="card">
-        <i class="fa-solid fa-flask"></i><br>Hackathons
-    </div>
-    <div class="card">
-        <i class="fa-solid fa-share-nodes"></i><br>Partage de prompts
-    </div>
-    <div class="card">
-        <i class="fa-regular fa-comments"></i><br>Dialogue ouvert
-    </div>
-</div>
-
-##==##
-
-<!-- SLIDE 22 -->
-# Le développeur augmenté
-
-> "L'IA ne remplacera pas les développeurs. Les développeurs qui utilisent l'IA remplaceront ceux qui ne l'utilisent pas."
+> "L'IA ne remplacera pas les développeur·euses. Les développeur·euses qui utilisent l'IA remplaceront ceux/celles qui ne l'utilisent pas."
 
 ### <span style="color:var(--accent-color)">Soyez les pilotes, pas les passagers.</span>
 
 *Merci.*
+
+##++##
+##++## data-background="./assets/images/iadev-vs-dev-gemini.png"
+##++##
 
 ##==##
 
@@ -577,3 +748,28 @@ Notes:
 
 # ACTE 5 : CONCLUSION
 
+
+Notes:
+
+Embrassez le changement plutôt que de lutter, accompagnez plutôt qu'imposer, gardez de l'humain dans cette transition
+
+
+##==##
+
+<!-- .slide: class="speaker-slide" -->
+
+<div class="speaker-slide">
+
+# Merci !!
+
+## Des questions ?
+
+### ![](fa-bluesky "fa fa-brands tc-icons") jefbinomed
+
+### ![](fa-linkedin "fa fa-brands tc-icons") jeanfrancois.garreau
+
+![](./assets/images/jf.jpg 'speaker')
+
+
+
+</div>
