@@ -3,7 +3,7 @@
 
 ### Chronique d'une révolution industrielle de notre métier.
 
-*Jean-François Garreau | Décembre 2025*
+*Jean-François Garreau | Février 2026*
 
 ##==##
 
@@ -182,8 +182,9 @@ Chaque abstraction promet la mort du développeur·euse...
 3. **C/Java** -> On gère des structures de données.
 4. **Python/JS** -> On gère des librairies.
 5. **GenAI** -> On gère des **intentions**.
+<!-- .element: class="list-fragment" -->
 
-<h3 style="color:var(--accent-color); margin-top: 30px;">On ne disparaît pas, on monte d'un étage.</h3>
+<h3 style="color:var(--accent-color); margin-top: 30px;" class="fragment">On ne disparaît pas, on monte d'un étage.</h3>
 ##++##
 
 ##==##
@@ -235,14 +236,16 @@ Chaque abstraction promet la mort du développeur·euse...
 
 **Le Problème :** Mettre un moteur de Ferrari sur une charrette.
 
-<div class="funnel-container">
+<div class="funnel-container fragment">
     <div class="funnel-top">🤖 IA (Coding) : Production Massive</div>
     <div style="font-size: 2em; margin: 10px;">⬇️</div>
     <div class="funnel-bottom">👓 Humain (Review)</div>
 </div>
 
-*Concept clé : Théorie des contraintes.*
 ##++##
+
+Notes:
+*Concept clé : Théorie des contraintes.*
 
 ##==##
 
@@ -264,6 +267,7 @@ source: [unsplash](https://unsplash.com/fr/photos/lot-de-canettes-de-boisson-ass
 
 * 📉 Explosion de la dette technique.
 * 📋 Moins de réutilisation, plus de copier-coller.
+<!-- .element: class="list-fragment" -->
 ##++##
 
 
@@ -283,7 +287,20 @@ source: [unsplash](https://unsplash.com/fr/photos/lot-de-canettes-de-boisson-ass
 <li class="fragment"><i class="fa-solid fa-image fa-2x text-danger"></i> 1 Image = 1 charge de smartphone</li>
 <li class="fragment"><i class="fa-solid fa-laptop-code fa-2x text-danger"></i> 1 Image (Standard)≈400 à 500 lignes de code généré </li>
 
+Notes:
+* 1 Recherche Google 🔍 -> Consommation : ~0.3 Wh
+  * Comparaison maison : C'est l'équivalent d'une ampoule LED allumée pendant 3 minutes. C'est très optimisé.
+* 1 Prompt ChatGPT (Texte simple) 💬 ->Consommation : ~3 Wh
+  * Comparaison : C'est 10x une recherche Google.
+  * Comparaison maison : C'est une ampoule LED allumée pendant 30 à 40 minutes.
+* 1 Conversation standard (20-50 questions) 💧
+  * Consommation : ~500 ml d'eau "consommée" (évaporée).
+  * Comparaison : Une petite bouteille d'eau minérale.
+  * Pour un seul prompt, c'est environ une "gorgée" (10-20ml), ce qui semble peu, mais multiplié par les millions d'utilisateurs quotidiens, c'est un fleuve.
+
 ##++##
+
+
 
 ##==##
 
@@ -294,8 +311,9 @@ source: [unsplash](https://unsplash.com/fr/photos/lot-de-canettes-de-boisson-ass
 
 * 🧠 **Cognitif :** Lire du code est plus dur que d'en écrire.
 * 🔋 **Charge :** 77% des employés sentent *plus* de charge de travail avec l'IA.
+<!-- .element: class="list-fragment"-->
 
-<div class="card" style="width: 90%; margin-top: 20px;">
+<div class="card fragment" style="width: 90%; margin-top: 20px;">
     <strong>Risque : Le Burnout Cognitif</strong><br>
     On passe du statut de <em>Créateur</em> (Fun) à celui de <em>Correcteur</em> (Fastidieux).
 </div>
@@ -317,8 +335,9 @@ source: [unsplash](https://unsplash.com/fr/photos/chaine-en-acier-gris-verrouill
 1. **Le Paradoxe de Stanford :** Les devs avec IA écrivent du code moins sûr mais sont *plus confiants*.
 2. **Attaques Supply Chain :** Hallucinations de paquets inexistants.
 3. **Fuite de données :** Qu'envoyez-vous dans le prompt ?
+<!-- .element: class="list-fragment" -->
 
-<div style="text-align: center; margin-top: 20px;">
+<div style="text-align: center; margin-top: 20px;" class="fragment">
     <i class="fa-solid fa-shield-cat fa-3x text-danger"></i><br>
     🛡️ <em>Approche nécessaire : Zero Trust.</em>
 </div>
@@ -383,10 +402,12 @@ Boum : Injection de code dans l'entreprise.
 
 > "Une IA sans contexte est un stagiaire sans onboarding."
 
-**Le défi technique de demain :**
+**Le défi technique de demain :** <!-- .element: class="fragment" -->
 * **RAG** (Retrieval-Augmented Generation).
 * **Context Window** massive (1M+ tokens).
 * **Knowledge Graph** d'entreprise.
+<!-- .element: class="list-fragment"-->
+
 ##++##
 ##++## data-background="./assets/images/context-king-gemini.png"
 ##++##
@@ -423,6 +444,7 @@ Si l'IA code, l'humain doit savoir **parfaitement demander**.
 
 * ➡️ **Compétence clé :** Exprimer une intention technique et métier claire.
 * ✅ **Validation :** Écrire les tests *avant* l'implémentation pour vérifier l'IA.
+<!-- .element: class="list-fragment" -->
 ##++##
 
 Notes:
@@ -461,8 +483,10 @@ Parler de speckit / OpenSpec / BMAD
 
 * ❌ Syntaxe & Boilerplate.
 * ✅ Architecture, Design System, Sécurité.
+<!-- .element: class="list-fragment" -->
 
 Le "Craft" ne disparaît pas, il se déplace vers la conception de haut niveau.
+<!-- .element: class="fragment" -->
 ##++##
 ##++## data-background="./assets/images/penseur-rodin-gemini.png"
 ##++##
@@ -525,7 +549,7 @@ source: [unsplash](https://unsplash.com/fr/photos/sol-brun-fissure-HxxmKwvUbgI) 
 
 <br>
 
-*Question : "A-t-on besoin d'une IA pour centrer une div ?"*
+*Question : "A-t-on besoin d'une IA pour centrer une div ?"* <!-- .element: class="fragment" -->
 ##++##
 
 Notes:
@@ -559,7 +583,7 @@ Regarder du côté des modèles nanos, des futurs usages intégrés, edge comput
 # L'IA n'est pas morte
 
 Notes:
-On se rabat vers l'IA gen mais l'IA spécialisée
+On se rabat vers l'IA gen mais l'IA spécialisée existe toujours et est toujours aussi importante
 
 ##==##
 
@@ -581,9 +605,12 @@ source: [unsplash](https://unsplash.com/fr/photos/deux-mains-sur-le-point-de-ten
 ## Accompagner, ne pas subir
 
 **Stratégie d'entreprise :**
-* 🔦 **Shadow AI :** Ne pas interdire, mais encadrer.
+
+* 🔦 **Shadow AI :** Interdire et encadrer.
 * 🤝 **Gestion des profils :** Calmer les enthousiastes, rassurer les sceptiques.
 * ⏳ **Temps :** Accepter que la courbe d'apprentissage est réelle.
+<!-- .element: class="list-fragment" -->
+
 ##++##
 
 ##==##
@@ -609,6 +636,8 @@ source: [unsplash](https://unsplash.com/fr/photos/un-masque-noir-sur-fond-rouge-
 * ![](fa-hand-holding-heart "fa tc-icons fa-solid") Quels sont leur besoins ?
 * ![](fa-list-check "fa tc-icons fa-solid") Quelles actions mettre en place par personas ?
 
+<!-- .element: class="list-fragment"-->
+
 ##++##
 
 ##==##
@@ -617,16 +646,16 @@ source: [unsplash](https://unsplash.com/fr/photos/un-masque-noir-sur-fond-rouge-
 ## Exemple d'actions mise en place
 
 <div class="card-container">
-    <div class="card">
+    <div class="card fragment">
         <i class="fa-solid fa-hand"></i><br>Ask me GenAI
     </div>
-    <div class="card">
+    <div class="card fragment">
         <i class="fa-solid fa-share-nodes"></i><br>Made with GenAI
     </div>
-    <div class="card">
+    <div class="card fragment">
         <i class="fa-regular fa-comments"></i><br>Opentalk GenAI
     </div>
-    <div class="card">
+    <div class="card fragment">
         <i class="fa-solid fa-laptop-code"></i><br>AI Dojo
     </div>
 </div>
@@ -671,6 +700,7 @@ Pourquoi ne pas proposer d'accompagner les juniors à tri-programmer
 * Puis-je faire ce refactoring tant attendu ?
 * Je me concentre sur la conception et la montée en compétence des équipes
 * ...
+<!-- .element: class="list-fragment"-->
 
 Notes:
 De nombreux éléments sont là pour nous guider et redéfinir ensemble les enjeux futurs
@@ -719,6 +749,7 @@ source: [unsplash](https://unsplash.com/fr/photos/personnes-debout-sur-un-ecran-
 1. Universalité : Éviter le "Shadow AI" en fournissant un outil sécurisé à tous.
 2. Conditionnalité : Pas de licence sans formation ("Le permis de prompter").
 3. Responsabilité : L'outil change, la responsabilité reste (Le développeur est seul signataire du commit).
+<!-- .element: class="list-fragment" -->>
 
 ##++##
 
@@ -734,9 +765,11 @@ Parler de la formation SFEIR
 
 > "L'IA ne remplacera pas les développeur·euses. Les développeur·euses qui utilisent l'IA remplaceront ceux/celles qui ne l'utilisent pas."
 
-### <span style="color:var(--accent-color)">Soyez les pilotes, pas les passagers.</span>
+### <span style="color:var(--accent-color)">Soyez les pilotes, pas les passagers.</span> 
+<!-- .element: class="fragment" data-fragment-index="1" -->
 
 *Merci.*
+<!-- .element: class="fragment" data-fragment-index="1" -->
 
 ##++##
 ##++## data-background="./assets/images/iadev-vs-dev-gemini.png"
@@ -770,6 +803,8 @@ Embrassez le changement plutôt que de lutter, accompagnez plutôt qu'imposer, g
 
 ![](./assets/images/jf.jpg 'speaker')
 
+
+![](https://shorturl.at/yFtjr 'tc-qrcode h-300 text-below')https://shorturl.at/yFtjr
 
 
 </div>
