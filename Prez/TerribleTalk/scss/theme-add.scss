@@ -9,4 +9,8 @@
         font-size: 1.5em;
     }
 
+    code.hljs.has-highlights table tr:not(.highlight-line){
+        opacity: 0.1;
+    }
+
 }

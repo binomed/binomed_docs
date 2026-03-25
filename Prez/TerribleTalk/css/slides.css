@@ -42,6 +42,9 @@ To integrate to theme
   box-shadow: initial;
   font-size: 1.5em;
 }
+.reveal .slides section code.hljs.has-highlights table tr:not(.highlight-line) {
+  opacity: 0.1;
+}
 
 /** 
 Specifics

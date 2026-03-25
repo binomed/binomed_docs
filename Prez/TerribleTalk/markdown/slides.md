@@ -1764,10 +1764,9 @@ Conclusion !
 <a style="color:white; top: 600px;" href="https://bit.ly/conf-rate">https://bit.ly/conf-rate</a>
 
 © Chet Haase <br>/ <br>SFEIR School Speaker
-<!-- .
-element: class="credits"-->
+<!-- .element: class="credits"-->
 
-![h-500](./assets/images/qr-code-touraine-tech-25.png)<!-- .element: style="position:absolute; right:200px; top:500px;" -->
+<!-- ![h-500](./assets/images/qr-code-touraine-tech-25.png)<!-- .element: style="position:absolute; right:200px; top:500px;" -->
 
 Notes:
 Un rappel de son twitter, l’url des slides, faire en sorte d’ouvrir la discussion avant tout !
