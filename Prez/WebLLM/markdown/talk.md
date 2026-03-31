@@ -5,7 +5,7 @@
 
 ##==##
 
-<!-- .slide: class="speaker-slide" -->
+<!-- .slide: class="speaker-slide" data-state="out-gemma" -->
 
 <div class="speaker-slide">
 
@@ -32,9 +32,13 @@
 
 ##==##
 
+<!-- .slide: data-state="in-gemma" -->
+
+# Let's meet Gemma
+
 ##==##
 
-<!-- .slide: class="transition"-->
+<!-- .slide: class="transition" data-state="out-gemma" -->
 
 # CONCLUSION
 

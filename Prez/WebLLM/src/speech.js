@@ -31,7 +31,8 @@
             // Ajuster la langue de reconnaissance selon la direction
             // Si fr-en -> on parle français. Si en-fr -> on parle anglais.
             const direction = directionSelect.value;
-            recognition.lang = direction.startsWith('fr') ? 'fr-FR' : 'en-US';
+            //recognition.lang = direction.startsWith('fr') ? 'fr-FR' : 'en-US';
+            recognition.lang = 'fr-FR';
 
             recognition.start();
         }

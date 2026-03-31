@@ -98,6 +98,12 @@ window.tts = (function () {
         }
     }
 
+    function stop(){
+        if (synth){
+            synth.cancel();
+        }
+    }
+
     btnSpeak.addEventListener('click', () => {
         speak(outputDisplay.textContent);
     });
