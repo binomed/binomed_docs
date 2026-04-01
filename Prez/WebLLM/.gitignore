@@ -1,1 +1,4 @@
 web_modules
+
+# Modèles locaux (trop lourds pour git — utilisez huggingface-cli pour les télécharger)
+models/

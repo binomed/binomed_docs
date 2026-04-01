@@ -55,5 +55,5 @@ await ThemeInitializer.init({
             };
         },
     },
-    tcThemeOptions: {defaultTheme:"sample"},
+    tcThemeOptions: {defaultTheme:"lema"},
 });

@@ -1,5 +1,6 @@
 import { html, render } from '../node_modules/lit-html/lit-html.js';
 
+
 function accentColor(pct, type = 'default') {
     if (pct > 85) return '#ef4444';
     if (pct > 65) return '#f59e0b';
@@ -215,12 +216,59 @@ class StatsWidget extends HTMLElement {
 
 customElements.define('stats-widget', StatsWidget);
 
-// Auto-injection en overlay fixe dans la présentation
-const widget = document.createElement('stats-widget');
-Object.assign(widget.style, {
-    position: 'fixed',
-    top: '16px',
-    right: '16px',
-    zIndex: '10000',
-});
-document.body.appendChild(widget);
+
+// Variables globales pour la gestion de l'overlay
+let overlayWidget = null;
+
+
+/**
+ * Ajoute le bouton micro avec les listeners
+ * Crée un bouton circulaire avec emoji micro et ombre portée
+ */
+export function addOverlayWidget() {
+  try {
+    // Éviter les doublons
+    if (overlayWidget) {
+      console.warn('Overlay already exists');
+      return;
+    }
+
+    // Auto-injection en overlay fixe dans la présentation
+    overlayWidget = document.createElement('stats-widget');
+    Object.assign(overlayWidget.style, {
+        position: 'fixed',
+        top: '16px',
+        right: '16px',
+        zIndex: '10000',
+    });
+    document.body.appendChild(overlayWidget);
+
+    
+    console.log('Overlay added successfully');
+  } catch (error) {
+    console.error('Error adding overlay:', error);
+  }
+}
+
+/**
+ * Retire le overlay widget
+ * Supprime complètement le widget
+ */
+export function removeOverlayWidget() {
+  try {
+    
+    // Retrait du widget du DOM
+    if (overlayWidget) {
+      document.body.removeChild(overlayWidget);
+    }
+    
+    // Reset des variables
+    overlayWidget = null;
+    
+    console.log('Overlay removed successfully');
+  } catch (error) {
+    console.error('Error removing micro button:', error);
+  }
+}
+
+

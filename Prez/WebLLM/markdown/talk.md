@@ -27,6 +27,8 @@
 
 ![](./assets/images/gde.png 'badge')
 
+![](./assets/images/et-si-on-parlait.jpeg 'badge')
+
 
 </div>
 
@@ -34,7 +36,11 @@
 
 <!-- .slide: data-state="in-gemma" -->
 
-# Let's meet Gemma
+# Let's meet Lema
+
+**Lema for "Local Gemma"**
+
+![](./assets/images/lema.png 'lema h-600 center')
 
 ##==##
 

@@ -1,16 +1,18 @@
 import {
     Reveal,
 } from '../web_modules/talk-control-revealjs-extensions/talk-control-revealjs-extensions.js';
-import './stats-overlay.js';
+import {addOverlayWidget, removeOverlayWidget} from  './stats-overlay.js';
 
 
 Reveal.addEventListener('in-gemma', ()=>{
     console.log('In Gemma');
     addMicButton();
+    addOverlayWidget();
 })
 Reveal.addEventListener('out-gemma', ()=>{
     console.log('Out Gemma');
     removeMicButton();
+    removeOverlayWidget();
 })
 
 
@@ -19,6 +21,8 @@ let micButton = null;
 let micState = false; // false = stopped, true = started
 let clickListener = null;
 let keyListener = null;
+
+
 
 /**
  * Ajoute le bouton micro avec les listeners
