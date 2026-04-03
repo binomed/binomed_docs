@@ -213,62 +213,62 @@ class StatsWidget extends HTMLElement {
         document.addEventListener('mouseup', up);
     }
 }
-
 customElements.define('stats-widget', StatsWidget);
 
+export class OverlayStats{
+    #overlayWidget;
 
-// Variables globales pour la gestion de l'overlay
-let overlayWidget = null;
-
-
-/**
- * Ajoute le bouton micro avec les listeners
- * Crée un bouton circulaire avec emoji micro et ombre portée
- */
-export function addOverlayWidget() {
-  try {
-    // Éviter les doublons
-    if (overlayWidget) {
-      console.warn('Overlay already exists');
-      return;
+    constructor(){
     }
 
-    // Auto-injection en overlay fixe dans la présentation
-    overlayWidget = document.createElement('stats-widget');
-    Object.assign(overlayWidget.style, {
-        position: 'fixed',
-        top: '16px',
-        right: '16px',
-        zIndex: '10000',
-    });
-    document.body.appendChild(overlayWidget);
+    /**
+     * Ajoute le bouton micro avec les listeners
+     * Crée un bouton circulaire avec emoji micro et ombre portée
+     */
+    addOverlayWidget() {
+        try {
+            // Éviter les doublons
+            if (this.#overlayWidget) {
+                log('Overlay already exists', undefined);
+                return;
+            }
 
-    
-    console.log('Overlay added successfully');
-  } catch (error) {
-    console.error('Error adding overlay:', error);
-  }
-}
+            // Auto-injection en overlay fixe dans la présentation
+            this.#overlayWidget = document.createElement('stats-widget');
+            Object.assign(this.#overlayWidget.style, {
+                position: 'fixed',
+                top: '16px',
+                right: '16px',
+                zIndex: '10000',
+            });
+            document.body.appendChild(this.#overlayWidget);
 
-/**
- * Retire le overlay widget
- * Supprime complètement le widget
- */
-export function removeOverlayWidget() {
-  try {
-    
-    // Retrait du widget du DOM
-    if (overlayWidget) {
-      document.body.removeChild(overlayWidget);
+            
+            log('Overlay added successfully', undefined);
+        } catch (error) {
+            log('Error adding overlay:', undefined, 'error', error);
+        }
     }
-    
-    // Reset des variables
-    overlayWidget = null;
-    
-    console.log('Overlay removed successfully');
-  } catch (error) {
-    console.error('Error removing micro button:', error);
-  }
-}
 
+    /**
+     * Retire le overlay widget
+     * Supprime complètement le widget
+     */
+    removeOverlayWidget() {
+        try {
+            
+            // Retrait du widget du DOM
+            if (this.#overlayWidget) {
+                document.body.removeChild(this.#overlayWidget);
+            }
+            
+            // Reset des variables
+            this.#overlayWidget = null;
+            
+            log('Overlay removed successfully', undefined);
+        } catch (error) {
+            log('Error removing micro button:', undefined, 'error', error);
+        }
+    }
+}
 

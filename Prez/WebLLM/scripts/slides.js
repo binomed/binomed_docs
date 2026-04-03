@@ -6,7 +6,7 @@ import {
     materialSymbolsIconPack,
 } from '../web_modules/talk-control-revealjs-extensions/talk-control-revealjs-extensions.js';
 
-import '../src/actions.js';
+import '../src/main.js';
 
 console.log('Reveal version', Reveal.VERSION);
 console.log('Reveal instance', Reveal);

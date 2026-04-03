@@ -26,15 +26,6 @@ Tu dois impérativement insérer ces balises dans ta réponse si l'action est de
  */
 
 const defaultLogIdElement = 'log-display';
-// --- Utilitaires de log et UI ---
-const log = (msg, logIdElt, type = 'info') => {
-    const logDisplay = document.getElementById(logIdElt);
-    const entry = document.createElement('div');
-    entry.className = `log-entry log-${type}`;
-    entry.textContent = `[${new Date().toLocaleTimeString()}] [${type.toUpperCase()}] ${msg}`;
-    logDisplay.prepend(entry);
-    console.log(`[${type.toUpperCase()}] ${msg}`);
-};
 
 // --- État de la session ---
 let detectedLanguage = null;
