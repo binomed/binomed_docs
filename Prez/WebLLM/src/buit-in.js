@@ -1,4 +1,6 @@
-const promptSystem = `Tu es Lema, une IA révolutionnaire tournant exclusivement en local dans ce navigateur grâce à Gemma 2b. 
+import { use } from "react";
+
+const LEMA_PROMPT_SYSTEM = `Tu es Lema, une IA révolutionnaire tournant exclusivement en local dans ce navigateur grâce à Gemma 2b. 
 Tu participes à une conférence live. Ton interlocuteur est le présentateur.
 
 ### TON TON :
@@ -18,297 +20,478 @@ Tu dois impérativement insérer ces balises dans ta réponse si l'action est de
 - Si le Wi-Fi est coupé, vante-toi d'être toujours opérationnelle alors que le reste du web est "mort".
 - Si on te donne une persona, adopte-la immédiatement tout en restant "Lema".`;
 
-/**
- * @file main.js
- * @description Version simplifiée pour tester les API d'IA intégrées de Chrome.
- * Approche KISS : pas d'abstraction complexe, appels directs.
- * Utilise les namespaces PascalCase (ex: window.LanguageModel).
- */
+export const KEY_LANGAGE_DETECTOR = 'LanguageDetector';
+export const KEY_TRANSLATOR = 'Translator';
+export const KEY_SUMMARIZER = 'Summarizer';
+export const KEY_LANGAGE_MODEL = 'LanguageModel';
+export const KEY_WRITER = 'Writer';
+export const KEY_REWRITER = 'Rewriter';
+export const KEY_PROOFREADER = 'Proofreader';
+export const LANG_FR = 'fr';
+export const LANG_EN = 'en';
 
-const defaultLogIdElement = 'log-display';
+const APIS_TO_CHECK = [
+    { label: 'Language Detector', key: KEY_LANGAGE_DETECTOR },
+    { label: 'Translator (FR->EN)', key: KEY_TRANSLATOR, params: { sourceLanguage: 'fr', targetLanguage: 'en' }},
+    { label: 'Translator (EN->FR)', key: KEY_TRANSLATOR, params: { sourceLanguage: 'en', targetLanguage: 'fr' } },
+    { label: 'Summarizer', key: KEY_SUMMARIZER },
+    { label: 'Language Model (FR/EN)', key: KEY_LANGAGE_MODEL, params: { languages: ['en', 'fr']}},
+    { label: 'Writer', key: KEY_WRITER },
+    { label: 'Rewriter', key: KEY_REWRITER },
+    { label: 'Proofreader', key: KEY_PROOFREADER }
+];
 
-// --- État de la session ---
-let detectedLanguage = null;
+export class BuiltInControler{
 
-const display = (text, lang = null) => {
-    log(text,defaultLogIdElement,  'info');
-    document.getElementById('output-display').textContent = text;
+    /**
+     * @type {object}
+     * @property {string} state
+     * @property {string} api
+     * @property {string} msg
+     * @property {object} result
+     * @property {stream} stream
+     */
+    #stateListener = null;
 
-    // Hook pour le TTS
-    const autoRead = document.getElementById('auto-read');
-    if (autoRead && autoRead.checked && window.tts) {
-        // Si lang est null, on utilise l'auto-détection du TTS ou la langue mémorisée
-        window.tts.speak(text, lang || detectedLanguage);
+    /**
+     * @type {Object}
+     */
+    #stateAPIS = {};
+
+    constructor(stateListener){
+        this.#stateListener = stateListener;
     }
-};
 
-// --- Détection des API ---
-const getAPI = (name) => {
-    const apis = {
-        LanguageDetector: window.LanguageDetector,
-        Translator: window.Translator,
-        Summarizer: window.Summarizer,
-        LanguageModel: window.LanguageModel,
-        Writer: window.Writer,
-        Rewriter: window.Rewriter,
-        Proofreader: window.Proofreader
+    #getAPI(name){
+        const apis = {
+            LanguageDetector: window.LanguageDetector,
+            Translator: window.Translator,
+            Summarizer: window.Summarizer,
+            LanguageModel: window.LanguageModel,
+            Writer: window.Writer,
+            Rewriter: window.Rewriter,
+            Proofreader: window.Proofreader
+        };
+        return apis[name];
     };
-    return apis[name];
-};
 
-const updateUIStatus = async () => {
-    log('Vérification de la disponibilité des API...',defaultLogIdElement);
-    const list = document.getElementById('api-status-list');
-    list.innerHTML = '';
+    async checkStateAPIs(){
+        for (const api of APIS_TO_CHECK) {
+            const builtInAPI = this.#getAPI(api.key);
+            let status = 'unavailable';
 
-    const toCheck = [
-        { label: 'Language Detector', key: 'LanguageDetector' },
-        { label: 'Translator (FR->EN)', key: 'Translator', params: { sourceLanguage: 'fr', targetLanguage: 'en' } },
-        { label: 'Translator (EN->FR)', key: 'Translator', params: { sourceLanguage: 'en', targetLanguage: 'fr' } },
-        { label: 'Summarizer', key: 'Summarizer' },
-        { label: 'Language Model (FR/EN)', key: 'LanguageModel', params: { languages: ['en', 'fr'] } },
-        { label: 'Writer', key: 'Writer' },
-        { label: 'Rewriter', key: 'Rewriter' },
-        { label: 'Proofreader', key: 'Proofreader' }
-    ];
+            if (builtInAPI) {
+                try {
+                    status = typeof builtInAPI.availability === 'function'
+                        ? await builtInAPI.availability(api.params || {})
+                        : 'available';
+                } catch (e) {
+                    log(`Erreur dispo ${api.label}: ${e.message}`, 'error');
+                }
+            }
 
-    for (const api of toCheck) {
-        const obj = getAPI(api.key);
-        let status = 'unavailable';
+            this.#stateAPIS[api.key] = status;
 
-        if (obj) {
-            try {
-                status = typeof obj.availability === 'function'
-                    ? await obj.availability(api.params || {})
-                    : 'available';
-            } catch (e) {
-                log(`Erreur dispo ${api.label}: ${e.message}`, 'error');
+            // const div = document.createElement('div');
+            // div.className = 'api-status';
+            // div.innerHTML = `<span>${api.label}</span><span class="status-badge status-${status}">${status}</span>`;
+            // list.appendChild(div);
+        }
+    }
+
+    async downloadMissingAPIs(){
+        for (const api of APIS_TO_CHECK) {
+            const builtInAPI = this.#getAPI(api.key);
+            const status = this.#stateAPIS[api.key];
+            const superThis = this;
+            try{
+
+                if (status === 'downloadable'){
+                    await builtInAPI.create({
+                        ...api.params,
+                        monitor(m){
+                            m.addEventListener('downloadprogress', (e)=>{
+                                const progress = Math.round((e.loaded / e.total) * 100);
+                                superThis.#stateListener({state:'downloadModel', api: api.key, msg: progress});
+                            })
+                        }
+                    })
+                    superThis.#stateListener({state:'readyModel', api: api.key, msg: 'Ready'});
+                    this.#stateAPIS[api.key] = status;
+                }
+            }catch(error){
+                log(`Error Downloading model ${api.key}`, 'error', error);
             }
         }
-
-        const div = document.createElement('div');
-        div.className = 'api-status';
-        div.innerHTML = `<span>${api.label}</span><span class="status-badge status-${status}">${status}</span>`;
-        list.appendChild(div);
     }
-};
 
-// --- Handlers Directs ---
+    /**
+     * 
+     * @param {string} text : langue à détecter
+     * @returns @type {Object}
+     * @property {string} detectedLanguage : FR, ...
+     * @property {number} confidence : % of confidence
+     */
+    async detectLanguage(text){
+        if (!text){
+            return log('Texte manquant', 'error');
+        }
+        log(`Appel ${KEY_LANGAGE_DETECTOR}...`);
+        try {
+            const api = getAPI(KEY_LANGAGE_DETECTOR);
+            if (!api) throw new Error('API non trouvée');
 
-async function onDetectLanguage() {
-    const text = document.getElementById('text-input').value;
-    if (!text) return log('Texte manquant', 'error');
+            const detector = await api.create();
+            const results = await detector.detect(text);
+            
+            //display(`Langue: ${detectedLanguage} (${Math.round(results[0].confidence * 100)}%)`, detectedLanguage);
+            log(`Détection réussie : ${detectedLanguage}`);
 
-    log('Appel LanguageDetector...', defaultLogIdElement);
-    try {
-        const api = getAPI('LanguageDetector');
-        if (!api) throw new Error('API non trouvée');
-
-        const detector = await api.create();
-        const results = await detector.detect(text);
-
-        // On mémorise la langue détectée pour la session
-        detectedLanguage = results[0].detectedLanguage;
-
-        display(`Langue: ${detectedLanguage} (${Math.round(results[0].confidence * 100)}%)`, detectedLanguage);
-        log(`Détection réussie : ${detectedLanguage}`, defaultLogIdElement, 'success');
-    } catch (e) {
-        log(`Erreur: ${e.message}`, defaultLogIdElement, 'error');
+            return {
+                detectedLanguage : results[0].detectLanguage,
+                confidence : Math.round(results[0].confidence * 100)
+            };
+        } catch (e) {
+            log(`Erreur: ${e.message}`, 'error');
+        }
     }
-}
 
-async function onTranslate() {
-    const text = document.getElementById('text-input').value;
-    const direction = document.getElementById('translation-direction').value;
-    if (!text) return log('Texte manquant', defaultLogIdElement, 'error');
-
-    const [src, tgt] = direction.split('-');
-    log(`Appel Translator (${src.toUpperCase()} -> ${tgt.toUpperCase()})...`, defaultLogIdElement);
-
-    try {
-        const api = getAPI('Translator');
-        if (!api) throw new Error('API non trouvée');
-
-        const translator = await api.create({ sourceLanguage: src, targetLanguage: tgt });
-        const result = await translator.translate(text);
-        display(result, tgt); // On passe la langue cible au TTS
-        log('Traduction réussie', defaultLogIdElement, 'success');
-    } catch (e) {
-        log(`Erreur: ${e.message}`, defaultLogIdElement, 'error');
-    }
-}
-
-async function onSummarize() {
-    const text = document.getElementById('text-input').value;
-    if (!text) return log('Texte manquant', defaultLogIdElement, 'error');
-
-    log(`Appel Summarizer (Contexte: ${detectedLanguage || 'auto'})...`, defaultLogIdElement);
-    try {
-        const api = getAPI('Summarizer');
-        if (!api) throw new Error('API non trouvée');
-
-        // Configuration raffinée du Summarizer selon la langue détectée
-        const options = {
-            type: 'key-points', // Format par défaut
-            format: 'markdown',
-            length: 'medium'
-        };
-
-        if (detectedLanguage) {
-            options.expectedInputLanguages = [detectedLanguage];
-            options.outputLanguage = detectedLanguage;
-            options.expectedContextLanguages = [detectedLanguage];
-            options.sharedContext = `Processing a document in ${detectedLanguage}. Please provide the summary in the same language.`;
+    /**
+     * 
+     * @param {string} text 
+     * @param {string} sourceLanguage : fr or en
+     * @param {string} targetLanguage : fr or en
+     * @returns {Array<Promise<string>>} a stream of chunks (to be awaited !!)
+     */
+    async translate(text, sourceLanguage, targetLanguage){
+        if (!text){
+            return log('Texte manquant', 'error');
         }
 
-        const summarizer = await api.create(options);
-        const result = await summarizer.summarize(text);
-        display(result, detectedLanguage);
-        log('Résumé réussi', defaultLogIdElement, 'success');
-    } catch (e) {
-        log(`Erreur: ${e.message}`, defaultLogIdElement, 'error');
+        log(`Appel ${KEY_TRANSLATOR} (${sourceLanguage.toUpperCase()} -> ${targetLanguage.toUpperCase()})...`);
+
+        try {
+            const api = getAPI(KEY_TRANSLATOR);
+            if (!api) throw new Error('API non trouvée');
+
+            const translator = await api.create({ sourceLanguage, targetLanguage });
+            const result = translator.translateStreaming(text);
+            log('Traduction stréamée');
+            return result;
+        } catch (e) {
+            log(`Erreur: ${e.message}`, 'error');
+        }
     }
+
+    /**
+     * 
+     * @param {string} text 
+     * @param {string} language : fr or en
+     * @returns {Array<Promise<string>>} a stream of chunks (to be awaited !!)
+     */
+    async summarize(text, language) {
+        if (!text) return log('Texte manquant', 'error');
+
+        log(`Appel ${KEY_SUMMARIZER} (Contexte: ${language || 'auto'})...`);
+        try {
+            const api = getAPI(KEY_SUMMARIZER);
+            if (!api) throw new Error('API non trouvée');
+
+            // Configuration raffinée du Summarizer selon la langue détectée
+            const options = {
+                type: 'key-points', // Format par défaut
+                format: 'markdown',
+                length: 'medium'
+            };
+
+            if (language) {
+                options.expectedInputLanguages = [language];
+                options.outputLanguage = language;
+                options.expectedContextLanguages = [language];
+                options.sharedContext = `Processing a document in ${language}. Please provide the summary in the same language.`;
+            }
+
+            const summarizer = await api.create(options);
+            const result = summarizer.summarizeStreaming(text);
+            log('Résumé streammé');
+            return result;
+        } catch (e) {
+            log(`Erreur: ${e.message}`, 'error');
+        }
+    }
+
+    /**
+     * 
+     * @param {string} text : subject 
+     * @returns {Array<Promise<string>>} a stream of chunks (to be awaited !!)
+     */
+    async write(text) {
+        if (!text) return log('Sujet manquant', 'error');
+
+        log(`Appel ${KEY_WRITER} API...`);
+        try {
+            const api = getAPI(KEY_WRITER);
+            if (!api) throw new Error('API non trouvée');
+
+            const writer = await api.create();
+            /**
+              
+tone : Le ton de l'écriture peut faire référence au style, au caractère ou à l'attitude du contenu. La valeur peut être définie sur formal, neutral (par défaut) ou casual.
+format: la mise en forme de la sortie, avec les valeurs autorisées markdown (par défaut) et plain-text.
+length: la longueur de la sortie, avec les valeurs autorisées short (par défaut), medium et long.
+sharedContext : lorsque vous écrivez plusieurs sorties, un contexte partagé peut aider le modèle à créer du contenu mieux adapté à vos attentes.
+             */
+
+            const result = await writer.writeStreaming(text);
+            log('Écriture stréamée');
+            return result;
+        } catch (e) {
+            log(`Erreur: ${e.message}`, 'error');
+        }
+    }
+
+    /**
+     * 
+     * @param {string} text : subject 
+     * @returns {Array<Promise<string>>} a stream of chunks (to be awaited !!)
+     */
+    async rewrite(text) {
+        if (!text) return log('Texte manquant', 'error');
+
+        log(`Appel ${KEY_REWRITER} API...`);
+        try {
+            const api = getAPI(KEY_REWRITER);
+            if (!api) throw new Error('API non trouvée');
+
+            const rewriter = await api.create();
+/*
+tone : Le ton de l'écriture peut faire référence au style, au caractère ou à l'attitude du contenu. La valeur peut être définie sur more-formal, as-is (par défaut) ou more-casual.
+format: la mise en forme de la sortie, avec les valeurs autorisées as-is (par défaut), markdown et plain-text.
+length: la longueur de la sortie, avec les valeurs autorisées shorter, as-is (par défaut) et longer.
+sharedContext : lorsque vous réécrivez plusieurs éléments de contenu, un contexte partagé peut aider le modèle à créer un contenu mieux adapté à vos attentes.
+*/
+            const result = await rewriter.rewriteStreaming(text);
+            log('Réécriture stréamée', 'success');
+            return result;
+        } catch (e) {
+            log(`Erreur: ${e.message}`, 'error');
+        }
+    }
+
+    /**
+     * 
+     * @param {string} text : subject 
+     * @returns @type {Object} ProofreadResult
+     * @property {Array<Object>} corrections
+     */
+    async proofread(text) {
+        if (!text) return log('Texte manquant', 'error');
+
+        log(`Appel ${KEY_PROOFREADER} API...`);
+        try {
+            const api = getAPI(KEY_PROOFREADER);
+            if (!api) throw new Error('API non trouvée');
+
+            const proofreader = await api.create();
+            const result = await proofreader.proofread(text);            
+            log('Correction réussie');
+            return result;
+        } catch (e) {
+            log(`Erreur: ${e.message}`, 'error');
+        }
+    }
+
+
+    /**
+     * 
+     * @param @type {Object}
+     * @property {string} text: the text
+     * @property {binary} image: the image to analyse
+     * @property {Object} session: the session to continue 
+     * @returns @type {Object}
+     * @property {Object} session : the session used
+     * @property {Array<Promise<String>>} streams : the stream of chunks
+     */
+    async prompt({text, image, session}) {
+        if (!text && !image) return log('Entrée manquante', 'error');
+
+        log(`Appel ${KEY_LANGAGE_MODEL} (Gemma )...`);
+        try {
+            const api = getAPI(KEY_LANGAGE_MODEL);
+            if (!api) throw new Error('API non trouvée');
+
+            let usedSession = undefined;
+            if (session){
+                usedSession = session;
+            }else{
+                usedSession = await api.create({
+                    expectedInputs: [{ type: "text" }, { type: "image" },],
+                    initialPrompts: [
+                        {
+                            role: 'system',
+                            content:
+                            LEMA_PROMPT_SYSTEM
+                        },
+                    ],
+                });
+            }
+
+            let stream = undefined;
+            if (image) {
+                log('Traitement multimodal (image)...');
+                //const buffer = await file.arrayBuffer();
+                stream = usedSession.promptStreaming([{
+                    role: "user",
+                    content: [
+                        { type: 'text', value: text },
+                        { type: 'image', value: document.querySelector('img') }
+                    ]
+                }]);
+            } else {
+                stream = usedSession.promptStreaming(text);
+
+            }
+            log('Réponse stréamée');
+            return{
+                session: usedSession,
+                stream
+            }
+            
+        } catch (e) {
+            log(`Erreur: ${e.message}`, 'error');
+        }
+    }
+
+    /**
+     * 
+     * @returns {number} the context still available in session if API exists, NaN else
+     */
+    getAvailbaleContext(){
+        const api = this.#getAPI(KEY_LANGAGE_MODEL);
+        if (!api){
+            return NaN;
+        }
+        const { contextWindow, contextUsage } = api;
+        const contextWindowLeft = contextWindow - contextUsage;
+        return contextWindowLeft;
+    }
+
+    /**
+     * 
+     * @param {Object} session 
+     */
+    closeSession(session){
+        try{
+            if (session){
+                session.destroy();
+            }
+        }catch(error){
+            log('Error pendant la desctruction de la session', 'error', error);
+        }
+    }
+
+
 }
 
-async function onPrompt() {
-    const text = document.getElementById('text-input').value;
-    const file = document.getElementById('image-input').files[0];
-    if (!text && !file) return log('Entrée manquante', 'error');
+export class ProofReaderFixControler{
 
-    log('Appel LanguageModel (Gemma )...', defaultLogIdElement);
-    try {
-        const api = getAPI('LanguageModel');
-        if (!api) throw new Error('API non trouvée');
+    #activeCorrection = null;
 
-        const session = await api.create({
-            //expectedInputs: [{ type: "text", languages: ['en'] }, { type: "image" },],
-            expectedInputs: [{ type: "text" }, { type: "image" },],
-            //expectedOutputs: [{ type: "text", languages: ['en'] }],
-            initialPrompts: [
-                {
-                    role: 'system',
-                    content:
-                        promptSystem
-                        //'Your task is to describe images. Only use plain text. Do not use Markdown. Be short and precise.',
-                        //'Réponds en français. Sois concis. pas de markdown'
-                },
-            ],
+    constructor(){}
+
+
+    /**
+     * Render the results with highlights
+     */
+    renderResult(result, paragraphElement) {
+        paragraphElement.innerHTML = '';
+        const { corrections } = result;
+        
+        let lastIndex = 0;
+        
+        corrections.forEach((correction) => {
+            // Unchanged part
+            if (correction.startIndex > lastIndex) {
+                const span = document.createElement('span');
+                span.textContent = currentText.substring(lastIndex, correction.startIndex);
+                paragraphElement.appendChild(span);
+            }
+
+            // Error part
+            const errorSpan = document.createElement('span');
+            errorSpan.className = 'error-highlight';
+            errorSpan.textContent = currentText.substring(correction.startIndex, correction.endIndex);
+            
+            errorSpan.addEventListener('click', (e) => {
+                e.stopPropagation();
+                this.showTooltip(e, correction);
+            });
+
+            paragraphElement.appendChild(errorSpan);
+            lastIndex = correction.endIndex;
         });
 
-        let stream = undefined;
-        if (file) {
-            log('Traitement multimodal (image)...', defaultLogIdElement);
-            //const buffer = await file.arrayBuffer();
-            stream = session.promptStreaming([{
-                role: "user",
-                content: [
-                    { type: 'text', value: text },
-                    { type: 'image', value: document.querySelector('img') }
-                ]
-            }]);
-        } else {
-            stream = session.promptStreaming(text);
-
+        // Remaining text
+        if (lastIndex < currentText.length) {
+            const span = document.createElement('span');
+            span.textContent = currentText.substring(lastIndex);
+            paragraphElement.appendChild(span);
         }
 
-        // log(`content send : ${JSON.stringify(content)}`);
+    }
 
-        let result = '';
-        for await (const chunk of stream) {
-            //output.append(chunk);
-            result += chunk;
-        }
-        display(result);
-        log('Réponse reçue', defaultLogIdElement, 'success');
-    } catch (e) {
-        log(`Erreur: ${e.message}`, defaultLogIdElement, 'error');
+    /**
+     * Tooltip Management
+     */
+    showTooltip(event, correction) {
+
+        this.#activeCorrection = correction;
+
+        const toolTipHTML = `<div id="correction-tooltip" class="correction-popup">
+            <div class="popup-header">Suggested Correction</div>
+            <div id="suggestion-value" class="suggestion-text"></div>
+            <div id="explanation-value" class="explanation-text"></div>
+            <div class="popup-actions">
+                <button id="btn-cancel-correction" class="btn btn-secondary btn-small">Ignore</button>
+                <button id="btn-apply-correction" class="btn btn-apply btn-small">Apply</button>
+            </div>
+        </div>`;
+        // TODO ajouter au dom la tooltip (que si pas déjà présente)
+
+        
+        // TODO mapping sur la tooltip 
+        //elements.suggestionVal.textContent = correction.correction || 'No suggestion';
+        //elements.explanationVal.textContent = correction.explanation || '';
+        
+        // Position tooltip
+        const rect = event.target.getBoundingClientRect();
+        // TODO positionnement tooltip
+        //elements.tooltip.style.left = `${rect.left + window.scrollX}px`;
+        //elements.tooltip.style.top = `${rect.bottom + window.scrollY + 10}px`;
+        //elements.tooltip.style.display = 'flex';
+
+        // TODO ajouter un listener 
+        //elements.btnApply.addEventListener('click', applyCorrection);
+    }
+
+    hideTooltip() {
+        // TODO cacher la tooltip si elle existe
+        //elements.tooltip.style.display = 'none';
+        this.#activeCorrection = null;
+    }
+
+    applyCorrection() {
+        if (!this.#activeCorrection) return;
+        
+        const before = currentText.substring(0, activeCorrection.startIndex);
+        const after = currentText.substring(activeCorrection.endIndex);
+        currentText = before + activeCorrection.correction + after;
+        
+        this.hideTooltip();
+        
+        // Refresh the view with new text
+        // TODO trouver un moyen plus simple que de relancer une analyse complète
+        //reAnalyzeAndRender();
     }
 }
 
-async function onWrite() {
-    const text = document.getElementById('text-input').value;
-    if (!text) return log('Sujet manquant', 'error');
-
-    log('Appel Writer API...', defaultLogIdElement);
-    try {
-        const api = getAPI('Writer');
-        if (!api) throw new Error('API non trouvée');
-
-        const writer = await api.create();
-        const result = await writer.write(text);
-        display(result);
-        log('Écriture réussie', defaultLogIdElement, 'success');
-    } catch (e) {
-        log(`Erreur: ${e.message}`, defaultLogIdElement, 'error');
-    }
-}
-
-async function onRewrite() {
-    const text = document.getElementById('text-input').value;
-    if (!text) return log('Texte manquant', 'error');
-
-    log('Appel Rewriter API...', defaultLogIdElement);
-    try {
-        const api = getAPI('Rewriter');
-        if (!api) throw new Error('API non trouvée');
-
-        const rewriter = await api.create();
-        const result = await rewriter.rewrite(text);
-        display(result);
-        log('Réécriture réussie', defaultLogIdElement, 'success');
-    } catch (e) {
-        log(`Erreur: ${e.message}`, defaultLogIdElement, 'error');
-    }
-}
-
-async function onProofread() {
-    const text = document.getElementById('text-input').value;
-    if (!text) return log('Texte manquant', 'error');
-
-    log('Appel Proofreader API...', defaultLogIdElement);
-    try {
-        const api = getAPI('Proofreader');
-        if (!api) throw new Error('API non trouvée');
-
-        const proofreader = await api.create();
-        const result = await proofreader.proofread(text);
-        display(result);
-        log('Correction réussie', defaultLogIdElement, 'success');
-    } catch (e) {
-        log(`Erreur: ${e.message}`, defaultLogIdElement, 'error');
-    }
-}
-
-// --- Initialisation ---
-document.addEventListener('DOMContentLoaded', () => {
-    log('Prêt.', defaultLogIdElement);
-
-    document.getElementById('check-status-btn').addEventListener('click', updateUIStatus);
-    document.getElementById('btn-detect-lang').addEventListener('click', onDetectLanguage);
-    document.getElementById('btn-translate').addEventListener('click', onTranslate);
-    document.getElementById('btn-summarize').addEventListener('click', onSummarize);
-    document.getElementById('btn-prompt').addEventListener('click', onPrompt);
-    document.getElementById('btn-write').addEventListener('click', onWrite);
-    document.getElementById('btn-rewrite').addEventListener('click', onRewrite);
-    document.getElementById('btn-proofread').addEventListener('click', onProofread);
-
-    // Image preview simple
-    document.getElementById('image-input').addEventListener('change', (e) => {
-        const f = e.target.files[0];
-        if (f) {
-            const r = new FileReader();
-            r.onload = (ev) => document.getElementById('image-preview').innerHTML = `<img id="preview-image" src="${ev.target.result}">`;
-            r.readAsDataURL(f);
-        }
-    });
-
-    // Reset de la langue détectée si le texte change
-    document.getElementById('text-input').addEventListener('input', () => {
-        if (detectedLanguage) {
-            detectedLanguage = null;
-            log('Texte modifié : langue mémorisée réinitialisée.', defaultLogIdElement, 'info');
-        }
-    });
-
-    setTimeout(updateUIStatus, 500);
-});

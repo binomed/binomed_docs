@@ -10,7 +10,7 @@ export class SpeechRecognitionControler{
         const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
         if (!SpeechRecognition) {
-            log("Web Speech API non supportée sur ce navigateur.", undefined, 'error');
+            log("Web Speech API non supportée sur ce navigateur.", 'error');
             stateListener({state:'error', msg: 'not-availlable'})
             return;
         }
@@ -161,9 +161,9 @@ export class MicControler{
             // Ajout au DOM
             document.body.appendChild(this.#micButton);
             
-            log('Micro button added successfully', undefined);
+            log('Micro button added successfully');
         } catch (error) {
-            log('Error adding micro button:', undefined, 'error' ,error);
+            log('Error adding micro button:', 'error' ,error);
         }
     }
 
@@ -193,9 +193,9 @@ export class MicControler{
             this.#micButton = null;
             this.micState = false;
             
-            log('Micro button removed successfully', undefined);
+            log('Micro button removed successfully');
         } catch (error) {
-            log('Error removing micro button:', undefined, error);
+            log('Error removing micro button:', error);
         }
     }
 
@@ -218,7 +218,7 @@ export class MicControler{
                 this.#micButton.style.color = this.micState ? '#ffffff' : '#000000';
             }
         } catch (error) {
-            log('Error triggering mic:', undefined, 'error', error);
+            log('Error triggering mic:', 'error', error);
         }
     }
 
@@ -227,7 +227,7 @@ export class MicControler{
      * À implémenter selon vos besoins spécifiques
      */
     #startMic() {
-        log('Starting microphone...', undefined);
+        log('Starting microphone...');
         this.#stateListener({state:'start'});
     }
     
@@ -236,7 +236,7 @@ export class MicControler{
      * À implémenter selon vos besoins spécifiques
     */
    #stopMic() {
-       log('Stopping microphone...', undefined);
+       log('Stopping microphone...');
        this.#stateListener({state:'stop'});        
     }
 }

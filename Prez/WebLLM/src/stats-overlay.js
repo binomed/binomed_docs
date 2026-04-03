@@ -229,7 +229,7 @@ export class OverlayStats{
         try {
             // Éviter les doublons
             if (this.#overlayWidget) {
-                log('Overlay already exists', undefined);
+                log('Overlay already exists');
                 return;
             }
 
@@ -244,9 +244,9 @@ export class OverlayStats{
             document.body.appendChild(this.#overlayWidget);
 
             
-            log('Overlay added successfully', undefined);
+            log('Overlay added successfully');
         } catch (error) {
-            log('Error adding overlay:', undefined, 'error', error);
+            log('Error adding overlay:', 'error', error);
         }
     }
 
@@ -265,9 +265,9 @@ export class OverlayStats{
             // Reset des variables
             this.#overlayWidget = null;
             
-            log('Overlay removed successfully', undefined);
+            log('Overlay removed successfully');
         } catch (error) {
-            log('Error removing micro button:', undefined, 'error', error);
+            log('Error removing micro button:', 'error', error);
         }
     }
 }

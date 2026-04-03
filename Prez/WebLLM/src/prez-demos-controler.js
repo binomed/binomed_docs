@@ -29,12 +29,12 @@ export class PrezDemosControler{
 
     initRevealEvents(){
         Reveal.addEventListener('in-gemma', ()=>{
-            log('In Gemma', undefined);
+            log('In Gemma');
             this.#micControler.addMicButton();
             this.#overlayControler.addOverlayWidget();
         })
         Reveal.addEventListener('out-gemma', ()=>{
-            log('Out Gemma', undefined);
+            log('Out Gemma');
             this.#micControler.removeMicButton();
             this.#overlayControler.removeOverlayWidget();
         })
@@ -61,22 +61,22 @@ export class PrezDemosControler{
     stateSpeechListener({state, msg}){
         switch(state){
             case 'error':
-                log('Error SpeechRecongnition', undefined, 'error', msg);
+                log('Error SpeechRecongnition', 'error', msg);
                 break;
             case 'start':
-                log('Start SpeechRecongnition', undefined);
+                log('Start SpeechRecongnition');
                 break;
             case 'stop':
-                log('Stop SpeechRecongnition', undefined);
+                log('Stop SpeechRecongnition');
                 if (this.#micControler && this.#micControler.micState){
                     this.#micControler.triggerMic();
                 }
                 break;
             case 'speechend':
-                log('SpeechEnd SpeechRecongnition', undefined);
+                log('SpeechEnd SpeechRecongnition');
                 break;
             case 'result':
-                log('Result SpeechRecongnition', undefined, 'debug', msg);
+                log('Result SpeechRecongnition', 'debug', msg);
                 break;
         }
     }

@@ -2,7 +2,7 @@ import { PrezDemosControler } from './prez-demos-controler.js';
 
 const DEBUG = true;
 // --- Utilitaires de log et UI ---
-window.log = (msg, logIdElt, type = 'info', msgOrError) => {
+window.log = (msg, type = 'info', msgOrError) => {
     if (!type){
         type = 'debug';
     }
@@ -10,15 +10,7 @@ window.log = (msg, logIdElt, type = 'info', msgOrError) => {
         console.log(`[${type.toUpperCase()}] ${msg}`, msgOrError);
     }else if (type === 'error'){ 
         console.error(`[${type.toUpperCase()}]`, msg, msgOrError);        
-    }
-    
-    if (logIdElt){
-        const entry = document.createElement('div');
-        entry.className = `log-entry log-${type}`;
-        entry.textContent = `[${new Date().toLocaleTimeString()}] [${type.toUpperCase()}] ${msg}`;
-        const logDisplay = document.getElementById(logIdElt);
-        logDisplay.prepend(entry);
-    }
+    }        
 };
 
 (async function () {
