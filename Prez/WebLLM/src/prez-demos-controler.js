@@ -4,7 +4,9 @@ import {
 
 import {OverlayStats} from  './stats-overlay.js';
 import { SpeechRecognitionControler, MicControler } from './speech.js';
+import { SpeechSynthesisControler, VOICE_LEMA, VOICE_TEMA } from './tts.js';
 
+let index = 0;
 export class PrezDemosControler{
 
     
@@ -12,6 +14,10 @@ export class PrezDemosControler{
      * @type {SpeechRecognitionControler}
      */
     #speechControler = null;
+    /**
+     * @type {SpeechSynthesisControler}
+     */
+    #ttsControler = null;
     /**
      * @type  {OverlayStats}
      */
@@ -32,6 +38,7 @@ export class PrezDemosControler{
             log('In Gemma');
             this.#micControler.addMicButton();
             this.#overlayControler.addOverlayWidget();
+            this.#ttsControler.loadVoices();
         })
         Reveal.addEventListener('out-gemma', ()=>{
             log('Out Gemma');
@@ -48,6 +55,7 @@ export class PrezDemosControler{
 
     initTTSAndSpeech(){
         this.#speechControler = new SpeechRecognitionControler(this.stateSpeechListener.bind(this));
+        this.#ttsControler = new SpeechSynthesisControler();
     }
 
     /**
@@ -76,6 +84,8 @@ export class PrezDemosControler{
                 log('SpeechEnd SpeechRecongnition');
                 break;
             case 'result':
+                index++;
+                this.#ttsControler.speak(msg, index%2 === 0 ?VOICE_LEMA : VOICE_TEMA);
                 log('Result SpeechRecongnition', 'debug', msg);
                 break;
         }
