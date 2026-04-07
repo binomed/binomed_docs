@@ -56,6 +56,11 @@ export class BuiltInControler{
      */
     #stateAPIS = {};
 
+    /**
+     * @type {Object}
+     */
+    #lastSession = null;
+
     constructor(stateListener){
         this.#stateListener = stateListener;
     }
@@ -337,6 +342,9 @@ sharedContext : lorsque vous réécrivez plusieurs éléments de contenu, un con
                 });
             }
 
+            // Stocker la session pour accéder aux quotas
+            this.#lastSession = usedSession;
+
             let stream = undefined;
             if (image) {
                 log('Traitement multimodal (image)...');
@@ -368,13 +376,39 @@ sharedContext : lorsque vous réécrivez plusieurs éléments de contenu, un con
      * @returns {number} the context still available in session if API exists, NaN else
      */
     getAvailbaleContext(){
-        const api = this.#getAPI(KEY_LANGAGE_MODEL);
-        if (!api){
+        if (!this.#lastSession){
             return NaN;
         }
-        const { contextWindow, contextUsage } = api;
-        const contextWindowLeft = contextWindow - contextUsage;
-        return contextWindowLeft;
+        const inputQuota = this.#lastSession.inputQuota;
+        const inputUsage = this.#lastSession.inputUsage || this.#lastSession.tokensSoFar || 0;
+        const inputLeft = inputQuota - inputUsage;
+        return inputLeft;
+    }
+
+    /**
+     * Obtient les infos complètes du contexte du modèle
+     * @returns {Object} { remaining: number, total: number } ou { remaining: 0, total: 0 }
+     */
+    getContextInfo() {
+        if (!this.#lastSession) {
+            return { remaining: 0, total: 0 };
+        }
+
+        // Utiliser inputQuota/inputUsage (ou tokensSoFar/tokensLeft pour anciennes API)
+        const inputQuota = this.#lastSession.inputQuota;
+        const inputUsage = this.#lastSession.inputUsage || this.#lastSession.tokensSoFar || 0;
+
+        log('inputQuota:', 'debug', inputQuota);
+        log('inputUsage:', 'debug', inputUsage);
+
+        if (!inputQuota) {
+            return { remaining: 0, total: 0 };
+        }
+
+        return {
+            remaining: inputQuota - inputUsage,
+            total: inputQuota
+        };
     }
 
     /**

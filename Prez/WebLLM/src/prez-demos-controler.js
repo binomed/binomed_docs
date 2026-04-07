@@ -54,10 +54,11 @@ export class PrezDemosControler{
             this.#micControler.addMicButton();
             this.#overlayControler.addOverlayWidget();
             this.#ttsControler.loadVoices();
-            this.#builtInControler.checkStateAPIs();
-            this.#promptControler.downloadMissingAPIsIfNeeded();
+            await this.#builtInControler.checkStateAPIs();
+            await this.#promptControler.downloadMissingAPIsIfNeeded();
             this.#promptControler.showAPIStatus();
-            
+            this.#promptControler.updateContextDisplay();
+
         })
         Reveal.addEventListener('out-gemma', async ()=>{
             log('Out Gemma');
@@ -116,12 +117,15 @@ export class PrezDemosControler{
                 let resp = '';
                 for await (const chunk of stream){
                     resp += chunk;
+                    // Mettre à jour l'affichage du contexte à chaque chunk reçu
+                    this.#promptControler.updateContextDisplay();
                 }
                 log("Output Api : "+resp);
                 //this.#builtInControler.translate(resp, )
 
                 index++;
-                this.#ttsControler.speak(resp, index%2 === 0 ?VOICE_LEMA : VOICE_TEMA);
+                //this.#ttsControler.speak(resp, index%2 === 0 ?VOICE_LEMA : VOICE_TEMA);
+                this.#ttsControler.speak(resp, VOICE_LEMA);
                 //log('Result SpeechRecongnition', 'debug', msg);
                 break;
         }

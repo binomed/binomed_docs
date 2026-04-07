@@ -33,6 +33,10 @@ class APIStatusWidget extends HTMLElement {
         super();
         this._stateAPIS = {};
         this._collapsed = false;
+        this._contextInfo = {
+            remaining: 0,
+            total: 0
+        };
     }
 
     connectedCallback() {
@@ -45,6 +49,16 @@ class APIStatusWidget extends HTMLElement {
      */
     updateAPIs(stateAPIS) {
         this._stateAPIS = stateAPIS;
+        this._render();
+    }
+
+    /**
+     * Mettre à jour les infos du contexte
+     * @param {number} remaining - Tokens restants
+     * @param {number} total - Tokens totaux
+     */
+    updateContext(remaining, total) {
+        this._contextInfo = { remaining, total };
         this._render();
     }
 
@@ -96,12 +110,44 @@ class APIStatusWidget extends HTMLElement {
                 </div>
 
                 ${!this._collapsed ? html`
-                    <div style="padding:14px 16px;display:flex;flex-direction:column;gap:8px">
+                    <div style="padding:14px 16px;display:flex;flex-direction:column;gap:12px">
+                        <!-- APIs Status -->
                         ${apiEntries.length > 0 ? apiEntries.map(api => statusBadge(api.label, api.status)) : html`
                             <div style="text-align:center;color:#94a3b8;font-size:14px;padding:20px 0">
                                 Aucune API à afficher
                             </div>
                         `}
+
+                        <!-- Séparateur -->
+                        ${this._contextInfo.total ? html`
+                            <div style="height:1px;background:#e2e8f0"></div>
+
+                            <!-- Context Info -->
+                            <div style="display:flex;flex-direction:column;gap:6px">
+                                <span style="font-size:12px;font-weight:700;color:#475569;text-transform:uppercase;letter-spacing:1px">
+                                    Context
+                                </span>
+                                <div style="display:flex;justify-content:space-between;align-items:center;gap:8px">
+                                    <div style="flex:1">
+                                        <div style="
+                                            height:6px;
+                                            background:#e2e8f0;
+                                            border-radius:3px;
+                                            overflow:hidden">
+                                            <div style="
+                                                height:100%;
+                                                background:#3b82f6;
+                                                width:${this._contextInfo.total > 0 ? Math.min((this._contextInfo.remaining / this._contextInfo.total) * 100, 100) : 0}%;
+                                                transition:width 0.3s ease">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span style="font-size:12px;font-weight:700;color:#1e293b;white-space:nowrap">
+                                        ${isNaN(this._contextInfo.remaining) ? '-' : this._contextInfo.remaining} / ${this._contextInfo.total}
+                                    </span>
+                                </div>
+                            </div>
+                        ` : ''}
                     </div>
                 ` : ''}
             </div>
@@ -194,6 +240,17 @@ class APIStatusOverlay {
     getAPIsState() {
         return this.#apiStates;
     }
+
+    /**
+     * Mettre à jour les infos du contexte
+     * @param {number} remaining - Tokens restants
+     * @param {number} total - Tokens totaux
+     */
+    updateContextInfo(remaining, total) {
+        if (this.#overlayWidget) {
+            this.#overlayWidget.updateContext(remaining, total);
+        }
+    }
 }
 
 export class PromptControler{
@@ -255,5 +312,16 @@ export class PromptControler{
      */
     hideAPIStatus() {
         this.#apiStatusOverlay.removeOverlayWidget();
+    }
+
+    /**
+     * Mettre à jour l'affichage du contexte dans le widget
+     */
+    updateContextDisplay() {
+        if (this.#builtInControler) {
+            const contextInfo = this.#builtInControler.getContextInfo();
+            log('Context Info:', 'debug', contextInfo);
+            this.#apiStatusOverlay.updateContextInfo(contextInfo.remaining, contextInfo.total);
+        }
     }
 }
