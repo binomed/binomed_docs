@@ -5,6 +5,8 @@ import {
 import {OverlayStats} from  './stats-overlay.js';
 import { SpeechRecognitionControler, MicControler } from './speech.js';
 import { SpeechSynthesisControler, VOICE_LEMA, VOICE_TEMA } from './tts.js';
+import {BuiltInControler} from './buit-in.js';
+import { PromptControler } from './prompt-controler.js';
 
 let index = 0;
 export class PrezDemosControler{
@@ -27,23 +29,41 @@ export class PrezDemosControler{
      */
     #micControler = null; 
 
+    /**
+     * @type {BuiltInControler}
+     */
+    #builtInControler = null;
+
+    /**
+     * @type {PromptControler}
+     */
+    #promptControler = null;
+
+
+
     constructor(){
         this.initGraphicalsElements();
         this.initTTSAndSpeech();
         this.initRevealEvents();
+        this.initAiApis();
     }
 
     initRevealEvents(){
-        Reveal.addEventListener('in-gemma', ()=>{
+        Reveal.addEventListener('in-gemma', async ()=>{
             log('In Gemma');
             this.#micControler.addMicButton();
             this.#overlayControler.addOverlayWidget();
             this.#ttsControler.loadVoices();
+            this.#builtInControler.checkStateAPIs();
+            this.#promptControler.downloadMissingAPIsIfNeeded();
+            this.#promptControler.showAPIStatus();
+            
         })
-        Reveal.addEventListener('out-gemma', ()=>{
+        Reveal.addEventListener('out-gemma', async ()=>{
             log('Out Gemma');
             this.#micControler.removeMicButton();
             this.#overlayControler.removeOverlayWidget();
+            this.#promptControler.hideAPIStatus();
         })
     }
 
@@ -58,15 +78,23 @@ export class PrezDemosControler{
         this.#ttsControler = new SpeechSynthesisControler();
     }
 
+    async initAiApis(){
+        this.#promptControler = new PromptControler(null); // Sera complété après
+        const stateListener = this.#promptControler.handleBuiltInStateChange.bind(this.#promptControler);
+        this.#builtInControler = new BuiltInControler(stateListener);
+        this.#promptControler.setBuiltInControler(this.#builtInControler);
+        
+    }
+
     /**
      * STATES LISTENERS
      */
 
     /**
      * SpeechRecognition Listeners
-     * @param {*} param0 
+     * @param {*} param0
      */
-    stateSpeechListener({state, msg}){
+    async stateSpeechListener({state, msg}){
         switch(state){
             case 'error':
                 log('Error SpeechRecongnition', 'error', msg);
@@ -84,16 +112,24 @@ export class PrezDemosControler{
                 log('SpeechEnd SpeechRecongnition');
                 break;
             case 'result':
+                const {stream, session} = await this.#builtInControler.prompt({text:msg});
+                let resp = '';
+                for await (const chunk of stream){
+                    resp += chunk;
+                }
+                log("Output Api : "+resp);
+                //this.#builtInControler.translate(resp, )
+
                 index++;
-                this.#ttsControler.speak(msg, index%2 === 0 ?VOICE_LEMA : VOICE_TEMA);
-                log('Result SpeechRecongnition', 'debug', msg);
+                this.#ttsControler.speak(resp, index%2 === 0 ?VOICE_LEMA : VOICE_TEMA);
+                //log('Result SpeechRecongnition', 'debug', msg);
                 break;
         }
     }
 
     /**
      * Mic Listener
-     * @param {*} param0 
+     * @param {*} param0
      */
     stateMicListener({state}){
         switch(state){
@@ -106,7 +142,7 @@ export class PrezDemosControler{
                 if (this.#speechControler && this.#speechControler.isListening){
                     this.#speechControler.stopListening();
                 }
-                break;            
+                break;
         }
     }
 }

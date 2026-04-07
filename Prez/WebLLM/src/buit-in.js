@@ -1,5 +1,3 @@
-import { use } from "react";
-
 const LEMA_PROMPT_SYSTEM = `Tu es Lema, une IA révolutionnaire tournant exclusivement en local dans ce navigateur grâce à Gemma 2b. 
 Tu participes à une conférence live. Ton interlocuteur est le présentateur.
 
@@ -34,7 +32,7 @@ const APIS_TO_CHECK = [
     { label: 'Language Detector', key: KEY_LANGAGE_DETECTOR },
     { label: 'Translator (FR->EN)', key: KEY_TRANSLATOR, params: { sourceLanguage: 'fr', targetLanguage: 'en' }},
     { label: 'Translator (EN->FR)', key: KEY_TRANSLATOR, params: { sourceLanguage: 'en', targetLanguage: 'fr' } },
-    { label: 'Summarizer', key: KEY_SUMMARIZER },
+    { label: 'Summarizer', key: KEY_SUMMARIZER, downloadParams: { expectedInputLanguages: ['en', 'fr'], outputLanguage: 'en', expectedContextLanguages: ['en', 'fr'],} },
     { label: 'Language Model (FR/EN)', key: KEY_LANGAGE_MODEL, params: { languages: ['en', 'fr']}},
     { label: 'Writer', key: KEY_WRITER },
     { label: 'Rewriter', key: KEY_REWRITER },
@@ -92,6 +90,8 @@ export class BuiltInControler{
 
             this.#stateAPIS[api.key] = status;
 
+            
+            this.#stateListener({state: 'check', api : api.key, msg : status});
             // const div = document.createElement('div');
             // div.className = 'api-status';
             // div.innerHTML = `<span>${api.label}</span><span class="status-badge status-${status}">${status}</span>`;
@@ -109,6 +109,7 @@ export class BuiltInControler{
                 if (status === 'downloadable'){
                     await builtInAPI.create({
                         ...api.params,
+                        ...api.downloadParams,
                         monitor(m){
                             m.addEventListener('downloadprogress', (e)=>{
                                 const progress = Math.round((e.loaded / e.total) * 100);
@@ -138,7 +139,7 @@ export class BuiltInControler{
         }
         log(`Appel ${KEY_LANGAGE_DETECTOR}...`);
         try {
-            const api = getAPI(KEY_LANGAGE_DETECTOR);
+            const api = this.#getAPI(KEY_LANGAGE_DETECTOR);
             if (!api) throw new Error('API non trouvée');
 
             const detector = await api.create();
@@ -171,7 +172,7 @@ export class BuiltInControler{
         log(`Appel ${KEY_TRANSLATOR} (${sourceLanguage.toUpperCase()} -> ${targetLanguage.toUpperCase()})...`);
 
         try {
-            const api = getAPI(KEY_TRANSLATOR);
+            const api = this.#getAPI(KEY_TRANSLATOR);
             if (!api) throw new Error('API non trouvée');
 
             const translator = await api.create({ sourceLanguage, targetLanguage });
@@ -194,7 +195,7 @@ export class BuiltInControler{
 
         log(`Appel ${KEY_SUMMARIZER} (Contexte: ${language || 'auto'})...`);
         try {
-            const api = getAPI(KEY_SUMMARIZER);
+            const api = this.#getAPI(KEY_SUMMARIZER);
             if (!api) throw new Error('API non trouvée');
 
             // Configuration raffinée du Summarizer selon la langue détectée
@@ -230,7 +231,7 @@ export class BuiltInControler{
 
         log(`Appel ${KEY_WRITER} API...`);
         try {
-            const api = getAPI(KEY_WRITER);
+            const api = this.#getAPI(KEY_WRITER);
             if (!api) throw new Error('API non trouvée');
 
             const writer = await api.create();
@@ -260,7 +261,7 @@ sharedContext : lorsque vous écrivez plusieurs sorties, un contexte partagé pe
 
         log(`Appel ${KEY_REWRITER} API...`);
         try {
-            const api = getAPI(KEY_REWRITER);
+            const api = this.#getAPI(KEY_REWRITER);
             if (!api) throw new Error('API non trouvée');
 
             const rewriter = await api.create();
@@ -289,7 +290,7 @@ sharedContext : lorsque vous réécrivez plusieurs éléments de contenu, un con
 
         log(`Appel ${KEY_PROOFREADER} API...`);
         try {
-            const api = getAPI(KEY_PROOFREADER);
+            const api = this.#getAPI(KEY_PROOFREADER);
             if (!api) throw new Error('API non trouvée');
 
             const proofreader = await api.create();
@@ -317,7 +318,7 @@ sharedContext : lorsque vous réécrivez plusieurs éléments de contenu, un con
 
         log(`Appel ${KEY_LANGAGE_MODEL} (Gemma )...`);
         try {
-            const api = getAPI(KEY_LANGAGE_MODEL);
+            const api = this.#getAPI(KEY_LANGAGE_MODEL);
             if (!api) throw new Error('API non trouvée');
 
             let usedSession = undefined;
@@ -363,7 +364,7 @@ sharedContext : lorsque vous réécrivez plusieurs éléments de contenu, un con
     }
 
     /**
-     * 
+     *
      * @returns {number} the context still available in session if API exists, NaN else
      */
     getAvailbaleContext(){
@@ -374,6 +375,14 @@ sharedContext : lorsque vous réécrivez plusieurs éléments de contenu, un con
         const { contextWindow, contextUsage } = api;
         const contextWindowLeft = contextWindow - contextUsage;
         return contextWindowLeft;
+    }
+
+    /**
+     * Obtient l'état actuel de toutes les APIs
+     * @returns {Object} État des APIs { key: 'status', ... }
+     */
+    getAPIsState(){
+        return this.#stateAPIS;
     }
 
     /**
