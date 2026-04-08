@@ -58,6 +58,7 @@ export class PrezDemosControler{
 
     #stateDemos = -1;
 
+    #arrayChatHandlers = [];
 
 
     constructor(){
@@ -79,13 +80,15 @@ export class PrezDemosControler{
             await this.#promptControler.downloadMissingAPIsIfNeeded();
             this.#promptControler.showAPIStatus();
             this.#promptControler.updateContextDisplay();
-
+            this.initChatHandlers();
+            
         })
         Reveal.addEventListener('out-gemma', async ()=>{
             log('Out Gemma');
             this.#micControler.removeMicButton();
             this.#overlayControler.removeOverlayWidget();
             this.#promptControler.hideAPIStatus();
+            this.removeChatHandlers();
             this.#stateDemos = -1;
         })
 
@@ -153,6 +156,18 @@ export class PrezDemosControler{
         });
     }
 
+    initChatHandlers(){
+        this.#arrayChatHandlers.push(this.#chatController.onUserMessage("lema-chat",(msg)=>this.processUserMessage(msg)));
+        this.#arrayChatHandlers.push(this.#chatController.onUserMessage("lema-translate",(msg)=>this.processUserMessage(msg)));
+    }
+
+    removeChatHandlers(){
+        for (let chatHandler of this.#arrayChatHandlers){
+            chatHandler();
+        }
+        this.#arrayChatHandlers = [];
+    }
+
     /**
      * STATES LISTENERS
      */
@@ -197,12 +212,12 @@ export class PrezDemosControler{
                 log('SpeechEnd SpeechRecongnition');
                 break;
             case 'result':
-                await this.processSpeechSynthesisResult(msg);
+                await this.processUserMessage(msg);
                 break;
         }
     }
 
-    async processSpeechSynthesisResult(msg){
+    async processUserMessage(msg){
         switch(this.#stateDemos){
             case WELCOME_LEMA:{
                 this.#chatController.addUserMessage("lema-chat",msg);

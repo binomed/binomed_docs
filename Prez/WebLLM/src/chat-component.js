@@ -185,6 +185,8 @@ export class ChatComponent extends LitElement {
                         type="text"
                         class="input-field"
                         placeholder="Type your message..."
+                        @keydown=${(e) => e.stopPropagation()}
+                        @keyup=${(e) => e.stopPropagation()}
                         @keypress=${this.#handleKeyPress}
                     />
                     <button class="send-btn" @click=${this.#handleSend}>Send</button>
@@ -201,6 +203,7 @@ export class ChatComponent extends LitElement {
     }
 
     #handleKeyPress(event) {
+        event.stopPropagation();
         if (event.key === 'Enter' && !event.shiftKey) {
             event.preventDefault();
             this.#handleSend();

@@ -121,7 +121,7 @@ export class ChatController {
         const chat = this.getChat(dataId);
         if (chat) {
             const handler = (event) => {
-                callback(event.detail);
+                callback(event.detail?.text);
             };
             chat.addEventListener('user-message', handler);
 

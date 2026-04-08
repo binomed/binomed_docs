@@ -21,7 +21,9 @@ window.log = (msg, type = 'info', msgOrError) => {
         const inIframe = window.top != window.self;
 
         if (!inIframe) {
+            
             new PrezDemosControler();
+
         }
 
     }
