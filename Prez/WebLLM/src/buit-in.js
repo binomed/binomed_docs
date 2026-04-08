@@ -182,6 +182,7 @@ export class BuiltInControler{
             if (!api) throw new Error('API non trouvée');
 
             const translator = await api.create({ sourceLanguage, targetLanguage });
+            this.#lastSession = translator;
             const result = translator.translateStreaming(text);
             log('Traduction stréamée');
             return result;
@@ -220,6 +221,7 @@ export class BuiltInControler{
             }
 
             const summarizer = await api.create(config);
+            this.#lastSession = summarizer;
             const result = summarizer.summarizeStreaming(text);
             log('Résumé streammé');
             return result;
@@ -242,6 +244,7 @@ export class BuiltInControler{
             if (!api) throw new Error('API non trouvée');
 
             const writer = await api.create();
+            this.#lastSession = writer;
             /**
               
 tone : Le ton de l'écriture peut faire référence au style, au caractère ou à l'attitude du contenu. La valeur peut être définie sur formal, neutral (par défaut) ou casual.
@@ -272,6 +275,7 @@ sharedContext : lorsque vous écrivez plusieurs sorties, un contexte partagé pe
             if (!api) throw new Error('API non trouvée');
 
             const rewriter = await api.create();
+            this.#lastSession = rewriter;
 /*
 tone : Le ton de l'écriture peut faire référence au style, au caractère ou à l'attitude du contenu. La valeur peut être définie sur more-formal, as-is (par défaut) ou more-casual.
 format: la mise en forme de la sortie, avec les valeurs autorisées as-is (par défaut), markdown et plain-text.
@@ -301,6 +305,7 @@ sharedContext : lorsque vous réécrivez plusieurs éléments de contenu, un con
             if (!api) throw new Error('API non trouvée');
 
             const proofreader = await api.create();
+            this.#lastSession = proofreader;
             const result = await proofreader.proofread(text);            
             log('Correction réussie');
             return result;
