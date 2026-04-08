@@ -4,13 +4,16 @@ import {
 
 import {OverlayStats} from  './stats-overlay.js';
 import { SpeechRecognitionControler, MicControler } from './speech.js';
-import { SpeechSynthesisControler, VOICE_LEMA, VOICE_TEMA } from './tts.js';
+import { SpeechSynthesisControler, VOICE_ENGLISH, VOICE_LEMA, VOICE_TEMA } from './tts.js';
 import {BuiltInControler} from './buit-in.js';
 import { PromptControler } from './prompt-controler.js';
 import { ChatController } from './chat-controller.js';
 import { ActionHandler } from './action-handler.js';
 
 let index = 0;
+
+const WELCOME_LEMA = 1;
+const TRANSLATE_LEMA = 2;
 export class PrezDemosControler{
 
 
@@ -53,6 +56,8 @@ export class PrezDemosControler{
 
     #nbMessageToSpeak = 0;
 
+    #stateDemos = -1;
+
 
 
     constructor(){
@@ -81,6 +86,14 @@ export class PrezDemosControler{
             this.#micControler.removeMicButton();
             this.#overlayControler.removeOverlayWidget();
             this.#promptControler.hideAPIStatus();
+            this.#stateDemos = -1;
+        })
+
+        Reveal.addEventListener('welcome-lema', ()=>{
+            this.#stateDemos = WELCOME_LEMA;
+        })
+        Reveal.addEventListener('translate-lema', ()=>{
+            this.#stateDemos = TRANSLATE_LEMA;
         })
     }
 
@@ -184,62 +197,81 @@ export class PrezDemosControler{
                 log('SpeechEnd SpeechRecongnition');
                 break;
             case 'result':
+                await this.processSpeechSynthesisResult(msg);
+                break;
+        }
+    }
+
+    async processSpeechSynthesisResult(msg){
+        switch(this.#stateDemos){
+            case WELCOME_LEMA:{
                 this.#chatController.addUserMessage("lema-chat",msg);
                 const {stream, session} = await this.#builtInControler.prompt({text:msg});
-                const idStream = this.#chatController.startStream("lema-chat");
-
-                // Réinitialiser l'action handler pour ce nouveau stream
-                this.#actionHandler.reset();
-
-                let actionTrapped = false;
-                let chunkToSend = '';
-                const actions = [];
-                for await (const chunk of stream){
-                    // Traiter le chunk pour extraire les actions
-                    if (!actionTrapped && chunk.indexOf('[') !== -1){
-                        actionTrapped = true;
-                    }
-                    if (actionTrapped){
-                        chunkToSend += chunk;
-
-                        if (chunkToSend.indexOf(']]') !== -1){
-                            // Action trapped -> We have to clean
-                            const actionRegex = /\[\[ACTION:([A-Z_]+)\]\]/g;
-                             let match;
-                            while ((match = actionRegex.exec(chunkToSend)) !== null) {
-                                actions.push(match[1]);
-                            }
-                            chunkToSend = chunkToSend.replace(actionRegex, '');
-
-                            actionTrapped = false;
-                        }
-                    }else{
-                        chunkToSend = chunk;
-                    }
-                    //const { cleanText, completedActions } = this.#actionHandler.processChunk(chunk);
-
-                    // Ajouter les actions complétées à la liste
-                    if (!actionTrapped){
-                        this.#chatController.appendToStream("lema-chat", idStream, chunkToSend);
-                        this.#ttsControler.appendToStream(chunkToSend, VOICE_LEMA);
-                        
-                    }
-                    
-                    // Mettre à jour l'affichage du contexte à chaque chunk reçu
-                    this.#promptControler.updateContextDisplay();
-                }
-
+                await this.processStreamToChatAndVoice("lema-chat", VOICE_LEMA, stream);
                 
-                this.#chatController.finishStream("lema-chat", idStream);
-                
-                // Signaler la fin du stream au TTS pour forcer la lecture du buffer restant
-                this.#ttsControler.finishLLMStream();
-                
-                for (const action of actions) {
-                   this.#actionHandler.addCompletedAction(action);
-                }
-
                 break;
+            }
+            case TRANSLATE_LEMA:{
+
+                this.#chatController.addUserMessage("lema-translate",msg);
+                const stream = await this.#builtInControler.translate(msg,'fr', 'en');
+                await this.processStreamToChatAndVoice("lema-translate", VOICE_ENGLISH, stream);
+                break;
+            }
+        }
+    }
+
+    async processStreamToChatAndVoice(idChat, voiceTarget, stream){
+        const idStream = this.#chatController.startStream(idChat);
+
+        // Réinitialiser l'action handler pour ce nouveau stream
+        this.#actionHandler.reset();
+        let actionTrapped = false;
+        let chunkToSend = '';
+        const actions = [];
+        for await (const chunk of stream){
+            // Traiter le chunk pour extraire les actions
+            if (!actionTrapped && chunk.indexOf('[') !== -1){
+                actionTrapped = true;
+            }
+            if (actionTrapped){
+                chunkToSend += chunk;
+
+                if (chunkToSend.indexOf(']]') !== -1){
+                    // Action trapped -> We have to clean
+                    const actionRegex = /\[\[ACTION:([A-Z_]+)\]\]/g;
+                        let match;
+                    while ((match = actionRegex.exec(chunkToSend)) !== null) {
+                        actions.push(match[1]);
+                    }
+                    chunkToSend = chunkToSend.replace(actionRegex, '');
+
+                    actionTrapped = false;
+                }
+            }else{
+                chunkToSend = chunk;
+            }
+            //const { cleanText, completedActions } = this.#actionHandler.processChunk(chunk);
+
+            // Ajouter les actions complétées à la liste
+            if (!actionTrapped){
+                this.#chatController.appendToStream(idChat, idStream, chunkToSend);
+                this.#ttsControler.appendToStream(chunkToSend, voiceTarget);
+                
+            }
+            
+            // Mettre à jour l'affichage du contexte à chaque chunk reçu
+            this.#promptControler.updateContextDisplay();
+        }
+
+        
+        this.#chatController.finishStream(idChat, idStream);
+        
+        // Signaler la fin du stream au TTS pour forcer la lecture du buffer restant
+        this.#ttsControler.finishLLMStream();
+        
+        for (const action of actions) {
+            this.#actionHandler.addCompletedAction(action);
         }
     }
 

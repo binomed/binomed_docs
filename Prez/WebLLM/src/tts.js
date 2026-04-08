@@ -1,5 +1,6 @@
 export const VOICE_TEMA = "Amélie"; // Fr-CA -> Voice for Tema
 export const VOICE_LEMA = "Google français"; // Fr-FR -> Voice for LEMA
+export const VOICE_ENGLISH = "Google US English"; // En-US -> Voice for LEMA
 
 const VOICE_PITCH = 1;
 const VOICE_RATE = 1;
@@ -19,6 +20,7 @@ export class SpeechSynthesisControler{
     #pitchVal = 0;
 
     #lemaVoice = null;
+    #englishtLemaVoice = null;
     #temaVoice = null;
 
     // Streaming TTS fields
@@ -42,6 +44,8 @@ export class SpeechSynthesisControler{
 
         this.#lemaVoice = allVoices.find(v => v.name === VOICE_LEMA);
         if (!this.#lemaVoice) log('Voix pour Lema non disponible', 'error');
+        this.#englishtLemaVoice = allVoices.find(v => v.name === VOICE_ENGLISH);
+        if (!this.#englishtLemaVoice) log('Voix pour English Lema non disponible', 'error');
         this.#temaVoice = allVoices.find(v => v.name === VOICE_TEMA);
         if (!this.#temaVoice) log('Voix pour Tema non disponible', 'error');
     }
@@ -66,6 +70,8 @@ export class SpeechSynthesisControler{
         utterThis.voice = this.#lemaVoice;
         if (voiceConst === VOICE_TEMA){
             utterThis.voice = this.#temaVoice;
+        }else if (voiceConst === VOICE_ENGLISH){
+            utterThis.voice = this.#englishtLemaVoice;
         }
 
         utterThis.pitch = VOICE_PITCH;
@@ -203,6 +209,9 @@ export class SpeechSynthesisControler{
         let selectedVoice = this.#lemaVoice;
         if (voice === VOICE_TEMA) {
             selectedVoice = this.#temaVoice;
+        }else if (voice === VOICE_ENGLISH
+        ) {
+            selectedVoice = this.#englishtLemaVoice;
         }
 
         // Créer et configurer l'utterance

@@ -34,7 +34,7 @@
 
 ##==##
 
-<!-- .slide: data-state="in-gemma" -->
+<!-- .slide: data-state="in-gemma welcome-lema" -->
 
 # Let's meet Lema
 
@@ -43,6 +43,21 @@
 <div style="display: flex; gap: 40px; align-items: center; width: 100%;">
   <img src="./assets/images/lema.png" alt="lema" style="height: 500px;" />
   <chat-component data-id="lema-chat"></chat-component>
+</div>
+
+
+
+##==##
+
+<!-- .slide: data-state="translate-lema" -->
+
+
+# Let's translate
+
+
+<div style="display: flex; gap: 40px; align-items: center; width: 100%;">
+  <img src="./assets/images/lema.png" alt="lema" style="height: 500px;" />
+  <chat-component data-id="lema-translate"></chat-component>
 </div>
 
 ##==##
