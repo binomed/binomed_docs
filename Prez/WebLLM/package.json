@@ -7,8 +7,10 @@
     "sass-once": "sass ./scss/slides.scss:./css/slides.css --source-map",
     "test": "sfeir-school-theme check --rootDir=..",
     "server": "node ./src/server.js",
-    "serve": "live-server --port=4242 --open=\"./index.html\" --watch=\"markdown,scripts/\"",
-    "start": "parallelshell \"npm run server\" \"npm run serve\" \"npm run sass\"",
+    "serve": "live-server --port=4242 --open=\"./index.html\" --watch=\"markdown,scripts/,dist/\"",
+    "build:src": "vite build",
+    "dev:src": "vite build --watch",
+    "start": "parallelshell \"npm run server\" \"npm run serve\" \"npm run sass\" \"npm run dev:src\"",
     "prepare": "node ./scripts/dont-touch/prepare-script.js"
   },
   "author": "jefbinomed",
@@ -25,6 +27,7 @@
     "live-server": "^1.1.0",
     "parallelshell": "3.0.1",
     "sass": "^1.77.6",
-    "shelljs": "^0.8.5"
+    "shelljs": "^0.8.5",
+    "vite": "^5.4.21"
   }
 }

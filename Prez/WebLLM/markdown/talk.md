@@ -40,7 +40,10 @@
 
 **Lema for "Local Gemma"**
 
-![](./assets/images/lema.png 'lema h-600 center')
+<div style="display: flex; gap: 40px; align-items: center; width: 100%;">
+  <img src="./assets/images/lema.png" alt="lema" style="height: 500px;" />
+  <chat-component data-id="lema-chat"></chat-component>
+</div>
 
 ##==##
 

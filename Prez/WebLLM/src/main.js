@@ -1,4 +1,5 @@
 import { PrezDemosControler } from './prez-demos-controler.js';
+import './chat-component.js';
 
 const DEBUG = true;
 // --- Utilitaires de log et UI ---
@@ -8,13 +9,12 @@ window.log = (msg, type = 'info', msgOrError) => {
     }
     if(type === 'info' ||  type === 'debug' && DEBUG){
         console.log(`[${type.toUpperCase()}] ${msg}`, msgOrError);
-    }else if (type === 'error'){ 
-        console.error(`[${type.toUpperCase()}]`, msg, msgOrError);        
-    }        
+    }else if (type === 'error'){
+        console.error(`[${type.toUpperCase()}]`, msg, msgOrError);
+    }
 };
 
 (async function () {
-
 
     async function pageLoad() {
 

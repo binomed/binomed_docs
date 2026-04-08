@@ -7,11 +7,12 @@ import { SpeechRecognitionControler, MicControler } from './speech.js';
 import { SpeechSynthesisControler, VOICE_LEMA, VOICE_TEMA } from './tts.js';
 import {BuiltInControler} from './buit-in.js';
 import { PromptControler } from './prompt-controler.js';
+import { ChatController } from './chat-controller.js';
 
 let index = 0;
 export class PrezDemosControler{
 
-    
+
     /**
      * @type {SpeechRecognitionControler}
      */
@@ -39,6 +40,11 @@ export class PrezDemosControler{
      */
     #promptControler = null;
 
+    /**
+     * @type {ChatController}
+     */
+    #chatController = null;
+
 
 
     constructor(){
@@ -54,6 +60,7 @@ export class PrezDemosControler{
             this.#micControler.addMicButton();
             this.#overlayControler.addOverlayWidget();
             this.#ttsControler.loadVoices();
+            this.#chatController = new ChatController();
             await this.#builtInControler.checkStateAPIs();
             await this.#promptControler.downloadMissingAPIsIfNeeded();
             this.#promptControler.showAPIStatus();
@@ -71,7 +78,6 @@ export class PrezDemosControler{
     initGraphicalsElements(){
         this.#overlayControler = new OverlayStats();
         this.#micControler = new MicControler(this.stateMicListener.bind(this));
-
     }
 
     initTTSAndSpeech(){
@@ -113,13 +119,17 @@ export class PrezDemosControler{
                 log('SpeechEnd SpeechRecongnition');
                 break;
             case 'result':
+                this.#chatController.addUserMessage("lema-chat",msg);
                 const {stream, session} = await this.#builtInControler.prompt({text:msg});
+                const idStream = this.#chatController.startStream("lema-chat");
                 let resp = '';
                 for await (const chunk of stream){
+                    this.#chatController.appendToStream("lema-chat",idStream, chunk);
                     resp += chunk;
                     // Mettre à jour l'affichage du contexte à chaque chunk reçu
                     this.#promptControler.updateContextDisplay();
                 }
+                this.#chatController.finishStream("lema-chat", idStream);
                 log("Output Api : "+resp);
                 //this.#builtInControler.translate(resp, )
 
