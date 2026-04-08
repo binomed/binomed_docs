@@ -29,10 +29,12 @@ export class SpeechSynthesisControler{
     #isProcessing = false;   // verrou pour éviter la concurrence sur #playNext
     #streamFinished = false; // flag indiquant que le stream LLM est terminé
     #currentVoice = null;    // voix utilisée au démarrage du stream (pour finishLLMStream)
+    #stateListener = null;
 
-    constructor(){
+    constructor(stateListener){
         this.#synth = window.speechSynthesis;
         this.#currentVoice = VOICE_LEMA;
+        this.#stateListener = stateListener;
     }
 
     loadVoices(){
@@ -120,6 +122,7 @@ export class SpeechSynthesisControler{
         if (!this.#chunkBuffer.trim()) {
             return; // Rien à pousser
         }
+        this.#stateListener({state:'addToQueue'});
 
         // Pousser le contenu du buffer dans la queue
         this.#streamQueue.push({
@@ -212,6 +215,7 @@ export class SpeechSynthesisControler{
         // Utiliser safePlayNext pour éviter les accès concurrents
         utterThis.onend = () => {
             this.#safePlayNext();
+            this.#sendEnMessage();
         };
 
         // Gestion des erreurs : continuer avec le prochain chunk
@@ -223,6 +227,12 @@ export class SpeechSynthesisControler{
 
         // Lancer la lecture
         this.#synth.speak(utterThis);
+    }
+
+
+
+    #sendEnMessage(){
+        this.#stateListener({state:'end'});
     }
 
 }
