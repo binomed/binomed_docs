@@ -88,7 +88,7 @@
 
 ##==##
 
-<!-- .slide: data-state="summarize-lema" -->
+<!-- .slide: data-state="summarize-lema out-vision" -->
 
 
 # Let's Summarize
@@ -144,7 +144,7 @@
 
 ##==##
 
-<!-- .slide: class="transition" data-state="out-gemma" -->
+<!-- .slide: class="transition" data-state="out-gemma out-vision" -->
 
 # CONCLUSION
 

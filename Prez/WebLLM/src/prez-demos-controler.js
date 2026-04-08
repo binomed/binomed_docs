@@ -71,6 +71,8 @@ export class PrezDemosControler{
 
     #arrayChatHandlers = [];
 
+    #streamStopped = false;
+
 
     constructor(){
         this.initGraphicalsElements();
@@ -78,9 +80,14 @@ export class PrezDemosControler{
         this.initRevealEvents();
         this.initAiApis();
         this.initActionHandlers();
+        this.initKeyboardShortcuts();
     }
 
     initRevealEvents(){
+        Reveal.on('slidechanged', ()=>{
+            this.stopTTSAndStream();
+        });
+
         Reveal.addEventListener('in-gemma', async ()=>{
             log('In Gemma');
             this.#micControler.addMicButton();
@@ -99,8 +106,7 @@ export class PrezDemosControler{
             this.#micControler.removeMicButton();
             this.#overlayControler.removeOverlayWidget();
             this.#promptControler.hideAPIStatus();
-            this.removeChatHandlers();
-            this.#cameraController?.teardown();
+            this.removeChatHandlers();            
             this.#stateDemos = -1;
         })
 
@@ -123,6 +129,9 @@ export class PrezDemosControler{
             this.#stateDemos = VISION_LEMA;
             this.#cameraController = new CameraController();
             await this.#cameraController.setup();
+        })
+        Reveal.addEventListener('out-vision', async ()=>{
+            this.#cameraController?.teardown();
         })
     }
 
@@ -179,6 +188,18 @@ export class PrezDemosControler{
         this.#actionHandler.registerActionHandler('AUDIO_PROCESS', () => {
             log('Action: AUDIO_PROCESS');
             // À implémenter selon ton besoin
+        });
+    }
+
+    /**
+     * Initialise les raccourcis clavier
+     */
+    initKeyboardShortcuts(){
+        document.addEventListener('keydown', (e) => {
+            if (e.key.toLowerCase() === 'm') {
+                this.stopTTSAndStream();
+                log('Voice stopped (M key)');
+            }
         });
     }
 
@@ -322,7 +343,14 @@ export class PrezDemosControler{
         }
     }
 
+    async stopTTSAndStream(){
+        this.#streamStopped = true;
+        this.#ttsControler.stop();
+        this.#ttsControler.stopStream();
+    }
+
     async processStreamToChatAndVoice(idChat, voiceTarget, stream){
+        this.#streamStopped = false;
         const idStream = this.#chatController.startStream(idChat);
 
         // Réinitialiser l'action handler pour ce nouveau stream
@@ -357,8 +385,10 @@ export class PrezDemosControler{
             // Ajouter les actions complétées à la liste
             if (!actionTrapped){
                 this.#chatController.appendToStream(idChat, idStream, chunkToSend);
-                this.#ttsControler.appendToStream(chunkToSend, voiceTarget);
-                
+                if (!this.#streamStopped){
+                    this.#ttsControler.appendToStream(chunkToSend, voiceTarget);
+                }
+
             }
             
             // Mettre à jour l'affichage du contexte à chaque chunk reçu
