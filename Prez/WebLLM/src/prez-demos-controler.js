@@ -9,6 +9,8 @@ import {BuiltInControler} from './buit-in.js';
 import { PromptControler } from './prompt-controler.js';
 import { ChatController } from './chat-controller.js';
 import { ActionHandler } from './action-handler.js';
+import { CameraController } from './camera-controller.js';
+import { CameraComponent } from './camera-component.js';
 
 let index = 0;
 
@@ -17,6 +19,7 @@ const TRANSLATE_LEMA = 2;
 const WRITER_LEMA = 3;
 const REWRITE_LEMA = 4;
 const SUMMARIZE_LEMA = 5;
+const VISION_LEMA = 6;
 export class PrezDemosControler{
 
 
@@ -57,6 +60,11 @@ export class PrezDemosControler{
      */
     #actionHandler = null;
 
+    /**
+     * @type {CameraController}
+     */
+    #cameraController = null;
+
     #nbMessageToSpeak = 0;
 
     #stateDemos = -1;
@@ -92,6 +100,7 @@ export class PrezDemosControler{
             this.#overlayControler.removeOverlayWidget();
             this.#promptControler.hideAPIStatus();
             this.removeChatHandlers();
+            this.#cameraController?.teardown();
             this.#stateDemos = -1;
         })
 
@@ -109,6 +118,11 @@ export class PrezDemosControler{
         })
         Reveal.addEventListener('summarize-lema', ()=>{
             this.#stateDemos = SUMMARIZE_LEMA;
+        })
+        Reveal.addEventListener('vision-lema', async ()=>{
+            this.#stateDemos = VISION_LEMA;
+            this.#cameraController = new CameraController();
+            await this.#cameraController.setup();
         })
     }
 
@@ -174,6 +188,7 @@ export class PrezDemosControler{
         this.#arrayChatHandlers.push(this.#chatController.onUserMessage("lema-writer",(msg)=>this.processUserMessage(msg)));
         this.#arrayChatHandlers.push(this.#chatController.onUserMessage("lema-rewrite",(msg)=>this.processUserMessage(msg)));
         this.#arrayChatHandlers.push(this.#chatController.onUserMessage("lema-summarize",(msg)=>this.processUserMessage(msg)));
+        this.#arrayChatHandlers.push(this.#chatController.onUserMessage("lema-vision",(msg)=>this.processUserMessage(msg)));
     }
 
     removeChatHandlers(){
@@ -292,7 +307,18 @@ export class PrezDemosControler{
                 await this.processStreamToChatAndVoice("lema-summarize", detectedLanguage === 'fr' ? VOICE_ENGLISH : VOICE_LEMA, stream);
                 break;
             }
-            
+            case VISION_LEMA:{
+                const photo = this.#cameraController.getLastPhoto();
+                if (!photo) {
+                    this.#chatController.addAssistantMessage("lema-vision", "Please capture a photo first!");
+                    break;
+                }
+                this.#chatController.addUserMessage("lema-vision",msg);
+                const {stream, session} = await this.#builtInControler.prompt({text:msg, image:photo});
+                await this.processStreamToChatAndVoice("lema-vision", VOICE_LEMA, stream);
+                break;
+            }
+
         }
     }
 

@@ -355,12 +355,11 @@ sharedContext : lorsque vous réécrivez plusieurs éléments de contenu, un con
             let stream = undefined;
             if (image) {
                 log('Traitement multimodal (image)...');
-                //const buffer = await file.arrayBuffer();
                 stream = usedSession.promptStreaming([{
                     role: "user",
                     content: [
                         { type: 'text', value: text },
-                        { type: 'image', value: document.querySelector('img') }
+                        { type: 'image', value: image }
                     ]
                 }]);
             } else {

@@ -130,6 +130,20 @@
 
 ##==##
 
+<!-- .slide: data-state="vision-lema" -->
+
+# Let's See
+
+<div style="display: flex; gap: 40px; align-items: center; width: 100%;">
+  <img src="./assets/images/lema.png" alt="lema" style="height: 400px;" />
+  <div style="flex-grow: 1; display: flex; flex-direction: row; gap: 16px;">
+    <camera-component></camera-component>
+    <chat-component data-id="lema-vision"></chat-component>
+  </div>
+</div>
+
+##==##
+
 <!-- .slide: class="transition" data-state="out-gemma" -->
 
 # CONCLUSION
