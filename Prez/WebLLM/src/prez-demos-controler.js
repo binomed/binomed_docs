@@ -122,20 +122,19 @@ export class PrezDemosControler{
                 this.#chatController.addUserMessage("lema-chat",msg);
                 const {stream, session} = await this.#builtInControler.prompt({text:msg});
                 const idStream = this.#chatController.startStream("lema-chat");
-                let resp = '';
                 for await (const chunk of stream){
+                    log(`Chunk : ${chunk}`)
                     this.#chatController.appendToStream("lema-chat",idStream, chunk);
-                    resp += chunk;
+                    // Stream le chunk directement au TTS pour commencer la lecture immédiatement
+                    this.#ttsControler.appendToStream(chunk, VOICE_LEMA);
                     // Mettre à jour l'affichage du contexte à chaque chunk reçu
                     this.#promptControler.updateContextDisplay();
                 }
                 this.#chatController.finishStream("lema-chat", idStream);
-                log("Output Api : "+resp);
-                //this.#builtInControler.translate(resp, )
+                // Signaler la fin du stream au TTS pour forcer la lecture du buffer restant
+                this.#ttsControler.finishLLMStream();
 
                 index++;
-                //this.#ttsControler.speak(resp, index%2 === 0 ?VOICE_LEMA : VOICE_TEMA);
-                this.#ttsControler.speak(resp, VOICE_LEMA);
                 //log('Result SpeechRecongnition', 'debug', msg);
                 break;
         }
