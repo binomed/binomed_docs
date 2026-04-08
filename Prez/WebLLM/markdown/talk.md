@@ -75,6 +75,19 @@
 
 ##==##
 
+<!-- .slide: data-state="rewrite-lema" -->
+
+
+# Let's Rewrite
+
+
+<div style="display: flex; gap: 40px; align-items: center; width: 100%;">
+  <img src="./assets/images/lema.png" alt="lema" style="height: 500px;" />
+  <chat-component data-id="lema-rewrite"></chat-component>
+</div>
+
+##==##
+
 <!-- .slide: class="transition" data-state="out-gemma" -->
 
 # CONCLUSION
