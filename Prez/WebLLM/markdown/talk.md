@@ -62,6 +62,19 @@
 
 ##==##
 
+<!-- .slide: data-state="writer-lema" -->
+
+
+# Let's write
+
+
+<div style="display: flex; gap: 40px; align-items: center; width: 100%;">
+  <img src="./assets/images/lema.png" alt="lema" style="height: 500px;" />
+  <chat-component data-id="lema-writer"></chat-component>
+</div>
+
+##==##
+
 <!-- .slide: class="transition" data-state="out-gemma" -->
 
 # CONCLUSION

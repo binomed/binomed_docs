@@ -14,6 +14,7 @@ let index = 0;
 
 const WELCOME_LEMA = 1;
 const TRANSLATE_LEMA = 2;
+const WRITER_LEMA = 3;
 export class PrezDemosControler{
 
 
@@ -98,6 +99,9 @@ export class PrezDemosControler{
         Reveal.addEventListener('translate-lema', ()=>{
             this.#stateDemos = TRANSLATE_LEMA;
         })
+        Reveal.addEventListener('writer-lema', ()=>{
+            this.#stateDemos = WRITER_LEMA;
+        })
     }
 
     initGraphicalsElements(){
@@ -159,6 +163,7 @@ export class PrezDemosControler{
     initChatHandlers(){
         this.#arrayChatHandlers.push(this.#chatController.onUserMessage("lema-chat",(msg)=>this.processUserMessage(msg)));
         this.#arrayChatHandlers.push(this.#chatController.onUserMessage("lema-translate",(msg)=>this.processUserMessage(msg)));
+        this.#arrayChatHandlers.push(this.#chatController.onUserMessage("lema-writer",(msg)=>this.processUserMessage(msg)));
     }
 
     removeChatHandlers(){
@@ -231,6 +236,13 @@ export class PrezDemosControler{
                 this.#chatController.addUserMessage("lema-translate",msg);
                 const stream = await this.#builtInControler.translate(msg,'fr', 'en');
                 await this.processStreamToChatAndVoice("lema-translate", VOICE_ENGLISH, stream);
+                break;
+            }
+            case WRITER_LEMA:{
+
+                this.#chatController.addUserMessage("lema-writer",msg);
+                const stream = await this.#builtInControler.write(msg);
+                await this.processStreamToChatAndVoice("lema-writer", VOICE_LEMA, stream);
                 break;
             }
         }
