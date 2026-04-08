@@ -5,7 +5,7 @@ import {
 import {OverlayStats} from  './stats-overlay.js';
 import { SpeechRecognitionControler, MicControler } from './speech.js';
 import { SpeechSynthesisControler, VOICE_ENGLISH, VOICE_LEMA, VOICE_TEMA } from './tts.js';
-import {BuiltInControler} from './buit-in.js';
+import {BuiltInControler, ProofReaderFixControler} from './buit-in.js';
 import { PromptControler } from './prompt-controler.js';
 import { ChatController } from './chat-controller.js';
 import { ActionHandler } from './action-handler.js';
@@ -19,7 +19,8 @@ const TRANSLATE_LEMA = 2;
 const WRITER_LEMA = 3;
 const REWRITE_LEMA = 4;
 const SUMMARIZE_LEMA = 5;
-const VISION_LEMA = 6;
+const PROOFREAD_LEMA = 6;
+const VISION_LEMA = 7;
 export class PrezDemosControler{
 
 
@@ -64,6 +65,11 @@ export class PrezDemosControler{
      * @type {CameraController}
      */
     #cameraController = null;
+
+    /**
+     * @type {ProofReaderFixControler}
+     */
+    #proofReaderFixControler = null;
 
     #nbMessageToSpeak = 0;
 
@@ -124,6 +130,11 @@ export class PrezDemosControler{
         })
         Reveal.addEventListener('summarize-lema', ()=>{
             this.#stateDemos = SUMMARIZE_LEMA;
+        })
+        Reveal.addEventListener('proofread-lema', ()=>{
+            this.#stateDemos = PROOFREAD_LEMA;
+            this.#proofReaderFixControler = new ProofReaderFixControler();
+            this.#wireProofreadButtons();
         })
         Reveal.addEventListener('vision-lema', async ()=>{
             this.#stateDemos = VISION_LEMA;
@@ -329,6 +340,11 @@ export class PrezDemosControler{
                 await this.processStreamToChatAndVoice("lema-summarize", detectedLanguage === 'fr' ? VOICE_ENGLISH : VOICE_LEMA, stream);
                 break;
             }
+            case PROOFREAD_LEMA:{
+                const input = document.getElementById('proofread-input');
+                if (input) input.value += (input.value ? ' ' : '') + msg;
+                break;
+            }
             case VISION_LEMA:{
                 this.#chatController.setActiveChat("lema-vision", this.#promptControler);
                 const photo = this.#cameraController.getLastPhoto();
@@ -405,6 +421,43 @@ export class PrezDemosControler{
         
         for (const action of actions) {
             this.#actionHandler.addCompletedAction(action);
+        }
+    }
+
+    /**
+     * Wire up proofreader button handlers
+     */
+    #wireProofreadButtons() {
+        const btnProofread = document.getElementById('btn-proofread');
+        const btnApplyAll = document.getElementById('btn-apply-all');
+        if (!btnProofread || !btnApplyAll) return;
+
+        btnProofread.addEventListener('click', async () => {
+            const input = document.getElementById('proofread-input');
+            const result = document.getElementById('proofread-result');
+            if (!input?.value) return;
+            btnProofread.disabled = true;
+            btnProofread.textContent = 'Proofreading...';
+            const proofResult = await this.#builtInControler.proofread(input.value);
+            this.#proofReaderFixControler.renderResult(proofResult, result, input);
+            btnApplyAll.style.display = proofResult.corrections.length ? 'inline-block' : 'none';
+            btnProofread.disabled = false;
+            btnProofread.textContent = 'Proofread';
+        });
+
+        btnApplyAll.addEventListener('click', () => {
+            this.#proofReaderFixControler.applyAllCorrections();
+            btnApplyAll.style.display = 'none';
+        });
+
+        // Prevent keyboard events from propagating to reveal.js slide navigation
+        const textarea = document.getElementById('proofread-input');
+        if (textarea) {
+            ['keyup', 'keypress', 'keydown'].forEach(eventType => {
+                textarea.addEventListener(eventType, (e) => {
+                    e.stopPropagation();
+                });
+            });
         }
     }
 

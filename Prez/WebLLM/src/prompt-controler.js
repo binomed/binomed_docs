@@ -127,6 +127,14 @@ class APIStatusWidget extends HTMLElement {
         document.addEventListener('mousemove', move);
         document.addEventListener('mouseup', up);
     }
+
+    /**
+     * Toggle collapse state
+     */
+    toggleCollapse() {
+        this._collapsed = !this._collapsed;
+        this._render();
+    }
 }
 customElements.define('api-status-widget', APIStatusWidget);
 
@@ -195,6 +203,15 @@ class APIStatusOverlay {
      */
     getAPIsState() {
         return this.#apiStates;
+    }
+
+    /**
+     * Toggle le collapse du widget
+     */
+    toggleCollapse() {
+        if (this.#overlayWidget) {
+            this.#overlayWidget.toggleCollapse();
+        }
     }
 
 }
@@ -267,6 +284,13 @@ export class PromptControler{
      */
     hideAPIStatus() {
         this.#apiStatusOverlay.removeOverlayWidget();
+    }
+
+    /**
+     * Toggle le collapse du widget d'état des APIs
+     */
+    toggleAPIStatus() {
+        this.#apiStatusOverlay.toggleCollapse();
     }
 
     /**

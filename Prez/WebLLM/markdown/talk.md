@@ -130,6 +130,24 @@
 
 ##==##
 
+<!-- .slide: data-state="proofread-lema" -->
+
+# Let's Proofread
+
+<div style="display: flex; gap: 40px; align-items: center; width: 100%;">
+  <img src="./assets/images/lema.png" alt="lema" style="height: 500px;" />
+  <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 16px;">
+    <textarea id="proofread-input" style="width: 100%; height: 150px; padding: 10px; background: rgba(255,255,255,0.1); border: 1px solid rgba(168,85,247,0.3); color: white; border-radius: 8px; font-size: 14px; resize: vertical;" placeholder="Type text to proofread..."></textarea>
+    <div style="display: flex; gap: 12px;">
+      <button id="btn-proofread" style="padding: 8px 20px; background: rgba(168,85,247,0.6); color: white; border: none; border-radius: 6px; cursor: pointer;">Proofread</button>
+      <button id="btn-apply-all" style="display: none; padding: 8px 20px; background: rgba(34,197,94,0.6); color: white; border: none; border-radius: 6px; cursor: pointer;">Apply All</button>
+    </div>
+    <div id="proofread-result" style="min-height: 80px; padding: 10px; background: rgba(255,255,255,0.05); border-radius: 8px; line-height: 1.8; color: white;"></div>
+  </div>
+</div>
+
+##==##
+
 <!-- .slide: data-state="vision-lema" -->
 
 # Let's See

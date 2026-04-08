@@ -445,102 +445,229 @@ sharedContext : lorsque vous réécrivez plusieurs éléments de contenu, un con
 export class ProofReaderFixControler{
 
     #activeCorrection = null;
+    #currentText = '';
+    #corrections = [];
+    #paragraphElement = null;
+    #textareaElement = null;
 
     constructor(){}
 
-
     /**
      * Render the results with highlights
+     * @param {Object} result - proofread result with corrections array
+     * @param {HTMLElement} paragraphElement - target element for rendered output
+     * @param {HTMLTextAreaElement} textareaElement - textarea with input text
      */
-    renderResult(result, paragraphElement) {
-        paragraphElement.innerHTML = '';
-        const { corrections } = result;
-        
+    renderResult(result, paragraphElement, textareaElement) {
+        this.#paragraphElement = paragraphElement;
+        this.#textareaElement = textareaElement;
+        this.#currentText = textareaElement.value;
+        this.#corrections = result.corrections || [];
+        this.#render();
+    }
+
+    /**
+     * Internal render method - rebuild paragraph with highlights
+     */
+    #render() {
+        this.#paragraphElement.innerHTML = '';
+        const { corrections } = { corrections: this.#corrections };
+
         let lastIndex = 0;
-        
+
         corrections.forEach((correction) => {
             // Unchanged part
             if (correction.startIndex > lastIndex) {
                 const span = document.createElement('span');
-                span.textContent = currentText.substring(lastIndex, correction.startIndex);
-                paragraphElement.appendChild(span);
+                span.textContent = this.#currentText.substring(lastIndex, correction.startIndex);
+                this.#paragraphElement.appendChild(span);
             }
 
             // Error part
             const errorSpan = document.createElement('span');
             errorSpan.className = 'error-highlight';
-            errorSpan.textContent = currentText.substring(correction.startIndex, correction.endIndex);
-            
+            errorSpan.style.background = 'rgba(239,68,68,0.4)';
+            errorSpan.style.borderBottom = '2px solid #ef4444';
+            errorSpan.style.cursor = 'pointer';
+            errorSpan.style.borderRadius = '2px';
+            errorSpan.style.padding = '0 2px';
+            errorSpan.textContent = this.#currentText.substring(correction.startIndex, correction.endIndex);
+
             errorSpan.addEventListener('click', (e) => {
                 e.stopPropagation();
                 this.showTooltip(e, correction);
             });
 
-            paragraphElement.appendChild(errorSpan);
+            this.#paragraphElement.appendChild(errorSpan);
             lastIndex = correction.endIndex;
         });
 
         // Remaining text
-        if (lastIndex < currentText.length) {
+        if (lastIndex < this.#currentText.length) {
             const span = document.createElement('span');
-            span.textContent = currentText.substring(lastIndex);
-            paragraphElement.appendChild(span);
+            span.textContent = this.#currentText.substring(lastIndex);
+            this.#paragraphElement.appendChild(span);
         }
-
     }
 
     /**
-     * Tooltip Management
+     * Show tooltip with correction suggestion
      */
     showTooltip(event, correction) {
+        this.hideTooltip(); // Remove any existing tooltip
 
         this.#activeCorrection = correction;
 
-        const toolTipHTML = `<div id="correction-tooltip" class="correction-popup">
-            <div class="popup-header">Suggested Correction</div>
-            <div id="suggestion-value" class="suggestion-text"></div>
-            <div id="explanation-value" class="explanation-text"></div>
-            <div class="popup-actions">
-                <button id="btn-cancel-correction" class="btn btn-secondary btn-small">Ignore</button>
-                <button id="btn-apply-correction" class="btn btn-apply btn-small">Apply</button>
-            </div>
-        </div>`;
-        // TODO ajouter au dom la tooltip (que si pas déjà présente)
+        const tooltip = document.createElement('div');
+        tooltip.id = 'correction-tooltip';
+        tooltip.className = 'correction-popup';
+        tooltip.style.position = 'fixed';
+        tooltip.style.background = 'rgba(30,30,30,0.95)';
+        tooltip.style.border = '1px solid rgba(168,85,247,0.5)';
+        tooltip.style.borderRadius = '8px';
+        tooltip.style.padding = '12px';
+        tooltip.style.minWidth = '250px';
+        tooltip.style.zIndex = '99999';
+        tooltip.style.flexDirection = 'column';
+        tooltip.style.display = 'flex';
+        tooltip.style.gap = '8px';
+        tooltip.style.color = 'white';
+        tooltip.style.fontSize = '14px';
 
-        
-        // TODO mapping sur la tooltip 
-        //elements.suggestionVal.textContent = correction.correction || 'No suggestion';
-        //elements.explanationVal.textContent = correction.explanation || '';
-        
-        // Position tooltip
+        const header = document.createElement('div');
+        header.className = 'popup-header';
+        header.textContent = 'Suggested Correction';
+        header.style.fontWeight = 'bold';
+        header.style.marginBottom = '4px';
+
+        const suggestion = document.createElement('div');
+        suggestion.className = 'suggestion-text';
+        suggestion.textContent = correction.correction || 'No suggestion';
+        suggestion.style.padding = '8px';
+        suggestion.style.background = 'rgba(34,197,94,0.2)';
+        suggestion.style.borderRadius = '4px';
+        suggestion.style.borderLeft = '3px solid #22c55e';
+
+        const explanation = document.createElement('div');
+        explanation.className = 'explanation-text';
+        explanation.textContent = correction.explanation || '';
+        explanation.style.fontSize = '12px';
+        explanation.style.color = 'rgba(255,255,255,0.7)';
+
+        const actions = document.createElement('div');
+        actions.className = 'popup-actions';
+        actions.style.display = 'flex';
+        actions.style.gap = '8px';
+        actions.style.marginTop = '4px';
+
+        const btnCancel = document.createElement('button');
+        btnCancel.id = 'btn-cancel-correction';
+        btnCancel.className = 'btn btn-secondary btn-small';
+        btnCancel.textContent = 'Ignore';
+        btnCancel.style.padding = '6px 12px';
+        btnCancel.style.background = 'rgba(107,114,128,0.5)';
+        btnCancel.style.border = 'none';
+        btnCancel.style.color = 'white';
+        btnCancel.style.borderRadius = '4px';
+        btnCancel.style.cursor = 'pointer';
+        btnCancel.style.fontSize = '12px';
+        btnCancel.addEventListener('click', () => this.hideTooltip());
+
+        const btnApply = document.createElement('button');
+        btnApply.id = 'btn-apply-correction';
+        btnApply.className = 'btn btn-apply btn-small';
+        btnApply.textContent = 'Apply';
+        btnApply.style.padding = '6px 12px';
+        btnApply.style.background = 'rgba(34,197,94,0.6)';
+        btnApply.style.border = 'none';
+        btnApply.style.color = 'white';
+        btnApply.style.borderRadius = '4px';
+        btnApply.style.cursor = 'pointer';
+        btnApply.style.fontSize = '12px';
+        btnApply.addEventListener('click', () => this.applyCorrection());
+
+        tooltip.appendChild(header);
+        tooltip.appendChild(suggestion);
+        if (explanation.textContent) tooltip.appendChild(explanation);
+        actions.appendChild(btnCancel);
+        actions.appendChild(btnApply);
+        tooltip.appendChild(actions);
+
+        document.body.appendChild(tooltip);
+
+        // Position tooltip near the error
         const rect = event.target.getBoundingClientRect();
-        // TODO positionnement tooltip
-        //elements.tooltip.style.left = `${rect.left + window.scrollX}px`;
-        //elements.tooltip.style.top = `${rect.bottom + window.scrollY + 10}px`;
-        //elements.tooltip.style.display = 'flex';
+        tooltip.style.left = `${rect.left + window.scrollX}px`;
+        tooltip.style.top = `${rect.bottom + window.scrollY + 10}px`;
 
-        // TODO ajouter un listener 
-        //elements.btnApply.addEventListener('click', applyCorrection);
+        // Close tooltip on outside click
+        const closeOnClick = () => {
+            this.hideTooltip();
+            document.removeEventListener('click', closeOnClick);
+        };
+        document.addEventListener('click', closeOnClick);
     }
 
+    /**
+     * Hide the tooltip
+     */
     hideTooltip() {
-        // TODO cacher la tooltip si elle existe
-        //elements.tooltip.style.display = 'none';
+        const existing = document.getElementById('correction-tooltip');
+        if (existing) existing.remove();
         this.#activeCorrection = null;
     }
 
+    /**
+     * Apply single correction
+     */
     applyCorrection() {
         if (!this.#activeCorrection) return;
-        
-        const before = currentText.substring(0, activeCorrection.startIndex);
-        const after = currentText.substring(activeCorrection.endIndex);
-        currentText = before + activeCorrection.correction + after;
-        
+
+        const { startIndex, endIndex, correction } = this.#activeCorrection;
+        this.#currentText = this.#currentText.substring(0, startIndex) + correction + this.#currentText.substring(endIndex);
+
+        // Recalculate correction indices after applying one
+        const offset = correction.length - (endIndex - startIndex);
+        this.#corrections = this.#corrections
+            .filter(c => c !== this.#activeCorrection)
+            .map(c => {
+                if (c.startIndex > endIndex) {
+                    return { ...c, startIndex: c.startIndex + offset, endIndex: c.endIndex + offset };
+                }
+                return c;
+            });
+
+        // Update textarea
+        if (this.#textareaElement) {
+            this.#textareaElement.value = this.#currentText;
+        }
+
         this.hideTooltip();
-        
-        // Refresh the view with new text
-        // TODO trouver un moyen plus simple que de relancer une analyse complète
-        //reAnalyzeAndRender();
+        this.#render();
+    }
+
+    /**
+     * Apply all corrections at once
+     */
+    applyAllCorrections() {
+        // Sort corrections by startIndex descending to apply from end to start (preserves indices)
+        const sorted = [...this.#corrections].sort((a, b) => b.startIndex - a.startIndex);
+
+        for (const correction of sorted) {
+            this.#currentText = this.#currentText.substring(0, correction.startIndex) + correction.correction + this.#currentText.substring(correction.endIndex);
+        }
+
+        this.#corrections = [];
+
+        // Update textarea
+        if (this.#textareaElement) {
+            this.#textareaElement.value = this.#currentText;
+        }
+
+        // Clear result display
+        if (this.#paragraphElement) {
+            this.#paragraphElement.innerHTML = '';
+        }
     }
 }
 

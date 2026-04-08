@@ -212,6 +212,14 @@ class StatsWidget extends HTMLElement {
         document.addEventListener('mousemove', move);
         document.addEventListener('mouseup', up);
     }
+
+    /**
+     * Toggle collapse state
+     */
+    toggleCollapse() {
+        this._collapsed = !this._collapsed;
+        this._render();
+    }
 }
 customElements.define('stats-widget', StatsWidget);
 
@@ -256,18 +264,27 @@ export class OverlayStats{
      */
     removeOverlayWidget() {
         try {
-            
+
             // Retrait du widget du DOM
             if (this.#overlayWidget) {
                 document.body.removeChild(this.#overlayWidget);
             }
-            
+
             // Reset des variables
             this.#overlayWidget = null;
-            
+
             log('Overlay removed successfully');
         } catch (error) {
             log('Error removing micro button:', 'error', error);
+        }
+    }
+
+    /**
+     * Toggle le collapse du widget
+     */
+    toggleCollapse() {
+        if (this.#overlayWidget) {
+            this.#overlayWidget.toggleCollapse();
         }
     }
 }
