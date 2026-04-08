@@ -66,7 +66,7 @@ class StatsWidget extends HTMLElement {
     constructor() {
         super();
         this._data = null;
-        this._collapsed = false;
+        this._collapsed = true;
         this._es = null;
     }
 

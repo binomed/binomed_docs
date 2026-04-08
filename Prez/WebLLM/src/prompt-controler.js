@@ -32,11 +32,7 @@ class APIStatusWidget extends HTMLElement {
     constructor() {
         super();
         this._stateAPIS = {};
-        this._collapsed = false;
-        this._contextInfo = {
-            remaining: 0,
-            total: 0
-        };
+        this._collapsed = true;
     }
 
     connectedCallback() {
@@ -52,15 +48,6 @@ class APIStatusWidget extends HTMLElement {
         this._render();
     }
 
-    /**
-     * Mettre à jour les infos du contexte
-     * @param {number} remaining - Tokens restants
-     * @param {number} total - Tokens totaux
-     */
-    updateContext(remaining, total) {
-        this._contextInfo = { remaining, total };
-        this._render();
-    }
 
     _render() {
         render(this._tpl(), this);
@@ -117,37 +104,6 @@ class APIStatusWidget extends HTMLElement {
                                 Aucune API à afficher
                             </div>
                         `}
-
-                        <!-- Séparateur -->
-                        ${this._contextInfo.total ? html`
-                            <div style="height:1px;background:#e2e8f0"></div>
-
-                            <!-- Context Info -->
-                            <div style="display:flex;flex-direction:column;gap:6px">
-                                <span style="font-size:12px;font-weight:700;color:#475569;text-transform:uppercase;letter-spacing:1px">
-                                    Context
-                                </span>
-                                <div style="display:flex;justify-content:space-between;align-items:center;gap:8px">
-                                    <div style="flex:1">
-                                        <div style="
-                                            height:6px;
-                                            background:#e2e8f0;
-                                            border-radius:3px;
-                                            overflow:hidden">
-                                            <div style="
-                                                height:100%;
-                                                background:#3b82f6;
-                                                width:${this._contextInfo.total > 0 ? Math.min((this._contextInfo.remaining / this._contextInfo.total) * 100, 100) : 0}%;
-                                                transition:width 0.3s ease">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <span style="font-size:12px;font-weight:700;color:#1e293b;white-space:nowrap">
-                                        ${isNaN(this._contextInfo.remaining) ? '-' : this._contextInfo.remaining} / ${this._contextInfo.total}
-                                    </span>
-                                </div>
-                            </div>
-                        ` : ''}
                     </div>
                 ` : ''}
             </div>
@@ -195,7 +151,7 @@ class APIStatusOverlay {
             Object.assign(this.#overlayWidget.style, {
                 position: 'fixed',
                 bottom: '16px',
-                right: '16px',
+                left: '16px',
                 zIndex: '10000',
             });
             document.body.appendChild(this.#overlayWidget);
@@ -241,25 +197,17 @@ class APIStatusOverlay {
         return this.#apiStates;
     }
 
-    /**
-     * Mettre à jour les infos du contexte
-     * @param {number} remaining - Tokens restants
-     * @param {number} total - Tokens totaux
-     */
-    updateContextInfo(remaining, total) {
-        if (this.#overlayWidget) {
-            this.#overlayWidget.updateContext(remaining, total);
-        }
-    }
 }
 
 export class PromptControler{
     #apiStatusOverlay;
     #builtInControler;
+    #activeChatComponent;
 
     constructor(builtInControler = null){
         this.#builtInControler = builtInControler;
         this.#apiStatusOverlay = new APIStatusOverlay();
+        this.#activeChatComponent = null;
     }
 
     /**
@@ -267,6 +215,13 @@ export class PromptControler{
      */
     setBuiltInControler(builtInControler) {
         this.#builtInControler = builtInControler;
+    }
+
+    /**
+     * Définir le ChatComponent actif pour mettre à jour ses stats
+     */
+    setActiveChatComponent(chatComponent) {
+        this.#activeChatComponent = chatComponent;
     }
 
     /**
@@ -315,13 +270,15 @@ export class PromptControler{
     }
 
     /**
-     * Mettre à jour l'affichage du contexte dans le widget
+     * Mettre à jour l'affichage du contexte dans le chat actif
      */
     updateContextDisplay() {
         if (this.#builtInControler) {
             const contextInfo = this.#builtInControler.getContextInfo();
             log('Context Info:', 'debug', contextInfo);
-            this.#apiStatusOverlay.updateContextInfo(contextInfo.remaining, contextInfo.total);
+            if (this.#activeChatComponent) {
+                this.#activeChatComponent.updateContext(contextInfo.remaining, contextInfo.total);
+            }
         }
     }
 }

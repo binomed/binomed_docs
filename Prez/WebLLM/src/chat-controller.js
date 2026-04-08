@@ -161,4 +161,16 @@ export class ChatController {
     refreshChatInstances() {
         this.#setupChatComponents();
     }
+
+    /**
+     * Set the active chat component on the PromptControler
+     * @param {string} dataId - The data-id of the active chat
+     * @param {PromptControler} promptControler - The PromptControler instance
+     */
+    setActiveChat(dataId, promptControler) {
+        const chat = this.getChat(dataId);
+        if (chat && promptControler) {
+            promptControler.setActiveChatComponent(chat);
+        }
+    }
 }

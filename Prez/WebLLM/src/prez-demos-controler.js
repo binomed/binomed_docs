@@ -271,6 +271,7 @@ export class PrezDemosControler{
     async processUserMessage(msg){
         switch(this.#stateDemos){
             case WELCOME_LEMA:{
+                this.#chatController.setActiveChat("lema-chat", this.#promptControler);
                 this.#chatController.addUserMessage("lema-chat",msg);
                 const {stream, session} = await this.#builtInControler.prompt({text:msg});
                 await this.processStreamToChatAndVoice("lema-chat", VOICE_LEMA, stream);
@@ -278,28 +279,28 @@ export class PrezDemosControler{
                 break;
             }
             case TRANSLATE_LEMA:{
-
+                this.#chatController.setActiveChat("lema-translate", this.#promptControler);
                 this.#chatController.addUserMessage("lema-translate",msg);
                 const stream = await this.#builtInControler.translate(msg,'fr', 'en');
                 await this.processStreamToChatAndVoice("lema-translate", VOICE_ENGLISH, stream);
                 break;
             }
             case WRITER_LEMA:{
-
+                this.#chatController.setActiveChat("lema-writer", this.#promptControler);
                 this.#chatController.addUserMessage("lema-writer",msg);
                 const stream = await this.#builtInControler.write(msg);
                 await this.processStreamToChatAndVoice("lema-writer", VOICE_LEMA, stream);
                 break;
             }
             case REWRITE_LEMA:{
-
+                this.#chatController.setActiveChat("lema-rewrite", this.#promptControler);
                 this.#chatController.addUserMessage("lema-rewrite",msg);
                 const stream = await this.#builtInControler.rewrite(msg);
                 await this.processStreamToChatAndVoice("lema-rewrite", VOICE_LEMA, stream);
                 break;
             }
             case SUMMARIZE_LEMA:{
-
+                this.#chatController.setActiveChat("lema-summarize", this.#promptControler);
                 this.#chatController.addUserMessage("lema-summarize",msg);
                 const {detectedLanguage, confidence} = await this.#builtInControler.detectLanguage(msg);
                 this.#chatController.addAssistantMessage("lema-summarize",`Langue détectée : ${detectedLanguage} avec une confience de ${confidence}`);
@@ -329,6 +330,7 @@ export class PrezDemosControler{
                 break;
             }
             case VISION_LEMA:{
+                this.#chatController.setActiveChat("lema-vision", this.#promptControler);
                 const photo = this.#cameraController.getLastPhoto();
                 if (!photo) {
                     this.#chatController.addAssistantMessage("lema-vision", "Please capture a photo first!");

@@ -4,7 +4,9 @@ export class ChatComponent extends LitElement {
     static properties = {
         messages: { type: Array },
         dataId: { type: String, attribute: 'data-id' },
-        isStreaming: { type: Boolean }
+        isStreaming: { type: Boolean },
+        contextRemaining: { type: Number },
+        contextTotal: { type: Number }
     };
 
     static styles = css`
@@ -29,6 +31,52 @@ export class ChatComponent extends LitElement {
             font-family: 'Inter', sans-serif;
             color: var(--chat-text);
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .context-header {
+            padding: 12px 16px;
+            background: rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid var(--chat-border);
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .context-label {
+            font-size: 11px;
+            font-weight: 700;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .context-bar-container {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .context-bar {
+            flex: 1;
+            height: 6px;
+            background: #e2e8f0;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .context-bar-fill {
+            height: 100%;
+            background: #3b82f6;
+            transition: width 0.3s ease;
+        }
+
+        .context-tokens {
+            font-size: 12px;
+            font-weight: 700;
+            color: white;
+            white-space: nowrap;
+            min-width: 60px;
+            text-align: right;
         }
 
         .messages-container {
@@ -168,11 +216,28 @@ export class ChatComponent extends LitElement {
         this.messages = [];
         this.dataId = '';
         this.isStreaming = false;
+        this.contextRemaining = 0;
+        this.contextTotal = 0;
     }
 
     render() {
+        const contextPercentage = this.contextTotal > 0 ? Math.min((this.contextRemaining / this.contextTotal) * 100, 100) : 0;
+        const remaining = isNaN(this.contextRemaining) || this.contextRemaining === undefined ? '?' : this.contextRemaining;
+        const total = isNaN(this.contextTotal) || this.contextTotal === undefined ? '?' : this.contextTotal;
+
         return html`
             <div class="chat-container">
+                <div class="context-header">
+                    <div class="context-label">Context</div>
+                    <div class="context-bar-container">
+                        <div class="context-bar">
+                            <div class="context-bar-fill" style="width: ${contextPercentage}%"></div>
+                        </div>
+                        <div class="context-tokens">
+                            ${remaining} / ${total}
+                        </div>
+                    </div>
+                </div>
                 <div class="messages-container">
                     ${this.messages.map((msg, idx) => html`
                         <div class="message ${msg.role} ${msg.streaming ? 'streaming' : ''}">
@@ -288,6 +353,16 @@ export class ChatComponent extends LitElement {
      */
     clearMessages() {
         this.messages = [];
+    }
+
+    /**
+     * Update context information
+     * @param {number} remaining - Tokens restants
+     * @param {number} total - Tokens totaux
+     */
+    updateContext(remaining, total) {
+        this.contextRemaining = remaining;
+        this.contextTotal = total;
     }
 }
 
