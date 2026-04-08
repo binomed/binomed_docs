@@ -152,10 +152,10 @@ export class BuiltInControler{
             const results = await detector.detect(text);
             
             //display(`Langue: ${detectedLanguage} (${Math.round(results[0].confidence * 100)}%)`, detectedLanguage);
-            log(`Détection réussie : ${detectedLanguage}`);
+            log(`Détection réussie : ${results[0].detectedLanguage}`);
 
             return {
-                detectedLanguage : results[0].detectLanguage,
+                detectedLanguage : results[0].detectedLanguage,
                 confidence : Math.round(results[0].confidence * 100)
             };
         } catch (e) {
@@ -191,12 +191,13 @@ export class BuiltInControler{
     }
 
     /**
-     * 
-     * @param {string} text 
+     *
+     * @param {string} text
      * @param {string} language : fr or en
+     * @param {Object} options : {type, format, length}
      * @returns {Array<Promise<string>>} a stream of chunks (to be awaited !!)
      */
-    async summarize(text, language) {
+    async summarize(text, language, options = {}) {
         if (!text) return log('Texte manquant', 'error');
 
         log(`Appel ${KEY_SUMMARIZER} (Contexte: ${language || 'auto'})...`);
@@ -204,21 +205,21 @@ export class BuiltInControler{
             const api = this.#getAPI(KEY_SUMMARIZER);
             if (!api) throw new Error('API non trouvée');
 
-            // Configuration raffinée du Summarizer selon la langue détectée
-            const options = {
-                type: 'key-points', // Format par défaut
-                format: 'markdown',
-                length: 'medium'
+            // Configuration avec valeurs par défaut
+            const config = {
+                type: options.type || 'tldr',
+                format: options.format || 'plain-text',
+                length: options.length || 'medium'
             };
 
             if (language) {
-                options.expectedInputLanguages = [language];
-                options.outputLanguage = language;
-                options.expectedContextLanguages = [language];
-                options.sharedContext = `Processing a document in ${language}. Please provide the summary in the same language.`;
+                config.expectedInputLanguages = [language];
+                config.outputLanguage = language;
+                config.expectedContextLanguages = [language];
+                config.sharedContext = `Processing a document in ${language}. Please provide the summary in the same language.`;
             }
 
-            const summarizer = await api.create(options);
+            const summarizer = await api.create(config);
             const result = summarizer.summarizeStreaming(text);
             log('Résumé streammé');
             return result;

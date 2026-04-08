@@ -88,6 +88,48 @@
 
 ##==##
 
+<!-- .slide: data-state="summarize-lema" -->
+
+
+# Let's Summarize
+
+
+<div style="display: flex; gap: 40px; align-items: center; width: 100%;">
+  <img src="./assets/images/lema.png" alt="lema" style="height: 500px;" />
+  <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 16px;">
+    <chat-component data-id="lema-summarize"></chat-component>
+    <div style="display: flex; gap: 12px; background: rgba(255,255,255,0.05); padding: 12px; border-radius: 8px;">
+      <div style="flex: 1;">
+        <label style="display: block; font-size: 12px; margin-bottom: 6px; color: rgba(255,255,255,0.7);">Type</label>
+        <select id="summarize-type" style="width: 100%; padding: 6px; background: rgba(255,255,255,0.1); border: 1px solid rgba(168,85,247,0.3); color: white; border-radius: 4px;">
+          <option value="tldr">TLDR</option>
+          <option value="teaser">Teaser</option>
+          <option value="headline">Headline</option>
+          <option value="key-points">Key Points</option>
+        </select>
+      </div>
+      <div style="flex: 1;">
+        <label style="display: block; font-size: 12px; margin-bottom: 6px; color: rgba(255,255,255,0.7);">Format</label>
+        <select id="summarize-format" style="width: 100%; padding: 6px; background: rgba(255,255,255,0.1); border: 1px solid rgba(168,85,247,0.3); color: white; border-radius: 4px;">
+          <option value="plain-text">Plain Text</option>
+          <option value="markdown">Markdown</option>
+        </select>
+      </div>
+      <div style="flex: 1;">
+        <label style="display: block; font-size: 12px; margin-bottom: 6px; color: rgba(255,255,255,0.7);">Length</label>
+        <select id="summarize-length" style="width: 100%; padding: 6px; background: rgba(255,255,255,0.1); border: 1px solid rgba(168,85,247,0.3); color: white; border-radius: 4px;">
+          <option value="short">Short</option>
+          <option value="medium">Medium</option>
+          <option value="long">Long</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+##==##
+
 <!-- .slide: class="transition" data-state="out-gemma" -->
 
 # CONCLUSION

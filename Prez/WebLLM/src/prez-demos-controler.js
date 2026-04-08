@@ -16,6 +16,7 @@ const WELCOME_LEMA = 1;
 const TRANSLATE_LEMA = 2;
 const WRITER_LEMA = 3;
 const REWRITE_LEMA = 4;
+const SUMMARIZE_LEMA = 5;
 export class PrezDemosControler{
 
 
@@ -106,6 +107,9 @@ export class PrezDemosControler{
         Reveal.addEventListener('rewrite-lema', ()=>{
             this.#stateDemos = REWRITE_LEMA;
         })
+        Reveal.addEventListener('summarize-lema', ()=>{
+            this.#stateDemos = SUMMARIZE_LEMA;
+        })
     }
 
     initGraphicalsElements(){
@@ -169,6 +173,7 @@ export class PrezDemosControler{
         this.#arrayChatHandlers.push(this.#chatController.onUserMessage("lema-translate",(msg)=>this.processUserMessage(msg)));
         this.#arrayChatHandlers.push(this.#chatController.onUserMessage("lema-writer",(msg)=>this.processUserMessage(msg)));
         this.#arrayChatHandlers.push(this.#chatController.onUserMessage("lema-rewrite",(msg)=>this.processUserMessage(msg)));
+        this.#arrayChatHandlers.push(this.#chatController.onUserMessage("lema-summarize",(msg)=>this.processUserMessage(msg)));
     }
 
     removeChatHandlers(){
@@ -257,6 +262,37 @@ export class PrezDemosControler{
                 await this.processStreamToChatAndVoice("lema-rewrite", VOICE_LEMA, stream);
                 break;
             }
+            case SUMMARIZE_LEMA:{
+
+                this.#chatController.addUserMessage("lema-summarize",msg);
+                const {detectedLanguage, confidence} = await this.#builtInControler.detectLanguage(msg);
+                this.#chatController.addAssistantMessage("lema-summarize",`Langue détectée : ${detectedLanguage} avec une confience de ${confidence}`);
+                let translateText = msg;
+                if (detectedLanguage === 'fr'){
+                    translateText = '';
+                    this.#chatController.addAssistantMessage("lema-summarize","J'ai besoin de traduire ce texte pour le résumer car je ne prend pas encore le français en charge pour cette API");
+                    const streamTranslate = await this.#builtInControler.translate(msg, 'fr', 'en');
+                    for await(const chunk of streamTranslate){
+                        translateText+=chunk;
+                    }
+                    this.#chatController.addAssistantMessage("lema-summarize","Texte traduit : ");
+                    this.#chatController.addAssistantMessage("lema-summarize",translateText);
+                }
+
+                // Récupérer les paramètres des selects
+                const summarizeType = document.querySelector('#summarize-type')?.value || 'tldr';
+                const summarizeFormat = document.querySelector('#summarize-format')?.value || 'plain-text';
+                const summarizeLength = document.querySelector('#summarize-length')?.value || 'medium';
+
+                const stream = await this.#builtInControler.summarize(translateText, 'en', {
+                    type: summarizeType,
+                    format: summarizeFormat,
+                    length: summarizeLength
+                });
+                await this.processStreamToChatAndVoice("lema-summarize", detectedLanguage === 'fr' ? VOICE_ENGLISH : VOICE_LEMA, stream);
+                break;
+            }
+            
         }
     }
 
