@@ -138,6 +138,13 @@ export class CameraComponent extends LitElement {
                 <div class="controls">
                     <button
                         class="btn"
+                        @click=${this.#toggleCamera}
+                        style="background: ${this.stream ? 'linear-gradient(135deg, #ef4444, #f87171)' : 'var(--camera-primary)'}"
+                    >
+                        ${this.stream ? '🛑 Stop Camera' : '🎥 Start Camera'}
+                    </button>
+                    <button
+                        class="btn"
                         @click=${this.#capturePhoto}
                         ?disabled=${!this.stream}
                     >
@@ -164,6 +171,17 @@ export class CameraComponent extends LitElement {
         }
 
         this.#canvasRef = this.shadowRoot.querySelector('canvas');
+    }
+
+    /**
+     * Toggles the webcam stream on and off
+     */
+    async #toggleCamera() {
+        if (this.stream) {
+            this.stopCamera();
+        } else {
+            await this.startCamera();
+        }
     }
 
     /**

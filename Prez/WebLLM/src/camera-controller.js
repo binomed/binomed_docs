@@ -9,12 +9,10 @@ export class CameraController {
     /**
      * Setup camera: find component and start stream
      */
-    async setup() {
-        this.#cameraInstance = document.querySelector('camera-component');
-        if (this.#cameraInstance) {
-            await this.#cameraInstance.startCamera();
-        } else {
-            log('Camera component not found in DOM', 'error');
+    async setup(element = null) {
+        this.#cameraInstance = element || document.querySelector('camera-component');
+        if (!this.#cameraInstance) {
+            console.error('Camera component not found in DOM');
         }
     }
 

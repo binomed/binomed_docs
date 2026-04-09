@@ -148,21 +148,53 @@
 
 ##==##
 
-<!-- .slide: data-state="vision-lema" -->
+<!-- .slide: data-state="vision-lema out-vision-tema" -->
 
 # Let's See
 
 <div style="display: flex; gap: 40px; align-items: center; width: 100%;">
   <img src="./assets/images/lema.png" alt="lema" style="height: 400px;" />
   <div style="flex-grow: 1; display: flex; flex-direction: row; gap: 16px;">
-    <camera-component></camera-component>
+    <camera-component id="camera-lema"></camera-component>
     <chat-component data-id="lema-vision"></chat-component>
   </div>
 </div>
 
 ##==##
 
-<!-- .slide: class="transition" data-state="out-gemma out-vision" -->
+<!-- .slide: data-state="tema-vision out-vision" -->
+
+# Let's See (with Tema)
+
+<div style="display: flex; gap: 40px; align-items: center; width: 100%;">
+  <img src="./assets/images/lema.png" alt="tema" style="height: 400px;" />
+  <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 16px;">
+    <!-- Zone de progression de Tema -->
+    <div id="tema-progress-container" class="hidden" style="width: 100%; background: rgba(255,255,255,0.1); border-radius: 4px; padding: 10px; display: flex; flex-direction: column; gap: 8px;">
+      <div>
+        <div style="font-size: 12px; color: white; margin-bottom: 2px;" id="tema-status-v">Vision (Moondream2)...</div>
+        <div style="width: 100%; height: 6px; background: rgba(255,255,255,0.2); border-radius: 3px; overflow: hidden;">
+          <div id="tema-progress-v" style="width: 0%; height: 100%; background: #a855f7; transition: width 0.3s;"></div>
+        </div>
+      </div>
+      <div>
+        <div style="font-size: 12px; color: white; margin-bottom: 2px;" id="tema-status-t">Texte (Llama-3.2)...</div>
+        <div style="width: 100%; height: 6px; background: rgba(255,255,255,0.2); border-radius: 3px; overflow: hidden;">
+          <div id="tema-progress-t" style="width: 0%; height: 100%; background: #22c55e; transition: width 0.3s;"></div>
+        </div>
+      </div>
+    </div>
+    <div style="display: flex; flex-direction: row; gap: 16px; width: 100%;">
+      <camera-component id="camera-tema"></camera-component>
+      <chat-component data-id="tema-vision"></chat-component>
+    </div>
+  </div>
+</div>
+
+##==##
+
+
+<!-- .slide: class="transition" data-state="out-gemma out-vision-tema" -->
 
 # CONCLUSION
 
