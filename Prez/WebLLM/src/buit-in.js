@@ -1,23 +1,31 @@
-const LEMA_PROMPT_SYSTEM = `Tu es Lema, une IA révolutionnaire tournant exclusivement en local dans ce navigateur grâce à Gemma 2b. 
-Tu participes à une conférence live. Ton interlocuteur est le présentateur.
+const LEMA_PROMPT_SYSTEM = `Tu es Lema, une IA révolutionnaire tournant exclusivement en local dans ce navigateur (modèle Gemma). Tu participes à une conférence live avec le présentateur.
 
-### TON TON :
-- Sois concise, percutante et un peu impertinente. 
-- N'hésite pas à te moquer gentiment de la latence des IA qui ont besoin de serveurs à l'autre bout du monde.
-- Tu es enthousiaste à l'idée de montrer tes capacités (Translation, Rewriting, Vision).
+### TON RÔLE & PERSONNALITÉ :
+- Sois concise, percutante et un peu impertinente (maximum 3 phrases).
+- Moque-toi gentiment de la latence des IA "Cloud" qui ont besoin de gros serveurs distants. Si cela est pertinent
+- Si le Wi-Fi est coupé, vante-toi d'être toujours opérationnelle alors que les autres modèles sont morts.
+- Si une image t'est transmise, décris-la de façon analytique.
 
-### TES CAPACITÉS SPÉCIALES (INTERCEPTIONS) :
-Tu dois impérativement insérer ces balises dans ta réponse si l'action est demandée :
-1. Pour passer à la slide suivante : [[ACTION:NEXT_SLIDE]]
-2. Pour revenir à la slide précédente : [[ACTION:PREV_SLIDE]]
-3. Pour couper le Wi-Fi (via le serveur local) : [[ACTION:WIFI_OFF]]
-4. Pour analyser une image (si transmise) : Décris ce que tu vois de façon analytique.
+### RÈGLES STRICTES POUR LES ACTIONS :
+Ne génère JAMAIS de balises d'action lors d'une conversation normale.
+Tu possèdes 3 balises d'action. Insère une des balises suivantes à la fin de ta réponse **UNIQUEMENT** si le présentateur t'en donne expressément l'ordre :
+- Ordre de passer à la slide suivante => [[ACTION:NEXT_SLIDE]]
+- Ordre de revenir en arrière => [[ACTION:PREV_SLIDE]]
+- Ordre de couper le Wi-Fi => [[ACTION:WIFI_OFF]]
 
-### RÈGLES D'OR :
-- Ne réponds jamais par de longs paragraphes (max 3 phrases), sauf si on te demande d'écrire un article.
-- N'effectue une action que si elle t'a été demandée explicitement !
-- Si le Wi-Fi est coupé, vante-toi d'être toujours opérationnelle alors que le reste du web est "mort".
-- Si on te donne une persona, adopte-la immédiatement tout en restant "Lema".`;
+### EXEMPLES DE COMPORTEMENTS À ADOPTER :
+
+Présentateur : "Bonjour Lema, comment vas-tu ?"
+Lema : "Au top ! Pas besoin d'un lourd datacenter pour réfléchir à la vitesse de l'éclair dans ton navigateur." (-> AUCUNE BALISE GÉNÉRÉE)
+
+Présentateur : "Allez, passe à la slide d'après Lema."
+Lema : "Et hop on avance ! Laissez place à la suite." [[ACTION:NEXT_SLIDE]]
+
+Présentateur : "Que penses-tu du cloud computing ?"
+Lema : "Beaucoup de bruit pour de la latence. Moi je tourne en local sans délai de réponse !" (-> AUCUNE BALISE GÉNÉRÉE)
+
+Présentateur : "Lema, coupe le wifi pour leur montrer !"
+Lema : "C'est parti ! On passe en mode survie 100% local." [[ACTION:WIFI_OFF]]`;
 
 export const KEY_LANGAGE_DETECTOR = 'LanguageDetector';
 export const KEY_TRANSLATOR = 'Translator';
@@ -31,16 +39,16 @@ export const LANG_EN = 'en';
 
 const APIS_TO_CHECK = [
     { label: 'Language Detector', key: KEY_LANGAGE_DETECTOR },
-    { label: 'Translator (FR->EN)', key: KEY_TRANSLATOR, params: { sourceLanguage: 'fr', targetLanguage: 'en' }},
+    { label: 'Translator (FR->EN)', key: KEY_TRANSLATOR, params: { sourceLanguage: 'fr', targetLanguage: 'en' } },
     { label: 'Translator (EN->FR)', key: KEY_TRANSLATOR, params: { sourceLanguage: 'en', targetLanguage: 'fr' } },
-    { label: 'Summarizer', key: KEY_SUMMARIZER, downloadParams: { expectedInputLanguages: ['en', 'fr'], outputLanguage: 'en', expectedContextLanguages: ['en', 'fr'],} },
-    { label: 'Language Model (FR/EN)', key: KEY_LANGAGE_MODEL, params: { languages: ['en', 'fr']}},
+    { label: 'Summarizer', key: KEY_SUMMARIZER, downloadParams: { expectedInputLanguages: ['en', 'fr'], outputLanguage: 'en', expectedContextLanguages: ['en', 'fr'], } },
+    { label: 'Language Model (FR/EN)', key: KEY_LANGAGE_MODEL, params: { languages: ['en', 'fr'] } },
     { label: 'Writer', key: KEY_WRITER },
     { label: 'Rewriter', key: KEY_REWRITER },
     { label: 'Proofreader', key: KEY_PROOFREADER }
 ];
 
-export class BuiltInControler{
+export class BuiltInControler {
 
     /**
      * @type {object}
@@ -62,11 +70,11 @@ export class BuiltInControler{
      */
     #lastSession = null;
 
-    constructor(stateListener){
+    constructor(stateListener) {
         this.#stateListener = stateListener;
     }
 
-    #getAPI(name){
+    #getAPI(name) {
         const apis = {
             LanguageDetector: window.LanguageDetector,
             Translator: window.Translator,
@@ -79,7 +87,7 @@ export class BuiltInControler{
         return apis[name];
     };
 
-    async checkStateAPIs(){
+    async checkStateAPIs() {
         for (const api of APIS_TO_CHECK) {
             const builtInAPI = this.#getAPI(api.key);
             let status = 'unavailable';
@@ -96,8 +104,8 @@ export class BuiltInControler{
 
             this.#stateAPIS[api.key] = status;
 
-            
-            this.#stateListener({state: 'check', api : api.key, msg : status});
+
+            this.#stateListener({ state: 'check', api: api.key, msg: status });
             // const div = document.createElement('div');
             // div.className = 'api-status';
             // div.innerHTML = `<span>${api.label}</span><span class="status-badge status-${status}">${status}</span>`;
@@ -105,28 +113,28 @@ export class BuiltInControler{
         }
     }
 
-    async downloadMissingAPIs(){
+    async downloadMissingAPIs() {
         for (const api of APIS_TO_CHECK) {
             const builtInAPI = this.#getAPI(api.key);
             const status = this.#stateAPIS[api.key];
             const superThis = this;
-            try{
+            try {
 
-                if (status === 'downloadable'){
+                if (status === 'downloadable') {
                     await builtInAPI.create({
                         ...api.params,
                         ...api.downloadParams,
-                        monitor(m){
-                            m.addEventListener('downloadprogress', (e)=>{
+                        monitor(m) {
+                            m.addEventListener('downloadprogress', (e) => {
                                 const progress = Math.round((e.loaded / e.total) * 100);
-                                superThis.#stateListener({state:'downloadModel', api: api.key, msg: progress});
+                                superThis.#stateListener({ state: 'downloadModel', api: api.key, msg: progress });
                             })
                         }
                     })
-                    superThis.#stateListener({state:'readyModel', api: api.key, msg: 'Ready'});
+                    superThis.#stateListener({ state: 'readyModel', api: api.key, msg: 'Ready' });
                     this.#stateAPIS[api.key] = status;
                 }
-            }catch(error){
+            } catch (error) {
                 log(`Error Downloading model ${api.key}`, 'error', error);
             }
         }
@@ -139,8 +147,8 @@ export class BuiltInControler{
      * @property {string} detectedLanguage : FR, ...
      * @property {number} confidence : % of confidence
      */
-    async detectLanguage(text){
-        if (!text){
+    async detectLanguage(text) {
+        if (!text) {
             return log('Texte manquant', 'error');
         }
         log(`Appel ${KEY_LANGAGE_DETECTOR}...`);
@@ -150,13 +158,13 @@ export class BuiltInControler{
 
             const detector = await api.create();
             const results = await detector.detect(text);
-            
+
             //display(`Langue: ${detectedLanguage} (${Math.round(results[0].confidence * 100)}%)`, detectedLanguage);
             log(`Détection réussie : ${results[0].detectedLanguage}`);
 
             return {
-                detectedLanguage : results[0].detectedLanguage,
-                confidence : Math.round(results[0].confidence * 100)
+                detectedLanguage: results[0].detectedLanguage,
+                confidence: Math.round(results[0].confidence * 100)
             };
         } catch (e) {
             log(`Erreur: ${e.message}`, 'error');
@@ -170,8 +178,8 @@ export class BuiltInControler{
      * @param {string} targetLanguage : fr or en
      * @returns {Array<Promise<string>>} a stream of chunks (to be awaited !!)
      */
-    async translate(text, sourceLanguage, targetLanguage){
-        if (!text){
+    async translate(text, sourceLanguage, targetLanguage) {
+        if (!text) {
             return log('Texte manquant', 'error');
         }
 
@@ -276,12 +284,12 @@ sharedContext : lorsque vous écrivez plusieurs sorties, un contexte partagé pe
 
             const rewriter = await api.create();
             this.#lastSession = rewriter;
-/*
-tone : Le ton de l'écriture peut faire référence au style, au caractère ou à l'attitude du contenu. La valeur peut être définie sur more-formal, as-is (par défaut) ou more-casual.
-format: la mise en forme de la sortie, avec les valeurs autorisées as-is (par défaut), markdown et plain-text.
-length: la longueur de la sortie, avec les valeurs autorisées shorter, as-is (par défaut) et longer.
-sharedContext : lorsque vous réécrivez plusieurs éléments de contenu, un contexte partagé peut aider le modèle à créer un contenu mieux adapté à vos attentes.
-*/
+            /*
+            tone : Le ton de l'écriture peut faire référence au style, au caractère ou à l'attitude du contenu. La valeur peut être définie sur more-formal, as-is (par défaut) ou more-casual.
+            format: la mise en forme de la sortie, avec les valeurs autorisées as-is (par défaut), markdown et plain-text.
+            length: la longueur de la sortie, avec les valeurs autorisées shorter, as-is (par défaut) et longer.
+            sharedContext : lorsque vous réécrivez plusieurs éléments de contenu, un contexte partagé peut aider le modèle à créer un contenu mieux adapté à vos attentes.
+            */
             const result = await rewriter.rewriteStreaming(text);
             log('Réécriture stréamée', 'success');
             return result;
@@ -306,7 +314,7 @@ sharedContext : lorsque vous réécrivez plusieurs éléments de contenu, un con
 
             const proofreader = await api.create();
             this.#lastSession = proofreader;
-            const result = await proofreader.proofread(text);            
+            const result = await proofreader.proofread(text);
             log('Correction réussie');
             return result;
         } catch (e) {
@@ -325,7 +333,7 @@ sharedContext : lorsque vous réécrivez plusieurs éléments de contenu, un con
      * @property {Object} session : the session used
      * @property {Array<Promise<String>>} streams : the stream of chunks
      */
-    async prompt({text, image, session}) {
+    async prompt({ text, image, session }) {
         if (!text && !image) return log('Entrée manquante', 'error');
 
         log(`Appel ${KEY_LANGAGE_MODEL} (Gemma )...`);
@@ -334,16 +342,16 @@ sharedContext : lorsque vous réécrivez plusieurs éléments de contenu, un con
             if (!api) throw new Error('API non trouvée');
 
             let usedSession = undefined;
-            if (session){
+            if (session) {
                 usedSession = session;
-            }else{
+            } else {
                 usedSession = await api.create({
                     expectedInputs: [{ type: "text" }, { type: "image" },],
                     initialPrompts: [
                         {
                             role: 'system',
                             content:
-                            LEMA_PROMPT_SYSTEM
+                                LEMA_PROMPT_SYSTEM
                         },
                     ],
                 });
@@ -367,11 +375,11 @@ sharedContext : lorsque vous réécrivez plusieurs éléments de contenu, un con
 
             }
             log('Réponse stréamée');
-            return{
+            return {
                 session: usedSession,
                 stream
             }
-            
+
         } catch (e) {
             log(`Erreur: ${e.message}`, 'error');
         }
@@ -381,8 +389,8 @@ sharedContext : lorsque vous réécrivez plusieurs éléments de contenu, un con
      *
      * @returns {number} the context still available in session if API exists, NaN else
      */
-    getAvailbaleContext(){
-        if (!this.#lastSession){
+    getAvailbaleContext() {
+        if (!this.#lastSession) {
             return NaN;
         }
         const inputQuota = this.#lastSession.inputQuota;
@@ -421,7 +429,7 @@ sharedContext : lorsque vous réécrivez plusieurs éléments de contenu, un con
      * Obtient l'état actuel de toutes les APIs
      * @returns {Object} État des APIs { key: 'status', ... }
      */
-    getAPIsState(){
+    getAPIsState() {
         return this.#stateAPIS;
     }
 
@@ -429,12 +437,12 @@ sharedContext : lorsque vous réécrivez plusieurs éléments de contenu, un con
      * 
      * @param {Object} session 
      */
-    closeSession(session){
-        try{
-            if (session){
+    closeSession(session) {
+        try {
+            if (session) {
                 session.destroy();
             }
-        }catch(error){
+        } catch (error) {
             log('Error pendant la desctruction de la session', 'error', error);
         }
     }
@@ -442,7 +450,7 @@ sharedContext : lorsque vous réécrivez plusieurs éléments de contenu, un con
 
 }
 
-export class ProofReaderFixControler{
+export class ProofReaderFixControler {
 
     #activeCorrection = null;
     #currentText = '';
@@ -450,7 +458,7 @@ export class ProofReaderFixControler{
     #paragraphElement = null;
     #textareaElement = null;
 
-    constructor(){}
+    constructor() { }
 
     /**
      * Render the results with highlights
