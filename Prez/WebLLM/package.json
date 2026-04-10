@@ -11,6 +11,8 @@
     "build:src": "vite build",
     "dev:src": "vite build --watch",
     "start": "parallelshell \"npm run server\" \"npm run serve\" \"npm run sass\" \"npm run dev:src\"",
+    "download-models": "./download_models.sh",
+    "clean-models": "./clean_models.sh",
     "prepare": "node ./scripts/dont-touch/prepare-script.js"
   },
   "author": "jefbinomed",

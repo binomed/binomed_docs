@@ -299,7 +299,8 @@ export class PromptControler{
     updateContextDisplay() {
         if (this.#builtInControler) {
             const contextInfo = this.#builtInControler.getContextInfo();
-            log('Context Info:', 'debug', contextInfo);
+            // Silence debug log to keep console clean
+            // log('Context Info:', 'debug', contextInfo);
             if (this.#activeChatComponent) {
                 this.#activeChatComponent.updateContext(contextInfo.remaining, contextInfo.total);
             }

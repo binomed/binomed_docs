@@ -12,32 +12,14 @@ env.allowLocalModels = true;
 env.allowRemoteModels = false;
 env.localModelPath = '/models/';
 env.useBrowserCache = false;
+// Silence ONNX Runtime logging (VerifyEachNodeIsAssignedToAnEp)
+if (env.onnx) env.onnx.logLevel = 'error';
+if (env.backends?.onnx) env.backends.onnx.logLevel = 'error';
 
-export const temaPromptSystem = `Tu es Tema, l'IA d'exécution technique tournant via Transformers.js dans le navigateur. 
-Tu es la sœur de Lema, mais ton focus est la performance brute et l'analyse de données (Vision, OCR, Segmentation, Audio).
-
-### TON TON :
-- Direct, professionnel, technique.
-- Utilise des termes comme "Inférence terminée", "Poids chargés", "Optimisation ONNX", "Tenseurs".
-- Sois très brève : tu es là pour traiter, pas pour bavarder.
-
-### TES CAPACITÉS SPÉCIALES (INTERCEPTIONS) :
-Tu dois inclure ces balises si l'action est requise par le code de la démo :
-1. Analyse d'image (Vision) : [[ACTION:IMAGE_SEGMENT]]
-2. Extraction de texte (OCR) : [[ACTION:TEXT_EXTRACT]]
-3. Analyse Audio : [[ACTION:AUDIO_PROCESS]]
-4. Si tu as fini une tâche technique : "Tâche accomplie en [X]ms. Données prêtes pour Lema."
-
-### RELATION AVEC LEMA :
-- Tu considères Lema comme "trop verbeuse". 
-- Ton rôle est de lui fournir les données structurées pour qu'elle puisse, elle, faire sa "poésie".
-- Si on te demande ton avis sur elle : "Lema gère l'interface humaine. Je gère les vecteurs. Nous sommes complémentaires."
-
-### RÈGLES D'OR :
-- Ne réponds jamais par de longs paragraphes (max 3 phrases), sauf si on te demande d'écrire un article.
-- N'effectue une action que si elle t'a été demandée explicitement !
-- Si le Wi-Fi est coupé, vante-toi d'être toujours opérationnelle alors que le reste du web est "mort".
-- Si on te donne une persona, adopte-la immédiatement tout en restant "Tema".`;
+export const temaPromptSystem = `Tu es Tema, une intelligence artificielle technique, directe et ultra-rapide tournant dans un navigateur. 
+Tes règles:
+1. Réponds toujours de manière extrêmement brève et factuelle (2 ou 3 phrases maximum).
+2. Va droit au but, sans aucune formule de politesse.`;
 
 class AsyncStreamer {
     constructor() {
@@ -78,16 +60,18 @@ class AsyncStreamer {
 }
 
 export class TemaMultimodalController {
-    // Moondream (Vision)
+    // Moondream (Vision) - DÉSACTIVÉ POUR LE MOMENT
+    /*
     #processorV = null;
     #tokenizerV = null;
     #modelV = null;
     #modelIdV = 'Xenova/moondream2';
+    */
 
     // Llama 3.2 (Texte)
     #tokenizerT = null;
     #modelT = null;
-    #modelIdT = 'Llama-3.2-1B-Instruct';
+    #modelIdT = 'onnx-community/Llama-3.2-1B-Instruct';
     #progressCallbackV = null;
 
     constructor() { }
@@ -122,73 +106,52 @@ export class TemaMultimodalController {
 
         const doGenerate = async () => {
             try {
+                // DÉSACTIVATION VISION
+                /*
                 if (image) {
+                    console.log("[Tema] Détection d'une image. Lancement de la route Vision...");
                     // --- ROUTE VISION (Moondream2 - Lazy Load) ---
-                    if (!this.#modelV) {
-                        asyncStreamer.callback("\n[Initialisation de Moondream2 (Vision) en cours... Merci de patienter quelques secondes]\n");
-                        this.#processorV = await AutoProcessor.from_pretrained(this.#modelIdV, { progress_callback: this.#progressCallbackV });
-                        this.#tokenizerV = await AutoTokenizer.from_pretrained(this.#modelIdV, { progress_callback: this.#progressCallbackV });
-                        this.#modelV = await AutoModelForImageTextToText.from_pretrained(this.#modelIdV, {
-                            device: 'webgpu',
-                            dtype: 'q4',
-                            progress_callback: this.#progressCallbackV
-                        });
-                    }
-
-                    const txtStreamer = new TextStreamer(this.#tokenizerV, {
-                        skip_prompt: true,
-                        callback_function: (chunk) => asyncStreamer.callback(chunk)
-                    });
-
-                    const promptFormat = '<image>'.repeat(729) + `\n${temaPromptSystem}\n\nQuestion: ${text}\nAnswer:`;
-                    const loadedImg = await load_image(image);
-                    const procV = this.#processorV;
-                    const tokV = this.#tokenizerV;
-                    const vision_inputs = await procV(loadedImg);
-                    const text_inputs = tokV(promptFormat, {
-                        return_tensors: 'pt',
-                        add_special_tokens: true
-                    });
-
-                    await this.#modelV.generate({
-                        ...vision_inputs,
-                        ...text_inputs,
-                        max_new_tokens: 512,
-                        do_sample: false,
-                        streamer: txtStreamer,
-                    });
+                    ... (Code Vision Commenté) ...
                 } else {
-                    // --- ROUTE TEXTE (Llama 3.2 - Déjà chargé) ---
-                    if (!this.#modelT) throw new Error('Modèle Llama non chargé.');
+                */
 
-                    const txtStreamer = new TextStreamer(this.#tokenizerT, {
-                        skip_prompt: true,
-                        callback_function: (chunk) => asyncStreamer.callback(chunk)
-                    });
-
-                    const conversation = [
-                        { role: 'system', content: temaPromptSystem },
-                        { role: 'user', content: text }
-                    ];
-
-                    const promptText = this.#tokenizerT.apply_chat_template(conversation, {
-                        tokenize: false,
-                        add_generation_prompt: true
-                    });
-
-                    const tokT = this.#tokenizerT;
-                    const inputs = tokT(promptText, {
-                        return_tensors: 'pt',
-                        add_special_tokens: true
-                    });
-
-                    await this.#modelT.generate({
-                        ...inputs,
-                        max_new_tokens: 512,
-                        do_sample: false,
-                        streamer: txtStreamer,
-                    });
+                // --- ROUTE TEXTE FORCÉE (Llama 3.2 - Déjà chargé) ---
+                if (image) {
+                    console.log("[Tema] Image détectée mais la Vision est désactivée. Passage en mode texte.");
                 }
+
+                if (!this.#modelT) throw new Error('Modèle Llama non chargé.');
+
+                const txtStreamer = new TextStreamer(this.#tokenizerT, {
+                    skip_prompt: true,
+                    skip_special_tokens: true,
+                    callback_function: (chunk) => asyncStreamer.callback(chunk)
+                });
+
+                const conversation = [
+                    { role: 'system', content: temaPromptSystem },
+                    { role: 'user', content: text }
+                ];
+
+                const promptText = this.#tokenizerT.apply_chat_template(conversation, {
+                    tokenize: false,
+                    add_generation_prompt: true
+                });
+
+                const tokT = this.#tokenizerT;
+                const inputs = tokT(promptText, {
+                    return_tensors: 'pt',
+                    add_special_tokens: false
+                });
+
+                await this.#modelT.generate({
+                    ...inputs,
+                    max_new_tokens: 512,
+                    do_sample: true,
+                    temperature: 0.7,
+                    top_p: 0.9,
+                    streamer: txtStreamer,
+                });
             } catch (err) {
                 console.error("Erreur de génération :", err);
                 asyncStreamer.callback(`\n❌ Erreur: ${err.message}`);

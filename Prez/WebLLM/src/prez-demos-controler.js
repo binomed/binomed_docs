@@ -157,20 +157,20 @@ export class PrezDemosControler {
                 this.#temaController = new TemaMultimodalController();
             }
 
-            const statusElV = document.getElementById('tema-status-v');
+            //const statusElV = document.getElementById('tema-status-v');
             const statusElT = document.getElementById('tema-status-t');
             const progressContainer = document.getElementById('tema-progress-container');
-            const progressBarV = document.getElementById('tema-progress-v');
+            //const progressBarV = document.getElementById('tema-progress-v');
             const progressBarT = document.getElementById('tema-progress-t');
 
-            const progressCallbackV = (progress) => {
+            /*const progressCallbackV = (progress) => {
                 if (progress.status === 'progress') {
                     if (progressContainer) progressContainer.classList.remove('hidden');
                     const pct = Math.round(progress.progress || 0);
                     if (progressBarV) progressBarV.style.width = `${pct}%`;
                     if (statusElV) statusElV.textContent = `Vision: ${progress.name || ''} (${pct}%)`;
                 }
-            };
+            };*/
 
             const progressCallbackT = (progress) => {
                 if (progress.status === 'progress') {
@@ -181,26 +181,29 @@ export class PrezDemosControler {
                 }
             };
 
-            if (statusElV) statusElV.textContent = 'Initialisation de Tema (Vision)...';
+            //if (statusElV) statusElV.textContent = 'Initialisation de Tema (Vision)...';
             if (statusElT) statusElT.textContent = 'Initialisation de Tema (Texte)...';
             if (progressContainer) progressContainer.classList.remove('hidden');
 
             try {
+                // VISION DÉSACTIVÉE
+                /*
                 if (!this.#cameraController) {
                     this.#cameraController = new CameraController();
                 }
                 const camEl = document.getElementById('camera-tema');
                 await this.#cameraController.setup(camEl);
+                */
 
-                await this.#temaController.loadModel(progressCallbackV, progressCallbackT);
+                await this.#temaController.loadModel(null, progressCallbackT);
 
-                if (statusElV) statusElV.textContent = '✅ Tema Vision est prêt !';
+                //if (statusElV) statusElV.textContent = '✅ Tema Vision est prêt !';
                 if (statusElT) statusElT.textContent = '✅ Tema Texte est prêt !';
                 setTimeout(() => {
                     if (progressContainer) progressContainer.classList.add('hidden');
                 }, 2000);
             } catch (err) {
-                if (statusElV) statusElV.textContent = `❌ Erreur Vision: ${err.message}`;
+                //if (statusElV) statusElV.textContent = `❌ Erreur Vision: ${err.message}`;
                 if (statusElT) statusElT.textContent = `❌ Erreur Texte: ${err.message}`;
             }
         })
@@ -426,8 +429,9 @@ export class PrezDemosControler {
             }
             case TEMA_VISION: {
                 this.#chatController.setActiveChat("tema-vision", this.#promptControler);
-                const photo = this.#cameraController.getLastPhoto();
-                
+                // VISION DÉSACTIVÉE
+                const photo = null; // this.#cameraController.getLastPhoto();
+
                 this.#chatController.addUserMessage("tema-vision", msg);
                 try {
                     const { stream, session } = await this.#temaController.prompt({ text: msg, image: photo });
@@ -482,16 +486,18 @@ export class PrezDemosControler {
 
             // Ajouter les actions complétées à la liste
             if (!actionTrapped) {
+                // console.log(`[prez-demos-controler] Appending chunk '${chunkToSend}'`);
                 this.#chatController.appendToStream(idChat, idStream, chunkToSend);
                 if (!this.#streamStopped) {
                     this.#ttsControler.appendToStream(chunkToSend, voiceTarget);
                 }
-
+            } else {
+                console.log(`[prez-demos-controler] Trapped action chunk, accumulating: '${chunkToSend}'`);
             }
-
-            // Mettre à jour l'affichage du contexte à chaque chunk reçu
-            this.#promptControler.updateContextDisplay();
         }
+
+        // Mettre à jour l'affichage du contexte une seule fois à la fin du stream
+        this.#promptControler.updateContextDisplay();
 
 
         this.#chatController.finishStream(idChat, idStream);

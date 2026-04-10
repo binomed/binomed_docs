@@ -171,12 +171,12 @@
   <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 16px;">
     <!-- Zone de progression de Tema -->
     <div id="tema-progress-container" class="hidden" style="width: 100%; background: rgba(255,255,255,0.1); border-radius: 4px; padding: 10px; display: flex; flex-direction: column; gap: 8px;">
-      <div>
+      <!--<div>
         <div style="font-size: 12px; color: white; margin-bottom: 2px;" id="tema-status-v">Vision (Moondream2)...</div>
         <div style="width: 100%; height: 6px; background: rgba(255,255,255,0.2); border-radius: 3px; overflow: hidden;">
           <div id="tema-progress-v" style="width: 0%; height: 100%; background: #a855f7; transition: width 0.3s;"></div>
         </div>
-      </div>
+      </div>-->
       <div>
         <div style="font-size: 12px; color: white; margin-bottom: 2px;" id="tema-status-t">Texte (Llama-3.2)...</div>
         <div style="width: 100%; height: 6px; background: rgba(255,255,255,0.2); border-radius: 3px; overflow: hidden;">
@@ -185,7 +185,7 @@
       </div>
     </div>
     <div style="display: flex; flex-direction: row; gap: 16px; width: 100%;">
-      <camera-component id="camera-tema"></camera-component>
+      <!-- VISION DÉSACTIVÉE <camera-component id="camera-tema"></camera-component> -->
       <chat-component data-id="tema-vision"></chat-component>
     </div>
   </div>

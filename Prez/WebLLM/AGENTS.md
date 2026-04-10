@@ -18,6 +18,7 @@ Ce repository est une présentation interactive utilisant **Reveal.js** traitant
 - `markdown/talk.md` : Contenu des slides au format Markdown.
 - `assets/` : Ressources statiques (images, etc.).
 - `scripts/` : Scripts utilitaires pour la présentation.
+- `models/` : Répertoire de stockage des modèles Transformers.js (structuré par identifiant Hugging Face).
 - `web_modules/` : Dépendances frontend gérées manuellement ou via des scripts.
 
 ## 🏗 Architecture de `src/`
@@ -42,6 +43,8 @@ L'application suit une architecture pilotée par des contrôleurs :
 - `npm run start` : Lance l'environnement de développement complet (serveur, sass, vite).
 - `npm run build:src` : Compile les assets via Vite.
 - `npm run serve` : Lance uniquement le serveur de présentation sur le port 4242.
+- `npm run download-models` : Télécharge les modèles IA requis (`Llama 3.2`, `Moondream2`) dans le dossier `./models`.
+- `npm run clean-models` : Supprime le dossier `./models` pour libérer de l'espace.
 
 ## 🤖 Instructions spécifiques pour l'IA
 - Toujours vérifier le `package.json` avant de suggérer une nouvelle dépendance.
