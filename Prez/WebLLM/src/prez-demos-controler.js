@@ -86,6 +86,10 @@ export class PrezDemosControler {
 
     #streamStopped = false;
 
+    #initGema = false;
+
+    #lastSession = null;
+
 
     constructor() {
         this.initGraphicalsElements();
@@ -102,16 +106,19 @@ export class PrezDemosControler {
         });
 
         Reveal.addEventListener('in-gemma', async () => {
-            log('In Gemma');
-            this.#micControler.addMicButton();
-            this.#overlayControler.addOverlayWidget();
-            this.#ttsControler.loadVoices();
-            this.#chatController = new ChatController();
-            await this.#builtInControler.checkStateAPIs();
-            await this.#promptControler.downloadMissingAPIsIfNeeded();
-            this.#promptControler.showAPIStatus();
-            this.#promptControler.updateContextDisplay();
-            this.initChatHandlers();
+            if (!this.#initGema) {
+                this.#initGema = true;
+                log('In Gemma');
+                this.#micControler.addMicButton();
+                this.#overlayControler.addOverlayWidget();
+                this.#ttsControler.loadVoices();
+                this.#chatController = new ChatController();
+                await this.#builtInControler.checkStateAPIs();
+                await this.#promptControler.downloadMissingAPIsIfNeeded();
+                this.#promptControler.showAPIStatus();
+                this.#promptControler.updateContextDisplay();
+                this.initChatHandlers();
+            }
 
         })
         Reveal.addEventListener('out-gemma', async () => {
@@ -121,10 +128,12 @@ export class PrezDemosControler {
             this.#promptControler.hideAPIStatus();
             this.removeChatHandlers();
             this.#stateDemos = -1;
+            this.#initGema = false;
         })
 
         Reveal.addEventListener('welcome-lema', () => {
             this.#stateDemos = WELCOME_LEMA;
+            this.#setupWelcomeLemaSlide();
         })
         Reveal.addEventListener('translate-lema', () => {
             this.#stateDemos = TRANSLATE_LEMA;
@@ -252,12 +261,13 @@ export class PrezDemosControler {
 
         this.#actionHandler.registerActionHandler('WIFI_OFF', () => {
             log('Action: WIFI_OFF');
+            fetch('http://localhost:3000/kill-wifi', { method: 'POST' });
             // À implémenter selon ton besoin
         });
 
-        this.#actionHandler.registerActionHandler('IMAGE_SEGMENT', () => {
-            log('Action: IMAGE_SEGMENT');
-            // À implémenter selon ton besoin
+        this.#actionHandler.registerActionHandler('SHOW_STATS', () => {
+            log('Action: SHOW_STATS');
+            this.#overlayControler.toggleCollapse();
         });
 
         this.#actionHandler.registerActionHandler('TEXT_EXTRACT', () => {
@@ -354,7 +364,12 @@ export class PrezDemosControler {
             case WELCOME_LEMA: {
                 this.#chatController.setActiveChat("lema-chat", this.#promptControler);
                 this.#chatController.addUserMessage("lema-chat", msg);
-                const { stream, session } = await this.#builtInControler.prompt({ text: msg });
+                let tempSession = null;
+                if (this.#lastSession) {
+                    tempSession = this.#lastSession;
+                }
+                const { stream, session } = await this.#builtInControler.prompt({ text: msg, session: tempSession });
+                this.#lastSession = session;
                 await this.processStreamToChatAndVoice("lema-chat", VOICE_LEMA, stream);
 
                 break;
@@ -508,6 +523,32 @@ export class PrezDemosControler {
         for (const action of actions) {
             this.#actionHandler.addCompletedAction(action);
         }
+    }
+
+    /**
+     * Setup welcome lema slide interactions
+     */
+    #setupWelcomeLemaSlide() {
+        const btn = document.getElementById('btn-activate-lema');
+        const wakeupState = document.getElementById('lema-wakeup-state');
+        const activeState = document.getElementById('lema-active-state');
+
+        if (!btn || !wakeupState || !activeState) return;
+
+        // Reset state when entering slide
+        wakeupState.style.display = 'flex';
+        activeState.style.display = 'none';
+
+        // Remove all previous click listeners
+        btn.replaceWith(btn.cloneNode(false));
+        const newBtn = document.getElementById('btn-activate-lema');
+        newBtn.innerHTML = 'Activate Lema';
+
+        // Add single click listener
+        newBtn.addEventListener('click', () => {
+            wakeupState.style.display = 'none';
+            activeState.style.display = 'flex';
+        });
     }
 
     /**

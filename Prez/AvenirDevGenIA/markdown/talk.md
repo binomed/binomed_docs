@@ -3,7 +3,7 @@
 
 ### Chronique d'une révolution industrielle de notre métier.
 
-*Jean-François Garreau | Février 2026*
+*Jean-François Garreau | Avril 2026*
 
 ##==##
 
@@ -804,7 +804,7 @@ Embrassez le changement plutôt que de lutter, accompagnez plutôt qu'imposer, g
 ![](./assets/images/jf.jpg 'speaker')
 
 
-![](https://openfeedback.io/kQpmz21AHD2FVBj4bcup/2026-02-03/VbN2C9Cqcp2J7PCT3GUq 'tc-qrcode badge text-below')Open Feedback
+<!--![](https://openfeedback.io/kQpmz21AHD2FVBj4bcup/2026-02-03/VbN2C9Cqcp2J7PCT3GUq 'tc-qrcode badge text-below')Open Feedback-->
 
 ![](https://shorturl.at/yFtjr 'tc-qrcode company text-below')slides : https://shorturl.at/yFtjr
 

@@ -38,14 +38,95 @@
 
 # Let's meet Lema
 
-**Lema for "Local Gemma"**
+## Lema for "Local Gemma"
 
-<div style="display: flex; gap: 40px; align-items: center; width: 100%;">
-  <img src="./assets/images/lema.png" alt="lema" style="height: 500px;" />
-  <chat-component data-id="lema-chat"></chat-component>
+<div id="lema-container" style="display: flex; flex-direction: column; gap: 20px; align-items: center; width: 100%; height: 100%;">
+  <div id="lema-wakeup-state" style="display: flex; flex-direction: column; gap: 24px; align-items: center; width: 100%; padding-top: 40px;">
+    <img id="lema-image" src="./assets/images/lema-wakeup.png" alt="lema" style="max-height: 650px; width: auto; transition: all 0.4s ease;" />
+    <button id="btn-activate-lema" style="padding: 14px 40px; background: rgba(168,85,247,0.6); color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 16px; font-weight: bold; transition: background-color 0.2s;">Activate Lema</button>
+  </div>
+  <div id="lema-active-state" style="display: none; flex-direction: row; gap: 40px; align-items: stretch; width: 100%; flex: 1;">
+    <img id="lema-image-active" src="./assets/images/lema.png" alt="lema" style="height: 500px; width: auto; flex-shrink: 0; transition: all 0.4s ease;" />
+    <chat-component id="lema-chat-container" data-id="lema-chat" style="flex-grow: 1; height: 100%;"></chat-component>
+  </div>
 </div>
 
+##==##
 
+# How does it work ?
+
+## API Expérimentale : 
+
+**Flags à activer :**
+
+
+🏳️‍🌈 [chrome://flags/#optimization-guide-on-device-model](chrome://flags/#optimization-guide-on-device-model)
+
+🏳️‍🌈 [chrome://flags/#prompt-api-for-gemini-nano-multimodal-input](chrome://flags/#prompt-api-for-gemini-nano-multimodal-input)
+
+##==##
+
+# Welcome BuiltIn API's
+
+![](wifi_off 'tc-icons material-symbols-outlined') Tout ça 100% local !
+
+* 💬 Prompt API Multimodal Input
+* 🏳️‍🌈 API Language Detector
+* 🌍 Translation API
+* ✍️ Writer API
+* 🔄 Rewriter API
+* 📝 Summarization API
+* ✅ Proofreading API
+
+<!-- .element: class="list-fragment" -->
+
+
+##==##
+
+# Mix de LLM & AI Apis
+
+| LLM (Gemma) | AI APIs (BuiltIn) |
+|---|---|
+| ✅   | Prompt API Multimodal Input |
+| ❌   | API Language Detector |
+| ❌   | Translation API |
+| ✅   | Writer API |
+| ✅   | Rewriter API |
+| ✅   | Summarization API |
+| ✅   | Proofreading API |
+
+
+##==##
+
+# Pas pour toutes les machines
+
+## Cahier des charges pour faire tourner Lema :
+
+![](./assets/images/ram-vram.png 'center h-700')
+
+Notes:
+* GPU ou CPU : les modèles intégrés peuvent s'exécuter avec un GPU ou un CPU.
+  * GPU : strictement plus de 4 Go de VRAM.
+  * CPU : au moins 16 Go de RAM et au moins 4 cœurs de processeur.
+  * Remarque : L'API Prompt avec entrée audio nécessite un GPU.
+
+##==##
+
+# Pas pour tous les systèmes d'exploitation
+
+| OS | Supported| 
+|---|---|
+| Windows 10 ou 11 | ✅ |
+| macOS 13 ou version ultérieure (Ventura et versions ultérieures) | ✅ |
+| Linux | ✅ |
+| ChromeOS (à partir de la plate-forme 16389.0.0) sur les appareils Chromebook Plus | ✅ |
+| Chrome pour Android, iOS et ChromeOS sur les appareils autres que Chromebook Plus | ❌ |
+
+* Stockage : au moins 22 Go d'espace libre sur le volume contenant votre profil Chrome.
+
+Notes: 
+Système d'exploitation : Windows 10 ou 11 ; macOS 13 ou version ultérieure (Ventura et versions ultérieures) ; Linux ; ou ChromeOS (à partir de la plate-forme 16389.0.0) sur les appareils Chromebook Plus. Chrome pour Android, iOS et ChromeOS sur les appareils autres que Chromebook Plus ne sont pas encore compatibles avec les API qui utilisent Gemini Nano.
+Stockage : au moins 22 Go d'espace libre sur le volume contenant votre profil Chrom
 
 ##==##
 
