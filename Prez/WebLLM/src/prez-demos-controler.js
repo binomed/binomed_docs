@@ -109,13 +109,10 @@ export class PrezDemosControler {
             if (!this.#initGema) {
                 this.#initGema = true;
                 log('In Gemma');
-                this.#micControler.addMicButton();
-                this.#overlayControler.addOverlayWidget();
                 this.#ttsControler.loadVoices();
                 this.#chatController = new ChatController();
                 await this.#builtInControler.checkStateAPIs();
                 await this.#promptControler.downloadMissingAPIsIfNeeded();
-                this.#promptControler.showAPIStatus();
                 this.#promptControler.updateContextDisplay();
                 this.initChatHandlers();
             }
@@ -123,12 +120,23 @@ export class PrezDemosControler {
         })
         Reveal.addEventListener('out-gemma', async () => {
             log('Out Gemma');
-            this.#micControler.removeMicButton();
-            this.#overlayControler.removeOverlayWidget();
-            this.#promptControler.hideAPIStatus();
             this.removeChatHandlers();
             this.#stateDemos = -1;
             this.#initGema = false;
+        })
+        Reveal.addEventListener('show-mic-and-stats', async () => {
+            log('Show mic and stats');
+            this.#micControler.addMicButton();
+            this.#overlayControler.addOverlayWidget();
+            
+            this.#promptControler.showAPIStatus();
+        })
+        Reveal.addEventListener('hide-mic-and-stats', async () => {
+            log('Hide mic and stats');
+            this.#micControler.removeMicButton();
+            this.#overlayControler.removeOverlayWidget();
+            this.#promptControler.hideAPIStatus();
+            this.#stateDemos = -1;
         })
 
         Reveal.addEventListener('welcome-lema', () => {
@@ -262,7 +270,10 @@ export class PrezDemosControler {
         this.#actionHandler.registerActionHandler('WIFI_OFF', () => {
             log('Action: WIFI_OFF');
             fetch('http://localhost:3000/kill-wifi', { method: 'POST' });
-            // À implémenter selon ton besoin
+            const lemaImg = document.getElementById('lema-image-active') || document.getElementById('lema-image');
+            if (lemaImg) {
+                lemaImg.src = './assets/images/lema-offline.png';
+            }
         });
 
         this.#actionHandler.registerActionHandler('SHOW_STATS', () => {

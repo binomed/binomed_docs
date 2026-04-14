@@ -5,7 +5,7 @@
 
 ##==##
 
-<!-- .slide: class="speaker-slide" data-state="out-gemma" -->
+<!-- .slide: class="speaker-slide" data-state="out-gemma hide-mic-and-stats" -->
 
 <div class="speaker-slide">
 
@@ -34,7 +34,7 @@
 
 ##==##
 
-<!-- .slide: data-state="in-gemma welcome-lema" -->
+<!-- .slide: data-state="in-gemma welcome-lema show-mic-and-stats" -->
 
 # Let's meet Lema
 
@@ -51,24 +51,62 @@
   </div>
 </div>
 
+Notes:
+* Demander "Présente toi"
+* Demander "Que peux tu faire ?"
+* Affiche les indicateurs Systèmes.
+* Coupe le Wifi.
+* Passe le slide suivant.
+
 ##==##
 
-# How does it work ?
+<!-- .slide: data-state="hide-mic-and-stats" -->
 
-## API Expérimentale : 
+# Comment ça marche ?
 
-**Flags à activer :**
+## Chrome BuiltIn API's :
+
+![](./assets/images/chrome-builtin.png 'center h-600')
+
+🤖 [IA Intégrée - https://developer.chrome.com/docs/ai/](https://developer.chrome.com/docs/ai/)
+
+<!-- .element: class="center" -->
+<br>
+
+Notes: 
+Aujourd'hui, c'est dans chrome mais on verra après que ça arrive dans d'autres navigateurs aussi (Edge, Firefox, Safari...) via une lib qui s'appuie sur webGPU
+
+##==##
+
+# Comment ça marche ?
+
+## Flags à activer :
+
+![](./assets/images/flags.png 'center h-600')
 
 
 🏳️‍🌈 [chrome://flags/#optimization-guide-on-device-model](chrome://flags/#optimization-guide-on-device-model)
 
+<!-- .element: class="center" -->
+
 🏳️‍🌈 [chrome://flags/#prompt-api-for-gemini-nano-multimodal-input](chrome://flags/#prompt-api-for-gemini-nano-multimodal-input)
+
+<!-- .element: class="center" -->
+
+<br>
+
+Notes:
+Derrière du origin trial (activation ou origin trial) pour une partie des APIs
 
 ##==##
 
+<!-- .slide: class="tc-multiple-columns" -->
+
+##++##
+
 # Welcome BuiltIn API's
 
-![](wifi_off 'tc-icons material-symbols-outlined') Tout ça 100% local !
+
 
 * 💬 Prompt API Multimodal Input
 * 🏳️‍🌈 API Language Detector
@@ -79,30 +117,40 @@
 * ✅ Proofreading API
 
 <!-- .element: class="list-fragment" -->
+##++##
 
+##++## data-background="./assets/images/no-wifi.png" 
+##++##
 
 ##==##
 
 # Mix de LLM & AI Apis
 
-| LLM (Gemma) | AI APIs (BuiltIn) |
-|---|---|
-| ✅   | Prompt API Multimodal Input |
-| ❌   | API Language Detector |
-| ❌   | Translation API |
-| ✅   | Writer API |
-| ✅   | Rewriter API |
-| ✅   | Summarization API |
-| ✅   | Proofreading API |
-
+| AI APIs (BuiltIn) | LLM (Gemma) | Chrome Stable |
+|---|---|---|
+| Prompt API Multimodal Input | ✅  | 🧪 |
+| API Language Detector | ❌   | ✅ (138) |
+| Translation API | ❌   | ✅ (138) |
+| Writer API | ✅   | 🧪 |
+| Rewriter API | ✅   | 🧪 |
+| Summarization API | ✅   | ✅ (138) |
+| Proofreading API | ✅   | 🧪 |
 
 ##==##
 
+<!-- .slide: class="tc-multiple-columns" -->
+
+##++##
 # Pas pour toutes les machines
 
-## Cahier des charges pour faire tourner Lema :
 
-![](./assets/images/ram-vram.png 'center h-700')
+* GPU ou CPU
+  * GPU : > **4 Go** de VRAM.
+  * CPU : > **16 Go** de RAM & > **4 cœurs** de processeur.
+
+##++##
+##++## data-background="./assets/images/ram-vram.png"
+##++##
 
 Notes:
 * GPU ou CPU : les modèles intégrés peuvent s'exécuter avec un GPU ou un CPU.
@@ -117,12 +165,12 @@ Notes:
 | OS | Supported| 
 |---|---|
 | Windows 10 ou 11 | ✅ |
-| macOS 13 ou version ultérieure (Ventura et versions ultérieures) | ✅ |
+| macOS : 13+  | ✅ |
 | Linux | ✅ |
-| ChromeOS (à partir de la plate-forme 16389.0.0) sur les appareils Chromebook Plus | ✅ |
-| Chrome pour Android, iOS et ChromeOS sur les appareils autres que Chromebook Plus | ❌ |
+| ChromeOS (> 16389.0.0) & Chromebook Plus | ✅ |
+| Chrome pour Android, iOS et ChromeOS non Chromebook Plus | ❌ |
 
-* Stockage : au moins 22 Go d'espace libre sur le volume contenant votre profil Chrome.
+* ![](database 'tc-icons material-symbols-outlined') Stockage : > **22 Go** 
 
 Notes: 
 Système d'exploitation : Windows 10 ou 11 ; macOS 13 ou version ultérieure (Ventura et versions ultérieures) ; Linux ; ou ChromeOS (à partir de la plate-forme 16389.0.0) sur les appareils Chromebook Plus. Chrome pour Android, iOS et ChromeOS sur les appareils autres que Chromebook Plus ne sont pas encore compatibles avec les API qui utilisent Gemini Nano.
@@ -130,14 +178,20 @@ Stockage : au moins 22 Go d'espace libre sur le volume contenant votre profil Ch
 
 ##==##
 
-<!-- .slide: data-state="translate-lema" -->
+<!-- .slide: class="transition" data-state="hide-mic-and-stats" -->
+
+# Let's go back to Demo Effects !
+
+##==##
+
+<!-- .slide: data-state="translate-lema show-mic-and-stats" -->
 
 
 # Let's translate
 
 
 <div style="display: flex; gap: 40px; align-items: center; width: 100%;">
-  <img src="./assets/images/lema.png" alt="lema" style="height: 500px;" />
+  <img src="./assets/images/lema-traduction.png" alt="lema" style="height: 500px;" />
   <chat-component data-id="lema-translate"></chat-component>
 </div>
 
@@ -150,7 +204,7 @@ Stockage : au moins 22 Go d'espace libre sur le volume contenant votre profil Ch
 
 
 <div style="display: flex; gap: 40px; align-items: center; width: 100%;">
-  <img src="./assets/images/lema.png" alt="lema" style="height: 500px;" />
+  <img src="./assets/images/lema-create.png" alt="lema" style="height: 500px;" />
   <chat-component data-id="lema-writer"></chat-component>
 </div>
 
@@ -163,7 +217,7 @@ Stockage : au moins 22 Go d'espace libre sur le volume contenant votre profil Ch
 
 
 <div style="display: flex; gap: 40px; align-items: center; width: 100%;">
-  <img src="./assets/images/lema.png" alt="lema" style="height: 500px;" />
+  <img src="./assets/images/lema-thinking.png" alt="lema" style="height: 500px;" />
   <chat-component data-id="lema-rewrite"></chat-component>
 </div>
 
@@ -176,7 +230,7 @@ Stockage : au moins 22 Go d'espace libre sur le volume contenant votre profil Ch
 
 
 <div style="display: flex; gap: 40px; align-items: center; width: 100%;">
-  <img src="./assets/images/lema.png" alt="lema" style="height: 500px;" />
+  <img src="./assets/images/lema-reduction.png" alt="lema" style="height: 500px;" />
   <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 16px;">
     <chat-component data-id="lema-summarize"></chat-component>
     <div style="display: flex; gap: 12px; background: rgba(255,255,255,0.05); padding: 12px; border-radius: 8px;">
@@ -216,7 +270,7 @@ Stockage : au moins 22 Go d'espace libre sur le volume contenant votre profil Ch
 # Let's Proofread
 
 <div style="display: flex; gap: 40px; align-items: center; width: 100%;">
-  <img src="./assets/images/lema.png" alt="lema" style="height: 500px;" />
+  <img src="./assets/images/lema-proofreader.png" alt="lema" style="height: 500px;" />
   <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 16px;">
     <textarea id="proofread-input" style="width: 100%; height: 150px; padding: 10px; background: rgba(255,255,255,0.1); border: 1px solid rgba(168,85,247,0.3); color: white; border-radius: 8px; font-size: 14px; resize: vertical;" placeholder="Type text to proofread..."></textarea>
     <div style="display: flex; gap: 12px;">
@@ -234,7 +288,7 @@ Stockage : au moins 22 Go d'espace libre sur le volume contenant votre profil Ch
 # Let's See
 
 <div style="display: flex; gap: 40px; align-items: center; width: 100%;">
-  <img src="./assets/images/lema.png" alt="lema" style="height: 400px;" />
+  <img src="./assets/images/lema-vision.png" alt="lema" style="height: 400px;" />
   <div style="flex-grow: 1; display: flex; flex-direction: row; gap: 16px;">
     <camera-component id="camera-lema"></camera-component>
     <chat-component data-id="lema-vision"></chat-component>
@@ -243,12 +297,19 @@ Stockage : au moins 22 Go d'espace libre sur le volume contenant votre profil Ch
 
 ##==##
 
+<!-- .slide: data-state="out-vision" class="transition mask" data-background="./assets/images/lema-to-tema.png" -->
+
+# Let's meet Tema
+
+
+##==##
+
 <!-- .slide: data-state="tema-vision out-vision" -->
 
-# Let's See (with Tema)
+# Let's Chat (with Tema)
 
 <div style="display: flex; gap: 40px; align-items: center; width: 100%;">
-  <img src="./assets/images/lema.png" alt="tema" style="height: 400px;" />
+  <img src="./assets/images/tema.png" alt="tema" style="height: 500px;" />
   <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 16px;">
     <!-- Zone de progression de Tema -->
     <div id="tema-progress-container" class="hidden" style="width: 100%; background: rgba(255,255,255,0.1); border-radius: 4px; padding: 10px; display: flex; flex-direction: column; gap: 8px;">
@@ -274,19 +335,31 @@ Stockage : au moins 22 Go d'espace libre sur le volume contenant votre profil Ch
 
 ##==##
 
+# Tema is for (Transformers + lema)
 
-<!-- .slide: class="transition" data-state="out-gemma out-vision-tema" -->
+## Using Transformers.js
 
-# CONCLUSION
+![](./assets/images/transformers-compat.png 'center h-600')
 
+credits: transofrmers.js team 
+<!-- .element: class="credits" -->
 
-Notes:
+Notes: 
 
-
+Compatibilité avec les navigateurs
 
 ##==##
 
-<!-- .slide: class="speaker-slide" -->
+<!-- .slide: class="transition mask" data-state="out-vision-tema" data-background="./assets/images/lema-tema-conclusion.png"  -->
+
+# CONCLUSION
+
+Notes:
+TODO Laisser Lema faire la conclusion en résumant ce qui vient d'être dit
+
+##==##
+
+<!-- .slide: class="speaker-slide" data-state="out-gemma " -->
 
 <div class="speaker-slide">
 

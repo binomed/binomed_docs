@@ -16,6 +16,9 @@ body[data-theme='lema'] {
   --tc-bg-color: var(--r-background-color);
   --tc-text-color: var(--r-main-color);
   --tc-heading-color: var(--accent-color);
+  --tc-multiple-col-heading-color:var(--accent-color);
+  --tc-multiple-col-color:var(--r-main-color);
+  --tc-table-bg: rgba(168, 85, 247, 0.25);
   --tc-transition-color: var(--accent-color);
   
   /* Layout & Design System */
