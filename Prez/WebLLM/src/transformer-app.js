@@ -13,12 +13,15 @@ import { initMultimodal } from './transformer-multimodal.js';
 
 // ── Transformers.js Configuration ──
 // Chemin vers vos modèles locaux (téléchargés dans le dossier models/)
-// Par défaut, il cherchera d'abord en local s'ils existent, sinon sur le Hub.
 env.localModelPath = './models/';
 
-// Autoriser les modèles locaux, interdire les téléchargements distants
+// Autoriser les modèles locaux + fallback distant (HuggingFace Hub)
 env.allowLocalModels = true;
-env.allowRemoteModels = false;
+env.allowRemoteModels = true;
+
+// Cache les fichiers modèles dans le Cache API du navigateur (persistant entre sessions)
+env.useBrowserCache = true;
+env.useWasmCache = true;
 
 // ── Tab management ──
 const tabs = document.querySelectorAll('.tab');

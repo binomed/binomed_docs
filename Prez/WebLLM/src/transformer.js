@@ -10,9 +10,12 @@ import {
 
 // Configuration pour autoriser le chargement local
 env.allowLocalModels = true;
-env.allowRemoteModels = false;
+env.allowRemoteModels = true;
 env.localModelPath = '/models/';
-env.useBrowserCache = false;
+// Cache les fichiers modèles dans le Cache API du navigateur (persistant entre sessions)
+env.useBrowserCache = true;
+// Cache le runtime WASM ONNX (permet aussi le mode offline)
+env.useWasmCache = true;
 // Silence ONNX Runtime logging
 env.logLevel = LogLevel.ERROR;
 
