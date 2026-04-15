@@ -20,6 +20,18 @@ app.post('/kill-wifi', (req, res) => {
   });
 });
 
+app.post('/activate-wifi', (req, res) => {
+  console.log("Exécution de l'activation Wi-Fi...");
+
+  // Commande pour MacOS (à adapter pour Windows : 'netsh interface set interface...')
+  const cmd = "networksetup -setnetworkserviceenabled Wi-Fi on";
+
+  exec(cmd, (err) => {
+    if (err) return res.status(500).send(err.message);
+    res.send("Wi-Fi rétabli avec succès.");
+  });
+});
+
 function getMemStats() {
     return new Promise((resolve) => {
         exec('sysctl hw.memsize && vm_stat', (err, stdout) => {
