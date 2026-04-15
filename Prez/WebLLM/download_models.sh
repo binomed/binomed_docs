@@ -4,6 +4,7 @@
 MODELS_ROOT="./models"
 BASE_URL_LLAMA="https://huggingface.co/onnx-community/Llama-3.2-1B-Instruct/resolve/main"
 BASE_URL_MOONDREAM="https://huggingface.co/Xenova/moondream2/resolve/main"
+BASE_URL_GEMMA4="https://huggingface.co/onnx-community/gemma-4-E2B-it-ONNX/resolve/main"
 
 # Liste des fichiers pour Llama 3.2 1B
 FILES_LLAMA=(
@@ -24,6 +25,25 @@ FILES_MOONDREAM=(
     "onnx/vision_encoder_q4.onnx"
     "onnx/decoder_model_merged_q4.onnx"
     "onnx/embed_tokens_q4.onnx"
+)
+
+# Liste des fichiers pour Gemma 4 E2B (q4f16 pour WebGPU)
+FILES_GEMMA4=(
+    "config.json"
+    "generation_config.json"
+    "processor_config.json"
+    "preprocessor_config.json"
+    "tokenizer.json"
+    "tokenizer_config.json"
+    "chat_template.jinja"
+    "onnx/decoder_model_merged_q4f16.onnx"
+    "onnx/decoder_model_merged_q4f16.onnx_data"
+    "onnx/embed_tokens_q4f16.onnx"
+    "onnx/embed_tokens_q4f16.onnx_data"
+    "onnx/vision_encoder_q4f16.onnx"
+    "onnx/vision_encoder_q4f16.onnx_data"
+    "onnx/audio_encoder_q4f16.onnx"
+    "onnx/audio_encoder_q4f16.onnx_data"
 )
 
 download_file() {
@@ -61,6 +81,13 @@ TARGET_MOONDREAM="${MODELS_ROOT}/Xenova/moondream2"
 echo -e "\n📦 Processing Moondream2..."
 for file in "${FILES_MOONDREAM[@]}"; do
     download_file "$BASE_URL_MOONDREAM" "$file" "$TARGET_MOONDREAM"
+done
+
+# Gemma 4 E2B
+TARGET_GEMMA4="${MODELS_ROOT}/onnx-community/gemma-4-E2B-it-ONNX"
+echo -e "\n📦 Processing Gemma 4 E2B (q4f16 - WebGPU)..."
+for file in "${FILES_GEMMA4[@]}"; do
+    download_file "$BASE_URL_GEMMA4" "$file" "$TARGET_GEMMA4"
 done
 
 echo -e "\n✨ All downloads complete!"

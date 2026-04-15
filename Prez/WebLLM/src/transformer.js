@@ -59,44 +59,74 @@ class AsyncStreamer {
     }
 }
 
-export class TemaMultimodalController {
-    // Moondream (Vision) - DÉSACTIVÉ POUR LE MOMENT
-    /*
-    #processorV = null;
-    #tokenizerV = null;
-    #modelV = null;
-    #modelIdV = 'Xenova/moondream2';
-    */
+/**
+ * Modèles disponibles pour Tema.
+ * Changer ACTIVE_MODEL pour basculer entre Llama et Gemma.
+ * @type {'llama' | 'gemma4'}
+ */
+export const ACTIVE_MODEL = 'gemma4';
 
-    // Llama 3.2 (Texte)
-    #tokenizerT = null;
-    #modelT = null;
-    #modelIdT = 'onnx-community/Llama-3.2-1B-Instruct';
-    #progressCallbackV = null;
+/** @type {Record<string, {id: string, dtype: string, type: 'causal' | 'multimodal'}>} */
+const MODEL_CONFIGS = {
+    llama: {
+        id: 'onnx-community/Llama-3.2-1B-Instruct',
+        dtype: 'q4',
+        type: 'causal',
+    },
+    gemma4: {
+        id: 'onnx-community/gemma-4-E2B-it-ONNX',
+        dtype: 'q4f16',
+        type: 'multimodal',
+    },
+};
+
+export class TemaMultimodalController {
+    #processor = null;
+    #tokenizer = null;
+    #model = null;
+    #config = MODEL_CONFIGS[ACTIVE_MODEL];
 
     constructor() { }
 
     async loadModel(progressCallbackV, progressCallbackT) {
-        // Optionnel : on sauvegarde le callback métier vision pour un futur chargement paresseux
-        this.#progressCallbackV = progressCallbackV;
-        if (this.#modelT) return;
+        if (this.#model) return;
 
         try {
-            // Chargement de Llama 3.2 (Texte pur)
-            const { AutoModelForCausalLM } = await import('@huggingface/transformers');
-            this.#tokenizerT = await AutoTokenizer.from_pretrained(this.#modelIdT, { progress_callback: progressCallbackT });
-            this.#modelT = await AutoModelForCausalLM.from_pretrained(this.#modelIdT, {
-                device: 'webgpu',
-                dtype: 'q4',
-                progress_callback: progressCallbackT
-            });
+            const { id, dtype, type } = this.#config;
+            console.log(`[Tema] Chargement du modèle : ${id} (${dtype})`);
 
-            // Validation finale pour la vision en fallback asynchrone pour ne pas crasher
+            this.#tokenizer = await AutoTokenizer.from_pretrained(id, { progress_callback: progressCallbackT });
+
+            // Gemma 4 stocke son chat_template dans un fichier .jinja séparé
+            if (type === 'multimodal' && !this.#tokenizer.chat_template) {
+                const templateUrl = `${env.localModelPath}${id}/chat_template.jinja`;
+                const resp = await fetch(templateUrl);
+                if (resp.ok) {
+                    this.#tokenizer.chat_template = await resp.text();
+                }
+            }
+
+            if (type === 'multimodal') {
+                this.#processor = await AutoProcessor.from_pretrained(id, { progress_callback: progressCallbackT });
+                this.#model = await AutoModelForImageTextToText.from_pretrained(id, {
+                    device: 'webgpu',
+                    dtype,
+                    progress_callback: progressCallbackT,
+                });
+            } else {
+                const { AutoModelForCausalLM } = await import('@huggingface/transformers');
+                this.#model = await AutoModelForCausalLM.from_pretrained(id, {
+                    device: 'webgpu',
+                    dtype,
+                    progress_callback: progressCallbackT,
+                });
+            }
+
             if (progressCallbackV) {
-                progressCallbackV({ status: 'progress', progress: 100, name: 'Lazy Vision Loader ready' });
+                progressCallbackV({ status: 'progress', progress: 100, name: 'Model ready' });
             }
         } catch (err) {
-            console.error('Erreur lors du chargement de Tema (Texte):', err);
+            console.error('Erreur lors du chargement de Tema:', err);
             throw err;
         }
     }
@@ -106,52 +136,90 @@ export class TemaMultimodalController {
 
         const doGenerate = async () => {
             try {
-                // DÉSACTIVATION VISION
-                /*
-                if (image) {
-                    console.log("[Tema] Détection d'une image. Lancement de la route Vision...");
-                    // --- ROUTE VISION (Moondream2 - Lazy Load) ---
-                    ... (Code Vision Commenté) ...
-                } else {
-                */
+                if (!this.#model) throw new Error('Modèle non chargé.');
 
-                // --- ROUTE TEXTE FORCÉE (Llama 3.2 - Déjà chargé) ---
-                if (image) {
-                    console.log("[Tema] Image détectée mais la Vision est désactivée. Passage en mode texte.");
-                }
-
-                if (!this.#modelT) throw new Error('Modèle Llama non chargé.');
-
-                const txtStreamer = new TextStreamer(this.#tokenizerT, {
+                const txtStreamer = new TextStreamer(this.#tokenizer, {
                     skip_prompt: true,
                     skip_special_tokens: true,
                     callback_function: (chunk) => asyncStreamer.callback(chunk)
                 });
 
-                const conversation = [
-                    { role: 'system', content: temaPromptSystem },
-                    { role: 'user', content: text }
-                ];
+                if (this.#config.type === 'multimodal') {
+                    // --- ROUTE GEMMA 4 (texte ou multimodal) ---
+                    const conversation = [
+                        { role: 'system', content: temaPromptSystem },
+                    ];
 
-                const promptText = this.#tokenizerT.apply_chat_template(conversation, {
-                    tokenize: false,
-                    add_generation_prompt: true
-                });
+                    if (image) {
+                        conversation.push({
+                            role: 'user',
+                            content: [
+                                { type: 'image', image },
+                                { type: 'text', text },
+                            ],
+                        });
+                    } else {
+                        conversation.push({ role: 'user', content: text });
+                    }
 
-                const tokT = this.#tokenizerT;
-                const inputs = tokT(promptText, {
-                    return_tensors: 'pt',
-                    add_special_tokens: false
-                });
+                    const promptText = this.#tokenizer.apply_chat_template(conversation, {
+                        tokenize: false,
+                        add_generation_prompt: true,
+                    });
 
-                await this.#modelT.generate({
-                    ...inputs,
-                    max_new_tokens: 512,
-                    do_sample: true,
-                    temperature: 0.7,
-                    top_p: 0.9,
-                    streamer: txtStreamer,
-                });
+                    const tok = this.#tokenizer;
+                    let inputs;
+                    if (image && this.#processor) {
+                        inputs = await this.#processor.process(
+                            await load_image(image),
+                            { text: promptText },
+                        );
+                    } else {
+                        inputs = tok(promptText, {
+                            return_tensors: 'pt',
+                            add_special_tokens: false,
+                        });
+                    }
+
+                    await this.#model.generate({
+                        ...inputs,
+                        max_new_tokens: 512,
+                        do_sample: true,
+                        temperature: 1.0,
+                        top_p: 0.95,
+                        top_k: 64,
+                        streamer: txtStreamer,
+                    });
+                } else {
+                    // --- ROUTE TEXTE (Llama 3.2) ---
+                    if (image) {
+                        console.log("[Tema] Image détectée mais modèle texte uniquement.");
+                    }
+
+                    const conversation = [
+                        { role: 'system', content: temaPromptSystem },
+                        { role: 'user', content: text }
+                    ];
+
+                    const promptText = this.#tokenizer.apply_chat_template(conversation, {
+                        tokenize: false,
+                        add_generation_prompt: true
+                    });
+
+                    const inputs = this.#tokenizer(promptText, {
+                        return_tensors: 'pt',
+                        add_special_tokens: false
+                    });
+
+                    await this.#model.generate({
+                        ...inputs,
+                        max_new_tokens: 512,
+                        do_sample: true,
+                        temperature: 0.7,
+                        top_p: 0.9,
+                        streamer: txtStreamer,
+                    });
+                }
             } catch (err) {
                 console.error("Erreur de génération :", err);
                 asyncStreamer.callback(`\n❌ Erreur: ${err.message}`);
