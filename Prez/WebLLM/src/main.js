@@ -18,10 +18,13 @@ window.log = (msg, type = 'info', msgOrError) => {
 
     async function pageLoad() {
 
+        // On ne lance pas le script dans les notes speakers
         const inIframe = window.top != window.self;
+        // On n'autorise pas tout le chargement des démos en mode restit (on affiche que la théorie)
+        const dataType = document.querySelector('.slides').getAttribute('data-type');
 
-        if (!inIframe) {
-            
+        if (!inIframe && dataType && dataType === 'on-stage') {
+             
             new PrezDemosControler();
 
         }
