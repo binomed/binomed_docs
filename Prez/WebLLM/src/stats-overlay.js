@@ -108,7 +108,7 @@ class StatsWidget extends HTMLElement {
                 border:1px solid #e2e8f0;
                 border-radius:14px;
                 box-shadow:0 6px 30px rgba(0,0,0,0.16);
-                width:320px;
+                width:max-content;
                 font-family:system-ui,'Segoe UI',sans-serif;
                 overflow:hidden;
             ">
@@ -132,56 +132,46 @@ class StatsWidget extends HTMLElement {
                     <div style="padding:14px 16px 12px">
                         ${d ? html`
 
-                            <!-- RAM + CPU : grandes jauges -->
-                            <div style="display:flex;justify-content:space-around;margin-bottom:16px">
+                            <!-- Toutes les stats sur une ligne -->
+                            <div style="display:flex;align-items:center;gap:20px;white-space:nowrap">
+
+                                <!-- RAM + CPU -->
                                 ${gauge('RAM', memPct, 36, `${d.memory.used} / ${d.memory.total} GB`)}
                                 ${gauge('CPU', cpuPct, 36, `${d.cpu.load}%`, 'cpu')}
-                            </div>
 
-                            <!-- Séparateur -->
-                            <div style="height:1px;background:#f1f5f9;margin-bottom:14px"></div>
+                                <!-- Séparateur vertical -->
+                                <div style="width:1px;align-self:stretch;background:#e2e8f0"></div>
 
-                            <!-- GPU : 3 jauges moyennes -->
-                            <div style="margin-bottom:14px">
-                                <div style="
-                                    display:flex;justify-content:space-between;align-items:center;
-                                    margin-bottom:10px">
-                                    <span style="font-size:12px;font-weight:700;color:#475569;text-transform:uppercase;letter-spacing:1px">
-                                        GPU
-                                    </span>
-                                    <span style="font-size:12px;color:#3b82f6;font-weight:700">${d.gpu.model}</span>
+                                <!-- GPU -->
+                                <div style="display:flex;flex-direction:column;align-items:center;gap:6px">
+                                    <div style="display:flex;align-items:center;gap:8px">
+                                        <span style="font-size:12px;font-weight:700;color:#475569;text-transform:uppercase;letter-spacing:1px">GPU</span>
+                                        <span style="font-size:12px;color:#3b82f6;font-weight:700">${d.gpu.model}</span>
+                                    </div>
+                                    <div style="display:flex;gap:12px">
+                                        ${gauge('Renderer', d.gpu.renderer, 22)}
+                                        ${gauge('Tiler',    d.gpu.tiler,    22)}
+                                        ${gauge('Device',   d.gpu.device,   22)}
+                                    </div>
                                 </div>
-                                <div style="display:flex;justify-content:space-around">
-                                    ${gauge('Renderer', d.gpu.renderer, 26)}
-                                    ${gauge('Tiler',    d.gpu.tiler,    26)}
-                                    ${gauge('Device',   d.gpu.device,   26)}
-                                </div>
-                            </div>
 
-                            <!-- Séparateur -->
-                            <div style="height:1px;background:#f1f5f9;margin-bottom:12px"></div>
+                                <!-- Séparateur vertical -->
+                                <div style="width:1px;align-self:stretch;background:#e2e8f0"></div>
 
-                            <!-- Réseau : texte large -->
-                            <div style="display:flex;justify-content:space-around">
-                                <div style="display:flex;flex-direction:column;align-items:center;gap:2px">
-                                    <span style="font-size:20px;font-weight:800;color:#1e293b">
-                                        ${d.network.rx}
-                                    </span>
-                                    <span style="font-size:11px;color:#94a3b8;font-weight:500">KB/s</span>
-                                    <span style="font-size:11px;font-weight:700;color:#475569;text-transform:uppercase;letter-spacing:1px">
-                                        ↓ Réseau
-                                    </span>
+                                <!-- Réseau -->
+                                <div style="display:flex;gap:20px;align-items:center">
+                                    <div style="display:flex;flex-direction:column;align-items:center;gap:2px">
+                                        <span style="font-size:20px;font-weight:800;color:#1e293b">${d.network.rx}</span>
+                                        <span style="font-size:11px;color:#94a3b8;font-weight:500">KB/s</span>
+                                        <span style="font-size:11px;font-weight:700;color:#475569;text-transform:uppercase;letter-spacing:1px">↓ Réseau</span>
+                                    </div>
+                                    <div style="display:flex;flex-direction:column;align-items:center;gap:2px">
+                                        <span style="font-size:20px;font-weight:800;color:#1e293b">${d.network.tx}</span>
+                                        <span style="font-size:11px;color:#94a3b8;font-weight:500">KB/s</span>
+                                        <span style="font-size:11px;font-weight:700;color:#475569;text-transform:uppercase;letter-spacing:1px">↑ Envoi</span>
+                                    </div>
                                 </div>
-                                <div style="width:1px;background:#f1f5f9"></div>
-                                <div style="display:flex;flex-direction:column;align-items:center;gap:2px">
-                                    <span style="font-size:20px;font-weight:800;color:#1e293b">
-                                        ${d.network.tx}
-                                    </span>
-                                    <span style="font-size:11px;color:#94a3b8;font-weight:500">KB/s</span>
-                                    <span style="font-size:11px;font-weight:700;color:#475569;text-transform:uppercase;letter-spacing:1px">
-                                        ↑ Envoi
-                                    </span>
-                                </div>
+
                             </div>
 
                         ` : html`
