@@ -3,7 +3,7 @@
  * Each module exports an init() function called once when its tab is first activated.
  */
 
-import { env } from 'https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.8.1';
+import { env } from 'https://cdn.jsdelivr.net/npm/@huggingface/transformers@4.0.1';
 import { initChat } from './transformer-chat.js';
 import { initSTT } from './stt.js';
 import { initTTS } from './tts.js';

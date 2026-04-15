@@ -10,7 +10,7 @@ import {
     AutoModelForImageTextToText,
     load_image,
     TextStreamer,
-} from 'https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.8.1';
+} from 'https://cdn.jsdelivr.net/npm/@huggingface/transformers@4.0.1';
 
 const MODEL_ID = 'Xenova/moondream2';
 

@@ -7,7 +7,7 @@
 import {
     pipeline,
     TextStreamer,
-} from 'https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.8.1';
+} from 'https://cdn.jsdelivr.net/npm/@huggingface/transformers@4.0.1';
 
 // Llama 3.2 1B — petit, rapide, optimisé pour le navigateur
 const MODEL_ID = 'onnx-community/Llama-3.2-1B-Instruct';

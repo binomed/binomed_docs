@@ -4,7 +4,8 @@ import {
     AutoModelForImageTextToText,
     load_image,
     TextStreamer,
-    env
+    env,
+    LogLevel
 } from '@huggingface/transformers';
 
 // Configuration pour autoriser le chargement local
@@ -12,9 +13,8 @@ env.allowLocalModels = true;
 env.allowRemoteModels = false;
 env.localModelPath = '/models/';
 env.useBrowserCache = false;
-// Silence ONNX Runtime logging (VerifyEachNodeIsAssignedToAnEp)
-if (env.onnx) env.onnx.logLevel = 'error';
-if (env.backends?.onnx) env.backends.onnx.logLevel = 'error';
+// Silence ONNX Runtime logging
+env.logLevel = LogLevel.ERROR;
 
 export const temaPromptSystem = `Tu es Tema, une intelligence artificielle technique, directe et ultra-rapide tournant dans un navigateur. 
 Tes règles:
