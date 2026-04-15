@@ -1,7 +1,7 @@
 <!-- .slide: class="transition" -->
 # WebLLM ? BuiltIn API's 
 
-*Jean-François Garreau | Février 2026*
+*Jean-François Garreau | Devoxx FR 2026*
 
 ##==##
 
@@ -34,7 +34,7 @@
 
 ##==##
 
-<!-- .slide: data-state="in-gemma welcome-lema show-mic-and-stats" -->
+<!-- .slide: data-state="in-gemma welcome-lema show-mic-and-stats" data-type-show="on-stage" -->
 
 # Let's meet Lema
 
@@ -53,8 +53,9 @@
 
 Notes:
 * Demander "Présente toi"
-* Demander "Que peux tu faire ?"
 * Affiche les indicateurs Systèmes.
+* Demander "Que peux tu faire ?"
+* Parle moi de devoxx
 * Coupe le Wifi.
 * Passe le slide suivant.
 
@@ -178,13 +179,13 @@ Stockage : au moins 22 Go d'espace libre sur le volume contenant votre profil Ch
 
 ##==##
 
-<!-- .slide: class="transition" data-state="hide-mic-and-stats" -->
+<!-- .slide: class="transition" data-state="hide-mic-and-stats" data-type-show="on-stage"-->
 
 # Let's go back to Demo Effects !
 
 ##==##
 
-<!-- .slide: data-state="translate-lema show-mic-and-stats" -->
+<!-- .slide: data-state="translate-lema show-mic-and-stats" data-type-show="on-stage"-->
 
 
 # Let's translate
@@ -195,9 +196,12 @@ Stockage : au moins 22 Go d'espace libre sur le volume contenant votre profil Ch
   <chat-component data-id="lema-translate"></chat-component>
 </div>
 
+Notes:
+Je suis à Devoxx devant des développeurs passionés qui veulent en savoir plus sur les apis d'IA générative disponibles directement dans chrome
+
 ##==##
 
-<!-- .slide: data-state="writer-lema" -->
+<!-- .slide: data-state="writer-lema" data-type-show="on-stage"-->
 
 
 # Let's write
@@ -208,9 +212,13 @@ Stockage : au moins 22 Go d'espace libre sur le volume contenant votre profil Ch
   <chat-component data-id="lema-writer"></chat-component>
 </div>
 
+Notes:
+* Écris moi une blague sur l'IA Générative  
+* Je voudrais que tu m'écrives un post linkedin à poster pour parler du fait que je donnes une conférence sur l'IA générative sans réseau à Devoxx
+
 ##==##
 
-<!-- .slide: data-state="rewrite-lema" -->
+<!-- .slide: data-state="rewrite-lema" data-type-show="on-stage"-->
 
 
 # Let's Rewrite
@@ -221,9 +229,13 @@ Stockage : au moins 22 Go d'espace libre sur le volume contenant votre profil Ch
   <chat-component data-id="lema-rewrite"></chat-component>
 </div>
 
+Notes:
+Récupération du texte précédent et demander avec un ton familier et mettre le texte entre ''
+
+
 ##==##
 
-<!-- .slide: data-state="summarize-lema out-vision" -->
+<!-- .slide: data-state="summarize-lema out-vision" data-type-show="on-stage"-->
 
 
 # Let's Summarize
@@ -262,10 +274,12 @@ Stockage : au moins 22 Go d'espace libre sur le volume contenant votre profil Ch
   </div>
 </div>
 
+Notes:
+
 
 ##==##
 
-<!-- .slide: data-state="proofread-lema" -->
+<!-- .slide: data-state="proofread-lema" data-type-show="on-stage"-->
 
 # Let's Proofread
 
@@ -281,19 +295,27 @@ Stockage : au moins 22 Go d'espace libre sur le volume contenant votre profil Ch
   </div>
 </div>
 
+Notes:
+J'ecri come un gro cochont
+
 ##==##
 
-<!-- .slide: data-state="vision-lema out-vision-tema" -->
+<!-- .slide: data-state="vision-lema out-vision-tema" data-type-show="on-stage"-->
 
 # Let's See
 
-<div style="display: flex; gap: 40px; align-items: center; width: 100%;">
-  <img src="./assets/images/lema-vision.png" alt="lema" style="height: 400px;" />
-  <div style="flex-grow: 1; display: flex; flex-direction: row; gap: 16px;">
-    <camera-component id="camera-lema"></camera-component>
-    <chat-component data-id="lema-vision"></chat-component>
-  </div>
+<div class="grid-vision">
+    <img src="./assets/images/lema-vision.png" alt="lema" style="height: 400px; grid-area: lema; align-self:center; margin:auto;" />
+    <camera-component id="camera-lema" style="grid-area:camera; align-self:center;"></camera-component>
+    <chat-component data-id="lema-vision" style="grid-area:chat;"></chat-component>
 </div>
+
+
+
+Notes:
+Décris moi l'image
+Combien il y a de doigts affichés
+Est ce que les gens ont l'air content ?
 
 ##==##
 
@@ -304,33 +326,35 @@ Stockage : au moins 22 Go d'espace libre sur le volume contenant votre profil Ch
 
 ##==##
 
-<!-- .slide: data-state="tema-vision out-vision" -->
+<!-- .slide: data-state="tema-prompt" data-type-show="on-stage"-->
 
 # Let's Chat (with Tema)
 
 <div style="display: flex; gap: 40px; align-items: center; width: 100%;">
   <img src="./assets/images/tema.png" alt="tema" style="height: 500px;" />
   <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 16px;">
-    <!-- Zone de progression de Tema -->
     <div id="tema-progress-container" class="hidden" style="width: 100%; background: rgba(255,255,255,0.1); border-radius: 4px; padding: 10px; display: flex; flex-direction: column; gap: 8px;">
-      <!--<div>
-        <div style="font-size: 12px; color: white; margin-bottom: 2px;" id="tema-status-v">Vision (Moondream2)...</div>
-        <div style="width: 100%; height: 6px; background: rgba(255,255,255,0.2); border-radius: 3px; overflow: hidden;">
-          <div id="tema-progress-v" style="width: 0%; height: 100%; background: #a855f7; transition: width 0.3s;"></div>
-        </div>
-      </div>-->
       <div>
-        <div style="font-size: 12px; color: white; margin-bottom: 2px;" id="tema-status-t">Texte (Llama-3.2)...</div>
+        <div style="font-size: 12px; color: white; margin-bottom: 2px;" id="tema-status-t">Chargement du modèle...</div>
         <div style="width: 100%; height: 6px; background: rgba(255,255,255,0.2); border-radius: 3px; overflow: hidden;">
           <div id="tema-progress-t" style="width: 0%; height: 100%; background: #22c55e; transition: width 0.3s;"></div>
         </div>
       </div>
     </div>
-    <div style="display: flex; flex-direction: row; gap: 16px; width: 100%;">
-      <!-- VISION DÉSACTIVÉE <camera-component id="camera-tema"></camera-component> -->
-      <chat-component data-id="tema-vision"></chat-component>
-    </div>
+    <chat-component data-id="tema-prompt"></chat-component>
   </div>
+</div>
+
+##==##
+
+<!-- .slide: data-state="tema-multimodal" data-type-show="on-stage"-->
+
+# Let's See (with Tema)
+
+<div class="grid-vision">
+    <img src="./assets/images/tema-vision.png" alt="tema" style="height: 400px;  grid-area: lema; align-self:center; margin:auto;" />
+    <camera-component id="camera-tema" style="grid-area:camera; align-self:center;"></camera-component>
+    <chat-component data-id="tema-multimodal" style="grid-area:chat;"></chat-component>
 </div>
 
 ##==##
@@ -350,7 +374,7 @@ Compatibilité avec les navigateurs
 
 ##==##
 
-<!-- .slide: class="transition mask" data-state="out-vision-tema" data-background="./assets/images/lema-tema-conclusion.png"  -->
+<!-- .slide: class="transition mask" data-state="out-vision-tema" data-background="./assets/images/lema-tema-conclusion.png" data-type-show="on-stage" -->
 
 # CONCLUSION
 

@@ -80,6 +80,17 @@ body[data-theme='lema'] {
   animation: fadeInBlur 0.6s ease-out;
 }
 
+.reveal .slides section .grid-vision{
+  margin-top:-250px;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-areas: 'camera lema'
+        'camera chat'; 
+  grid-template-columns: 400px 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
 @keyframes fadeInBlur {
   0% { filter: blur(10px); opacity: 0; transform: scale(0.95); }
   100% { filter: blur(0); opacity: 1; transform: scale(1); }
