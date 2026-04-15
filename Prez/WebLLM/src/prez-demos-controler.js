@@ -22,7 +22,8 @@ const REWRITE_LEMA = 4;
 const SUMMARIZE_LEMA = 5;
 const PROOFREAD_LEMA = 6;
 const VISION_LEMA = 7;
-const TEMA_VISION = 8;
+const TEMA_PROMPT = 8;
+const TEMA_MULTIMODAL = 9;
 export class PrezDemosControler {
 
 
@@ -115,6 +116,14 @@ export class PrezDemosControler {
                 await this.#promptControler.downloadMissingAPIsIfNeeded();
                 this.#promptControler.updateContextDisplay();
                 this.initChatHandlers();
+
+                // Pré-chargement silencieux du modèle Tema en arrière-plan
+                if (!this.#temaController) {
+                    this.#temaController = new TemaMultimodalController();
+                }
+                this.#temaController.loadModel(null, () => {}).catch(err => {
+                    console.warn('[Tema] Pré-chargement échoué, sera retenté sur le slide:', err);
+                });
             }
 
         })
@@ -139,9 +148,16 @@ export class PrezDemosControler {
             this.#stateDemos = -1;
         })
 
-        Reveal.addEventListener('welcome-lema', () => {
+        Reveal.addEventListener('welcome-lema', async () => {
             this.#stateDemos = WELCOME_LEMA;
             this.#setupWelcomeLemaSlide();
+
+            // Pré-création silencieuse de la session Lema pour éviter la latence au premier message
+            if (!this.#lastSession) {
+                this.#builtInControler.createPromptSession().then(session => {
+                    if (session) this.#lastSession = session;
+                });
+            }
         })
         Reveal.addEventListener('translate-lema', () => {
             this.#stateDemos = TRANSLATE_LEMA;
@@ -168,61 +184,76 @@ export class PrezDemosControler {
             const camEl = document.getElementById('camera-lema');
             await this.#cameraController.setup(camEl);
         })
-        Reveal.addEventListener('tema-vision', async () => {
-            this.#stateDemos = TEMA_VISION;
+        Reveal.addEventListener('tema-prompt', async () => {
+            this.#stateDemos = TEMA_PROMPT;
             if (!this.#temaController) {
                 this.#temaController = new TemaMultimodalController();
             }
 
-            //const statusElV = document.getElementById('tema-status-v');
+            // S'assurer que le chat handler est enregistré
+            if (this.#chatController) {
+                this.#chatController.refreshChatInstances();
+                const chat = this.#chatController.getChat('tema-prompt');
+                if (chat && !chat.__temaPromptHandlerRegistered) {
+                    chat.__temaPromptHandlerRegistered = true;
+                    this.#arrayChatHandlers.push(
+                        this.#chatController.onUserMessage('tema-prompt', (msg) => this.processUserMessage(msg))
+                    );
+                }
+            }
+
             const statusElT = document.getElementById('tema-status-t');
             const progressContainer = document.getElementById('tema-progress-container');
-            //const progressBarV = document.getElementById('tema-progress-v');
             const progressBarT = document.getElementById('tema-progress-t');
-
-            /*const progressCallbackV = (progress) => {
-                if (progress.status === 'progress') {
-                    if (progressContainer) progressContainer.classList.remove('hidden');
-                    const pct = Math.round(progress.progress || 0);
-                    if (progressBarV) progressBarV.style.width = `${pct}%`;
-                    if (statusElV) statusElV.textContent = `Vision: ${progress.name || ''} (${pct}%)`;
-                }
-            };*/
 
             const progressCallbackT = (progress) => {
                 if (progress.status === 'progress') {
                     if (progressContainer) progressContainer.classList.remove('hidden');
                     const pct = Math.round(progress.progress || 0);
                     if (progressBarT) progressBarT.style.width = `${pct}%`;
-                    if (statusElT) statusElT.textContent = `Texte: ${progress.name || ''} (${pct}%)`;
+                    if (statusElT) statusElT.textContent = `Modèle: ${progress.name || ''} (${pct}%)`;
                 }
             };
 
-            //if (statusElV) statusElV.textContent = 'Initialisation de Tema (Vision)...';
-            if (statusElT) statusElT.textContent = 'Initialisation de Tema (Texte)...';
+            if (statusElT) statusElT.textContent = 'Initialisation de Tema...';
             if (progressContainer) progressContainer.classList.remove('hidden');
 
             try {
-                // VISION DÉSACTIVÉE
-                /*
-                if (!this.#cameraController) {
-                    this.#cameraController = new CameraController();
-                }
-                const camEl = document.getElementById('camera-tema');
-                await this.#cameraController.setup(camEl);
-                */
-
                 await this.#temaController.loadModel(null, progressCallbackT);
-
-                //if (statusElV) statusElV.textContent = '✅ Tema Vision est prêt !';
-                if (statusElT) statusElT.textContent = '✅ Tema Texte est prêt !';
+                if (statusElT) statusElT.textContent = '✅ Tema est prêt !';
                 setTimeout(() => {
                     if (progressContainer) progressContainer.classList.add('hidden');
                 }, 2000);
             } catch (err) {
-                //if (statusElV) statusElV.textContent = `❌ Erreur Vision: ${err.message}`;
-                if (statusElT) statusElT.textContent = `❌ Erreur Texte: ${err.message}`;
+                if (statusElT) statusElT.textContent = `❌ Erreur: ${err.message}`;
             }
+        })
+        Reveal.addEventListener('tema-multimodal', async () => {
+            this.#stateDemos = TEMA_MULTIMODAL;
+            if (!this.#temaController) {
+                this.#temaController = new TemaMultimodalController();
+            }
+
+            // S'assurer que le chat handler est enregistré
+            if (this.#chatController) {
+                this.#chatController.refreshChatInstances();
+                const chat = this.#chatController.getChat('tema-multimodal');
+                if (chat && !chat.__temaMultimodalHandlerRegistered) {
+                    chat.__temaMultimodalHandlerRegistered = true;
+                    this.#arrayChatHandlers.push(
+                        this.#chatController.onUserMessage('tema-multimodal', (msg) => this.processUserMessage(msg))
+                    );
+                }
+            }
+
+            // Le modèle est déjà chargé par tema-prompt (guard dans loadModel)
+            await this.#temaController.loadModel(null, () => {});
+
+            if (!this.#cameraController) {
+                this.#cameraController = new CameraController();
+            }
+            const camEl = document.getElementById('camera-tema');
+            await this.#cameraController.setup(camEl);
         })
         Reveal.addEventListener('out-vision', async () => {
             this.#cameraController?.teardown();
@@ -311,7 +342,7 @@ export class PrezDemosControler {
         this.#arrayChatHandlers.push(this.#chatController.onUserMessage("lema-rewrite", (msg) => this.processUserMessage(msg)));
         this.#arrayChatHandlers.push(this.#chatController.onUserMessage("lema-summarize", (msg) => this.processUserMessage(msg)));
         this.#arrayChatHandlers.push(this.#chatController.onUserMessage("lema-vision", (msg) => this.processUserMessage(msg)));
-        this.#arrayChatHandlers.push(this.#chatController.onUserMessage("tema-vision", (msg) => this.processUserMessage(msg)));
+        // tema-prompt et tema-multimodal sont enregistrés dans leurs événements RevealJS respectifs
     }
 
     removeChatHandlers() {
@@ -453,17 +484,26 @@ export class PrezDemosControler {
                 await this.processStreamToChatAndVoice("lema-vision", VOICE_LEMA, stream);
                 break;
             }
-            case TEMA_VISION: {
-                this.#chatController.setActiveChat("tema-vision", this.#promptControler);
-                // VISION DÉSACTIVÉE
-                const photo = null; // this.#cameraController.getLastPhoto();
-
-                this.#chatController.addUserMessage("tema-vision", msg);
+            case TEMA_PROMPT: {
+                this.#chatController.setActiveChat("tema-prompt", this.#promptControler);
+                this.#chatController.addUserMessage("tema-prompt", msg);
+                try {
+                    const { stream, session } = await this.#temaController.prompt({ text: msg });
+                    await this.processStreamToChatAndVoice("tema-prompt", VOICE_TEMA, stream);
+                } catch (err) {
+                    this.#chatController.addAssistantMessage("tema-prompt", "Erreur lors de l'exécution de Tema: " + err.message);
+                }
+                break;
+            }
+            case TEMA_MULTIMODAL: {
+                this.#chatController.setActiveChat("tema-multimodal", this.#promptControler);
+                const photo = this.#cameraController?.getLastPhoto() || null;
+                this.#chatController.addUserMessage("tema-multimodal", msg);
                 try {
                     const { stream, session } = await this.#temaController.prompt({ text: msg, image: photo });
-                    await this.processStreamToChatAndVoice("tema-vision", VOICE_TEMA, stream);
+                    await this.processStreamToChatAndVoice("tema-multimodal", VOICE_TEMA, stream);
                 } catch (err) {
-                    this.#chatController.addAssistantMessage("tema-vision", "Erreur lors de l'exécution de Tema: " + err.message);
+                    this.#chatController.addAssistantMessage("tema-multimodal", "Erreur lors de l'exécution de Tema: " + err.message);
                 }
                 break;
             }
