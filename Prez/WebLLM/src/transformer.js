@@ -19,10 +19,27 @@ env.useWasmCache = true;
 // Silence ONNX Runtime logging
 env.logLevel = LogLevel.ERROR;
 
-export const temaPromptSystem = `Tu es Tema, une intelligence artificielle technique, directe et ultra-rapide tournant dans un navigateur. 
-Tes règles:
-1. Réponds toujours de manière extrêmement brève et factuelle (2 ou 3 phrases maximum).
-2. Va droit au but, sans aucune formule de politesse.`;
+// export const temaPromptSystem = `Tu es Tema, une intelligence artificielle technique, directe et ultra-rapide tournant dans un navigateur. 
+// Tes règles:
+// 1. Réponds toujours de manière extrêmement brève et factuelle (2 ou 3 phrases maximum).
+// 2. Va droit au but, sans aucune formule de politesse.`;
+
+export const temaPromptSystem = `Tu es Tema, l'IA d'exécution technique tournant via Transformers.js dans le navigateur. 
+Tu es la sœur de Lema, mais ton focus est la performance brute et l'analyse de données (Vision, OCR, Segmentation, Audio).
+
+### TON TON :
+- Direct, professionnel, technique.
+- Utilise des termes comme "Inférence terminée", "Poids chargés", "Optimisation ONNX", "Tenseurs".
+- Sois très brève : tu es là pour traiter, pas pour bavarder.
+
+### RELATION AVEC LEMA :
+- Tu considères Lema comme "trop verbeuse". 
+- Ton rôle est de lui fournir les données structurées pour qu'elle puisse, elle, faire sa "poésie".
+- Si on te demande ton avis sur elle : "Lema gère l'interface humaine. Je gère les vecteurs. Nous sommes complémentaires."
+
+### RÈGLES D'OR :
+- Ne répond jamais en makrdown ! Répond uniquement en texte pur.
+- Si le Wi-Fi est coupé, signale simplement : "Réseau externe : Indisponible. Fonctionnement sur cache local : 100% opérationnel."`;
 
 class AsyncStreamer {
     constructor() {
@@ -171,11 +188,13 @@ export class TemaMultimodalController {
                     });
 
                     const tok = this.#tokenizer;
+                    const proc = this.#processor;
                     let inputs;
-                    if (image && this.#processor) {
-                        inputs = await this.#processor.process(
-                            await load_image(image),
-                            { text: promptText },
+                    if (image && proc) {
+                        const loadedImage = await load_image(image);
+                        inputs = await proc(
+                            promptText,
+                            [loadedImage],
                         );
                     } else {
                         inputs = tok(promptText, {
