@@ -306,7 +306,7 @@ sharedContext : lorsque vous écrivez plusieurs sorties, un contexte partagé pe
             length: la longueur de la sortie, avec les valeurs autorisées shorter, as-is (par défaut) et longer.
             sharedContext : lorsque vous réécrivez plusieurs éléments de contenu, un contexte partagé peut aider le modèle à créer un contenu mieux adapté à vos attentes.
             */
-            const result = await rewriter.rewriteStreaming(text);
+            const result = await rewriter.rewriteStreaming(text, {format:'plain-text'});
             log('Réécriture stréamée', 'success');
             return result;
         } catch (e) {
@@ -340,11 +340,34 @@ sharedContext : lorsque vous écrivez plusieurs sorties, un contexte partagé pe
 
 
     /**
-     * 
+     * Pré-crée une session LanguageModel (pour éviter la latence au premier message)
+     * @returns {Promise<Object|null>} la session créée, ou null en cas d'erreur
+     */
+    async createPromptSession() {
+        try {
+            const api = this.#getAPI(KEY_LANGAGE_MODEL);
+            if (!api) return null;
+            const session = await api.create({
+                expectedInputs: [{ type: "text" }, { type: "image" }],
+                initialPrompts: [
+                    { role: 'system', content: LEMA_PROMPT_SYSTEM },
+                ],
+            });
+            this.#lastSession = session;
+            log('Session Lema pré-créée');
+            return session;
+        } catch (e) {
+            log(`Erreur pré-création session: ${e.message}`, 'error');
+            return null;
+        }
+    }
+
+    /**
+     *
      * @param @type {Object}
      * @property {string} text: the text
      * @property {binary} image: the image to analyse
-     * @property {Object} session: the session to continue 
+     * @property {Object} session: the session to continue
      * @returns @type {Object}
      * @property {Object} session : the session used
      * @property {Array<Promise<String>>} streams : the stream of chunks
