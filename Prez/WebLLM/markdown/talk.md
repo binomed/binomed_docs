@@ -1095,12 +1095,23 @@ Lancement de la génération de la réponse avec le modèle de chat multimodal a
 
 ##==##
 
-<!-- .slide: data-background="./assets/images/lema-tema-conclusion.png" data-type-show="on-stage" class="transition mask" data-state="conclusion"  -->
+<!-- .slide: data-background="./assets/images/lema-tema-conclusion.png" data-type-show="on-stage" class="mask" data-state="conclusion show-mic-and-stats"  -->
 
-# CONCLUSION
+# Conclusion
+
+<div style="display: flex; gap: 20px; align-items: flex-start; width: 100%; margin-top: 16px;">
+  <div id="summary-terminal" style="flex: 0 0 400px; background: rgba(0,0,0,0.85); border: 1px solid rgba(168,85,247,0.4); border-radius: 8px; overflow: hidden; font-family: monospace; font-size: 13px; max-height: 440px; display: flex; flex-direction: column;">
+    <div style="background: rgba(168,85,247,0.2); padding: 8px 14px; color: rgba(168,85,247,1); font-weight: bold; border-bottom: 1px solid rgba(168,85,247,0.3); flex-shrink: 0; letter-spacing: 0.05em;">⚙ Pipeline Résumé</div>
+    <div id="summary-steps" style="padding: 10px 14px; overflow-y: auto; flex: 1; display: flex; flex-direction: column; gap: 6px; color: rgba(255,255,255,0.5); font-style: italic;">En attente...</div>
+  </div>
+  <chat-component data-id="lema-conclusion" style="flex: 1; height: 440px;"></chat-component>
+</div>
 
 Notes:
-TODO Laisser Lema faire la conclusion en résumant ce qui vient d'être dit
+* Demander "Lema, fais un résumé de ce qu'on a vu dans cette présentation"
+* Lema répond et déclenche [[ACTION:SUMMARY]]
+* Le terminal affiche les étapes du pipeline en temps réel
+* Collecte slides → Traduction EN → Summarize → Détection langue → Traduction FR → Lecture Lema
 
 
 ##==##

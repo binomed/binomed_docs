@@ -24,6 +24,7 @@ const PROOFREAD_LEMA = 6;
 const VISION_LEMA = 7;
 const TEMA_PROMPT = 8;
 const TEMA_MULTIMODAL = 9;
+const CONCLUSION = 10;
 export class PrezDemosControler {
 
 
@@ -255,6 +256,19 @@ export class PrezDemosControler {
             const camEl = document.getElementById('camera-tema');
             await this.#cameraController.setup(camEl);
         })
+        Reveal.addEventListener('conclusion', async () => {
+            this.#stateDemos = CONCLUSION;
+            if (this.#chatController) {
+                this.#chatController.refreshChatInstances();
+                const chat = this.#chatController.getChat('lema-conclusion');
+                if (chat && !chat.__conclusionHandlerRegistered) {
+                    chat.__conclusionHandlerRegistered = true;
+                    this.#arrayChatHandlers.push(
+                        this.#chatController.onUserMessage('lema-conclusion', (msg) => this.processUserMessage(msg))
+                    );
+                }
+            }
+        })
         Reveal.addEventListener('out-vision', async () => {
             this.#cameraController?.teardown();
         })
@@ -310,6 +324,11 @@ export class PrezDemosControler {
         this.#actionHandler.registerActionHandler('SHOW_STATS', () => {
             log('Action: SHOW_STATS');
             this.#overlayControler.toggleCollapse();
+        });
+
+        this.#actionHandler.registerActionHandler('SUMMARY', () => {
+            log('Action: SUMMARY');
+            this.#executeSummaryWorkflow();
         });
 
         this.#actionHandler.registerActionHandler('TEXT_EXTRACT', () => {
@@ -507,6 +526,18 @@ export class PrezDemosControler {
                 }
                 break;
             }
+            case CONCLUSION: {
+                this.#chatController.setActiveChat("lema-conclusion", this.#promptControler);
+                this.#chatController.addUserMessage("lema-conclusion", msg);
+                let tempSession = null;
+                if (this.#lastSession) {
+                    tempSession = this.#lastSession;
+                }
+                const { stream, session } = await this.#builtInControler.prompt({ text: msg, session: tempSession });
+                this.#lastSession = session;
+                await this.processStreamToChatAndVoice("lema-conclusion", VOICE_LEMA, stream);
+                break;
+            }
 
         }
     }
@@ -636,6 +667,137 @@ export class PrezDemosControler {
                     e.stopPropagation();
                 });
             });
+        }
+    }
+
+    /**
+     * Extrait le texte lisible de tous les slides (h1-h4, p, li — sans notes ni code)
+     * @returns {string}
+     */
+    static #getSlidesText() {
+        const slides = document.querySelectorAll('.reveal .slides section');
+        const parts = [];
+
+        for (const slide of slides) {
+            const clone = slide.cloneNode(true);
+            // Supprimer les notes speaker et les blocs de code
+            clone.querySelectorAll('aside, pre').forEach(el => el.remove());
+            const text = clone.textContent?.replace(/\s+/g, ' ').trim();
+            if (text && text.length > 10) parts.push(text);
+        }
+
+        // Limite à 8000 caractères pour rester dans les limites de l'API Summarizer
+        return parts.join('\n\n').substring(0, 8000);
+    }
+
+    /**
+     * Ajoute une ligne dans le terminal de résumé
+     * @param {HTMLElement} terminalEl
+     * @param {string} msg
+     * @param {'running'|'done'|'error'} status
+     * @returns {HTMLElement} la ligne créée
+     */
+    #addTerminalStep(terminalEl, msg, status = 'running') {
+        if (!terminalEl) return null;
+        // Vider le placeholder si c'est le premier vrai message
+        if (terminalEl.children.length === 1 && terminalEl.firstElementChild?.style.fontStyle === 'italic') {
+            terminalEl.innerHTML = '';
+        }
+        const colors = { running: '#fbbf24', done: '#22c55e', error: '#ef4444' };
+        const icons = { running: '⟳', done: '✓', error: '✗' };
+        const line = document.createElement('div');
+        line.style.cssText = `color:${colors[status]}; display:flex; align-items:center; gap:8px; line-height:1.4;`;
+        line.innerHTML = `<span style="flex-shrink:0;">${icons[status]}</span><span>${msg}</span>`;
+        terminalEl.appendChild(line);
+        terminalEl.scrollTop = terminalEl.scrollHeight;
+        return line;
+    }
+
+    /**
+     * Met à jour une ligne existante du terminal
+     * @param {HTMLElement} lineEl
+     * @param {string} msg
+     * @param {'done'|'error'} status
+     */
+    #updateTerminalStep(lineEl, msg, status) {
+        if (!lineEl) return;
+        const colors = { done: '#22c55e', error: '#ef4444' };
+        const icons = { done: '✓', error: '✗' };
+        lineEl.style.color = colors[status];
+        lineEl.innerHTML = `<span style="flex-shrink:0;">${icons[status]}</span><span>${msg}</span>`;
+    }
+
+    /**
+     * Crée un async generator qui yield un seul chunk de texte
+     * Utilisé pour injecter un texte calculé dans processStreamToChatAndVoice
+     * @param {string} text
+     */
+    async *#makeSingleChunkStream(text) {
+        yield text;
+    }
+
+    /**
+     * Pipeline complet du résumé de présentation :
+     * Collecte slides → Traduction EN → Summarize → Détection langue → Traduction FR → Chat + TTS
+     */
+    async #executeSummaryWorkflow() {
+        const terminalEl = document.getElementById('summary-steps');
+
+        try {
+            // Étape 1 : collecte du texte des slides
+            let line = this.#addTerminalStep(terminalEl, 'Collecte du contenu des slides…', 'running');
+            const slidesText = PrezDemosControler.#getSlidesText();
+            this.#updateTerminalStep(line, `${slidesText.length} caractères collectés depuis les slides`, 'done');
+
+            // Étape 2 : traduction vers l'anglais (nécessaire pour le Summarizer)
+            line = this.#addTerminalStep(terminalEl, 'Traduction vers l\'anglais…', 'running');
+            let englishText = '';
+            const translateStream = await this.#builtInControler.translate(slidesText, 'fr', 'en');
+            for await (const chunk of translateStream) {
+                englishText += chunk;
+            }
+            this.#updateTerminalStep(line, 'Traduction vers l\'anglais terminée', 'done');
+
+            // Étape 3 : résumé en anglais (key-points / medium / plain-text)
+            line = this.#addTerminalStep(terminalEl, 'Génération du résumé (key-points / medium)…', 'running');
+            let summaryText = '';
+            const summaryStream = await this.#builtInControler.summarize(englishText, 'en', {
+                type: 'key-points',
+                format: 'plain-text',
+                length: 'medium'
+            });
+            for await (const chunk of summaryStream) {
+                summaryText += chunk;
+            }
+            this.#updateTerminalStep(line, 'Résumé généré', 'done');
+
+            // Étape 4 : détection de la langue du résumé produit
+            line = this.#addTerminalStep(terminalEl, 'Détection de la langue du résumé…', 'running');
+            const { detectedLanguage } = await this.#builtInControler.detectLanguage(summaryText.substring(0, 300));
+            this.#updateTerminalStep(line, `Résumé en : ${detectedLanguage.toUpperCase()}`, 'done');
+
+            // Étape 5 : traduction vers le français si nécessaire
+            let finalText = summaryText;
+            if (detectedLanguage !== 'fr') {
+                line = this.#addTerminalStep(terminalEl, 'Traduction finale vers le français…', 'running');
+                let frenchText = '';
+                const frStream = await this.#builtInControler.translate(summaryText, 'en', 'fr');
+                for await (const chunk of frStream) {
+                    frenchText += chunk;
+                }
+                finalText = frenchText;
+                this.#updateTerminalStep(line, 'Traduction finale terminée', 'done');
+            }
+
+            this.#addTerminalStep(terminalEl, 'Lecture du résumé par Lema', 'done');
+
+            // Injection du résumé dans le chat + TTS via le pipeline standard
+            this.#chatController.setActiveChat('lema-conclusion', this.#promptControler);
+            await this.processStreamToChatAndVoice('lema-conclusion', VOICE_LEMA, this.#makeSingleChunkStream(finalText));
+
+        } catch (err) {
+            log('Erreur workflow résumé:', 'error', err);
+            this.#addTerminalStep(terminalEl, `Erreur : ${err.message}`, 'error');
         }
     }
 

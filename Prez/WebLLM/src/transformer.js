@@ -71,7 +71,7 @@ class AsyncStreamer {
  * - prompt({ text, image })  →  { stream: AsyncGenerator, session: null }
  */
 export class TemaMultimodalController {
-    #worker = new Worker(new URL('./transformer.worker.js', import.meta.url), { type: 'module' });
+    #worker = new Worker(new URL('./transformer.worker.js', import.meta.url));
     #modelLoaded = false;
 
     constructor() { }

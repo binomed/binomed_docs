@@ -3,7 +3,7 @@ export const VOICE_LEMA = "Google français"; // Fr-FR -> Voice for LEMA
 export const VOICE_ENGLISH = "Google US English"; // En-US -> Voice for LEMA
 
 const VOICE_PITCH = 1;
-const VOICE_RATE = 1;
+const VOICE_RATE = 1.1;
 export class SpeechSynthesisControler{
 
     /**
