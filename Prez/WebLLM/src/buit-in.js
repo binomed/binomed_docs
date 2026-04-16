@@ -277,7 +277,7 @@ length: la longueur de la sortie, avec les valeurs autorisées short (par défau
 sharedContext : lorsque vous écrivez plusieurs sorties, un contexte partagé peut aider le modèle à créer du contenu mieux adapté à vos attentes.
              */
 
-            const result = await writer.writeStreaming(text);
+            const result = await writer.writeStreaming(text,{format:"plain-text"});
             log('Écriture stréamée');
             return result;
         } catch (e) {

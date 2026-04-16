@@ -30,6 +30,10 @@ body[data-theme='lema'] {
 
     /* Icons */
   --tc-icon-color: white;
+
+  /* Code */
+  --tc-code-font-size: var(--tc-big-code-font-size);
+  --tc-code-line-height: var(--tc-big-code-line-height);
 }
 
 /* Style des titres avec effet "Glow" discret */
@@ -89,6 +93,15 @@ body[data-theme='lema'] {
         'camera chat'; 
   grid-template-columns: 400px 1fr;
   grid-template-rows: 1fr 1fr;
+}
+
+
+.reveal .slides section {
+    
+    code.hljs.has-highlights table tr:not(.highlight-line){
+        opacity: 0.1;
+    }
+
 }
 
 @keyframes fadeInBlur {
