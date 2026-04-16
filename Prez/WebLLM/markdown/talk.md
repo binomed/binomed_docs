@@ -61,6 +61,10 @@ Notes:
 
 ##==##
 
+<!-- .slide: data-state="hide-mic-and-stats" data-type-show="restit" data-background-video="./assets/videos/lema-welcome.mp4" -->
+
+##==##
+
 <!-- .slide: data-state="hide-mic-and-stats" -->
 
 # Comment ça marche ?
@@ -437,6 +441,10 @@ Je suis à Devoxx devant des développeurs passionés qui veulent en savoir plus
 
 ##==##
 
+<!-- .slide: data-state="hide-mic-and-stats" data-type-show="restit" data-background-video="./assets/videos/lema-translate.mp4" -->
+
+##==##
+
 <!-- .slide: class="with-code-bg-dark" data-type-show="on-stage" data-state="hide-mic-and-stats" -->
 
 # Parlons Code !
@@ -495,6 +503,10 @@ TODO Ajouter plus de langues dans la démo
 Notes:
 * Écris moi une blague sur l'IA Générative  
 * Je voudrais que tu m'écrives un post linkedin à poster pour parler du fait que je donnes une conférence sur l'IA générative sans réseau à Devoxx
+
+##==##
+
+<!-- .slide: data-state="hide-mic-and-stats" data-type-show="restit" data-background-video="./assets/videos/lema-write.mp4" -->
 
 ##==##
 
@@ -559,6 +571,10 @@ TODO Ajouter paramètres shared context + démo
 
 Notes:
 Récupération du texte précédent et demander avec un ton familier et mettre le texte entre ''
+
+##==##
+
+<!-- .slide: data-state="hide-mic-and-stats" data-type-show="restit" data-background-video="./assets/videos/lema-rewrite.mp4" -->
 
 ##==##
 
@@ -652,6 +668,12 @@ TODO Ajouter paramètres shared context + démo
 </div>
 
 Notes:
+Copier collé du Code Of Conduct de la conf
+
+##==##
+
+<!-- .slide: data-state="hide-mic-and-stats" data-type-show="restit" data-background-video="./assets/videos/lema-summarize.mp4" -->
+
 
 ##==##
 
@@ -731,6 +753,10 @@ J'ecri come un gro cochont
 
 ##==##
 
+<!-- .slide: data-state="hide-mic-and-stats" data-type-show="restit" data-background-video="./assets/videos/lema-proofreader.mp4" -->
+
+##==##
+
 <!-- .slide: class="with-code-bg-dark" data-type-show="on-stage" data-state="hide-mic-and-stats out-vison" -->
 
 # Parlons Code !
@@ -794,6 +820,10 @@ Notes:
 Décris moi l'image
 Combien il y a de doigts affichés
 Est ce que les gens ont l'air content ?
+
+##==##
+
+<!-- .slide: data-state="hide-mic-and-stats" data-type-show="restit" data-background-video="./assets/videos/lema-vision.mp4" -->
 
 
 ##==##
@@ -882,6 +912,10 @@ Notes:
 
 ##==##
 
+<!-- .slide: data-state="hide-mic-and-stats" data-type-show="restit" data-background-video="./assets/videos/tema-welcome.mp4" -->
+
+##==##
+
 <!-- .slide: data-state="tema-multimodal" data-type-show="on-stage"-->
 
 # Let's See (with Tema)
@@ -896,6 +930,10 @@ Notes:
 Décris moi l'image
 Combien il y a de doigts affichés
 Est ce que les gens ont l'air content ?
+
+##==##
+
+<!-- .slide: data-state="hide-mic-and-stats" data-type-show="restit" data-background-video="./assets/videos/tema-vision.mp4" -->
 
 ##==##
 
@@ -1113,10 +1151,13 @@ Notes:
 * Le terminal affiche les étapes du pipeline en temps réel
 * Collecte slides → Traduction EN → Summarize → Détection langue → Traduction FR → Lecture Lema
 
+##==##
+
+<!-- .slide: data-state="hide-mic-and-stats" data-type-show="restit" data-background-video="./assets/videos/lema-fin.mp4" -->
 
 ##==##
 
-<!-- .slide: class="speaker-slide" data-state="out-gemma" -->
+<!-- .slide: class="speaker-slide" data-state="out-gemma" data-type-show="on-stage" -->
 
 <div class="speaker-slide">
 
