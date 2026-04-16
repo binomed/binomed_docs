@@ -1095,16 +1095,17 @@ Lancement de la génération de la réponse avec le modèle de chat multimodal a
 
 ##==##
 
-<!-- .slide: class="transition mask" data-state="conclusion" data-background="./assets/images/lema-tema-conclusion.png" data-type-show="on-stage" -->
+<!-- .slide: data-background="./assets/images/lema-tema-conclusion.png" data-type-show="on-stage" class="transition mask" data-state="conclusion"  -->
 
 # CONCLUSION
 
 Notes:
 TODO Laisser Lema faire la conclusion en résumant ce qui vient d'être dit
 
+
 ##==##
 
-<!-- .slide: class="speaker-slide" data-state="out-gemma " -->
+<!-- .slide: class="speaker-slide" data-state="out-gemma" -->
 
 <div class="speaker-slide">
 
