@@ -65,36 +65,62 @@ class TemaWorkerController {
     constructor() { }
 
     async loadModel(progressCallback) {
-        if (this.#model) return;
-
-        const { id, dtype, type } = this.#config;
-        console.log(`[Tema Worker] Chargement du modèle : ${id} (${dtype})`);
-
-        this.#tokenizer = await AutoTokenizer.from_pretrained(id, { progress_callback: progressCallback });
-
-        // Gemma 4 stocke son chat_template dans un fichier .jinja séparé
-        if (type === 'multimodal' && !this.#tokenizer.chat_template) {
-            const templateUrl = `${env.localModelPath}${id}/chat_template.jinja`;
-            const resp = await fetch(templateUrl);
-            if (resp.ok) {
-                this.#tokenizer.chat_template = await resp.text();
-            }
+        if (this.#model) {
+            console.log('[Tema Worker] Modèle déjà en mémoire, skip.');
+            return;
         }
 
-        if (type === 'multimodal') {
-            this.#processor = await AutoProcessor.from_pretrained(id, { progress_callback: progressCallback });
-            this.#model = await AutoModelForImageTextToText.from_pretrained(id, {
-                device: 'webgpu',
-                dtype,
-                progress_callback: progressCallback,
-            });
-        } else {
-            const { AutoModelForCausalLM } = await import('@huggingface/transformers');
-            this.#model = await AutoModelForCausalLM.from_pretrained(id, {
-                device: 'webgpu',
-                dtype,
-                progress_callback: progressCallback,
-            });
+        const { id, dtype, type } = this.#config;
+        console.log(`[Tema Worker] === Démarrage chargement ===`);
+        console.log(`[Tema Worker] Modèle : ${id} | dtype : ${dtype} | type : ${type}`);
+
+        try {
+            console.log('[Tema Worker] Étape 1/3 : Chargement du Tokenizer...');
+            this.#tokenizer = await AutoTokenizer.from_pretrained(id, { progress_callback: progressCallback });
+            console.log('[Tema Worker] Tokenizer chargé.');
+
+            // Gemma 4 stocke son chat_template dans un fichier .jinja séparé
+            if (type === 'multimodal' && !this.#tokenizer.chat_template) {
+                const templateUrl = `${env.localModelPath}${id}/chat_template.jinja`;
+                console.log(`[Tema Worker] Récupération chat_template depuis : ${templateUrl}`);
+                const resp = await fetch(templateUrl);
+                console.log(`[Tema Worker] Réponse chat_template : ${resp.status} ${resp.statusText}`);
+                if (resp.ok) {
+                    this.#tokenizer.chat_template = await resp.text();
+                    console.log('[Tema Worker] chat_template appliqué.');
+                } else {
+                    console.warn('[Tema Worker] chat_template introuvable, le tokenizer utilisera son template par défaut.');
+                }
+            }
+
+            if (type === 'multimodal') {
+                console.log('[Tema Worker] Étape 2/3 : Chargement du Processor...');
+                this.#processor = await AutoProcessor.from_pretrained(id, { progress_callback: progressCallback });
+                console.log('[Tema Worker] Processor chargé.');
+
+                console.log('[Tema Worker] Étape 3/3 : Chargement du modèle (WebGPU)...');
+                this.#model = await AutoModelForImageTextToText.from_pretrained(id, {
+                    device: 'webgpu',
+                    dtype,
+                    progress_callback: progressCallback,
+                });
+                console.log('[Tema Worker] Modèle chargé sur WebGPU.');
+            } else {
+                console.log('[Tema Worker] Étape 2/3 : Pas de processor (modèle causal).');
+                console.log('[Tema Worker] Étape 3/3 : Chargement du modèle (WebGPU)...');
+                const { AutoModelForCausalLM } = await import('@huggingface/transformers');
+                this.#model = await AutoModelForCausalLM.from_pretrained(id, {
+                    device: 'webgpu',
+                    dtype,
+                    progress_callback: progressCallback,
+                });
+                console.log('[Tema Worker] Modèle causal chargé sur WebGPU.');
+            }
+
+            console.log('[Tema Worker] === Chargement terminé avec succès ===');
+        } catch (err) {
+            console.error('[Tema Worker] Erreur durant le chargement:', err);
+            throw err;
         }
     }
 

@@ -885,7 +885,7 @@ Précisé que l'audio fonctionne aussi (mais pas de démo pour le moment)
 
 ##==##
 
-<!-- .slide: data-state="tema-prompt out-vision-tema" data-type-show="on-stage"-->
+<!-- .slide: data-state="tema-prompt out-vision-tema show-mic-and-stats" data-type-show="on-stage"-->
 
 # Let's Chat (with Tema)
 

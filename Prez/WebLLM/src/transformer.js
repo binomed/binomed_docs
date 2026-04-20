@@ -71,10 +71,21 @@ class AsyncStreamer {
  * - prompt({ text, image })  →  { stream: AsyncGenerator, session: null }
  */
 export class TemaMultimodalController {
-    #worker = new Worker(new URL('./transformer.worker.js', import.meta.url));
+    #worker = null;
     #modelLoaded = false;
 
-    constructor() { }
+    constructor() {
+        console.log('[Tema] Création du Worker...');
+        this.#worker = new Worker(new URL('./transformer.worker.js', import.meta.url), { type: 'module' });
+        this.#worker.onerror = (err) => {
+            console.error('[Tema] Erreur Worker non gérée:');
+            console.error('  message  :', err.message);
+            console.error('  filename :', err.filename);
+            console.error('  lineno   :', err.lineno, '| colno:', err.colno);
+            console.error('  raw event:', err);
+        };
+        console.log('[Tema] Worker créé.');
+    }
 
     /**
      * Charge le modèle dans le Worker.
@@ -85,15 +96,21 @@ export class TemaMultimodalController {
      * @returns {Promise<void>}
      */
     async loadModel(progressCallbackV, progressCallbackT) {
-        if (this.#modelLoaded) return;
+        if (this.#modelLoaded) {
+            console.log('[Tema] Modèle déjà chargé, skip.');
+            return;
+        }
 
+        console.log('[Tema] Envoi LOAD_MODEL au Worker...');
         return new Promise((resolve, reject) => {
             const handler = ({ data }) => {
                 const { type } = data;
+                console.log('[Tema] Message reçu du Worker:', type, data.progress ?? data.error ?? '');
 
                 if (type === 'LOAD_PROGRESS') {
                     if (progressCallbackT) progressCallbackT(data.progress);
                 } else if (type === 'LOAD_COMPLETE') {
+                    console.log('[Tema] Modèle chargé avec succès.');
                     this.#modelLoaded = true;
                     this.#worker.removeEventListener('message', handler);
                     if (progressCallbackV) {
@@ -101,6 +118,7 @@ export class TemaMultimodalController {
                     }
                     resolve();
                 } else if (type === 'LOAD_ERROR') {
+                    console.error('[Tema] Erreur de chargement:', data.error);
                     this.#worker.removeEventListener('message', handler);
                     reject(new Error(data.error));
                 }
