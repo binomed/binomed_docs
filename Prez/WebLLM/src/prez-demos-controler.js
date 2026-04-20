@@ -321,6 +321,15 @@ export class PrezDemosControler {
             }
         });
 
+        this.#actionHandler.registerActionHandler('WIFI_ON', () => {
+            log('Action: WIFI_ON');
+            fetch('http://localhost:3000/activate-wifi', { method: 'POST' });
+            const lemaImg = document.getElementById('lema-image-active') || document.getElementById('lema-image');
+            if (lemaImg) {
+                lemaImg.src = './assets/images/lema-active.png';
+            }
+        });
+
         this.#actionHandler.registerActionHandler('SHOW_STATS', () => {
             log('Action: SHOW_STATS');
             this.#overlayControler.toggleCollapse();

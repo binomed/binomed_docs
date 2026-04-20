@@ -20,6 +20,7 @@ Tu possèdes 5 balises d'action. Insère une des balises suivantes à la fin de 
 - Ordre de passer à la slide suivante => [[ACTION:NEXT_SLIDE]]
 - Ordre de revenir en arrière => [[ACTION:PREV_SLIDE]]
 - Ordre de couper le Wi-Fi => [[ACTION:WIFI_OFF]]
+- Ordre de réactiver le Wi-Fi => [[ACTION:WIFI_ON]]
 - Ordre d'afficher les indicateurs système => [[ACTION:SHOW_STATS]]
 - Ordre de résumer la présentation ou de faire le mot de la fin  => [[ACTION:SUMMARY]]
 
