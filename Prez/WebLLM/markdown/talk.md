@@ -1172,9 +1172,9 @@ Notes:
 ![](./assets/images/jf.jpg 'speaker')
 
 
-![](https://openfeedback.io/kQpmz21AHD2FVBj4bcup/2026-02-03/VbN2C9Cqcp2J7PCT3GUq 'tc-qrcode badge text-below')Open Feedback
+![](https://bit.ly/4cUOHVr 'tc-qrcode badge text-below')Feedback Devoxx
 
-![](https://shorturl.at/yFtjr 'tc-qrcode company text-below')slides : https://shorturl.at/yFtjr
+![](https://jef.binomed.fr/binomed_docs/Prezs/WebLLM/index.html#/ 'tc-qrcode company text-below')slides : https://bit.ly/4mEXRJ9
 
 
 </div>
