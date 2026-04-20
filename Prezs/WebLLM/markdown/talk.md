@@ -1120,6 +1120,24 @@ Lancement de la génération de la réponse avec le modèle de chat multimodal a
 
 ##==##
 
+<!-- .slide: class="tc-multiple-columns" data-state="hide-mic-and-stats" -->
+
+##++##
+
+# What else ?
+
+* Prompt API polyfill
+* Web MCP
+##++##
+
+##++## data-background="./assets/images/web-mcp.png"
+##++##
+
+Notes: 
+Polyfill de la Prompt API pour les navigateurs qui ne la supportent pas encore (ex: Safari) mais utilisant pour le moment le cloud -> donc pas offline et oblige une utilisation de firebase
+
+##==##
+
 # Références
 
 * [Prompt API](https://developer.chrome.com/docs/ai/prompt-api)
@@ -1146,14 +1164,17 @@ Lancement de la génération de la réponse avec le modèle de chat multimodal a
 </div>
 
 Notes:
-* Demander "Lema, fais un résumé de ce qu'on a vu dans cette présentation"
-* Lema répond et déclenche [[ACTION:SUMMARY]]
-* Le terminal affiche les étapes du pipeline en temps réel
-* Collecte slides → Traduction EN → Summarize → Détection langue → Traduction FR → Lecture Lema
+* Je te laisse le mot de la fin
 
 ##==##
 
 <!-- .slide: data-state="hide-mic-and-stats" data-type-show="restit" data-background-video="./assets/videos/lema-fin.mp4" -->
+
+##==##
+
+<!-- .slide: class="transition" -->
+
+# Ma Conclusion
 
 ##==##
 
@@ -1172,9 +1193,9 @@ Notes:
 ![](./assets/images/jf.jpg 'speaker')
 
 
-![](https://openfeedback.io/kQpmz21AHD2FVBj4bcup/2026-02-03/VbN2C9Cqcp2J7PCT3GUq 'tc-qrcode badge text-below')Open Feedback
+![](https://bit.ly/4cUOHVr 'tc-qrcode badge text-below')Feedback Devoxx
 
-![](https://shorturl.at/yFtjr 'tc-qrcode company text-below')slides : https://shorturl.at/yFtjr
+![](https://jef.binomed.fr/binomed_docs/Prezs/WebLLM/index.html#/ 'tc-qrcode company text-below')slides : https://bit.ly/4mEXRJ9
 
 
 </div>
