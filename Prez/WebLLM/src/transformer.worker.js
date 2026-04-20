@@ -151,9 +151,10 @@ class TemaWorkerController {
                 ...inputs,
                 max_new_tokens: 512,
                 do_sample: true,
-                temperature: 1.0,
-                top_p: 0.95,
-                top_k: 64,
+                temperature: 0.5,
+                top_p: 0.9,
+                top_k: 50,
+                repetition_penalty: 1.2,
                 streamer: txtStreamer,
             });
         } else {
@@ -180,8 +181,10 @@ class TemaWorkerController {
                 ...inputs,
                 max_new_tokens: 512,
                 do_sample: true,
-                temperature: 0.7,
-                top_p: 0.9,
+                temperature: 0.5,
+                top_p: 0.85,
+                top_k: 50,
+                repetition_penalty: 1.2,
                 streamer: txtStreamer,
             });
         }
