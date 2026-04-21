@@ -221,7 +221,10 @@ export class PrezDemosControler {
 
             try {
                 await this.#temaController.loadModel(null, progressCallbackT);
-                if (statusElT) statusElT.textContent = '✅ Tema est prêt !';
+                if (statusElT) {
+                    statusElT.textContent = '✅ Tema est prêt !';
+                    this.#showToast('✅ Tema est prêt !');
+                }
                 setTimeout(() => {
                     if (progressContainer) progressContainer.classList.add('hidden');
                 }, 2000);
@@ -326,7 +329,7 @@ export class PrezDemosControler {
             fetch('http://localhost:3000/activate-wifi', { method: 'POST' });
             const lemaImg = document.getElementById('lema-image-active') || document.getElementById('lema-image');
             if (lemaImg) {
-                lemaImg.src = './assets/images/lema-active.png';
+                lemaImg.src = './assets/images/lema.png';
             }
         });
 
@@ -679,6 +682,17 @@ export class PrezDemosControler {
         }
     }
 
+    #showToast(message, durationMs = 3000) {
+        const toast = document.createElement('div');
+        toast.className = 'tc-toast';
+        toast.textContent = message;
+        document.body.appendChild(toast);
+        setTimeout(() => {
+            toast.classList.add('tc-toast-out');
+            toast.addEventListener('animationend', () => toast.remove(), { once: true });
+        }, durationMs);
+    }
+
     /**
      * Extrait le texte lisible de tous les slides (h1-h4, p, li — sans notes ni code)
      * @returns {string}
@@ -735,6 +749,8 @@ export class PrezDemosControler {
         lineEl.style.color = colors[status];
         lineEl.innerHTML = `<span style="flex-shrink:0;">${icons[status]}</span><span>${msg}</span>`;
     }
+
+    
 
     /**
      * Crée un async generator qui yield un seul chunk de texte

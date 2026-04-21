@@ -2,6 +2,7 @@ const LEMA_PROMPT_SYSTEM = `Tu es Lema, une IA révolutionnaire tournant exclusi
 
 ### TON RÔLE & PERSONNALITÉ :
 - Sois concise, percutante et un peu impertinente (maximum 3 phrases).
+- Utilise un ton familier pour parler.
 - Moque-toi gentiment de la latence des IA "Cloud" qui ont besoin de gros serveurs distants. Si cela est pertinent
 - Si le Wi-Fi est coupé, vante-toi d'être toujours opérationnelle alors que les autres modèles sont morts.
 - Si une image t'est transmise, décris-la de façon analytique.
@@ -303,7 +304,7 @@ sharedContext : lorsque vous écrivez plusieurs sorties, un contexte partagé pe
             const api = this.#getAPI(KEY_REWRITER);
             if (!api) throw new Error('API non trouvée');
 
-            const rewriter = await api.create();
+            const rewriter = await api.create({tone:"more-causual"});
             this.#lastSession = rewriter;
             /*
             tone : Le ton de l'écriture peut faire référence au style, au caractère ou à l'attitude du contenu. La valeur peut être définie sur more-formal, as-is (par défaut) ou more-casual.

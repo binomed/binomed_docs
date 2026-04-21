@@ -3,6 +3,12 @@
 
 *Jean-François Garreau | Devoxx FR 2026*
 
+Notes:
+Poser des questions -> 
+* Qui utiliser des SLM ?
+* Qui crois en leur potentiels ?
+* Qui as déjà entendu parlé des built-in APIs ?
+
 ##==##
 
 <!-- .slide: class="speaker-slide" data-state="out-gemma hide-mic-and-stats" -->
@@ -309,7 +315,7 @@ await Summarizer.create({
 ## Prompt API - Récupération d'une session de chat
 
 ```javascript [1|2|3-6|1-7]
-const session = await api.create({
+const session = await LanguageModel.create({
     expectedInputs: [{ type: "text" }],
     initialPrompts: [{
             role: 'system',
@@ -327,7 +333,7 @@ const session = await api.create({
 ## Prompt API - Récupération d'une session de chat
 
 ```javascript
-const session = await api.create({
+const session = await LanguageModel.create({
     expectedInputs: [{ type: "text" }],
     initialPrompts: [{
             role: 'system',
@@ -587,9 +593,9 @@ Récupération du texte précédent et demander avec un ton familier et mettre l
 ```javascript [1|2-6|8-10]
 const rewriterSession = await Rewriter.create();
 const params = {
-  tone : 'formal', //'neutral' (par défaut) 'casual'
-  format: 'markdown', // (par défaut) et 'plain-text'
-  length: 'short', // (par défaut) et 'medium' et 'long'
+  tone : 'more-formal', //'as-is' (par défaut) 'more-casual'
+  format: 'markdown', // (par défaut), 'as-is' et 'plain-text'
+  length: 'as-is', // (par défaut) et 'shorter' et 'longer'
 }
 
 const result = await rewriterSession.rewriteStreaming(text,...params);
@@ -611,9 +617,9 @@ TODO Ajouter paramètres shared context + démo
 ```javascript
 const rewriterSession = await Rewriter.create();
 const params = {
-  tone : 'formal', //'neutral' (par défaut) 'casual'
-  format: 'markdown', // (par défaut) et 'plain-text'
-  length: 'short', // (par défaut) et 'medium' et 'long'
+  tone : 'more-formal', //'as-is' (par défaut) 'more-casual'
+  format: 'markdown', // (par défaut), 'as-is' et 'plain-text'
+  length: 'as-is', // (par défaut) et 'shorter' et 'longer'
 }
 
 const result = rewriterSession.rewriteStreaming(text,...params);
@@ -669,6 +675,7 @@ TODO Ajouter paramètres shared context + démo
 
 Notes:
 Copier collé du Code Of Conduct de la conf
+TODO : intégrer une traduction streamée phrase par phrase pour plus de cohérence et au file du stream de l'autre
 
 ##==##
 

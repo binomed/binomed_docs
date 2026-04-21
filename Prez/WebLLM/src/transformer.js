@@ -143,6 +143,7 @@ export class TemaMultimodalController {
         let imageData = null;
         if (image instanceof HTMLCanvasElement) {
             imageData = image.toDataURL('image/jpeg');
+            text+=". Contente toi juste de décrire l'image, ne donne aucun détaille technique, reste concentré uniquement les détails trouvés et la description de l'image donnée."
         }
 
         const handler = ({ data }) => {
