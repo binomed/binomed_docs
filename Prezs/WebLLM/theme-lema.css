@@ -108,3 +108,38 @@ body[data-theme='lema'] {
   0% { filter: blur(10px); opacity: 0; transform: scale(0.95); }
   100% { filter: blur(0); opacity: 1; transform: scale(1); }
 }
+
+/* Toast notification */
+.tc-toast {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.75rem 1.25rem;
+    background: #1e293b;
+    color: #f8fafc;
+    border-left: 4px solid #22c55e;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    font-size: 1rem;
+    font-family: sans-serif;
+    animation: tc-toast-in 0.3s ease forwards;
+    pointer-events: none;
+}
+
+.tc-toast.tc-toast-out {
+    animation: tc-toast-out 0.4s ease forwards;
+}
+
+@keyframes tc-toast-in {
+    from { transform: translateY(2rem); opacity: 0; }
+    to   { transform: translateY(0);    opacity: 1; }
+}
+
+@keyframes tc-toast-out {
+    from { transform: translateY(0);    opacity: 1; }
+    to   { transform: translateY(2rem); opacity: 0; }
+}

@@ -303,7 +303,7 @@ sharedContext : lorsque vous écrivez plusieurs sorties, un contexte partagé pe
             const api = this.#getAPI(KEY_REWRITER);
             if (!api) throw new Error('API non trouvée');
 
-            const rewriter = await api.create();
+            const rewriter = await api.create({tone:"more-causual"});
             this.#lastSession = rewriter;
             /*
             tone : Le ton de l'écriture peut faire référence au style, au caractère ou à l'attitude du contenu. La valeur peut être définie sur more-formal, as-is (par défaut) ou more-casual.
