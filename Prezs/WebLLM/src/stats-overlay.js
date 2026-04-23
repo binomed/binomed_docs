@@ -215,6 +215,7 @@ customElements.define('stats-widget', StatsWidget);
 
 export class OverlayStats{
     #overlayWidget;
+    #collapsed = true;
 
     constructor(){
     }
@@ -233,6 +234,7 @@ export class OverlayStats{
 
             // Auto-injection en overlay fixe dans la présentation
             this.#overlayWidget = document.createElement('stats-widget');
+            this.#overlayWidget._collapsed = this.#collapsed;
             Object.assign(this.#overlayWidget.style, {
                 position: 'fixed',
                 top: '16px',
@@ -273,6 +275,7 @@ export class OverlayStats{
      * Toggle le collapse du widget
      */
     toggleCollapse() {
+        this.#collapsed = !this.#collapsed;
         if (this.#overlayWidget) {
             this.#overlayWidget.toggleCollapse();
         }

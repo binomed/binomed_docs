@@ -73,6 +73,7 @@ class AsyncStreamer {
 export class TemaMultimodalController {
     #worker = null;
     #modelLoaded = false;
+    #loadingPromise = null;
 
     constructor() {
         console.log('[Tema] Création du Worker...');
@@ -100,9 +101,13 @@ export class TemaMultimodalController {
             console.log('[Tema] Modèle déjà chargé, skip.');
             return;
         }
+        if (this.#loadingPromise) {
+            console.log('[Tema] Chargement déjà en cours, attente de la même Promise.');
+            return this.#loadingPromise;
+        }
 
         console.log('[Tema] Envoi LOAD_MODEL au Worker...');
-        return new Promise((resolve, reject) => {
+        this.#loadingPromise = new Promise((resolve, reject) => {
             const handler = ({ data }) => {
                 const { type } = data;
                 console.log('[Tema] Message reçu du Worker:', type, data.progress ?? data.error ?? '');
@@ -112,6 +117,7 @@ export class TemaMultimodalController {
                 } else if (type === 'LOAD_COMPLETE') {
                     console.log('[Tema] Modèle chargé avec succès.');
                     this.#modelLoaded = true;
+                    this.#loadingPromise = null;
                     this.#worker.removeEventListener('message', handler);
                     if (progressCallbackV) {
                         progressCallbackV({ status: 'progress', progress: 100, name: 'Model ready' });
@@ -119,6 +125,7 @@ export class TemaMultimodalController {
                     resolve();
                 } else if (type === 'LOAD_ERROR') {
                     console.error('[Tema] Erreur de chargement:', data.error);
+                    this.#loadingPromise = null;
                     this.#worker.removeEventListener('message', handler);
                     reject(new Error(data.error));
                 }
@@ -127,6 +134,7 @@ export class TemaMultimodalController {
             this.#worker.addEventListener('message', handler);
             this.#worker.postMessage({ type: 'LOAD_MODEL' });
         });
+        return this.#loadingPromise;
     }
 
     /**
