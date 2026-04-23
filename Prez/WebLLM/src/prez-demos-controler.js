@@ -122,9 +122,11 @@ export class PrezDemosControler {
                 if (!this.#temaController) {
                     this.#temaController = new TemaMultimodalController();
                 }
-                this.#temaController.loadModel(null, () => {}).catch(err => {
-                    console.warn('[Tema] Pré-chargement échoué, sera retenté sur le slide:', err);
-                });
+                this.#temaController.loadModel(null, () => {})
+                    .then(() => this.#showToast('✅ Tema est prêt !'))
+                    .catch(err => {
+                        console.warn('[Tema] Pré-chargement échoué, sera retenté sur le slide:', err);
+                    });
             }
 
         })
@@ -221,10 +223,7 @@ export class PrezDemosControler {
 
             try {
                 await this.#temaController.loadModel(null, progressCallbackT);
-                if (statusElT) {
-                    statusElT.textContent = '✅ Tema est prêt !';
-                    this.#showToast('✅ Tema est prêt !');
-                }
+                if (statusElT) statusElT.textContent = '✅ Tema est prêt !';
                 setTimeout(() => {
                     if (progressContainer) progressContainer.classList.add('hidden');
                 }, 2000);
@@ -307,11 +306,13 @@ export class PrezDemosControler {
         // Enregistrer les handlers pour chaque action disponible
         this.#actionHandler.registerActionHandler('NEXT_SLIDE', () => {
             log('Action: NEXT_SLIDE');
+            this.#showToast('next slide action ➡️');
             Reveal.next();
         });
 
         this.#actionHandler.registerActionHandler('PREV_SLIDE', () => {
             log('Action: PREV_SLIDE');
+            this.#showToast('prev slide action ⬅️');
             Reveal.prev();
         });
 
@@ -322,6 +323,7 @@ export class PrezDemosControler {
             if (lemaImg) {
                 lemaImg.src = './assets/images/lema-offline.png';
             }
+            this.#showToast('Wifi off action ❌');
         });
 
         this.#actionHandler.registerActionHandler('WIFI_ON', () => {
@@ -331,16 +333,19 @@ export class PrezDemosControler {
             if (lemaImg) {
                 lemaImg.src = './assets/images/lema.png';
             }
+            this.#showToast('wifi on action 🛜');
         });
 
         this.#actionHandler.registerActionHandler('SHOW_STATS', () => {
             log('Action: SHOW_STATS');
             this.#overlayControler.toggleCollapse();
+            this.#showToast('show stats action 📊');
         });
 
         this.#actionHandler.registerActionHandler('SUMMARY', () => {
             log('Action: SUMMARY');
             this.#executeSummaryWorkflow();
+            this.#showToast('summary action 📝');
         });
 
         this.#actionHandler.registerActionHandler('TEXT_EXTRACT', () => {
@@ -683,6 +688,7 @@ export class PrezDemosControler {
     }
 
     #showToast(message, durationMs = 3000) {
+        console.log("Toast recieve", message);
         const toast = document.createElement('div');
         toast.className = 'tc-toast';
         toast.textContent = message;
