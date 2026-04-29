@@ -1127,7 +1127,7 @@ Bon voiture 11, et mine ma place ?
 
 <!-- .slide: data-type-show="prez" -->
 
-# A oui et quel siège ?
+# Ah oui et quel siège ?
 
 ![center h-600](./assets/images/billet-train.png)
 
