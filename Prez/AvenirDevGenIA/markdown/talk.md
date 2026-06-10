@@ -3,7 +3,7 @@
 
 ### Chronique d'une révolution industrielle de notre métier.
 
-*Jean-François Garreau | Avril 2026*
+*Jean-François Garreau | DevQuest 2026*
 
 ##==##
 
@@ -29,6 +29,8 @@
 
 ![](./assets/images/gde.png 'badge')
 
+![](./assets/images/et-si-on-parlait.jpeg 'badge')
+
 
 </div>
 
@@ -43,7 +45,7 @@ source: [unsplash](https://unsplash.com/fr/photos/minifig-lego-bleue-sur-surface
 ##++##
 ## La fin du code est-elle (encore) annoncée ?
 
-<div class="headline-box fragment"><i class="fa-solid fa-newspaper"></i>"Devin, le premier ingénieur IA autonome"</div>
+<div class="headline-box fragment"><i class="fa-solid fa-newspaper"></i>"Anthropic dresse un classement des métiers les plus menacés par l’IA"</div>
 <div class="headline-box fragment" style="transform: rotate(1deg);"><i class="fa-solid fa-newspaper"></i>"ChatGPT remplace les développeur·euses juniors"</div>
 
 * <i class="fa-solid fa-bullhorn text-warning"></i> **Promesse Marketing :** +100% de productivité.
@@ -197,15 +199,23 @@ Chaque abstraction promet la mort du développeur·euse...
 ##==##
 
 <!-- SLIDE 7 .slide: class="transition mask" data-background="./assets/images/exponential-gemini.png" -->
-## On va plus vite... vraiment ?
+## Plus de code, plus vite ?
 
 <div style="display: flex; justify-content: space-around; margin-top: 40px;">
     <div>
-        <span class="big-stat">+55%</span>
-        <br><small style="color:white;">Vitesse (GitHub 2023)<br><i>Sur tâches simples</i></small>
+        <span class="big-stat">+29%</span>
+        <br><small style="color:white;">PR fusionnées en un an (GitHub 2025)<br><i>Accélération record de l'activité globale</i></small>
     </div>    
 </div>
 
+**1 milliard de commits** poussés sur GitHub en 2025 (+25% YoY). L'IA ne remplace pas le dev, elle décuple sa production brute.
+<!-- .element: style="text-align:center; color:white;" -->
+
+
+[A year of record growth](https://github.blog/news-insights/octoverse/octoverse-a-new-developer-joins-github-every-second-as-ai-leads-typescript-to-1/)<!-- .element: style="text-align:center; color:white; text-decoration:underline; " -->
+
+Notes:
+Source : GitHub Octoverse 2025 : "A year of record growth" (Rapport annuel publié fin 2025).
 
 
 ##==##
@@ -213,16 +223,20 @@ Chaque abstraction promet la mort du développeur·euse...
 <!-- SLIDE 7  .slide: class="transition mask" data-background="./assets/images/slow-gemini.png" -->
 ## On va plus vite... vraiment ?
 
-
 <div style="display: flex; justify-content: space-around; margin-top: 40px;">
     <div>
-        <span class="big-stat text-warning">20-45%</span>
-        <br><small style="color:white;">Gain Réel (McKinsey)<br><i>Sur ingénierie globale</i></small>
+        <span class="big-stat">45%</span>
+        <br><small style="color:white;">Perte de temps (Stack Overflow 2025)<br><i>Devs déclarant perdre du temps à déboguer l'IA</i></small>
     </div>
 </div>
 
-⚠️ **Réalité Terrain :** "Le code généré n'est pas du code livré."
-<!-- .element: style="text-align:center;" -->
+⚠️ **Le paradoxe de 2025 :** "L'IA amplifie l'existant. Si vos process sont flous, l'IA produit juste du chaos plus rapidement." (Rapport DORA 2025)
+<!-- .element: style="text-align:center; color:white;" -->
+
+Notes:
+Source 1 : Stack Overflow Developer Survey 2025 (50 000 répondants).
+
+Source 2 : Google Cloud - DORA Report 2025 : "State of AI-assisted Software Development".
 
 ##==##
 
@@ -257,17 +271,23 @@ source: [unsplash](https://unsplash.com/fr/photos/lot-de-canettes-de-boisson-ass
 <!-- .element: class="credits" -->
 ##++##
 ##++##
-## On produit plus, on jette plus
+## L'ivresse du volume
 
-*Source : Étude GitClear (Jan 2024) - 150M lignes de code.*
-
-<span class="big-stat text-danger">+41%</span>
+<span class="big-stat text-danger" style="margin-top:-70px;">x2</span>
 **de Code Churn**
-*(Code écrit puis jeté/modifié < 2 semaines)*
+*(Comparé à l'ère pré-IA)*
 
-* 📉 Explosion de la dette technique.
-* 📋 Moins de réutilisation, plus de copier-coller.
+* 🚨 **Code "Kleenex" :** + de code écrit que compris
+* 📈 **Dette technique exponentielle :** + de copier-coller / - de refactorisation.
+* 📉 **Érosion de la modularité :** Les IA favorisent les "monolithes" longs et répétitifs.
 <!-- .element: class="list-fragment" -->
+
+Notes:
+*Source : Étude GitClear (Jan. 2025/2026) - 250M+ lignes de code.*
+* 🚨 **Code "Kleenex" :** Le code est écrit plus vite qu'il n'est compris.
+* 📈 **Dette technique exponentielle :** Explosion du copier-coller au détriment de la refactorisation.
+* 📉 **Érosion de la modularité :** Les assistants IA favorisent les fichiers "monolithes" longs et répétitifs.
+
 ##++##
 
 
@@ -403,7 +423,6 @@ Boum : Injection de code dans l'entreprise.
 > "Une IA sans contexte est un stagiaire sans onboarding."
 
 **Le défi technique de demain :** <!-- .element: class="fragment" -->
-* **RAG** (Retrieval-Augmented Generation).
 * **Context Window** massive (1M+ tokens).
 * **Knowledge Graph** d'entreprise.
 <!-- .element: class="list-fragment"-->
@@ -804,9 +823,10 @@ Embrassez le changement plutôt que de lutter, accompagnez plutôt qu'imposer, g
 ![](./assets/images/jf.jpg 'speaker')
 
 
-<!--![](https://openfeedback.io/kQpmz21AHD2FVBj4bcup/2026-02-03/VbN2C9Cqcp2J7PCT3GUq 'tc-qrcode badge text-below')Open Feedback-->
+![](https://openfeedback.io/X6Zd1NPDkMkDZHl003Yu/0/cmmchyuaq026101nstgt6t46f 'tc-qrcode badge text-below')Open Feedback
+<!-- .element: style="margin-top: -100px;" -->
 
-![](https://shorturl.at/yFtjr 'tc-qrcode company text-below')slides : https://shorturl.at/yFtjr
-
+![](https://shorturl.at/yFtjr 'tc-qrcode badge text-below')slides : https://shorturl.at/yFtjr
+<!-- .element: style="margin-top: 300px; margin-left:-120px" -->
 
 </div>
