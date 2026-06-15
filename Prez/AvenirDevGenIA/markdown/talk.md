@@ -67,7 +67,7 @@ source: [unsplash](https://unsplash.com/fr/photos/minifig-lego-bleue-sur-surface
     </div>
     <div class="card fragment">
         <i class="fa-solid fa-person-arrow-up-from-line fa-2x"></i>
-        <p>Passage de "Pisseur de code" à "Architecte de valeur".</p>
+        <p>Passage de "Pisseur de code" à "L'ingénieur·e".</p>
     </div>
 </div>
 
@@ -108,17 +108,6 @@ source: [unsplash](https://unsplash.com/fr/photos/minifig-lego-bleue-sur-surface
 
 *De l'Assembleur vers le Structuré et l'Objet (C, Pascal, C++).*
 
-<!--
-<div style="display:flex; gap:20px; align-items:center; margin-top:20px;">
-    <div class="code-box" style="background:#1e293b; color:#fff; flex:1;">
-        MOV AX, 1<br>ADD AX, 2<br>JMP L1<br><br><span style="color:#aaa;">// Contrôle total</span>
-    </div>
-    <div style="font-size:2em;">→</div>
-    <div class="code-box" style="background:#eff6ff; color:#333; border:1px solid #93c5fd; flex:1;">
-        class User {<br>  login() { ... }<br>}<br><br><span style="color:#2563eb;">// Modélisation</span>
-    </div>
-</div>
--->
 
 <ul style="margin-top:20px;">
     <li class="fragment"><strong>La Peur :</strong> "On perd le contrôle du hardware", "C'est trop lent", "Un vrai dev gère sa mémoire".</li>
@@ -340,6 +329,14 @@ Notes:
 ##++##
 ##++## data-background="./assets/images/codeur-fatigue-gemini.png"
 ##++##
+
+Notes:
+juillet 2024 par l'Upwork Research Institute
+les 77 % d'employés qui ressentent une charge de travail accrue l'expliquent par trois facteurs principaux :
+
+La relecture et la modération (39 %) : Les salariés déclarent passer énormément de temps à vérifier, corriger et valider le contenu (ou le code) généré par l'IA. On est en plein dans la charge cognitive de la relecture !
+Le temps d'apprentissage (23 %) : Le temps nécessaire pour monter en compétence et comprendre comment prompter/utiliser l'outil efficacement.
+L'augmentation des attentes (21 %) : Puisque l'employé a une IA, le management lui demande d'en faire plus, créant une surcharge de tâches parallèles.
 
 ##==##
 
@@ -744,7 +741,7 @@ source: [unsplash](https://unsplash.com/fr/photos/loupe-cadre-rond-dore-et-argen
 
 # Coute-t-elle vraiment cher ?
 
-* Rappelez-vous le gain de productivité proche de 20-45%
+* Repensez aux gains de productivité.
 * Équipez vos équipe ne se discute plus.
 
 ##++##
