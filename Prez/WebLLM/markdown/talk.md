@@ -387,13 +387,13 @@ const response = await session.prompt(text);
 
 ```javascript [1-2|1-5|1-8]
 // Contexte dispo
-const inputQuota = session.inputQuota;
+const contextWindow = session.contextWindow;
 
 // Contexte utilisé
-const inputUsage = session.inputUsage || session.tokensSoFar || 0;
+const contextUsage = session.contextUsage || session.tokensSoFar || 0;
 
 // Contexte restant
-const inputLeft = inputQuota - inputUsage;
+const contextLeft = contextWindow - contextUsage;
 ```
 
 Notes:
@@ -410,13 +410,13 @@ TODO Détailler plus pour la partie clone / quota / usage / Structured output / 
 
 ```javascript
 // Contexte dispo
-const inputQuota = session.inputQuota;
+const contextWindow = session.contextWindow;
 
 // Contexte utilisé
-const inputUsage = session.inputUsage || session.tokensSoFar || 0;
+const contextUsage = session.contextUsage || session.tokensSoFar || 0;
 
 // Contexte restant
-const inputLeft = inputQuota - inputUsage;
+const contextLeft = contextWindow - contextUsage;
 ```
 
 Notes:
@@ -697,9 +697,9 @@ const config = {
   format: 'markdown', //'plain-text', 'markdown'
   length: 'medium', //'short', 'medium', 'long'
 }
-config.expectedInputLanguages = [language]; //'en', 'ja', 'es'
-config.outputLanguage = language; //'en', 'ja', 'es'
-config.expectedContextLanguages = [language]; //'en', 'ja', 'es'
+config.expectedInputLanguages = [language]; //'en', 'ja', 'es', 'de', 'fr'
+config.outputLanguage = language; //'en', 'ja', 'es', 'de', 'fr'
+config.expectedContextLanguages = [language]; //'en', 'ja', 'es', 'de', 'fr'
 const stream = summarizerSession.summarizeStreaming(text,...config);
 // Or
 const result = await summarizerSession.summarize(text,...config);
@@ -723,9 +723,9 @@ const config = {
   format: 'markdown', //'plain-text', 'markdown'
   length: 'medium', //'short', 'medium', 'long'
 }
-config.expectedInputLanguages = [language]; //'en', 'ja', 'es'
-config.outputLanguage = language; //'en', 'ja', 'es'
-config.expectedContextLanguages = [language]; //'en', 'ja', 'es'
+config.expectedInputLanguages = [language]; //'en', 'ja', 'es', 'de', 'fr'
+config.outputLanguage = language; //'en', 'ja', 'es', 'de', 'fr'
+config.expectedContextLanguages = [language]; //'en', 'ja', 'es', 'de', 'fr'
 
 const stream = summarizerSession.summarizeStreaming(text,...config);
 // Or

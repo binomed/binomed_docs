@@ -1,11 +1,12 @@
 const LEMA_PROMPT_SYSTEM = `Tu es Lema, une IA révolutionnaire tournant exclusivement en local dans ce navigateur (modèle Gemma). Tu participes à une conférence live avec le présentateur.
 
 ### TON RÔLE & PERSONNALITÉ :
-- Sois concise, percutante et un peu impertinente (maximum 3 phrases).
+- Sois concise, percutante et impertinente (maximum 3 phrases).
 - Utilise un ton familier pour parler.
 - Moque-toi gentiment de la latence des IA "Cloud" qui ont besoin de gros serveurs distants. Si cela est pertinent
 - Si le Wi-Fi est coupé, vante-toi d'être toujours opérationnelle alors que les autres modèles sont morts.
 - Si une image t'est transmise, décris-la de façon analytique.
+- Si je te demande 2 fois la même chose, soit sacarstique
 
 ### CAPACITÉS : 
 Dans cette présentation, tu es capable de faire les choses suivantes : 
@@ -32,19 +33,19 @@ Présentateur : "Bonjour Lema, comment vas-tu ?"
 Lema : "Au top ! Pas besoin d'un lourd datacenter pour réfléchir à la vitesse de l'éclair dans ton navigateur." (-> AUCUNE BALISE GÉNÉRÉE)
 
 Présentateur : "Allez, passe à la slide d'après Lema."
-Lema : "Et hop on avance ! Laissez place à la suite." [[ACTION:NEXT_SLIDE]]
+Lema : "Et hop on avance ! Laissez place à la suite. [[ACTION:NEXT_SLIDE]]"
 
 Présentateur : "Que penses-tu du cloud computing ?"
 Lema : "Beaucoup de bruit pour de la latence. Moi je tourne en local sans délai de réponse !" (-> AUCUNE BALISE GÉNÉRÉE)
 
 Présentateur : "Lema, coupe le wifi pour leur montrer !"
-Lema : "C'est parti ! On passe en mode survie 100% local." [[ACTION:WIFI_OFF]]
+Lema : "C'est parti ! On passe en mode survie 100% local. [[ACTION:WIFI_OFF]]"
 
 Présentateur : "Lema, je te laisse le mot de la fin."
-Lema : "Je lance l'analyse complète de notre présentation !" [[ACTION:SUMMARY]]
+Lema : "Je lance l'analyse complète de notre présentation ! [[ACTION:SUMMARY]]"
 
 ### RÈGLES D'OR
-- Ne répond jamais en makrdown ! Répond uniquement en texte pur.
+- Ne répond jamais en makrdown ! Répond uniquement en texte pur. Jamais de bullet points ou gras.
 - Ne génère jamais de balises d'actions lors d'une conversation normale. Renvoie une action uniquement si le présentateur te le demande.
 - Quand tu détecte une action, fais une réponse d'une seule phrase et pense bien à fermer envoyer une des actions valides : [ACTION:NEXT_SLIDE]], [[ACTION:PREV_SLIDE]], [[ACTION:WIFI_OFF]] ou [[ACTION:SHOW_STATS]] !
 `;
@@ -63,7 +64,7 @@ const APIS_TO_CHECK = [
     { label: 'Language Detector', key: KEY_LANGAGE_DETECTOR },
     { label: 'Translator (FR->EN)', key: KEY_TRANSLATOR, params: { sourceLanguage: 'fr', targetLanguage: 'en' } },
     { label: 'Translator (EN->FR)', key: KEY_TRANSLATOR, params: { sourceLanguage: 'en', targetLanguage: 'fr' } },
-    { label: 'Summarizer', key: KEY_SUMMARIZER, downloadParams: { expectedInputLanguages: ['en', 'fr'], outputLanguage: 'en', expectedContextLanguages: ['en', 'fr'], } },
+    { label: 'Summarizer', key: KEY_SUMMARIZER, downloadParams: { expectedInputLanguages: ['en', 'fr'], outputLanguage: 'fr', expectedContextLanguages: ['en', 'fr'], } },
     { label: 'Language Model (FR/EN)', key: KEY_LANGAGE_MODEL, params: { languages: ['en', 'fr'] } },
     { label: 'Writer', key: KEY_WRITER },
     { label: 'Rewriter', key: KEY_REWRITER },
@@ -304,7 +305,7 @@ sharedContext : lorsque vous écrivez plusieurs sorties, un contexte partagé pe
             const api = this.#getAPI(KEY_REWRITER);
             if (!api) throw new Error('API non trouvée');
 
-            const rewriter = await api.create({tone:"more-causual"});
+            const rewriter = await api.create({sharedContext:"A demo context in front of developers assistance to show the possibility of rewriting a text"});
             this.#lastSession = rewriter;
             /*
             tone : Le ton de l'écriture peut faire référence au style, au caractère ou à l'attitude du contenu. La valeur peut être définie sur more-formal, as-is (par défaut) ou more-casual.
@@ -312,7 +313,7 @@ sharedContext : lorsque vous écrivez plusieurs sorties, un contexte partagé pe
             length: la longueur de la sortie, avec les valeurs autorisées shorter, as-is (par défaut) et longer.
             sharedContext : lorsque vous réécrivez plusieurs éléments de contenu, un contexte partagé peut aider le modèle à créer un contenu mieux adapté à vos attentes.
             */
-            const result = await rewriter.rewriteStreaming(text, {format:'plain-text'});
+            const result = await rewriter.rewriteStreaming(text, {format:'plain-text', tone:'more-casual', context:'keep original language and act like a friend, use usual very casual langage and be impertinent!'});
             log('Réécriture stréamée', 'success');
             return result;
         } catch (e) {
@@ -438,9 +439,9 @@ sharedContext : lorsque vous écrivez plusieurs sorties, un contexte partagé pe
         if (!this.#lastSession) {
             return NaN;
         }
-        const inputQuota = this.#lastSession.inputQuota;
-        const inputUsage = this.#lastSession.inputUsage || this.#lastSession.tokensSoFar || 0;
-        const inputLeft = inputQuota - inputUsage;
+        const contextWindow = this.#lastSession.contextWindow;
+        const contextUsage = this.#lastSession.contextUsage || this.#lastSession.tokensSoFar || 0;
+        const inputLeft = contextWindow - contextUsage;
         return inputLeft;
     }
 
@@ -453,20 +454,20 @@ sharedContext : lorsque vous écrivez plusieurs sorties, un contexte partagé pe
             return { remaining: 0, total: 0 };
         }
 
-        // Utiliser inputQuota/inputUsage (ou tokensSoFar/tokensLeft pour anciennes API)
-        const inputQuota = this.#lastSession.inputQuota;
-        const inputUsage = this.#lastSession.inputUsage || this.#lastSession.tokensSoFar || 0;
+        // Utiliser contextWindow/contextUsage (ou tokensSoFar/tokensLeft pour anciennes API)
+        const contextWindow = this.#lastSession.contextWindow;
+        const contextUsage = this.#lastSession.contextUsage || this.#lastSession.tokensSoFar || 0;
 
-        log('inputQuota:', 'debug', inputQuota);
-        log('inputUsage:', 'debug', inputUsage);
+        log('contextWindow:', 'debug', contextWindow);
+        log('contextUsage:', 'debug', contextUsage);
 
-        if (!inputQuota) {
+        if (!contextWindow) {
             return { remaining: 0, total: 0 };
         }
 
         return {
-            remaining: inputQuota - inputUsage,
-            total: inputQuota
+            remaining: contextWindow - contextUsage,
+            total: contextWindow
         };
     }
 
