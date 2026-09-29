@@ -569,6 +569,13 @@ export class PrezDemosControler {
         this.#streamStopped = false;
         const idStream = this.#chatController.startStream(idChat);
 
+        // Exécuter immédiatement toute action laissée en attente par le tour précédent
+        // (le TTS de la réponse précédente peut ne pas avoir eu le temps de se terminer)
+        const pendingFromPreviousTurn = this.#actionHandler.flushActions();
+        if (pendingFromPreviousTurn.length) {
+            this.#actionHandler.executeActions(pendingFromPreviousTurn);
+        }
+
         // Réinitialiser l'action handler pour ce nouveau stream
         this.#actionHandler.reset();
         let actionTrapped = false;
@@ -578,6 +585,7 @@ export class PrezDemosControler {
             // Traiter le chunk pour extraire les actions
             if (!actionTrapped && chunk.indexOf('[') !== -1) {
                 actionTrapped = true;
+                chunkToSend = ''; // ne pas traîner le texte déjà envoyé lors du chunk précédent
             }
             if (actionTrapped) {
                 chunkToSend += chunk;
