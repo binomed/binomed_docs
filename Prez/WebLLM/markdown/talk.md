@@ -1,7 +1,7 @@
 <!-- .slide: class="transition" -->
 # WebLLM ? BuiltIn API's 
 
-*Jean-François Garreau | Devoxx FR 2026*
+*Jean-François Garreau | GDG Nantes / NantesJS 2026*
 
 Notes:
 Poser des questions -> 
@@ -1135,6 +1135,7 @@ Lancement de la génération de la réponse avec le modèle de chat multimodal a
 # What else ?
 
 * Prompt API polyfill
+* Prompt API Tools (experimental)
 * Web MCP
 ##++##
 
@@ -1201,7 +1202,9 @@ Notes:
 ![](./assets/images/jf.jpg 'speaker')
 
 
+<!--
 ![](https://bit.ly/4cUOHVr 'tc-qrcode badge text-below')Feedback Devoxx
+-->
 
 ![](https://jef.binomed.fr/binomed_docs/Prezs/WebLLM/index.html#/ 'tc-qrcode company text-below')slides : https://bit.ly/4mEXRJ9
 
