@@ -118,7 +118,7 @@ export class BuiltInControler {
                 try {
                     status = typeof builtInAPI.availability === 'function'
                         ? await builtInAPI.availability(api.params || {})
-                        : 'available';
+                        : 'unavailable';
                 } catch (e) {
                     log(`Erreur dispo ${api.label}: ${e.message}`, 'error');
                 }
@@ -154,7 +154,7 @@ export class BuiltInControler {
                         }
                     })
                     superThis.#stateListener({ state: 'readyModel', api: api.key, msg: 'Ready' });
-                    this.#stateAPIS[api.key] = status;
+                    this.#stateAPIS[api.key] = 'available';
                 }
             } catch (error) {
                 log(`Error Downloading model ${api.key}`, 'error', error);

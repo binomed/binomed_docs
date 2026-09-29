@@ -239,7 +239,7 @@ if (builtInAPI){
   try {
     status = typeof builtInAPI.availability === 'function'
           ? await builtInAPI.availability(params || {})
-          : 'available';
+          : 'unavailable';
   } catch (e) {}
 }
 ```
@@ -259,7 +259,7 @@ if (builtInAPI){
   try {
     status = typeof builtInAPI.availability === 'function'
           ? await builtInAPI.availability(params || {})
-          : 'available';
+          : 'unavailable';
   } catch (e) {}
 }
 ```
