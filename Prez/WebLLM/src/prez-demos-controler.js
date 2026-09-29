@@ -484,7 +484,7 @@ export class PrezDemosControler {
                 const { detectedLanguage, confidence } = await this.#builtInControler.detectLanguage(msg);
                 this.#chatController.addAssistantMessage("lema-summarize", `Langue détectée : ${detectedLanguage} avec une confience de ${confidence}`);
                 let translateText = msg;
-                if (detectedLanguage === 'fr') {
+                /*if (detectedLanguage === 'fr') {
                     translateText = '';
                     this.#chatController.addAssistantMessage("lema-summarize", "J'ai besoin de traduire ce texte pour le résumer car je ne prend pas encore le français en charge pour cette API");
                     const streamTranslate = await this.#builtInControler.translate(msg, 'fr', 'en');
@@ -493,19 +493,19 @@ export class PrezDemosControler {
                     }
                     this.#chatController.addAssistantMessage("lema-summarize", "Texte traduit : ");
                     this.#chatController.addAssistantMessage("lema-summarize", translateText);
-                }
+                }*/
 
                 // Récupérer les paramètres des selects
                 const summarizeType = document.querySelector('#summarize-type')?.value || 'tldr';
                 const summarizeFormat = document.querySelector('#summarize-format')?.value || 'plain-text';
                 const summarizeLength = document.querySelector('#summarize-length')?.value || 'medium';
 
-                const stream = await this.#builtInControler.summarize(translateText, 'en', {
+                const stream = await this.#builtInControler.summarize(translateText, detectedLanguage, {
                     type: summarizeType,
                     format: summarizeFormat,
                     length: summarizeLength
                 });
-                await this.processStreamToChatAndVoice("lema-summarize", detectedLanguage === 'fr' ? VOICE_ENGLISH : VOICE_LEMA, stream);
+                await this.processStreamToChatAndVoice("lema-summarize", detectedLanguage === 'fr' ? VOICE_LEMA: VOICE_ENGLISH , stream);
                 break;
             }
             case PROOFREAD_LEMA: {
