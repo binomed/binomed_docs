@@ -914,6 +914,7 @@ Précisé que l'audio fonctionne aussi (mais pas de démo pour le moment)
 Notes: 
 * Présente toi
 * Que peux tu faire ?
+* Tu penses quoi de Lema ?
 * Parles moi de devoxx 
 * Ecris moi un post linkedin pour dire que je vais parler à Devoxx pour parler d'IA dans le navigateur et sans connexion
 
