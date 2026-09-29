@@ -30,7 +30,8 @@ L'application suit une architecture pilotée par des contrôleurs :
 - **`built-in.js`** : Abstraction pour les APIs IA natives de Chrome.
 - **`prompt-controler.js`** : Gère l'état du téléchargement des modèles et l'affichage du statut des APIs.
 - **`action-handler.js`** : Permet à l'IA d'exécuter des actions sur la présentation (ex: `[[ACTION:NEXT_SLIDE]]`).
-- **`speech.js` & `tts.js`** : Gèrent respectivement la reconnaissance vocale et la synthèse vocale.
+- **`speech.js` & `tts.js`** : Gèrent respectivement la reconnaissance vocale et la synthèse vocale. `tts.js` choisit un moteur par voix : Web Speech API pour Lema, voix neuronale Supertonic 2 (Transformers.js) pour Tema, avec repli Web Speech tant qu'elle n'est pas chargée.
+- **`tts.worker.js`** : Worker de synthèse neuronale Supertonic (`onnx-community/Supertonic-TTS-2-ONNX`), exécuté en WASM pour laisser le GPU à Gemma.
 - **`camera-controller.js`** : Gère l'accès à la webcam pour les démos de vision.
 
 ## 📝 Conventions de Code
@@ -43,7 +44,7 @@ L'application suit une architecture pilotée par des contrôleurs :
 - `npm run start` : Lance l'environnement de développement complet (serveur, sass, vite).
 - `npm run build:src` : Compile les assets via Vite.
 - `npm run serve` : Lance uniquement le serveur de présentation sur le port 4242.
-- `npm run download-models` : Télécharge les modèles IA requis (`Llama 3.2`, `Moondream2`) dans le dossier `./models`.
+- `npm run download-models` : Télécharge les modèles IA requis (`Llama 3.2`, `Moondream2`, `Gemma 4`, `Supertonic 2`) dans le dossier `./models`.
 - `npm run clean-models` : Supprime le dossier `./models` pour libérer de l'espace.
 
 ## 🤖 Instructions spécifiques pour l'IA

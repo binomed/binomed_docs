@@ -5,6 +5,7 @@ MODELS_ROOT="./models"
 BASE_URL_LLAMA="https://huggingface.co/onnx-community/Llama-3.2-1B-Instruct/resolve/main"
 BASE_URL_MOONDREAM="https://huggingface.co/Xenova/moondream2/resolve/main"
 BASE_URL_GEMMA4="https://huggingface.co/onnx-community/gemma-4-E2B-it-ONNX/resolve/main"
+BASE_URL_SUPERTONIC="https://huggingface.co/onnx-community/Supertonic-TTS-2-ONNX/resolve/main"
 
 # Liste des fichiers pour Llama 3.2 1B
 FILES_LLAMA=(
@@ -44,6 +45,29 @@ FILES_GEMMA4=(
     "onnx/vision_encoder_q4f16.onnx_data"
     "onnx/audio_encoder_q4f16.onnx"
     "onnx/audio_encoder_q4f16.onnx_data"
+)
+
+# Liste des fichiers pour Supertonic 2 (TTS neuronal FR, fp32 ~262 MB, exécuté en WASM)
+FILES_SUPERTONIC=(
+    "config.json"
+    "tokenizer.json"
+    "tokenizer_config.json"
+    "onnx/text_encoder.onnx"
+    "onnx/text_encoder.onnx_data"
+    "onnx/latent_denoiser.onnx"
+    "onnx/latent_denoiser.onnx_data"
+    "onnx/voice_decoder.onnx"
+    "onnx/voice_decoder.onnx_data"
+    "voices/F1.bin"
+    "voices/F2.bin"
+    "voices/F3.bin"
+    "voices/F4.bin"
+    "voices/F5.bin"
+    "voices/M1.bin"
+    "voices/M2.bin"
+    "voices/M3.bin"
+    "voices/M4.bin"
+    "voices/M5.bin"
 )
 
 download_file() {
@@ -88,6 +112,13 @@ TARGET_GEMMA4="${MODELS_ROOT}/onnx-community/gemma-4-E2B-it-ONNX"
 echo -e "\n📦 Processing Gemma 4 E2B (q4f16 - WebGPU)..."
 for file in "${FILES_GEMMA4[@]}"; do
     download_file "$BASE_URL_GEMMA4" "$file" "$TARGET_GEMMA4"
+done
+
+# Supertonic 2
+TARGET_SUPERTONIC="${MODELS_ROOT}/onnx-community/Supertonic-TTS-2-ONNX"
+echo -e "\n📦 Processing Supertonic 2 TTS (fp32 - WASM)..."
+for file in "${FILES_SUPERTONIC[@]}"; do
+    download_file "$BASE_URL_SUPERTONIC" "$file" "$TARGET_SUPERTONIC"
 done
 
 echo -e "\n✨ All downloads complete!"

@@ -118,6 +118,11 @@ export class PrezDemosControler {
                 this.#promptControler.updateContextDisplay();
                 this.initChatHandlers();
 
+                // Pré-chargement de la voix neuronale de Tema (Supertonic, WASM) — repli Web Speech en attendant
+                this.#ttsControler.loadNeuralVoices()
+                    .then(() => this.#showToast('🔊 Voix de Tema prête !'))
+                    .catch(err => console.warn('[TTS] Voix neuronale indisponible, repli Web Speech:', err));
+
                 // Pré-chargement silencieux du modèle Tema en arrière-plan
                 if (!this.#temaController) {
                     this.#temaController = new TemaMultimodalController();
