@@ -75,7 +75,7 @@ export class ActionHandler {
      * À appeler à la fin du stream
      */
     flushActions() {
-        const actions = this.#completedActions;
+        const actions = [...this.#completedActions];
         this.#completedActions = [];
         this.#buffer = '';
         return actions;
