@@ -81,7 +81,7 @@ class StatsWidget extends HTMLElement {
 
     _connectSSE() {
         if (this._es) this._es.close();
-        this._es = new EventSource('http://localhost:3000/stats');
+        this._es = new EventSource('http://localhost:4780/stats');
         this._es.onmessage = (e) => {
             this._data = JSON.parse(e.data);
             this._render();
