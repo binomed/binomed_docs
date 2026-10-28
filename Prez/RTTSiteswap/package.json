@@ -1,13 +1,19 @@
 {
-  "author": "JefBinomed",
-  "name": "Themes",
-  "version": "1.0.0",
-  "dependencies": {},
+  "name": "rtt-siteswap",
+  "version": "2.0.0",
+  "description": "Le Siteswap",
+  "scripts": {
+    "serve": "live-server --port=4343 --open=\"./index.html\" --watch=\"markdown,assets,theme-rtt.css,rtt.css\"",
+    "start": "npm run serve",
+    "prepare": "node ./scripts/dont-touch/prepare-script.js"
+  },
+  "author": "jefbinomed",
+  "license": "MIT",
+  "dependencies": {
+    "@talk-control/talk-control-revealjs-extensions": "^1.0.0-rc-4"
+  },
   "devDependencies": {
-    "browser-sync": "^2.6.9",
-    "gulp": "^3.8.11",
-    "gulp-sass": "^2.0.4",
-    "gulp-sourcemaps": "^1.5.2",
-    "run-sequence": "^1.1.2"
+    "live-server": "^1.1.0",
+    "shelljs": "^0.8.5"
   }
 }

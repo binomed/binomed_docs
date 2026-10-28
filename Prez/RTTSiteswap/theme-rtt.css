@@ -1,0 +1,40 @@
+/* --- Thème RTT Siteswap pour Reveal.js & Talk-Control --- */
+/* Point de départ volontairement minimal : l'ancien thème "binomed" */
+/* n'étant plus accessible (symlinks vers un repo Tools absent), on repart */
+/* du thème de base talk-control et on reprend ici la palette "Material" */
+/* déjà utilisée dans markdown/prez.md (bleu/vert/orange). À retravailler. */
+
+body[data-theme='rtt'] {
+  /* Overrides Reveal.js (variables --r-*) */
+  --r-background-color: #ffffff;
+  --r-main-color: #1e293b;
+  --r-heading-color: #1e293b;
+  --r-link-color: #2196f3;
+  --r-link-color-hover: #1769aa;
+  --r-selection-background-color: rgba(33, 150, 243, 0.3);
+
+  /* Overrides Talk-Control (variables --tc-*) */
+  --accent-color: #2196f3;
+  --tc-primary-color: #2196f3;
+  --tc-secondary-color: #4caf50;
+  --tc-transition-color: #ffffff;
+  --tc-heading-color: var(--accent-color);
+  --tc-icon-color: var(--r-main-color);
+}
+
+/* Variantes "transition-black" / "transition-white" du contenu existant */
+/* (fonds pleins, sans data-background explicite dans le markdown) */
+/* !important nécessaire : le thème de base talk-control cible */
+/* section:not(.stack)[class*=transition] avec une spécificité plus forte */
+.reveal .slides section.transition-black {
+  background-color: #000 !important;
+}
+.reveal .slides section.transition-black h1 {
+  color: #fff !important;
+}
+.reveal .slides section.transition-white {
+  background-color: #fff !important;
+}
+.reveal .slides section.transition-white h1 {
+  color: #1e293b !important;
+}
