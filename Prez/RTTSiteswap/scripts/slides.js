@@ -1,6 +1,9 @@
 import {
     Reveal,
     ThemeInitializer,
+    featherIconPack,
+    fontAwesomeIconPack,
+    materialSymbolsIconPack,
 } from '../web_modules/talk-control-revealjs-extensions/talk-control-revealjs-extensions.js';
 
 console.log('Reveal version', Reveal.VERSION);
@@ -22,6 +25,13 @@ function presentation() {
 
 await ThemeInitializer.init({
     slidesFactory: presentation,
+    tcMarkedOptions: {
+        fontIcons: [
+            fontAwesomeIconPack(),
+            featherIconPack(),
+            materialSymbolsIconPack(),
+        ]
+    },
     tcI18nOptions: {
         baseMarkdownPath: 'markdown/',
     },

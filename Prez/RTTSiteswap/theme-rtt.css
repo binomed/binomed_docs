@@ -17,9 +17,19 @@ body[data-theme='rtt'] {
   --accent-color: #2196f3;
   --tc-primary-color: #2196f3;
   --tc-secondary-color: #4caf50;
-  --tc-transition-color: #ffffff;
   --tc-heading-color: var(--accent-color);
   --tc-icon-color: var(--r-main-color);
+  /* --tc-transition-color n'est volontairement pas fixé ici : le thème de
+     base le résout en var(--tc-heading-color) par défaut (lisible sur fond
+     blanc). Les slides avec un fond coloré/sombre passent en blanc via la
+     classe .text-white ci-dessous plutôt qu'en global. */
+}
+
+/* Le markdown existant utilise la classe historique "text-white" (héritée de */
+/* l'ancien thème bootstrap) là où talk-control attend "txt-white". On la */
+/* fait pointer vers la même variable pour les slides à fond coloré/sombre. */
+.reveal .slides section.text-white {
+  --tc-transition-color: #fff;
 }
 
 /* Variantes "transition-black" / "transition-white" du contenu existant */
