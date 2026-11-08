@@ -1,0 +1,15 @@
+/* --- CSS personnalisé RTT Siteswap --- */
+
+.reveal .slides section siteswap-diagram {
+  display: block;
+  width: 100%;
+  max-width: 900px;
+  margin: 20px auto 0;
+}
+
+.reveal .slides section siteswap-scene {
+  display: block;
+  width: 100%;
+  max-width: 1100px;
+  margin: 20px auto 0;
+}

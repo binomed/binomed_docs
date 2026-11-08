@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": ";AAwBA,YAAY;EACX,KAAK,EATc,OAAI;;;;AAaxB,mBAAmB;EAClB,KAAK,EAnBS,IAAW;;;;AAsB1B,cAAc;EACb,KAAK,EAhBQ,IAAM;;;;AAmBnB,kBAAkB;EACjB,KAAK,EAzBQ,OAAU;;;;AA4BxB,oBAAoB;EACnB,KAAK,EAzBQ,OAAY",
-"sources": ["../../../../scss/theme/2015/binomed/colors.scss"],
-"names": [],
-"file": "specifics_slides_print.css"
-}
