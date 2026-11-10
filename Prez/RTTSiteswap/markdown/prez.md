@@ -69,7 +69,7 @@ Notes:
 
 ##==##
 
-<!-- .slide: class="transition-black" data-background="black" -->
+<!-- .slide: class="transition-black" -->
 
 # Plus sérieusement ! 
 
@@ -98,7 +98,7 @@ Notes:
 
 ##==##
 
-<!-- .slide: class="transition-black text-white" data-background="black"  -->
+<!-- .slide: class="transition-black" -->
 
 # Exemple : <br> 333
 
@@ -107,7 +107,7 @@ Notes:
 
 ##==##
 
-<!-- .slide: class="transition text-white" data-background="#2196F3" -->
+<!-- .slide: class="transition tone-1" -->
 
 # Siteswaps Asynchrones
 
@@ -132,7 +132,7 @@ Le temps passe d'une main à l'autre, les 2 mains sont désyncrhonisées
 
 ##==##
 
-<!-- .slide: class="transition text-white" data-background="#4CAF50" -->
+<!-- .slide: class="transition tone-2" -->
 
 # Les multiplex ! 
 
@@ -141,7 +141,7 @@ Lancées issus d'une même main
 
 ##==##
 
-<!-- .slide: class="transition text-white" data-background="#4CAF50" -->
+<!-- .slide: class="transition tone-2" -->
 
 # Exemple : <br> [43]
 
@@ -150,7 +150,7 @@ Lancées issus d'une même main
 
 ##==##
 
-<!-- .slide: class="transition text-white" data-background="#FF9800" -->
+<!-- .slide: class="transition tone-3" -->
 
 # Les Siteswap Synchrones
 
@@ -160,7 +160,7 @@ Lancées simultanés
 
 ##==##
 
-<!-- .slide: class="transition text-white" data-background="#FF9800" -->
+<!-- .slide: class="transition tone-3" -->
 
 # Exemple : <br> (4,4)
 
@@ -169,7 +169,7 @@ Lancées simultanés
 
 ##==##
 
-<!-- .slide: class="transition text-white" data-background="#FF9800" -->
+<!-- .slide: class="transition tone-3" -->
 
 # Version croisée : <br> (4,2x)(2x,4) 
 
@@ -191,7 +191,7 @@ Notes:
 
 ##==##
 
-<!-- .slide: class="transition-black" data-background="black" -->
+<!-- .slide: class="transition-black" -->
 
 # Comment valider un siteswap ?
 
@@ -227,27 +227,27 @@ Le côté répétable représente la notion de cycle d'un siteswap 321 => fini d
 
 ##==##
 
-<!-- .slide: class="transition text-white" data-background="#2196F3" style="--tc-transition-line-color: #2196F3" -->
+<!-- .slide: class="transition tone-1" -->
 
 # 3 <br> <span class="fragment"> 3 / 1 = 3</span>
 
 ##==##
 
-<!-- .slide: class="transition text-white" data-background="#2196F3" style="--tc-transition-line-color: #2196F3" -->
+<!-- .slide: class="transition tone-1" -->
 
 # 531 <br> <span  class="fragment">5 + 3 + 1 = 9</span> <br> <span  class="fragment">9 / 3 = 3 </span>
 
 
 ##==##
 
-<!-- .slide: class="transition text-white" data-background="#4CAF50" style="--tc-transition-line-color: #4CAF50"-->
+<!-- .slide: class="transition tone-2" -->
 
 # 4[43]1 <br> <span class="fragment">4+4+3+1 = 12</span> <br> <span class="fragment">12 / 3 = 4</span>
 
 
 ##==##
 
-<!-- .slide: class="transition text-white" data-background="#FF9800" style="--tc-transition-line-color: #FF9800"-->
+<!-- .slide: class="transition tone-3" -->
 
 # (4,4) <br> <span class="fragment">8 / 2 = 4</span>
 
@@ -261,12 +261,12 @@ Le côté répétable représente la notion de cycle d'un siteswap 321 => fini d
 
 ##==##
 
-<!-- .slide: class="transition text-white" data-background="#2196F3" -->
+<!-- .slide: class="transition tone-1" -->
 
 # 531 
 
 ##==##
-<!-- .slide: class="transition text-white" data-background="#2196F3" data-type-show="on-stage"-->
+<!-- .slide: class="transition tone-1" data-type-show="on-stage"-->
 
 # 531 
 
@@ -281,13 +281,13 @@ Le côté répétable représente la notion de cycle d'un siteswap 321 => fini d
 
 ##==##
 
-<!-- .slide: class="transition text-white" data-background="#4CAF50" -->
+<!-- .slide: class="transition tone-2" -->
 
 # 622
 
 ##==##
 
-<!-- .slide: class="transition text-white" data-background="#f14343c8" -->
+<!-- .slide: class="transition invalid" -->
 
 # 622
 
@@ -295,13 +295,13 @@ Le côté répétable représente la notion de cycle d'un siteswap 321 => fini d
 
 ##==##
 
-<!-- .slide: class="transition text-white" data-background="#FF9800" -->
+<!-- .slide: class="transition tone-3" -->
 
 # 6222
 
 ##==##
 
-<!-- .slide: class="transition text-white" data-background="#FF9800" data-type-show="on-stage"-->
+<!-- .slide: class="transition tone-3" data-type-show="on-stage"-->
 
 # 6222
 
@@ -316,14 +316,14 @@ Le côté répétable représente la notion de cycle d'un siteswap 321 => fini d
 
 ##==##
 
-<!-- .slide: class="transition text-white" data-background="#2196F3" -->
+<!-- .slide: class="transition tone-1" -->
 
 # 321
 
 
 ##==##
 
-<!-- .slide: class="transition text-white" data-background="#f14343c8" -->
+<!-- .slide: class="transition invalid" -->
 
 # 321
 
@@ -331,14 +331,14 @@ Le côté répétable représente la notion de cycle d'un siteswap 321 => fini d
 
 ##==##
 
-<!-- .slide: class="transition text-white" data-background="#4CAF50" -->
+<!-- .slide: class="transition tone-2" -->
 
 # 32[42]01
 
 
 ##==##
 
-<!-- .slide: class="transition text-white" data-background="#f14343c8" -->
+<!-- .slide: class="transition invalid" -->
 
 # 32[42]01
 
@@ -346,13 +346,13 @@ Le côté répétable représente la notion de cycle d'un siteswap 321 => fini d
 
 ##==##
 
-<!-- .slide: class="transition text-white" data-background="#FF9800" -->
+<!-- .slide: class="transition tone-3" -->
 
 # 441 
 
 ##==##
 
-<!-- .slide: class="transition text-white" data-background="#FF9800"  data-type-show="on-stage"-->
+<!-- .slide: class="transition tone-3"  data-type-show="on-stage"-->
 
 # 441 
 
@@ -369,13 +369,13 @@ Le côté répétable représente la notion de cycle d'un siteswap 321 => fini d
 
 ##==##
 
-<!-- .slide: class="transition text-white" data-background="#2196F3" -->
+<!-- .slide: class="transition tone-1" -->
 
 # 441423333531 
 
 ##==##
 
-<!-- .slide: class="transition text-white" data-background="#2196F3"  data-type-show="on-stage"-->
+<!-- .slide: class="transition tone-1"  data-type-show="on-stage"-->
 
 # 441423333531 
 

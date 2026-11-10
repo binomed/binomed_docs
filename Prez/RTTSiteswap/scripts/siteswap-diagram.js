@@ -21,7 +21,7 @@
  *  - static   (optionnel)   : désactive l'animation et le clic
  */
 
-import { BALL_PALETTE, decodeSiteswap, simulateBalls } from './siteswap-core.js';
+import { ballColor, decodeSiteswap, simulateBalls } from './siteswap-core.js';
 
 const COL_WIDTH = 110;
 const MARGIN_X = 70;
@@ -154,7 +154,7 @@ class SiteswapDiagram extends HTMLElement {
             if (value <= 0) continue;
             const landing = i + value;
             const ballId = ballByBeat[i];
-            const color = ballId === null ? '#9e9e9e' : BALL_PALETTE[ballId % BALL_PALETTE.length];
+            const color = ballColor(ballId);
             const isActive = !isStatic && !noneActive && ballId === this._activeBall;
             const isDimmed = !isStatic && !noneActive && ballId !== this._activeBall;
             arcs.push({
@@ -169,7 +169,7 @@ class SiteswapDiagram extends HTMLElement {
         for (let col = 0; col < windowSize; col += 1) {
             const isEcho = col >= period;
             const ballId = ballByBeat[col % period];
-            const color = ballId === null ? 'none' : BALL_PALETTE[ballId % BALL_PALETTE.length];
+            const color = ballId === null ? 'none' : ballColor(ballId);
             const hand = col % 2 === 0 ? 'G' : 'D';
             const label = `T${col + 1}`;
             const isDimmed = !isStatic && !noneActive && ballId !== this._activeBall;
@@ -199,7 +199,7 @@ class SiteswapDiagram extends HTMLElement {
             }
         }
 
-        const activeColor = noneActive ? null : BALL_PALETTE[this._activeBall % BALL_PALETTE.length];
+        const activeColor = noneActive ? null : ballColor(this._activeBall);
         const hint = isStatic
             ? ''
             : noneActive
@@ -228,7 +228,7 @@ class SiteswapDiagram extends HTMLElement {
                     (b) => `
               <g class="beat${b.isEcho ? ' echo' : ''}${b.isDimmed ? ' dimmed' : ''}">
                 <circle cx="${b.x}" cy="${b.y}" r="22"
-                        fill="${b.empty ? 'none' : b.color}"
+                        style="fill:${b.empty ? 'none' : b.color}"
                         class="${b.empty ? 'hand-empty' : 'hand'}" />
                 <text x="${b.x}" y="${b.y}" class="hand-label">${b.hand}</text>
                 <text x="${b.x}" y="${b.y === yG ? b.y - 40 : b.y + 54}" class="beat-label">${b.label}</text>
@@ -279,13 +279,13 @@ class SiteswapDiagram extends HTMLElement {
       .arc.active { opacity: 1; stroke-width: 7; }
       .hand { stroke: currentColor; stroke-width: 2; opacity: 0.95; transition: opacity 0.2s; }
       .hand-empty { stroke: currentColor; stroke-width: 2; stroke-dasharray: 3 3; opacity: 0.4; }
-      .hand-label { text-anchor: middle; dominant-baseline: central; fill: #fff; font-weight: 700; font-size: 20px; pointer-events: none; }
+      .hand-label { text-anchor: middle; dominant-baseline: central; fill: var(--ss-contrast, #fff); font-weight: 700; font-size: 20px; pointer-events: none; }
       .beat.echo .hand-label, .beat.echo .hand, .beat.echo .hand-empty { opacity: 0.35; }
       .beat.dimmed .hand, .beat.dimmed .hand-label { opacity: 0.2; }
-      .beat-label { text-anchor: middle; fill: currentColor; opacity: 0.6; font-size: 18px; }
-      .ball-dot { fill: var(--ball-color); stroke: #fff; stroke-width: 2; }
+      .beat-label { font-family: var(--ss-mono, inherit); text-anchor: middle; fill: currentColor; opacity: 0.6; font-size: 18px; }
+      .ball-dot { fill: var(--ball-color); stroke: var(--ss-contrast, #fff); stroke-width: 2; }
       .caption { display: flex; align-items: baseline; gap: 14px; justify-content: center; margin-top: 4px; font-size: 0.8em; opacity: 0.85; }
-      .caption .pattern { font-weight: 700; letter-spacing: 1px; }
+      .caption .pattern { font-family: var(--ss-mono, inherit); font-weight: 700; letter-spacing: 1px; }
       .caption .hint { opacity: 0.6; font-style: italic; }
       .error p { color: #e53935; font-weight: 600; text-align: center; }
     `;

@@ -19,7 +19,7 @@
  * la dernière balle revient à la vue d'ensemble.
  */
 
-import { BALL_PALETTE, decodeSiteswap, simulateBalls, cycleLength, activeFlights } from './siteswap-core.js';
+import { ballColor, decodeSiteswap, simulateBalls, cycleLength, activeFlights } from './siteswap-core.js';
 
 const BEATS_PER_SECOND = 1.8;
 const SPEEDS = [0.25, 0.5, 1];
@@ -200,7 +200,7 @@ class SiteswapScene extends HTMLElement {
                preserveAspectRatio="xMidYMid meet" role="img" aria-label="Échelle du siteswap ${pattern}">
             ${this._ladderStaticSvg()}
             ${Array.from({ length: ballCount })
-                .map((_, b) => `<circle class="ball ball-${b}" r="10" style="--c:${BALL_PALETTE[b % BALL_PALETTE.length]}" />`)
+                .map((_, b) => `<circle class="ball ball-${b}" r="10" style="--c:${ballColor(b)}" />`)
                 .join('')}
           </svg>
         </div>
@@ -209,7 +209,7 @@ class SiteswapScene extends HTMLElement {
                preserveAspectRatio="xMidYMid meet" role="img" aria-label="Jongleur fil de fer">
             ${this._jugglerStaticSvg()}
             ${Array.from({ length: ballCount })
-                .map((_, b) => `<circle class="ball ball-${b}" r="13" style="--c:${BALL_PALETTE[b % BALL_PALETTE.length]}" />`)
+                .map((_, b) => `<circle class="ball ball-${b}" r="13" style="--c:${ballColor(b)}" />`)
                 .join('')}
           </svg>
         </div>
@@ -305,7 +305,7 @@ class SiteswapScene extends HTMLElement {
             const peak = Math.min(yG, yD) - (16 + value * 14) - maxValue * 1.5;
             const { cx1, cy1, cx2, cy2 } = plateauControls(x1, y1, x2, y2, peak);
             const ballId = staticBallByBeat[i];
-            const color = ballId === null ? '#9e9e9e' : BALL_PALETTE[ballId % BALL_PALETTE.length];
+            const color = ballColor(ballId);
             svg += `<path class="arc" data-ball="${ballId === null ? '' : ballId}" d="M ${x1} ${y1} C ${cx1} ${cy1} ${cx2} ${cy2} ${x2} ${y2}" style="--c:${color}" />`;
         }
 
@@ -314,10 +314,10 @@ class SiteswapScene extends HTMLElement {
             const cx = x(col);
             const isEcho = col >= period;
             const ballId = staticBallByBeat[col % period];
-            const color = ballId === null ? 'none' : BALL_PALETTE[ballId % BALL_PALETTE.length];
+            const color = ballId === null ? 'none' : ballColor(ballId);
             const hand = col % 2 === 0 ? 'G' : 'D';
             svg += `<g class="beat ${isEcho ? 'echo' : ''}" data-ball="${ballId === null ? '' : ballId}">
-        <circle cx="${cx}" cy="${cy}" r="16" fill="${color === 'none' ? 'none' : color}" class="${color === 'none' ? 'hand-empty' : 'hand'}" />
+        <circle cx="${cx}" cy="${cy}" r="16" style="fill:${color}" class="${color === 'none' ? 'hand-empty' : 'hand'}" />
         <text x="${cx}" y="${cy}" class="hand-label">${hand}</text>
       </g>`;
         }
@@ -473,9 +473,9 @@ class SiteswapScene extends HTMLElement {
       .arc { fill: none; stroke: var(--c); stroke-width: 3; opacity: 0.35; }
       .hand { stroke: currentColor; stroke-width: 2; }
       .hand-empty { stroke: currentColor; stroke-width: 2; stroke-dasharray: 3 3; opacity: 0.4; }
-      .hand-label { text-anchor: middle; dominant-baseline: central; fill: #fff; font-weight: 700; font-size: 15px; pointer-events: none; }
+      .hand-label { text-anchor: middle; dominant-baseline: central; fill: var(--ss-contrast, #fff); font-weight: 700; font-size: 15px; pointer-events: none; }
       .echo { opacity: 0.3; }
-      .ball { fill: var(--c); stroke: #fff; stroke-width: 1.5; opacity: 0; transition: opacity 0.15s; }
+      .ball { fill: var(--c); stroke: var(--ss-contrast, #fff); stroke-width: 1.5; opacity: 0; transition: opacity 0.15s; }
       .juggler .body { fill: none; stroke: currentColor; stroke-width: 4; stroke-linecap: round; opacity: 0.85; }
       .juggler .arm { fill: none; stroke: currentColor; stroke-width: 4; stroke-linecap: round; opacity: 0.85; }
       .juggler .hand { fill: none; stroke: currentColor; stroke-width: 3; opacity: 0.85; }
@@ -485,7 +485,7 @@ class SiteswapScene extends HTMLElement {
       .controls button.active, .controls button:hover { opacity: 1; }
       .controls .play { font-size: 1.1em; min-width: 40px; }
       .controls .speeds { display: flex; gap: 6px; }
-      .controls .meta { opacity: 0.7; margin-left: auto; }
+      .controls .meta { font-family: var(--ss-mono, inherit); opacity: 0.7; margin-left: auto; }
       .controls .hint { opacity: 0.6; font-style: italic; }
       .error { color: #e53935; font-weight: 600; text-align: center; }
     `;

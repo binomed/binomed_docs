@@ -9,6 +9,18 @@
 
 export const BALL_PALETTE = ['#2196F3', '#4CAF50', '#FF9800', '#E91E63', '#9C27B0', '#009688', '#795548'];
 
+/**
+ * Couleur d'une balle sous forme de var() CSS : le thème de la présentation
+ * peut la redéfinir via --ss-ball-0..6 (les custom properties traversent le
+ * Shadow DOM), BALL_PALETTE ne sert que de repli. S'utilise en CSS (style=),
+ * pas dans un attribut de présentation SVG (fill=) qui ignore var().
+ */
+export function ballColor(ballId) {
+    if (ballId === null) return 'var(--ss-ball-none, #9e9e9e)';
+    const i = ballId % BALL_PALETTE.length;
+    return `var(--ss-ball-${i}, ${BALL_PALETTE[i]})`;
+}
+
 export function decodeSiteswap(pattern) {
     const chars = Array.from(pattern.trim());
     if (chars.length === 0) {
