@@ -46,7 +46,7 @@ Le Siteswap
 
 <br>
 
-![](/assets/images/StateDiagram3BallMaxThrow5.png 'center h-500')
+![](./assets/images/StateDiagram3BallMaxThrow5.png 'center h-500')
 
 Notes:
 
@@ -63,7 +63,7 @@ Notes:
 
 <br>
 
-![](/assets/images/Jackie-Chan-WTF.jpg 'center h-700')
+![](./assets/images/Jackie-Chan-WTF.jpg 'center h-700')
 
 Notes:
 
@@ -94,7 +94,7 @@ Notes:
 
 <br>
 
-![](/assets/images/Siteswap.png 'center h-600')
+![](./assets/images/Siteswap.png 'center h-600')
 
 ##==##
 
@@ -110,6 +110,9 @@ Notes:
 <!-- .slide: class="transition text-white" data-background="#2196F3" -->
 
 # Siteswaps Asynchrones
+
+Notes: 
+Le temps passe d'une main à l'autre, les 2 mains sont désyncrhonisées
 
 
 ##==##
@@ -168,10 +171,23 @@ Lancées simultanés
 
 <!-- .slide: class="transition text-white" data-background="#FF9800" -->
 
-# Version croisée : <br> (4,2x)(2x,4)
+# Version croisée : <br> (4,2x)(2x,4) 
 
 Notes:
 Lancées simultanés
+
+##==##
+
+<!-- .slide: class="transition top" data-background="white" -->
+
+# Easy ?
+
+![](./assets/images/khaby-lame.webp 'center h-500')
+
+khaby lame <!-- .element: class="credits" -->
+
+Notes:
+
 
 ##==##
 
@@ -205,6 +221,12 @@ Le côté répétable représente la notion de cycle d'un siteswap 321 => fini d
 
 ##==##
 
+<br><br>
+
+<video data-autoplay src="./assets/gifs/confused-computing.mp4" loop class="center h-800"></video>
+
+##==##
+
 <!-- .slide: class="transition text-white" data-background="#2196F3" style="--tc-transition-line-color: #2196F3" -->
 
 # 3 <br> <span class="fragment"> 3 / 1 = 3</span>
@@ -231,9 +253,11 @@ Le côté répétable représente la notion de cycle d'un siteswap 321 => fini d
 
 ##==##
 
-<!-- .slide: class="transition-white" -->
+<!-- .slide: class="transition top" -->
 
 # Jouons maintenant 
+
+<video data-autoplay src="./assets/gifs/sml-jackie-chu.mp4" loop class="center h-500"></video>
 
 ##==##
 
@@ -280,6 +304,8 @@ Le côté répétable représente la notion de cycle d'un siteswap 321 => fini d
 <!-- .slide: class="transition text-white" data-background="#FF9800" data-type-show="on-stage"-->
 
 # 6222
+
+## Valide
 
 ##==##
 
@@ -330,6 +356,8 @@ Le côté répétable représente la notion de cycle d'un siteswap 321 => fini d
 
 # 441 
 
+## Valide
+
 
 ##==##
 
@@ -351,6 +379,7 @@ Le côté répétable représente la notion de cycle d'un siteswap 321 => fini d
 
 # 441423333531 
 
+## Valide
 
 ##==##
 
@@ -376,7 +405,7 @@ credits : [Pexels - Beyza Kaplan](https://www.pexels.com/fr-fr/@kaplanart/)
 
 # Merci !! Des questions ?
 
-## Jean-François Garreau
+## Jean-François Garreau - Jongleur & Codeur
 
 ### ![](fa-bluesky "fa fa-brands tc-icons") jefbinomed
 
@@ -384,8 +413,11 @@ credits : [Pexels - Beyza Kaplan](https://www.pexels.com/fr-fr/@kaplanart/)
 
 ![](./assets/images/jf.jpg 'speaker')
 
+<div class="mt-50 badge">
 
-![](https://jef.binomed.fr/binomed_docs/Prezs/RTTSiteswap/index.html#/ 'tc-qrcode company text-below')slides : https://bit.ly/4mEXRJ9
+![](https://jef.binomed.fr/binomed_docs/Prezs/RTTSiteswap/index.html#/ 'tc-qrcode text-below')slides : https://bit.ly/3Vh3fJ5 
+
+</div>
 
 
 </div>
