@@ -46,7 +46,7 @@ Le Siteswap
 
 <br>
 
-![](/assets/images/StateDiagram3BallMaxThrow5.png 'center h-500')
+![](./assets/images/StateDiagram3BallMaxThrow5.png 'center h-500')
 
 Notes:
 
@@ -63,7 +63,7 @@ Notes:
 
 <br>
 
-![](/assets/images/Jackie-Chan-WTF.jpg 'center h-700')
+![](./assets/images/Jackie-Chan-WTF.jpg 'center h-700')
 
 Notes:
 
@@ -94,7 +94,7 @@ Notes:
 
 <br>
 
-![](/assets/images/Siteswap.png 'center h-600')
+![](./assets/images/Siteswap.png 'center h-600')
 
 ##==##
 
@@ -385,7 +385,7 @@ credits : [Pexels - Beyza Kaplan](https://www.pexels.com/fr-fr/@kaplanart/)
 ![](./assets/images/jf.jpg 'speaker')
 
 
-![](https://jef.binomed.fr/binomed_docs/Prezs/RTTSiteswap/index.html#/ 'tc-qrcode company text-below')slides : https://bit.ly/4mEXRJ9
+![](https://jef.binomed.fr/binomed_docs/Prezs/RTTSiteswap/index.html#/ 'tc-qrcode company text-below')slides : https://bit.ly/3Vh3fJ5
 
 
 </div>
