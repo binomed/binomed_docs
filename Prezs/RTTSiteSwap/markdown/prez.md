@@ -104,6 +104,15 @@ Notes:
 
 Notes:
 
+##==##
+
+<!-- .slide: class="transition-black" -->
+
+# Et il n'est question que de temps !
+
+Notes:
+Montrer des variantes ou d'autres objets pour le 3 et différentes hauteurs
+
 
 ##==##
 
