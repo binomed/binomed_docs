@@ -1,50 +1,274 @@
-/* --- Thème RTT Siteswap pour Reveal.js & Talk-Control --- */
-/* Point de départ volontairement minimal : l'ancien thème "binomed" */
-/* n'étant plus accessible (symlinks vers un repo Tools absent), on repart */
-/* du thème de base talk-control et on reprend ici la palette "Material" */
-/* déjà utilisée dans markdown/prez.md (bleu/vert/orange). À retravailler. */
+/* --- Thèmes RTT Siteswap pour Reveal.js & Talk-Control --- */
+/*
+ * Deux directions, commutables par l'URL (?data-theme=nuit) :
+ *  - atelier (défaut) : papier chaud, encre, couleurs de balles de jongle "pro"
+ *    (mates, pas de primaires de cirque). Ambiance carnet de notation.
+ *  - nuit : scène sombre, halo de projecteur, balles lumineuses (esprit
+ *    jonglage contemporain / LED), sans paillettes.
+ *
+ * Motifs communs, tirés de la notation plutôt que du cirque :
+ *  - sous le titre de la première slide, un arc de lancer (main → balle → main) ;
+ *  - en pied de slide, le "rail" du diagramme en échelle (temps G/D alternés) ;
+ *  - les chiffres et la notation en police mono.
+ *
+ * Les fonds des slides de transition sont posés par mapBackgrounds()
+ * (scripts/slides.js) via les classes tone-1/2/3, invalid, transition-black,
+ * transition-white : garder les couleurs alignées avec --rtt-tone-* ici.
+ */
 
-body[data-theme='rtt'] {
-  /* Overrides Reveal.js (variables --r-*) */
-  --r-background-color: #ffffff;
-  --r-main-color: #1e293b;
-  --r-heading-color: #1e293b;
-  --r-link-color: #2196f3;
-  --r-link-color-hover: #1769aa;
-  --r-selection-background-color: rgba(33, 150, 243, 0.3);
+/* --- Polices embarquées (assets/fonts, licence OFL) : zéro réseau sur scène --- */
+/* Fontes variables issues de Google Fonts, sous-ensembles latin + latin-ext. */
 
-  /* Overrides Talk-Control (variables --tc-*) */
-  --accent-color: #2196f3;
-  --tc-primary-color: #2196f3;
-  --tc-secondary-color: #4caf50;
-  --tc-heading-color: var(--accent-color);
-  --tc-icon-color: var(--r-main-color);
-  /* --tc-transition-color n'est volontairement pas fixé ici : le thème de
-     base le résout en var(--tc-heading-color) par défaut (lisible sur fond
-     blanc). Les slides avec un fond coloré/sombre passent en blanc via la
-     classe .text-white ci-dessous plutôt qu'en global. */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  font-display: swap;
+  src: url('./assets/fonts/archivo-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-/* Le markdown existant utilise la classe historique "text-white" (héritée de */
-/* l'ancien thème bootstrap) là où talk-control attend "txt-white". On la */
-/* fait pointer vers la même variable pour les slides à fond coloré/sombre. */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  font-display: swap;
+  src: url('./assets/fonts/archivo-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 100 800;
+  font-display: swap;
+  src: url('./assets/fonts/jetbrains-mono-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 100 800;
+  font-display: swap;
+  src: url('./assets/fonts/jetbrains-mono-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+body[data-theme='atelier'],
+body[data-theme='nuit'] {
+  --rtt-font: 'Archivo', system-ui, sans-serif;
+  --rtt-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --r-main-font: var(--rtt-font);
+  --r-heading-font: var(--rtt-font);
+  --r-code-font: var(--rtt-mono);
+  --r-background-color: var(--rtt-bg);
+  --r-main-color: var(--rtt-ink);
+  --r-heading-color: var(--rtt-ink);
+  --r-link-color: var(--rtt-accent);
+  --r-link-color-hover: var(--rtt-ink);
+  --r-selection-background-color: var(--rtt-accent);
+  --r-selection-color: var(--rtt-bg);
+
+  --tc-heading-color: var(--rtt-ink);
+  --tc-transition-color: var(--rtt-ink);
+  --tc-transition-line-color: var(--rtt-accent);
+  --tc-icon-color: var(--rtt-ink);
+  --tc-credits-bg: transparent;
+  --tc-credits-color: var(--rtt-muted);
+
+  /* Composants <siteswap-diagram> / <siteswap-scene> */
+  --ss-mono: var(--rtt-mono);
+  --ss-contrast: var(--rtt-bg);
+  --ss-ball-none: var(--rtt-muted);
+}
+
+body[data-theme='atelier'] {
+  --rtt-bg: #f4f1ea;
+  --rtt-ink: #1b1e24;
+  --rtt-muted: #7a756b;
+  --rtt-accent: #d1495b;
+  --rtt-rail: #1b1e24;
+
+  --rtt-tone-1: #24476b;
+  --rtt-tone-2: #2f6b5e;
+  --rtt-tone-3: #b0662a;
+  --rtt-invalid: #a33a2f;
+
+  --ss-ball-0: #d1495b;
+  --ss-ball-1: #24619e;
+  --ss-ball-2: #e0a030;
+  --ss-ball-3: #2f8f7a;
+  --ss-ball-4: #6d4c8f;
+  --ss-ball-5: #7f8f3a;
+  --ss-ball-6: #4b5563;
+}
+
+body[data-theme='nuit'] {
+  --rtt-bg: #121419;
+  --rtt-ink: #ece7dc;
+  --rtt-muted: #8b8a86;
+  --rtt-accent: #ff6b4a;
+  --rtt-rail: #ece7dc;
+
+  --rtt-tone-1: #16263b;
+  --rtt-tone-2: #142e2a;
+  --rtt-tone-3: #33240f;
+  --rtt-invalid: #3a1414;
+
+  --ss-ball-0: #ff6b4a;
+  --ss-ball-1: #4aa8ff;
+  --ss-ball-2: #ffc94a;
+  --ss-ball-3: #3ee0a8;
+  --ss-ball-4: #c58bff;
+  --ss-ball-5: #b5e550;
+  --ss-ball-6: #ff7eb6;
+
+  /* Halo de projecteur : les slides sans fond dédié en héritent */
+  background-image: radial-gradient(ellipse 70% 60% at 50% 35%, #232731 0%, var(--rtt-bg) 70%);
+}
+
+/* --- Typographie ------------------------------------------------------- */
+
+body[data-theme] .reveal .slides section:not(.stack) h1,
+body[data-theme] .reveal .slides section:not(.stack) h2 {
+  font-weight: 800;
+  font-stretch: 112%;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+body[data-theme] .reveal .slides section:not(.stack) h3 {
+  font-weight: 500;
+  color: var(--rtt-muted);
+}
+
+/* Titre de slide de contenu : une "balle" d'accent en guise de puce */
+body[data-theme] .reveal .slides section:not(.stack):not([class*='transition']) > h2:first-child::before,
+body[data-theme] .reveal .slides section:not(.stack):not([class*='transition']) > h1:first-child::before {
+  content: '';
+  display: inline-block;
+  width: 0.42em;
+  height: 0.42em;
+  margin-right: 0.45em;
+  vertical-align: 0.12em;
+  border-radius: 50%;
+  background: var(--rtt-accent);
+}
+
+body[data-theme] .reveal li::marker {
+  color: var(--rtt-accent);
+}
+
+/* --- Slides de transition ---------------------------------------------- */
+
+body[data-theme] .reveal .slides section:not(.stack)[class*='transition'] h1 {
+  font-weight: 900;
+  font-stretch: 125%;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+/* L'arc de lancer remplace la barre droite du thème de base */
+body[data-theme] .reveal .slides section:not(.stack)[class*='transition'] h1::before {
+  width: 220px;
+  height: 70px;
+  left: 50%;
+  bottom: -90px;
+  transform: translateX(-50%);
+  background: var(--tc-transition-line-color);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 70'%3E%3Cpath d='M14 62 C 50 -6, 170 -6, 206 62' fill='none' stroke='black' stroke-width='4' stroke-linecap='round' stroke-dasharray='1 9'/%3E%3Ccircle cx='14' cy='62' r='6'/%3E%3Ccircle cx='206' cy='62' r='6'/%3E%3Ccircle cx='110' cy='12' r='11'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 70'%3E%3Cpath d='M14 62 C 50 -6, 170 -6, 206 62' fill='none' stroke='black' stroke-width='4' stroke-linecap='round' stroke-dasharray='1 9'/%3E%3Ccircle cx='14' cy='62' r='6'/%3E%3Ccircle cx='206' cy='62' r='6'/%3E%3Ccircle cx='110' cy='12' r='11'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+body[data-theme] .reveal .slides section:not(.stack)[class*='transition'] h2 {
+  font-weight: 500;
+  font-stretch: 100%;
+  margin-top: 30px;
+  opacity: 0.85;
+}
+
+/* L'arc n'est gardé que sur la slide de titre : ailleurs il n'apporte rien */
+body[data-theme] .reveal .slides section:not(.stack)[class*='transition'] {
+  --tc-transition-display-line: none;
+}
+
+body[data-theme] .reveal .slides > section:first-child:not(.stack)[class*='transition'] {
+  --tc-transition-display-line: block;
+}
+
+body[data-theme] .reveal .slides > section:first-child:not(.stack)[class*='transition'] h2 {
+  margin-top: 110px;
+}
+
+/* Fonds pleins (couleur posée par mapBackgrounds) : texte clair */
+body[data-theme] .reveal .slides section.tone-1,
+body[data-theme] .reveal .slides section.tone-2,
+body[data-theme] .reveal .slides section.tone-3,
+body[data-theme] .reveal .slides section.invalid,
+body[data-theme] .reveal .slides section.transition-black {
+  --tc-transition-color: #f4f1ea;
+  --tc-transition-line-color: rgba(244, 241, 234, 0.75);
+  --tc-heading-color: #f4f1ea;
+  --r-main-color: #f4f1ea;
+}
+
+body[data-theme] .reveal .slides section.invalid {
+  --tc-transition-line-color: #ff8a7a;
+}
+
+body[data-theme] .reveal .slides section.transition-white {
+  --tc-transition-color: #1b1e24;
+  --tc-heading-color: #1b1e24;
+}
+
+/* Alias historique (ancien thème bootstrap) de la classe talk-control txt-white */
 .reveal .slides section.text-white {
   --tc-transition-color: #fff;
 }
 
-/* Variantes "transition-black" / "transition-white" du contenu existant */
-/* (fonds pleins, sans data-background explicite dans le markdown) */
-/* !important nécessaire : le thème de base talk-control cible */
-/* section:not(.stack)[class*=transition] avec une spécificité plus forte */
-.reveal .slides section.transition-black {
-  background-color: #000 !important;
+/* --- Rail du diagramme en échelle en pied des slides de contenu --------- */
+
+body[data-theme] .reveal .slides section:not(.stack):not([class*='transition']):not(.speaker-slide)::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -30px;
+  height: 36px;
+  opacity: 0.14;
+  background: var(--rtt-rail);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 36'%3E%3Cpath d='M0 6 H120 M0 30 H120' stroke='black' stroke-width='1.5'/%3E%3Ccircle cx='30' cy='6' r='5'/%3E%3Ccircle cx='90' cy='30' r='5'/%3E%3C/svg%3E") left center / 120px 36px repeat-x;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 36'%3E%3Cpath d='M0 6 H120 M0 30 H120' stroke='black' stroke-width='1.5'/%3E%3Ccircle cx='30' cy='6' r='5'/%3E%3Ccircle cx='90' cy='30' r='5'/%3E%3C/svg%3E") left center / 120px 36px repeat-x;
+  pointer-events: none;
 }
-.reveal .slides section.transition-black h1 {
-  color: #fff !important;
+
+/* --- Blocs ---------------------------------------------------------------- */
+
+body[data-theme] .reveal blockquote {
+  width: 78%;
+  padding: 0.6em 1em;
+  font-style: normal;
+  box-shadow: none;
+  border-left: 6px solid var(--rtt-accent);
+  background: color-mix(in srgb, var(--rtt-ink) 5%, transparent);
 }
-.reveal .slides section.transition-white {
-  background-color: #fff !important;
+
+body[data-theme] .reveal blockquote::before,
+body[data-theme] .reveal blockquote::after {
+  content: none;
 }
-.reveal .slides section.transition-white h1 {
-  color: #1e293b !important;
+
+body[data-theme] .reveal .slides section p.credits.credits {
+  font-family: var(--rtt-mono);
+  font-size: 0.5em;
+  letter-spacing: 0.02em;
+}
+
+/* Les images sur fond blanc gardent un cadre papier en thème sombre */
+body[data-theme='nuit'] .reveal .slides section:not([class*='transition']) img {
+  border-radius: 10px;
 }
